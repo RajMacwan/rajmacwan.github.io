@@ -1,4 +1,4 @@
-# rajmacwan.com
+# macwangrid.com
 
 Personal site of **Raj Macwan** — VP Information Technology, security researcher, MIT scholar.
 
@@ -6,7 +6,7 @@ Personal site of **Raj Macwan** — VP Information Technology, security research
 
 - Static HTML + CSS (no framework, no build step)
 - Hosted on GitHub Pages
-- Custom domain: `rajmacwan.com`
+- Custom domain: `macwangrid.com`
 - Auto-refreshed Industry Watch via GitHub Actions (every 6 hours)
 - Free TLS via Let's Encrypt (GitHub-managed)
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-rajmacwan.com - Industry Watch Aggregator
+macwangrid.com - Industry Watch Aggregator
 ==========================================
 Fetches curated IT infrastructure, cybersecurity, and AI news from public feeds.
 Renders a clean professional news page - NOT the dark/hacker aesthetic.
@@ -204,7 +204,7 @@ def render_page(articles, last_updated):
     <meta property="og:title" content="Industry Watch — Raj Macwan">
     <meta property="og:description" content="Curated infrastructure, security, and AI news, auto-refreshed every 6 hours.">
     <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://rajmacwan.com/industry-watch.html">
+    <link rel="canonical" href="https://macwangrid.com/industry-watch.html">
 </head>
 <body>
 
