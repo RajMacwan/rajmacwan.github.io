@@ -74,17 +74,52 @@
     </div>
 </nav>
 
-<!-- =================== HERO =================== -->
+<!-- =================== STATUS BAR (threat/activity feed) =================== -->
+<div class="status-bar">
+    <div class="container">
+        <div class="status-item live">
+            <span class="status-dot"></span>
+            <span class="status-label">SYSTEM</span>
+            <span class="status-value">ONLINE</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">NODES</span>
+            <div class="threat-bars">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <span class="status-value">7 GRIDS</span>
+        </div>
+        <div class="status-item alert">
+            <span class="status-dot"></span>
+            <span class="status-label">DARKPULSE</span>
+            <span class="status-value">BROADCASTING</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">BUILD</span>
+            <span class="status-value">v2.0 · macwangrid.com</span>
+        </div>
+        <div class="status-item">
+            <span class="status-label">OPERATOR</span>
+            <span class="status-value">RAJ MACWAN</span>
+        </div>
+    </div>
+</div>
+
+<!-- =================== HERO (terminal-style) =================== -->
 <section class="hero">
     <div class="container">
         <div class="hero-content">
             <div class="hero-text">
-                <span class="eyebrow">MacwanGrid · By Raj Macwan</span>
-                <h1>The Art of Smart Technologies.</h1>
+                <span class="terminal-prompt">root@macwangrid:~$ whoami</span>
+                <h1>The Art of <span class="accent-word">Smart Technologies</span><span class="pulse-cursor"></span></h1>
                 <p class="hero-subtitle">
                     A practitioner's notes across the grids of modern IT — infrastructure,
-                    security, AI, and the systems behind them. Written from the desk of a
-                    VP who still reads the logs.
+                    security, AI, and the systems behind them. Written from the desk of a VP
+                    who still reads the logs.
                 </p>
                 <div class="hero-cta-row">
                     <a href="blog/index.html" class="btn btn-primary">Read the Blog →</a>
@@ -98,7 +133,7 @@
                 <div class="badge-base LI-profile-badge"
                      data-locale="en_US"
                      data-size="large"
-                     data-theme="light"
+                     data-theme="dark"
                      data-type="VERTICAL"
                      data-vanity="raj-macwan"
                      data-version="v1">
