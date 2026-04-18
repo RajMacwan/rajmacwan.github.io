@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Raj Macwan</title>
+    <meta name="description" content="DarkPulse Security: a privacy-first cybersecurity research project operating as a Tor hidden service. Why I built it and what I learned.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Research — Raj Macwan">
+    <meta property="og:description" content="DarkPulse Security: a privacy-first cybersecurity research project operating as a Tor hidden service. Why I built it and what I learned.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://rajmacwan.com/research.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="expertise.html">Expertise</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="research.html" class="active">Research</a></li>
+            <li><a href="mit-journey.html">MIT</a></li>
+            <li><a href="industry-watch.html">Industry Watch</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="eyebrow">Research &amp; Side Projects</div>
+            <h1>Building to understand.</h1>
+            <p class="lede">To truly understand privacy and adversarial thinking, you have to operate in the environments you're trying to defend. This page documents my ongoing research projects &mdash; the most substantial of which is DarkPulse Security.</p>
+
+            <div class="research-callout">
+                <span class="tor-badge">🧅 LIVE · TOR HIDDEN SERVICE</span>
+                <h3>DarkPulse Security</h3>
+                <p>DarkPulse Security is a privacy-first cybersecurity news aggregator that operates exclusively as a Tor hidden service. It exists because most mainstream security news sites are heavy with trackers, ads, and fingerprinting &mdash; which is a strange way to deliver news to an audience whose whole professional concern is surveillance.</p>
+                <p>The site aggregates content from 18+ public RSS feeds &mdash; CISA, Krebs on Security, BleepingComputer, The Hacker News, SANS ISC, Dark Reading, and others &mdash; and republishes summaries in a minimal, static, JavaScript-free format. No cookies, no analytics, no third-party requests.</p>
+                <p>Alongside the news stream it maintains a mirror of the CISA Known Exploited Vulnerabilities catalog (1,500+ actively exploited CVEs, refreshed daily), a ransomware group tracker covering 300+ active and defunct groups, and a weekly long-form case file series dissecting events like Silk Road, Stuxnet, NotPetya, SolarWinds, Equifax, and Colonial Pipeline. A daily threat-temperature gauge gives a rough read of the current operational environment.</p>
+                <p>DarkPulse is operated under the pseudonym <strong>TheMacwan</strong>. That is deliberate. The operational separation between the professional identity writing these words and the pseudonymous identity running the onion is part of the research, not a marketing gimmick.</p>
+                <div class="onion-url">http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion</div>
+                <p class="small">Requires Tor Browser. The site will not load over the clearnet, by design.</p>
+            </div>
+
+            <div class="article-body">
+                <h2>The Architecture: Whonix + VirtualBox</h2>
+                <p>DarkPulse is hosted on a Whonix stack running on VirtualBox. Whonix is a two-VM design: a Gateway VM that does nothing but route traffic through Tor, and a Workstation VM that hosts the actual services but has no idea what its real IP address is. The Workstation can only reach the network through the Gateway, and the Gateway will not route anything outside of Tor.</p>
+                <p>This is traffic-isolation discipline at the hypervisor level, not the application level. It means even a full compromise of the Workstation &mdash; a bad dependency, a zero-day in the web server, a misconfiguration &mdash; cannot leak the origin IP, because the Workstation genuinely does not know it. The only network interface it sees is an internal virtual one that speaks to the Gateway.</p>
+                <p>That's a structurally different guarantee than "we configured the firewall carefully." Most Tor hidden-service deopsxsxs fail because an application running on the host accidentally makes a clearnet request &mdash; an errant DNS lookup, a call to a CDN, a telemetry ping. With Whonix, those requests have nowhere to go.</p>
+                <p>VirtualBox was chosen over KVM or Xen for honest reasons: it runs on the commodity hardware I already own, the documentation is excellent, and Whonix distributes first-class VirtualBox images. When the goal is learning, using the best-documented path is usually the right call.</p>
+
+                <h2>The Content Pipeline</h2>
+                <p>The aggregator itself is a small Python application. It polls RSS feeds on a four-hour refresh cycle, deduplicates against a local cache, and regenerates static HTML. There is no database. There is no dynamic content. Every page the visitor sees was written to disk before they arrived.</p>
+                <p>The feed list is split into tiers. Tier 1 sources (CISA advisories, the KEV catalog, a small number of high-signal blogs) are always pulled. Tier 2 is split into 2A and 2B and alternates &mdash; this keeps the total request volume reasonable while still surfacing a broad range of perspectives over a 24-hour window.</p>
+                <p>Alongside the news stream, the site carries a set of curated resource pages: a breach-response checklist, a plain-English glossary, a safety guide for people who think they might be targeted. Those are hand-written and updated when something meaningful changes, not on a schedule.</p>
+                <p>The weekly case files drop on Mondays. They are written in advance, queued, and released by a cron job. Writing them a week ahead lets me edit with a cooler head than I'd have if I were publishing in real time.</p>
+
+                <h2>Operational Separation</h2>
+                <p>TheMacwan is a different identity from Raj Macwan. Different PGP key (RSA-4096, separate keyring), different writing voice, different signing habits. The only crosswalk between the two identities is this page &mdash; and the blog post linked at the bottom &mdash; because I've decided the research itself is worth publishing under my real name.</p>
+                <p>The onion carries a PGP-signed warrant canary that rotates on a known cadence. Canaries are signaling, not legal protection. They are a convention that lets a careful reader notice when something changes, without requiring the operator to say anything they are not allowed to say. If the canary stops updating, that is information.</p>
+                <p>Why bother with the separation at all, if I'm publishing the connection here? Because the two identities serve different purposes. Raj Macwan is a professional identity with a career, an employer, and a public track record. TheMacwan is an experimental identity for a research project whose whole point is understanding how hidden services are built and defended. Mixing those contexts would compromise both: the professional identity would pick up operational-security mistakes, and the research identity would pick up commercial pressure.</p>
+
+                <h2>What I Learned</h2>
+                <ul>
+                    <li><strong>Privacy engineering is a discipline, not a toolset.</strong> Tor, Whonix, and PGP do not make a system private. A rigorous operating procedure does. The tools make the procedure possible.</li>
+                    <li><strong>Hidden services are slow &mdash; design for that.</strong> Three-hop circuits add real latency. Static HTML, no JavaScript, small images. Anything that requires a second round-trip will feel broken to the user.</li>
+                    <li><strong>Static is safer than dynamic.</strong> No database means no SQL injection. No server-side rendering means a much smaller attack surface. "Boring" is a security posture.</li>
+                    <li><strong>Journaled aggregation gives you resilience.</strong> When a source feed goes down &mdash; and they do &mdash; a local cache means the site keeps working. Don't call live; call once, store, serve from storage.</li>
+                    <li><strong>Canaries are signaling, not shields.</strong> They cannot compel anyone to do anything. They only tell a careful reader that conditions have changed.</li>
+                    <li><strong>Operational separation is harder than it sounds.</strong> Writing style leaks. Time-of-day patterns leak. Vocabulary leaks. Maintaining two voices consistently is the part of the project that required the most deliberate practice.</li>
+                    <li><strong>Open-source tooling is genuinely better for privacy infrastructure.</strong> Not for ideological reasons &mdash; because you can audit it, fork it, and freeze a version that you trust. Proprietary stacks force you to trust the vendor's update cycle.</li>
+                    <li><strong>Most "dark web" coverage is nonsense.</strong> The vast majority of Tor traffic is ordinary people avoiding surveillance. The criminal fraction is real but small, and it is not the interesting engineering story.</li>
+                </ul>
+
+                <h2>Why I Publish This</h2>
+                <p>Both the project and the identity separation are public facts. The onion's existence does not need to be a secret &mdash; it is advertised, linked, and discussed. What needs protection is the identity of <em>visitors</em>, not the operator. Readers of a security news site have good reasons to want their reading habits private: they may be researchers, journalists, vulnerable people, or simply professionals whose employers would rather not see them reading about ransomware on the corporate VPN.</p>
+                <p>Publishing the research under my real name, on a page like this one, makes the intent legible. This is not a market; it is not a product; it is a body of work. If that is useful to anyone else trying to think through the same questions, better that it is out in the open than whispered about.</p>
+
+                <div class="cta-row mt-4">
+                    <a href="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion" class="btn btn-primary">Visit DarkPulse (.onion &mdash; requires Tor Browser)</a>
+                    <a href="blog/why-i-built-darkpulse.html" class="btn btn-secondary">Read the Blog Post</a>
+                </div>
+            </div>
+
+            <div class="linkedin-badge-wrap mt-5">
+                <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="raj-macwan" data-version="v1"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology &mdash; from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="expertise.html">Expertise</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="mit-journey.html">MIT Journey</a></li>
+                    <li><a href="industry-watch.html">Industry Watch</a></li>
+                    <li><a href="blog/feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

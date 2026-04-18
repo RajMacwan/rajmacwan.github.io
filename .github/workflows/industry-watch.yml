@@ -1,0 +1,60 @@
+# =====================================================================
+# Industry Watch Auto-Refresh
+# Runs every 6 hours, fetches security/IT RSS feeds, regenerates
+# industry-watch.html, commits back to the repo. GitHub Pages
+# auto-deploys the new page.
+# =====================================================================
+
+name: Industry Watch Refresh
+
+on:
+  schedule:
+    # Every 6 hours (UTC): 00:00, 06:00, 12:00, 18:00
+    - cron: '0 */6 * * *'
+  workflow_dispatch:  # Allow manual trigger from the Actions tab
+  push:
+    paths:
+      - 'industry_watch.py'
+      - '.github/workflows/industry-watch.yml'
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # needs to commit updated HTML back
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser
+
+      - name: Configure aggregator paths for GitHub Pages
+        run: |
+          # The aggregator was written for VPS paths.
+          # Override WEB_ROOT and CACHE_DIR to local repo paths.
+          sed -i 's|WEB_ROOT = Path("/var/www/html")|WEB_ROOT = Path(".")|' industry_watch.py
+          sed -i 's|CACHE_DIR = Path("/var/lib/rajmacwan/cache")|CACHE_DIR = Path(".cache")|' industry_watch.py
+
+      - name: Run aggregator
+        run: python industry_watch.py
+
+      - name: Commit updated page if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add industry-watch.html
+          if git diff --cached --quiet; then
+            echo "No changes - skipping commit"
+          else
+            git commit -m "chore(industry-watch): auto-refresh $(date -u +%Y-%m-%d\ %H:%M\ UTC)"
+            git push
+          fi

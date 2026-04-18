@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raj Macwan — Blog</title>
+    <link>https://rajmacwan.com/blog/</link>
+    <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
+    <language>en-us</language>
+    <atom:link href="https://rajmacwan.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <lastBuildDate>Wed, 15 Apr 2026 10:00:00 GMT</lastBuildDate>
+    <managingEditor>contact@rajmacwan.com (Raj Macwan)</managingEditor>
+    <copyright>© 2026 Raj Macwan. Views are my own.</copyright>
+
+    <item>
+      <title>Why I Built a Dark Web Research Site (and What I Learned)</title>
+      <link>https://rajmacwan.com/blog/why-i-built-darkpulse.html</link>
+      <description>Running a Tor hidden service as a senior IT leader. Stack notes, tradecraft, identity separation, and what the project actually taught me about privacy engineering.</description>
+      <pubDate>Wed, 15 Apr 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://rajmacwan.com/blog/why-i-built-darkpulse.html</guid>
+      <category>Research</category>
+    </item>
+
+    <item>
+      <title>The CISA KEV Catalog as a Prioritized Patch Backlog</title>
+      <link>https://rajmacwan.com/blog/kev-as-backlog.html</link>
+      <description>Most patch management programs drown in CVE noise. CISA's Known Exploited Vulnerabilities list is the strongest prioritization signal available, and how to actually integrate it into workflow.</description>
+      <pubDate>Fri, 10 Apr 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://rajmacwan.com/blog/kev-as-backlog.html</guid>
+      <category>Security</category>
+    </item>
+
+    <item>
+      <title>AI in IT Operations: A Reality Check from the Trenches</title>
+      <link>https://rajmacwan.com/blog/ai-in-ops-reality-check.html</link>
+      <description>A balanced practitioner view on where AI actually works in IT operations, where it is hype, and the governance problems nobody wants to own.</description>
+      <pubDate>Sun, 05 Apr 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://rajmacwan.com/blog/ai-in-ops-reality-check.html</guid>
+      <category>AI and Automation</category>
+    </item>
+
+    <item>
+      <title>MIT Week 1: Back in a Classroom After 20 Years</title>
+      <link>https://rajmacwan.com/blog/mit-week-1.html</link>
+      <description>Returning to formal study at MIT after two decades in industry. Early notes on the gap between running the work and studying it.</description>
+      <pubDate>Thu, 02 Apr 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://rajmacwan.com/blog/mit-week-1.html</guid>
+      <category>MIT Journey</category>
+    </item>
+
+    <item>
+      <title>Zero Trust Is Harder Than Vendors Admit</title>
+      <link>https://rajmacwan.com/blog/zero-trust-reality.html</link>
+      <description>The Zero Trust architecture is sound. The products sold under its name often are not. A pragmatic five-year view of what the real journey looks like.</description>
+      <pubDate>Sat, 28 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://rajmacwan.com/blog/zero-trust-reality.html</guid>
+      <category>Security</category>
+    </item>
+
+  </channel>
+</rss>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero Trust Is Harder Than Vendors Admit — Raj Macwan</title>
+    <meta name="description" content="The Zero Trust architecture is sound. The products sold under its name often are not. A pragmatic five-year view of what the real journey looks like.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Zero Trust Is Harder Than Vendors Admit">
+    <meta property="og:description" content="The Zero Trust architecture is sound. The products sold under its name often are not. A pragmatic five-year view of what the real journey looks like.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-28T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://rajmacwan.com/blog/zero-trust-reality.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../expertise.html">Expertise</a></li>
+            <li><a href="index.html" class="active">Blog</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../mit-journey.html">MIT</a></li>
+            <li><a href="../industry-watch.html">Industry Watch</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="category-pill">Security</span>
+                <span>Published 2026-03-28</span>
+                <span>9 min read</span>
+            </div>
+            <h1>Zero Trust Is Harder Than Vendors Admit</h1>
+
+            <div class="article-body">
+                <p class="lead">Zero Trust is the most talked-about and least implemented architecture in enterprise security. Every vendor claims to deliver it. Every analyst firm claims to measure it. Most of the organizations I have spoken with who claim to have it have deployed, at most, two pieces of it. This post is a fair but direct accounting of the gap, and of what a practical path actually looks like.</p>
+
+                <h2>What Zero Trust actually is</h2>
+
+                <p>NIST SP 800-207 defines Zero Trust as a set of architectural principles: no implicit trust based on network location, continuous verification of identity and device posture, least-privilege access enforced per-session, and policy decisions informed by dynamic signals. That is an architecture, not a product. It is, arguably, not even a single architecture; it is a family of them that share those principles.</p>
+
+                <p>None of that mentions a specific vendor or product category. That is important. The most common mistake in Zero Trust programs is to begin with a product selection instead of a principle adoption.</p>
+
+                <h2>The common vendor pitch</h2>
+
+                <p>Some version of: "Buy our gateway, deploy our agent, and you will have Zero Trust." The pitch is compelling because it compresses a multi-year organizational transformation into a procurement event. It is also, in every version I have seen, dishonest about the actual scope.</p>
+
+                <p>What the product buys you is one component — typically identity-aware access to a set of applications. That is genuinely useful. It is also perhaps five percent of the journey. The other ninety-five percent is organizational, architectural, and data-structural work that no product can do for you.</p>
+
+                <h2>Where real organizations actually struggle</h2>
+
+                <h3>Identity foundation</h3>
+
+                <p>If your identity and access management is messy, Zero Trust is impossible. Full stop. You cannot continuously verify identity if your identity system does not have a clean view of who your users are, what groups they belong to, which accounts are service accounts, which are stale, and which are privileged. Most organizations have years of identity debt before they realize it matters. Cleaning that up is the first phase of the journey, and it is slow, unglamorous work.</p>
+
+                <h3>Data classification</h3>
+
+                <p>You cannot enforce policy about data you have not classified. Most enterprises have a policy document that says they classify data. Most of those policies are not operationally enforced. The gap between the document and the running system is where Zero Trust lives or dies. If "sensitive" is a label nobody applies consistently, no policy engine in the world can protect it.</p>
+
+                <h3>Network and device trust separation</h3>
+
+                <p>Microsegmentation is one of the most discussed and least completed projects in enterprise security. The technical capabilities have existed for a decade. The reason most projects stall is that real networks were not designed to be segmented, applications have surprising east-west dependencies, and discovering those dependencies is expensive. You end up either over-segmenting and breaking things, or under-segmenting and declaring victory too early.</p>
+
+                <h3>Continuous verification requires telemetry everywhere</h3>
+
+                <p>Continuous verification is not a feature. It is a consequence of having observable telemetry across identity, device, network, and application planes, integrated into a policy decision point that actually consumes it. If any of those planes are dark — and in most organizations, at least one is — your verification is not continuous. It is occasional.</p>
+
+                <h3>The organizational problem</h3>
+
+                <p>Security teams are asked to constrain applications they do not own. Application teams are asked to adopt constraints they did not design into. Platform teams sit in the middle. Zero Trust only works when those three groups share a roadmap. Most organizations do not have a shared roadmap. They have three overlapping ones that each optimize for their own deliverables.</p>
+
+                <h2>A pragmatic incremental path</h2>
+
+                <p>What does a realistic multi-year plan look like? Not a vendor's version. A practitioner's.</p>
+
+                <h3>Phase one: identity hygiene</h3>
+
+                <ul>
+                    <li>MFA everywhere. Including service accounts where possible; workload identity where not.</li>
+                    <li>Clean RBAC. Kill role sprawl. Review and decommission stale privileged access.</li>
+                    <li>Single source of truth for identity. Consolidate directories if you have multiple.</li>
+                </ul>
+
+                <p>This phase is not exciting. It is also where the largest security wins of the entire program sit. Most breaches involve compromised identity. Fixing identity is the work.</p>
+
+                <h3>Phase two: device posture</h3>
+
+                <ul>
+                    <li>EDR deployed and healthy across the fleet, reporting a compliance signal you can actually use.</li>
+                    <li>A clear policy on managed versus unmanaged devices. Enforced, not aspirational.</li>
+                    <li>Device attributes surfaced to the policy decision point so they can inform access.</li>
+                </ul>
+
+                <h3>Phase three: top-priority application portfolio</h3>
+
+                <p>Pick five applications. Not fifty. Five. Criteria: high sensitivity, high traffic, clear owners. Put them behind a Zero Trust access layer with identity- and device-aware policy. Measure the operational cost honestly. Fix what breaks.</p>
+
+                <p>This phase is where you learn what Zero Trust actually costs in your environment. Every subsequent expansion is informed by what you learned here. Skipping this phase and going wide is how programs fail.</p>
+
+                <h3>Phase four: expand outward</h3>
+
+                <p>Now you add applications to the ZT portfolio on a cadence your organization can actually sustain. The rate limit is rarely the technology. It is the capacity of the owning teams to onboard cleanly without breaking user experience.</p>
+
+                <h3>Phase five: network segmentation</h3>
+
+                <p>Most teams do this earlier. I would argue it belongs later, after identity-aware access has displaced most of the network's role as a trust boundary. At that point, segmentation becomes about containing lateral movement rather than being the primary control, and the project gets easier.</p>
+
+                <h2>What good enough looks like</h2>
+
+                <p>For most enterprises, "done" is not the brochure picture of every workload behind a policy engine with real-time risk scoring. "Done" is:</p>
+
+                <ul>
+                    <li>Identity is clean, MFA is universal, privileged access is time-bound and audited.</li>
+                    <li>Devices accessing sensitive applications have a measurable posture signal.</li>
+                    <li>The most sensitive thirty or fifty applications in the estate are behind identity- and device-aware access.</li>
+                    <li>East-west movement between major zones requires authentication rather than being free.</li>
+                    <li>The remaining long tail is on a roadmap that is actually moving, not stalled.</li>
+                </ul>
+
+                <p>That is a five-year outcome in most enterprises I have worked in. Vendors who promise it in eighteen months are either selling a narrower product than they are labeling, or selling to organizations with unusually clean starting conditions.</p>
+
+                <h2>The honest summary</h2>
+
+                <blockquote>Zero Trust is a five-year journey for most organizations. Vendors sell five-month journeys. The difference between the two is where reality lives.</blockquote>
+
+                <p>None of this is an argument against Zero Trust. The principles are the right ones, and the industry trajectory is toward them. It is an argument against buying a product and believing you are done. The architecture is sound. The work is hard. The people selling it as easy have not done it.</p>
+
+                <p>If you are starting a Zero Trust program, my one piece of advice is the one that sounds least interesting: fix identity first, fix it properly, and do not move on until it is actually clean. Every other phase of the journey compounds on that foundation. An unsteady foundation does not become steady because you added more floors.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="kev-as-backlog.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-04-10</span>
+                    </div>
+                    <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                    <p>The strongest empirical signal we have for patch prioritization, and how to actually use it.</p>
+                </a>
+                <a href="why-i-built-darkpulse.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Research</span>
+                        <span>2026-04-15</span>
+                    </div>
+                    <h3>Why I Built a Dark Web Research Site (and What I Learned)</h3>
+                    <p>Running a Tor hidden service as a senior IT leader: stack notes, tradecraft, and identity separation.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

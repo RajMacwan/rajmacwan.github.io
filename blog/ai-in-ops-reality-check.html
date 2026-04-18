@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI in IT Operations: A Reality Check from the Trenches — Raj Macwan</title>
+    <meta name="description" content="A balanced practitioner view on where AI actually works in IT operations, where it is hype, and the governance problems nobody wants to own.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI in IT Operations: A Reality Check from the Trenches">
+    <meta property="og:description" content="Where generative AI earns its keep in operations, and where it is still theater. Specific use cases from production, not pitch decks.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-04-05T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://rajmacwan.com/blog/ai-in-ops-reality-check.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../expertise.html">Expertise</a></li>
+            <li><a href="index.html" class="active">Blog</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../mit-journey.html">MIT</a></li>
+            <li><a href="../industry-watch.html">Industry Watch</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="category-pill">AI &amp; Automation</span>
+                <span>Published 2026-04-05</span>
+                <span>7 min read</span>
+            </div>
+            <h1>AI in IT Operations: A Reality Check from the Trenches</h1>
+
+            <div class="article-body">
+                <p class="lead">If I had to name the most common feature of vendor pitch decks this year, it would be a slide with "AI-powered" in front of a product that last year was simply powered. That framing obscures a real question: where does generative AI actually make an operations team measurably better, and where is it a marketing layer on top of a tool that already existed?</p>
+
+                <p>I have spent the last eighteen months evaluating, deploying, and in some cases quietly retiring AI-assisted tooling across infrastructure and security functions. This post is my honest field report. Not dismissive, not evangelical. Specific.</p>
+
+                <h2>What is actually working in production</h2>
+
+                <p>These are use cases where I have seen consistent, measurable value.</p>
+
+                <h3>LLM-assisted triage of tier-one SOC alerts</h3>
+
+                <p>Narrow usage: enrichment, context, and summary. The model is excellent at pulling together the first five tabs an analyst would open for a given alert — asset owner, recent changes, related tickets, external reputation data. The analyst still makes the call. Time-to-triage drops meaningfully. False-positive fatigue drops more.</p>
+
+                <p>Where it goes wrong is the moment someone tries to let the model decide. Tier-one decisions require knowing when to escalate, and the model has no calibrated sense of organizational context. It will close things it should escalate and escalate things a senior analyst would close in ten seconds.</p>
+
+                <h3>Change ticket summarization</h3>
+
+                <p>Most organizations have change advisory boards that read between forty and two hundred tickets per week. A well-prompted summarizer condenses each ticket to a three-line executive brief: what, why, risk, rollback. Board meetings get shorter and the discussion gets sharper. This is low-risk, high-leverage, and an easy early win.</p>
+
+                <h3>Policy document drafting and review</h3>
+
+                <p>Writing a first draft of an acceptable-use policy, an incident response plan, or a vendor risk questionnaire from a clean sheet is slow. Producing a first draft with an LLM, then having a human subject matter expert edit it, is dramatically faster and typically more complete than starting from scratch. The reviewer still does the thinking. The model does the typing.</p>
+
+                <h3>Runbook drafting from post-mortems</h3>
+
+                <p>Feed the model the post-mortem document and ask it to draft a runbook that would have prevented or shortened the incident. The output is uneven but frequently catches steps a tired human writer forgets. The engineer still has the last word.</p>
+
+                <h3>Code and IaC review</h3>
+
+                <p>As a first-pass reviewer on Terraform, Bicep, or infrastructure scripts, the model catches a meaningful number of simple mistakes: unpinned versions, missing tags, overly permissive IAM, forgotten backups. It is not a substitute for a human reviewer. It is a useful pre-filter.</p>
+
+                <h3>Documentation maintenance</h3>
+
+                <p>The single most underrated win. Keeping internal documentation in sync with actual infrastructure is something no team genuinely does well. Generative AI, pointed at the delta between infrastructure state and the docs, produces pull requests that humans then approve. Documentation quality improves. Engineer time spent on documentation drops.</p>
+
+                <h2>What is hype</h2>
+
+                <p>And here is where I will be unpopular with some vendors.</p>
+
+                <h3>"Fully autonomous SOC"</h3>
+
+                <p>No. Not at the current state of the technology, and not within the next two years by any reasonable read of the trajectory. Humans remain essential for anything above tier-two. Adversaries adapt. Models drift. The accountability question — who is responsible when the autonomous SOC makes the wrong call during a real incident — has not been answered, and until it is, autonomous SOC claims should be read as marketing.</p>
+
+                <h3>AI-written code pushed to production without human review</h3>
+
+                <p>No. Not in regulated industries. Not in infrastructure. Not anywhere that cares about correctness more than velocity. The model is a force multiplier for a human reviewer, not a replacement for one.</p>
+
+                <h3>"AI-powered" where AI is a thin LLM wrapper</h3>
+
+                <p>If the core value of the product is the same as it was before the AI label was added, the label does not add value. Ask the vendor what specific decisions the AI makes, on what inputs, with what evaluation. If they cannot answer precisely, it is branding.</p>
+
+                <h3>Predictive outage claims</h3>
+
+                <p>"Our AI predicts outages before they happen" is, in most cases, a lightly-repackaged anomaly detection product. Real predictive value is possible but rare, and it typically requires years of clean telemetry and a narrow-enough domain. Evaluate these claims the way you would evaluate a weather forecast: over a long time window, against a ground truth, with false positives counted honestly.</p>
+
+                <h2>The governance problems nobody wants to own</h2>
+
+                <p>This is where the real work lives, and where most organizations have not yet done the thinking.</p>
+
+                <ul>
+                    <li><strong>Prompt injection.</strong> If your AI agent reads ticket content, and a ticket contains attacker-controlled text, that text can rewrite the agent's instructions. This is not theoretical. It is well-documented.</li>
+                    <li><strong>Data leakage to foundation model providers.</strong> Sending production data to external APIs is a data handling decision that most organizations have not formally classified.</li>
+                    <li><strong>Model provenance.</strong> Which model, from which provider, at which version, with which training cutoff, evaluated by whom. None of these are trivial in a regulated environment.</li>
+                    <li><strong>Auditability.</strong> If an AI-assisted decision shows up in a compliance audit, can you reconstruct what the model saw, what it said, and what the human did with it?</li>
+                </ul>
+
+                <p>These are not blockers. They are homework. Organizations that skip them are accumulating policy debt they will have to pay back later, usually after an incident.</p>
+
+                <h2>Where I see real leverage in the next twelve to twenty-four months</h2>
+
+                <ol>
+                    <li><strong>Automated change documentation.</strong> High leverage, low risk. This should be widespread by the end of the year.</li>
+                    <li><strong>Post-incident timeline construction.</strong> Pulling a coherent chronology out of logs, chat, and ticket systems is slow human work and a natural fit for a model.</li>
+                    <li><strong>Compliance evidence gathering.</strong> Collecting and formatting evidence for audits is an enormous annual tax on security and IT teams. It is exactly the kind of structured-but-boring work that LLMs accelerate.</li>
+                    <li><strong>Threat intelligence summarization.</strong> Condensing twenty vendor reports and blog posts into a single weekly digest, with sources cited. Low stakes, high time-saving.</li>
+                </ol>
+
+                <p>Notice what these have in common. They are all cases where the model drafts and a human decides. That is the pattern that works. The cases that fail are the ones where the model is the decision-maker.</p>
+
+                <h2>A short operating rule</h2>
+
+                <blockquote>AI is a tool, not a strategy. Use it where it demonstrably saves time and preserves human judgment. Avoid it where it replaces judgment. When you cannot tell which side of the line a proposal falls on, that is the proposal to slow down on.</blockquote>
+
+                <p>The organizations I see getting the most out of this technology are not the ones with the most ambitious deployments. They are the ones who picked three or four narrow use cases, integrated them carefully, measured the time saved, and only then expanded. That is unsexy. It is also how every productive wave of operational technology has played out, from virtualization to cloud. There is no reason to believe this one is different.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="kev-as-backlog.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-04-10</span>
+                    </div>
+                    <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                    <p>The strongest empirical signal we have for patch prioritization, and how to actually use it.</p>
+                </a>
+                <a href="zero-trust-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-28</span>
+                    </div>
+                    <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                    <p>A five-year view of what it actually takes to move a real enterprise toward Zero Trust.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

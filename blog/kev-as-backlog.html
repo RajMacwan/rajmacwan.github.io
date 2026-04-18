@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CISA KEV Catalog as a Prioritized Patch Backlog — Raj Macwan</title>
+    <meta name="description" content="Most patch management programs drown in CVE noise. CISA's Known Exploited Vulnerabilities list is the strongest prioritization signal available. How to actually integrate it into workflow.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The CISA KEV Catalog as a Prioritized Patch Backlog">
+    <meta property="og:description" content="Why KEV beats CVSS as a prioritization signal, and how to wire it into a patch workflow that actually moves.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-04-10T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://rajmacwan.com/blog/kev-as-backlog.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../expertise.html">Expertise</a></li>
+            <li><a href="index.html" class="active">Blog</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../mit-journey.html">MIT</a></li>
+            <li><a href="../industry-watch.html">Industry Watch</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="category-pill">Security</span>
+                <span>Published 2026-04-10</span>
+                <span>7 min read</span>
+            </div>
+            <h1>The CISA KEV Catalog as a Prioritized Patch Backlog</h1>
+
+            <div class="article-body">
+                <p class="lead">Roughly thirty thousand CVEs were published last year. No organization on earth patches all of them. That is not a failure of discipline. It is an arithmetic fact. The practical question is which ones matter first, and on that question, most programs still answer wrong.</p>
+
+                <p>Ask any patch team how they prioritize, and you will hear some variant of: "we focus on critical and high." Translated, that means CVSS 9.0 and above. On a good day, seven and above. That approach has a problem. CVSS is a severity score, not an exploitation score. It answers "how bad would this be if exploited," not "is this being exploited." Those are different questions, and the answer to the second one is what determines whether your team should be losing sleep this week.</p>
+
+                <h2>Why CVSS alone is a weak prioritization signal</h2>
+
+                <p>CVSS is useful. It gives you a rough sense of blast radius and a consistent vocabulary across tools. It is not, by itself, a work queue. A few reasons:</p>
+
+                <ul>
+                    <li>Most CVEs with a 9+ score are never exploited at scale. The base vector assumes ideal adversary conditions that rarely hold.</li>
+                    <li>Some CVEs with moderate scores (5.5, 6.1) are weaponized within days because they sit in the right product, the right position, the right internet-exposed path.</li>
+                    <li>CVSS does not move when exploitation changes. A CVE scored two years ago does not automatically update its urgency when a proof-of-concept drops on GitHub.</li>
+                </ul>
+
+                <p>Empirical studies over the last several years consistently show that the correlation between CVSS score and observed exploitation is weak. Using it as a primary filter means your team is almost certainly working on the wrong things most weeks.</p>
+
+                <h2>What KEV is, and why it is different</h2>
+
+                <p>The CISA Known Exploited Vulnerabilities catalog is a public list of CVEs that CISA has evidence are being actively exploited in the wild. It currently sits around 1,500 entries. Each entry includes the CVE, the product, a short description, the date it was added, and a required remediation date for U.S. federal civilian agencies.</p>
+
+                <p>Three properties make KEV stronger than CVSS as a prioritization signal:</p>
+
+                <ol>
+                    <li><strong>Empirical.</strong> Entries are added based on observed exploitation, not theoretical severity.</li>
+                    <li><strong>Curated.</strong> CISA applies a consistent standard and does not add every PoC that appears on the internet.</li>
+                    <li><strong>Actionable.</strong> Each entry comes with a clock. That clock is a federal mandate, but the signal is useful to any organization.</li>
+                </ol>
+
+                <p>In practical terms: if something is on KEV, attackers are already using it on someone. Your window is small and the work is not optional.</p>
+
+                <h2>How to actually integrate KEV into a workflow</h2>
+
+                <p>Most teams I have seen treat KEV as a newsletter. Someone reads the weekly additions, nods, and goes back to the CVSS queue. That is not integration. Integration looks like this:</p>
+
+                <h3>1. Subscribe to the feed</h3>
+
+                <p>CISA publishes KEV as JSON, CSV, and an RSS feed. Pick the format that fits your pipeline. The goal is that new additions trigger an automated workflow within hours, not whenever someone remembers to check.</p>
+
+                <h3>2. Tag CMDB assets by product</h3>
+
+                <p>KEV entries are product-scoped. To act on them, you have to know which of your assets run which products, at which versions. If your asset inventory is a spreadsheet maintained by whoever owned the system last, KEV will bounce off you. Fixing this takes real work, and it is where most of the value in the whole program actually lives. A KEV pipeline is, in the end, a forcing function for asset hygiene.</p>
+
+                <h3>3. Prioritize KEV-affected systems above everything else</h3>
+
+                <p>Not "consider prioritizing." Prioritize. When a CVE hits KEV and you have matching assets, those tickets jump the queue. Other work is paused or deferred. This requires management support, which requires having explained ahead of time what KEV is and why the interrupt pattern is necessary.</p>
+
+                <h3>4. Measure the right thing</h3>
+
+                <p>Track two separate metrics:</p>
+
+                <ul>
+                    <li><strong>Mean time to patch, KEV items.</strong> This is the number that matters. Target: under the CISA remediation date. Stretch: under seven days.</li>
+                    <li><strong>Mean time to patch, non-KEV items.</strong> This can run slower and that is fine. Managing it in the background is an explicit choice, not a failure.</li>
+                </ul>
+
+                <p>If you only have one SLA that covers everything, your team will be evaluated on average performance across a population where urgency is wildly uneven. Split the metric. It will change behavior.</p>
+
+                <h2>What KEV does not cover</h2>
+
+                <p>KEV is a strong signal, not a complete one. It is worth being clear about its limits:</p>
+
+                <ul>
+                    <li><strong>Zero-days before they are listed.</strong> KEV trails public exploitation by days or weeks. For the fastest-moving threats, you will be reacting after the fact.</li>
+                    <li><strong>Adversary tradecraft that does not target U.S. federal infrastructure.</strong> CISA's visibility is not universal. A vulnerability exploited primarily in Asia-Pacific enterprises may never make the list.</li>
+                    <li><strong>Internal-only vulnerabilities.</strong> KEV emphasizes internet-facing and widely-deployed products. Your line-of-business custom application will never appear.</li>
+                </ul>
+
+                <p>The right framing is that KEV is the top of your queue, not the whole of it. Supplement it with your vendor-specific threat intelligence, a vulnerability scanner that tracks EPSS scores, and whatever sector-specific ISAC you belong to.</p>
+
+                <h2>Patterns worth learning from</h2>
+
+                <p>Several high-impact vulnerabilities of the last few years followed the same pattern: public disclosure, proof of concept within days, mass exploitation within a week, KEV listing shortly after. Log4j. MOVEit. Ivanti Connect Secure. A series of file transfer and VPN appliance issues. In every case, organizations with a working KEV pipeline were patching within the week. Organizations still running CVSS-first missed their window.</p>
+
+                <p>There is no cleverness in this. The mechanics are straightforward. The people who do it well are simply the people who decided that exploitation evidence, not theoretical severity, determines urgency — and built the plumbing to act on that decision.</p>
+
+                <h2>A concise summary</h2>
+
+                <blockquote>Treat KEV as the top priority queue. Treat everything else as background. Measure the two populations separately. Invest in the asset inventory work that makes the pipeline possible. Accept that being good at this is mostly an operations discipline problem, not a tooling problem.</blockquote>
+
+                <p>That framing will not impress a vendor selling a risk-scoring product. It will, however, measurably reduce the time your environment spends exposed to the vulnerabilities that adversaries are actually using. Which is the whole point.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="zero-trust-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-28</span>
+                    </div>
+                    <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                    <p>The architecture is sound. The products sold under its name rarely are.</p>
+                </a>
+                <a href="ai-in-ops-reality-check.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI &amp; Automation</span>
+                        <span>2026-04-05</span>
+                    </div>
+                    <h3>AI in IT Operations: A Reality Check from the Trenches</h3>
+                    <p>Where generative AI earns its keep in operations, and where it is still theater.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

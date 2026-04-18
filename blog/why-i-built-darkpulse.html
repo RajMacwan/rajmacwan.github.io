@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Built a Dark Web Research Site (and What I Learned) — Raj Macwan</title>
+    <meta name="description" content="Running a Tor hidden service as a senior IT leader. Stack notes, tradecraft, identity separation, and what the project actually taught me about privacy engineering.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Why I Built a Dark Web Research Site (and What I Learned)">
+    <meta property="og:description" content="Running a Tor hidden service as a senior IT leader. Stack notes, tradecraft, identity separation, and what the project actually taught me about privacy engineering.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-04-15T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://rajmacwan.com/blog/why-i-built-darkpulse.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../expertise.html">Expertise</a></li>
+            <li><a href="index.html" class="active">Blog</a></li>
+            <li><a href="../research.html">Research</a></li>
+            <li><a href="../mit-journey.html">MIT</a></li>
+            <li><a href="../industry-watch.html">Industry Watch</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="category-pill">Research</span>
+                <span>Published 2026-04-15</span>
+                <span>9 min read</span>
+            </div>
+            <h1>Why I Built a Dark Web Research Site (and What I Learned)</h1>
+
+            <div class="article-body">
+                <p class="lead">Most people have never opened Tor Browser. Most people who have, opened it once, loaded a news article about it, and closed it again. So when a practitioner says they run a site on the dark web, the instinct is to raise an eyebrow. That reaction is fair. It is also, I think, worth pushing past.</p>
+
+                <p>I run a small security research site as a Tor hidden service. It publishes under a separate pseudonym and aggregates feeds from roughly eighteen open-source threat intelligence and privacy research sources. It is not commercial. It carries no tracking. It exists because I wanted to understand, from the inside, how adversaries and defenders actually use the same infrastructure — and because the only honest way to understand that was to build something and maintain it over time.</p>
+
+                <p>This post is about why, what is running under it, and what surprised me. If you came here expecting edgy stories, you will be disappointed. The lesson of the project is that the interesting parts of this space are the boring parts.</p>
+
+                <h2>The conventional wisdom, and the reality</h2>
+
+                <p>The conventional wisdom is that the dark web is where crime happens. That is partially correct. Criminal markets and forums exist there, and they are well documented by researchers and law enforcement. But the same network also hosts:</p>
+
+                <ul>
+                    <li>Mirrors of major newsrooms for readers in censored regions.</li>
+                    <li>SecureDrop instances for journalists and sources.</li>
+                    <li>Privacy-respecting search engines and email providers.</li>
+                    <li>Documentation and learning material for privacy engineering.</li>
+                    <li>Research sites by academics who study the space honestly.</li>
+                </ul>
+
+                <p>Tor is a network, not a neighborhood. It has rough corners and it has libraries. Treating the whole thing as a threat is as lazy as treating the whole clearnet as a threat because phishing happens there.</p>
+
+                <h2>What I actually wanted to learn</h2>
+
+                <p>I have spent most of my career operating enterprise infrastructure. You learn a lot about attackers from incident response, from threat feeds, and from vendor reports. What you do not learn is what it feels like to build and maintain the kind of minimalist, adversary-aware infrastructure that privacy-conscious operators actually run. I wanted that feel in my hands.</p>
+
+                <p>The specific questions I wanted to answer:</p>
+
+                <ol>
+                    <li>How hard is operational security, really, when you try to do it properly?</li>
+                    <li>What design choices does the Tor environment force that the clearnet lets you ignore?</li>
+                    <li>How does identity separation behave as a lived discipline, not a slide?</li>
+                    <li>What does a defensible, static-first publishing stack look like in 2026?</li>
+                </ol>
+
+                <h2>The stack, in short</h2>
+
+                <p>The setup is intentionally boring. Boring is a security property.</p>
+
+                <ul>
+                    <li><strong>Whonix Gateway + Workstation</strong> on a dedicated hypervisor. All traffic from the workstation is forced through the gateway. The workstation never sees the clearnet directly.</li>
+                    <li><strong>Tor hidden service (v3 onion)</strong> running on the gateway. Keys are kept off the workstation.</li>
+                    <li><strong>A small Python static site generator.</strong> Markdown in, HTML out. No database, no server-side rendering, no authentication surface.</li>
+                    <li><strong>Feed aggregation</strong> from roughly eighteen public threat intelligence and privacy sources, normalized and deduplicated, rebuilt on a schedule.</li>
+                    <li><strong>A hardened content policy</strong>: no JavaScript, no external fonts, no third-party assets, no cookies, no analytics.</li>
+                </ul>
+
+                <p>The whole thing is closer in spirit to a 2005 blog than a 2025 SaaS application. That is the point.</p>
+
+                <h2>What surprised me</h2>
+
+                <h3>Discipline beats tools</h3>
+
+                <p>The hardest part of running this was not the technology. It was remembering, every single session, to follow the same procedures in the same order. The network-level protections are strong; the human-level protections are only as strong as habits. Most real-world deanonymizations come from someone, once, doing the ordinary convenient thing.</p>
+
+                <h3>Identity separation is its own engineering problem</h3>
+
+                <p>Keeping my professional identity and the research identity genuinely separate takes more than different browsers. It takes different writing styles, different schedules, different tools, different machines, and a willingness to never reach across the boundary even once. I underestimated this at the start. It is the single most demanding part of the work.</p>
+
+                <p>I decided early that I would document both identities publicly rather than pretend they were unrelated. The professional work (this site) is mine. The research work under the pseudonym "TheMacwan" is also mine. What I will not do is blend them operationally. The logical link is public; the technical link does not exist.</p>
+
+                <h3>Latency changes design</h3>
+
+                <p>A fully loaded page over Tor can take five to ten seconds. That single fact disciplines every design decision. You stop using webfonts. You stop loading a framework to render a button. You write small HTML, small CSS, and almost no JavaScript. The result is faster, simpler, and more accessible than most commercial sites I've worked on. Users who have never touched Tor would benefit from the same constraints.</p>
+
+                <h3>Static sites are vastly more secure</h3>
+
+                <p>There is no SQL injection vulnerability in a site that has no SQL. There is no authentication bypass in a site that has no authentication. There is no server-side request forgery in a site that has no server-side anything. Moving from dynamic to static is not a convenience choice; it removes entire categories of vulnerability from your backlog.</p>
+
+                <h3>Tor Browser's defaults kill most web assumptions</h3>
+
+                <p>Script is off by default on the highest security setting. WebGL is off. Fonts are constrained. Many canvas APIs are neutered. If you design for the median web today, your site will simply fail to render for the users you are trying to reach. Designing for the strict baseline is a healthy corrective. It reminded me how much of the modern web is unnecessary weight.</p>
+
+                <h2>On publishing without naming people</h2>
+
+                <p>I work a day job. That job is unrelated to this research. I do not publish anything that references my employer, my colleagues, clients, or any incident I've worked on professionally. The research site draws only from public threat intelligence. That boundary is not optional and not subtle. It is the whole deal.</p>
+
+                <p>If you are considering similar work as a practitioner, I would argue the same discipline applies. Your employer is not a source. Your employer's systems are not a lab. The dark web is full of people who confused those lines and paid for it.</p>
+
+                <h2>Why publish any of this at all</h2>
+
+                <p>Partly because I think the field is underserved by people willing to speak plainly about this kind of work. The popular coverage alternates between breathless and dismissive, and practitioners who actually operate in the space often stay quiet. I think that is a loss.</p>
+
+                <p>Partly because the skills transfer. Everything the project taught me about minimal attack surface, operational discipline, and identity hygiene is directly useful in enterprise work. The privacy-first posture the Tor environment forces on you is a posture enterprise security would benefit from borrowing.</p>
+
+                <p>And partly because I like the problem. Curiosity is still, after all this time, the most reliable engine for learning I have found.</p>
+
+                <h2>Where to go from here</h2>
+
+                <p>If you want the research context and the address of the onion site, that lives on the <a href="../research.html">research page</a>. If you want to talk about any of this, I am easy to find on <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn</a>. The invitation is specifically to other practitioners — people who run infrastructure, lead teams, and want a more honest view of this corner of the field than the trade press typically offers.</p>
+
+                <blockquote>The interesting part of the dark web, for a defender, is not what is hidden on it. It is how the people who operate there think about trust. That is a useful mirror to hold up to your own environment.</blockquote>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="zero-trust-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-28</span>
+                    </div>
+                    <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                    <p>The architecture is sound. The products sold under its name rarely are.</p>
+                </a>
+                <a href="kev-as-backlog.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-04-10</span>
+                    </div>
+                    <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                    <p>The strongest empirical signal we have for patch prioritization, and how to actually use it.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>
