@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raj Macwan — IT Leader, Security Researcher, MIT Scholar</title>
-    <meta name="description" content="Raj Macwan is a VP of Information Technology, security researcher, and MIT scholar. Writing about enterprise infrastructure, cybersecurity, AI, and automation.">
+    <title>MacwanGrid — The Art of Smart Technologies</title>
+    <meta name="description" content="MacwanGrid — The Art of Smart Technologies. A practitioner's notes on infrastructure, security, AI, dark web research, and the systems behind modern IT — by Raj Macwan, VP Information Technology.">
     <meta name="author" content="Raj Macwan">
 
     <!-- Open Graph / Social -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Raj Macwan — IT Leader, Security Researcher">
-    <meta property="og:description" content="Enterprise IT, cybersecurity, AI, and automation — from a practitioner's perspective.">
-    <meta property="og:site_name" content="Raj Macwan">
+    <meta property="og:title" content="MacwanGrid — The Art of Smart Technologies">
+    <meta property="og:description" content="A practitioner's notes on infrastructure, security, AI, and the systems behind modern IT.">
+    <meta property="og:site_name" content="MacwanGrid">
+    <meta property="og:url" content="https://macwangrid.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Raj Macwan — IT Leader, Security Researcher">
-    <meta name="twitter:description" content="Enterprise IT, cybersecurity, AI, and automation — from a practitioner's perspective.">
+    <meta name="twitter:title" content="MacwanGrid — The Art of Smart Technologies">
+    <meta name="twitter:description" content="A practitioner's notes on infrastructure, security, AI, and the systems behind modern IT.">
 
     <!-- Schema.org structured data -->
     <script type="application/ld+json">
@@ -43,7 +44,7 @@
     </script>
 
     <link rel="stylesheet" href="style.css">
-    <link rel="alternate" type="application/rss+xml" title="Raj Macwan — Blog" href="blog/feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid — Blog" href="blog/feed.xml">
     <link rel="canonical" href="https://macwangrid.com/">
 
     <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
@@ -53,22 +54,21 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
-
 </head>
 <body>
 
-<!-- =================== NAV =================== -->
 <nav class="site-nav">
     <div class="container">
-        <a href="index.html" class="site-logo">Raj Macwan<span class="logo-dot">.</span></a>
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="expertise.html">Expertise</a></li>
-            <li><a href="blog/index.html">Blog</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="mit-journey.html">MIT</a></li>
-            <li><a href="industry-watch.html">Industry Watch</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
             <li><a href="contact.html" class="nav-cta">Connect</a></li>
         </ul>
     </div>
@@ -79,12 +79,12 @@
     <div class="container">
         <div class="hero-content">
             <div class="hero-text">
-                <span class="eyebrow">IT Leader · Security Researcher · MIT Scholar</span>
-                <h1>Building resilient, secure, and intelligent enterprise technology.</h1>
+                <span class="eyebrow">MacwanGrid · By Raj Macwan</span>
+                <h1>The Art of Smart Technologies.</h1>
                 <p class="hero-subtitle">
-                    I'm <strong>Raj Macwan</strong>, Vice President of Information Technology.
-                    I spend my time leading infrastructure programs, studying emerging threats,
-                    and writing about what I learn — from enterprise architecture to AI-assisted operations.
+                    A practitioner's notes across the grids of modern IT — infrastructure,
+                    security, AI, and the systems behind them. Written from the desk of a
+                    VP who still reads the logs.
                 </p>
                 <div class="hero-cta-row">
                     <a href="blog/index.html" class="btn btn-primary">Read the Blog →</a>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="hero-aside">
-                <!-- LinkedIn Badge (auto-rendered by LinkedIn's platform.js) -->
+                <!-- LinkedIn Badge -->
                 <div class="badge-base LI-profile-badge"
                      data-locale="en_US"
                      data-size="large"
@@ -109,48 +109,77 @@
     </div>
 </section>
 
-<!-- =================== ABOUT BRIEF =================== -->
 <main>
+
+    <!-- =================== THE GRIDS =================== -->
     <section class="section">
         <div class="container">
             <div class="section-heading">
-                <span class="eyebrow">About</span>
-                <h2>Practitioner first. Writer second. Student always.</h2>
+                <span class="eyebrow">The Grids</span>
+                <h2>Seven grids. One practice.</h2>
                 <p class="section-lede">
-                    Twenty years of hands-on experience delivering enterprise-scale technology
-                    programs. Currently pursuing advanced studies at MIT. My work sits at the
-                    intersection of <strong>infrastructure</strong>, <strong>security</strong>,
-                    and <strong>emerging technology</strong>.
+                    Every post is mapped to a <strong>Grid</strong> — a thematic bucket that
+                    organizes ideas by domain. Pick the one that matches what you're working on.
                 </p>
             </div>
-            <div class="card-grid">
-                <div class="card">
-                    <div class="card-icon">🏗️</div>
-                    <h3>Infrastructure Leadership</h3>
-                    <p>Designing and running the plumbing of large-scale organizations — networks, cloud, data center, identity, endpoint.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Cybersecurity Strategy</h3>
-                    <p>From threat intel to defensive architecture. Practical Zero Trust, KEV-prioritized patching, breach response frameworks.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🤖</div>
-                    <h3>AI &amp; Automation</h3>
-                    <p>Applying AI and automation to operations — from incident triage to policy generation — while avoiding vendor hype.</p>
-                </div>
+
+            <div class="grid-tile-grid">
+
+                <a href="threat-grid.html" class="grid-tile tile-threat">
+                    <div class="tile-name"><span class="tile-icon">🛡️</span> ThreatGrid</div>
+                    <p class="tile-desc">Cybersecurity, Zero Trust, threat intel, and defensive architecture that matches real threat models — not compliance checklists.</p>
+                    <div class="tile-meta">Security · 2 posts →</div>
+                </a>
+
+                <a href="infra-grid.html" class="grid-tile tile-infra">
+                    <div class="tile-name"><span class="tile-icon">⚡</span> InfraGrid</div>
+                    <p class="tile-desc">Infrastructure, cloud, networks, and data platforms. The unglamorous foundations that determine whether everything else works.</p>
+                    <div class="tile-meta">Infrastructure · coming soon →</div>
+                </a>
+
+                <a href="dark-grid.html" class="grid-tile tile-dark">
+                    <div class="tile-name"><span class="tile-icon">🧅</span> DarkGrid</div>
+                    <p class="tile-desc">Privacy engineering, Tor research, and dark-web infrastructure — including DarkPulse Security, operated under a separate pseudonymous identity.</p>
+                    <div class="tile-meta">Research · 1 post →</div>
+                </a>
+
+                <a href="ai-grid.html" class="grid-tile tile-ai">
+                    <div class="tile-name"><span class="tile-icon">🤖</span> AIGrid</div>
+                    <p class="tile-desc">AI and automation in IT operations. What actually works in production versus what's vendor theater. Skeptical, practical, hands-on.</p>
+                    <div class="tile-meta">AI &amp; Automation · 1 post →</div>
+                </a>
+
+                <a href="intel-grid.html" class="grid-tile tile-intel">
+                    <div class="tile-name"><span class="tile-icon">📡</span> IntelGrid</div>
+                    <p class="tile-desc">Industry watch and threat intel — auto-refreshed every 6 hours from sources worth reading. Signal, not noise.</p>
+                    <div class="tile-meta">News · Auto-refreshed →</div>
+                </a>
+
+                <a href="lab-grid.html" class="grid-tile tile-lab">
+                    <div class="tile-name"><span class="tile-icon">🔬</span> LabGrid</div>
+                    <p class="tile-desc">Home-lab experiments, tool reviews, and hands-on how-tos. If I'm writing about it, I've actually run it.</p>
+                    <div class="tile-meta">Experiments · coming soon →</div>
+                </a>
+
+                <a href="off-grid.html" class="grid-tile tile-off">
+                    <div class="tile-name"><span class="tile-icon">🌲</span> OffGrid</div>
+                    <p class="tile-desc">Personal, hobbies, and off-duty thoughts. Not everything has to be about systems.</p>
+                    <div class="tile-meta">Personal · coming soon →</div>
+                </a>
+
             </div>
         </div>
     </section>
 
-    <!-- =================== RESEARCH HIGHLIGHT =================== -->
+    <!-- =================== FEATURED RESEARCH (DarkGrid) =================== -->
     <section class="section" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-heading">
-                <span class="eyebrow">Current Research</span>
-                <h2>Exploring the privacy side of infrastructure.</h2>
+                <span class="eyebrow">Featured Research · DarkGrid</span>
+                <h2>The dark web, studied in practice.</h2>
                 <p class="section-lede">
-                    To understand security and privacy deeply, I build. Here's what I'm running right now.
+                    To understand adversarial thinking, you have to operate in the same threat
+                    model it assumes. Here's what I built.
                 </p>
             </div>
 
@@ -158,64 +187,74 @@
                 <span class="tor-badge">🧅 LIVE · TOR HIDDEN SERVICE</span>
                 <h3>DarkPulse Security</h3>
                 <p>
-                    A privacy-first cybersecurity news aggregator operating as a Tor hidden service.
-                    Built on a Whonix-isolated infrastructure with full operational separation.
-                    Aggregates 18+ public feeds, maintains the CISA KEV mirror, tracks ransomware
-                    groups, and publishes weekly long-form case files.
+                    A privacy-first cybersecurity news aggregator operating as a Tor hidden
+                    service on a Whonix-isolated infrastructure. Aggregates 18+ public feeds,
+                    mirrors the CISA KEV catalog, tracks ransomware groups, and publishes weekly
+                    long-form case files on landmark cyber events.
                 </p>
                 <p>
-                    Why build it? Because understanding adversarial tradecraft requires operating
-                    in the same threat model it assumes. This is an engineering exercise in
-                    end-to-end privacy, not a product.
-                </p>
-                <p>
-                    <strong>Operated under the pseudonym <code>TheMacwan</code></strong> — a separate
-                    operational identity kept intentionally distinct from my professional profile.
+                    <strong>Operated under the pseudonym <code>TheMacwan</code></strong> — a
+                    separate operational identity kept intentionally distinct from my professional
+                    profile here.
                 </p>
                 <div class="onion-url">http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion</div>
                 <small style="color: #94a3b8;">Requires <a href="https://www.torproject.org/" target="_blank" rel="noopener" style="color: #00d4ff;">Tor Browser</a> to access.</small>
                 <div style="margin-top: 1.5rem;">
-                    <a href="research.html" class="btn btn-primary" style="background: #00ff88; color: #0f172a;">Read the Full Research Story →</a>
+                    <a href="dark-grid.html" class="btn btn-primary" style="background: #00ff88; color: #0f172a;">Enter the DarkGrid →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =================== LATEST BLOG POSTS =================== -->
+    <!-- =================== LATEST POSTS =================== -->
     <section class="section">
         <div class="container">
             <div class="section-heading">
-                <span class="eyebrow">From the Blog</span>
-                <h2>Latest writing.</h2>
+                <span class="eyebrow">Latest Posts</span>
+                <h2>From the blog.</h2>
                 <p class="section-lede">
-                    Notes from practice, reflections from MIT coursework, and threat analyses.
+                    Practitioner notes, reflections, and analyses across the grids.
                 </p>
             </div>
+
             <div class="card-grid-2">
+
                 <a href="blog/why-i-built-darkpulse.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">Research</span>
-                        <span>Apr 2026</span>
+                        <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                        <span>Apr 15, 2026</span>
                     </div>
                     <h3>Why I Built a Dark Web Research Site (and What I Learned)</h3>
                     <p>A year of studying privacy engineering by building one. Lessons on Whonix, Tor hidden services, and the discipline of operational isolation.</p>
                 </a>
+
                 <a href="blog/kev-as-backlog.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">Security</span>
-                        <span>Apr 2026</span>
+                        <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                        <span>Apr 10, 2026</span>
                     </div>
-                    <h3>The CISA KEV Catalog as a Prioritized Backlog</h3>
-                    <p>Most patch-management programs drown in CVEs. The KEV list is the strongest signal most teams aren't using well. Here's how.</p>
+                    <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                    <p>Most patch management programs drown in CVEs. The KEV list is the strongest signal most teams aren't using well. Here's how.</p>
                 </a>
+
                 <a href="blog/ai-in-ops-reality-check.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">AI &amp; Automation</span>
-                        <span>Apr 2026</span>
+                        <span class="grid-pill grid-pill-ai">AIGrid</span>
+                        <span>Apr 5, 2026</span>
                     </div>
-                    <h3>AI in IT Operations: A Reality Check</h3>
+                    <h3>AI in IT Operations: A Reality Check from the Trenches</h3>
                     <p>What actually works, what's vendor theater, and where I think the genuine leverage lives over the next two years.</p>
                 </a>
+
+                <a href="blog/zero-trust-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                        <span>Mar 28, 2026</span>
+                    </div>
+                    <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                    <p>The concept is sound; implementations are often theatrical. A pragmatic path through the Zero Trust journey.</p>
+                </a>
+
             </div>
             <div style="text-align: center; margin-top: 2.5rem;">
                 <a href="blog/index.html" class="btn btn-secondary">View All Posts →</a>
@@ -227,7 +266,7 @@
     <section class="section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
         <div class="container text-center">
             <div class="section-heading" style="margin-bottom: 1.5rem;">
-                <h2>Work in IT. Interested in what I'm working on?</h2>
+                <h2>Work in IT? Let's compare notes.</h2>
                 <p class="section-lede" style="margin-left: auto; margin-right: auto;">
                     I connect with fellow practitioners, researchers, and students. If any of
                     this resonates — reach out.
@@ -239,31 +278,31 @@
             </div>
         </div>
     </section>
+
 </main>
 
-<!-- =================== FOOTER =================== -->
 <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
             <div class="footer-col brand">
-                <div class="site-logo">Raj Macwan<span class="logo-dot">.</span></div>
-                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">The Art of Smart Technologies — a practitioner's notes on infrastructure, security, AI, and the systems behind them.</p>
             </div>
             <div class="footer-col">
-                <h4>Site</h4>
+                <h4>Grids</h4>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="expertise.html">Expertise</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Deeper</h4>
+                <h4>More</h4>
                 <ul>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="mit-journey.html">MIT Journey</a></li>
-                    <li><a href="industry-watch.html">Industry Watch</a></li>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
                     <li><a href="blog/feed.xml">RSS Feed</a></li>
                 </ul>
             </div>
@@ -271,18 +310,18 @@
                 <h4>Connect</h4>
                 <ul>
                     <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <span>© 2026 Raj Macwan. Views are my own.</span>
-            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
         </div>
     </div>
 </footer>
 
-<!-- LinkedIn badge platform script (once per page) -->
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>

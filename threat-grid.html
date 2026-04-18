@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThreatGrid — MacwanGrid</title>
+    <meta name="description" content="Cybersecurity, Zero Trust, breach analysis, and defensive architecture on MacwanGrid — The Art of Smart Technologies.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ThreatGrid — MacwanGrid">
+    <meta property="og:description" content="Cybersecurity, Zero Trust, breach analysis, and defensive architecture.">
+    <meta property="og:site_name" content="MacwanGrid">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid — Blog" href="blog/feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/threat-grid.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="grid-banner grid-banner-threat">
+    <div class="container-narrow">
+        <span class="grid-label">ThreatGrid · Cybersecurity · Threats · Defense</span>
+        <h1>Defending modern enterprise IT.</h1>
+        <p class="grid-lede">Notes from the frontline of cybersecurity — Zero Trust in practice, KEV-prioritized patching, breach analysis, and defensive architecture that actually matches today's threat models.</p>
+    </div>
+</section>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-body">
+                <h2>What this Grid covers</h2>
+                <p>ThreatGrid is where I write about defensive engineering as it actually gets practiced — not as a marketing diagram. The scope spans Zero Trust architecture, identity as the new perimeter, EDR and XDR tuning, vulnerability management under real-world constraints, SOC operations, detection engineering, and incident response. If a control only works in a vendor slide deck, it doesn't belong here.</p>
+
+                <p>The recurring themes are prioritization and honesty. Security teams are drowning in alerts, CVEs, and frameworks. The work that actually moves the needle is disciplined triage — knowing which vulnerabilities are being exploited right now (the CISA KEV catalog is a good starting point), which controls map to the threat models your organization actually faces, and which "best practices" are safe to deprioritize. Writing here tends to be opinionated about that tradeoff.</p>
+
+                <p>Expect breach post-mortems, architectural reviews, Zero Trust reality checks, patch-management philosophy, and occasional commentary on the vendor ecosystem. Written from the practitioner's chair, not the analyst's.</p>
+
+                <h2>Posts in this Grid</h2>
+                <div class="card-grid-2">
+                    <a href="blog/kev-as-backlog.html" class="post-card">
+                        <div class="post-meta">
+                            <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                            <span>Apr 10, 2026</span>
+                        </div>
+                        <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                        <p>Treating Known Exploited Vulnerabilities as the top of your patch queue — and what it does to SLA conversations.</p>
+                    </a>
+                    <a href="blog/zero-trust-reality.html" class="post-card">
+                        <div class="post-meta">
+                            <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                            <span>Mar 28, 2026</span>
+                        </div>
+                        <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                        <p>Where the model breaks down in real enterprises, and the honest sequencing of work required to get there.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">The Art of Smart Technologies — a practitioner's notes on infrastructure, security, AI, and the systems behind them.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Grids</h4>
+                <ul>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
+                    <li><a href="blog/feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

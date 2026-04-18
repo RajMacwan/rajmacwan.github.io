@@ -724,3 +724,212 @@ main {
 @media (prefers-reduced-motion: reduce) {
     * { animation: none !important; transition: none !important; }
 }
+
+/* =====================================================================
+   MACWANGRID — Grid System (category pills, grid tiles, landing pages)
+   ===================================================================== */
+
+:root {
+    /* Grid category colors */
+    --grid-threat:  #dc2626;   /* Red    — Security / Threats */
+    --grid-infra:   #2563eb;   /* Blue   — Infrastructure */
+    --grid-dark:    #059669;   /* Green  — Dark Web / Privacy research */
+    --grid-ai:      #7c3aed;   /* Purple — AI / Automation */
+    --grid-intel:   #06b6d4;   /* Cyan   — Intel / News / Analysis */
+    --grid-lab:     #f59e0b;   /* Amber  — Lab / Tools / Experiments */
+    --grid-off:     #64748b;   /* Slate  — Off Grid (personal) */
+}
+
+/* --- Site Logo (MacwanGrid.) --- */
+.site-logo .brand-accent {
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* --- Tagline Block (The Art of Smart Technologies) --- */
+.site-tagline {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    letter-spacing: 0.02em;
+    margin-top: 0.25rem;
+}
+.hero-text .site-tagline {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Grid Category Pill (on post cards, post headers, etc.) --- */
+.grid-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: 1px solid transparent;
+    text-decoration: none;
+    transition: all 0.15s ease;
+    font-family: var(--font-sans);
+}
+.grid-pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.grid-pill-threat { color: var(--grid-threat); background: rgba(220, 38, 38, 0.08);  border-color: rgba(220, 38, 38, 0.3); }
+.grid-pill-infra  { color: var(--grid-infra);  background: rgba(37, 99, 235, 0.08);  border-color: rgba(37, 99, 235, 0.3); }
+.grid-pill-dark   { color: var(--grid-dark);   background: rgba(5, 150, 105, 0.08);  border-color: rgba(5, 150, 105, 0.3); }
+.grid-pill-ai     { color: var(--grid-ai);     background: rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.3); }
+.grid-pill-intel  { color: var(--grid-intel);  background: rgba(6, 182, 212, 0.08);  border-color: rgba(6, 182, 212, 0.3); }
+.grid-pill-lab    { color: var(--grid-lab);    background: rgba(245, 158, 11, 0.08); border-color: rgba(245, 158, 11, 0.3); }
+.grid-pill-off    { color: var(--grid-off);    background: rgba(100, 116, 139, 0.08);border-color: rgba(100, 116, 139, 0.3); }
+
+.grid-pill:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+.grid-pill-threat:hover { background: var(--grid-threat); color: white; }
+.grid-pill-infra:hover  { background: var(--grid-infra);  color: white; }
+.grid-pill-dark:hover   { background: var(--grid-dark);   color: white; }
+.grid-pill-ai:hover     { background: var(--grid-ai);     color: white; }
+.grid-pill-intel:hover  { background: var(--grid-intel);  color: white; }
+.grid-pill-lab:hover    { background: var(--grid-lab);    color: white; }
+.grid-pill-off:hover    { background: var(--grid-off);    color: white; }
+
+/* --- Grid Tile Grid (homepage featured grids) --- */
+.grid-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.grid-tile {
+    display: block;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+.grid-tile::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--grid-threat);
+    transition: width 0.2s ease;
+}
+.grid-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    text-decoration: none;
+    border-color: transparent;
+}
+.grid-tile:hover::before { width: 6px; }
+
+.grid-tile.tile-threat::before { background: var(--grid-threat); }
+.grid-tile.tile-infra::before  { background: var(--grid-infra); }
+.grid-tile.tile-dark::before   { background: var(--grid-dark); }
+.grid-tile.tile-ai::before     { background: var(--grid-ai); }
+.grid-tile.tile-intel::before  { background: var(--grid-intel); }
+.grid-tile.tile-lab::before    { background: var(--grid-lab); }
+.grid-tile.tile-off::before    { background: var(--grid-off); }
+
+.grid-tile .tile-name {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+}
+.grid-tile .tile-name .tile-icon {
+    font-size: 1.4rem;
+}
+
+.grid-tile .tile-desc {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+.grid-tile .tile-meta {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+.grid-tile.tile-threat .tile-meta { color: var(--grid-threat); }
+.grid-tile.tile-infra .tile-meta  { color: var(--grid-infra); }
+.grid-tile.tile-dark .tile-meta   { color: var(--grid-dark); }
+.grid-tile.tile-ai .tile-meta     { color: var(--grid-ai); }
+.grid-tile.tile-intel .tile-meta  { color: var(--grid-intel); }
+.grid-tile.tile-lab .tile-meta    { color: var(--grid-lab); }
+.grid-tile.tile-off .tile-meta    { color: var(--grid-off); }
+
+/* --- Grid Landing Page Banner --- */
+.grid-banner {
+    padding: 3rem 0 2.5rem;
+    border-bottom: 1px solid var(--border-subtle);
+    position: relative;
+}
+.grid-banner::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+}
+.grid-banner-threat::before { background: var(--grid-threat); }
+.grid-banner-infra::before  { background: var(--grid-infra); }
+.grid-banner-dark::before   { background: var(--grid-dark); }
+.grid-banner-ai::before     { background: var(--grid-ai); }
+.grid-banner-intel::before  { background: var(--grid-intel); }
+.grid-banner-lab::before    { background: var(--grid-lab); }
+.grid-banner-off::before    { background: var(--grid-off); }
+
+.grid-banner .grid-label {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.75rem;
+}
+.grid-banner-threat .grid-label { color: var(--grid-threat); }
+.grid-banner-infra .grid-label  { color: var(--grid-infra); }
+.grid-banner-dark .grid-label   { color: var(--grid-dark); }
+.grid-banner-ai .grid-label     { color: var(--grid-ai); }
+.grid-banner-intel .grid-label  { color: var(--grid-intel); }
+.grid-banner-lab .grid-label    { color: var(--grid-lab); }
+.grid-banner-off .grid-label    { color: var(--grid-off); }
+
+.grid-banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+.grid-banner .grid-lede {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 65ch;
+}
+
+/* Responsive logo/tagline */
+@media (max-width: 640px) {
+    .site-logo { font-size: 1.05rem; }
+    .site-tagline { font-size: 0.8rem; }
+}
