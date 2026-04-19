@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dot Matrix Variants — MacwanGrid Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .option-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .option-card h3 {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .preview-stage {
+            width: 100%;
+            max-width: 320px;
+            aspect-ratio: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050509;
+            box-shadow: inset 0 0 40px rgba(0, 240, 255, 0.05);
+        }
+        .preview-stage::after {
+            /* Vignette */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%);
+            pointer-events: none;
+        }
+        .preview-stage object,
+        .preview-stage img,
+        .preview-stage svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .option-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .tag-line {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 3px;
+        }
+
+        /* Outer glow wrap */
+        .dot-wrap {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 4px rgba(0, 240, 255, 0.4));
+        }
+    </style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="preview.html">← Round 1</a></li>
+            <li><a href="preview2.html">← Round 2</a></li>
+            <li><a href="index.html">← Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Dot Matrix · Build-Up Variants</span>
+            <h2>How should the dots appear?</h2>
+            <p class="section-lede">
+                6 ways the dot portrait can build itself up, pause when complete, then dissolve and rebuild.
+                Each dot is an individual SVG element — pure CSS animations. Loops indefinitely.
+            </p>
+        </div>
+
+        <div class="options-grid">
+
+            <!-- ============= Variant 9A — Sequential ============= -->
+            <div class="option-card">
+                <h3>9A — Sequential (Reading Order)</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-sequential.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Top-left to bottom-right · 6ms per dot</span>
+                <p class="option-desc">
+                    Dots appear <strong>one at a time in reading order</strong>. Like a printer
+                    scanning line by line. ~12 seconds to build completely. Methodical, precise.
+                </p>
+            </div>
+
+            <!-- ============= Variant 9B — Ripple ============= -->
+            <div class="option-card">
+                <h3>9B — Ripple (Center Outward)</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-ripple.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Radar sweep from center</span>
+                <p class="option-desc">
+                    Dots appear in an <strong>expanding ring from the center outward</strong>.
+                    Sonar / radar ping feel. Builds in ~2 seconds. Elegant and focused.
+                </p>
+            </div>
+
+            <!-- ============= Variant 9C — Scan ============= -->
+            <div class="option-card">
+                <h3>9C — Scan Line (Top → Bottom)</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-scan.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Horizontal scan line · 2.5s sweep</span>
+                <p class="option-desc">
+                    Dots appear as an <strong>invisible horizontal scan line sweeps down</strong>.
+                    Classic "printing" effect. Feels like a document being rendered in real-time.
+                </p>
+            </div>
+
+            <!-- ============= Variant 9D — Random ============= -->
+            <div class="option-card">
+                <h3>9D — Random Chaos</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-random.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Each dot independent · random delay</span>
+                <p class="option-desc">
+                    Dots appear in <strong>random order across the canvas</strong>. Feels like
+                    data deserializing / noise resolving into order. Slightly chaotic, organic.
+                </p>
+            </div>
+
+            <!-- ============= Variant 9E — Columns ============= -->
+            <div class="option-card">
+                <h3>9E — Columns (Left → Right)</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-columns.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Column-by-column wipe</span>
+                <p class="option-desc">
+                    Dots appear <strong>column by column left to right</strong>. Feels like a
+                    CRT screen refresh or old-school computer boot. Crisp vertical wipe.
+                </p>
+            </div>
+
+            <!-- ============= Variant 9F — Spiral ============= -->
+            <div class="option-card">
+                <h3>9F — Spiral (Outside-In)</h3>
+                <div class="preview-stage">
+                    <div class="dot-wrap">
+                        <object data="assets/svg/dots-spiral.svg" type="image/svg+xml"></object>
+                    </div>
+                </div>
+                <span class="tag-line">Spiral from edges to center</span>
+                <p class="option-desc">
+                    Dots appear in a <strong>spiral pattern from outside to inside</strong>.
+                    Organic, natural feel — like ink being drawn in a pattern. Most artistic.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="section-heading" style="margin-top: 4rem;">
+            <h3>Also on the table</h3>
+            <p style="color: var(--text-secondary);">
+                Beyond these 6 build-up patterns, I can also add extras <em>on top of</em> whichever you pick:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li><strong>"X + glitch flash"</strong> — occasional RGB glitch flickers during the animation</li>
+                <li><strong>"X + color cycle"</strong> — dots shift through cyan → green → amber slowly</li>
+                <li><strong>"X + scan beam overlay"</strong> — add the cyan sweeping beam on top</li>
+                <li><strong>"X slower / faster"</strong> — adjust the cycle duration</li>
+                <li><strong>"X with subtle breathing"</strong> — constant pulse after full-build</li>
+                <li><strong>"Mix 9B + 9D"</strong> — ripple for main, with some random flicker</li>
+            </ul>
+        </div>
+
+        <div class="section-heading" style="margin-top: 2rem;">
+            <h3>Reply with your pick</h3>
+            <p style="color: var(--text-secondary);">Just say:</p>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li><strong>"9A"</strong> through <strong>"9F"</strong> — I'll apply it to the hero</li>
+                <li><strong>"9X + [modifier]"</strong> — combine with one of the extras above</li>
+                <li><strong>"Show me 9B in a bigger size"</strong> — any tweaks to the chosen variant</li>
+                <li><strong>"Round 4 — different direction"</strong> — I'll try new patterns entirely</li>
+            </ul>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>MacwanGrid — preview 3 · dot variants</span>
+            <span><a href="index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
