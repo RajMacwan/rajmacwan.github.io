@@ -1,0 +1,16 @@
+{
+  "01-25": {"title": "Slammer worm anniversary.", "note": "In 2003, the SQL Slammer worm infected 75,000 hosts in 10 minutes. Patches existed six months before. Patch velocity still defines survivability."},
+  "02-07": {"title": "Safer Internet Day.", "note": "A good reminder to review MFA enrollment across your identity provider. Pockets of SMS-based fallback are still the #1 account takeover vector I see."},
+  "03-01": {"title": "Start of fiscal Q-planning.", "note": "If you haven't mapped this year's security controls to MITRE ATT&CK and your actual incidents, now is the week."},
+  "03-31": {"title": "World Backup Day.", "note": "Restore-tested backups are the only backups. Pull a random workload from cold storage today and time the restore."},
+  "04-07": {"title": "Heartbleed disclosed (2014).", "note": "The bug that normalized 'patch the entire internet.' A decent prompt to audit what TLS libraries your vendors statically link."},
+  "05-12": {"title": "WannaCry anniversary (2017).", "note": "A kill switch saved the NHS. Your SMB exposure audit should run at least quarterly."},
+  "06-27": {"title": "NotPetya anniversary (2017).", "note": "$10B in damage from a supply-chain wiper. Revisit your software build-provenance today."},
+  "07-04": {"title": "Holiday attack surface.", "note": "Long weekends are ransomware prime time. Cross-check your on-call rotation and EDR alert routing."},
+  "08-01": {"title": "DEF CON season.", "note": "Expect fresh research drops. Subscribe to the PacketStorm advisory RSS if you haven't already."},
+  "09-18": {"title": "Equifax breach disclosed (2017).", "note": "An unpatched Struts vulnerability exposed 147M records. The post-mortem is still required reading for any patch program."},
+  "10-01": {"title": "Cybersecurity Awareness Month.", "note": "Skip the posters. Run a phishing simulation tied to a real breach story and post the results publicly."},
+  "11-02": {"title": "Morris worm (1988).", "note": "The first internet-scale worm, by a PhD student, from an MIT host. Every modern vuln chain descends from this template."},
+  "12-10": {"title": "Log4Shell anniversary (2021).", "note": "A reminder to audit your SBOMs. Six-figure vendor products still ship with vulnerable log4j 2.x under a dozen rebrands."},
+  "12-13": {"title": "SolarWinds disclosed (2020).", "note": "Supply-chain compromise via a signed update. Your vendor inventory should include which products auto-update without review."}
+}

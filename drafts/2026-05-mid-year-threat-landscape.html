@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mid-Year Threat Landscape: What's Actually Changed in 2026 — MacwanGrid</title>
+    <meta name="description" content="Four months into 2026, the threat landscape has shifted in ways that matter. A senior practitioner's read on identity attacks, AI phishing, and the ransomware reshuffle.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mid-Year Threat Landscape: What's Actually Changed in 2026">
+    <meta property="og:description" content="Four months into 2026, the threat landscape has shifted in ways that matter. A senior practitioner's read on identity attacks, AI phishing, and the ransomware reshuffle.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-05-01T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="../blog/feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/mid-year-threat-landscape.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">SignalGrid</a></li>
+            <li><a href="../lab-grid.html">OffGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-signal">SignalGrid</span>
+                <span>Published May 1, 2026</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Mid-Year Threat Landscape: What's Actually Changed in 2026</h1>
+            <div class="article-body">
+                <p>The perimeter didn't die in 2026 — it just got a new name. We're now calling it "identity," and every practitioner I talk with is fighting the same war: attackers who no longer need to land a payload because they log in with a valid session cookie and a stolen OAuth token.</p>
+
+                <p>Four months into the year, I've spent enough time in incident calls, ISAC briefings, and backchannel chats with other VPs of IT to offer a grounded read on what's actually changed — and what the marketing teams are pretending has changed. Here's the honest version.</p>
+
+                <h2>Identity is now the primary attack plane</h2>
+
+                <p>If you read one thing from this post, read this: the center of gravity in enterprise intrusions has moved decisively from endpoint to identity. The Q1 Verizon-adjacent data, the Microsoft Digital Defense notes, and my own incident response numbers all point the same direction. Session hijacking, token theft, OAuth consent phishing, and MFA fatigue are the top four initial access vectors I've tracked across the last 120 days.</p>
+
+                <p>What surprised me: the sophistication of <code>evilginx</code>-style reverse proxy kits has collapsed the barrier to AiTM attacks. A mid-tier affiliate operator can now bypass FIDO-exempt MFA — SMS, TOTP, push — with a kit that costs less than a quarterly Splunk renewal. If you're still relying on push notifications as a compensating control, you're running a 2022 playbook in 2026.</p>
+
+                <ul>
+                    <li>Phishing-resistant MFA (WebAuthn / passkeys) is no longer a nice-to-have; it's the control that actually stops the kits.</li>
+                    <li>Conditional Access policies without device compliance are performative.</li>
+                    <li>Non-human identities (service principals, app registrations, workload identities) now outnumber humans 10:1 in most enterprises, and almost nobody I've spoken to is monitoring their token lifetimes.</li>
+                </ul>
+
+                <h2>AI-augmented phishing is real, but not in the way you think</h2>
+
+                <p>The scary headlines about AI-generated deepfake CFOs on Zoom are real — we've seen two attempts at clients this year — but they're not the volume threat. The volume threat is something quieter: LLM-polished spear phishing that clears every grammar-based heuristic and blends perfectly with legitimate correspondence.</p>
+
+                <blockquote>The tell used to be a typo. The tell is now a <em>perfect</em> email that knows your org chart, your last procurement cycle, and the name of your kid's soccer team.</blockquote>
+
+                <p>What the defenders I respect are doing: moving detection from content ("does this email sound weird?") to behavior ("is this account doing something weird?"). Abnormal Security, Material, and the native Microsoft Defender for Office behavioral lane are all converging on this pattern. Content-only filters are a losing game.</p>
+
+                <h2>Supply chain: the post-SolarWinds era never ended, it just diffused</h2>
+
+                <p>Five years after SolarWinds, we're not fighting the same attack — but we're fighting the same <em>class</em> of attack. The shift I've noticed this year is that supply chain compromise has moved downstream, away from the marquee software vendors and into the CI/CD pipeline, the npm registry, and the SaaS-integration layer.</p>
+
+                <p>The March incident involving a compromised GitHub Actions runner affecting a payroll SaaS vendor — which I won't name but every IT leader reading this knows which one — is the template for 2026. The attacker didn't need to compromise the vendor's production; they compromised the build pipeline that ships to production. If you're not running a software bill of materials (SBOM) review on your top 20 SaaS vendors, you are exposed to a failure you cannot see.</p>
+
+                <h2>Ransomware: the reshuffle, not the retirement</h2>
+
+                <p>Law enforcement had a good 2025. LockBit's infrastructure takedown, the AlphV/BlackCat exit scam, and the Clop indictments all looked like wins. Here's the sober read at the mid-year mark: ransomware revenue is <em>up</em>, not down. What changed is the brand names.</p>
+
+                <p>The affiliate economy simply reconstituted under new labels — RansomHub's growth, the emergence of "DragonForce" and a handful of smaller brands, and the rise of data-extortion-only groups that skip encryption entirely. The encryption step was always the easy part; exfiltration is the leverage. Several victims this year paid to suppress data release without their production ever going down.</p>
+
+                <h2>The public incidents worth studying</h2>
+
+                <p>A few cases from the last four months that every IT leader should read the post-mortems on:</p>
+
+                <ul>
+                    <li><strong>The Okta token-reuse incident (January)</strong> — a reminder that the IdP itself is your crown jewel, and that session token theft in one tenant can cascade.</li>
+                    <li><strong>The Snowflake-adjacent healthcare breaches (February)</strong> — the "one weak link in the SaaS data warehouse" pattern is now a well-understood TTP. If you have sensitive data in a shared data platform with single-factor service accounts, you have a problem.</li>
+                    <li><strong>The AI-vendor prompt injection exfil case (March)</strong> — the first public case I'm aware of where an LLM agent with tool access was tricked into exfiltrating data via indirect prompt injection in a support ticket. This is the beginning of a category, not the end.</li>
+                </ul>
+
+                <h2>The takeaway</h2>
+
+                <p>If I had to pick one thing for every IT leader to do in Q2, it would be this: <strong>run a tabletop exercise on identity compromise, not ransomware</strong>. The ransomware tabletop is over-rehearsed. The identity tabletop — "an attacker has a valid session token for your CFO's account, go" — will surface more gaps, faster, than any other exercise you can run this quarter.</p>
+
+                <p>The threat landscape in 2026 isn't unrecognizable from 2024. It's the same fight, pushed one layer further into the control plane. The defenders who are winning are the ones who stopped treating identity as an IAM problem and started treating it as a security problem.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026-2027 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

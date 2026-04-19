@@ -1,0 +1,35 @@
+name: Monthly Post Publisher
+
+on:
+  schedule:
+    # 1st of every month at 07:00 UTC = 03:00 ET
+    - cron: "0 7 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Promote draft for this month
+        run: python automation/monthly_publisher.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(blog): monthly post $(date -u +%Y-%m)"
+            git push
+          else
+            echo "No draft ready this month — nothing to commit."
+          fi

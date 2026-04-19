@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Six Months of Production AI in IT Ops: What Worked — MacwanGrid</title>
+    <meta name="description" content="An honest six-month retrospective on running LLMs in production IT operations. What delivered real time back, what quietly failed, and what I stopped trying.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Six Months of Production AI in IT Ops: What Worked">
+    <meta property="og:description" content="An honest six-month retrospective on running LLMs in production IT operations. What delivered real time back, what quietly failed, and what I stopped trying.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-06-01T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="../blog/feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/ai-ops-six-months-in.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">SignalGrid</a></li>
+            <li><a href="../lab-grid.html">OffGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published June 1, 2026</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Six Months of Production AI in IT Ops: What Worked</h1>
+            <div class="article-body">
+                <p>Six months ago I greenlit a handful of LLM-backed workflows into production IT ops. Not a pilot, not a lab — actual tickets, actual changes, actual on-call. I promised myself I would write an honest retrospective at the half-year mark, whatever the results were. This is that post.</p>
+
+                <p>The short version: the wins are real but smaller than the vendor deck claimed, the failures are specific and instructive, and the thing I was most skeptical of — fully autonomous agents — is the thing I'm still most skeptical of.</p>
+
+                <h2>What I deployed, and what it actually does</h2>
+
+                <p>Three workstreams, in order of impact:</p>
+
+                <ul>
+                    <li><strong>Tier-1 ticket triage and draft response</strong>. Claude (via API, with retrieval over our knowledge base) reads inbound tickets, classifies them, drafts a first response, and suggests a routing queue. A human always ships the response. Zero autonomous actions on the user-facing side.</li>
+                    <li><strong>Runbook assist for on-call</strong>. A Slack-native agent that, when pinged during an incident, surfaces the relevant runbook section, recent similar incidents, and a summary of the last 30 minutes of alert telemetry. It doesn't run commands. It just reads and summarizes.</li>
+                    <li><strong>Change request summarization and risk flagging</strong>. Before a CAB meeting, an LLM pass reads every proposed change, summarizes the blast radius, and flags changes that touch systems with overlapping dependencies.</li>
+                </ul>
+
+                <p>All three use the same pattern: <em>read and summarize, don't write and execute</em>. That choice is load-bearing.</p>
+
+                <h2>What worked</h2>
+
+                <p>The triage workflow was the clearest win. Median time-to-first-response dropped 38% and routing accuracy — measured by tickets that didn't need to be re-queued — improved 22%. The draft responses aren't shipping verbatim, but they get the analyst 70% of the way there on common categories (password resets, access requests, VPN hiccups, printer exorcisms). My team's quality-of-life feedback has been stronger than any metric I could have picked.</p>
+
+                <p>Runbook assist saved two outages this quarter, measurably. In both cases an on-call engineer got to the right runbook section in under 60 seconds of asking, where historical MTTR to "I know what playbook to run" was closer to 5-8 minutes. That's not revolutionary, but at 2 AM it's the difference between a contained incident and a bridge call.</p>
+
+                <p>Change summarization is the quietest win and maybe the most durable. CAB meetings that used to run 90 minutes now run 45. Not because the AI is making decisions — it isn't — but because everyone walks in pre-briefed.</p>
+
+                <h2>What failed</h2>
+
+                <p>Fully autonomous anything. I tried two: an auto-remediation agent for a narrow class of disk-space alerts, and an auto-closing agent for "ticket appears resolved" patterns. Both got pulled.</p>
+
+                <blockquote>The disk-space agent cleared a log directory on a system where those logs were the only record of a compliance event. Technically it followed the runbook. The runbook was wrong. A human would have flagged it; the agent didn't.</blockquote>
+
+                <p>The auto-closer was worse — it closed a ticket that a user had deliberately left open as a reminder, because the language patterns matched "resolved." The user's trust in the system took six weeks to recover. The lesson isn't "agents are bad." The lesson is that the value of a human in the loop is not the action, it's the sanity check on the <em>premise</em>.</p>
+
+                <p>I also killed a "Slack question answerer" that was supposed to deflect routine questions away from my team. It hallucinated a procurement policy that didn't exist, and someone nearly put in a PO based on it. RAG over your actual documents helps, but it doesn't eliminate the failure mode — it just makes it more convincing when it happens.</p>
+
+                <h2>The unglamorous lessons</h2>
+
+                <p>A few things I wish someone had told me in December:</p>
+
+                <ul>
+                    <li><strong>Evals are the job.</strong> I spent maybe 15% of the effort on prompts and model selection and 60% on evaluation harnesses. That ratio felt wrong for months. It's correct.</li>
+                    <li><strong>The ROI is in the <code>p90</code>, not the median.</strong> The AI doesn't make your best engineer faster. It makes your worst ticket — the 90th-percentile ugly one — survivable. Measure there.</li>
+                    <li><strong>Costs are real but manageable.</strong> We spend about $4,200/month across all three workflows on API calls. That's roughly 3% of a single L3 engineer's loaded cost. The economics work, but only because we're disciplined about what gets routed to the model.</li>
+                    <li><strong>Model choice matters less than people claim.</strong> I've swapped between Claude, GPT, and a self-hosted Llama variant for non-sensitive workloads. The workflow design, the retrieval quality, and the evaluation loop matter 10x more than which model is marginally ahead this month.</li>
+                    <li><strong>The security review is not optional.</strong> Prompt injection via ticket content is a real threat vector. We sanitize, we sandbox, we never let the model call tools on behalf of a user without explicit confirmation. Treat every LLM endpoint like an exposed API, because it is.</li>
+                </ul>
+
+                <h2>The takeaway</h2>
+
+                <p>If you're a peer considering this path: start with read-and-summarize workflows, invest disproportionately in evals, and be deeply suspicious of any pitch that uses the word "autonomous." The gains are real. They look like 30-40% improvements on specific, well-scoped workflows — not the 10x the vendor decks promise, but more than enough to justify the program.</p>
+
+                <p>Six months in, I'm not a convert and I'm not a skeptic. I'm a practitioner, and the tool is earning its seat on the team. That's the highest compliment I know how to pay a piece of technology.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026-2027 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

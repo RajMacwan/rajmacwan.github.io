@@ -1,0 +1,35 @@
+name: Today in Security
+
+on:
+  schedule:
+    # Daily at 06:00 UTC = 02:00 ET
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  today:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update today-in-security widget
+        run: python automation/today_ticker.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add index.html
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(today): daily brief $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to commit."
+          fi

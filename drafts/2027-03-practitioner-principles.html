@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ten Principles I'd Tell My Younger Self — MacwanGrid</title>
+    <meta name="description" content="Ten principles earned the hard way across 20 years of IT leadership. Each one with the story that taught it, and why most of them cost me something first.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Ten Principles I'd Tell My Younger Self">
+    <meta property="og:description" content="Ten principles earned the hard way across 20 years of IT leadership. Each one with the story that taught it, and why most of them cost me something first.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2027-03-01T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="../blog/feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/practitioner-principles.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">SignalGrid</a></li>
+            <li><a href="../lab-grid.html">OffGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-off">OffGrid</span>
+                <span>Published March 1, 2027</span>
+                <span>6 min read</span>
+            </div>
+            <h1>The Ten Principles I'd Tell My Younger Self</h1>
+            <div class="article-body">
+                <p>Career advice posts are almost always more useful to the author than the reader. I'm writing this one anyway, with a rule: every principle comes with the specific story that taught it to me, because principles without scars are just opinions.</p>
+
+                <p>Twenty-plus years in, here are the ten things I'd tell a 25-year-old me who was about to take a first sysadmin role and thought he knew more than he did.</p>
+
+                <h2>1. The boring work is the real work.</h2>
+
+                <p>In 2008 I spent three months rebuilding a backup system that nobody was asking me to rebuild, because the existing one had never been tested end-to-end. A year later a production database corruption event wiped out a day of transactions and the recovery worked because of the work no one had thanked me for. The flashy projects get promotions. The boring ones save your company. Do both; prioritize the second.</p>
+
+                <h2>2. Write everything down.</h2>
+
+                <p>Early in my career I joined a team where the only person who understood the legacy order-management system was the engineer who had built it, and he had just given notice. The three weeks that followed were the most expensive crash course of my career. Since then: documentation, runbooks, decision logs, postmortems, one-on-one notes. Not because bureaucracy is good, but because the version of you that has to figure something out at 2 AM in six months will thank the version of you who wrote the note at 2 PM today.</p>
+
+                <h2>3. Your gut is a model trained on a small dataset.</h2>
+
+                <p>I ran a hiring loop in 2013 where my instinct told me a candidate wasn't a fit. I overrode the rest of the panel and declined. Two years later that person had become a legendary engineer at a competitor. My instinct wasn't wrong exactly — it was picking up on a real signal — but the signal was correlated with things I now know were cosmetic and unrelated to performance. Your intuition is data, but it's not the only data, and it has biases you haven't audited.</p>
+
+                <h2>4. Push back early, or accept you can't push back at all.</h2>
+
+                <p>I sat on an architectural decision I disagreed with for six weeks in 2015 because I was new to the team and didn't want to be the person throwing wrenches on day one. By the time I spoke up, the decision had been memorialized in slides, vendor contracts, and team assumptions. I was "late to the conversation" even though I'd been invited on day one. Lesson: say the hard thing when it's still cheap to say. Waiting doesn't make you more credible; it makes you more invested in the status quo you disagree with.</p>
+
+                <h2>5. The person you hire worst is the person most like you.</h2>
+
+                <p>My second hiring mistake was a mirror — same background, same communication style, same technical instincts. He and I agreed on everything, and neither of us challenged the other enough to catch each other's blind spots. The third hire was someone who argued with me in the interview; she became the best engineer I ever worked with. Diversity of thought isn't an HR program. It's a debugging strategy for your own decision-making.</p>
+
+                <h2>6. A calm voice on a bad call is worth more than any tool.</h2>
+
+                <p>Somewhere around 2017 I was on an incident bridge with a dozen people, a hot production outage, and an executive yelling in the background. The senior engineer who took control of the bridge did it by lowering her voice, not raising it. The bridge went quiet. The incident got resolved. I've tried to emulate that ever since. In the worst moments, the person everyone is looking for is the one who sounds like they've seen worse.</p>
+
+                <blockquote>The most underrated leadership skill in IT is the ability to make a room feel less panicked without minimizing the problem. It is also the hardest one to fake.</blockquote>
+
+                <h2>7. Choose architectures you can explain to a non-technical executive.</h2>
+
+                <p>Around 2019 I approved a "strategic" data platform architecture I didn't fully understand because the team pitching it was credible and the slides looked good. Eighteen months later I had to defend its cost to a CFO, and I couldn't — not really — because I didn't have a simple mental model for what it actually did for the business. We ripped out half of it. The lesson wasn't "avoid complexity." It was: if you can't reduce an architecture to a two-sentence explanation that a smart non-technical person accepts, you don't understand it well enough to own it. Understand it or don't approve it.</p>
+
+                <h2>8. Treat your energy as a finite resource, because it is.</h2>
+
+                <p>I burned out in 2020, and the thing that broke me wasn't any single project — it was my belief that willpower could substitute for sleep, exercise, and unstructured thinking time. I worked through a year when I should have been recovering for a quarter, and the quality of my decisions declined measurably through the whole period. I couldn't see it while it was happening; the people around me could. The senior leaders I respect most now treat recovery as part of the job, not adjacent to it. I finally do too.</p>
+
+                <h2>9. Culture is what you tolerate.</h2>
+
+                <p>In 2021 I inherited a team with a high-performing senior engineer who was corrosive to everyone around him. I tolerated it for eight months because his output was real and the replacement cost seemed high. By the time I acted, two strong engineers had quit and a third had given notice. My delay cost the team more than his behavior did. Culture is not your Slack channel header. It's the worst behavior you will accept from your best performer. Calibrate accordingly.</p>
+
+                <h2>10. The long game is almost always the right game.</h2>
+
+                <p>Every shortcut I've taken in this career — the undocumented deploy, the "we'll fix it later" architecture, the reference check I didn't do — has cost me more later than it saved earlier. Every investment I've made in the long game — writing things down, building relationships, developing junior people, earning credibility with finance — has compounded. I can't remember a single case where the shortcut won over a five-year horizon. That's a strong empirical base for a simple heuristic: when in doubt, play the longer game.</p>
+
+                <h2>What I wouldn't tell my younger self</h2>
+
+                <p>I'd leave some things off the list on purpose. I wouldn't warn him about the specific bad jobs or the specific bad bosses, because the pattern recognition from surviving them is more valuable than avoiding them. I wouldn't tell him which technologies to bet on, because being wrong about technology choices and correcting mid-course is how you learn to evaluate future choices. And I wouldn't tell him the career would turn out fine, because the uncertainty is part of what kept him sharp.</p>
+
+                <h2>The takeaway</h2>
+
+                <p>If you're earlier in your career and you read this: don't try to internalize ten principles at once. Pick one. Try it this month. See if the world looks different. The principles that compound are the ones you actually practice, not the ones you agree with.</p>
+
+                <p>And if you're peer-aged and reading this: send me your list. I'll read it carefully. The best education I get these days is from other practitioners writing honestly about what they learned the hard way, and I don't have enough of it yet.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026-2027 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

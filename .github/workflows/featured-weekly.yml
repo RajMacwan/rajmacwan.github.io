@@ -1,0 +1,38 @@
+name: Featured This Week
+
+on:
+  schedule:
+    # Mondays 05:00 UTC = 01:00 ET
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Rebuild post manifest
+        run: python automation/build_manifest.py
+
+      - name: Rotate featured post
+        run: python automation/featured_rotation.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add index.html automation/post_manifest.json automation/featured_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(featured): weekly rotation $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to commit."
+          fi

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2 Breach Retrospective: Lessons From the Quarter — MacwanGrid</title>
+    <meta name="description" content="Three major Q2 2026 breaches, analyzed for defender lessons. SaaS compromise, IdP token theft, and a CI/CD supply chain incident — what each one teaches.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Q2 Breach Retrospective: Lessons From the Quarter">
+    <meta property="og:description" content="Three major Q2 2026 breaches, analyzed for defender lessons. SaaS compromise, IdP token theft, and a CI/CD supply chain incident — what each one teaches.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-08-01T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="../blog/feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/q2-breach-retrospective.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">SignalGrid</a></li>
+            <li><a href="../lab-grid.html">OffGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published August 1, 2026</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Q2 Breach Retrospective: Lessons From the Quarter</h1>
+            <div class="article-body">
+                <p>Every quarter I set aside an afternoon to read the public disclosures, 8-Ks, and post-mortems from the prior three months and write down what I'd change in my own program because of them. Q2 2026 had a lot to work with. Three breaches in particular deserve careful study — not because they're the biggest by record count, but because they illustrate how the threat model has moved in 2026.</p>
+
+                <p>I'm going to keep names generalized where the investigations are ongoing, but each of these is public and any IT leader can find the details.</p>
+
+                <h2>Case 1: The HR SaaS vendor compromise</h2>
+
+                <p>In late April, a mid-market HR SaaS vendor used by several thousand enterprises disclosed that an attacker had obtained access to a service account that held read privileges across customer tenants. The initial access vector: a compromised contractor laptop running an outdated EDR agent, belonging to a third-party support firm. The attacker moved from the contractor laptop, to an internal bastion, to a cached <code>AWS_SESSION_TOKEN</code> in a CI runner, to the cross-tenant service role.</p>
+
+                <p>The thing worth dwelling on isn't the intrusion path. It's the <em>blast radius</em>. One service account, one vendor, many customers. The number of enterprises that had to send the "we're investigating potential exposure" letter because of a vendor they chose three years ago was well into the thousands.</p>
+
+                <p>Defender lessons:</p>
+
+                <ul>
+                    <li>Every SaaS vendor holding sensitive data should be asked, in writing: "Do your employees and contractors have any form of cross-tenant access to our data? Under what conditions? How is it logged?" Most vendors won't answer honestly the first time. Ask again.</li>
+                    <li>Your vendor risk questionnaire almost certainly doesn't cover contractor-to-vendor-to-you access chains. Update it.</li>
+                    <li>If a vendor can't produce audit logs of access to <em>your</em> data within 48 hours of a request, that's a finding. Treat it like one.</li>
+                </ul>
+
+                <h2>Case 2: The IdP token replay incident</h2>
+
+                <p>In May, a large identity provider disclosed an incident in which stolen session tokens — harvested via a browser-extension supply chain compromise months earlier — were being replayed to maintain persistent access to customer tenants. The tokens predated any MFA challenge and were, by design, trusted until expiration.</p>
+
+                <p>This is the pattern I warned about in my May post, made concrete. The attacker doesn't need to beat your MFA because they're past it. Once a token is issued, it's a bearer credential. If you don't tie it to a device, an IP range, or a behavioral baseline, it travels.</p>
+
+                <blockquote>MFA is authentication. Session management is authorization. Most enterprises have invested heavily in the first and almost nothing in the second.</blockquote>
+
+                <p>Defender lessons:</p>
+
+                <ul>
+                    <li>Token lifetimes should be <em>short</em>. If your access tokens are valid for 24 hours, you are handing the attacker a 24-hour window. Tune them down and absorb the UX cost.</li>
+                    <li>Enable continuous access evaluation (CAE) or equivalent on every IdP you run. It is the single highest-leverage lever you have against token replay.</li>
+                    <li>Alert on token use from a new device fingerprint for privileged accounts. This alert fires less often than you'd think and catches exactly this pattern.</li>
+                </ul>
+
+                <h2>Case 3: The CI/CD pipeline supply chain attack</h2>
+
+                <p>In June, a popular open-source build action was compromised for a window of roughly six hours, during which a malicious step exfiltrated environment variables — including cloud credentials — from builds across an estimated 15,000 repositories. The attacker chain was classic: typosquatted dependency, compromised maintainer account (no MFA), malicious commit merged via a self-approved PR, tag pushed to stable.</p>
+
+                <p>What made this one different from prior supply chain events was the <em>speed of monetization</em>. Stolen AWS keys were being used against downstream environments within an hour of exfiltration. The attacker had automation ready to spin up coin miners and attempt lateral movement. There was no dwell time.</p>
+
+                <p>Defender lessons:</p>
+
+                <ul>
+                    <li>Pin every third-party GitHub Action to a full commit SHA, not a version tag. Tags are mutable; SHAs are not. This is a one-line policy change your platform team can enforce today.</li>
+                    <li>Rotate CI secrets on a schedule, and scope them ruthlessly. A build job needs access to exactly one thing; it should have access to exactly one thing.</li>
+                    <li>If you have long-lived cloud credentials anywhere in a CI runner, replace them with short-lived OIDC federation. The technology has been ready for three years; there is no excuse left.</li>
+                    <li>Maintain a detection for "cloud credential used from a new geography within 30 minutes of CI run." It is cheap and catches this family of attack.</li>
+                </ul>
+
+                <h2>The common thread</h2>
+
+                <p>Three incidents, three attack surfaces, one pattern. None of these breaches required a novel zero-day. Each one exploited a gap between how the technology <em>works</em> and how most enterprises <em>operate</em> it. Short-lived credentials exist. Pinned dependencies exist. Vendor audit contracts exist. The failure mode was never capability — it was configuration and process.</p>
+
+                <p>That's both depressing and encouraging. Depressing because we keep making the same mistakes. Encouraging because the fixes are known and usually free.</p>
+
+                <h2>The takeaway</h2>
+
+                <p>Run this exercise yourself. Pick three public breaches from last quarter, read the 8-Ks, and write down the one thing each one would have caught in your environment if it were configured correctly. Then fix two of them this quarter. That's it. That's the program. Do that every quarter for a decade and you will be in the top 10% of security programs in your peer group — not because you bought the right thing, but because you kept the thing you have honest.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026-2027 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>
