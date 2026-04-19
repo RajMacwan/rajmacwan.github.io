@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Service Fundamentals — MacwanGrid</title>
+    <meta name="description" content="How v3 onion services actually work — Ed25519 addressing, hidden service descriptors, the rendezvous protocol, and what operators should know.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hidden Service Fundamentals">
+    <meta property="og:description" content="How v3 onion services actually work — Ed25519 addressing, hidden service descriptors, the rendezvous protocol, and what operators should know.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-14T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/hidden-service-fundamentals.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-03-14</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Hidden Service Fundamentals</h1>
+            <div class="article-body">
+                <p>"Hidden services" — now officially called "onion services" — are one of the most misunderstood primitives on the internet. They are not a synonym for crime. They are a way to publish a service whose location is not revealed to clients, with end-to-end encryption and strong authentication built into the address itself. The same protocol that serves ransomware leak sites also serves Facebook (<code>facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion</code>), The New York Times, and ProPublica.</p>
+
+                <h2>The Address is a Public Key</h2>
+                <p>In v3, the 56-character onion address is a base32 encoding of an Ed25519 public key plus a checksum and version byte. Roughly:</p>
+                <pre><code>onion_address = base32(pubkey || checksum || version) + ".onion"
+checksum = SHA3-256(".onion checksum" || pubkey || version)[:2]</code></pre>
+                <p>The upshot is that connecting to <code>xyz...onion</code> gives you cryptographic certainty you are talking to the holder of the matching Ed25519 private key. Unlike TLS, there is no CA to trust and no mis-issuance story. The name <em>is</em> the key. This is a beautiful property.</p>
+
+                <h2>Descriptors and the Rendezvous Protocol</h2>
+                <p>An onion service doesn't sit on a listening IP you connect to. Instead:</p>
+                <ul>
+                    <li>The service picks a set of <strong>introduction points</strong> — ordinary Tor relays — and builds circuits to them.</li>
+                    <li>It signs a <strong>descriptor</strong> (listing those intro points) with its long-term key and uploads it to the hash-ring of <strong>HSDir</strong> relays. In v3, the descriptor is blinded, so HSDirs cannot learn the underlying onion address without already knowing it.</li>
+                    <li>A client fetches the descriptor, picks a <strong>rendezvous point</strong> (another Tor relay), and sends an <code>INTRODUCE</code> cell through an intro point containing the rendezvous cookie.</li>
+                    <li>The service connects out to the rendezvous point, and client and service meet there, each at the end of a three-hop Tor circuit. Total: six hops between them.</li>
+                </ul>
+                <p>Neither side ever learns the other's IP address. The rendezvous relay doesn't know who the service is. The intro points don't see the payload. That's the shape of it.</p>
+
+                <h2>Vanity Addresses</h2>
+                <p>You've probably seen onion addresses that start with a human-readable prefix. Those are generated by brute-forcing Ed25519 keypairs until the base32 encoding of the public key starts with your desired string. The standard tool is <strong>mkp224o</strong>. Short prefixes (4–6 characters) take seconds to minutes on a CPU. Longer prefixes scale exponentially — an 8-character prefix is hours; 10 is days on fast GPUs; 16 characters is computationally impractical. Facebook's address famously took many CPU-years; they got lucky.</p>
+                <pre><code>./mkp224o -d output_dir -n 4 macwan</code></pre>
+
+                <h2>Operational Realities</h2>
+                <p>Running an onion service is technically easy — add two lines to <code>torrc</code>, restart Tor, read <code>hostname</code>. Running one <em>well</em> is a different problem:</p>
+                <ul>
+                    <li>The <code>hs_ed25519_secret_key</code> file is the service's soul. Lose it and the address is gone forever. Leak it and someone else can impersonate the service.</li>
+                    <li>If your web server leaks its real IP via a test page, a misconfigured virtual host, an email header, or a scheduled outbound request, the anonymity property is gone.</li>
+                    <li>Onion services have real latency and real DDoS exposure. The Tor Project has done significant work on PoW defenses ("HiddenServiceEnableIntroDoSDefense"), but a popular service still feels the load.</li>
+                </ul>
+                <p>Onion services are a primitive, not a product. Used deliberately — for authenticated internal tools, for whistleblower drop-boxes, for censorship-resistant mirrors — they are one of the most powerful anti-surveillance technologies we have.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

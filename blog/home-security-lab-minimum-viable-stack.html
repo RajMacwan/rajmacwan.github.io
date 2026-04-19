@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Security Lab: Minimum Viable Stack — MacwanGrid</title>
+    <meta name="description" content="The actual hardware and software a home security lab needs — hypervisor, VLANs, EDR trials, AD forest, and packet capture. Everything else is fluff.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Home Security Lab: Minimum Viable Stack">
+    <meta property="og:description" content="The actual hardware and software a home security lab needs — hypervisor, VLANs, EDR trials, AD forest, and packet capture. Everything else is fluff.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-28T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/home-security-lab-minimum-viable-stack.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-28</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Home Security Lab: Minimum Viable Stack</h1>
+            <div class="article-body">
+                <p>Most home labs I see on Reddit are over-engineered museums. Three Dell R730s humming in a closet because "more is better," but the owner has never actually detonated malware or replayed a phishing chain end-to-end. The point of a security lab is to break things safely and learn from the breakage — not to rack-mount for Instagram.</p>
+                <p>Here is the minimum viable stack I recommend. Anything beyond this is a nice-to-have until you are hitting 80% utilization on what you already have.</p>
+
+                <h2>1. One Hypervisor Host Running Proxmox VE 8</h2>
+                <p>Pick a single box. A used Lenovo ThinkCentre M920q with 64 GB RAM and a 1 TB NVMe is around $450 on eBay. Install Proxmox VE 8.2. Done.</p>
+                <ul>
+                    <li>Proxmox ships ZFS, LXC, and KVM out of the box.</li>
+                    <li>Snapshots are free, unlike VMware workstation.</li>
+                    <li>Clustering comes later — single-node is fine for years.</li>
+                </ul>
+                <p>If you want truly tiny, a Beelink SER5 with 32 GB will run five concurrent VMs comfortably.</p>
+
+                <h2>2. A Routed, Tagged VLAN Segment</h2>
+                <p>Your lab must live on its own Layer 2 segment. Do not bridge lab VMs to your home LAN. Ever.</p>
+                <p>The cheap approach: a used MikroTik hEX (RB750Gr3) or a UniFi Dream Machine plus one managed switch that speaks 802.1Q. Configure VLAN 99 as the lab, block it from initiating traffic to your residential VLAN, allow internet egress through a dedicated firewall rule set.</p>
+                <pre><code># Example MikroTik rule
+/ip firewall filter
+add chain=forward src-address=10.99.0.0/24 \
+    dst-address=192.168.1.0/24 action=drop \
+    comment="lab cannot talk to home"</code></pre>
+
+                <h2>3. EDR Trial Instances on a Rotating Basis</h2>
+                <p>CrowdStrike, SentinelOne, and Microsoft Defender for Endpoint all offer 30-to-90 day trials for qualified testers. Request one, deploy it on two Windows 11 VMs (one clean, one victim), run Atomic Red Team tests against it, record what fires and what does not. Rotate every quarter.</p>
+                <p>You learn more from one week of "does T1059.001 actually alert on default policy?" than from a year of reading vendor whitepapers.</p>
+
+                <h2>4. A Small Active Directory Test Forest</h2>
+                <p>One Windows Server 2022 domain controller, two member workstations, one service account deliberately configured with SPN for Kerberoasting practice. GOAD (Game of Active Directory) automates almost all of this with Terraform and Ansible — clone it from GitHub and run <code>./scripts/start.sh</code>.</p>
+                <p>This is where you test:</p>
+                <ul>
+                    <li>BloodHound collection and analysis</li>
+                    <li>NTDS.dit extraction with secretsdump</li>
+                    <li>LAPS rollout mistakes</li>
+                    <li>ADCS misconfigurations (ESC1 through ESC8)</li>
+                </ul>
+
+                <h2>5. Packet Capture Capability</h2>
+                <p>A virtual Security Onion 2.4 instance with a SPAN port mirrored from your lab VLAN. That is the whole requirement. Zeek logs plus Suricata alerts plus full PCAP retention for 7 days is enough to answer 90% of "what actually happened on the wire" questions.</p>
+                <p>If your switch cannot span, a dedicated Proxmox bridge with a promiscuous-mode Zeek sensor will do the job.</p>
+
+                <h2>What You Do Not Need Yet</h2>
+                <p>Skip these until you are genuinely out of capacity:</p>
+                <ul>
+                    <li>A Kubernetes cluster. You have no security workload that requires it.</li>
+                    <li>A separate SIEM appliance. Splunk Free (500 MB/day) or Wazuh-on-a-VM handles everything.</li>
+                    <li>A 42U rack. Noise, heat, and a divorce are not learning outcomes.</li>
+                    <li>10GbE anything. 1GbE saturates on packet capture long before your learning does.</li>
+                </ul>
+
+                <p>Build this stack for under $800 and you will have done more hands-on security work than most analysts do in their first two years on the job. That is the actual win.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

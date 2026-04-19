@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitwarden Enterprise Review — MacwanGrid</title>
+    <meta name="description" content="Eighteen months of Bitwarden Enterprise deployed across a real org. What works, what is rough, and the verdict.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bitwarden Enterprise Review">
+    <meta property="og:description" content="Eighteen months of Bitwarden Enterprise deployed across a real org. What works, what is rough, and the verdict.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-04T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/bitwarden-enterprise-review.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-04</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Bitwarden Enterprise Review</h1>
+            <div class="article-body">
+                <p>We rolled Bitwarden Enterprise out to an organization with a few hundred users 18 months ago. This is the honest write-up. It is mostly positive, with some sharp edges worth knowing before you sign.</p>
+
+                <h2>What Works</h2>
+                <h3>SSO with SCIM</h3>
+                <p>Okta SAML + SCIM provisioning does what you want. A new hire's Okta group membership creates their Bitwarden account, puts them in the right collections via group-to-collection mapping, and the day-one password vault is ready before their laptop ships. Offboarding is equally clean — the SCIM deprovision fires, Bitwarden revokes the user, and their vault is gone from their device on next sync.</p>
+
+                <h3>Collections and Groups</h3>
+                <p>The mental model is simple: users → groups → collections → items. We run about 40 collections mapped to team boundaries. The permission matrix (can view, can edit, can manage) is granular enough without being PowerPoint material. Engineering has their shared infra credentials, Finance has payment rails, IT has the rest. No one accidentally sees what they should not.</p>
+
+                <h3>Self-Hosting Option</h3>
+                <p>We run Bitwarden cloud, but the ability to self-host the full stack (or the Unified container since 2023) is a real compliance card to play. The vault data is end-to-end encrypted either way, so this is more about who holds the CSP contract than who sees your secrets.</p>
+
+                <h3>CLI and API</h3>
+                <p>The <code>bw</code> CLI is workable for scripting. Service accounts via Bitwarden Secrets Manager (separate SKU) are where it gets actually useful for CI/CD — injecting secrets into pipelines without long-lived tokens. We use it with GitHub Actions.</p>
+                <pre><code>bws secret get --access-token $BWS_TOKEN $SECRET_ID</code></pre>
+
+                <h3>Pricing</h3>
+                <p>Enterprise is $6/user/month. Compared to 1Password Business at $8 and LastPass Business at $7 (and LastPass being, you know, LastPass), Bitwarden prices like the challenger it is. Secrets Manager is a separate line and worth it if you are replacing HashiCorp Vault at small scale.</p>
+
+                <h2>What Is Rough</h2>
+                <h3>SCIM Nuances</h3>
+                <p>The SCIM provisioner is correct about 98% of the time. The 2% is: renaming a group in Okta does not always propagate cleanly, and nested groups are effectively flattened. We had one incident where a restructured org chart left 30 users temporarily without collection access for a morning. Not a data exposure — just a helpdesk spike.</p>
+                <p>Workaround: any material identity change gets a manual verification in the Bitwarden admin console the same day. Annoying, but cheap.</p>
+
+                <h3>Mobile UX Edge Cases</h3>
+                <p>iOS autofill from the app works most of the time. The edge cases pile up on business apps with non-standard login webviews — Salesforce mobile, some banking apps, Workday. Users end up copy-pasting, which works but trains bad muscle memory. The iOS Passkeys support landed late compared to 1Password and is still catching up.</p>
+                <p>Android is better. Accessibility-service autofill plus the native Autofill Framework makes Android feel more mature than iOS here, which is an odd sentence to type in 2026.</p>
+
+                <h3>Admin Console UI</h3>
+                <p>Functional. Not delightful. Reporting is thin — you can see who logged in, who has weak passwords in their personal vault (if they consent), and what is shared where. If you want detailed audit events exported to a SIEM, the Event Logs API works but is paginated awkwardly and rate-limited.</p>
+
+                <h3>Password History and Shared Item Auditing</h3>
+                <p>When a shared item's password gets rotated, the previous value is kept in history — fine — but there is no built-in "who last viewed this item" log for shared collections without enabling the Enterprise Policies event stream. Make sure you turn that on at deployment, not six months in when someone asks.</p>
+
+                <h2>Things to Do on Day One</h2>
+                <ul>
+                    <li>Enforce 2FA at the org level. TOTP and WebAuthn for admins.</li>
+                    <li>Turn on the Master Password policy — 14+ characters, enforce a complexity score.</li>
+                    <li>Enable Event Logs + stream to your SIEM.</li>
+                    <li>Disable personal ownership for new items (force everything into a collection).</li>
+                    <li>Write the break-glass plan: two admin accounts with physical YubiKeys in a safe.</li>
+                </ul>
+
+                <h2>Verdict</h2>
+                <p>Yes, with caveats. Bitwarden Enterprise is the right answer for most mid-market orgs that want an open-source-foundation password manager with real SSO, decent SCIM, and a non-insulting price. 1Password's polish is real and worth the premium if your users push back on UX friction. But for shops that value auditability and cost over the last 10% of mobile smoothness, Bitwarden earns the deployment.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

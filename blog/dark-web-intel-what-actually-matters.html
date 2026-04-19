@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Web Intel: What Actually Matters — MacwanGrid</title>
+    <meta name="description" content="Most dark-web-monitoring products oversell. Only two classes of findings actually change defender behavior.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Dark Web Intel: What Actually Matters">
+    <meta property="og:description" content="Most dark-web-monitoring products oversell. Only two classes of findings actually change defender behavior.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-21T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/dark-web-intel-what-actually-matters.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-21</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Dark Web Intel: What Actually Matters</h1>
+            <div class="article-body">
+                <p>Dark web monitoring is the most oversold product category in threat intelligence. Vendors sell you the aesthetic of a dimly-lit dashboard with forum avatars and Cyrillic handles, and what you get back is mostly noise: scraper-generated "chatter" about your brand, recycled credential dumps already in Have I Been Pwned, and screenshots of ransomware leak sites you could read yourself.</p>
+
+                <p>In my experience, only two classes of dark web findings actually change defender behavior. Everything else is theater.</p>
+
+                <h2>What "Dark Web" Even Means in 2026</h2>
+                <p>First, a definitional cleanup, because vendors muddle this deliberately. The dark web proper is Tor hidden services and I2P eepsites. Most "dark web monitoring" is not actually dark web — it is a blend of: (a) a few major Tor-hosted forums and markets, (b) Telegram channels (clearnet protocol, access-controlled content), (c) Discord servers, (d) closed-registration clearweb forums like XSS (now bouncing across domains post-seizure) and Exploit, and (e) paste sites and leak blogs. Telegram has eaten a huge chunk of what used to be on Tor; the BreachForums reincarnations and leak-data shops are clearweb with Tor mirrors.</p>
+
+                <p>If your vendor's "dark web coverage" is really just ransomware leak sites plus Telegram scraping, you can do that yourself for the cost of a Tor Browser and a disposable VM.</p>
+
+                <h2>Finding One: Your Credentials for Sale</h2>
+                <p>Initial Access Brokers (IABs) sell access — RDP, VPN, Citrix, single sign-on — on forums and private channels. If a listing appears that plausibly describes your network (revenue band, industry, geography, employee count, specific VPN banner), it is a high-confidence "someone is already in or about to be in" signal. This is the one dark web finding worth paying for, because (a) it is time-sensitive, (b) it is actionable (force password resets, rotate VPN certs, hunt for persistence, prep IR), and (c) you cannot easily collect it yourself without operational discipline and paid access.</p>
+
+                <p>Adjacent: infostealer logs. Redline, Raccoon, Lumma, StealC, Vidar — the commodity stealer ecosystem dumps millions of browser-saved credentials into telegram-channel marketplaces daily. If your corporate SSO cookies show up in a stealer log, that is a session-hijack waiting to happen. Russian Market, 2easy, Genesis-style replacements, and the various Telegram "cloud" channels are where these surface. Good vendors do this well; free trackers like HudsonRock's Cavalier give you a preview of the value.</p>
+
+                <h2>Finding Two: A Credible Pre-Leak Mention</h2>
+                <p>When a ransomware crew names you on their leak site, that is not intel — it is news. You already know. The useful signal is the narrow window before that: a broker offering "a US-based law firm, 150 employees, revenue ~$60M" that fits your fingerprint; an affiliate bragging in a closed channel; a sample file tree appearing on a paste site. This is rare and often ambiguous, but when it is real, you have 24–72 hours to act.</p>
+
+                <h2>The Noise Category</h2>
+                <p>Everything else is mostly noise. Forum chatter mentioning your brand? Usually phishing-kit discussions naming a hundred other brands too. "Hackers discussing" your CVE? So is everyone on Twitter. A threat actor "claiming" to have breached you with no sample data? Ransomware groups lie routinely — LockBit's post-takedown relist flood in 2024 famously included dozens of re-listed old victims and outright fabrications. Akira, Medusa, and Clop have all been caught inflating victim counts.</p>
+
+                <p>Rule: claims without evidence (file tree, sample files, negotiation portal link with your data) are PR. Wait for proof.</p>
+
+                <h2>Telling an Inflated Claim From a Real Breach</h2>
+                <p>Real claims have: (a) a sample directory tree that matches your internal structure (share names, naming conventions), (b) filenames that resolve to real employees or projects, (c) a countdown timer synced to negotiation portal activity, (d) metadata in leaked files matching your domain. Inflated claims have: marketing copy, generic screenshots, a demand for "proof request" before sample data, reuse of victim logos pulled from your website. Check the leak site entry against what Emsisoft, Ransomware.live, and ecrime.ch have historically tracked for that group's reliability.</p>
+
+                <h2>The Defender's Position</h2>
+                <p>Dark web monitoring is worth paying for if and only if the vendor demonstrably has non-public IAB and stealer-log access, and they alert you with enough context to act (not just keyword hits). Otherwise, build a small internal capability: a Tor VM, saved searches on ransomware.live and HIBP domain alerts, a Telegram-channel monitor script, and a paid account on one mainstream TI platform. You will catch the things that matter and ignore the rest — which, in this category, is most of it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

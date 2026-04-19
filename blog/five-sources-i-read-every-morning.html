@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Five Sources I Read Every Morning — MacwanGrid</title>
+    <meta name="description" content="A 20-minute curated read-in is better than a 2-hour dashboard crawl. The five sources in my rotation.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Five Sources I Read Every Morning">
+    <meta property="og:description" content="A 20-minute curated read-in is better than a 2-hour dashboard crawl. The five sources in my rotation.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-06T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/five-sources-i-read-every-morning.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-06</span>
+                <span>5 min read</span>
+            </div>
+            <h1>The Five Sources I Read Every Morning</h1>
+            <div class="article-body">
+                <p>A 20-minute curated read-in at 7 a.m. beats a two-hour dashboard crawl at 10 a.m. every time. Dashboards are designed to generate engagement; your morning rotation should be designed to generate decisions. Here are the five sources I have converged on after deleting a lot of RSS entries.</p>
+
+                <h2>1. CISA Alerts and KEV Updates</h2>
+                <p>Start here. CISA aggregates joint advisories with FBI, NSA, and international partners, and the Known Exploited Vulnerabilities catalog is the shortest and most defensible patch prioritization list in existence. If a new KEV entry touches your stack, your morning is no longer yours — the day's priorities just changed. Subscribe to the mailing list and the KEV JSON feed.</p>
+
+                <p><strong>What you miss if you skip it:</strong> the regulator-defensible minimum. Being surprised by a KEV-listed CVE six weeks after publication is the kind of thing that ends up in a CISO post-mortem slide.</p>
+
+                <h2>2. Krebs on Security</h2>
+                <p>Brian Krebs does original investigative reporting that the trade press reports on days later, usually wrongly. He is particularly strong on financial crime, carding ecosystems, SIM-swap infrastructure, and the personalities behind specific criminal operations. His posts are long, but they are front-of-the-newsroom quality — closer to investigative journalism than security news.</p>
+
+                <p><strong>What you miss if you skip it:</strong> the human layer of the threat ecosystem. Understanding that a specific group rebranded, or that a specific service was dismantled by a specific action, saves you from detection rules that silently go stale.</p>
+
+                <h2>3. BleepingComputer</h2>
+                <p>The closest thing we have to a wire service for the cybercrime beat. Ransomware incidents, fresh CVEs in context, vendor advisories, enterprise breaches — all covered fast and usually with links to primary sources. Lawrence Abrams and team have a track record of getting exclusives from ransomware operators and victims alike. Skim the headlines, read two or three articles in depth.</p>
+
+                <p><strong>What you miss if you skip it:</strong> the Monday morning "did you see that XYZ was breached?" conversation. Also: the ransomware negotiation color that doesn't appear in vendor blogs.</p>
+
+                <h2>4. Dark Reading (or substitute: The Record by Recorded Future)</h2>
+                <p>Industry analysis and the CISO-perspective takes. Dark Reading's strength is breadth — they cover the operational-to-strategic interface where vendor-trade-press and investigative journalism hand off. The Record, staffed by actual investigative reporters (several Politico alumni), is arguably stronger on nation-state and policy coverage. Pick one. Both skew toward U.S./NATO perspective, which you should be aware of.</p>
+
+                <p><strong>What you miss if you skip it:</strong> context for board-level questions. When your CEO asks "should we be worried about Typhoon?" you want more than a tool vendor's marketing page as your reference.</p>
+
+                <h2>5. ransomware.live</h2>
+                <p>The free, open, public tracker of ransomware leak-site activity. Filter by country and industry. Every morning, I scan the overnight additions for my sector and for peer organizations. A peer getting listed is the single highest-signal event that should trigger a defensive posture review — the delivery vector is probably something you are also exposed to.</p>
+
+                <p>ecrime.ch and the Ransomware Group Reports from Recorded Future, Emsisoft, and Coveware are useful supplements for trend context.</p>
+
+                <p><strong>What you miss if you skip it:</strong> the fastest-moving operational indicator available to private-sector defenders. Also: a lot of the time-sensitive "hmm, that is the third law firm this month" pattern detection that no vendor dashboard will surface as cleanly.</p>
+
+                <h2>What I Deliberately Do Not Include</h2>
+                <p>Twitter/X infosec — too much noise, too much repetition, too much engagement-farming. I check it twice a week maybe. Mastodon infosec — better signal, worse coverage; weekly.</p>
+
+                <p>Vendor blogs — I read Mandiant, Unit 42, Talos, Microsoft Threat Intelligence, Red Canary, The DFIR Report, but on a weekly rhythm, not daily. Their publishing cadence is slower and the depth rewards batched reading.</p>
+
+                <p>Podcasts — valuable, but not morning material. Risky Business Friday show is my one must-listen; commute time, not inbox time.</p>
+
+                <h2>The Meta-Point</h2>
+                <p>Five sources, 20 minutes, same time every day. The discipline matters more than the specific sources. If you switch one of mine for Risky Biz News, The Hacker News, or SANS Internet Storm Center diaries, you will be roughly as well-served. What fails is trying to read everything, or trying to read whenever. Fixed time, fixed list, move on with the day.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

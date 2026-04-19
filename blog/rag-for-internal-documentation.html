@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG for Internal Docs: The Boring, Useful Pattern — MacwanGrid</title>
+    <meta name="description" content="Retrieval-augmented generation over internal documentation is the most boring and most useful enterprise AI pattern. A practitioner's guide.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="RAG for Internal Docs: The Boring, Useful Pattern">
+    <meta property="og:description" content="Retrieval-augmented generation over internal documentation is the most boring and most useful enterprise AI pattern. A practitioner's guide.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-17T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/rag-for-internal-documentation.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-03-17</span>
+                <span>6 min read</span>
+            </div>
+            <h1>RAG for Internal Docs: The Boring, Useful Pattern</h1>
+            <div class="article-body">
+                <p>If you have to pick one AI pattern to deploy in an enterprise this year, pick retrieval-augmented generation over your internal documentation. It does not demo well. Nobody will write a Medium post about it. It will pay for itself inside a quarter and keep doing so.</p>
+
+                <p>I have now deployed three variants of this in different contexts. The failure modes are predictable. The wins are durable.</p>
+
+                <h2>Pick the embedding model second</h2>
+                <p>Engineers reach for the embedding model first. It is the wrong starting point. The right starting point is the corpus. What documents? How are they chunked? What metadata do you have? If you cannot answer those, no embedding model will save you.</p>
+
+                <p>That said: for most enterprise English-language corpora, a mid-sized open model like BGE or one of the instruction-tuned variants gets you within a few percent of the closed-source options at a fraction of the cost and with full data residency control. Use OpenAI's or Voyage's embeddings if you are already paying for that ecosystem. Do not agonize.</p>
+
+                <h2>Chunking is where the accuracy lives</h2>
+                <p>Naive fixed-size chunking (say, 512 tokens with 50 overlap) is the default in every LangChain tutorial and it is the default for a reason. It works okay. Okay is not great.</p>
+
+                <p>What moved the needle for us was respecting document structure. Split on headings first, paragraphs second, sentences third. Keep the heading breadcrumb in the chunk metadata so "Step 3" under "Rollback Procedure" is not mistaken for "Step 3" under "Deployment." A chunk without its hierarchical context is frequently nonsense.</p>
+
+                <p>The other trick: for long structured documents (runbooks, policy manuals), index at two granularities. Small chunks for retrieval precision, then fetch the parent section for context at generation time. LlamaIndex calls this "parent document retrieval." It is worth the complexity.</p>
+
+                <h2>Metadata filtering is the underrated superpower</h2>
+                <p>A user asks "how do I provision a new VPN account." If your index is the entire company knowledge base, you will retrieve the provisioning doc, the decommissioning doc, the 2019 legacy VPN doc, and a marketing blog. Vector similarity does not distinguish between them well.</p>
+
+                <p>Tag every chunk with source system, document type, last-reviewed date, audience, and region. Filter before you rank. A query from a US employee about current VPN procedures should never see the 2019 doc or the EU-only policy. This single change improved our answer quality more than any embedding model upgrade.</p>
+
+                <h2>What "accuracy" means in RAG</h2>
+                <p>Accuracy is not a single number. It decomposes into retrieval quality (did we find the right chunk) and generation quality (did we use it correctly). Measure them separately. A system that retrieves well and generates badly needs different fixes than the reverse.</p>
+
+                <p>We maintain a test set of roughly 200 hand-labeled question-and-expected-source pairs. Every embedding or prompt change runs against it. The number we optimize for is "did the correct source appear in the top 5 retrieved chunks." Generation quality we sample manually. Automating LLM-as-judge evals is tempting and we use it, but for a system that holds up over quarters, humans look at a sample of real production queries every week.</p>
+
+                <h2>Stale docs will eat you</h2>
+                <p>Your corpus is 30 percent wrong the day you build the index. Within six months it is closer to 50 percent. No vector database solves this. The only defense is surfacing freshness: date every chunk, show the date in the answer, flag old content. Pair that with a weekly report of "most retrieved docs that have not been edited in a year" and hand it to the teams that own them. The model becomes a lever for documentation hygiene.</p>
+
+                <h2>When you do not need RAG</h2>
+                <p>Sometimes the right answer is "give them better search." If your users are technical, know what they are looking for, and just need to find a document quickly, RAG adds latency, cost, and a hallucination risk over what a well-tuned Elasticsearch would give you. The LLM earns its keep when users cannot articulate the query precisely, when answers span multiple documents, or when synthesis matters. If those conditions do not hold, ship search and move on.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

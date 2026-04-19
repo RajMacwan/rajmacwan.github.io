@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ransomware Negotiation: When Not to Pay — MacwanGrid</title>
+    <meta name="description" content="OFAC sanctions, decryptor availability, insurance posture, reconstitution economics, and the 'we paid and still got leaked' reality.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ransomware Negotiation: When Not to Pay">
+    <meta property="og:description" content="OFAC sanctions, decryptor availability, insurance posture, reconstitution economics, and the 'we paid and still got leaked' reality.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-26T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/ransomware-negotiation-when-not-to-pay.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                <span>Published 2026-02-26</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Ransomware Negotiation: When Not to Pay</h1>
+            <div class="article-body">
+                <p>The ransomware decision is not technical. It is strategic, financial, and legal — made by the CEO and counsel, with the CFO and cyber insurer in the room, informed by the IR team. The question should never be "should we pay?" first. It should be "are we permitted to pay, and if we are, is paying the best option?"</p>
+                <p>Here is the framework I use.</p>
+
+                <h2>1. Check OFAC First, Before Anything Else</h2>
+                <p>The US Treasury Department's Office of Foreign Assets Control (OFAC) maintains the Specially Designated Nationals (SDN) list. A payment — directly or indirectly — to a sanctioned person or entity can be a federal crime even if the victim is unaware of the sanction.</p>
+                <p>Sanctioned ransomware actors and variants include historical designations around Evil Corp (Maksim Yakubets), Conti operators, and various DPRK-linked groups. OFAC's 2020 and 2021 advisories made it clear that "we didn't know" is not a defense — strict liability applies in many cases.</p>
+                <ul>
+                    <li>OFAC SDN search: <code>sanctionssearch.ofac.treas.gov</code></li>
+                    <li>OFAC ransomware advisories: search "OFAC ransomware advisory" at <code>home.treasury.gov</code></li>
+                    <li>License application: if there are compelling circumstances, OFAC may issue a specific license. This is a legal process your counsel runs, not a form you fill out alone.</li>
+                </ul>
+                <p>Your ransomware negotiation vendor (Coveware, GroupSense, Kivu, etc.) does OFAC due diligence as standard practice, but responsibility sits with the victim. If the actor cannot be cleanly cleared, payment is off the table.</p>
+
+                <h2>2. Is a Free Decryptor Available?</h2>
+                <p>Before paying, check No More Ransom: <code>nomoreransom.org</code>. It is a joint project of Europol, law enforcement, and security vendors and hosts decryptors for dozens of ransomware families. Periodically law enforcement seizes a group's infrastructure and publishes keys — LockBit, Hive, BlackMatter, and others have seen this happen in recent years.</p>
+                <p>Also check:</p>
+                <ul>
+                    <li>ID Ransomware (<code>id-ransomware.malwarehunterteam.com</code>) to identify the family from a sample file.</li>
+                    <li>Your IR firm's internal decryptor library — the major firms keep inventories that are not public.</li>
+                    <li>The FBI — occasionally they have keys they can share under specific conditions.</li>
+                </ul>
+                <p>If a working decryptor exists, paying is almost never the right call.</p>
+
+                <h2>3. What Does Your Insurance Say?</h2>
+                <p>Cyber insurance has tightened aggressively since 2021. Most policies now:</p>
+                <ul>
+                    <li>Require approval from the carrier before any ransom discussion.</li>
+                    <li>Require use of an approved negotiation vendor.</li>
+                    <li>Sub-limit extortion coverage separately from the main policy (often $1-5M against a much larger aggregate).</li>
+                    <li>Exclude OFAC-prohibited payments entirely.</li>
+                </ul>
+                <p>The carrier's position often drives the economic answer. If they cover only a fraction of the demand and require full cooperation on other remediation costs, paying may shift money that is better spent on reconstitution and notification.</p>
+
+                <h2>4. The Reconstitution Economics</h2>
+                <p>Honest math:</p>
+                <ul>
+                    <li>What is the ransom demand?</li>
+                    <li>What is the projected cost and time to rebuild from backups?</li>
+                    <li>What is the business cost per day of downtime?</li>
+                    <li>What is the incremental cost for data you cannot recover (legal exposure, customer churn, regulatory)?</li>
+                </ul>
+                <p>Three outcomes:</p>
+                <ol>
+                    <li><strong>Backups clean, downtime manageable.</strong> Do not pay. Rebuild.</li>
+                    <li><strong>Backups compromised, business-critical data gone.</strong> Payment becomes a defensive option, subject to OFAC and insurance.</li>
+                    <li><strong>Data extortion only (no encryption).</strong> Payment almost never buys certainty that the data is deleted. The industry data here is bleak.</li>
+                </ol>
+
+                <h2>5. "We Paid and Still Got Leaked"</h2>
+                <p>This is the uncomfortable reality. Coveware and other trackers publish figures annually showing that post-payment data leaks happen in a meaningful minority of cases, ranging in recent years from around 15-30%. Some actors honor the deal. Some double-extort. Some groups disband, spin up a new brand, and leak the data from the last brand to punish former victims.</p>
+                <p>Specifically for data-theft-only cases, payment buys:</p>
+                <ul>
+                    <li>A promise to delete.</li>
+                    <li>A claim that no backup copies exist.</li>
+                    <li>A possibly doctored proof-of-deletion video.</li>
+                </ul>
+                <p>None of that is independently verifiable. Treat exfiltrated data as public regardless of what you pay.</p>
+
+                <h2>When Payment Might Be the Right Call</h2>
+                <p>I have seen payment be the least-bad option in these specific situations:</p>
+                <ul>
+                    <li>A healthcare environment where patient safety depends on system availability and reconstitution cannot happen in time.</li>
+                    <li>A manufacturer where downtime costs exceed the ransom by an order of magnitude per week and backups are gone.</li>
+                    <li>A situation where legal counsel and insurance have cleared OFAC, approved the payment, and the actor has a reasonable track record.</li>
+                </ul>
+                <p>None of these are "we can't be bothered to restore." Payment is a last resort, not a first option.</p>
+
+                <h2>Always Do These, Payment or Not</h2>
+                <ul>
+                    <li>File with the FBI IC3 (<code>ic3.gov</code>) and call your local FBI field office.</li>
+                    <li>Notify your cyber insurer within the policy window.</li>
+                    <li>Preserve all forensic evidence before any remediation.</li>
+                    <li>Identify the actor and likely sanctions exposure.</li>
+                    <li>Plan the notification strategy assuming stolen data will be public, regardless of what the negotiator says.</li>
+                    <li>Work toward a root-cause fix before restoring services. Restoring without patching the initial access vector is how you get ransomed a second time.</li>
+                </ul>
+
+                <p>The ransomware decision is an executive decision made on incomplete information in hostile conditions. Slow it down. Get legal and insurance in the room. Assume the worst-case disclosure outcome regardless. And if you pay, pay because the math and the law say to — never because it "feels faster."</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

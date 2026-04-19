@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MFA Is Necessary. It's Not Sufficient. — MacwanGrid</title>
+    <meta name="description" content="MFA fatigue, adversary-in-the-middle, OAuth abuse, SIM swap. Why push-based MFA is no longer enough and what real MFA maturity looks like in 2026.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MFA Is Necessary. It's Not Sufficient.">
+    <meta property="og:description" content="MFA fatigue, adversary-in-the-middle, OAuth abuse, SIM swap. Why push-based MFA is no longer enough and what real MFA maturity looks like in 2026.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-22T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/mfa-necessary-not-sufficient.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-03-22</span>
+                <span>5 min read</span>
+            </div>
+            <h1>MFA Is Necessary. It's Not Sufficient.</h1>
+            <div class="article-body">
+                <p>If you are still measuring your identity program by "MFA coverage percentage," you are measuring 2019. The adversaries moved on. Push-based MFA, SMS codes, and even TOTP are now routinely defeated by attackers who are not particularly sophisticated. The question is not whether you have MFA. The question is whether your MFA survives contact with a motivated attacker.</p>
+
+                <h2>What actually breaks MFA in 2026</h2>
+                <p>Four attack patterns dominate real incidents I have reviewed:</p>
+                <ul>
+                    <li><strong>MFA fatigue / push bombing.</strong> The 2022 Uber breach by a Lapsus$-affiliated actor is the textbook case: contractor credentials phished, then push prompts spammed until the user tapped approve. Still works. Still used.</li>
+                    <li><strong>Adversary-in-the-middle (AiTM).</strong> Toolkits like <code>Evilginx</code> and the commodity phishing-as-a-service kits that wrap it proxy the entire auth flow and steal the session cookie. Your MFA fires correctly. The attacker gets a valid session anyway.</li>
+                    <li><strong>OAuth and consent-grant abuse.</strong> No password, no MFA prompt — just a malicious app the user approved. Microsoft 365 and Google Workspace are the common targets. The logs look boring until you know what to look for.</li>
+                    <li><strong>SIM swap.</strong> SMS-based MFA on a privileged account is a single phone-store social engineer away from compromise. This is not hypothetical — SEC officials and crypto executives have been hit repeatedly.</li>
+                </ul>
+
+                <h2>What MFA maturity actually looks like</h2>
+                <p>Real maturity is not a checkbox. It is a set of deliberate choices:</p>
+                <ul>
+                    <li><strong>Phishing-resistant factors for privileged access.</strong> FIDO2 hardware tokens (YubiKey, Feitian) or platform authenticators with attestation. For domain admins, cloud admins, and finance leadership, this is no longer optional.</li>
+                    <li><strong>Number matching and context on push.</strong> If you must use push, enforce number matching and show geo/IP/app context. Microsoft made this default in 2023 for a reason.</li>
+                    <li><strong>Session and token hygiene.</strong> Short session lifetimes for privileged roles, Continuous Access Evaluation on Entra ID, device binding, and token-theft detection. An AiTM attack is only valuable for as long as the cookie lives.</li>
+                    <li><strong>Passkeys as the default for new applications.</strong> Synced passkeys for workforce use, device-bound passkeys for high-assurance. The ergonomics are finally good enough that users stop complaining.</li>
+                    <li><strong>OAuth app governance.</strong> Block unverified publishers, require admin consent, and actually review the app inventory. Most tenants have dozens of approved apps nobody can name.</li>
+                </ul>
+
+                <h2>Kill SMS for anything that matters</h2>
+                <p>SMS-based MFA should be a fallback only, and never for privileged accounts. If your help desk can reset MFA over a phone call with a name and a date of birth, your MFA program is a theatre prop. Help desk identity verification is now part of the attack surface. The <code>Scattered Spider</code> crew has made this explicit.</p>
+
+                <blockquote>MFA bought us a decade of relative safety at the password layer. That decade is over. Identity is now a detection problem as much as a prevention problem.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Audit your MFA configuration through an attacker's eyes, not an auditor's. Which accounts still accept SMS? Which admins can approve a push on the first prompt? Which tenant allows user-consented OAuth apps? Pick one of those and close it this quarter. Repeat until the easy paths are gone. MFA is a floor, not a ceiling.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

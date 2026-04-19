@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM-Powered Runbooks: Where They Actually Work — MacwanGrid</title>
+    <meta name="description" content="LLMs augment runbooks well, but only after you stop treating them as answer engines. The pattern that actually works in production on-call.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="LLM-Powered Runbooks: Where They Actually Work">
+    <meta property="og:description" content="LLMs augment runbooks well, but only after you stop treating them as answer engines. The pattern that actually works in production on-call.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-26T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/llm-powered-runbooks-where-they-work.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-03-26</span>
+                <span>6 min read</span>
+            </div>
+            <h1>LLM-Powered Runbooks: Where They Actually Work</h1>
+            <div class="article-body">
+                <p>The first time I watched a junior engineer paste a Grafana screenshot into ChatGPT at 2 a.m. and ask "what do I do," I knew two things. One, the runbook we had spent three months writing was never going to be read. Two, if I didn't give them a sanctioned path, they would keep doing this against unsanctioned tools.</p>
+
+                <p>Eighteen months later, LLM-augmented runbooks are one of the most useful things we have deployed. But almost none of the early patterns worked. Here is what stuck.</p>
+
+                <h2>Stop treating the LLM as an answer engine</h2>
+                <p>The failure mode in the first three months was always the same. An engineer asks the model "the payments service is throwing 5xx, what should I do." The model confidently recommends a restart procedure that would have been correct in 2023 but is wrong for our current topology. The engineer, tired, executes it. We learn a new way to make things worse.</p>
+
+                <p>The fix is structural. The LLM does not get to answer operational questions from its training weights. It gets to retrieve from our runbook corpus, summarize what it found, and cite the source. If there is no source, the answer is "I do not have documented guidance for this, escalate." That last sentence is the most important feature.</p>
+
+                <h2>Retrieval-augmented, evidence-first</h2>
+                <p>Our stack is unglamorous. Runbooks live in Confluence and a Git repo. A nightly job embeds them with a small open model, stores vectors in Postgres with pgvector, and attaches metadata (service, last-reviewed date, author). At query time, Claude Sonnet gets the top chunks, the engineer's question, and a system prompt that boils down to: answer only from these documents, quote the exact steps, show the source link, and if the evidence is thin say so.</p>
+
+                <p>The "show the source link" part is the difference between a tool on-call trusts and a tool on-call ignores. If the engineer can one-click into the actual runbook, they can sanity-check the summary against the full context. If they cannot, they assume the model hallucinated and type the command into Google anyway.</p>
+
+                <h2>Handling stale docs</h2>
+                <p>Half of any runbook corpus is wrong the day you write it. The other half goes stale inside a quarter. We attach a <code>last_verified</code> date to every chunk and surface it in the response. A runbook last verified fourteen months ago gets flagged in the UI as "stale, confirm before acting." This has done more for docs hygiene than any Confluence campaign I have run in ten years. Engineers now update runbooks because the stale badge is embarrassing.</p>
+
+                <h2>Where it works</h2>
+                <p>Two use cases carried the ROI.</p>
+
+                <p><strong>On-call triage summarization.</strong> When an alert fires, a small agent pulls the last thirty minutes of logs, recent deploy metadata, and matching runbooks. It writes a six-line summary into the incident channel: what is firing, what changed recently, suggested first steps with runbook links, and a confidence rating. Engineers still do the triage. They just start from minute two instead of minute fifteen. On-call handoffs cut roughly 30 percent.</p>
+
+                <p><strong>Change summarization for CAB.</strong> Generating a human-readable summary from a merged PR plus the linked ticket is the kind of task LLMs are genuinely good at. Our change advisory board meetings got shorter because people actually read the pre-reads.</p>
+
+                <h2>Where we stopped</h2>
+                <p>We tried giving the agent execution rights. We stopped. The failure modes are not the ones the demos show. The agent does not go rogue. It does something subtly wrong, confidently, and nobody notices for an hour. For anything that writes to production, the human is the gate. Full stop.</p>
+
+                <p>The ceiling of this pattern is a sharp one: it makes good runbooks great and makes bad runbooks dangerous. Invest in the corpus first. The model is the cheap part.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity Separation in Security Work — MacwanGrid</title>
+    <meta name="description" content="If you research under a pseudonym, your clearnet and shadow identities need real separation — hardware, browsers, writing style, and comms hygiene.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Identity Separation in Security Work">
+    <meta property="og:description" content="If you research under a pseudonym, your clearnet and shadow identities need real separation — hardware, browsers, writing style, and comms hygiene.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-04T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/identity-separation-in-security-work.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-03-04</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Identity Separation in Security Work</h1>
+            <div class="article-body">
+                <p>A lot of people I know who do security research use a pseudonym for part of their work. Most of them do it wrong. "Different username and a VPN" is not identity separation; it's a thin costume that survives a single mistake. Real separation is a discipline that extends into hardware, habits, and writing style, and most people underestimate how much of it is habit.</p>
+
+                <h2>Threat Model Per Identity</h2>
+                <p>Before you build a second identity, write down the threat model for each one.</p>
+                <ul>
+                    <li><strong>Clearnet identity</strong> — usually corporate. Threat: reputational damage if linked to controversial research, even legitimate research.</li>
+                    <li><strong>Research identity</strong> — pseudonymous. Threat: deanonymization by adversaries whose services you study; harassment from their affiliates; occasionally, legal attention if law enforcement wants to understand who's been scraping.</li>
+                </ul>
+                <p>The separation you need is exactly what defends the weaker identity against the adversary of the stronger one. If your research adversary is a ransomware crew, you defend against forum-based OSINT and IP correlation. If your adversary is a nation-state, the bar is much, much higher and honestly beyond what most individuals can meet.</p>
+
+                <h2>Dedicated Hardware and VMs</h2>
+                <p>The sanitary arrangement looks like this:</p>
+                <ul>
+                    <li>A dedicated laptop, bought with cash if your threat model warrants it, that never joins your home Wi-Fi under its MAC and never logs into any account tied to your real identity.</li>
+                    <li>Or, more commonly, a Whonix-Workstation VM on a host that itself only ever talks to Tor from a specific network segment.</li>
+                    <li>A time-of-day discipline: research identity only during certain hours, so behavior patterns don't line up with your corporate Slack activity.</li>
+                </ul>
+                <p>VirtualBox snapshots are your friend. Compromise in the Workstation? Revert. New identity phase? Fresh VM from base image.</p>
+
+                <h2>Browser Fingerprinting and Writing Style</h2>
+                <p>Tor Browser normalizes a huge amount of the browser-level fingerprint — screen size, fonts, user agent, timezone. Using anything else to access your research identity erodes that. Don't check your pseudonym's forum with Chrome "just to see." You leak a fingerprint that sits next to your clearnet fingerprint forever.</p>
+                <p>More subtly, <strong>stylometry</strong> is real. Your sentence rhythm, punctuation choices, favorite words, and mistakes cluster together. Academic work on authorship attribution (see the JStylo / Anonymouth line of research) can distinguish authors with meaningful accuracy on samples as short as 5,000 words. Countermeasures: write short, avoid your idioms, don't reuse jokes, run drafts through a paraphraser only as a sanity check, and never paste content between identities.</p>
+
+                <h2>Communications Hygiene and Lessons from Failures</h2>
+                <p>Email: separate provider, separate password manager vault, accessed only from the separate VM. PGP keys never overlap. Signal or XMPP+OTR for real-time if needed, on separate phones or separate VMs.</p>
+                <p>The cautionary tales are worth reading carefully:</p>
+                <ul>
+                    <li><strong>Ross Ulbricht</strong> was linked to Silk Road partly because he used the same early-stage pseudonym ("altoid") across a Bitcoin forum and Stack Overflow, and partly because he asked a coding question on SO under his real name that mirrored work done on the market. A single account crossover was enough.</li>
+                    <li><strong>Alexandre Cazes</strong> (AlphaBay) was found partly because his personal Hotmail address appeared in the welcome-email headers sent by the marketplace. One configuration mistake.</li>
+                </ul>
+                <p>Identity separation is mostly about refusing small conveniences a thousand times. It's tedious. It's also the only thing that works. If you're not willing to be tedious about it, don't run the pseudonym — it's a liability pretending to be a shield.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

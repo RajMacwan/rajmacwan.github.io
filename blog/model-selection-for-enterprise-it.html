@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Selection for Enterprise IT — MacwanGrid</title>
+    <meta name="description" content="The LLM you pick for enterprise IT is not the one on the ChatGPT homepage. A framework for choosing between Claude, GPT, Gemini, and Llama.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Model Selection for Enterprise IT">
+    <meta property="og:description" content="The LLM you pick for enterprise IT is not the one on the ChatGPT homepage. A framework for choosing between Claude, GPT, Gemini, and Llama.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-07T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/model-selection-for-enterprise-it.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-03-07</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Model Selection for Enterprise IT</h1>
+            <div class="article-body">
+                <p>Every few months a new model tops the public leaderboards and the question lands in my inbox: should we switch. The honest answer is almost always "probably not, and anyway you are asking the wrong question." The model you pick for an enterprise IT workload has almost nothing to do with the number at the top of the leaderboard and almost everything to do with constraints the leaderboard does not measure.</p>
+
+                <h2>Start with the constraints, not the benchmark</h2>
+                <p>Before any capability question, answer these:</p>
+
+                <ul>
+                    <li><strong>Data residency.</strong> Where can this data legally be processed? For European or healthcare data you often cannot send it to a US inference endpoint at all, regardless of contractual assurances.</li>
+                    <li><strong>Latency budget.</strong> Is this interactive (sub-second)? Near-real-time (a few seconds)? Batch (minutes)? That choice kills half the options immediately.</li>
+                    <li><strong>Volume.</strong> Ten queries a day or ten million? At scale, a 10x cost difference per token is the difference between a pilot and a budget memo.</li>
+                    <li><strong>Tolerance for errors.</strong> What does a wrong answer cost? A summary is cheap. A ticket routed to the wrong team is more expensive. A command executed against production is career-ending.</li>
+                </ul>
+
+                <h2>Open versus closed</h2>
+                <p>This debate is more religion than engineering. The pragmatic take: closed models (Claude, GPT-4o, Gemini) are currently the best at the highest-difficulty tasks. Open-weight models (Llama, Qwen, Mistral, Gemma) have closed most of the gap on mid-difficulty tasks at a fraction of the cost and with full control.</p>
+
+                <p>Run the closed model for the hard 20 percent of your volume. Run the open model on your own infrastructure for the easy 80 percent. A small router model decides which is which. Most of our workload now runs on a Llama variant hosted on vLLM. Claude handles the hard cases. Costs went down by roughly 70 percent without a measurable quality regression.</p>
+
+                <h2>Small specialized beats giant generic</h2>
+                <p>The most counterintuitive result of the last two years: for a narrowly defined task, a small fine-tuned model frequently beats a giant general-purpose one. A 7B parameter model fine-tuned on your ticket-classification data will outperform GPT-4o at the specific task, at one-hundredth the cost and with lower latency. It will be dumber at everything else. For that one task, you do not care.</p>
+
+                <p>This is the pattern I would evaluate before assuming you need a frontier model: can you define the task narrowly enough to fine-tune a small specialist.</p>
+
+                <h2>Fine-tuning economics</h2>
+                <p>Fine-tuning is worthwhile when you have clear task specifications, a few thousand high-quality examples, stable requirements, and volume that justifies it. It is a trap when any of those are missing. Most teams that asked me about fine-tuning in 2024 should have been asking about better prompts or better retrieval instead.</p>
+
+                <p>If you do fine-tune, budget for re-tuning. Your task definition will drift. The base model will get a new version. You will do this more than once.</p>
+
+                <h2>Quick sketch of the frontier options</h2>
+                <p><strong>Claude (Anthropic).</strong> Best instruction-following in my evals. Strong on long-context reasoning and structured extraction. Competitive pricing. Good enterprise contract terms.</p>
+                <p><strong>GPT-4o / o-series (OpenAI).</strong> Broadest ecosystem. Best-in-class tool calling. The reasoning models are genuinely useful for planning tasks. Pricing is tier-dependent.</p>
+                <p><strong>Gemini (Google).</strong> The best long-context window in the business if you actually need two-million-token prompts. Tight integration with Google Cloud and Workspace. Quality is competitive if uneven.</p>
+                <p><strong>Llama (Meta) and friends.</strong> The default for self-hosted. The 70B and larger variants are respectable on most tasks. The real win is control, not raw quality.</p>
+
+                <h2>How I actually decide</h2>
+                <p>Write down the task. Define three to five evaluation examples that a correct answer must get right. Run them against two or three candidate models. Measure cost, latency, and quality on your actual data, not on MMLU. Pick the cheapest option that clears the quality bar with margin. Revisit in six months, because the landscape will have moved.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

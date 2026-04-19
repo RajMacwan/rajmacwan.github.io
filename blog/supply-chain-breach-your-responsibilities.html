@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Breach: Your Responsibilities — MacwanGrid</title>
+    <meta name="description" content="When your vendor gets breached: contract review, shared-responsibility models, customer notification chain, legal exposure, and contract language to add.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Supply Chain Breach: Your Responsibilities">
+    <meta property="og:description" content="When your vendor gets breached: contract review, shared-responsibility models, customer notification chain, legal exposure, and contract language to add.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-11T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/supply-chain-breach-your-responsibilities.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                <span>Published 2026-02-11</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Supply Chain Breach: Your Responsibilities</h1>
+            <div class="article-body">
+                <p>Your vendor gets breached. Your company's data is in scope. You are not the one with the incident to remediate, but you still have work — legal, communications, technical, and contractual — that is on you, not on them. The organizations that handle these well have thought about the roles before the call comes. The ones that handle them poorly learn on the job, usually badly.</p>
+
+                <h2>The First Call Is to Counsel</h2>
+                <p>Before you do anything else — before you engage the vendor's "incident hotline," before you draft a customer note — your GC is in the room. A supply chain breach is a legal event for you. Data subjects may sue you, not the vendor. Regulators may hold you accountable as the controller even when the processor is at fault. Counsel drives.</p>
+
+                <h2>Pull the Contract Immediately</h2>
+                <p>Your Master Services Agreement and Data Processing Addendum answer most of the early questions:</p>
+                <ul>
+                    <li>Notification timeline — what does the vendor owe you and when? Is "without undue delay" or a specific number of hours specified?</li>
+                    <li>Information rights — can you demand a forensic report, an audit, or direct access to evidence?</li>
+                    <li>Cooperation obligations — are they required to assist with your downstream notifications?</li>
+                    <li>Liability caps and carve-outs — is security and data protection carved out from the general cap?</li>
+                    <li>Indemnification — are you covered for third-party claims arising from the vendor's breach?</li>
+                    <li>Data return/deletion — does the contract let you pull your data out for a quick migration?</li>
+                </ul>
+                <p>If the contract is thin in any of these areas, you have a capability gap today and a contract-remediation project after.</p>
+
+                <h2>The Shared-Responsibility Reality</h2>
+                <p>Every major cloud and SaaS vendor publishes a "shared responsibility model" that describes what they secure and what you secure. The pattern is consistent: they secure the platform; you secure your data, your users, and your configurations.</p>
+                <p>In a supply chain breach, walk that model deliberately:</p>
+                <ul>
+                    <li><strong>Was the compromise in the vendor's layer?</strong> (Their infrastructure, their code.) Then liability largely sits with them — subject to your contract.</li>
+                    <li><strong>Was the compromise in your layer inside their platform?</strong> (Your misconfigured bucket, your leaked API key, your user's compromised credential.) Then liability largely sits with you, even if the platform is what got touched.</li>
+                    <li><strong>Was it a shared failure?</strong> (Their default was insecure, you did not change it.) Expect the contract to be the battleground.</li>
+                </ul>
+
+                <h2>Your Customer Notification Chain</h2>
+                <p>Here is the part that surprises a lot of organizations: your customers (or your employees, if employee data is involved) generally want to hear from <em>you</em>, not from your vendor. You are their counterparty. You chose the vendor. You own the relationship.</p>
+                <p>Steps:</p>
+                <ol>
+                    <li>Determine what data of yours — and by extension, your customers' — was affected.</li>
+                    <li>Assess your notification obligations under state law, GDPR, HIPAA, or sector rules.</li>
+                    <li>Coordinate with the vendor on messaging so your notice and their notice do not contradict each other.</li>
+                    <li>Draft your customer notice with counsel. Reference the vendor by name only after careful consideration; blaming publicly can backfire legally and commercially.</li>
+                    <li>Provide a dedicated response channel for customer questions.</li>
+                    <li>Track notification completion state per customer, per jurisdiction.</li>
+                </ol>
+
+                <h2>Technical Response on Your Side</h2>
+                <p>Even when the incident is the vendor's, you have technical work:</p>
+                <ul>
+                    <li>Rotate any credentials, API keys, OAuth tokens, and secrets shared with the vendor. Even if the vendor says "only X system was affected," rotate broadly.</li>
+                    <li>Review recent data exchanges with the vendor — did anything unusual flow in or out in the affected window?</li>
+                    <li>Review your own logs for any sign of pivoting from the vendor's compromised environment into yours.</li>
+                    <li>Assess whether vendor-provided software or libraries embedded in your products need to be updated or replaced.</li>
+                    <li>Evaluate fallback vendors and migration cost if you decide to move.</li>
+                </ul>
+
+                <h2>Regulatory Exposure</h2>
+                <p>Under GDPR, you as controller remain on the hook for processor failures. Under many state laws, you as the business that "owns" the data set notify residents regardless of where the compromise happened. Under HIPAA, a business associate breach is your business associate's duty to report to you; yours to assess and notify downstream. Under SEC Reg S-K Item 106, your material-cybersecurity incident disclosure clock is tied to your determination of materiality, not your vendor's.</p>
+                <p>None of these regimes allow you to point at the vendor and say "not our problem." The contract may reallocate economic liability between you and the vendor; it does not move regulatory liability.</p>
+
+                <h2>Contract Language to Add for Next Time</h2>
+                <p>Take this breach as tuition and update your standard contract template. Language that pays for itself:</p>
+                <ul>
+                    <li><strong>Short notification windows.</strong> "Vendor shall notify Customer within 24 hours of discovery of any Security Incident."</li>
+                    <li><strong>Right to forensics.</strong> "Customer shall have the right to review the final forensic report and, at Customer's expense, to engage an independent forensic firm subject to reasonable confidentiality protections."</li>
+                    <li><strong>Cooperation with notifications.</strong> "Vendor shall provide all information reasonably necessary for Customer to fulfill notification obligations to its customers, data subjects, and regulators."</li>
+                    <li><strong>Security incident carve-out from liability cap</strong> — or a super-cap (e.g., 3x annual fees) specifically for data protection failures.</li>
+                    <li><strong>Audit rights</strong> with reasonable notice.</li>
+                    <li><strong>Subprocessor transparency</strong> — a current list, change notice, right to object.</li>
+                    <li><strong>Termination for material breach</strong> with data return and deletion obligations.</li>
+                </ul>
+
+                <h2>Posture Going Forward</h2>
+                <p>Supply chain incidents are now the modal enterprise breach. Your vendor risk program should assume that every vendor will, at some point during the relationship, be breached. Build the response muscle for that — tabletop a vendor breach annually, keep a template response, and know which of your vendors hold which of your data. When it happens, you work the plan instead of writing it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

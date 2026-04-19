@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Architecture for Hybrid Work — MacwanGrid</title>
+    <meta name="description" content="The VPN-everywhere model broke during COVID and most orgs never rebuilt. What modern hybrid-work network architecture looks like in 2026 — ZTNA, SASE, split DNS, direct-to-SaaS.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Network Architecture for Hybrid Work">
+    <meta property="og:description" content="The VPN-everywhere model broke during COVID and most orgs never rebuilt. What modern hybrid-work network architecture looks like.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-27T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/network-architecture-hybrid-work.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-02-27</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Network Architecture for Hybrid Work</h1>
+            <div class="article-body">
+                <p>In March 2020, every enterprise VPN concentrator got a call it wasn't sized for. Ops teams doubled capacity over a weekend, pushed full-tunnel configs to laptops that would now route Zoom through headquarters, and declared victory. Six years later, a surprising number of those same configurations are still running. The pandemic broke the network architecture. Nobody rebuilt it.</p>
+
+                <p>Hybrid work isn't a temporary condition. It's the operating mode. And the operating mode doesn't fit an architecture designed to pull every packet back to a corporate firewall before it reaches Microsoft 365.</p>
+
+                <h2>The VPN-everywhere problem</h2>
+                <p>The full-tunnel VPN was built for a world where most of what the user needed lived inside the corporate network — file shares, intranet apps, AD-integrated services. In 2026 that distribution has inverted. The user opens their laptop and immediately talks to M365, Salesforce, ServiceNow, GitHub, a handful of SaaS tools, and maybe — maybe — one or two internal apps.</p>
+                <p>Routing that traffic through a VPN concentrator in us-east-1 to reach a Microsoft endpoint also in us-east-1 is absurd. The user experience is bad, the backhaul is expensive, and the security theater is just that — theater. The VPN isn't inspecting TLS, your SaaS vendors already authenticate the user, and the only thing the detour accomplishes is worse latency.</p>
+
+                <h2>ZTNA and SASE: what's real, what's marketing</h2>
+                <p>Zero Trust Network Access (ZTNA) is the replacement for the always-on VPN. SASE (Secure Access Service Edge) is the marketing umbrella that bundles ZTNA with SWG, CASB, DLP, and FWaaS. The real vendors in 2026 — Zscaler, Netskope, Cloudflare, Palo Alto Prisma — deliver most of these actually working, with wildly varying quality per module.</p>
+                <p>What you want architecturally:</p>
+                <ul>
+                    <li><strong>Identity-aware proxy</strong> in front of internal applications. No IP allowlisting, no VPN. The user authenticates to the proxy; the proxy brokers the connection to the internal app. Cloudflare Access, Google IAP, Tailscale, Twingate, Zscaler Private Access — pick your flavor.</li>
+                    <li><strong>Direct-to-SaaS routing</strong> for M365, Salesforce, etc. The endpoint connects to the SaaS over the open internet. Authentication, DLP, and threat inspection happen at a cloud-hosted security edge, not in your datacenter.</li>
+                    <li><strong>Split DNS with intelligent routing.</strong> Internal hostnames resolve to the ZTNA proxy. External hostnames resolve normally. No "VPN on/off" toggle.</li>
+                    <li><strong>Device posture</strong> as an access condition. The ZTNA broker checks the MDM signal before brokering.</li>
+                </ul>
+
+                <h2>DNS-based split tunneling is the unglamorous win</h2>
+                <p>The fastest wins I've seen on hybrid-work network projects aren't rip-and-replace. They're DNS. Move to a managed resolver (Cloudflare Gateway, Cisco Umbrella, NextDNS for smaller shops), push it to endpoints via MDM, and let it make routing decisions:</p>
+                <blockquote>Resolve *.corp.example.com to the ZTNA broker. Resolve *.microsoft.com, *.salesforce.com, *.okta.com direct. Block known-bad domains at the resolver. Log everything.</blockquote>
+                <p>This is a weekend of work for a mid-size org and eliminates 80% of the reasons anyone had a full-tunnel VPN in the first place. It also gives you DNS-layer threat blocking and visibility for every endpoint, on or off corporate network.</p>
+
+                <h2>When VPN still makes sense</h2>
+                <p>VPN isn't dead. It's narrower.</p>
+                <ul>
+                    <li>Third-party or legacy applications that can't sit behind a modern identity-aware proxy — SCADA, old client-server apps, stuff that speaks proprietary TCP protocols.</li>
+                    <li>Administrative access to network infrastructure itself — jumping to a core switch or firewall management interface.</li>
+                    <li>Site-to-site connectivity — between datacenters, between cloud VPCs, between offices. IPsec and WireGuard aren't going anywhere here.</li>
+                    <li>Offline-first field scenarios where intermittent connectivity and bulk data transfer make a tunnel the simpler model.</li>
+                </ul>
+                <p>The distinction: VPN for <em>specific, justified</em> use cases. Not "VPN by default, exceptions on request."</p>
+
+                <h2>What the office network becomes</h2>
+                <p>If all the security controls live at the identity and edge layer, what's the corporate LAN for? Mostly: print, conference room AV, on-site-only peripherals, and a reasonably good internet uplink. Treat the office network like a hotel network — untrusted by default, nothing sensitive on it, wired to the same ZTNA broker your remote users hit. SD-WAN for branches, direct internet breakout, no MPLS nostalgia.</p>
+
+                <p><strong>The takeaway:</strong> If your hybrid-work architecture still starts with "connect to VPN," you're running 2015's network in 2026's operating model. Push DNS and identity to the edge, put internal apps behind an identity-aware proxy, and keep the VPN for the specific cases that actually need it. The user experience improves, the attack surface shrinks, and your VPN capacity becomes a budget line you can actually reduce.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

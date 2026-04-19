@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITRE ATT&amp;CK for Defenders — MacwanGrid</title>
+    <meta name="description" content="ATT&CK is a framework, not a checklist. Most orgs use it like a bingo card. Here's how to use it as a design language.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MITRE ATT&CK for Defenders">
+    <meta property="og:description" content="ATT&CK is a framework, not a checklist. Most orgs use it like a bingo card. Here's how to use it as a design language.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-14T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/mitre-attack-for-defenders.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-02-14</span>
+                <span>7 min read</span>
+            </div>
+            <h1>MITRE ATT&amp;CK for Defenders</h1>
+            <div class="article-body">
+                <p>ATT&amp;CK is the best thing to happen to detection engineering in twenty years, and it is also widely misused. Most orgs treat the matrix as a bingo card — colour a cell green when they have "coverage," count the greens, brief the board, repeat. This produces the illusion of progress and, in the worst cases, actively misleads defenders about their posture.</p>
+
+                <p>ATT&amp;CK is a design language, not a scoreboard. Here is how to use it like one.</p>
+
+                <h2>What ATT&amp;CK Actually Is</h2>
+                <p>MITRE ATT&amp;CK is a curated, versioned knowledge base of adversary techniques derived from real-world incident observation — primarily by MITRE, Mandiant, Microsoft, CrowdStrike, and other contributors. The structure is tactics (the "why" — initial access, persistence, privilege escalation, etc.), techniques and sub-techniques (the "how"), and references to procedures and groups observed using them.</p>
+
+                <p>Important: it was built from post-incident forensics of sophisticated intrusions. It is biased toward what gets written up — which means APT-style targeted attacks are overrepresented and commodity threats, while present, are less granular. This matters when you use it to scope defensive priorities.</p>
+
+                <h2>Honest Coverage Mapping</h2>
+                <p>A real coverage map is not "do we have a rule that might fire for T1059.001 PowerShell?" It is:</p>
+
+                <ul>
+                    <li><strong>Which specific procedures under this technique are we covering?</strong> PowerShell has dozens of sub-patterns — encoded commands, downloader stubs, AMSI bypass, IEX invocation, scheduled task execution via WMI. You need to be granular.</li>
+                    <li><strong>What is our detection quality?</strong> Alert only, alert + context, alert + automated response. A raw alert that nobody triages is not coverage.</li>
+                    <li><strong>What is our false-positive rate?</strong> A rule that fires on every admin workstation is not coverage; it is training your SOC to click "suppress."</li>
+                    <li><strong>Have we tested it?</strong> Atomic Red Team execution, purple-team validation, detection-as-code pipeline output. Untested rules often silently break when logging sources shift.</li>
+                </ul>
+
+                <p>Red Canary's detection engineering writeups and SpecterOps' "on detection" series by Jared Atkinson are the standard-setting reads on doing this honestly. The MITRE ATT&amp;CK Navigator is the visualization layer; color cells with a meaningful scale, not binary.</p>
+
+                <h2>Threat-Informed Defense</h2>
+                <p>You do not need coverage across every ATT&amp;CK cell. You need coverage against the techniques actually used by adversaries targeting organizations like yours. This is the core insight of threat-informed defense — a concept MITRE's Center for Threat-Informed Defense has formalized.</p>
+
+                <p>Practical sequence: (1) identify the threat groups relevant to your sector and geography (operational intel), (2) export their technique coverage from ATT&amp;CK Navigator, (3) overlay with your detection inventory, (4) prioritize gaps where the technique is common across multiple relevant groups. The overlap areas — the techniques used by everyone from Scattered Spider to APT41 to LockBit affiliates (credential dumping, Kerberoasting, SMB lateral movement, living-off-the-land binaries) — are where to spend first. These are also the most heavily-telegraphed techniques in open research; coverage is achievable.</p>
+
+                <h2>ATT&amp;CK in Purple Teams</h2>
+                <p>This is where ATT&amp;CK earns its reputation. A purple team engagement becomes scoping-trivial when framed in ATT&amp;CK terms: "exercise T1566.001 + T1059.001 + T1547.001 + T1021.002 + T1041" is a complete initial-access-to-exfil chain in fifteen seconds of specification. Atomic Red Team gives you reference implementations. Caldera orchestrates sequences. The exercise output maps one-for-one back to detection gaps you can prioritize.</p>
+
+                <p>The failure mode to avoid: running Atomic Red Team tests in isolation, firing individual techniques, and declaring victory on the ones that alert. Adversaries chain techniques. Your detections need to perform in chains too — context and correlation across MITRE tactics is where realistic attacks actually differentiate from isolated lab tests.</p>
+
+                <h2>The Framework's Limits</h2>
+                <p>Three known biases to account for:</p>
+
+                <p><strong>APT-centric historical bias.</strong> Less-documented techniques common in commodity ransomware or business email compromise can be underrepresented at the sub-technique level, though MITRE has worked to close this in recent versions.</p>
+
+                <p><strong>Post-incident view.</strong> ATT&amp;CK describes what was observed after a successful intrusion. Pre-compromise and social-engineering heavy chains (vishing, helpdesk abuse, MFA fatigue) are captured in the PRE matrix but at a different granularity than the main matrix.</p>
+
+                <p><strong>Platform scope.</strong> Enterprise ATT&amp;CK focuses on Windows, macOS, Linux, cloud, containers, network infrastructure. Mobile ATT&amp;CK and ICS ATT&amp;CK are separate and less mature. If your threat model is heavy on OT or mobile, you will need supplementary frameworks.</p>
+
+                <h2>Adapting for Your Environment</h2>
+                <p>Not every technique applies to every organization. A regional manufacturer probably does not need deep coverage of every cloud-specific sub-technique; a cloud-native SaaS company almost certainly does. Build a custom "priority matrix" — a subset of techniques weighted by relevance to your threat model, stack, and regulatory environment. Review it quarterly as the landscape shifts.</p>
+
+                <p>That custom matrix is the artifact you brief to your board. Not the full Enterprise matrix colored green. The green Enterprise matrix tells them you bought tools. The custom priority matrix tells them you thought.</p>
+
+                <h2>The Practitioner's ATT&amp;CK Stance</h2>
+                <p>Use ATT&amp;CK as a shared vocabulary between intel, detection, IR, red team, purple team, and audit. Do not use it as a measurement of completeness. No organization covers all of ATT&amp;CK. The mature ones cover the techniques their adversaries actually use, honestly, with tested detections, and they keep updating as the adversaries do.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

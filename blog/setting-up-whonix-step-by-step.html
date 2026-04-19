@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setting Up Whonix: Step by Step — MacwanGrid</title>
+    <meta name="description" content="A hands-on walkthrough of installing Whonix on Windows with VirtualBox, bootstrapping Tor, publishing a first onion service, and avoiding common pitfalls.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Setting Up Whonix: Step by Step">
+    <meta property="og:description" content="A hands-on walkthrough of installing Whonix on Windows with VirtualBox, bootstrapping Tor, publishing a first onion service, and avoiding common pitfalls.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-24T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/setting-up-whonix-step-by-step.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-24</span>
+                <span>7 min read</span>
+            </div>
+            <h1>Setting Up Whonix: Step by Step</h1>
+            <div class="article-body">
+                <p>Whonix is two VMs working together: a Gateway that talks to Tor, and a Workstation that routes all its traffic through the Gateway. Nothing on the Workstation can leak outside Tor — not DNS, not an NTP query, not a misbehaving app. That isolation is the whole point.</p>
+                <p>This is how I install it on Windows 11 using Oracle VirtualBox 7.0. The same steps work on Linux with minor changes.</p>
+
+                <h2>1. Prep the Host</h2>
+                <p>Before you download anything, deal with Hyper-V. If Hyper-V is enabled, VirtualBox will run in an emulated slow mode and Whonix will crawl. Disable it:</p>
+                <pre><code># Run as administrator
+bcdedit /set hypervisorlaunchtype off
+DISM /Online /Disable-Feature:Microsoft-Hyper-V-All
+# Reboot</code></pre>
+                <p>If you use WSL2 or Docker Desktop, this will break them. Pick your compartment and stick with it — ideally a dedicated host for privacy work.</p>
+                <p>Install VirtualBox 7.0.x plus the matching Extension Pack. Confirm VT-x is enabled in BIOS.</p>
+
+                <h2>2. Download and Verify Whonix</h2>
+                <p>Grab the Whonix-Xfce OVA from whonix.org. Two things are non-negotiable:</p>
+                <ul>
+                    <li>Verify the OpenPGP signature. The Whonix signing key fingerprint is <code>916B 8D99 C38E AF5E 8ADC 7A2A 8D66 066A 2EEA CCDA</code>.</li>
+                    <li>Verify the SHA-512 hash published next to the download.</li>
+                </ul>
+                <pre><code>gpg --verify Whonix-Xfce-17.*.ova.asc Whonix-Xfce-17.*.ova
+certutil -hashfile Whonix-Xfce-17.*.ova SHA512</code></pre>
+                <p>If either check fails, do not import. Download again from a different network.</p>
+
+                <h2>3. Import and First Boot</h2>
+                <p>In VirtualBox, File → Import Appliance → point at the OVA. It creates both the Whonix-Gateway and Whonix-Workstation VMs plus an internal network called <code>Whonix</code> that connects them.</p>
+                <p>Start the Gateway first. Walk through the Anon Connection Wizard — for most home networks, pick "Connect" unless you are in a censored region that needs bridges. Wait for the progress bar to show "Bootstrapping done: 100%". That typically takes 60 to 120 seconds.</p>
+                <p>Now start the Workstation. Open Tor Browser from the menu. Load <code>check.torproject.org</code>. If it confirms Tor, you are live.</p>
+
+                <h2>4. Publish Your First Onion Service</h2>
+                <p>This is done on the Gateway, not the Workstation. SSH in or use the console:</p>
+                <pre><code>sudo nano /usr/local/etc/torrc.d/50_user.conf</code></pre>
+                <p>Add:</p>
+                <pre><code>HiddenServiceDir /var/lib/tor/my_first_onion/
+HiddenServicePort 80 10.152.152.11:80
+HiddenServiceVersion 3</code></pre>
+                <p>Where <code>10.152.152.11</code> is the default Workstation IP on the internal Whonix network. Restart Tor: <code>sudo systemctl restart tor@default</code>. Your onion address appears in <code>/var/lib/tor/my_first_onion/hostname</code>.</p>
+                <p>On the Workstation, install nginx: <code>sudo apt install nginx</code>, drop a test index.html, and browse to your new v3 onion from any Tor Browser in the world.</p>
+
+                <h2>5. Common Pitfalls</h2>
+                <ul>
+                    <li><strong>Hyper-V sneaks back on.</strong> Windows updates, WSL installs, and Docker Desktop all flip the hypervisor flag. Re-run <code>bcdedit</code> after every feature update.</li>
+                    <li><strong>Shared folders do not work.</strong> By design — they would be a de-anonymization vector. Use the clipboard sharing in Qubes-Whonix or, on standalone Whonix, move files through the internal network with scp.</li>
+                    <li><strong>Time drift breaks Tor.</strong> If your host clock is more than a few minutes off, the Tor consensus check fails. Whonix uses sdwdate internally — let it settle before troubleshooting anything else.</li>
+                    <li><strong>Do not install Guest Additions.</strong> Ever. It defeats the isolation.</li>
+                    <li><strong>Updates go through Tor.</strong> <code>sudo apt update</code> will feel slow. That is correct behavior.</li>
+                </ul>
+
+                <p>Spend an afternoon here. Whonix is one of the cleanest compartmentalization tools available, and the setup pays for itself the first time you need to do any sensitive research.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

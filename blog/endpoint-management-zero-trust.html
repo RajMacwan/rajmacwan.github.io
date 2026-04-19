@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endpoint Management: Zero Trust for Devices — MacwanGrid</title>
+    <meta name="description" content="Your endpoint is a perimeter segment. Managing it like it's 2015 — domain-joined, full trust — is how you get breached. What modern endpoint management actually looks like.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Endpoint Management: Zero Trust for Devices">
+    <meta property="og:description" content="Your endpoint is a perimeter segment. Managing it like it's 2015 is how you get breached.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-03T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/endpoint-management-zero-trust.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-03-03</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Endpoint Management: Zero Trust for Devices</h1>
+            <div class="article-body">
+                <p>A domain-joined Windows laptop in 2026 is the same security posture as a domain-joined Windows laptop in 2015 — full trust the moment it shows up on the VPN. If you haven't changed that model, the blast radius of a single phished employee is still your entire internal network. That isn't a configuration problem. It's an architectural one.</p>
+
+                <p>The endpoint is a perimeter segment, not a trusted island. It should prove its identity, prove its compliance, and keep proving both every time it touches a resource. The tooling for this has existed for five years. Most enterprises are still configuring it like it's still 2015.</p>
+
+                <h2>Intune and Jamf: the reality, not the brochure</h2>
+                <p>Microsoft Intune handles Windows, macOS, iOS, Android, Linux (sort of). Jamf does macOS and iOS brilliantly and everything else reluctantly. Most enterprises end up running both. That's fine. What isn't fine is running them as asset management tools instead of security posture engines.</p>
+                <p>A baseline Intune configuration that actually moves the needle:</p>
+                <ul>
+                    <li>Compliance policy enforcing disk encryption, OS version floor, firewall on, Defender signatures current, jailbreak/root detection.</li>
+                    <li>Configuration profiles for CIS benchmark baselines — not in "audit mode," in enforcement.</li>
+                    <li>App protection policies on mobile so corporate data can't cross into personal apps.</li>
+                    <li>Autopatch for Windows, not WSUS, not "we'll get to it."</li>
+                </ul>
+                <p>If your MDM fleet report shows 90%+ compliance, you're probably measuring the wrong things. Realistic orgs sit at 70-85% on <em>meaningful</em> compliance checks because endpoints drift, users defer updates, and agents fail. The goal isn't 100%. The goal is that non-compliance has consequences.</p>
+
+                <h2>Device compliance as a Conditional Access signal</h2>
+                <p>This is where endpoint management stops being IT hygiene and becomes security architecture. Entra ID Conditional Access (or Okta Device Trust, or equivalents) lets you say:</p>
+                <blockquote>Access to Salesforce requires: a known user, MFA within 8 hours, a managed device, device compliance = true, sign-in risk = low.</blockquote>
+                <p>Any one of those failing, access denied. This is zero trust for endpoints in practice. It's not a product you buy; it's a set of policies wired between your IdP, your MDM, and your sensitive applications.</p>
+                <p>The failure mode: compliance signals exist, but nothing consumes them. Intune says the laptop is non-compliant; Salesforce doesn't know or care. Close that loop. It's often a weekend of configuration work you've been putting off for a year.</p>
+
+                <h2>BYOD, honestly</h2>
+                <p>Most BYOD policies are fiction. "Employees can use personal devices if they install our MDM profile" — and then no one does, and sensitive email flows through them anyway. The honest options are:</p>
+                <ul>
+                    <li><strong>App-level containerization.</strong> iOS/Android work profiles, Intune App Protection Policies. Corporate data lives in managed apps. Personal data is untouched. This works.</li>
+                    <li><strong>Browser-based isolation.</strong> Island, Talon, Microsoft Edge for Business with disk-write restrictions. For contractors and occasional-access users, a managed browser on an unmanaged device is a reasonable middle.</li>
+                    <li><strong>VDI or CloudPC.</strong> When the device can't be trusted at all, send the user to Windows 365 or AVD. The endpoint becomes a display, not a data store.</li>
+                    <li><strong>No BYOD.</strong> Sometimes the right answer. Not as unpopular as HR thinks, if you ship the hardware quickly.</li>
+                </ul>
+                <p>What doesn't work: pretending personal devices are managed because someone clicked "I agree" on a policy PDF.</p>
+
+                <h2>Trust scoring and unmanaged reality</h2>
+                <p>No matter how good your program is, 5-15% of the devices touching your data will be unmanaged — contractors, M&A inheritances, service accounts on random VMs, that one executive's iPad. A mature endpoint strategy accepts this and scores trust continuously:</p>
+                <ul>
+                    <li>Signals: managed state, compliance, sign-in risk, user risk (Entra ID Protection), EDR telemetry, geo/velocity anomalies.</li>
+                    <li>Tiered access: read-only for medium-trust, full access for high-trust, step-up auth for sensitive actions regardless of tier.</li>
+                    <li>EDR (CrowdStrike, Defender for Endpoint, SentinelOne) feeding the same decision — a device with an active detection should lose access the moment the detection fires, not after the analyst triages.</li>
+                </ul>
+
+                <p><strong>The takeaway:</strong> Device compliance is only as valuable as the access decisions it gates. If your MDM reports aren't feeding your IdP's policy engine, you're running asset management with a security budget. Close the loop, enforce on the result, and accept that unmanaged devices exist — then price access to them accordingly.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

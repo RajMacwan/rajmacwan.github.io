@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreachGrid — Breach Response & Recovery — MacwanGrid</title>
+    <meta name="description" content="What to do when your data has been breached — immediate actions, US authority contacts, credit bureau freezes, identity theft recovery, and regulatory obligations.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BreachGrid — Breach Response & Recovery">
+    <meta property="og:description" content="Complete breach response playbook — who to call, what to do, how to recover.">
+    <meta property="og:site_name" content="MacwanGrid">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://macwangrid.com/breach-grid.html">
+
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="grid-banner grid-banner-breach">
+    <div class="container-narrow">
+        <span class="grid-label">BREACHGRID · Breach Response · Recovery · Authority Contacts</span>
+        <h1>If your data has been breached — read this first.</h1>
+        <p class="grid-lede">
+            A practitioner's breach response guide, US-focused. Immediate actions, who to call,
+            how to freeze your credit, recover your identity, and meet regulatory obligations.
+            Not legal advice — but the operational playbook every person and IT leader should know.
+        </p>
+    </div>
+</section>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+
+            <!-- =========================================
+                 URGENT ALERT
+                 ========================================= -->
+            <div class="urgent-alert">
+                <p style="margin: 0;"><strong>⚠ If this is happening right now:</strong> Don't panic. Don't wipe devices. Don't pay anything. Isolate affected systems from the network, preserve evidence, and start the timeline below. Legal counsel and insurance carrier come <em>before</em> public comms.</p>
+            </div>
+
+            <!-- =========================================
+                 FIRST 24 HOURS TIMELINE
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">Immediate Actions</span>
+                <h2>The First 24 Hours.</h2>
+                <p class="section-lede">
+                    Most breach outcomes are determined in the first 24 hours. The mistakes
+                    happen in the first 60 minutes — from wiping evidence, to paying ransom
+                    without authorization, to notifying the wrong parties.
+                </p>
+            </div>
+
+            <div class="article-body">
+                <div class="timeline-step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h4>Isolate, don't wipe</h4>
+                        <p>Disconnect affected systems from the network (pull the cable / disable Wi-Fi) but <strong>do not power off</strong> unless critical. Memory and running-process evidence is lost on shutdown. Your future forensic investigation depends on this.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h4>Switch to out-of-band communication</h4>
+                        <p>Assume the attacker is reading your email. Use personal phones / Signal / in-person meetings for internal incident comms until you've confirmed the attacker is out. No email, no company chat, no shared documents.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h4>Engage legal counsel FIRST</h4>
+                        <p>Before talking to anyone outside the core response team — loop in an attorney (ideally one familiar with cyber breach response). Legal privilege protects investigation communications. Your IR firm, your insurance claim, your regulatory filings all run through counsel.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <h4>Notify your cyber insurance carrier</h4>
+                        <p>Most policies require notification within a short window (often 24–72 hours) to preserve coverage. They'll also assign a panel IR firm — don't hire one until you've checked. Wrong firm = out-of-pocket costs.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">5</div>
+                    <div class="step-content">
+                        <h4>Engage an incident response firm</h4>
+                        <p>If you don't have one on retainer, your insurance will assign one. They'll triage scope, coordinate forensics, and guide regulatory timelines. Trying to DIY a major breach is where things go permanently wrong.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">6</div>
+                    <div class="step-content">
+                        <h4>Preserve evidence</h4>
+                        <p>No cleanup. No patching. No re-imaging. Nothing until forensics collects images and logs. Document decisions in a running log (date, time, decision, decider). This log becomes critical in legal proceedings.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-step">
+                    <div class="step-num">7</div>
+                    <div class="step-content">
+                        <h4>Activate the IR plan. Don't improvise.</h4>
+                        <p>If you have a documented incident response plan, run it. If you don't, that's tomorrow's problem — today, work with counsel and the IR firm. Avoid ad-hoc decisions at the executive level.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 US AUTHORITY CONTACTS
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">US Authority Contacts</span>
+                <h2>Who to call.</h2>
+                <p class="section-lede">
+                    These are the authoritative US contacts. Each serves a distinct purpose —
+                    don't confuse them.
+                </p>
+            </div>
+
+            <div class="emergency-grid">
+                <div class="emergency-card">
+                    <h4>🛡️ FBI IC3</h4>
+                    <p>Primary federal cybercrime reporting. Wire fraud / BEC: file within 72 hours for the Financial Fraud Kill Chain.</p>
+                    <div class="contact-line"><span class="contact-label">File at</span> <span class="contact-value"><a href="https://www.ic3.gov" target="_blank" rel="noopener">ic3.gov</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Phone</span> <span class="contact-value">local FBI field office</span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>🏛️ CISA</h4>
+                    <p>Cybersecurity & Infrastructure Security Agency. For critical infrastructure, federal contractors, nationally significant incidents.</p>
+                    <div class="contact-line"><span class="contact-label">Report</span> <span class="contact-value"><a href="https://www.cisa.gov/report" target="_blank" rel="noopener">cisa.gov/report</a></span></div>
+                    <div class="contact-line"><span class="contact-label">24/7 line</span> <span class="contact-value">1-844-Say-CISA<br>(1-844-729-2472)</span></div>
+                    <div class="contact-line"><span class="contact-label">Email</span> <span class="contact-value">report@cisa.gov</span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>🕵️ US Secret Service</h4>
+                    <p>Financial cybercrime — wire fraud, business email compromise, ransomware with cryptocurrency components.</p>
+                    <div class="contact-line"><span class="contact-label">Field office</span> <span class="contact-value"><a href="https://www.secretservice.gov/contact/field-offices" target="_blank" rel="noopener">secretservice.gov</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Cyber</span> <span class="contact-value">Electronic Crimes<br>Task Force</span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>⚖️ FTC</h4>
+                    <p>Consumer identity theft. Start here if you're an individual whose personal info was exposed.</p>
+                    <div class="contact-line"><span class="contact-label">Identity theft</span> <span class="contact-value"><a href="https://www.identitytheft.gov" target="_blank" rel="noopener">IdentityTheft.gov</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Fraud report</span> <span class="contact-value"><a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">reportfraud.ftc.gov</a></span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>🏦 SEC (public companies)</h4>
+                    <p>Publicly traded companies must disclose material cybersecurity incidents via Form 8-K within 4 business days.</p>
+                    <div class="contact-line"><span class="contact-label">Form 8-K</span> <span class="contact-value">Item 1.05</span></div>
+                    <div class="contact-line"><span class="contact-label">Rule</span> <span class="contact-value">Reg S-K Item 106</span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>🏛️ State Attorney General</h4>
+                    <p>Each state has breach notification laws with specific AG notification requirements. California's DPA is strictest; New York SHIELD Act also significant.</p>
+                    <div class="contact-line"><span class="contact-label">Find yours</span> <span class="contact-value"><a href="https://www.naag.org" target="_blank" rel="noopener">naag.org</a></span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>💳 IRS (tax ID theft)</h4>
+                    <p>If SSN was exposed and you suspect tax identity theft: file IRS Form 14039.</p>
+                    <div class="contact-line"><span class="contact-label">Hotline</span> <span class="contact-value">1-800-908-4490</span></div>
+                    <div class="contact-line"><span class="contact-label">Form</span> <span class="contact-value">14039 (ID Theft Affidavit)</span></div>
+                </div>
+
+                <div class="emergency-card">
+                    <h4>🔐 Social Security Admin</h4>
+                    <p>If SSN exposed: report to SSA, request earnings statement review, consider new SSN in extreme cases.</p>
+                    <div class="contact-line"><span class="contact-label">Fraud hotline</span> <span class="contact-value">1-800-269-0271</span></div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 CREDIT BUREAU FREEZES
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">Personal Protection</span>
+                <h2>Freeze your credit. All three.</h2>
+                <p class="section-lede">
+                    Credit freezes are free since 2018 (FCRA). Freezing only one bureau is useless —
+                    criminals just use the other two. Freeze all three.
+                </p>
+            </div>
+
+            <div class="emergency-grid">
+                <div class="emergency-card">
+                    <h4>Equifax</h4>
+                    <div class="contact-line"><span class="contact-label">Freeze</span> <span class="contact-value"><a href="https://www.equifax.com/personal/credit-report-services" target="_blank" rel="noopener">equifax.com</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Phone</span> <span class="contact-value">1-800-349-9960</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>Experian</h4>
+                    <div class="contact-line"><span class="contact-label">Freeze</span> <span class="contact-value"><a href="https://www.experian.com/freeze" target="_blank" rel="noopener">experian.com/freeze</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Phone</span> <span class="contact-value">1-888-397-3742</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>TransUnion</h4>
+                    <div class="contact-line"><span class="contact-label">Freeze</span> <span class="contact-value"><a href="https://www.transunion.com/credit-freeze" target="_blank" rel="noopener">transunion.com</a></span></div>
+                    <div class="contact-line"><span class="contact-label">Phone</span> <span class="contact-value">1-888-909-8872</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>Free Credit Reports</h4>
+                    <p>Weekly free reports since 2023.</p>
+                    <div class="contact-line"><span class="contact-label">Official source</span> <span class="contact-value"><a href="https://www.annualcreditreport.com" target="_blank" rel="noopener">annualcreditreport.com</a></span></div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 BREACH CHECKLIST
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">Personal Recovery</span>
+                <h2>If your data was exposed in a breach.</h2>
+            </div>
+
+            <div class="article-body">
+                <ol>
+                    <li><strong>Check <a href="https://haveibeenpwned.com" target="_blank" rel="noopener">haveibeenpwned.com</a></strong> — search your email; see which breaches exposed you.</li>
+                    <li><strong>Change passwords on the breached site first</strong> — then any other site where you reused that password (you shouldn't have, but we're dealing with reality).</li>
+                    <li><strong>Turn on 2FA everywhere that offers it</strong> — prefer authenticator apps (Aegis, 1Password, Authy) over SMS.</li>
+                    <li><strong>Freeze credit at all three bureaus</strong> (above).</li>
+                    <li><strong>Watch bank statements and credit card activity</strong> for 6–12 months. Small charges first, then larger.</li>
+                    <li><strong>Change security questions</strong> on anything sensitive. Answers are often in the same data dumps as passwords.</li>
+                    <li><strong>Be aggressive with phishing filtering</strong> — breached email addresses get spammed with authentic-looking targeted phishing for weeks after.</li>
+                    <li><strong>If SSN exposed:</strong> file IRS Form 14039 if you suspect tax fraud; consider new SSN only in extreme cases.</li>
+                    <li><strong>Visit <a href="https://www.identitytheft.gov" target="_blank" rel="noopener">IdentityTheft.gov</a></strong> for a personalized recovery plan if identity theft has occurred.</li>
+                    <li><strong>Keep a timeline</strong> of everything you did and when. You may need it for disputes, insurance claims, or legal.</li>
+                </ol>
+            </div>
+
+            <!-- =========================================
+                 SECURITY TOOLS I RECOMMEND
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">Recommended Tools</span>
+                <h2>Tools that actually help (personal use).</h2>
+            </div>
+
+            <div class="emergency-grid">
+                <div class="emergency-card">
+                    <h4>Password Managers</h4>
+                    <div class="contact-line"><span class="contact-label">Free/open source</span> <span class="contact-value">Bitwarden</span></div>
+                    <div class="contact-line"><span class="contact-label">Sovereignty</span> <span class="contact-value">KeePassXC</span></div>
+                    <div class="contact-line"><span class="contact-label">UX leader</span> <span class="contact-value">1Password</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>2FA Authenticator Apps</h4>
+                    <div class="contact-line"><span class="contact-label">Android (open)</span> <span class="contact-value">Aegis</span></div>
+                    <div class="contact-line"><span class="contact-label">iOS (open)</span> <span class="contact-value">Raivo OTP</span></div>
+                    <div class="contact-line"><span class="contact-label">Hardware</span> <span class="contact-value">YubiKey 5, Titan</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>Breach Monitoring</h4>
+                    <div class="contact-line"><span class="contact-label">HIBP</span> <span class="contact-value">haveibeenpwned.com</span></div>
+                    <div class="contact-line"><span class="contact-label">Firefox Monitor</span> <span class="contact-value">monitor.firefox.com</span></div>
+                </div>
+                <div class="emergency-card">
+                    <h4>Email Privacy</h4>
+                    <div class="contact-line"><span class="contact-label">Aliasing</span> <span class="contact-value">SimpleLogin, AnonAddy</span></div>
+                    <div class="contact-line"><span class="contact-label">Encrypted mail</span> <span class="contact-value">Proton, Tuta</span></div>
+                </div>
+            </div>
+
+            <!-- =========================================
+                 BREACHGRID ARTICLES
+                 ========================================= -->
+            <div class="section-heading" style="margin-top: 4rem;">
+                <span class="eyebrow">Deep Dives · BreachGrid Articles</span>
+                <h2>Read further.</h2>
+                <p class="section-lede">
+                    Article-length breakdowns of specific scenarios: executive breach playbook,
+                    ransomware negotiation, BEC recovery, state-by-state notification, supply
+                    chain breaches, and template disclosure letters.
+                </p>
+            </div>
+
+            <div class="card-grid-2">
+                <a href="blog/first-24-hours-breach-response.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 29, 2026</span></div>
+                    <h3>What To Do In The First 24 Hours</h3>
+                    <p>The calm-first playbook: isolate, preserve, engage legal, out-of-band comms — and the things you must NOT do.</p>
+                </a>
+                <a href="blog/us-cyber-authorities-who-to-call.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 23, 2026</span></div>
+                    <h3>US Cyber Authorities: Who to Call</h3>
+                    <p>FBI IC3, CISA, Secret Service, state AG, SEC — what each does, when to call each, and how to report effectively.</p>
+                </a>
+                <a href="blog/credit-freeze-step-by-step.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 18, 2026</span></div>
+                    <h3>Credit Freezes: Step by Step</h3>
+                    <p>All three bureaus, walked through. Child credit freezes. When to lift. Fraud alerts vs freezes.</p>
+                </a>
+                <a href="blog/identity-theft-recovery-workflow.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 13, 2026</span></div>
+                    <h3>Identity Theft Recovery Workflow</h3>
+                    <p>The IdentityTheft.gov five-step process, police reports, credit bureau disputes, tax-related ID theft.</p>
+                </a>
+                <a href="blog/executive-breach-response-playbook.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 8, 2026</span></div>
+                    <h3>Executive Breach Response Playbook</h3>
+                    <p>Board notification, crisis comms, counsel, insurance, regulators — the 48-72h window that sets the trajectory.</p>
+                </a>
+                <a href="blog/gdpr-breach-notification-requirements.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Mar 3, 2026</span></div>
+                    <h3>GDPR Breach Notification Requirements</h3>
+                    <p>The 72-hour clock, DPA notification, when "high risk" triggers data subject notification, recent fine examples.</p>
+                </a>
+                <a href="blog/ransomware-negotiation-when-not-to-pay.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Feb 26, 2026</span></div>
+                    <h3>Ransomware Negotiation: When NOT to Pay</h3>
+                    <p>OFAC sanctions lists, decryptor existence, insurance position, reconstitution economics, and "paid and still leaked" reality.</p>
+                </a>
+                <a href="blog/business-email-compromise-recovery.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Feb 21, 2026</span></div>
+                    <h3>Business Email Compromise Recovery</h3>
+                    <p>Wire fraud specifics, IC3 within 72h, bank notification, the Financial Fraud Kill Chain, recovery realities.</p>
+                </a>
+                <a href="blog/breach-disclosure-letter-templates.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Feb 16, 2026</span></div>
+                    <h3>Breach Disclosure Letter Templates</h3>
+                    <p>Consumer, employee, and regulatory notification templates. What to include, what to avoid, what lawyers want changed.</p>
+                </a>
+                <a href="blog/supply-chain-breach-your-responsibilities.html" class="post-card">
+                    <div class="post-meta"><span class="grid-pill grid-pill-breach">BreachGrid</span><span>Feb 11, 2026</span></div>
+                    <h3>Supply Chain Breach: Your Responsibilities</h3>
+                    <p>When a vendor gets breached — contract review, shared-responsibility, customer notification chain, future contract language.</p>
+                </a>
+            </div>
+
+            <div class="urgent-alert" style="margin-top: 3rem;">
+                <p style="margin: 0; font-size: 0.9rem;">
+                    <strong>Disclaimer:</strong> This page is informational only. It is not legal advice,
+                    financial advice, or a substitute for engaging counsel and qualified incident response
+                    professionals. Reporting thresholds and regulatory obligations vary by jurisdiction and
+                    industry. Always verify current requirements with your legal team.
+                </p>
+            </div>
+
+        </div>
+    </section>
+<!-- AUTO:POSTS_START -->
+            <div class="section-heading" style="margin-top: 3rem;">
+                <h2>All Posts in This Grid</h2>
+                <p class="section-lede">10 articles · newest first</p>
+            </div>
+            <div class="card-grid-2">
+                <a href="blog/first-24-hours-breach-response.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 29, 2026</span>
+                    </div>
+                    <h3>What To Do In The First 24 Hours</h3>
+                    <p>The calm-first playbook. Isolate, preserve, engage legal, out-of-band comms. And what you must NOT do.</p>
+                </a>
+                <a href="blog/us-cyber-authorities-who-to-call.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 23, 2026</span>
+                    </div>
+                    <h3>US Cyber Authorities: Who to Call</h3>
+                    <p>FBI IC3, CISA, Secret Service, state AG, SEC. What each does, when to call, how to report effectively.</p>
+                </a>
+                <a href="blog/credit-freeze-step-by-step.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 18, 2026</span>
+                    </div>
+                    <h3>Credit Freezes: Step by Step</h3>
+                    <p>All three bureaus, walked through. Child credit freezes. When to lift. Fraud alerts vs. freezes.</p>
+                </a>
+                <a href="blog/identity-theft-recovery-workflow.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 13, 2026</span>
+                    </div>
+                    <h3>Identity Theft Recovery Workflow</h3>
+                    <p>IdentityTheft.gov five-step process, police reports, credit bureau disputes, tax-related ID theft.</p>
+                </a>
+                <a href="blog/executive-breach-response-playbook.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 8, 2026</span>
+                    </div>
+                    <h3>Executive Breach Response Playbook</h3>
+                    <p>Board notification, crisis comms, counsel, insurance, regulators. The 48-72h window that sets the trajectory.</p>
+                </a>
+                <a href="blog/gdpr-breach-notification-requirements.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Mar 3, 2026</span>
+                    </div>
+                    <h3>GDPR Breach Notification Requirements</h3>
+                    <p>72-hour clock, DPA notification, when "high risk" triggers data subject notification, fine examples.</p>
+                </a>
+                <a href="blog/ransomware-negotiation-when-not-to-pay.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Feb 26, 2026</span>
+                    </div>
+                    <h3>Ransomware Negotiation: When NOT to Pay</h3>
+                    <p>OFAC sanctions lists, decryptor existence, insurance position, "paid and still leaked" reality.</p>
+                </a>
+                <a href="blog/business-email-compromise-recovery.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Feb 21, 2026</span>
+                    </div>
+                    <h3>Business Email Compromise Recovery</h3>
+                    <p>Wire fraud specifics, IC3 within 72h, the Financial Fraud Kill Chain, recovery realities.</p>
+                </a>
+                <a href="blog/breach-disclosure-letter-templates.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Feb 16, 2026</span>
+                    </div>
+                    <h3>Breach Disclosure Letter Templates</h3>
+                    <p>Consumer, employee, regulatory templates. What to include, what lawyers change, real language.</p>
+                </a>
+                <a href="blog/supply-chain-breach-your-responsibilities.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                        <span>Feb 11, 2026</span>
+                    </div>
+                    <h3>Supply Chain Breach: Your Responsibilities</h3>
+                    <p>When your vendor gets breached. Contract review, shared-responsibility, customer notification, future language.</p>
+                </a>
+            </div>
+<!-- AUTO:POSTS_END -->
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">The Art of Smart Technologies — a practitioner's notes on infrastructure, security, AI, and the systems behind them.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Grids</h4>
+                <ul>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="breach-grid.html">BreachGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

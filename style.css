@@ -43,6 +43,7 @@
     --grid-ai:      #b84dff;
     --grid-intel:   #00f0ff;
     --grid-lab:     #ffb020;
+    --grid-breach:  #ff9544;
     --grid-off:     #6b7280;
 
     /* Grid glows */
@@ -52,6 +53,7 @@
     --glow-ai:     rgba(184, 77, 255, 0.4);
     --glow-intel:  rgba(0, 240, 255, 0.4);
     --glow-lab:    rgba(255, 176, 32, 0.4);
+    --glow-breach: rgba(255, 149, 68, 0.4);
     --glow-off:    rgba(107, 114, 128, 0.3);
 
     /* Typography */
@@ -733,6 +735,7 @@ main {
 .grid-tile.tile-ai::before     { background: var(--grid-ai); }
 .grid-tile.tile-intel::before  { background: var(--grid-intel); }
 .grid-tile.tile-lab::before    { background: var(--grid-lab); }
+.grid-tile.tile-breach::before { background: var(--grid-breach); }
 .grid-tile.tile-off::before    { background: var(--grid-off); }
 
 .grid-tile.tile-threat:hover { box-shadow: 0 0 32px var(--glow-threat); }
@@ -741,6 +744,7 @@ main {
 .grid-tile.tile-ai:hover     { box-shadow: 0 0 32px var(--glow-ai); }
 .grid-tile.tile-intel:hover  { box-shadow: 0 0 32px var(--glow-intel); }
 .grid-tile.tile-lab:hover    { box-shadow: 0 0 32px var(--glow-lab); }
+.grid-tile.tile-breach:hover { box-shadow: 0 0 32px var(--glow-breach); }
 .grid-tile.tile-off:hover    { box-shadow: 0 0 32px var(--glow-off); }
 
 .grid-tile .tile-name {
@@ -787,6 +791,7 @@ main {
 .grid-tile.tile-ai .tile-meta     { color: var(--grid-ai); }
 .grid-tile.tile-intel .tile-meta  { color: var(--grid-intel); }
 .grid-tile.tile-lab .tile-meta    { color: var(--grid-lab); }
+.grid-tile.tile-breach .tile-meta { color: var(--grid-breach); }
 .grid-tile.tile-off .tile-meta    { color: var(--grid-off); }
 
 .grid-tile.tile-threat .tile-icon { color: var(--grid-threat); }
@@ -795,6 +800,7 @@ main {
 .grid-tile.tile-ai .tile-icon     { color: var(--grid-ai); }
 .grid-tile.tile-intel .tile-icon  { color: var(--grid-intel); }
 .grid-tile.tile-lab .tile-icon    { color: var(--grid-lab); }
+.grid-tile.tile-breach .tile-icon { color: var(--grid-breach); }
 .grid-tile.tile-off .tile-icon    { color: var(--grid-off); }
 
 /* ========================================================================
@@ -830,6 +836,7 @@ main {
 .grid-pill-ai     { color: var(--grid-ai);     background: rgba(184, 77, 255, 0.1); border-color: rgba(184, 77, 255, 0.3); }
 .grid-pill-intel  { color: var(--grid-intel);  background: rgba(0, 240, 255, 0.1);  border-color: rgba(0, 240, 255, 0.3); }
 .grid-pill-lab    { color: var(--grid-lab);    background: rgba(255, 176, 32, 0.1); border-color: rgba(255, 176, 32, 0.3); }
+.grid-pill-breach { color: var(--grid-breach); background: rgba(255, 149, 68, 0.1); border-color: rgba(255, 149, 68, 0.3); }
 .grid-pill-off    { color: var(--grid-off);    background: rgba(107, 114, 128, 0.1);border-color: rgba(107, 114, 128, 0.3); }
 
 /* ========================================================================
@@ -968,6 +975,7 @@ main {
 .grid-banner-ai::before     { background: linear-gradient(90deg, transparent, var(--grid-ai),     transparent); }
 .grid-banner-intel::before  { background: linear-gradient(90deg, transparent, var(--grid-intel),  transparent); }
 .grid-banner-lab::before    { background: linear-gradient(90deg, transparent, var(--grid-lab),    transparent); }
+.grid-banner-breach::before { background: linear-gradient(90deg, transparent, var(--grid-breach), transparent); }
 .grid-banner-off::before    { background: linear-gradient(90deg, transparent, var(--grid-off),    transparent); }
 
 .grid-banner .grid-label {
@@ -989,7 +997,88 @@ main {
 .grid-banner-ai .grid-label     { color: var(--grid-ai);     border-color: rgba(184, 77, 255, 0.3); }
 .grid-banner-intel .grid-label  { color: var(--grid-intel);  border-color: rgba(0, 240, 255, 0.3); }
 .grid-banner-lab .grid-label    { color: var(--grid-lab);    border-color: rgba(255, 176, 32, 0.3); }
+.grid-banner-breach .grid-label { color: var(--grid-breach); border-color: rgba(255, 149, 68, 0.3); }
 .grid-banner-off .grid-label    { color: var(--grid-off);    border-color: rgba(107, 114, 128, 0.3); }
+
+/* BreachGrid emergency-info styling */
+.emergency-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin: 1.5rem 0 2rem;
+}
+.emergency-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--grid-breach);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+.emergency-card h4 {
+    color: var(--grid-breach);
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+.emergency-card .contact-line {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-subtle);
+    font-family: var(--font-mono);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.emergency-card .contact-line:last-child { border: none; }
+.emergency-card .contact-label { color: var(--text-muted); flex-shrink: 0; }
+.emergency-card .contact-value { color: var(--accent); text-align: right; word-break: break-all; }
+.emergency-card .contact-value a { color: inherit; }
+
+.urgent-alert {
+    background: rgba(255, 62, 95, 0.08);
+    border: 1px solid var(--grid-threat);
+    border-left: 4px solid var(--grid-threat);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    margin: 1.5rem 0;
+}
+.urgent-alert strong { color: var(--grid-threat); }
+
+.timeline-step {
+    display: flex;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+}
+.timeline-step:last-child { border-bottom: none; }
+.timeline-step .step-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--grid-breach);
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+}
+.timeline-step .step-content h4 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+}
+.timeline-step .step-content p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
+}
 
 .grid-banner h1 {
     font-size: 2.75rem;

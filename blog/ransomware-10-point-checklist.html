@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 10-Point Ransomware Readiness Checklist — MacwanGrid</title>
+    <meta name="description" content="A practitioner-built ransomware readiness checklist: offline backups, immutable storage, IR rehearsals, ransom decision trees, and the gaps most orgs find too late.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The 10-Point Ransomware Readiness Checklist">
+    <meta property="og:description" content="A practitioner-built ransomware readiness checklist: offline backups, immutable storage, IR rehearsals, ransom decision trees, and the gaps most orgs find too late.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-25T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/ransomware-10-point-checklist.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-03-25</span>
+                <span>4 min read</span>
+            </div>
+            <h1>The 10-Point Ransomware Readiness Checklist</h1>
+            <div class="article-body">
+                <p>Most organizations discover their ransomware gaps after the encryption starts. By then the questions are no longer theoretical — they are a conference bridge at 2 a.m. with a lawyer, a CFO, and an incident responder who bills by the hour. The work is to front-load those questions into a checklist you actually rehearse.</p>
+
+                <p>This is not a compliance artifact. It is the list I hand to a CISO who asks, honestly, "where are we exposed?"</p>
+
+                <h2>Backups and storage</h2>
+                <ul>
+                    <li><strong>Offline, tested backups.</strong> Not "we have Veeam." Tested means you restored a critical system end-to-end in the last 90 days and timed it. If you have not done this, your backups are a hypothesis.</li>
+                    <li><strong>Immutable storage.</strong> Object lock on S3, hardened repositories, or tape. The 2023 MOVEit wave hit orgs whose "backups" were writable from the same domain that got encrypted.</li>
+                    <li><strong>Domain-separated backup infrastructure.</strong> If your backup admin account lives in the same Active Directory as your file servers, it is not really separated.</li>
+                </ul>
+
+                <h2>Identity and endpoint</h2>
+                <ul>
+                    <li><strong>MFA everywhere, including service accounts and VPN.</strong> MFA on webmail only is a 2018 posture. See also: the separate post on why MFA is necessary but not sufficient.</li>
+                    <li><strong>Segmented networks.</strong> Flat networks are how a single compromised workstation turns into a seven-figure event. East-west controls matter more than the perimeter firewall at this point.</li>
+                    <li><strong>EDR on every endpoint, including servers and jump hosts.</strong> CrowdStrike Falcon, SentinelOne, Defender for Endpoint — pick one and make the coverage report honest. The gap between "deployed" and "99% coverage" is where adversaries live.</li>
+                </ul>
+
+                <h2>Response and decision-making</h2>
+                <ul>
+                    <li><strong>An IR plan that has been rehearsed this year.</strong> A plan in SharePoint that no one has opened is documentation theatre. Run a tabletop, find the gaps, update the plan.</li>
+                    <li><strong>Out-of-band communication.</strong> If your Teams tenant is encrypted, how does the response team talk? Pre-staged Signal groups, personal phone numbers, a printed call tree. Yes, printed.</li>
+                    <li><strong>Legal counsel on speed dial.</strong> Breach coach engaged <em>before</em> the incident, with an hourly rate you have already negotiated. The wrong time to shop for a lawyer is while your domain controllers are screaming.</li>
+                    <li><strong>Cyber insurance sanity check.</strong> Read the policy. Understand sub-limits, coinsurance, and what your carrier requires before they will pay — many now mandate specific EDR and MFA controls.</li>
+                </ul>
+
+                <h2>The question nobody wants to pre-answer</h2>
+                <p>You need a decision tree for paying ransom. Not a policy that says "we don't pay" (every org says that until they are down for eight days), and not a blank check. A decision tree that names who decides, what inputs they need (sanctions screening, data exfil evidence, restore ETA), and what the board-level threshold is.</p>
+
+                <blockquote>If the first time your executive team discusses ransom payment is during the incident, you have already lost the most expensive hours of your response.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Print this list. Walk it room by room with your infrastructure, identity, and legal teams. For every item where the answer is "mostly" or "we're working on it," write the date you will close it. Ransomware readiness is not a score — it is a set of ten questions you can answer cold, at 2 a.m., with auditors on the line.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Home Lab Threat Model — MacwanGrid</title>
+    <meta name="description" content="Your home lab is internet-exposed whether you meant it to be or not. How to segment it, back it up, and keep the admin password off it.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Home Lab Threat Model">
+    <meta property="og:description" content="Your home lab is internet-exposed whether you meant it to be or not. How to segment it, back it up, and keep the admin password off it.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-17T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/home-lab-threat-model.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-02-17</span>
+                <span>5 min read</span>
+            </div>
+            <h1>The Home Lab Threat Model</h1>
+            <div class="article-body">
+                <p>Here is the uncomfortable truth about the home lab: you are running real services on real infrastructure in a real residential network with no change control. If a security professional's job is to think about threat models, they should start with their own.</p>
+
+                <h2>Assumption One: The Lab Is Internet-Exposed</h2>
+                <p>"Mine isn't." Yes, it is. Some of the vectors I have seen bite people:</p>
+                <ul>
+                    <li>UPnP silently opened ports when a new appliance joined the network.</li>
+                    <li>A reverse proxy "just for Jellyfin" with a default admin password on the management UI.</li>
+                    <li>IPv6 SLAAC assigning a globally routable address to a VM that had only IPv4 firewall rules.</li>
+                    <li>A Tailscale node that was meant for access to the lab but ended up routing traffic out through a dodgy exit node.</li>
+                    <li>DNS rebinding against a local-only service because the browser didn't know it was local.</li>
+                </ul>
+                <p>Plan as if everything you spin up is discoverable. Because frequently, it is.</p>
+
+                <h2>Assumption Two: You Will Detonate Malware</h2>
+                <p>That is literally the point of having a lab. So plan for the malware to misbehave — try to phone home, try to scan the LAN, try to pivot into your personal devices. Three rules:</p>
+                <ol>
+                    <li>Detonation happens in an isolated VLAN with an explicit-deny default. Egress is allowed only through an inspection proxy you control.</li>
+                    <li>No L2 bridge between the lab and your personal VLAN. None. Ever.</li>
+                    <li>When you are done, revert from snapshot. Do not clean up by hand. Do not trust "looks fine now."</li>
+                </ol>
+
+                <h2>Assumption Three: The Lab Will Get Ransomwared</h2>
+                <p>Self-inflicted or otherwise. Your backup strategy has to survive it.</p>
+                <p>What I run:</p>
+                <ul>
+                    <li><strong>Primary backup:</strong> Proxmox Backup Server on a separate host, pull-mode (PBS pulls from PVE, PVE has no credentials to push). So a ransomed PVE cannot poison the backups.</li>
+                    <li><strong>Offline copy:</strong> Monthly <code>rsync</code> to a USB drive that lives unplugged in a drawer.</li>
+                    <li><strong>Offsite encrypted copy:</strong> Backblaze B2 with restic and a key stored in the cloud password manager. Different credential than the lab admin.</li>
+                    <li><strong>Restore drills:</strong> Twice a year, pick a random VM, restore it to a fresh host, boot it. If you have never restored, you do not have backups.</li>
+                </ul>
+
+                <h2>Assumption Four: The Admin Password Will Leak</h2>
+                <p>Because it will. A commit that should have been <code>git reset</code>, a pastebin you forgot about, a phishing email that catches you when you are tired.</p>
+                <p>Mitigations:</p>
+                <ul>
+                    <li>The lab's admin password is unique. It is not your personal password manager master, not your work AD password, not the WiFi passphrase, not the NAS password.</li>
+                    <li>Every service gets its own credential. SSO into a single IdP within the lab is fine; but the lab's IdP credential is not your personal IdP credential.</li>
+                    <li>MFA with a hardware token on anything that is Internet-reachable. YubiKey 5C NFC at $55 is the cheapest insurance you will ever buy.</li>
+                    <li>Break-glass: a printed admin password sealed in a tamper-evident envelope in a drawer. Yes, paper. It survives ransomware.</li>
+                </ul>
+
+                <h2>Segmentation Cheat Sheet</h2>
+                <p>My current layout:</p>
+                <pre><code>VLAN 10 - Trusted (laptops, phones)
+VLAN 20 - IoT (TVs, cameras, thermostat)
+VLAN 30 - Lab management (Proxmox, PBS UI)
+VLAN 40 - Lab detonation (malware runs here)
+VLAN 50 - Lab services (reachable from trusted, read-only)
+VLAN 99 - Guest (WAN-only)
+
+Default rule between any two: deny.
+Exceptions documented in firewall comments.</code></pre>
+
+                <h2>The Questions to Ask Yourself Quarterly</h2>
+                <ul>
+                    <li>If my lab were compromised tonight, what is the blast radius?</li>
+                    <li>Which service in my lab has not been updated in 90+ days?</li>
+                    <li>Is there any service exposed to the Internet that I have forgotten about?</li>
+                    <li>Could my partner, kids, or roommate accidentally reach the detonation VLAN?</li>
+                    <li>If my house burned down tomorrow, do I have the keys to restore this?</li>
+                </ul>
+
+                <p>Home labs teach by breaking. Plan for them to break badly at least once. The lab you treat like production will, over time, actually resemble production. That is the goal.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

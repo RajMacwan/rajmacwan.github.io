@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tor for IT Professionals: A Primer — MacwanGrid</title>
+    <meta name="description" content="A calm, accurate introduction to Tor for IT leaders — how onion routing works, legitimate use cases, and the threat model basics you should know.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Tor for IT Professionals: A Primer">
+    <meta property="og:description" content="A calm, accurate introduction to Tor for IT leaders — how onion routing works, legitimate use cases, and the threat model basics you should know.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-23T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/tor-for-it-professionals-primer.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-03-23</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Tor for IT Professionals: A Primer</h1>
+            <div class="article-body">
+                <p>In most enterprise environments I've worked in, the word "Tor" triggers an automatic risk-register entry and a blocked egress rule. That reflex is understandable, but it reflects a caricature rather than the actual technology. Tor is a privacy network used by the Associated Press, the US State Department's democracy programs, the Electronic Frontier Foundation, and a long list of newsrooms running SecureDrop. If you're responsible for policy around it, you should understand what it actually does.</p>
+
+                <h2>How Onion Routing Actually Works</h2>
+                <p>Tor is a layered-encryption overlay network. When the Tor client builds a circuit, it typically chooses three relays: a <em>guard</em>, a <em>middle</em>, and an <em>exit</em>. Your traffic is encrypted in three nested layers, one per relay, using ephemeral keys negotiated through the ntor handshake (described in the original Tor design paper by Dingledine, Mathewson, and Syverson).</p>
+                <ul>
+                    <li>The guard knows who you are (your IP) but not what you're doing.</li>
+                    <li>The middle knows nothing meaningful — just that it's shuffling packets between two other relays.</li>
+                    <li>The exit knows what you're doing (the destination, and plaintext if you didn't use TLS) but not who you are.</li>
+                </ul>
+                <p>No single relay holds both sides of the correlation. That property is what Tor provides — not invisibility, but unlinkability between source and destination given a non-global adversary.</p>
+
+                <h2>Legitimate Use Cases</h2>
+                <p>Tor is a general-purpose privacy tool. The ones I see most often in practice:</p>
+                <ul>
+                    <li><strong>SecureDrop</strong> — used by The New York Times, The Washington Post, The Guardian, and dozens of others to receive documents from sources.</li>
+                    <li><strong>Dissident and activist communications</strong> in jurisdictions that surveil or block civil society traffic.</li>
+                    <li><strong>Security research</strong> — pulling samples, visiting leak sites, verifying IOCs — without tipping off the operator via your corporate IP.</li>
+                    <li><strong>Circumventing network-level censorship</strong> using bridges and pluggable transports (obfs4, meek, webtunnel).</li>
+                    <li><strong>Protecting browsing metadata</strong> from ISPs and ad-tech networks, which is the bulk of daily usage.</li>
+                </ul>
+
+                <h2>Tor Browser vs. Running a Relay</h2>
+                <p>There are three roles, and you should separate them in your head:</p>
+                <ul>
+                    <li><strong>Tor Browser</strong> — a hardened Firefox ESR that routes through Tor, defeats a large class of fingerprinting, and is the right tool for almost all users.</li>
+                    <li><strong>Running a middle or guard relay</strong> — a donation of bandwidth to the network. No exit traffic leaves your IP. Low legal risk, high community value.</li>
+                    <li><strong>Running an exit relay</strong> — your IP appears as the source of other people's traffic. This attracts abuse complaints and legal notices. Generally run by organizations (torservers.net, Calyx, Nos Oignons), not individuals.</li>
+                </ul>
+
+                <h2>Bridges and Threat Models</h2>
+                <p>Where a country blocks access to known Tor relays, <strong>bridges</strong> — unlisted entry points, often combined with traffic obfuscation — restore access. The pluggable-transport ecosystem (obfs4, meek over CDN fronting, Snowflake using WebRTC) is genuinely elegant engineering, and worth reading about even if you never use it.</p>
+                <p>A word on threat models. Tor defends well against local network observers, ISPs, and most website operators. It does <em>not</em> defend against a global passive adversary who can observe both ends of the circuit simultaneously (end-to-end correlation), nor against browser-level deanonymization if you log in to Gmail over Tor with your real account. Tor is a tool, not a magic wand. Knowing its edges makes you a better consumer of it — and a fairer policymaker when someone on your team has a legitimate reason to use it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

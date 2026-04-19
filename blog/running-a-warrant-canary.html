@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Running a Warrant Canary — MacwanGrid</title>
+    <meta name="description" content="A warrant canary is a signaling mechanism, not a legal defense. How to build one that works — statements, freshness proofs, signing, and exit.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Running a Warrant Canary">
+    <meta property="og:description" content="A warrant canary is a signaling mechanism, not a legal defense. How to build one that works — statements, freshness proofs, signing, and exit.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-21T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/running-a-warrant-canary.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-02-21</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Running a Warrant Canary</h1>
+            <div class="article-body">
+                <p>A warrant canary is a published statement asserting that an operator has not received a specific kind of legal process — typically a National Security Letter in the US context. If the statement disappears or stops being updated, a careful observer can infer that something has changed. The logic is that compelled <em>silence</em> is possible under NSLs, but compelled <em>lying</em> (forcing someone to reassert a false statement) is considered much harder legally. The legal theory is untested in court, and honest lawyers will tell you so. But the signaling value, done well, is real.</p>
+
+                <h2>What the Statement Should Claim</h2>
+                <p>Keep it short and negative. A typical statement:</p>
+                <pre><code>As of [DATE], [OPERATOR] has not:
+  - received any National Security Letter
+  - received any gag order
+  - received any secret subpoena
+  - been compelled to modify our system to allow surveillance
+  - been compelled to hand over cryptographic keys</code></pre>
+                <p>Each bullet is a distinct claim. When any bullet becomes false, that bullet is removed from the next publication. The absence is the signal.</p>
+                <p>Don't over-claim. Don't include things you have no standing to know ("no government anywhere has investigated us"). Don't include things a compelled party would still be forced to reassert ("we have never had a bug"). Stick to legal processes that NSL-style gag orders cover.</p>
+
+                <h2>Freshness Proofs</h2>
+                <p>A signed statement from three months ago proves nothing about today. You need to bind each publication to a point in time that couldn't have been predicted. Two conventions are common:</p>
+                <ul>
+                    <li><strong>Bitcoin block hash</strong> — include the latest block's hash and height. This proves the statement was written <em>after</em> that block existed. Anyone can verify it on a block explorer.</li>
+                    <li><strong>News headlines</strong> — the top three headlines from Reuters, the BBC, and a specific newspaper, each quoted verbatim. This works without crypto literacy in the audience, but is fuzzier to verify mechanically.</li>
+                </ul>
+                <p>Include both. It costs nothing and gives readers two independent checks.</p>
+
+                <h2>Signing and Frequency</h2>
+                <p>Sign every publication with the same PGP key you use for your public identity. Publish on a predictable cadence — monthly is common, weekly for high-stakes services — and commit to that cadence in the canary itself ("this canary is updated on the first Monday of each month").</p>
+                <ul>
+                    <li>Use a YubiKey or air-gapped signing workflow, not a hot key that automation could misuse.</li>
+                    <li>Publish to at least two locations: your main site and a mirror (Git repository, IPFS, an archive.org snapshot). Redundancy here is important — if only one copy exists and it "breaks," the signal becomes ambiguous.</li>
+                    <li>Keep old canaries online forever. The history is part of the proof.</li>
+                </ul>
+                <pre><code>gpg --clearsign canary-2026-02-01.txt
+# publishes canary-2026-02-01.txt.asc</code></pre>
+
+                <h2>Think About the Ending on Day One</h2>
+                <p>The hardest question about a canary is: what do you do when the moment actually arrives? If you've thought carefully, your answer is already baked in. Some operators choose to simply stop publishing — the canary dies. Others remove specific bullets while leaving the rest. Others take the whole site down. None of these is obviously correct; they depend on the jurisdiction, the legal advice you've received, and what the canary was supposed to signal.</p>
+                <p>Write down in advance — and share with one trusted attorney — what the stopping rule is. If you're ever in the situation where you need to act on it, you'll be stressed, possibly legally constrained in ways I can't anticipate, and absolutely not in a state to design a response from scratch.</p>
+                <p>A note on theater: a canary you never planned to let lapse is worse than no canary at all. Users build a trust model on it. Running one is a long commitment. Take it seriously, or don't run one.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

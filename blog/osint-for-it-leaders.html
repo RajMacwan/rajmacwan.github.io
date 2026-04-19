@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT for IT Leaders — MacwanGrid</title>
+    <meta name="description" content="Free OSINT sources tell you 80% of what costs $100k+ in vendor subscriptions. Here's how to stack them.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="OSINT for IT Leaders">
+    <meta property="og:description" content="Free OSINT sources tell you 80% of what costs $100k+ in vendor subscriptions. Here's how to stack them.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-25T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/osint-for-it-leaders.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-25</span>
+                <span>6 min read</span>
+            </div>
+            <h1>OSINT for IT Leaders</h1>
+            <div class="article-body">
+                <p>You do not need a Threat Intelligence Platform to get started with intel. I will go further: the free OSINT stack is the correct starting point even if you eventually buy one, because it teaches you what you actually want the paid product to do. Here is the stack that will get you 80% of what $100k+ in vendor subscriptions deliver.</p>
+
+                <h2>The Vulnerability Layer</h2>
+                <p><strong>CISA KEV (Known Exploited Vulnerabilities)</strong> is the single highest-signal free feed on the internet. If a CVE is on KEV, it is being exploited in the wild against U.S. infrastructure. Every CVE on this list deserves a patch ticket with a 14-day SLA; that is the federal mandate under BOD 22-01 and it is a defensible standard for the private sector too. Subscribe to the JSON feed; wire it into your ticketing.</p>
+
+                <p><strong>NVD</strong> for base CVSS, CPE matching, and reference links. Supplement with <strong>EPSS</strong> (Exploit Prediction Scoring System) — a probability, updated daily, that a CVE will be exploited in the next 30 days. KEV + EPSS > CVSS alone for prioritization.</p>
+
+                <h2>The Exposure Layer</h2>
+                <p><strong>Have I Been Pwned</strong> — Troy Hunt's breach database. The domain search (free for verified domain owners) tells you which of your employees' corporate addresses appear in breach dumps. Wire it into your IAM program. A new hit on a C-level address is an immediate password-rotation and MFA-verification event.</p>
+
+                <p><strong>Certificate Transparency logs</strong> (crt.sh, Censys CT) expose every TLS cert issued for your domains. Set a weekly query for <code>%.yourdomain.com</code> and you will catch shadow IT, forgotten subdomains, and typosquat preparation within days of issuance.</p>
+
+                <p><strong>Shodan and Censys</strong> for external attack surface. Facet your ASN and organization name; look for RDP (3389), SMB (445), exposed databases (27017, 5432, 9200), and deprecated TLS. Censys' free tier is generous enough to run weekly attack-surface reviews.</p>
+
+                <h2>The Adversary Layer</h2>
+                <p><strong>Ransomware leak site trackers.</strong> ransomware.live and ecrime.ch aggregate claims from every major extortion group's .onion leak site — LockBit offshoots, Akira, Play, BlackBasta, Cl0p, Medusa, Qilin. Filter by industry and geography. This is the closest thing we have to a real-time industry-specific threat indicator, and it is entirely free.</p>
+
+                <p><strong>Mandiant, CrowdStrike, Microsoft Threat Intelligence, Unit 42, Talos blogs.</strong> Public-facing write-ups of active campaigns. When Mandiant publishes a deep dive on APT41's new edge-device TTP, that is operational intel you would pay six figures for from a smaller vendor.</p>
+
+                <p><strong>CISA advisories.</strong> Joint CSAs with FBI/NSA on groups like Volt Typhoon, Salt Typhoon, and LockBit variants include IOCs, TTPs, and mitigation guidance. Drop them into your detection backlog.</p>
+
+                <h2>The Indicator Layer</h2>
+                <p><strong>abuse.ch</strong> runs URLhaus (malicious URLs), MalwareBazaar (samples), ThreatFox (IOCs), and Feodo Tracker (botnet C2). Free, well-curated, STIX/MISP-ingestible. <strong>AlienVault OTX</strong> for community-contributed pulses. <strong>VirusTotal</strong> free tier for sample and URL lookups (upgrade if you need hunting and retrohunt).</p>
+
+                <h2>How to Stack Them</h2>
+                <p>The trick is correlation, not collection. A workable weekly rhythm for a lean team:</p>
+
+                <p><strong>Monday (20 min):</strong> New CISA KEV entries → cross-reference with your CMDB → open patch tickets. New CISA advisories → skim TTPs → flag any that hit your tech stack.</p>
+
+                <p><strong>Wednesday (15 min):</strong> HIBP domain scan, CT log diff, Shodan/Censys ASN review. Anything new gets a ticket.</p>
+
+                <p><strong>Friday (20 min):</strong> ransomware.live filtered to your sector, plus one major vendor blog. Are any victims peer organizations? If yes, threat-model the delivery vector.</p>
+
+                <p>That is under an hour a week, costs zero, and produces a dated artifact you can show an auditor or a board. It is also, I would argue, better than most $100k TIP deployments I have seen, because the humans actually read it.</p>
+
+                <h2>When to Graduate</h2>
+                <p>Buy a TIP when the volume of correlated indicators exceeds what a human can triage, when you need automated enrichment at ingest, or when you need non-public underground sources. Not before. The free stack is not a starter kit — it is a permanent layer. The paid tools sit on top of it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

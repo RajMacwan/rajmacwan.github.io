@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow AI: What IT Does Not Know — MacwanGrid</title>
+    <meta name="description" content="If you have not measured Shadow AI usage in your org, it is higher than you think. What to do about it before reflexively banning.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Shadow AI: What IT Does Not Know">
+    <meta property="og:description" content="If you have not measured Shadow AI usage in your org, it is higher than you think. What to do about it before reflexively banning.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-20T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/shadow-ai-what-it-doesnt-know.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-02-20</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Shadow AI: What IT Does Not Know</h1>
+            <div class="article-body">
+                <p>The first time we actually measured it, the number stopped the meeting. We thought maybe 15 percent of employees were using unsanctioned AI tools at work. The proxy logs said 78 percent. Of those, about half were pasting content that touched data we classified as restricted.</p>
+
+                <p>That was not a policy failure. That was a policy that had been written as if the internet did not exist.</p>
+
+                <h2>How to actually count it</h2>
+                <p>Surveys undercount by roughly 3x in my experience. People do not want to say they are using ChatGPT to write performance reviews. You need data the employees do not self-report.</p>
+
+                <p>The sources that work:</p>
+
+                <ul>
+                    <li>Web proxy or SASE logs for requests to known AI inference endpoints. Start with the obvious ones (OpenAI, Anthropic, Google AI Studio, Perplexity, Mistral's hosted offering) and expand from there.</li>
+                    <li>Browser extension telemetry if you have a managed extension story. Extensions often talk to inference endpoints directly.</li>
+                    <li>CASB data for sanctioned SaaS apps that have AI features now enabled by default. Your sanctioned CRM probably grew a generative feature this quarter.</li>
+                    <li>Expense report patterns. Individual ChatGPT Plus and Claude Pro subscriptions show up if you look for them.</li>
+                </ul>
+
+                <p>Combine those. Build the number. Present it to leadership without editorial. The number will do the persuading.</p>
+
+                <h2>Why banning does not work</h2>
+                <p>Every org that has tried a blanket ban has watched the same movie. Usage goes down on the corporate network for two weeks. Then it moves to personal phones connected to personal hotspots, personal laptops at home, and browser extensions that proxy through services you have never heard of. The data exposure does not decrease. Your visibility into it does.</p>
+
+                <p>The employees using these tools are not malicious. They are productive people reaching for tools that make them more productive. A policy that tells them to be less productive loses. It loses against market forces, against peer pressure, against the CEO who uses ChatGPT herself.</p>
+
+                <h2>The sanctioned-alternative strategy</h2>
+                <p>What works is providing an enterprise alternative that is at least as good as the consumer tool for the majority of use cases. We rolled out an enterprise Claude deployment with a clear data handling posture (no training, short retention, contractual protections) and a thin UI that works with SSO. Within three months, 70 percent of the Shadow AI traffic we had been seeing routed to the sanctioned tool. Not because of policy. Because of convenience: SSO, no personal credit card, full context length, no rate limits.</p>
+
+                <p>The remaining 30 percent is a mix of specialized tools (image generation, coding assistants) and a long tail. For those we triaged: sanction the ones with acceptable data posture, offer guidance on the rest.</p>
+
+                <h2>Training over prohibition</h2>
+                <p>Most people are not trying to leak data. They do not know that pasting a customer list into ChatGPT is different from pasting it into a Google Doc. Twenty minutes of training on what is and is not safe to paste changes behavior more than any policy document. Make the training concrete: "here are examples of data that is fine to put into the sanctioned tool, here are examples that should never leave this perimeter." People respond to examples, not categories.</p>
+
+                <h2>Conditional access for AI tools</h2>
+                <p>For the stuff you have sanctioned, put real controls around it. Conditional access policies that require SSO, device compliance, and trusted network for high-risk tools. DLP integration at the egress that inspects content going to AI endpoints for sensitive patterns. Logging that is comparable to what you have for other SaaS.</p>
+
+                <p>You cannot apply the same controls to consumer ChatGPT on a personal device. You can make it less convenient to use than the sanctioned alternative. That is usually enough.</p>
+
+                <h2>The posture to aim for</h2>
+                <p>Accept that AI tools are now part of how knowledge work gets done. Provide a sanctioned path that is genuinely good. Measure what slips past it. Train people to know the difference. Ban only the things that are genuinely unacceptable (consumer inference with restricted data) and enforce those bans where you can. Revisit quarterly, because the tool landscape changes faster than your policies will.</p>
+
+                <p>The worst outcome is not Shadow AI. The worst outcome is a policy that pretends it does not exist and leaves you blind.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

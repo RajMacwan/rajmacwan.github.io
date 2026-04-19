@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI: Hype vs. Production — MacwanGrid</title>
+    <meta name="description" content="Agentic AI is real but fragile. What works, what breaks, and why your first deployment should be narrow. A practitioner's view.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Agentic AI: Hype vs. Production">
+    <meta property="og:description" content="Agentic AI is real but fragile. What works, what breaks, and why your first deployment should be narrow. A practitioner's view.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-14T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/agentic-ai-hype-vs-production.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-02-14</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Agentic AI: Hype vs. Production</h1>
+            <div class="article-body">
+                <p>The demos are incredible. The agent watches a bug report, clones the repo, reproduces the issue, writes a fix, opens a PR. Twenty seconds, end to end. Everyone in the room leans forward.</p>
+
+                <p>Then you deploy it in production. The agent works beautifully on the happy path. On step four of a twelve-step task, it makes a small mistake. It does not notice. It proceeds on the assumption that step four succeeded. By step twelve, it has created a pull request against the wrong branch, modified unrelated files, and closed the original ticket with a confident summary of something that did not happen.</p>
+
+                <p>Agentic AI is real. It is also, in early 2026, much more fragile than the demos suggest. Here is how I think about where it earns its keep and where it burns you.</p>
+
+                <h2>The core problem: error cascades</h2>
+                <p>A one-shot LLM call has one chance to be wrong. An agent making twenty tool calls in sequence has twenty chances. If each step is 95 percent reliable (which is optimistic for anything non-trivial), the end-to-end success rate is 36 percent. The math is unkind and the math does not care how good the underlying model is.</p>
+
+                <p>Models do not recover well from their own mistakes. If the agent called a tool with the wrong argument and got a cryptic error, the typical response is to try a variation, get another cryptic error, and eventually hallucinate a workaround that is worse than both. Watching this happen in real time is educational in a way that no vendor demo is.</p>
+
+                <h2>Toolchain complexity</h2>
+                <p>Every tool you add to an agent's toolbelt is another surface for errors. The tool's schema has to match what the model expects. The tool's error messages have to be intelligible to a model. The tool's side effects have to be reversible or gated. Most internal APIs were not designed for any of this. You end up writing thin wrappers per tool, and those wrappers become the thing you maintain.</p>
+
+                <p>Frameworks like LangChain and LlamaIndex help with the glue. They do not help with the fact that your internal ServiceNow instance returns HTML error pages to API calls under certain conditions, or that your ticketing system has rate limits the agent will happily blow through.</p>
+
+                <h2>Scoped agents versus open-ended</h2>
+                <p>The agent deployments that work have a narrow, well-defined scope. "Given an alert, gather these five enrichment signals, write a triage summary, and set one of four labels." That is an agent. It has a bounded action space, predictable inputs, and clear success criteria.</p>
+
+                <p>"Be my IT assistant" is not an agent. It is a vibe. Open-ended agents fail in ways that are hard to debug because the failure mode is the combinatorial explosion of the action space. Narrow the scope. Narrow it again. When you think you have narrowed it enough, narrow it once more. That version might ship.</p>
+
+                <h2>Audit trails are not optional</h2>
+                <p>If an agent can take actions that affect systems, every action needs to be logged with enough context to reconstruct what happened. The prompt at each step, the tool call made, the response returned, the model's reasoning if you can extract it. When something goes wrong, and it will, you need to walk back through the decision tree.</p>
+
+                <p>This is also what makes incident response on agentic systems tractable. A developer can look at the trace, identify the step that went sideways, and either fix the prompt, fix the tool, or add a guard. Without the trace, you are guessing.</p>
+
+                <h2>Human gates for blast radius</h2>
+                <p>Agents should be allowed to act autonomously on reversible, low-stakes actions. Commenting on a ticket, tagging a message, querying a read-only API. Anything that cannot be easily undone needs a human in the loop. Creating tickets, modifying records, running scripts, sending external email.</p>
+
+                <p>This is boring, and it is also the reason the systems we run have not had a public incident. The overhead of a human clicking confirm is small. The cost of an autonomous agent modifying the wrong customer record is not small.</p>
+
+                <h2>When agents are worth the complexity</h2>
+                <p>Three conditions need to hold: the task is repetitive enough that automating it saves real time, the scope is narrow enough that the failure modes are understandable, and the stakes are low enough that an occasional failure is recoverable. Triage summarization, routine enrichment, first-pass classification. The space where agents earn their keep today is unglamorous.</p>
+
+                <p>The more ambitious stuff will get there. Probably not this year. Definitely not this quarter. If a vendor is selling you an "autonomous IT operations agent" that replaces your ops team, ask to see their incident log. If they do not have one, they do not have production.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

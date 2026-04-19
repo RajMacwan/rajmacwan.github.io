@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes for Enterprise IT (Not Just Developers) — MacwanGrid</title>
+    <meta name="description" content="Kubernetes is infrastructure, not a dev platform. Enterprise IT teams who hand it over to product squads regret it. Here's why ownership matters.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Kubernetes for Enterprise IT (Not Just Developers)">
+    <meta property="og:description" content="Kubernetes is infrastructure, not a dev platform. Enterprise IT teams who hand it over to product squads regret it. Here's why ownership matters.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-24T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/kubernetes-enterprise-it-not-just-devs.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-03-24</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Kubernetes for Enterprise IT (Not Just Developers)</h1>
+            <div class="article-body">
+                <p>Every breach postmortem I've read in the last two years where Kubernetes was involved has the same root cause buried three paragraphs down: <em>nobody in enterprise IT owned the cluster</em>. A product team stood it up. A DevOps engineer wired it in. Security was a Jira ticket. Then someone left, the CNI version drifted, RBAC rotted, and a misconfigured service account held the keys to the namespace next door.</p>
+
+                <p>Kubernetes is not a developer platform. It's a distributed operating system with its own network, identity plane, secrets store, and scheduler. Treating it as "the thing the app team runs" is the same mistake enterprises made letting product teams manage their own AD forests in 2005. It ends the same way.</p>
+
+                <h2>Cluster ownership: pick a model and write it down</h2>
+                <p>There are three reasonable cluster ownership models. Pick one and commit:</p>
+                <ul>
+                    <li><strong>Central platform team owns everything.</strong> Product teams get namespaces. Best for orgs under 50 services. Scales badly past that.</li>
+                    <li><strong>Platform team owns the substrate; product teams own namespaces and workloads.</strong> Platform provides a paved road — Helm charts, base images, policy bundles. This is where most enterprises belong.</li>
+                    <li><strong>Federated: product teams run their own clusters on a shared control plane (EKS, AKS, GKE).</strong> Only works if you have real platform engineering maturity and a hard inventory story.</li>
+                </ul>
+                <p>The wrong answer is "it depends on the team" — that's how you end up with 14 clusters, three CNIs, and no one who can answer <em>which one runs payroll</em>.</p>
+
+                <h2>Networking and identity: the parts IT actually owns</h2>
+                <p>CNI choice is infrastructure. It is not a product team decision. Cilium, Calico, AWS VPC CNI, Azure CNI — each has different implications for network policy enforcement, eBPF observability, and egress cost. Pick based on how you answer <em>who enforces east-west traffic policy</em>, not on a blog post.</p>
+                <p>Service account sprawl is the modern equivalent of local admin accounts. Defaults are generous. A service account with <code>cluster-admin</code> bound to <code>default</code> in one namespace is a breach waiting for a compromised pod. Enterprise IT should be auditing:</p>
+                <ul>
+                    <li>Workload identity federation (IRSA on AWS, Workload Identity on GCP, Azure AD workload identity) — so pods don't hold long-lived credentials.</li>
+                    <li>Secret stores external to the cluster — HashiCorp Vault, AWS Secrets Manager via the Secrets Store CSI driver. Not <code>kubectl create secret</code>.</li>
+                    <li>Bound service account tokens with TTLs. The old "token lives forever in a secret" model is deprecated for a reason.</li>
+                </ul>
+
+                <h2>Policy and multi-tenancy: the parts everyone skips</h2>
+                <p>If your cluster has more than one team on it, you need a policy engine. OPA Gatekeeper or Kyverno — doesn't matter which, pick one. Without admission control you have no way to prevent:</p>
+                <blockquote>A team deploying privileged containers, mounting host paths, or running as root — because the platform lets them, and they're on a deadline.</blockquote>
+                <p>Multi-tenancy in Kubernetes is harder than the marketing suggests. Namespaces are not a security boundary by themselves. Network policies default-deny, pod security standards enforced at <code>restricted</code>, ResourceQuotas, LimitRanges, and — for anything with real blast-radius concerns — virtual clusters (vcluster) or separate clusters entirely.</p>
+
+                <h2>Observability: the bill you didn't budget for</h2>
+                <p>The day you turn on full Prometheus scraping, Loki for logs, and Tempo for traces across a 200-node cluster, your observability bill doubles. I've watched this happen. The answer is not "turn it off" — it's cardinality discipline at the ingestion layer, tiered retention, and being honest that not every namespace needs 30 days of traces.</p>
+                <p>Enterprise IT needs to own the observability plane for clusters the same way it owns SIEM for endpoints. If product teams are each running their own Grafana, you have no operational view.</p>
+
+                <p><strong>The takeaway:</strong> Kubernetes is infrastructure. Put it under the same ownership model as your hypervisors, your network fabric, and your identity plane. If you can't name the person on-call for the cluster running your most critical workload, you don't have a platform — you have a liability.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

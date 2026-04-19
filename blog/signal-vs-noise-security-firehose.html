@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signal vs Noise: The Security News Firehose — MacwanGrid</title>
+    <meta name="description" content="There's too much security 'news.' 95% doesn't change what you do tomorrow. Here's how to filter.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Signal vs Noise: The Security News Firehose">
+    <meta property="og:description" content="There's too much security 'news.' 95% doesn't change what you do tomorrow. Here's how to filter.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-24T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/signal-vs-noise-security-firehose.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-02-24</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Signal vs Noise: The Security News Firehose</h1>
+            <div class="article-body">
+                <p>There is too much security news. NVD publishes thousands of CVEs per year. LinkedIn fills with CVE-of-the-day hot takes. Vendor marketing teams push "the next SolarWinds" every six weeks. Trade press runs the same breach three ways. By honest estimate, 95% of what crosses an IT leader's inbox and feeds in a given week has no effect on what they should do next Monday.</p>
+
+                <p>Filtering is a core skill. Here is a working model.</p>
+
+                <h2>The Three Buckets</h2>
+                <p><strong>Bucket 1: Act today.</strong> A CVE was added to CISA KEV and it affects your stack. A peer in your sector was named on a ransomware leak site. Your IdP vendor issued an urgent advisory. Anomalous volume of infostealer logs for your domain appears on a tracker. You stop what you were doing and you respond.</p>
+
+                <p><strong>Bucket 2: Digest this week.</strong> Vendor threat-report drops (Mandiant M-Trends, Verizon DBIR, CrowdStrike GTR, IBM X-Force Index, ENISA landscape). Detailed campaign writeups (Unit 42, Talos, Microsoft Threat Intelligence, The DFIR Report). New legislation or regulatory guidance (SEC disclosure, NIS2, DORA). Trend reporting where the delta matters but the urgency doesn't.</p>
+
+                <p><strong>Bucket 3: Ignore or lightly skim.</strong> CVE announcements without evidence of exploitation. Zero-day "warnings" that turn out to be routine vendor patches rebranded by marketing. Vendor-funded survey "studies" (usually a Ponemon report). Conference keynote speculation. Every article using the phrase "alarming new threat."</p>
+
+                <p>Most people's news consumption is inverted — they spend the most time on Bucket 3 because it is loudest, and miss Bucket 1 because it arrives quietly in a CISA mailing list.</p>
+
+                <h2>The Zero-Day Fear Cycle</h2>
+                <p>Zero-day coverage follows a predictable hype curve. Day 0: "critical RCE in widely deployed product." Day 1: proof-of-concept released, patch available, media frenzy. Day 3–7: retrospective articles about "how serious this is." Week 2: actual exploitation telemetry quietly shows limited, targeted use against specific victims. Week 4: crickets.</p>
+
+                <p>The decision-useful question is almost never "is this zero-day scary?" It is "is this in my environment, and is there evidence of exploitation in my sector?" KEV answers the second part with government confidence. Your CMDB answers the first. If both are yes, Bucket 1. If only the first, Bucket 2. If neither, you can stop reading.</p>
+
+                <h2>CVE Bulletin Exhaustion</h2>
+                <p>NVD has been backlogged for large stretches of 2024–2025, the CVSS-centric model routinely mis-scores real-world risk, and supplementary sources (VulnCheck, CISA SSVC, EPSS, GitHub Advisories, OSV) have taken on more of the load. Reading every CVE is not a coherent intake strategy. The practical approach:</p>
+
+                <ul>
+                    <li>Subscribe to vendor advisories for every product in your CMDB (Microsoft, Cisco, Fortinet, Palo Alto, Ivanti, Citrix, VMware, major Linux distros, the specific SaaS vendors you use).</li>
+                    <li>Subscribe to CISA KEV.</li>
+                    <li>Wire EPSS into your vulnerability management to prioritize what is likely to be exploited.</li>
+                    <li>Ignore CVE-of-the-day Twitter unless it shows up in one of the above within 48 hours.</li>
+                </ul>
+
+                <h2>The Base-Rate Discipline</h2>
+                <p>The DBIR and Mandiant M-Trends both tell the same story, year after year: the median incident starts with a commodity phish, a vulnerable edge appliance, or stolen credentials — not a novel zero-day or an exotic APT. If you let the news cycle set your priorities, you over-invest in the exciting and under-invest in the boring. Patching, MFA on everything, edge-device hygiene, email filtering, IdP hardening, backup integrity. The base rates haven't changed in years. Neither should your spending priorities.</p>
+
+                <h2>Briefing Executives Without Being Alarmist</h2>
+                <p>How you relay the firehose to leadership is itself a filtering problem. A few disciplines:</p>
+
+                <p><strong>Lead with relevance, not severity.</strong> "This affects our Fortinet fleet; we have patched 60% as of this morning" is better than "critical vulnerability is being actively exploited."</p>
+
+                <p><strong>Say what you are doing, not what could happen.</strong> Executives don't need your vendor's FUD copy. They need to know the action and the ETA.</p>
+
+                <p><strong>Use consistent risk language.</strong> If you called last month's event "high severity," be prepared to explain how this one compares. Inflation erodes credibility fast.</p>
+
+                <p><strong>Stay boring when possible.</strong> If your weekly CISO update is dramatic, it is either a bad week or bad filtering. Over time, people will calibrate to you; aim for a reputation where "Raj is worried" means something.</p>
+
+                <h2>The One-Question Filter</h2>
+                <p>Before consuming any piece of security news, ask: "what decision will this change?" If the answer is none, skip or skim. If the answer is a specific decision, read carefully and act. That question removes about 80% of the firehose and leaves the 20% that deserves your attention — which, coincidentally, is roughly the ratio DBIR, M-Trends, and your own incident history all suggest you should be operating at.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

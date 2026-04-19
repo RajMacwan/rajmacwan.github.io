@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hardening Your Home Network — MacwanGrid</title>
+    <meta name="description" content="A practical list: VLANs for IoT, DNS filtering, WPA3, guest network, WireGuard remote access, and turning off UPnP. Boring wins here.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hardening Your Home Network">
+    <meta property="og:description" content="A practical list: VLANs for IoT, DNS filtering, WPA3, guest network, WireGuard remote access, and turning off UPnP. Boring wins here.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-09T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/hardening-your-home-network.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-09</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Hardening Your Home Network</h1>
+            <div class="article-body">
+                <p>My home network has about 40 devices. A third of them are IoT junk I would not let near a corporate VLAN. Hardening this is not glamorous work. It is mostly segmentation and saying no to default settings. Here is the short list that actually matters.</p>
+
+                <h2>1. Separate VLAN for IoT</h2>
+                <p>Your Ring doorbell, robot vacuum, smart bulbs, and TV do not need to speak to your laptop. Ever. Put them on their own VLAN with these rules:</p>
+                <ul>
+                    <li>IoT VLAN can reach the internet.</li>
+                    <li>IoT VLAN cannot initiate traffic to your trusted VLAN.</li>
+                    <li>Trusted VLAN can initiate traffic into IoT (so Home Assistant still works).</li>
+                    <li>Allow mDNS reflection or use Avahi if you need Cast/AirPlay discovery.</li>
+                </ul>
+                <p>On UniFi, this is three minutes in the Networks tab plus a Traffic Rule. On OPNsense, a floating rule on the IoT interface with <code>block in from IOT_net to RFC1918</code>.</p>
+
+                <h2>2. DNS Filtering</h2>
+                <p>Pi-hole on a Raspberry Pi 4 with the StevenBlack unified list catches roughly 15-20% of all queries on my network. NextDNS does the same thing as a managed service with better mobile profiles for about $20/year.</p>
+                <p>Configure your router's DHCP to hand out the Pi-hole IP as the only DNS server. Block outbound DNS (UDP/53 and DoT/853) from every client except Pi-hole itself. Otherwise your smart TV will happily hard-code 8.8.8.8 and bypass you.</p>
+                <pre><code># OPNsense floating rule, all interfaces except LAN
+# Block outbound 53 and 853 except from Pi-hole
+source: !PIHOLE_IP
+dest: any  dest_port: 53, 853
+action: block, log</code></pre>
+
+                <h2>3. WPA3 with a Long Passphrase</h2>
+                <p>If your access point supports WPA3 (any decent hardware made after 2020 does), turn it on. Use WPA3-Personal in transition mode if you have stragglers that only do WPA2. Pick a passphrase that is long, not clever — four random words from an EFF dice list, 25+ characters. WPA2 PSKs are offline-crackable in a weekend if they are short. WPA3 SAE is not.</p>
+
+                <h2>4. A Real Guest Network</h2>
+                <p>Guest SSID on its own VLAN, client isolation on, bandwidth cap optional. No access to any internal resource. This is where every friend, babysitter, and Airbnb guest gets put. Rotate the passphrase yearly — it is not a secret, but old ones tend to end up in group chats.</p>
+
+                <h2>5. WireGuard for Remote Access</h2>
+                <p>Do not open RDP to the internet. Do not open SSH on port 22 to the internet. Do not forward port 3306 because "it is only for me."</p>
+                <p>Install WireGuard on your router or on a dedicated Pi. UDP on a random high port. Each device gets its own keypair. When you want to reach anything at home, connect the tunnel first.</p>
+                <pre><code>[Interface]
+Address = 10.8.0.1/24
+ListenPort = 51820
+PrivateKey = ...
+
+[Peer]   # laptop
+PublicKey = ...
+AllowedIPs = 10.8.0.2/32</code></pre>
+                <p>Tailscale is the easier version of this and is fine. Just pick one and use it instead of port-forwards.</p>
+
+                <h2>6. Disable UPnP</h2>
+                <p>UPnP lets any device on your network ask your router to open an inbound port. Every "works magically" device you own abuses this. Turn it off. When a Sonos or a game console breaks, manually forward the one port it actually needs. The list is shorter than you would think.</p>
+
+                <h2>The Rest of the Checklist</h2>
+                <ul>
+                    <li>Change the default router admin password. Yes, people still have not.</li>
+                    <li>Disable WPS — the PIN attack is a decade old and still works on cheap gear.</li>
+                    <li>Update router firmware every 6 months. Calendar it.</li>
+                    <li>Turn off "remote management" / cloud admin on the router unless you genuinely use it.</li>
+                    <li>Enable IPv6 firewalling. A lot of people block inbound v4 and forget v6 is wide open.</li>
+                    <li>Log DNS queries for a week after any new device shows up. You will spot the one phoning home to a third-party analytics domain every 30 seconds.</li>
+                </ul>
+
+                <p>None of this is exotic. It is the equivalent of locking your doors and putting shades on the windows. An attacker moving laterally from a compromised smart plug to your work laptop is not a movie plot — it is Tuesday. Spend an evening, build the VLANs, and forget about most of it for a few years.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

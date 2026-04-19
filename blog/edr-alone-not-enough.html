@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDR Alone Isn't Enough. Here's What's Missing. — MacwanGrid</title>
+    <meta name="description" content="EDR is great on endpoints. Attackers moved to identity, SaaS, and OT. What ITDR, NDR, SSPM, and centralized logging add to a modern detection stack.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="EDR Alone Isn't Enough. Here's What's Missing.">
+    <meta property="og:description" content="EDR is great on endpoints. Attackers moved to identity, SaaS, and OT. What ITDR, NDR, SSPM, and centralized logging add to a modern detection stack.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-15T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/edr-alone-not-enough.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-03-15</span>
+                <span>5 min read</span>
+            </div>
+            <h1>EDR Alone Isn't Enough. Here's What's Missing.</h1>
+            <div class="article-body">
+                <p>EDR was the single best control investment of the last decade. CrowdStrike Falcon, SentinelOne, and Defender for Endpoint genuinely changed what was detectable on a Windows host. But attackers read the same reports you do. They moved up the stack (identity) and out of the stack (SaaS, cloud control planes, OT). If your detection strategy still centers on the endpoint, you are watching the door the adversaries stopped using.</p>
+
+                <h2>Identity is the new endpoint</h2>
+                <p>The 2023 Okta support-system breach, the Microsoft Midnight Blizzard compromise, and most Scattered Spider intrusions had one thing in common: no malware on a workstation. A valid session, a stolen token, a help-desk social engineer. EDR had nothing to say.</p>
+                <p>You need <code>ITDR</code> — identity threat detection and response. In practice that means:</p>
+                <ul>
+                    <li>Detections on impossible travel, token replay, anomalous OAuth consent, and risky sign-ins — and someone actually triaging them.</li>
+                    <li>Hardening for Active Directory and Entra ID: tiered admin model, privileged access workstations, alerting on <code>DCSync</code>, <code>Kerberoast</code>, and service-principal credential additions.</li>
+                    <li>Monitoring your IdP the way you monitor your EDR — with tuned rules, not out-of-the-box defaults.</li>
+                </ul>
+
+                <h2>SaaS and cloud posture, not just cloud workloads</h2>
+                <p>Most orgs now run payroll, CRM, code, and communications in SaaS. The attack surface is configuration, not binaries. A misconfigured sharing link in Google Drive or a legacy auth protocol in Microsoft 365 is the breach, and no endpoint agent will see it.</p>
+                <ul>
+                    <li><strong>SSPM</strong> for SaaS posture: tools like AppOmni, Obsidian, or the native posture features in your IdP.</li>
+                    <li><strong>CSPM and CNAPP</strong> for cloud: Wiz, Prisma Cloud, or Defender for Cloud — the value is continuous configuration assessment, not another dashboard.</li>
+                    <li>OAuth app inventory and consent governance. The app someone approved three years ago is still reading mail.</li>
+                </ul>
+
+                <h2>OT and ICS visibility</h2>
+                <p>If you run manufacturing, utilities, healthcare devices, or building management, your OT network is probably monitored by nothing. EDR will not install on a PLC. The Colonial Pipeline incident was an IT-to-OT precautionary shutdown, but the more recent water-utility intrusions show direct OT access is well within reach of commodity attackers.</p>
+                <p>Passive network monitoring — Claroty, Dragos, Nozomi — gives you asset inventory and anomaly detection without touching the devices. Start with inventory. You cannot defend what you cannot name.</p>
+
+                <h2>Network detection and centralized logs</h2>
+                <p>NDR is not dead. Encrypted traffic made payload inspection less useful, but flow analysis, DNS anomalies, and beacon detection are still how you catch the thing that slipped past the endpoint. Corelight, Darktrace, and the open-source <code>Zeek</code>/<code>Suricata</code> stack all work.</p>
+                <p>And all of this is noise if the logs do not land in one place. A SIEM or data lake with authentication logs, EDR telemetry, network metadata, cloud audit logs, and SaaS admin events — correlated, searchable, retained long enough to investigate a dwell time that is now often measured in weeks.</p>
+
+                <blockquote>EDR catches the noisy attacker on a laptop. It does not catch the quiet attacker who logged in.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Map your detection coverage against the attack surfaces that matter: endpoints, identity, SaaS, cloud control plane, OT, network. For each one, name the control, the telemetry source, and the person who tunes the rules. The gaps are where the next incident lives. EDR is the floor of that map, not the whole building.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

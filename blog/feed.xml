@@ -1,59 +1,687 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Raj Macwan — Blog</title>
+    <title>MacwanGrid — Blog</title>
     <link>https://macwangrid.com/blog/</link>
     <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
     <language>en-us</language>
     <atom:link href="https://macwangrid.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 15 Apr 2026 10:00:00 GMT</lastBuildDate>
-    <managingEditor>contact@macwangrid.com (Raj Macwan)</managingEditor>
-    <copyright>© 2026 Raj Macwan. Views are my own.</copyright>
+    <lastBuildDate>Sat, 19 Apr 2026 08:00:00 GMT</lastBuildDate>
 
     <item>
       <title>Why I Built a Dark Web Research Site (and What I Learned)</title>
       <link>https://macwangrid.com/blog/why-i-built-darkpulse.html</link>
-      <description>Running a Tor hidden service as a senior IT leader. Stack notes, tradecraft, identity separation, and what the project actually taught me about privacy engineering.</description>
+      <description>A year of studying privacy engineering by building one. Lessons on Whonix, Tor hidden services, and operational isolation.</description>
       <pubDate>Wed, 15 Apr 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/why-i-built-darkpulse.html</guid>
-      <category>Research</category>
+      <category>D
+arkGrid</category>
     </item>
-
     <item>
       <title>The CISA KEV Catalog as a Prioritized Patch Backlog</title>
       <link>https://macwangrid.com/blog/kev-as-backlog.html</link>
-      <description>Most patch management programs drown in CVE noise. CISA's Known Exploited Vulnerabilities list is the strongest prioritization signal available, and how to actually integrate it into workflow.</description>
+      <description>Most patch programs drown in CVEs. KEV is the strongest signal most teams aren't using well. Here's how.</description>
       <pubDate>Fri, 10 Apr 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/kev-as-backlog.html</guid>
-      <category>Security</category>
+      <category>T
+hreatGrid</category>
     </item>
-
     <item>
-      <title>AI in IT Operations: A Reality Check from the Trenches</title>
+      <title>AI in IT Operations: A Reality Check</title>
       <link>https://macwangrid.com/blog/ai-in-ops-reality-check.html</link>
-      <description>A balanced practitioner view on where AI actually works in IT operations, where it is hype, and the governance problems nobody wants to own.</description>
+      <description>What actually works, what's vendor theater, and where I think the genuine leverage lives over the next two years.</description>
       <pubDate>Sun, 05 Apr 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/ai-in-ops-reality-check.html</guid>
-      <category>AI and Automation</category>
+      <category>A
+iGrid</category>
     </item>
-
     <item>
       <title>MIT Week 1: Back in a Classroom After 20 Years</title>
       <link>https://macwangrid.com/blog/mit-week-1.html</link>
-      <description>Returning to formal study at MIT after two decades in industry. Early notes on the gap between running the work and studying it.</description>
+      <description>A personal reflection on returning to formal study after two decades of practice.</description>
       <pubDate>Thu, 02 Apr 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/mit-week-1.html</guid>
-      <category>MIT Journey</category>
+      <category>O
+ffGrid</category>
     </item>
-
+    <item>
+      <title>What To Do In The First 24 Hours</title>
+      <link>https://macwangrid.com/blog/first-24-hours-breach-response.html</link>
+      <description>The calm-first playbook: isolate, preserve, engage legal, out-of-band comms — and the things you must NOT do.</description>
+      <pubDate>Sun, 29 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/first-24-hours-breach-response.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Home Security Lab: The Minimum Viable Stack</title>
+      <link>https://macwangrid.com/blog/home-security-lab-minimum-viable-stack.html</link>
+      <description>What the lab actually needs: hypervisor, routed VLAN, EDR trials, AD test forest, packet capture.</description>
+      <pubDate>Sat, 28 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/home-security-lab-minimum-viable-stack.html</guid>
+      <category>L
+abGrid</category>
+    </item>
     <item>
       <title>Zero Trust Is Harder Than Vendors Admit</title>
       <link>https://macwangrid.com/blog/zero-trust-reality.html</link>
-      <description>The Zero Trust architecture is sound. The products sold under its name often are not. A pragmatic five-year view of what the real journey looks like.</description>
+      <description>The concept is sound. Implementations are often theatrical. A pragmatic path through the Zero Trust journey.</description>
       <pubDate>Sat, 28 Mar 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/zero-trust-reality.html</guid>
-      <category>Security</category>
+      <category>T
+hreatGrid</category>
     </item>
-
+    <item>
+      <title>Reading the Threat Intelligence Landscape</title>
+      <link>https://macwangrid.com/blog/reading-the-threat-intelligence-landscape.html</link>
+      <description>Threat intel has a tier system nobody writes down. Strategic, operational, tactical, technical.</description>
+      <pubDate>Fri, 27 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/reading-the-threat-intelligence-landscape.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>LLM-Powered Runbooks: Where They Work</title>
+      <link>https://macwangrid.com/blog/llm-powered-runbooks-where-they-work.html</link>
+      <description>LLMs augment runbooks well, but only after you've stopped treating them as answer engines.</description>
+      <pubDate>Thu, 26 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/llm-powered-runbooks-where-they-work.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>The 10-Point Ransomware Readiness Checklist</title>
+      <link>https://macwangrid.com/blog/ransomware-10-point-checklist.html</link>
+      <description>Most organizations discover their gaps after the encryption starts. The ten things to have in place before.</description>
+      <pubDate>Wed, 25 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/ransomware-10-point-checklist.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>OSINT for IT Leaders</title>
+      <link>https://macwangrid.com/blog/osint-for-it-leaders.html</link>
+      <description>Free OSINT sources give you 80% of what costs $100k+ in vendor subscriptions.</description>
+      <pubDate>Wed, 25 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/osint-for-it-leaders.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Kubernetes for Enterprise IT (Not Just Developers)</title>
+      <link>https://macwangrid.com/blog/kubernetes-enterprise-it-not-just-devs.html</link>
+      <description>Kubernetes is infrastructure, not a dev platform. Teams who let it sit with product teams regret it.</description>
+      <pubDate>Tue, 24 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/kubernetes-enterprise-it-not-just-devs.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Setting Up Whonix: Step by Step</title>
+      <link>https://macwangrid.com/blog/setting-up-whonix-step-by-step.html</link>
+      <description>Windows + VirtualBox + Whonix. Install, bootstrap Tor, first onion service, common pitfalls.</description>
+      <pubDate>Tue, 24 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/setting-up-whonix-step-by-step.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>US Cyber Authorities: Who to Call</title>
+      <link>https://macwangrid.com/blog/us-cyber-authorities-who-to-call.html</link>
+      <description>FBI IC3, CISA, Secret Service, state AG, SEC. What each does, when to call, how to report.</description>
+      <pubDate>Mon, 23 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/us-cyber-authorities-who-to-call.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Tor for IT Professionals: A Primer</title>
+      <link>https://macwangrid.com/blog/tor-for-it-professionals-primer.html</link>
+      <description>Most IT leaders think Tor = illegal and stop there. It's a critical privacy tool used by journalists and researchers.</description>
+      <pubDate>Mon, 23 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/tor-for-it-professionals-primer.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>MFA Is Necessary. It's Not Sufficient.</title>
+      <link>https://macwangrid.com/blog/mfa-necessary-not-sufficient.html</link>
+      <description>MFA is table stakes. Adversaries have moved to MFA fatigue, session hijacking, OAuth abuse.</description>
+      <pubDate>Sun, 22 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/mfa-necessary-not-sufficient.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Prompt Injection: The OWASP of AI</title>
+      <link>https://macwangrid.com/blog/prompt-injection-owasp-of-ai.html</link>
+      <description>Prompt injection is the SQL injection of 2026. Most teams haven't even mapped their attack surface yet.</description>
+      <pubDate>Sat, 21 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/prompt-injection-owasp-of-ai.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Dark Web Intel: What Actually Matters</title>
+      <link>https://macwangrid.com/blog/dark-web-intel-what-actually-matters.html</link>
+      <description>Most dark-web-monitoring products oversell. Only two classes of findings actually change defender behavior.</description>
+      <pubDate>Sat, 21 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/dark-web-intel-what-actually-matters.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>The Hidden Cost of Multi-Cloud</title>
+      <link>https://macwangrid.com/blog/hidden-cost-multi-cloud.html</link>
+      <description>Multi-cloud for resilience is often more fragile than single-cloud. Expertise duplication, data gravity, egress fees.</description>
+      <pubDate>Fri, 20 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/hidden-cost-multi-cloud.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Whonix Architecture Explained</title>
+      <link>https://macwangrid.com/blog/whonix-architecture-explained.html</link>
+      <description>Whonix separates the application from the network at the VM boundary. A beautiful piece of engineering.</description>
+      <pubDate>Thu, 19 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/whonix-architecture-explained.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Local LLM for SOC Prototyping</title>
+      <link>https://macwangrid.com/blog/local-llm-for-soc-prototyping.html</link>
+      <description>Ollama + Llama on a dedicated box. Why local matters for prototyping, what you can't prototype locally.</description>
+      <pubDate>Thu, 19 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/local-llm-for-soc-prototyping.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Tabletop Exercises That Actually Stress Your Plan</title>
+      <link>https://macwangrid.com/blog/tabletop-exercises-that-work.html</link>
+      <description>Most tabletops are theatre. A good one sends you back to documentation with 3-5 gaps to fix.</description>
+      <pubDate>Wed, 18 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/tabletop-exercises-that-work.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Credit Freezes: Step by Step</title>
+      <link>https://macwangrid.com/blog/credit-freeze-step-by-step.html</link>
+      <description>All three bureaus, walked through. Child credit freezes. When to lift. Fraud alerts vs. freezes.</description>
+      <pubDate>Wed, 18 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/credit-freeze-step-by-step.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>RAG for Internal Documentation</title>
+      <link>https://macwangrid.com/blog/rag-for-internal-documentation.html</link>
+      <description>RAG over internal docs is the most boring, most useful enterprise AI pattern.</description>
+      <pubDate>Tue, 17 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/rag-for-internal-documentation.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Observability vs Monitoring: A Practitioner's Take</title>
+      <link>https://macwangrid.com/blog/observability-vs-monitoring.html</link>
+      <description>Monitoring answers what you thought to ask. Observability answers questions you didn't anticipate.</description>
+      <pubDate>Mon, 16 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/observability-vs-monitoring.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Building an Intel-Driven Security Program</title>
+      <link>https://macwangrid.com/blog/building-intel-driven-security-program.html</link>
+      <description>Most SOCs claim intel-driven but operate alert-driven. What actually changes when intel drives detection.</description>
+      <pubDate>Mon, 16 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/building-intel-driven-security-program.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>EDR Alone Isn't Enough</title>
+      <link>https://macwangrid.com/blog/edr-alone-not-enough.html</link>
+      <description>EDR is great at endpoints. Attackers moved up (identity) and out (SaaS, OT). What else you need.</description>
+      <pubDate>Sun, 15 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/edr-alone-not-enough.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Hidden Service Fundamentals</title>
+      <link>https://macwangrid.com/blog/hidden-service-fundamentals.html</link>
+      <description>Hidden services are misunderstood. A powerful primitive for authenticated, end-to-end encrypted services.</description>
+      <pubDate>Sat, 14 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/hidden-service-fundamentals.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Proxmox vs ESXi in 2026</title>
+      <link>https://macwangrid.com/blog/proxmox-vs-esxi-2026.html</link>
+      <description>Post-Broadcom ESXi pricing. Proxmox for home + mid-enterprise. Feature parity for 80%, honest gaps.</description>
+      <pubDate>Sat, 14 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/proxmox-vs-esxi-2026.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>AI Tier-1 SOC Triage: Six-Month Results</title>
+      <link>https://macwangrid.com/blog/ai-tier1-soc-triage-six-months.html</link>
+      <description>After six months of LLM-assisted tier-1 triage, here's what I'd tell other IT leaders.</description>
+      <pubDate>Fri, 13 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/ai-tier1-soc-triage-six-months.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Identity Theft Recovery Workflow</title>
+      <link>https://macwangrid.com/blog/identity-theft-recovery-workflow.html</link>
+      <description>IdentityTheft.gov five-step process, police reports, credit bureau disputes, tax-related ID theft.</description>
+      <pubDate>Fri, 13 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/identity-theft-recovery-workflow.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Data Platform Maturity: From Lake to Lakehouse</title>
+      <link>https://macwangrid.com/blog/data-platform-maturity-lakehouse.html</link>
+      <description>The data lake promise failed. Lakehouse (Iceberg, Delta) succeeds where it does.</description>
+      <pubDate>Thu, 12 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/data-platform-maturity-lakehouse.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Vendor Threat Feeds: What You're Paying For</title>
+      <link>https://macwangrid.com/blog/vendor-threat-feeds-reality.html</link>
+      <description>The $500k feed has 85% overlap with the $10k one. The real value is often elsewhere.</description>
+      <pubDate>Wed, 11 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/vendor-threat-feeds-reality.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Insider Threat: The Uncomfortable Conversation</title>
+      <link>https://macwangrid.com/blog/insider-threat-uncomfortable-truth.html</link>
+      <description>Most insider threats aren't malicious. They're privilege sprawl, bad offboarding, and ego.</description>
+      <pubDate>Tue, 10 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/insider-threat-uncomfortable-truth.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Ethics of Dark Web Research</title>
+      <link>https://macwangrid.com/blog/ethics-of-dark-web-research.html</link>
+      <description>Doing security research on Tor requires a code. Legal research vs. crossing lines.</description>
+      <pubDate>Mon, 09 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/ethics-of-dark-web-research.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Hardening Your Home Network</title>
+      <link>https://macwangrid.com/blog/hardening-your-home-network.html</link>
+      <description>Separate IoT VLAN, DNS filtering, WPA3, guest network, Wireguard. Practical list.</description>
+      <pubDate>Mon, 09 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/hardening-your-home-network.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Executive Breach Response Playbook</title>
+      <link>https://macwangrid.com/blog/executive-breach-response-playbook.html</link>
+      <description>Board notification, crisis comms, counsel, insurance, regulators. The 48-72h window.</description>
+      <pubDate>Sun, 08 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/executive-breach-response-playbook.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Why Your SRE Team Isn't Scaling</title>
+      <link>https://macwangrid.com/blog/why-sre-not-scaling.html</link>
+      <description>SRE doesn't scale by hiring more SREs. It scales by reducing toil and raising abstraction.</description>
+      <pubDate>Sun, 08 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/why-sre-not-scaling.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Model Selection for Enterprise IT</title>
+      <link>https://macwangrid.com/blog/model-selection-for-enterprise-it.html</link>
+      <description>The LLM you pick for enterprise IT isn't the one on the ChatGPT homepage.</description>
+      <pubDate>Sat, 07 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/model-selection-for-enterprise-it.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>The Five Sources I Read Every Morning</title>
+      <link>https://macwangrid.com/blog/five-sources-i-read-every-morning.html</link>
+      <description>A 20-minute curated read-in beats a 2-hour dashboard crawl.</description>
+      <pubDate>Fri, 06 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/five-sources-i-read-every-morning.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Vulnerability Management That Isn't a CSV Dump</title>
+      <link>https://macwangrid.com/blog/vulnerability-management-that-works.html</link>
+      <description>You don't need to patch everything. You need to patch what adversaries are exploiting.</description>
+      <pubDate>Thu, 05 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/vulnerability-management-that-works.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Identity Separation in Security Work</title>
+      <link>https://macwangrid.com/blog/identity-separation-in-security-work.html</link>
+      <description>If you do research under a pseudonym, your clearnet and shadow identities need actual separation.</description>
+      <pubDate>Wed, 04 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/identity-separation-in-security-work.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Bitwarden Enterprise: 18-Month Review</title>
+      <link>https://macwangrid.com/blog/bitwarden-enterprise-review.html</link>
+      <description>What works, what's rough. SSO + team shares (good). SCIM nuances + mobile UX (uneven).</description>
+      <pubDate>Wed, 04 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/bitwarden-enterprise-review.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Endpoint Management: Zero Trust for Devices</title>
+      <link>https://macwangrid.com/blog/endpoint-management-zero-trust.html</link>
+      <description>Your endpoint is the new perimeter segment. Managing it like it's 2015 is why you're breached.</description>
+      <pubDate>Tue, 03 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/endpoint-management-zero-trust.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>GDPR Breach Notification Requirements</title>
+      <link>https://macwangrid.com/blog/gdpr-breach-notification-requirements.html</link>
+      <description>72-hour clock, DPA notification, when "high risk" triggers data subject notification.</description>
+      <pubDate>Tue, 03 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/gdpr-breach-notification-requirements.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Data Leakage in AI Workflows</title>
+      <link>https://macwangrid.com/blog/data-leakage-in-ai-workflows.html</link>
+      <description>Every AI workflow is a new data egress vector. Most orgs don't think about it until the lawyers find out.</description>
+      <pubDate>Mon, 02 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/data-leakage-in-ai-workflows.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Attribution: When It Matters</title>
+      <link>https://macwangrid.com/blog/attribution-when-it-matters.html</link>
+      <description>Attribution is overrated for defenders and underrated for response.</description>
+      <pubDate>Sun, 01 Mar 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/attribution-when-it-matters.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Breach Notification in the US: State-by-State Reality</title>
+      <link>https://macwangrid.com/blog/breach-notification-state-laws.html</link>
+      <description>There's no federal breach notification law. Every state has its own.</description>
+      <pubDate>Sat, 28 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/breach-notification-state-laws.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>1Password vs KeePassXC vs Bitwarden</title>
+      <link>https://macwangrid.com/blog/1password-vs-keepassxc.html</link>
+      <description>Honest comparison. 1Password UX best. KeePassXC best for sovereignty. Bitwarden best value.</description>
+      <pubDate>Fri, 27 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/1password-vs-keepassxc.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Network Architecture for Hybrid Work</title>
+      <link>https://macwangrid.com/blog/network-architecture-hybrid-work.html</link>
+      <description>The VPN-everywhere model broke during COVID. What modern hybrid-work architecture looks like.</description>
+      <pubDate>Fri, 27 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/network-architecture-hybrid-work.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>PGP for Technical Leaders</title>
+      <link>https://macwangrid.com/blog/pgp-for-technical-leaders.html</link>
+      <description>PGP has a bad UX reputation. For technical leaders it's a useful credential beyond encryption.</description>
+      <pubDate>Thu, 26 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/pgp-for-technical-leaders.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Ransomware Negotiation: When NOT to Pay</title>
+      <link>https://macwangrid.com/blog/ransomware-negotiation-when-not-to-pay.html</link>
+      <description>OFAC sanctions lists, decryptor existence, insurance position.</description>
+      <pubDate>Thu, 26 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/ransomware-negotiation-when-not-to-pay.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>The Economics of GenAI in the Enterprise</title>
+      <link>https://macwangrid.com/blog/economics-of-genai-in-enterprise.html</link>
+      <description>The ROI on GenAI isn't where the vendor deck says it is.</description>
+      <pubDate>Wed, 25 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/economics-of-genai-in-enterprise.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Signal vs Noise: The Security News Firehose</title>
+      <link>https://macwangrid.com/blog/signal-vs-noise-security-firehose.html</link>
+      <description>There's too much security news. 95% doesn't change what you do tomorrow.</description>
+      <pubDate>Tue, 24 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/signal-vs-noise-security-firehose.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Cloud Cost Optimization: The Framework</title>
+      <link>https://macwangrid.com/blog/cloud-cost-optimization-framework.html</link>
+      <description>FinOps isn't a team. It's a practice. The biggest wins are in design, not dashboards.</description>
+      <pubDate>Mon, 23 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/cloud-cost-optimization-framework.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>Personal OSINT Workstation Build</title>
+      <link>https://macwangrid.com/blog/personal-osint-workstation-build.html</link>
+      <description>Compartmentalized browsers, VPN stack, Maltego free tier, SpiderFoot, case file workflow.</description>
+      <pubDate>Sun, 22 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/personal-osint-workstation-build.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>SOC Maturity: The Plateaus Nobody Warns You About</title>
+      <link>https://macwangrid.com/blog/soc-maturity-common-plateaus.html</link>
+      <description>Most SOCs plateau at proactive hunt and detection engineering.</description>
+      <pubDate>Sun, 22 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/soc-maturity-common-plateaus.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Business Email Compromise Recovery</title>
+      <link>https://macwangrid.com/blog/business-email-compromise-recovery.html</link>
+      <description>Wire fraud specifics, IC3 within 72h, the Financial Fraud Kill Chain.</description>
+      <pubDate>Sat, 21 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/business-email-compromise-recovery.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Running a Warrant Canary</title>
+      <link>https://macwangrid.com/blog/running-a-warrant-canary.html</link>
+      <description>A canary is a signaling mechanism, not a legal defense.</description>
+      <pubDate>Sat, 21 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/running-a-warrant-canary.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Shadow AI: What IT Doesn't Know</title>
+      <link>https://macwangrid.com/blog/shadow-ai-what-it-doesnt-know.html</link>
+      <description>If you haven't counted Shadow AI usage, it's higher than you think.</description>
+      <pubDate>Fri, 20 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/shadow-ai-what-it-doesnt-know.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Threat Landscape Q1 2026: Patterns</title>
+      <link>https://macwangrid.com/blog/threat-landscape-q1-2026-patterns.html</link>
+      <description>A quarterly practitioner's read on what actually changed.</description>
+      <pubDate>Thu, 19 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/threat-landscape-q1-2026-patterns.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>Identity as the New Perimeter</title>
+      <link>https://macwangrid.com/blog/identity-as-new-perimeter.html</link>
+      <description>Network perimeter is dead. Identity is the new perimeter.</description>
+      <pubDate>Wed, 18 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/identity-as-new-perimeter.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>The Home Lab Threat Model</title>
+      <link>https://macwangrid.com/blog/home-lab-threat-model.html</link>
+      <description>The lab IS internet-exposed whether you mean it to be or not.</description>
+      <pubDate>Tue, 17 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/home-lab-threat-model.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Breach Disclosure Letter Templates</title>
+      <link>https://macwangrid.com/blog/breach-disclosure-letter-templates.html</link>
+      <description>Consumer, employee, regulatory templates. Real language.</description>
+      <pubDate>Mon, 16 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/breach-disclosure-letter-templates.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Privacy-Respecting Logging Patterns</title>
+      <link>https://macwangrid.com/blog/privacy-respecting-logging-patterns.html</link>
+      <description>You can run a useful service without logging things that would identify your users.</description>
+      <pubDate>Mon, 16 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/privacy-respecting-logging-patterns.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>A Practitioner's Patching Priority Framework</title>
+      <link>https://macwangrid.com/blog/patching-priority-practitioner-framework.html</link>
+      <description>CVSS alone won't cut it. A four-factor model.</description>
+      <pubDate>Sun, 15 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/patching-priority-practitioner-framework.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Agentic AI: Hype vs. Production Reality</title>
+      <link>https://macwangrid.com/blog/agentic-ai-hype-vs-production.html</link>
+      <description>Agentic AI is real but fragile. What works, what breaks.</description>
+      <pubDate>Sat, 14 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/agentic-ai-hype-vs-production.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>MITRE ATT&CK for Defenders</title>
+      <link>https://macwangrid.com/blog/mitre-attack-for-defenders.html</link>
+      <description>ATT&CK is a framework, not a checklist.</description>
+      <pubDate>Sat, 14 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/mitre-attack-for-defenders.html</guid>
+      <category>I
+ntelGrid</category>
+    </item>
+    <item>
+      <title>The Case for Boring Technology</title>
+      <link>https://macwangrid.com/blog/boring-technology-case.html</link>
+      <description>Novel tech is expensive in ways that don't show up in a POC.</description>
+      <pubDate>Fri, 13 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/boring-technology-case.html</guid>
+      <category>I
+nfraGrid</category>
+    </item>
+    <item>
+      <title>From Home Lab to Production: Lessons</title>
+      <link>https://macwangrid.com/blog/from-home-lab-to-production-lessons.html</link>
+      <description>What translates, what doesn't.</description>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/from-home-lab-to-production-lessons.html</guid>
+      <category>L
+abGrid</category>
+    </item>
+    <item>
+      <title>Reading the Dark Web: Intel Sources</title>
+      <link>https://macwangrid.com/blog/reading-the-dark-web-intel-sources.html</link>
+      <description>What a practitioner actually reads and how they use it.</description>
+      <pubDate>Wed, 11 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/reading-the-dark-web-intel-sources.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
+    <item>
+      <title>Supply Chain Breach: Your Responsibilities</title>
+      <link>https://macwangrid.com/blog/supply-chain-breach-your-responsibilities.html</link>
+      <description>When your vendor gets breached. Contract review, shared-responsibility, customer notification.</description>
+      <pubDate>Wed, 11 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/supply-chain-breach-your-responsibilities.html</guid>
+      <category>B
+reachGrid</category>
+    </item>
+    <item>
+      <title>Supply Chain Security: Five Years After SolarWinds</title>
+      <link>https://macwangrid.com/blog/supply-chain-security-after-solarwinds.html</link>
+      <description>SolarWinds shifted the conversation. Five years later, most orgs still don't have real supply chain controls.</description>
+      <pubDate>Tue, 10 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/supply-chain-security-after-solarwinds.html</guid>
+      <category>T
+hreatGrid</category>
+    </item>
+    <item>
+      <title>Evaluating AI Vendors: The Practitioner's Checklist</title>
+      <link>https://macwangrid.com/blog/evaluating-ai-vendors-practitioner-checklist.html</link>
+      <description>Every AI vendor deck looks the same. The ten questions that separate real from fake.</description>
+      <pubDate>Sun, 08 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/evaluating-ai-vendors-practitioner-checklist.html</guid>
+      <category>A
+iGrid</category>
+    </item>
+    <item>
+      <title>Onion Services v3: An Operator's Notes</title>
+      <link>https://macwangrid.com/blog/onion-services-v3-operator-notes.html</link>
+      <description>Running a v3 onion service isn't hard technically. The operational discipline is where people fail.</description>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/onion-services-v3-operator-notes.html</guid>
+      <category>D
+arkGrid</category>
+    </item>
   </channel>
 </rss>

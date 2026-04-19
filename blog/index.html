@@ -3,23 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog — Raj Macwan</title>
-    <meta name="description" content="Notes from practice on infrastructure, cybersecurity, AI, and MIT coursework. From a practitioner's desk.">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Blog — Raj Macwan">
-    <meta property="og:description" content="Notes from practice on infrastructure, cybersecurity, AI, and MIT coursework.">
+    <title>Blog — MacwanGrid</title>
+    <meta name="description" content="All articles from MacwanGrid — infrastructure, security, AI, dark web research, and breach response. 75 posts across 7 grids.">
     <link rel="stylesheet" href="../style.css">
-    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
     <link rel="canonical" href="https://macwangrid.com/blog/">
-
-    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
     <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
-
-    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
-
 </head>
 <body>
 
@@ -34,6 +25,7 @@
             <li><a href="../ai-grid.html">AIGrid</a></li>
             <li><a href="../intel-grid.html">IntelGrid</a></li>
             <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
             <li><a href="../off-grid.html">OffGrid</a></li>
             <li><a href="../contact.html" class="nav-cta">Connect</a></li>
         </ul>
@@ -42,63 +34,689 @@
 
 <main>
     <section class="section">
-        <div class="container-narrow">
-            <span class="eyebrow">Writing</span>
-            <h1>Notes from a practitioner's desk.</h1>
-            <p class="lead">Substantive posts on infrastructure, cybersecurity, AI in operations, and reflections from my MIT studies. No listicles. No ghost-written marketing. Just what I've learned.</p>
-            <p><a href="feed.xml" class="btn btn-ghost">Subscribe via RSS ↗</a></p>
-        </div>
-    </section>
-
-    <section class="section">
         <div class="container">
-            <div class="card-grid-2">
+            <div class="section-heading">
+                <span class="eyebrow">Blog · All Posts</span>
+                <h1>Notes from a practitioner's desk.</h1>
+                <p class="section-lede">75 articles across 7 grids. Newest first. Filter by grid via the nav above, or <a href="feed.xml">subscribe via RSS</a>.</p>
+            </div>
 
+            <div class="card-grid-2">
                 <a href="why-i-built-darkpulse.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">Research</span>
-                        <span>2026-04-15</span>
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Apr 15, 2026</span>
                     </div>
                     <h3>Why I Built a Dark Web Research Site (and What I Learned)</h3>
-                    <p>Running a Tor hidden service as a senior IT leader sounds provocative. The reality is quieter, more disciplined, and more useful than the framing suggests. Notes on stack, tradecraft, and identity separation.</p>
+                    <p>A year of studying privacy engineering by building one. Lessons on Whonix, Tor hidden services, and operational isolation.</p>
                 </a>
-
                 <a href="kev-as-backlog.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">Security</span>
-                        <span>2026-04-10</span>
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Apr 10, 2026</span>
                     </div>
                     <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
-                    <p>Most patch programs drown in CVSS noise. CISA's Known Exploited Vulnerabilities list is the strongest empirical signal we have, and most teams still treat it like a newsletter instead of a work queue.</p>
+                    <p>Most patch programs drown in CVEs. KEV is the strongest signal most teams aren't using well. Here's how.</p>
                 </a>
-
                 <a href="ai-in-ops-reality-check.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">AI &amp; Automation</span>
-                        <span>2026-04-05</span>
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Apr 05, 2026</span>
                     </div>
-                    <h3>AI in IT Operations: A Reality Check from the Trenches</h3>
-                    <p>A balanced look at where generative AI actually earns its keep in operations, where it's still theater, and the governance problems no one wants to own.</p>
+                    <h3>AI in IT Operations: A Reality Check</h3>
+                    <p>What actually works, what's vendor theater, and where I think the genuine leverage lives over the next two years.</p>
                 </a>
-
                 <a href="mit-week-1.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">MIT Journey</span>
-                        <span>2026-04-02</span>
+                        <span class="grid-pill grid-pill-off">O
+ffGrid</span>
+                        <span>Apr 02, 2026</span>
                     </div>
                     <h3>MIT Week 1: Back in a Classroom After 20 Years</h3>
-                    <p>Returning to formal study after two decades in industry is a particular kind of humbling. A few early observations on the gap between running the work and studying it.</p>
+                    <p>A personal reflection on returning to formal study after two decades of practice.</p>
                 </a>
-
+                <a href="first-24-hours-breach-response.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 29, 2026</span>
+                    </div>
+                    <h3>What To Do In The First 24 Hours</h3>
+                    <p>The calm-first playbook: isolate, preserve, engage legal, out-of-band comms — and the things you must NOT do.</p>
+                </a>
+                <a href="home-security-lab-minimum-viable-stack.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 28, 2026</span>
+                    </div>
+                    <h3>Home Security Lab: The Minimum Viable Stack</h3>
+                    <p>What the lab actually needs: hypervisor, routed VLAN, EDR trials, AD test forest, packet capture.</p>
+                </a>
                 <a href="zero-trust-reality.html" class="post-card">
                     <div class="post-meta">
-                        <span class="post-category">Security</span>
-                        <span>2026-03-28</span>
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 28, 2026</span>
                     </div>
                     <h3>Zero Trust Is Harder Than Vendors Admit</h3>
-                    <p>The architecture is sound. The products sold under its name rarely are. A pragmatic, five-year view of what it actually takes to move a real enterprise toward Zero Trust.</p>
+                    <p>The concept is sound. Implementations are often theatrical. A pragmatic path through the Zero Trust journey.</p>
                 </a>
-
+                <a href="reading-the-threat-intelligence-landscape.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 27, 2026</span>
+                    </div>
+                    <h3>Reading the Threat Intelligence Landscape</h3>
+                    <p>Threat intel has a tier system nobody writes down. Strategic, operational, tactical, technical.</p>
+                </a>
+                <a href="llm-powered-runbooks-where-they-work.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 26, 2026</span>
+                    </div>
+                    <h3>LLM-Powered Runbooks: Where They Work</h3>
+                    <p>LLMs augment runbooks well, but only after you've stopped treating them as answer engines.</p>
+                </a>
+                <a href="ransomware-10-point-checklist.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 25, 2026</span>
+                    </div>
+                    <h3>The 10-Point Ransomware Readiness Checklist</h3>
+                    <p>Most organizations discover their gaps after the encryption starts. The ten things to have in place before.</p>
+                </a>
+                <a href="osint-for-it-leaders.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 25, 2026</span>
+                    </div>
+                    <h3>OSINT for IT Leaders</h3>
+                    <p>Free OSINT sources give you 80% of what costs $100k+ in vendor subscriptions.</p>
+                </a>
+                <a href="kubernetes-enterprise-it-not-just-devs.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 24, 2026</span>
+                    </div>
+                    <h3>Kubernetes for Enterprise IT (Not Just Developers)</h3>
+                    <p>Kubernetes is infrastructure, not a dev platform. Teams who let it sit with product teams regret it.</p>
+                </a>
+                <a href="setting-up-whonix-step-by-step.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 24, 2026</span>
+                    </div>
+                    <h3>Setting Up Whonix: Step by Step</h3>
+                    <p>Windows + VirtualBox + Whonix. Install, bootstrap Tor, first onion service, common pitfalls.</p>
+                </a>
+                <a href="us-cyber-authorities-who-to-call.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 23, 2026</span>
+                    </div>
+                    <h3>US Cyber Authorities: Who to Call</h3>
+                    <p>FBI IC3, CISA, Secret Service, state AG, SEC. What each does, when to call, how to report.</p>
+                </a>
+                <a href="tor-for-it-professionals-primer.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Mar 23, 2026</span>
+                    </div>
+                    <h3>Tor for IT Professionals: A Primer</h3>
+                    <p>Most IT leaders think Tor = illegal and stop there. It's a critical privacy tool used by journalists and researchers.</p>
+                </a>
+                <a href="mfa-necessary-not-sufficient.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 22, 2026</span>
+                    </div>
+                    <h3>MFA Is Necessary. It's Not Sufficient.</h3>
+                    <p>MFA is table stakes. Adversaries have moved to MFA fatigue, session hijacking, OAuth abuse.</p>
+                </a>
+                <a href="prompt-injection-owasp-of-ai.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 21, 2026</span>
+                    </div>
+                    <h3>Prompt Injection: The OWASP of AI</h3>
+                    <p>Prompt injection is the SQL injection of 2026. Most teams haven't even mapped their attack surface yet.</p>
+                </a>
+                <a href="dark-web-intel-what-actually-matters.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 21, 2026</span>
+                    </div>
+                    <h3>Dark Web Intel: What Actually Matters</h3>
+                    <p>Most dark-web-monitoring products oversell. Only two classes of findings actually change defender behavior.</p>
+                </a>
+                <a href="hidden-cost-multi-cloud.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 20, 2026</span>
+                    </div>
+                    <h3>The Hidden Cost of Multi-Cloud</h3>
+                    <p>Multi-cloud for resilience is often more fragile than single-cloud. Expertise duplication, data gravity, egress fees.</p>
+                </a>
+                <a href="whonix-architecture-explained.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Mar 19, 2026</span>
+                    </div>
+                    <h3>Whonix Architecture Explained</h3>
+                    <p>Whonix separates the application from the network at the VM boundary. A beautiful piece of engineering.</p>
+                </a>
+                <a href="local-llm-for-soc-prototyping.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 19, 2026</span>
+                    </div>
+                    <h3>Local LLM for SOC Prototyping</h3>
+                    <p>Ollama + Llama on a dedicated box. Why local matters for prototyping, what you can't prototype locally.</p>
+                </a>
+                <a href="tabletop-exercises-that-work.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 18, 2026</span>
+                    </div>
+                    <h3>Tabletop Exercises That Actually Stress Your Plan</h3>
+                    <p>Most tabletops are theatre. A good one sends you back to documentation with 3-5 gaps to fix.</p>
+                </a>
+                <a href="credit-freeze-step-by-step.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 18, 2026</span>
+                    </div>
+                    <h3>Credit Freezes: Step by Step</h3>
+                    <p>All three bureaus, walked through. Child credit freezes. When to lift. Fraud alerts vs. freezes.</p>
+                </a>
+                <a href="rag-for-internal-documentation.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 17, 2026</span>
+                    </div>
+                    <h3>RAG for Internal Documentation</h3>
+                    <p>RAG over internal docs is the most boring, most useful enterprise AI pattern.</p>
+                </a>
+                <a href="observability-vs-monitoring.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 16, 2026</span>
+                    </div>
+                    <h3>Observability vs Monitoring: A Practitioner's Take</h3>
+                    <p>Monitoring answers what you thought to ask. Observability answers questions you didn't anticipate.</p>
+                </a>
+                <a href="building-intel-driven-security-program.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 16, 2026</span>
+                    </div>
+                    <h3>Building an Intel-Driven Security Program</h3>
+                    <p>Most SOCs claim intel-driven but operate alert-driven. What actually changes when intel drives detection.</p>
+                </a>
+                <a href="edr-alone-not-enough.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 15, 2026</span>
+                    </div>
+                    <h3>EDR Alone Isn't Enough</h3>
+                    <p>EDR is great at endpoints. Attackers moved up (identity) and out (SaaS, OT). What else you need.</p>
+                </a>
+                <a href="hidden-service-fundamentals.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Mar 14, 2026</span>
+                    </div>
+                    <h3>Hidden Service Fundamentals</h3>
+                    <p>Hidden services are misunderstood. A powerful primitive for authenticated, end-to-end encrypted services.</p>
+                </a>
+                <a href="proxmox-vs-esxi-2026.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 14, 2026</span>
+                    </div>
+                    <h3>Proxmox vs ESXi in 2026</h3>
+                    <p>Post-Broadcom ESXi pricing. Proxmox for home + mid-enterprise. Feature parity for 80%, honest gaps.</p>
+                </a>
+                <a href="ai-tier1-soc-triage-six-months.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 13, 2026</span>
+                    </div>
+                    <h3>AI Tier-1 SOC Triage: Six-Month Results</h3>
+                    <p>After six months of LLM-assisted tier-1 triage, here's what I'd tell other IT leaders.</p>
+                </a>
+                <a href="identity-theft-recovery-workflow.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 13, 2026</span>
+                    </div>
+                    <h3>Identity Theft Recovery Workflow</h3>
+                    <p>IdentityTheft.gov five-step process, police reports, credit bureau disputes, tax-related ID theft.</p>
+                </a>
+                <a href="data-platform-maturity-lakehouse.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 12, 2026</span>
+                    </div>
+                    <h3>Data Platform Maturity: From Lake to Lakehouse</h3>
+                    <p>The data lake promise failed. Lakehouse (Iceberg, Delta) succeeds where it does.</p>
+                </a>
+                <a href="vendor-threat-feeds-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 11, 2026</span>
+                    </div>
+                    <h3>Vendor Threat Feeds: What You're Paying For</h3>
+                    <p>The $500k feed has 85% overlap with the $10k one. The real value is often elsewhere.</p>
+                </a>
+                <a href="insider-threat-uncomfortable-truth.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 10, 2026</span>
+                    </div>
+                    <h3>Insider Threat: The Uncomfortable Conversation</h3>
+                    <p>Most insider threats aren't malicious. They're privilege sprawl, bad offboarding, and ego.</p>
+                </a>
+                <a href="ethics-of-dark-web-research.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Mar 09, 2026</span>
+                    </div>
+                    <h3>Ethics of Dark Web Research</h3>
+                    <p>Doing security research on Tor requires a code. Legal research vs. crossing lines.</p>
+                </a>
+                <a href="hardening-your-home-network.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 09, 2026</span>
+                    </div>
+                    <h3>Hardening Your Home Network</h3>
+                    <p>Separate IoT VLAN, DNS filtering, WPA3, guest network, Wireguard. Practical list.</p>
+                </a>
+                <a href="executive-breach-response-playbook.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 08, 2026</span>
+                    </div>
+                    <h3>Executive Breach Response Playbook</h3>
+                    <p>Board notification, crisis comms, counsel, insurance, regulators. The 48-72h window.</p>
+                </a>
+                <a href="why-sre-not-scaling.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 08, 2026</span>
+                    </div>
+                    <h3>Why Your SRE Team Isn't Scaling</h3>
+                    <p>SRE doesn't scale by hiring more SREs. It scales by reducing toil and raising abstraction.</p>
+                </a>
+                <a href="model-selection-for-enterprise-it.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 07, 2026</span>
+                    </div>
+                    <h3>Model Selection for Enterprise IT</h3>
+                    <p>The LLM you pick for enterprise IT isn't the one on the ChatGPT homepage.</p>
+                </a>
+                <a href="five-sources-i-read-every-morning.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 06, 2026</span>
+                    </div>
+                    <h3>The Five Sources I Read Every Morning</h3>
+                    <p>A 20-minute curated read-in beats a 2-hour dashboard crawl.</p>
+                </a>
+                <a href="vulnerability-management-that-works.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Mar 05, 2026</span>
+                    </div>
+                    <h3>Vulnerability Management That Isn't a CSV Dump</h3>
+                    <p>You don't need to patch everything. You need to patch what adversaries are exploiting.</p>
+                </a>
+                <a href="identity-separation-in-security-work.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Mar 04, 2026</span>
+                    </div>
+                    <h3>Identity Separation in Security Work</h3>
+                    <p>If you do research under a pseudonym, your clearnet and shadow identities need actual separation.</p>
+                </a>
+                <a href="bitwarden-enterprise-review.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Mar 04, 2026</span>
+                    </div>
+                    <h3>Bitwarden Enterprise: 18-Month Review</h3>
+                    <p>What works, what's rough. SSO + team shares (good). SCIM nuances + mobile UX (uneven).</p>
+                </a>
+                <a href="endpoint-management-zero-trust.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Mar 03, 2026</span>
+                    </div>
+                    <h3>Endpoint Management: Zero Trust for Devices</h3>
+                    <p>Your endpoint is the new perimeter segment. Managing it like it's 2015 is why you're breached.</p>
+                </a>
+                <a href="gdpr-breach-notification-requirements.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Mar 03, 2026</span>
+                    </div>
+                    <h3>GDPR Breach Notification Requirements</h3>
+                    <p>72-hour clock, DPA notification, when "high risk" triggers data subject notification.</p>
+                </a>
+                <a href="data-leakage-in-ai-workflows.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Mar 02, 2026</span>
+                    </div>
+                    <h3>Data Leakage in AI Workflows</h3>
+                    <p>Every AI workflow is a new data egress vector. Most orgs don't think about it until the lawyers find out.</p>
+                </a>
+                <a href="attribution-when-it-matters.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Mar 01, 2026</span>
+                    </div>
+                    <h3>Attribution: When It Matters</h3>
+                    <p>Attribution is overrated for defenders and underrated for response.</p>
+                </a>
+                <a href="breach-notification-state-laws.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Feb 28, 2026</span>
+                    </div>
+                    <h3>Breach Notification in the US: State-by-State Reality</h3>
+                    <p>There's no federal breach notification law. Every state has its own.</p>
+                </a>
+                <a href="1password-vs-keepassxc.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Feb 27, 2026</span>
+                    </div>
+                    <h3>1Password vs KeePassXC vs Bitwarden</h3>
+                    <p>Honest comparison. 1Password UX best. KeePassXC best for sovereignty. Bitwarden best value.</p>
+                </a>
+                <a href="network-architecture-hybrid-work.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Feb 27, 2026</span>
+                    </div>
+                    <h3>Network Architecture for Hybrid Work</h3>
+                    <p>The VPN-everywhere model broke during COVID. What modern hybrid-work architecture looks like.</p>
+                </a>
+                <a href="pgp-for-technical-leaders.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Feb 26, 2026</span>
+                    </div>
+                    <h3>PGP for Technical Leaders</h3>
+                    <p>PGP has a bad UX reputation. For technical leaders it's a useful credential beyond encryption.</p>
+                </a>
+                <a href="ransomware-negotiation-when-not-to-pay.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Feb 26, 2026</span>
+                    </div>
+                    <h3>Ransomware Negotiation: When NOT to Pay</h3>
+                    <p>OFAC sanctions lists, decryptor existence, insurance position.</p>
+                </a>
+                <a href="economics-of-genai-in-enterprise.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Feb 25, 2026</span>
+                    </div>
+                    <h3>The Economics of GenAI in the Enterprise</h3>
+                    <p>The ROI on GenAI isn't where the vendor deck says it is.</p>
+                </a>
+                <a href="signal-vs-noise-security-firehose.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Feb 24, 2026</span>
+                    </div>
+                    <h3>Signal vs Noise: The Security News Firehose</h3>
+                    <p>There's too much security news. 95% doesn't change what you do tomorrow.</p>
+                </a>
+                <a href="cloud-cost-optimization-framework.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Feb 23, 2026</span>
+                    </div>
+                    <h3>Cloud Cost Optimization: The Framework</h3>
+                    <p>FinOps isn't a team. It's a practice. The biggest wins are in design, not dashboards.</p>
+                </a>
+                <a href="personal-osint-workstation-build.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Feb 22, 2026</span>
+                    </div>
+                    <h3>Personal OSINT Workstation Build</h3>
+                    <p>Compartmentalized browsers, VPN stack, Maltego free tier, SpiderFoot, case file workflow.</p>
+                </a>
+                <a href="soc-maturity-common-plateaus.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Feb 22, 2026</span>
+                    </div>
+                    <h3>SOC Maturity: The Plateaus Nobody Warns You About</h3>
+                    <p>Most SOCs plateau at proactive hunt and detection engineering.</p>
+                </a>
+                <a href="business-email-compromise-recovery.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Feb 21, 2026</span>
+                    </div>
+                    <h3>Business Email Compromise Recovery</h3>
+                    <p>Wire fraud specifics, IC3 within 72h, the Financial Fraud Kill Chain.</p>
+                </a>
+                <a href="running-a-warrant-canary.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Feb 21, 2026</span>
+                    </div>
+                    <h3>Running a Warrant Canary</h3>
+                    <p>A canary is a signaling mechanism, not a legal defense.</p>
+                </a>
+                <a href="shadow-ai-what-it-doesnt-know.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Feb 20, 2026</span>
+                    </div>
+                    <h3>Shadow AI: What IT Doesn't Know</h3>
+                    <p>If you haven't counted Shadow AI usage, it's higher than you think.</p>
+                </a>
+                <a href="threat-landscape-q1-2026-patterns.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Feb 19, 2026</span>
+                    </div>
+                    <h3>Threat Landscape Q1 2026: Patterns</h3>
+                    <p>A quarterly practitioner's read on what actually changed.</p>
+                </a>
+                <a href="identity-as-new-perimeter.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Feb 18, 2026</span>
+                    </div>
+                    <h3>Identity as the New Perimeter</h3>
+                    <p>Network perimeter is dead. Identity is the new perimeter.</p>
+                </a>
+                <a href="home-lab-threat-model.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Feb 17, 2026</span>
+                    </div>
+                    <h3>The Home Lab Threat Model</h3>
+                    <p>The lab IS internet-exposed whether you mean it to be or not.</p>
+                </a>
+                <a href="breach-disclosure-letter-templates.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Feb 16, 2026</span>
+                    </div>
+                    <h3>Breach Disclosure Letter Templates</h3>
+                    <p>Consumer, employee, regulatory templates. Real language.</p>
+                </a>
+                <a href="privacy-respecting-logging-patterns.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Feb 16, 2026</span>
+                    </div>
+                    <h3>Privacy-Respecting Logging Patterns</h3>
+                    <p>You can run a useful service without logging things that would identify your users.</p>
+                </a>
+                <a href="patching-priority-practitioner-framework.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Feb 15, 2026</span>
+                    </div>
+                    <h3>A Practitioner's Patching Priority Framework</h3>
+                    <p>CVSS alone won't cut it. A four-factor model.</p>
+                </a>
+                <a href="agentic-ai-hype-vs-production.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Feb 14, 2026</span>
+                    </div>
+                    <h3>Agentic AI: Hype vs. Production Reality</h3>
+                    <p>Agentic AI is real but fragile. What works, what breaks.</p>
+                </a>
+                <a href="mitre-attack-for-defenders.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-intel">I
+ntelGrid</span>
+                        <span>Feb 14, 2026</span>
+                    </div>
+                    <h3>MITRE ATT&CK for Defenders</h3>
+                    <p>ATT&CK is a framework, not a checklist.</p>
+                </a>
+                <a href="boring-technology-case.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-infra">I
+nfraGrid</span>
+                        <span>Feb 13, 2026</span>
+                    </div>
+                    <h3>The Case for Boring Technology</h3>
+                    <p>Novel tech is expensive in ways that don't show up in a POC.</p>
+                </a>
+                <a href="from-home-lab-to-production-lessons.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-lab">L
+abGrid</span>
+                        <span>Feb 12, 2026</span>
+                    </div>
+                    <h3>From Home Lab to Production: Lessons</h3>
+                    <p>What translates, what doesn't.</p>
+                </a>
+                <a href="reading-the-dark-web-intel-sources.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Feb 11, 2026</span>
+                    </div>
+                    <h3>Reading the Dark Web: Intel Sources</h3>
+                    <p>What a practitioner actually reads and how they use it.</p>
+                </a>
+                <a href="supply-chain-breach-your-responsibilities.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-breach">B
+reachGrid</span>
+                        <span>Feb 11, 2026</span>
+                    </div>
+                    <h3>Supply Chain Breach: Your Responsibilities</h3>
+                    <p>When your vendor gets breached. Contract review, shared-responsibility, customer notification.</p>
+                </a>
+                <a href="supply-chain-security-after-solarwinds.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-threat">T
+hreatGrid</span>
+                        <span>Feb 10, 2026</span>
+                    </div>
+                    <h3>Supply Chain Security: Five Years After SolarWinds</h3>
+                    <p>SolarWinds shifted the conversation. Five years later, most orgs still don't have real supply chain controls.</p>
+                </a>
+                <a href="evaluating-ai-vendors-practitioner-checklist.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-ai">A
+iGrid</span>
+                        <span>Feb 08, 2026</span>
+                    </div>
+                    <h3>Evaluating AI Vendors: The Practitioner's Checklist</h3>
+                    <p>Every AI vendor deck looks the same. The ten questions that separate real from fake.</p>
+                </a>
+                <a href="onion-services-v3-operator-notes.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="grid-pill grid-pill-dark">D
+arkGrid</span>
+                        <span>Feb 06, 2026</span>
+                    </div>
+                    <h3>Onion Services v3: An Operator's Notes</h3>
+                    <p>Running a v3 onion service isn't hard technically. The operational discipline is where people fail.</p>
+                </a>
             </div>
         </div>
     </section>
@@ -106,45 +724,12 @@
 
 <footer class="site-footer">
     <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col brand">
-                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
-                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Site</h4>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../about.html">About</a></li>
-                    <li><a href="../expertise.html">Expertise</a></li>
-                    <li><a href="index.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Deeper</h4>
-                <ul>
-                    <li><a href="../research.html">Research</a></li>
-                    <li><a href="../mit-journey.html">MIT Journey</a></li>
-                    <li><a href="../industry-watch.html">Industry Watch</a></li>
-                    <li><a href="feed.xml">RSS Feed</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
         <div class="footer-bottom">
-            <span>© 2026 Raj Macwan. Views are my own.</span>
-            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+            <span>© 2026 Raj Macwan — macwangrid.com · 75 posts</span>
+            <span><a href="feed.xml">RSS Feed</a> · <a href="../index.html">Back to Home</a></span>
         </div>
     </div>
 </footer>
-
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 </body>
 </html>

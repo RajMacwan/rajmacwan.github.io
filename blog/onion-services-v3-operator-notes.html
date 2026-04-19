@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onion Services v3: An Operator's Notes — MacwanGrid</title>
+    <meta name="description" content="Operational discipline for running a v3 onion service — key management, client auth, hosting tradeoffs, DDoS realities, and safe monitoring.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Onion Services v3: An Operator's Notes">
+    <meta property="og:description" content="Operational discipline for running a v3 onion service — key management, client auth, hosting tradeoffs, DDoS realities, and safe monitoring.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-06T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/onion-services-v3-operator-notes.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-02-06</span>
+                <span>7 min read</span>
+            </div>
+            <h1>Onion Services v3: An Operator's Notes</h1>
+            <div class="article-body">
+                <p>Standing up a v3 onion service is three lines of config. Running one well, for months, under load, without leaking anything that ruins the point of it — that's a different exercise, and where most operators slip. These are my notes from operating a small v3 service for a while, and from watching larger ones fail in instructive ways.</p>
+
+                <h2>Key Management is the Whole Game</h2>
+                <p>The <code>hs_ed25519_secret_key</code> file in your <code>HiddenServiceDir</code> <em>is</em> the service. Whoever has it, is the service. Whoever loses it has lost the address forever — there is no recovery, because the address is derived from the key.</p>
+                <ul>
+                    <li>Back up the <code>HiddenServiceDir</code> directory — including <code>hs_ed25519_secret_key</code>, <code>hs_ed25519_public_key</code>, and <code>hostname</code> — to at least two offline locations. GPG-encrypt the backup; the key is a plaintext seed by default.</li>
+                    <li>Tight permissions: owned by the Tor user, mode 700 on the directory, 600 on the key. If anything else on the box can read it, that thing is now inside your trust boundary.</li>
+                    <li>If you ever suspect compromise, rotate. Generate a new onion, publish the transition signed by the old key, and retire the old hostname. Don't be romantic about a vanity address.</li>
+                </ul>
+                <p>The OnionBalance project is worth a look if you need redundancy across multiple backends under a single onion address — it's the standard way to run a fault-tolerant service without duplicating keys across boxes.</p>
+
+                <h2>Client Auth for Private Services</h2>
+                <p>v3 supports client authorization: the descriptor is encrypted to a set of client public keys, so only holders of the matching private keys can even discover the service. This is the right default for anything non-public (internal tools, restricted collaborations, small-group communications).</p>
+                <pre><code># Generate a client keypair
+openssl genpkey -algorithm x25519 -out /tmp/k.prv.pem
+# extract base32 public key, add to server:
+# HiddenServiceDir/authorized_clients/alice.auth
+# descriptor:x25519:&lt;base32-pub&gt;
+
+# client side, torrc:
+ClientOnionAuthDir /var/lib/tor/onion_auth
+# add entry: &lt;onion-addr&gt;:descriptor:x25519:&lt;base32-priv&gt;</code></pre>
+                <p>The practical effect: brute-force scanning doesn't find you, and revoking access is a single-file change on the server.</p>
+
+                <h2>Where to Host, and DDoS Realities</h2>
+                <p>Home hardware vs. VPS is a threat-model decision, not a cost decision.</p>
+                <ul>
+                    <li><strong>Home hardware</strong> — no hosting provider to subpoena, but your residential connection has limited upstream and worse latency. Good for low-traffic services where the hosting relationship itself is part of your threat model.</li>
+                    <li><strong>VPS</strong> — better availability, but the provider can be compelled or compromised. Choose jurisdictions thoughtfully, and assume the provider can read your disk; encrypt at rest with a key you type at boot.</li>
+                </ul>
+                <p>Onion services are unusually exposed to cheap DDoS. An attacker can spin up clients that open introduction circuits for free, and a popular service can spend all its CPU negotiating rendezvous. The Tor Project's <strong>HiddenServiceEnableIntroDoSDefense</strong> and the proof-of-work defense (prop327) help meaningfully — enable them. They don't eliminate the problem; they make it expensive enough that casual attacks stop.</p>
+                <pre><code># torrc
+HiddenServiceDir /var/lib/tor/mysvc/
+HiddenServicePort 80 unix:/run/mysvc.sock
+HiddenServiceEnableIntroDoSDefense 1
+HiddenServiceEnableIntroDoSBurstPerSec 200
+HiddenServiceEnableIntroDoSRatePerSec 25
+HiddenServicePoWDefensesEnabled 1</code></pre>
+
+                <h2>Publishing Changes Safely, and Monitoring Without Leaking</h2>
+                <p>Every change you push to the service is a chance to leak. Things I've learned:</p>
+                <ul>
+                    <li>Bind the web server to a Unix socket, not 127.0.0.1, and firewall the box to block all inbound except what Tor needs. A misconfigured virtual host that's reachable on the clearnet IP will get indexed and correlated.</li>
+                    <li>Strip <code>Server</code> headers, framework fingerprint headers, and anything that would let someone match the onion to a clearnet-accessible box with the same quirks.</li>
+                    <li>Use <code>OnionShare</code> for one-off file transfers to the server rather than SCP from a residential IP to a VPS. Operational convenience is not a valid excuse for cross-identity correlation.</li>
+                    <li>For monitoring, push metrics <em>out</em> from the box over Tor to a collector — don't scrape <em>into</em> it. Prometheus' remote-write with a Tor SOCKS proxy works fine. Your monitoring endpoint should never accept connections from anywhere except the onion itself.</li>
+                    <li>Aggressively disable access logs (see my piece on privacy-respecting logging). On an onion, the source IP is always loopback and the access log is purely downside risk.</li>
+                </ul>
+                <p>The technical part of running a v3 service is the easy part. The operational discipline — the refusal to take small shortcuts — is where the anonymity actually lives. Treat every convenience that pulls you toward clearnet workflows as a question that needs a good answer, not a default.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

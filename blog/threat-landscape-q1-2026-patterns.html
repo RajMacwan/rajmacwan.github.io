@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Landscape Q1 2026: Patterns — MacwanGrid</title>
+    <meta name="description" content="A quarterly practitioner's read on what actually changed — ransomware reshuffling, identity-based attack dominance, and AI-enabled phishing.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Threat Landscape Q1 2026: Patterns">
+    <meta property="og:description" content="A quarterly practitioner's read on what actually changed — ransomware reshuffling, identity-based attack dominance, and AI-enabled phishing.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-19T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/threat-landscape-q1-2026-patterns.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-02-19</span>
+                <span>7 min read</span>
+            </div>
+            <h1>Threat Landscape Q1 2026: Patterns</h1>
+            <div class="article-body">
+                <p>This is not a "threats are evolving" piece. Threats are always evolving. This is a practitioner's read on what actually shifted in the last few months, based on public reporting from Mandiant, Unit 42, Microsoft Threat Intelligence, Red Canary, The DFIR Report, and what my peers are seeing in IR work. Five patterns worth your attention this quarter.</p>
+
+                <h2>1. The Post-LockBit Reshuffling is Still Settling</h2>
+                <p>Operation Cronos in 2024 took LockBit's infrastructure offline and burned the administrator's reputation on his own leak site. The group tried to relaunch, posted inflated victim counts including recycled old claims, and lost most affiliate confidence. What happened next is what any organizational analyst would predict: affiliates migrated in patterns. Akira absorbed a chunk. RansomHub grew quickly, then had its own instability. Play, Medusa, Qilin, and the resurrected Cl0p-adjacent groups took share. A persistent long tail of smaller, short-lived brands (DragonForce, Hunters International successors, INC Ransom rebrands) complicates tracking.</p>
+
+                <p>The practitioner takeaway: name-based threat modeling is less useful than ever. The affiliate pool is shared; the TTPs are shared; the initial-access brokers are shared. Detect the TTP chain (IAB access → Cobalt Strike or Sliver → Rclone/MegaCMD exfil → encryption), not the brand.</p>
+
+                <h2>2. Identity is the Attack Surface</h2>
+                <p>Mandiant's M-Trends and Microsoft's Digital Defense reporting converged on this point before the most recent cycle, and it has only intensified: the modal breach now begins with credentials or session tokens, not with malware on an endpoint. Scattered Spider's social-engineering-to-helpdesk pattern, MFA-fatigue attacks, OAuth-consent phishing against Microsoft 365 and Google Workspace, infostealer logs feeding SSO session hijacks — all of this is identity-plane activity that an EDR focused on the endpoint barely sees.</p>
+
+                <p>The hardening move: identity-plane telemetry (IdP sign-ins, risky-session signals, OAuth consent events, conditional-access denials) flowing to your SIEM with detections as a first-class workload. If your SOC's dashboards are still endpoint-centric, you are fighting last decade's war.</p>
+
+                <h2>3. AI-Enabled Phishing Crossed a Quality Threshold</h2>
+                <p>This is the first quarter where I have stopped seeing telltale LLM-phish artifacts (the subtle register, the over-polite closings, generic corporate voice) as a reliable filter. Business email compromise and vendor-impersonation phish now reliably match the target's writing style, reference real recent projects (scraped from LinkedIn, press releases, SEC filings), and survive the sniff test of an alert employee. Voice-cloning in vishing has become cheap enough to appear in mid-market attacks, not just executive-targeted ones.</p>
+
+                <p>This is not "AI is changing cybersecurity" hype — it is a specific, measurable step-change in phishing conversion rates that several IR firms are reporting privately. The control response is not better training (though that still helps); it is verification-by-side-channel protocols for any finance or credential action, and technical controls that don't rely on human detection — DMARC enforcement, FIDO2/passkey-only auth for privileged accounts, signed internal email, and email-security tooling that is itself using ML to spot subtle context-mismatches.</p>
+
+                <h2>4. Edge-Device Exploitation Remains the Preferred Initial Access</h2>
+                <p>Ivanti Connect Secure, Fortinet FortiGate, Citrix NetScaler, Palo Alto GlobalProtect, Cisco ASA/FTD, Check Point gateways — the pattern of n-day and occasional 0-day exploitation against edge appliances is now the single most reliable nation-state and sophisticated-criminal initial access vector. Volt Typhoon and Salt Typhoon are the flagship names; many unnamed clusters do the same work. The appliances often cannot run EDR, are patched on vendor's timelines, and sit on privileged network segments. It is the perfect target surface.</p>
+
+                <p>The near-term move: strict segmentation of management planes, aggressive patch SLAs (sub-14-day for KEV-listed edge CVEs), configuration monitoring, and honest consideration of whether the appliance vendor's response history justifies continued reliance.</p>
+
+                <h2>5. Tool Consolidation and the "DefectDojo Pattern"</h2>
+                <p>On the defender side, we are seeing a belated but welcome consolidation wave. Open-source practitioner tools like DefectDojo for AppSec triage, Wazuh for SIEM at the low end, Velociraptor for IR, and the CISA-endorsed assessment tools are chewing into commercial budgets. SOAR is being absorbed into SIEMs. EDR and XDR lines are blurring. The economic backdrop — sustained pressure on security budgets after several years of mid-teens growth — is driving real rationalization.</p>
+
+                <p>Expect fewer tools, deeper integrations, and more in-house engineering against vendor-agnostic data models (OCSF is the one to watch). The "best-of-breed assembled from fifteen vendors" era is ending.</p>
+
+                <h2>Notable Public Incidents</h2>
+                <p>I will not recap specific victim names here — the patterns matter more than the celebrity breaches. But the through-line across the major public incidents this quarter: identity-plane initial access, rapid lateral movement via SSO and cloud-admin abuse, data exfiltration prioritized over encryption (double and triple-extortion remains the norm), and a widening gap between "we detected quickly" and "we contained effectively."</p>
+
+                <h2>What to Do Monday</h2>
+                <p>If this quarter's reading prompts one posture change, make it identity-plane monitoring. If two, add edge-device patch SLA discipline. If three, add a verification-protocol rollout for finance and privileged-action workflows. That list covers a disproportionate share of what is actually happening right now.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

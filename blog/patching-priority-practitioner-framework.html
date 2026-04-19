@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Practitioner's Patching Priority Framework — MacwanGrid</title>
+    <meta name="description" content="CVSS alone won't cut it. A four-factor patching model: exploitation status, exposure, impact, reversibility. How to score, automate, and apply it.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="A Practitioner's Patching Priority Framework">
+    <meta property="og:description" content="CVSS alone won't cut it. A four-factor patching model: exploitation status, exposure, impact, reversibility. How to score, automate, and apply it.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-15T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/patching-priority-practitioner-framework.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-02-15</span>
+                <span>5 min read</span>
+            </div>
+            <h1>A Practitioner's Patching Priority Framework</h1>
+            <div class="article-body">
+                <p>CVSS alone will not tell you what to patch first. A base score of 9.8 on an internal developer tool nobody can reach from the internet is not a fire. A base score of 7.5 on a Citrix appliance with active exploitation is your weekend. Prioritization is four factors, not one. Here is the model I use.</p>
+
+                <h2>The four factors</h2>
+                <ul>
+                    <li><strong>Exploitation status.</strong> Is it on the CISA KEV list? Is there a public PoC? A working weaponized exploit? Active mass exploitation? This is the single strongest signal and it gets the most weight.</li>
+                    <li><strong>Exposure.</strong> Where does the affected asset live? Internet-facing, DMZ, internal flat network, segmented, air-gapped? An unpatched SSH server behind two firewalls and a bastion is a different problem than the same CVE on an edge load balancer.</li>
+                    <li><strong>Impact.</strong> What would compromise of this asset cost you? Crown-jewel data, production downtime, lateral movement into the domain, regulatory exposure. This is business-contextual and requires talking to people outside security.</li>
+                    <li><strong>Reversibility.</strong> How hard is remediation? A routine Windows patch is cheap. A firmware update on an OT device, a kernel upgrade on a legacy app server, or a schema change on a database cluster is not. Reversibility also captures rollback risk.</li>
+                </ul>
+                <p>Score each factor 1–5, multiply exploitation and exposure (the "will they reach it" signal) and then weight by impact. Reversibility goes into the scheduling decision, not the priority decision.</p>
+
+                <h2>Integrate with the CMDB or it does not work</h2>
+                <p>Factor two and three live in your configuration management database. If the CMDB does not know an asset is internet-facing, or does not know it processes cardholder data, your score is garbage. Before you automate the scoring, spend a quarter making two CMDB fields reliable: <code>network_exposure</code> and <code>business_criticality</code>. Everything downstream depends on those.</p>
+                <p>Automation takes the vulnerability feed (Tenable, Qualys, your cloud provider's native scanner), joins to the CMDB, pulls KEV and EPSS, and produces a ranked queue. The queue is the ticket source of truth. Individual analysts do not re-prioritize; they challenge the score when they see context the data missed, and that challenge updates the rule.</p>
+
+                <h2>Three examples</h2>
+                <ul>
+                    <li><strong>MOVEit Transfer (CVE-2023-34362).</strong> KEV within days, internet-facing by design, mass exploited, crown-jewel data in the typical deployment. Score: maximum. Response: emergency patch, then assume compromise and hunt.</li>
+                    <li><strong>Log4Shell (CVE-2021-44228).</strong> KEV, ubiquitous, weaponized within 24 hours. The hard part was not priority — priority was obvious. The hard part was exposure analysis, because the CMDB had no idea where Log4j was. Lesson: software bill of materials matters here, not just asset inventory.</li>
+                    <li><strong>SonicWall / Fortinet appliance CVEs.</strong> Recurring pattern — edge VPN or firewall, authenticated or unauthenticated RCE, immediate KEV listing, ransomware affiliates moving within days. These score maximum every time and deserve a pre-approved emergency change process.</li>
+                </ul>
+
+                <h2>Dealing with inherited technical debt</h2>
+                <p>Every org has the legacy app that cannot be patched, the unsupported OS in a manufacturing line, the ancient database that runs payroll. The framework handles these by making them explicit:</p>
+                <ul>
+                    <li>Score them normally. Do not pretend the vulnerability is not there.</li>
+                    <li>Document the compensating control: network isolation, allowlisted traffic, enhanced logging, compensating detection.</li>
+                    <li>Set an expiration on the risk acceptance, with a named owner for the roadmap to replacement.</li>
+                </ul>
+
+                <blockquote>If your patching priorities do not change when CISA adds a CVE to KEV before lunch, your framework is decorative.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Take your top 100 open vulnerabilities. Score them against the four factors using data you actually have. You will find two things: a handful of items that are higher priority than your current system says, and a larger pile that is lower priority than your current system says. Rebalance the work. Defenders do not win by patching more; they win by patching what matters, before the adversary's tooling catches up.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

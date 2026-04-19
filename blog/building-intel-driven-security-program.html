@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building an Intel-Driven Security Program — MacwanGrid</title>
+    <meta name="description" content="Most SOCs claim 'intel-driven' but operate 'alert-driven.' What actually changes when intel drives detection.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Building an Intel-Driven Security Program">
+    <meta property="og:description" content="Most SOCs claim 'intel-driven' but operate 'alert-driven.' What actually changes when intel drives detection.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-16T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/building-intel-driven-security-program.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-16</span>
+                <span>7 min read</span>
+            </div>
+            <h1>Building an Intel-Driven Security Program</h1>
+            <div class="article-body">
+                <p>"Intel-driven" is the most-claimed and least-practiced phrase in security. Almost every SOC deck I have reviewed says it. Almost none of them operate that way. What they actually operate is alert-driven — the tool vendors decided what is interesting, the SIEM rule pack ships with 4,000 default detections, and analysts triage whatever comes up. Intel, if it exists, lives in a Confluence page nobody reads.</p>
+
+                <p>Here is what changes when intel actually drives the program.</p>
+
+                <h2>Priority Intelligence Requirements (PIRs)</h2>
+                <p>Borrowed from military intelligence doctrine, PIRs are the short list of questions your program is trying to answer. Good PIRs are specific enough to be answerable and general enough to last a quarter. Bad PIRs look like "what are the latest threats?" Good PIRs look like:</p>
+
+                <ul>
+                    <li>Which ransomware affiliates target mid-market US law firms and what are their initial-access TTPs this quarter?</li>
+                    <li>Are our edge appliances (Citrix NetScaler, Fortinet FortiGate, Ivanti Connect Secure) subject to active exploitation chains?</li>
+                    <li>Which of our third-party SaaS vendors have had credential exposure or OAuth-token compromise incidents in the last 90 days?</li>
+                    <li>What commodity infostealers are most prevalent on consumer machines that authenticate to our SSO?</li>
+                </ul>
+
+                <p>Every intel artifact your team produces or consumes should tie back to a PIR. If it doesn't, it is either a new PIR or noise.</p>
+
+                <h2>Detection Engineering From Intel</h2>
+                <p>The concrete test of intel-driven is: does new operational intel produce new detections within a defined SLA? When Mandiant or Unit 42 publishes a report on, say, Scattered Spider's latest social-engineering-to-MFA-fatigue-to-Okta-session-hijack chain, the clock starts. Within 72 hours, your detection engineer should have (a) mapped the TTPs to ATT&CK, (b) checked existing detection coverage for each technique, (c) written or tuned detections for the gaps, and (d) filed a test case in your purple team backlog.</p>
+
+                <p>This is the Red Canary / SpecterOps model. Intel in, detections out, measured and tracked. If your "intel team" produces PDFs and your detection team writes rules from scratch off SIEM alerts, those are two disconnected functions regardless of what the org chart says.</p>
+
+                <h2>Briefing Cadence</h2>
+                <p>A workable cadence for a mid-sized program:</p>
+
+                <p><strong>Daily (async, 5 min read):</strong> Intel analyst posts a short Slack summary — new CISA KEV, any open PIR hits overnight, anything the on-call SOC needs to know.</p>
+
+                <p><strong>Weekly (30 min):</strong> SOC + detection engineering + intel review. What detections shipped, what PIRs moved, what is backlogged.</p>
+
+                <p><strong>Monthly (60 min):</strong> CISO-level intel brief. Threat-landscape shifts, PIR coverage, recommended posture changes.</p>
+
+                <p><strong>Quarterly (strategic):</strong> PIR refresh. Retire stale PIRs, add new ones based on business changes, threat shifts, and incident learnings.</p>
+
+                <h2>Measuring ROI</h2>
+                <p>Intel programs die when they cannot defend their budget. Measurable outputs:</p>
+
+                <ul>
+                    <li><strong>Time from public threat disclosure to detection deployment</strong> (target: 72 hours for priority groups).</li>
+                    <li><strong>Detection coverage against a named threat portfolio</strong> mapped in ATT&CK Navigator — track quarter over quarter.</li>
+                    <li><strong>Intel-sourced incidents</strong> — how many incidents were caught because of an intel-driven detection vs. a default rule? Tag them in your case management.</li>
+                    <li><strong>PIR answer rate</strong> — of your stated PIRs, how many have a current, defensible answer?</li>
+                    <li><strong>Purple team pass rate</strong> against threat-informed scenarios, not generic ones.</li>
+                </ul>
+
+                <p>These are defensible to a CFO in a way that "indicator ingestion volume" never will be.</p>
+
+                <h2>The Risks of Over-Intel-ing</h2>
+                <p>You can over-rotate in the other direction. Three failure modes I have seen:</p>
+
+                <p><strong>Actor obsession.</strong> The team spends weeks building APT28-specific detections because the CISO read an article, while the actual incident vector is a commodity phish with a Microsoft 365 OAuth-consent trick. Intel should inform priorities, not define them to the exclusion of base rates. Commodity threats cause most breaches.</p>
+
+                <p><strong>Report-writing as a substitute for defending.</strong> Beautiful intel reports that nobody on the SOC side reads or acts on. If the detection engineer cannot name last week's top intel finding, your pipeline is broken.</p>
+
+                <p><strong>Perishable overload.</strong> Ingesting every available IOC feed produces false positives, retention bloat, and alert fatigue. Quality and enrichment beat volume. The CrowdStrike and Mandiant practitioner consensus on this has been consistent for years.</p>
+
+                <h2>A Minimum Viable Intel Function</h2>
+                <p>If you are a one-person intel program (which is most mid-market security teams): write four PIRs, subscribe to CISA KEV and three operational blogs, set a weekly 30-minute ritual to translate findings into a single detection or control change, and track the backlog in a simple spreadsheet. That is an intel-driven program. Everything else is scaling, not substance.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

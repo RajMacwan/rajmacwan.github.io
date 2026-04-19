@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insider Threat: The Uncomfortable Conversation Nobody Wants — MacwanGrid</title>
+    <meta name="description" content="Most insider 'threats' aren't malicious. They're privilege sprawl, poor offboarding, and ego. Name the problem honestly and the program changes.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Insider Threat: The Uncomfortable Conversation Nobody Wants">
+    <meta property="og:description" content="Most insider 'threats' aren't malicious. They're privilege sprawl, poor offboarding, and ego. Name the problem honestly and the program changes.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-10T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/insider-threat-uncomfortable-truth.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-03-10</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Insider Threat: The Uncomfortable Conversation Nobody Wants</h1>
+            <div class="article-body">
+                <p>Insider threat programs fail because they start with the wrong premise. The dominant mental model — a disgruntled employee stealing secrets — is cinematic and rare. The boring truth is that most insider incidents are not malice. They are privilege sprawl, sloppy offboarding, and senior leaders who refuse to live by the controls they signed off on.</p>
+
+                <p>If you name that honestly, the program changes. You stop buying $400k UEBA platforms to chase a villain that is not there, and you start fixing the three unglamorous things that cause actual losses.</p>
+
+                <h2>Offboarding is where most of the damage lives</h2>
+                <p>I have reviewed post-incident reports where a terminated employee still had VPN access six months later, an SSH key on production, or a personal GitHub account that retained write access to a private repo via an OAuth app nobody revoked. None of this required malice. It required a Tuesday.</p>
+                <p>Practical offboarding is unsexy:</p>
+                <ul>
+                    <li>HR termination event triggers IdP disablement within minutes, not by a ticket in a queue.</li>
+                    <li>Audit trail for every SaaS, every shared vault, every API key tied to the departing person.</li>
+                    <li>Break-glass review of any admin or developer role: what did they touch in the last 90 days, and what survives them?</li>
+                    <li>Contractor and third-party accounts get the same treatment. These are the accounts that age out worst.</li>
+                </ul>
+
+                <h2>Least privilege as reality, not policy</h2>
+                <p>Every policy document I have read claims least privilege. Every access review I have run has found a finance analyst with read access to HR data, a developer with production database credentials from a 2021 incident response, and a service account in Domain Admins because "it was easier."</p>
+                <p>Privilege sprawl is the actual insider risk. The fix is mechanical:</p>
+                <ul>
+                    <li>Quarterly access reviews that managers sign, not rubber-stamp. Tie revocations to a deadline.</li>
+                    <li>Just-in-time elevation for admin roles, not standing access. PIM on Entra, sudo with approval, or equivalent.</li>
+                    <li>Separation of duty for anything that touches money or customer data. One human should not be able to change a bank account and approve the change.</li>
+                </ul>
+
+                <h2>The behavioral indicators that actually matter</h2>
+                <p>Most UEBA vendor demos show you alerts on "unusual login time" and "anomalous file access volume." In real environments those fire constantly and nobody acts on them. The indicators that correlate with real insider incidents are more prosaic:</p>
+                <ul>
+                    <li>Staged data in unusual locations — a sudden archive on a personal OneDrive, a zip file on a USB.</li>
+                    <li>Repeated failed attempts to access systems outside the user's normal scope.</li>
+                    <li>HR signals: resignation notice, performance improvement plan, visa or immigration change, internal transfer refused.</li>
+                    <li>Sysadmins disabling their own logging or making changes outside change windows.</li>
+                </ul>
+                <p>UEBA is useful when it is tuned to these, integrated with HR signals, and reviewed by a human who knows the business. Deployed without that, it is an expensive noise generator.</p>
+
+                <blockquote>The riskiest insider in most companies is not an analyst with a grudge. It is an executive who refuses to use MFA and has a laptop full of board material.</blockquote>
+
+                <h2>The executive insider problem</h2>
+                <p>VIP exceptions are where insider programs die. The CEO who forwards email to a personal Gmail, the CFO who shares a password with an assistant, the board member who uses a personal device to review the M&A deck — these are the highest-impact insider risks in any mid-market or enterprise org. Naming this out loud, and getting executive sponsorship to not exempt executives, is the hardest and most valuable work in the program.</p>
+
+                <h2>The takeaway</h2>
+                <p>Before you buy an insider threat platform, close three things: terminations that do not propagate in minutes, access reviews that nobody really does, and VIP exceptions to your own controls. If you do those well, you have solved most insider risk. If you do not, no tool will save you.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

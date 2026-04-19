@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Platform Maturity: From Lake to Lakehouse — MacwanGrid</title>
+    <meta name="description" content="The data lake promise failed. The lakehouse succeeds where it does. Iceberg, Delta, bronze/silver/gold, and why governance has to come before scale.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Data Platform Maturity: From Lake to Lakehouse">
+    <meta property="og:description" content="The data lake promise failed. The lakehouse succeeds where it does. Iceberg, Delta, and why governance has to come before scale.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-12T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/data-platform-maturity-lakehouse.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-03-12</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Data Platform Maturity: From Lake to Lakehouse</h1>
+            <div class="article-body">
+                <p>The data lake was a promise: dump everything in S3, figure out schemas later, democratize analytics. A decade on, the swamp jokes write themselves. Most enterprise data lakes I've walked into are petabyte-scale write-only memory — full of data nobody can find, nobody trusts, and nobody owns.</p>
+
+                <p>The lakehouse is the architecture that takes the actual lesson from those ten years: storage and compute should be separate, but <strong>tables need table semantics</strong>. Schemas, ACID transactions, time travel, governance. That's what Iceberg, Delta Lake, and Hudi exist to provide. This is the first data architecture in a while that's honest about what it's doing.</p>
+
+                <h2>Dumping is not ingestion</h2>
+                <p>The original sin of data lakes: "land it raw, we'll clean it downstream." Teams ingest CDC streams, clickstreams, SaaS exports, partner feeds into a <code>raw/</code> prefix and call it an ingestion pipeline. It isn't. It's a dumping ground with a cron.</p>
+                <p>The medallion pattern (bronze / silver / gold) isn't new terminology; it's a discipline that enforces what the lake failed to:</p>
+                <ul>
+                    <li><strong>Bronze</strong>: raw, immutable, append-only. Source-of-truth for replay. Nobody queries this directly for business use.</li>
+                    <li><strong>Silver</strong>: cleaned, deduplicated, conformed. Joins resolved. Schema enforced. This is what data engineers build against.</li>
+                    <li><strong>Gold</strong>: business-ready marts. Aggregated, denormalized for BI. This is what analysts query.</li>
+                </ul>
+                <p>Skip silver and your gold layer is a duct-tape pile of one-off cleanups. Skip bronze and you can't reprocess when a transformation bug is found six months later.</p>
+
+                <h2>Table formats matter more than engines</h2>
+                <p>Apache Iceberg vs. Delta Lake vs. Hudi is the argument data Twitter wants to have. The more important argument is: <em>you need a table format at all.</em> Parquet files in a prefix is not a table. It's a filesystem with a schema you hope nobody broke.</p>
+                <p>What a modern table format gives you:</p>
+                <ul>
+                    <li>ACID transactions (so your Spark job doesn't leave a half-written table visible to the query engine).</li>
+                    <li>Schema evolution without rewriting petabytes.</li>
+                    <li>Time travel — <code>SELECT * FROM orders VERSION AS OF '2026-03-01'</code> is an incident-response superpower.</li>
+                    <li>Partition evolution without downtime.</li>
+                    <li>Engine-agnostic reads: Spark writes, Trino reads, Snowflake reads, DuckDB reads locally.</li>
+                </ul>
+                <p>Iceberg has the strongest multi-engine story in 2026 — AWS, Snowflake, Databricks, Google BigLake all support it natively or via the REST catalog spec. Delta is excellent if you're a Databricks shop. Hudi if you have heavy upsert workloads. Pick one and commit; running three is how you end up back at "files in a prefix."</p>
+
+                <h2>Governance before scale, not after</h2>
+                <p>The catalog is the most important decision in your data platform, and it's the one most teams make last. Unity Catalog, AWS Glue + Lake Formation, Polaris, Nessie — the options have diverged quickly. What matters:</p>
+                <blockquote>If you can't answer "who owns this table, who can read it, and what PII is in it" in under 30 seconds, you have a compliance incident waiting to happen — not a data platform.</blockquote>
+                <p>Column-level access control, row-level filters for tenancy, tag-based policies for PII/PHI, lineage that actually traces across engines. Do this before you scale to a thousand tables, not after.</p>
+
+                <h2>Most teams need less than they think</h2>
+                <p>I've watched teams architect for a hundred-node Spark cluster and Airflow at scale before they had ten reliable pipelines. If your company has under 10 TB of meaningful data and fewer than 50 analysts, you probably don't need a lakehouse. You need Postgres, dbt, and a BI tool. That's not a failure — it's capacity matching.</p>
+                <p>The lakehouse earns its complexity at scale: multi-petabyte storage, ML feature stores with time-travel semantics, real-time CDC from dozens of source systems, compliance regimes that demand auditable lineage. If that isn't your problem, build the thing your problem actually needs.</p>
+
+                <p><strong>The takeaway:</strong> The lakehouse works because it stopped pretending files in a bucket were a database. Pick a table format, enforce medallion discipline, and nail the catalog before you chase scale. And be honest about whether you need a lakehouse at all — the answer is more often "not yet" than the vendor slides suggest.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

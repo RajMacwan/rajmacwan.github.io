@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Email Compromise Recovery — MacwanGrid</title>
+    <meta name="description" content="Wire fraud specifics, the 72-hour IC3 window for the Financial Fraud Kill Chain, bank notification, internal comms, and recovering trust.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Business Email Compromise Recovery">
+    <meta property="og:description" content="Wire fraud specifics, the 72-hour IC3 window for the Financial Fraud Kill Chain, bank notification, internal comms, and recovering trust.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-21T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/business-email-compromise-recovery.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                <span>Published 2026-02-21</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Business Email Compromise Recovery</h1>
+            <div class="article-body">
+                <p>Business Email Compromise remains the single most expensive cybercrime category tracked by the FBI IC3, with annual adjusted losses reported in the billions. Most BECs look mundane — a spoofed invoice, a wire redirected, a payroll change request that "came from the CFO." The recovery playbook is narrow and the timing is everything.</p>
+
+                <h2>The First Four Hours Decide Almost Everything</h2>
+                <p>Money moves through the US banking system fast, but it does not instantly leave the system. A wire sent domestically and then on to a foreign bank generally has a narrow window during which a recall is still possible. Once the funds hit a money mule's account overseas and are cashed out or converted to cryptocurrency, recovery drops to near zero.</p>
+                <p>The rule: the moment you suspect a fraudulent wire, start two clocks simultaneously.</p>
+
+                <h2>Clock 1: Your Bank</h2>
+                <p>Call your bank's wire room, not the branch. The wire room is the department that can issue a recall request immediately.</p>
+                <ul>
+                    <li>Ask for a <strong>SWIFT recall</strong> (for international wires) or a <strong>Hold Harmless Agreement reversal request</strong> (for domestic).</li>
+                    <li>Have the wire details ready: sender, amount, reference, timestamp, beneficiary name, beneficiary bank, and beneficiary account number.</li>
+                    <li>Escalate to the bank's fraud department and request in writing that they freeze outgoing funds.</li>
+                    <li>If the wire is intra-day and has not settled, some banks can stop it outright.</li>
+                </ul>
+                <p>Persistence matters. The first agent you reach may deflect. Escalate until someone with authority to initiate the recall takes the case.</p>
+
+                <h2>Clock 2: FBI IC3 and the Financial Fraud Kill Chain</h2>
+                <p>File with IC3 at <code>ic3.gov</code> as soon as possible, and critically <strong>within 72 hours</strong> of the transfer. IC3 is the activation point for the FBI's <em>Financial Fraud Kill Chain</em> (FFKC), which coordinates with Treasury's Financial Crimes Enforcement Network (FinCEN) and foreign law enforcement to freeze funds abroad.</p>
+                <p>FFKC criteria when it was published:</p>
+                <ul>
+                    <li>The wire must generally be international and above a meaningful threshold.</li>
+                    <li>IC3 report filed within 72 hours of the wire.</li>
+                    <li>Beneficiary account and bank known.</li>
+                </ul>
+                <p>Also call your local FBI field office directly (<code>fbi.gov/contact-us/field-offices</code>). Phone contact in parallel with the online filing moves things faster — the online form alone may queue.</p>
+
+                <h2>Other Immediate Actions</h2>
+                <ul>
+                    <li><strong>Preserve the compromised mailbox.</strong> Do not reset passwords or force sign-out yet — you will lose the attacker's session evidence. Snapshot the mailbox, audit logs, and inbox rules first. In Microsoft 365, export the Unified Audit Log; in Google Workspace, export from the Admin Console.</li>
+                    <li><strong>Look for inbox rules.</strong> A standard BEC plants a rule that auto-forwards or auto-deletes messages matching keywords. Find it and document it before you clean it.</li>
+                    <li><strong>Enumerate OAuth grants.</strong> Attackers often add third-party app consent as persistence. Revoke after you have logged them.</li>
+                    <li><strong>MFA registrations.</strong> Check for rogue registered devices and hardware tokens. Remove.</li>
+                    <li><strong>Password reset</strong> — but only after evidence is preserved. Rotate the user's password, invalidate all active sessions, and re-enroll MFA.</li>
+                </ul>
+
+                <h2>Internal Communications</h2>
+                <p>BEC is a deeply embarrassing incident for the people involved, usually finance staff who acted in good faith on an instruction that looked real. How you communicate internally matters:</p>
+                <ul>
+                    <li>Do not name and blame in the all-hands. BEC is engineered to succeed — that is the point. Naming a junior accountant publicly does nothing but harm.</li>
+                    <li>Do send a factual message to the broader team that an incident occurred, that IT and finance are investigating, and that employees should be alert to unusual payment requests in the coming days.</li>
+                    <li>Brief executives and the board under counsel.</li>
+                    <li>For the affected individual or team, provide direct support. They are going to feel terrible. Reassure them this happens to sophisticated organizations constantly.</li>
+                </ul>
+
+                <h2>External Communications</h2>
+                <p>If funds were paid to a counterfeit invoice impersonating a real vendor, call the real vendor. They may be the actual breach point (their mailbox was compromised and used to send a convincing "new banking details" note). A coordinated conversation may reveal a shared threat and helps both parties.</p>
+                <p>If your mailbox was the compromised one, proactively contact counterparties who may have received fraudulent instructions. Counsel drafts. Do not blast a generic notice; a short personal call goes further.</p>
+
+                <h2>Insurance and Tax</h2>
+                <ul>
+                    <li><strong>Cyber insurance:</strong> Most policies have a social engineering fraud endorsement with sub-limits of $100K-$500K. Check your endorsement before assuming coverage.</li>
+                    <li><strong>Crime insurance:</strong> Traditional crime policies may cover "funds transfer fraud" or "computer fraud." Coverage terms vary widely.</li>
+                    <li><strong>Tax treatment:</strong> Generally a theft loss deductible in the year the loss is discovered, with reimbursement offsets. Talk to tax counsel.</li>
+                </ul>
+
+                <h2>Recovering Trust</h2>
+                <p>The controls that prevent recurrence are not glamorous:</p>
+                <ul>
+                    <li><strong>Callback verification</strong> for any vendor banking change, using a phone number on file from before the request — not a number in the email.</li>
+                    <li><strong>Dual approval</strong> for wires above a threshold.</li>
+                    <li><strong>Out-of-band confirmation</strong> for any CEO/CFO urgent-wire request.</li>
+                    <li><strong>Domain-based email authentication</strong> — DMARC at enforcement (reject or quarantine), not monitor. Most BECs succeed against organizations that have DMARC at p=none.</li>
+                    <li><strong>Phishing-resistant MFA</strong> — FIDO2/WebAuthn — for finance and executive staff.</li>
+                    <li><strong>Quarterly tabletop</strong> that rehearses a fake-CEO wire scenario with the actual finance team.</li>
+                </ul>
+
+                <p>BEC is a procedural failure more often than a technical one. Fix the procedures, harden the email authentication, and drill the specific scenarios. Money recovered after the fact is rare. Money never sent is the win.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

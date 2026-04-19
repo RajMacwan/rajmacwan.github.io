@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GDPR Breach Notification Requirements — MacwanGrid</title>
+    <meta name="description" content="The 72-hour clock, when it starts, DPA notifications, subject notifications, what high-risk means, and recent fine examples.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="GDPR Breach Notification Requirements">
+    <meta property="og:description" content="The 72-hour clock, when it starts, DPA notifications, subject notifications, what high-risk means, and recent fine examples.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-03T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/gdpr-breach-notification-requirements.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                <span>Published 2026-03-03</span>
+                <span>6 min read</span>
+            </div>
+            <h1>GDPR Breach Notification Requirements</h1>
+            <div class="article-body">
+                <p>Article 33 of the GDPR requires controllers to notify the competent supervisory authority of a personal data breach within 72 hours of becoming aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons. Article 34 adds a separate duty to notify affected data subjects when the risk is "high." That is the one-paragraph version. The details are where organizations get hurt.</p>
+
+                <h2>When the 72-Hour Clock Starts</h2>
+                <p>The clock starts when the controller becomes <em>aware</em> of the breach. The European Data Protection Board's Guidelines 9/2022 define awareness as the moment the controller has a reasonable degree of certainty that a security incident has occurred leading to personal data being compromised.</p>
+                <ul>
+                    <li>A vague alert is not awareness. A confirmed incident affecting personal data is.</li>
+                    <li>Once aware, the clock does not pause because you are still investigating. Article 33 explicitly anticipates this — you can submit an initial notification and provide further information in phases.</li>
+                    <li>If your processor (say, a SaaS vendor) becomes aware, they must notify you "without undue delay." Your clock starts when they tell you — but you can hold them accountable for delay in their contract.</li>
+                </ul>
+
+                <h2>What the Notification Must Contain</h2>
+                <p>Article 33(3) mandates minimum content:</p>
+                <ul>
+                    <li>Nature of the breach, categories and approximate number of data subjects concerned, and categories and approximate number of records.</li>
+                    <li>Name and contact details of the DPO or other contact point.</li>
+                    <li>Likely consequences of the breach.</li>
+                    <li>Measures taken or proposed to address the breach and mitigate its adverse effects.</li>
+                </ul>
+                <p>If you cannot provide all the information at once, phase it. Most DPAs provide online portals — the UK ICO, CNIL (France), BfDI (Germany federal), and the Irish DPC all have web forms. Use them rather than email where possible; the portal produces a reference number that is useful for later correspondence.</p>
+
+                <h2>Which DPA?</h2>
+                <p>The "lead supervisory authority" under the one-stop-shop mechanism is the DPA of the controller's main establishment in the EU. For companies with a single EU hub, this is straightforward. For cross-border cases, the lead DPA coordinates with the other concerned DPAs.</p>
+                <p>Non-EU controllers covered by Article 3(2) (offering goods/services to data subjects in the EU, or monitoring their behavior) notify the DPA of the member state where affected data subjects are primarily located, or where an EU representative is designated.</p>
+
+                <h2>When Subject Notification Is Required</h2>
+                <p>Article 34 kicks in when the breach is likely to result in a "high risk" to rights and freedoms. Factors to weigh:</p>
+                <ul>
+                    <li>Type of breach (confidentiality vs. integrity vs. availability).</li>
+                    <li>Nature of the data (special categories under Article 9 raise the bar).</li>
+                    <li>Ease of identifying individuals from the compromised data.</li>
+                    <li>Severity of consequences (financial loss, identity theft, discrimination).</li>
+                    <li>Special characteristics of the data subjects (children, vulnerable populations).</li>
+                    <li>Volume and persistence of the data.</li>
+                </ul>
+                <p>Three exceptions let you skip subject notification:</p>
+                <ol>
+                    <li>The data was rendered unintelligible (e.g., strong encryption) and the keys remain safe.</li>
+                    <li>Measures taken after the breach ensure the high risk is no longer likely to materialize.</li>
+                    <li>Direct communication would involve disproportionate effort — in which case a public communication or equivalent substitute is required.</li>
+                </ol>
+
+                <h2>Recent Enforcement in Perspective</h2>
+                <p>Fines that have shaped practical interpretation:</p>
+                <ul>
+                    <li><strong>Meta Platforms Ireland — €1.2B (May 2023).</strong> EU-US data transfer case under Chapter V, not specifically a breach notification fine, but the single largest GDPR penalty and a reminder that the upper bound (4% of global turnover or €20M, whichever is higher) is real.</li>
+                    <li><strong>TikTok — €345M (September 2023), Irish DPC.</strong> Children's data processing violations; illustrates how special-category and vulnerable-population data drives sanctions.</li>
+                    <li><strong>Amazon — €746M (July 2021), Luxembourg CNPD.</strong> Advertising consent, not a breach per se, but the fine is a common reference point for severity.</li>
+                    <li><strong>Clearview AI — €20M each by France, Italy, Greece, UK.</strong> Processing without lawful basis plus cooperation failures.</li>
+                </ul>
+                <p>Breach-notification-specific fines tend to be smaller but frequent — tens or hundreds of thousands of euros, often tied to late notification rather than the underlying incident. The aggravating factor DPAs cite most often is "we waited to be sure before notifying." The rule is to notify in phases, not to wait.</p>
+
+                <h2>Documentation Requirements</h2>
+                <p>Article 33(5) requires controllers to document <em>all</em> personal data breaches — including those not notified — with:</p>
+                <ul>
+                    <li>Facts relating to the breach.</li>
+                    <li>Its effects.</li>
+                    <li>Remedial action taken.</li>
+                </ul>
+                <p>This record is what DPAs ask for during audits. "We assessed and did not notify because it was low risk" is a legitimate outcome, but only if the assessment is written down and defensible.</p>
+
+                <h2>Practical Preparation</h2>
+                <ul>
+                    <li>Keep a pre-filled template of the Article 33 notification content for your most common scenarios.</li>
+                    <li>Maintain a list of DPAs and portal URLs for every jurisdiction in your scope.</li>
+                    <li>Have an EU representative designated and contactable if you are a non-EU controller under Article 27.</li>
+                    <li>Run a table-top exercise annually with the 72-hour clock as a constraint. You will find gaps in your detection and escalation that would otherwise surface during a real incident.</li>
+                </ul>
+
+                <p>GDPR breach notification is less about perfection than about demonstrable good faith: notify on time with what you know, update as you learn more, document your reasoning either way. DPAs reward that discipline and punish the opposite.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

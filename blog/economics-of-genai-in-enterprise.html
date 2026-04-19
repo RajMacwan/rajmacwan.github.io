@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Economics of GenAI in Enterprise — MacwanGrid</title>
+    <meta name="description" content="The ROI on GenAI is not where the vendor deck says it is. A practitioner's breakdown of the real economic patterns behind enterprise AI spend.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Economics of GenAI in Enterprise">
+    <meta property="og:description" content="The ROI on GenAI is not where the vendor deck says it is. A practitioner's breakdown of the real economic patterns behind enterprise AI spend.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-25T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/economics-of-genai-in-enterprise.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-02-25</span>
+                <span>6 min read</span>
+            </div>
+            <h1>The Economics of GenAI in Enterprise</h1>
+            <div class="article-body">
+                <p>Every vendor deck in my inbox over the last year has included an ROI slide. The slide is almost always wrong. Not fabricated. Wrong in a specific way: it attributes a productivity delta to the tool, and it assumes that productivity delta translates to dollars. Neither half of that sentence survives contact with the actual finance team.</p>
+
+                <p>Here is what the real economics look like after two years of running this.</p>
+
+                <h2>Per-token costs are the visible part</h2>
+                <p>Claude Sonnet runs in the low single digits of dollars per million input tokens and a few times that for output. GPT-4o is in the same neighborhood. A self-hosted Llama, amortized over the GPU cluster, is roughly an order of magnitude cheaper per token at scale. These numbers have fallen by about 10x in two years and will keep falling.</p>
+
+                <p>For the workloads we run, token spend is maybe 15 percent of the total cost of the AI program. Which means optimizing token spend is a real but secondary game.</p>
+
+                <h2>The invisible costs are larger</h2>
+                <p>What actually adds up:</p>
+
+                <ul>
+                    <li><strong>Prompt engineering maintenance.</strong> Every prompt is a small program. It has bugs. It regresses when the model version changes. Someone has to own it. Call this 0.2 to 0.5 FTE per meaningful integration.</li>
+                    <li><strong>Evaluation infrastructure.</strong> If you cannot tell whether your system got better or worse after a change, you will not ship changes confidently. Build or buy evals. Budget engineering time accordingly.</li>
+                    <li><strong>Data plumbing.</strong> The RAG corpus, the retrieval layer, the metadata, the freshness jobs. This is where the actual value lives and where 60 percent of the engineering effort goes.</li>
+                    <li><strong>Integration into workflows.</strong> The AI part is a week. The integration into ServiceNow, Slack, Jira, and however users actually work is three months.</li>
+                    <li><strong>Governance and audit.</strong> Security review, legal review, data use documentation, model cards, change logs. Not glamorous. Non-negotiable in regulated environments.</li>
+                </ul>
+
+                <h2>Context window economics</h2>
+                <p>Long context windows are a trap if you do not think about them. A two-million-token prompt to Gemini costs real money and takes real time. Most of the time you do not need it. Better retrieval narrows the context to what is actually relevant, and narrower contexts generally produce better answers anyway. "Just stuff everything in" is a non-solution that gets expensive fast.</p>
+
+                <h2>Cached vs. live inference</h2>
+                <p>Most providers now offer prompt caching. If your system prompt is 2,000 tokens and you send it with every query, caching that portion can cut costs by 50 to 90 percent on the cached section. For us, moving our RAG system to use prompt caching for the stable instruction portion cut total inference spend by roughly 40 percent with zero quality impact. If you are not using it and your provider supports it, you are paying a tax for no reason.</p>
+
+                <h2>Automation versus augmentation</h2>
+                <p>The ROI slides always assume automation: the AI does a task, a human does not, savings equal the human's cost. In practice, most deployments are augmentation: the human still does the task, just faster or with fewer errors. The economics of augmentation are real but indirect. A 20 percent productivity lift on a ten-person team does not mean you can fire two people. It means you can absorb 20 percent more work, or the same team can take on higher-value work, or quality improves. The CFO needs to understand this because the default financial model is wrong.</p>
+
+                <h2>Productivity versus throughput</h2>
+                <p>This is the subtle one. You can measure a developer generating code 40 percent faster with Copilot. That is a productivity gain. Whether the team ships 40 percent more features depends on code review capacity, testing capacity, deployment capacity, and meetings. Often the bottleneck is not code generation. In those cases, the productivity gain exists and the throughput gain is negligible. That is not a failure. It just means the ROI story is more subtle than "multiply the hourly rate."</p>
+
+                <h2>How I budget</h2>
+                <p>Roughly a third for inference spend. A third for platform engineering. A third for integration, governance, and training. And I assume the first year is mostly learning. The economic case gets real in year two when the platform is stable and you can roll out the same patterns across additional workflows cheaply. That compounding is the actual ROI. Skip the vendor's spreadsheet.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

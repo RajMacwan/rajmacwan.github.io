@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabletop Exercises That Actually Stress Your Plan — MacwanGrid</title>
+    <meta name="description" content="A well-run tabletop exercise finds 3-5 real gaps. A bad one produces kumbaya. How to design, facilitate, and debrief tabletops that change your IR program.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Tabletop Exercises That Actually Stress Your Plan">
+    <meta property="og:description" content="A well-run tabletop exercise finds 3-5 real gaps. A bad one produces kumbaya. How to design, facilitate, and debrief tabletops that change your IR program.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-18T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/tabletop-exercises-that-work.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-03-18</span>
+                <span>5 min read</span>
+            </div>
+            <h1>Tabletop Exercises That Actually Stress Your Plan</h1>
+            <div class="article-body">
+                <p>Most tabletop exercises are theatre. Everyone gathers in a conference room, the facilitator reads a scenario nobody finds threatening, the participants nod through decisions they would never make under pressure, and the deliverable is a glossy PDF that says "continue to mature IR capabilities." Nothing in the program changes.</p>
+
+                <p>A well-run tabletop looks different. It ends with three to five concrete gaps, a named owner for each, and a runbook revision tracked in version control. Participants leave slightly uncomfortable. That is the point.</p>
+
+                <h2>Choose a scenario that actually hurts</h2>
+                <p>Generic ransomware scenarios are too easy. Everyone has rehearsed the shape of that one. Pick something that maps to your actual environment and your actual weak spots:</p>
+                <ul>
+                    <li>A compromised third-party IT provider pushing malicious updates — the <code>Kaseya</code> and <code>SolarWinds</code> pattern.</li>
+                    <li>A business email compromise that redirects a real, pending wire transfer your finance team is about to send.</li>
+                    <li>Data exfiltration discovered through a journalist's inquiry, not your own tooling. How do comms, legal, and the CEO respond before you know the scope?</li>
+                    <li>Ransomware in an OT or clinical environment where you cannot simply isolate and restore.</li>
+                </ul>
+                <p>If your scenario could be resolved by "restore from backup and move on," it is not a tabletop, it is a warm-up.</p>
+
+                <h2>Invite the uncomfortable participants</h2>
+                <p>Security people running tabletops for security people is how you produce kumbaya. The value is in the cross-functional friction. Get:</p>
+                <ul>
+                    <li><strong>Legal and the breach coach.</strong> They will ask about notification triggers you have not thought about.</li>
+                    <li><strong>Communications / PR.</strong> The first draft of a holding statement will be worse than you expect. That is a finding.</li>
+                    <li><strong>Executives, including the CEO and CFO.</strong> Ransom decisions, regulatory disclosure, customer outreach — these are not IT decisions. Rehearse who actually calls them.</li>
+                    <li><strong>HR.</strong> If the incident involves an insider, an employee device, or a layoff-adjacent terminated account, HR is on the bridge whether you invited them or not.</li>
+                    <li><strong>A skeptical outsider.</strong> A peer CISO or a retained IR firm who will ask the questions your team has normalized away.</li>
+                </ul>
+
+                <h2>Run it with injects, not a script</h2>
+                <p>A static narrative lets people rehearse the story they have already agreed on. Injects break that. Drop new information into the room at intervals: a ransom note arrives, a reporter tweets about your outage, a subsidiary in another jurisdiction reports related activity, your cloud provider sends a suspicious-activity notice. Force the room to re-prioritize in real time.</p>
+
+                <p>Ask each participant to produce an artifact during the exercise, not after: the first draft holding statement, the call list, the ransom decision memo, the regulator notification. These artifacts are the real output. A polished summary deck is not.</p>
+
+                <blockquote>If nobody in the room was surprised by anything, you did not run a tabletop. You ran a status meeting with snacks.</blockquote>
+
+                <h2>Blameless debrief, tracked gaps</h2>
+                <p>The debrief is where programs improve. Make it blameless — the goal is to find the gap, not the person. Write every gap down with an owner, a date, and a specific artifact to update. Track them like any other engineering backlog. Close them.</p>
+
+                <p>Then run the next one the following quarter, not next year. Annual tabletops are a compliance line item. Quarterly tabletops, each one focused on a different part of the plan, are how an IR program actually matures.</p>
+
+                <h2>The takeaway</h2>
+                <p>If your last tabletop produced no action items, it was theatre. Schedule the next one with a scenario your team has not rehearsed, the people who make real decisions, and a debrief that writes to your backlog. The point of a tabletop is not to prove the plan works. It is to find where it does not.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

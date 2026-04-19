@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading the Dark Web: Intel Sources — MacwanGrid</title>
+    <meta name="description" content="What a practitioner actually reads to track dark-web threat activity — leak sites, aggregators, Telegram OSINT — and how to brief executives without selling fear.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reading the Dark Web: Intel Sources">
+    <meta property="og:description" content="What a practitioner actually reads to track dark-web threat activity — leak sites, aggregators, Telegram OSINT — and how to brief executives without selling fear.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-11T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/reading-the-dark-web-intel-sources.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-02-11</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Reading the Dark Web: Intel Sources</h1>
+            <div class="article-body">
+                <p>"Dark web monitoring" is one of the more oversold categories in the security vendor landscape. Much of what's marketed is either (a) a firehose of leaked credentials that was public six months ago, or (b) a fear-based sales pitch with fancy screenshots. Useful practitioners read the actual sources and build their own signal. Here's what that looks like, and how I brief executives on it without turning it into theater.</p>
+
+                <h2>Ransomware Leak Sites: Observe, Don't Visit</h2>
+                <p>Most active ransomware crews maintain an onion-hosted "wall of shame" listing recent victims, with countdown timers and sample data. For intel purposes you care about three things: who got hit, when, and what sector. You do <em>not</em> need the stolen data.</p>
+                <ul>
+                    <li>Track the leak-site indexes via reputable aggregators (ransomwatch.telemetry.ltd, ransomware.live) that scrape the pages and publish structured feeds. Using their feed means you never visit the criminal infrastructure yourself.</li>
+                    <li>Cross-reference with CISA advisories and StopRansomware bulletins for TTP context.</li>
+                    <li>Never download "sample" archives. They contain real victim data and may be legally radioactive in your jurisdiction.</li>
+                </ul>
+
+                <h2>Credential Aggregators and HIBP</h2>
+                <p>Most "someone's selling your CEO's password on the dark web" alerts reduce to recycled combolists — ancient breaches repackaged. Sort signal from noise:</p>
+                <ul>
+                    <li><strong>Have I Been Pwned</strong> — Troy Hunt's project, the gold standard. Integrate their domain-search API with your SSO provider to alert on your employees' email appearing in new breaches. Free for verified domain owners.</li>
+                    <li><strong>DeHashed, IntelX</strong> — commercial aggregators. Useful if you budget for them. Not a substitute for HIBP.</li>
+                    <li><strong>Pwned Passwords</strong> — the NIST 800-63B-aligned way to check whether a new password has appeared in any known breach, via k-anonymity lookup. Integrate into your IAM.</li>
+                </ul>
+                <p>A credential found in a combolist from 2020 is a medium-priority hygiene fact, not a breaking incident. Brief accordingly.</p>
+
+                <h2>Telegram and the Post-Forum Era</h2>
+                <p>A lot of what used to happen on Tor-hosted forums has migrated to Telegram channels, which are clearnet-accessible and enormously more trafficked. For OSINT purposes, watching:</p>
+                <ul>
+                    <li>Ransomware gang announcement channels (they cross-post from their onion sites).</li>
+                    <li>Initial-access-broker channels offering corporate VPN/RDP access.</li>
+                    <li>Regional activist/hacktivist channels during geopolitical events.</li>
+                </ul>
+                <p>Scrapers and frontends like Telemetr.io and various academic research tools let you track channel activity without joining and giving up your phone number metadata. Treat Telegram as a broadcast medium, not a social graph you join.</p>
+
+                <h2>Intel Quality Tiers and Executive Briefings</h2>
+                <p>Not all intel is the same grade. I sort what I see into three tiers:</p>
+                <ul>
+                    <li><strong>Tier 1: Confirmed.</strong> Named victim has acknowledged the incident publicly, or data has been independently verified. Actionable.</li>
+                    <li><strong>Tier 2: Claimed.</strong> A crew has posted a victim but the claim is unverified. Worth watching, not worth alarming the board.</li>
+                    <li><strong>Tier 3: Noise.</strong> Recycled data, scam listings, obviously fake claims (common, especially from clout-chasing actors).</li>
+                </ul>
+                <p>When I brief executives, I tag every item with its tier. "Our vendor X appears on a ransomware leak site (Tier 2, claim unverified as of today; we're monitoring)" is a much more useful sentence than "Our vendor has been breached." The latter creates panic and, if the claim turns out to be false, corrodes trust in the next briefing.</p>
+                <p>The honest version of dark-web intel is: mostly it's boring, occasionally it's critical, and the product that tells you everything is on fire every week is the product you should cancel. Build a small, curated reading list — a handful of feeds, HIBP, a couple of Telegram scrapes — and spend the saved budget on actually patching the things those feeds warn you about.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

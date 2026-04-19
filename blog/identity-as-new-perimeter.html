@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identity as the New Perimeter — MacwanGrid</title>
+    <meta name="description" content="The network perimeter is dead. Identity is the new perimeter — and most IAM programs still run it like HR paperwork. PAM lag, service account sprawl, and what real control looks like.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Identity as the New Perimeter">
+    <meta property="og:description" content="The network perimeter is dead. Identity is the new perimeter — and most IAM programs still run it like HR paperwork.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-18T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/identity-as-new-perimeter.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-02-18</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Identity as the New Perimeter</h1>
+            <div class="article-body">
+                <p>If you want to know where a modern enterprise's security program is really maturing, don't look at the firewall. Look at the IAM org chart. More specifically, look at who runs it: if your identity program reports into HR or shares a manager with onboarding, your perimeter is a spreadsheet. The network boundary stopped being the boundary a decade ago. Identity is the perimeter now, and most programs haven't caught up.</p>
+
+                <h2>PAM adoption is a decade behind</h2>
+                <p>Privileged Access Management is the control that sits between "attacker compromised a user" and "attacker became domain admin." Every breach report from the last five years includes the phrase "lateral movement using legitimate credentials." That's the gap PAM exists to close.</p>
+                <p>And yet — PAM deployments in 2026 still look like 2016. CyberArk or BeyondTrust installed, a subset of admin accounts vaulted, a handful of servers with session recording, the rest left alone. The things that don't get vaulted:</p>
+                <ul>
+                    <li>Cloud IAM roles with broad privileges — <code>AdministratorAccess</code> assumed from a laptop over SSO, no session boundary.</li>
+                    <li>Break-glass accounts stored in a password manager shared among six people.</li>
+                    <li>Service accounts with admin-equivalent privileges in Active Directory — the same ones Mimikatz will harvest the moment a single endpoint is compromised.</li>
+                    <li>Kubernetes <code>cluster-admin</code> on bastion hosts.</li>
+                    <li>SaaS super-admin accounts — Okta, Entra, GitHub, Salesforce. These are the most sensitive identities you have, and they're usually the least governed.</li>
+                </ul>
+                <p>A modern PAM program starts with "what can destroy us," not "what's easiest to vault."</p>
+
+                <h2>Service accounts: the shadow identity population</h2>
+                <p>Audit your directory. For every human user, how many service accounts exist? In most enterprises it's 3-10x. These accounts have passwords that don't rotate, MFA exemptions, group memberships nobody remembers granting, and owners who left the company in 2022.</p>
+                <blockquote>The non-human identity population outnumbers the human one, is less governed, and holds more privilege. This is the attack surface.</blockquote>
+                <p>What works:</p>
+                <ul>
+                    <li>Inventory everything — ServiceAccount objects in AD, IAM users and roles in cloud, OAuth apps in SaaS, Kubernetes ServiceAccounts, CI/CD secrets.</li>
+                    <li>Assign an owner to each. No exceptions. An orphan service account is a ticking clock.</li>
+                    <li>Rotate credentials on a schedule enforceable by tooling — HashiCorp Vault dynamic secrets, AWS IAM Roles Anywhere, workload identity federation. The goal is to eliminate long-lived credentials entirely.</li>
+                    <li>Monitor for anomalous use. A service account that usually hits one API suddenly enumerating all users at 3am is a signal.</li>
+                </ul>
+
+                <h2>OAuth scopes: the quiet exposure</h2>
+                <p>Users install SaaS apps that request OAuth access to their mailbox, calendar, Drive. IT finds out during an audit. The permission grants persist for years, outlive the apps themselves, and occasionally belong to apps that have since been breached or sold.</p>
+                <p>Microsoft Graph and Google Workspace both give you the APIs to enumerate and govern these. Entra ID App Governance and Google Workspace App Access Control make it a configuration problem, not a development project. Most orgs haven't turned them on because "we'll get to it."</p>
+                <p>A baseline:</p>
+                <ul>
+                    <li>Block user consent for high-privilege scopes. Require admin review.</li>
+                    <li>Review granted OAuth apps quarterly. Revoke anything with no active use in 90 days.</li>
+                    <li>Treat the OAuth grant list as a third-party inventory. It is.</li>
+                </ul>
+
+                <h2>Conditional Access is the real control plane</h2>
+                <p>Conditional Access (Entra ID) or equivalent (Okta, Ping) is where identity becomes architecture. It's where you express:</p>
+                <ul>
+                    <li>This user, from this device, in this country, with this risk score, at this time, can access this app — and must prove it this way.</li>
+                    <li>Privileged sign-ins require phishing-resistant MFA (FIDO2 / passkeys). SMS and TOTP are no longer acceptable for admins.</li>
+                    <li>Sessions have bounded lifetimes. Re-authentication is required to touch anything sensitive.</li>
+                    <li>Token theft is detected and responded to — Continuous Access Evaluation terminates sessions the moment risk signals change.</li>
+                </ul>
+                <p>The failure mode: Conditional Access configured for end users but not for admins, because "it'll lock us out." That's the exact population where the strict controls matter most. Fix the escape hatches (break-glass accounts, emergency access procedures) and apply the controls universally.</p>
+
+                <h2>The SSO-for-IT-only anti-pattern</h2>
+                <p>A surprising number of enterprise apps sit outside SSO because the SAML license is extra, because the integration took a quarter, or because the app's SSO tier was priced punitively. The result: users have local passwords in 30 apps that IT thinks are SSO-covered. MFA doesn't exist on those local logins. The credentials are reused.</p>
+                <p>"SSO tax" is a real problem. The answer is vendor pressure, contractual requirements, and — for the apps where it's genuinely impossible — a password manager enforced at the endpoint and monitored. Not ignoring the problem because the procurement cycle was hard.</p>
+
+                <p><strong>The takeaway:</strong> Identity is the perimeter, and most IAM programs are operating it like an HR workflow. Vault what can destroy you, govern non-human identities like they outnumber humans (because they do), close the OAuth exposure, and wire Conditional Access into every access decision — including your own admins'. The network team isn't coming to save you.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGP for Technical Leaders — MacwanGrid</title>
+    <meta name="description" content="PGP has an infamous UX, but for technical leaders it remains a useful credential — for signed statements, canaries, and long-lived identity.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="PGP for Technical Leaders">
+    <meta property="og:description" content="PGP has an infamous UX, but for technical leaders it remains a useful credential — for signed statements, canaries, and long-lived identity.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-26T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/pgp-for-technical-leaders.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-02-26</span>
+                <span>6 min read</span>
+            </div>
+            <h1>PGP for Technical Leaders</h1>
+            <div class="article-body">
+                <p>PGP has a deserved UX reputation. Matthew Green and Moxie Marlinspike have both written persuasive essays about why PGP's email-encryption use case is a mess: bad key discovery, bad forward secrecy, bad defaults. I agree with most of it. But PGP in 2026 is still the best tool I have for one specific job — <strong>signing long-lived statements as a known identity</strong>. That job matters, and technical leaders should have a key for it.</p>
+
+                <h2>What PGP Is Good At</h2>
+                <p>Forget encrypted email for a minute. Think of PGP as a general-purpose signing system you can apply to arbitrary bytes.</p>
+                <ul>
+                    <li><strong>Signing public statements</strong> — a blog post, a disclosure, a policy document. Anyone who has your public key can verify the text hasn't been altered and came from the holder of the key.</li>
+                    <li><strong>Transparency canaries</strong> — a signed statement with a freshness proof, republished regularly. Essential for anyone running a privacy-sensitive service.</li>
+                    <li><strong>Signing commits and releases</strong> — Git supports PGP natively (<code>git commit -S</code>), and release tarballs from serious projects are still distributed with detached signatures.</li>
+                    <li><strong>Long-lived identity</strong> — an Ed25519 or RSA-4096 key with a 1–2 year expiry, rotated deliberately, gives you a cryptographic thread across years of output.</li>
+                </ul>
+
+                <h2>Key Rotation Without Drama</h2>
+                <p>The single biggest mistake I see is people generating a key, posting the fingerprint, and then forgetting about it. Five years later the key is orphaned, probably on a laptop they no longer own, and a new key appears with no continuity.</p>
+                <p>Do it like this:</p>
+                <ol>
+                    <li>Generate a <strong>primary key</strong> that is certify-only and lives offline — on a YubiKey, an air-gapped machine, or both.</li>
+                    <li>Generate <strong>subkeys</strong> for signing, encrypting, and authentication. These are the ones you use day-to-day.</li>
+                    <li>Give subkeys a 1–2 year expiry. When a subkey nears expiry, extend it with the primary key or replace it. The identity (fingerprint) stays stable for a decade.</li>
+                    <li>Publish the full public key (with subkeys) to keys.openpgp.org and to your own website under a stable URL.</li>
+                </ol>
+                <pre><code>gpg --full-generate-key  # pick Ed25519
+gpg --edit-key YOURID
+  addkey   # add signing subkey
+  addkey   # add encryption subkey
+  save
+gpg --export YOURID &gt; pubkey.asc</code></pre>
+
+                <h2>Web of Trust vs. Keybase-Style Attestation</h2>
+                <p>The original Web of Trust — other people signing your key at keysigning parties — is essentially dead outside a few communities. What works in its place is <strong>public attestation</strong>: proof that the key is controlled by whoever controls specific public accounts. Keybase pioneered this (link a key to Twitter/GitHub/DNS). The project's trajectory has been unpleasant, but the pattern is sound and you can implement it manually:</p>
+                <ul>
+                    <li>Publish your fingerprint on your personal website under HTTPS with HSTS.</li>
+                    <li>Add a <code>.well-known/openpgpkey</code> WKD entry so clients can fetch it automatically.</li>
+                    <li>Post the fingerprint from your verified professional social accounts.</li>
+                    <li>Sign a short statement linking the key to the accounts.</li>
+                </ul>
+                <p>An adversary would need to compromise several independent systems simultaneously to fake the whole set.</p>
+
+                <h2>Common PGP Sins</h2>
+                <p>Things I've seen technical leaders do that undercut the entire exercise:</p>
+                <ul>
+                    <li>Using a key with no expiry — eternal but unmaintained, a liability when the laptop dies.</li>
+                    <li>Keeping the primary key on the same laptop as subkeys — one compromise, entire identity gone.</li>
+                    <li>Signing things casually with comments like "lol" — it's a cryptographic signature; treat it like one.</li>
+                    <li>Losing the revocation certificate — generate it the moment you create the key and store it somewhere you'll actually find it in five years.</li>
+                </ul>
+                <p>PGP is not a great everyday messaging tool. It is a great durable-signature tool. For the job of "this statement came from me and hasn't been changed," I haven't found anything better.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

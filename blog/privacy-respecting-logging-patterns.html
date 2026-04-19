@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy-Respecting Logging Patterns — MacwanGrid</title>
+    <meta name="description" content="How to run a useful service without logging user-identifying data — access logs, aggregation, differential privacy, and when not logging is a problem.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Privacy-Respecting Logging Patterns">
+    <meta property="og:description" content="How to run a useful service without logging user-identifying data — access logs, aggregation, differential privacy, and when not logging is a problem.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-16T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/privacy-respecting-logging-patterns.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-02-16</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Privacy-Respecting Logging Patterns</h1>
+            <div class="article-body">
+                <p>Most web stacks log everything by default — IPs, user agents, referer, request URL, cookies if you're sloppy — and then the ops team forgets about it until a breach forces a retention review. The data you don't have can't be stolen and can't be subpoenaed. For privacy-sensitive services, that's the whole argument. You can run a useful, debuggable, abuse-resilient service while collecting strictly less.</p>
+
+                <h2>Turn Off Identifying Access Logs</h2>
+                <p>Nginx default access logs are not privacy-preserving. A common pattern is to define a custom format that strips IP and identifying headers, and keep the default format only for a short-retention debug buffer if needed.</p>
+                <pre><code>log_format privacy '- - - [$time_local] "$request" '
+                   '$status $body_bytes_sent';
+
+server {
+    access_log /var/log/nginx/access.log privacy;
+    # or for an onion service:
+    access_log off;
+    error_log /var/log/nginx/error.log crit;
+}</code></pre>
+                <p>For an onion service specifically, access logging is rarely useful — the source IP is always 127.0.0.1 anyway, which tells you nothing. Turn it off entirely and rely on metrics.</p>
+
+                <h2>Aggregate Without Storing Identifiers</h2>
+                <p>You almost always want <em>counts</em>, not <em>events</em>. "How many requests to /api/foo in the last hour" is answerable from a simple in-memory counter that writes one row per hour to disk. No IPs, no user-agents, no session IDs. Tools like Prometheus' <code>counter</code> and <code>histogram</code> primitives are literally built for this.</p>
+                <ul>
+                    <li>Replace <code>log_line(event)</code> with <code>counter.inc(labels)</code>. Pick labels that are low-cardinality by construction: HTTP method, status code, route template — never raw path, never user ID.</li>
+                    <li>Rotate per-request samples aggressively. If you need a sampled trace for debugging, keep it for minutes, not weeks.</li>
+                    <li>When you do need per-user metrics (rare), hash the identifier with a daily-rotating HMAC key, so the mapping is broken every day.</li>
+                </ul>
+
+                <h2>Differential Privacy, Briefly</h2>
+                <p>When you publish aggregate numbers — say, monthly usage stats — you can leak information about individuals through differencing attacks. The canonical example: reporting "active users in region X" for two consecutive months, where one user joined or left, reveals that user's membership. Differential privacy is the mathematical framework that quantifies this, by adding calibrated noise (typically Laplace or Gaussian) to outputs so that any single user's contribution is masked.</p>
+                <p>You probably don't need full DP machinery. You probably do need:</p>
+                <ul>
+                    <li>Minimum cohort sizes before reporting a count (say, suppress any cell with &lt;10 entries).</li>
+                    <li>Rounded numbers rather than exact counts.</li>
+                    <li>Delayed reporting (publish monthly, not real-time) to reduce side-channel leaks.</li>
+                </ul>
+                <p>Apple's, Google's, and the US Census Bureau's DP deployments are good reading if you go deeper.</p>
+
+                <h2>Reverse-Proxy Hygiene and When Not Logging Hurts</h2>
+                <p>If your app sits behind a reverse proxy or CDN, the proxy is often logging things you thought you disabled. Audit both tiers. Strip <code>X-Forwarded-For</code> before it hits application logs if you've decided not to retain IPs.</p>
+                <p>Honest tradeoffs:</p>
+                <ul>
+                    <li><strong>Debugging gets harder.</strong> A useful compromise is short-retention detailed logs (hours to a day) plus long-retention aggregates (years). You can diagnose yesterday's incident without carrying forever's data.</li>
+                    <li><strong>Abuse response gets harder.</strong> If you truly log nothing, you cannot tell one user from another, which makes rate-limiting and banning nuanced. Ephemeral per-session tokens (refreshed often) give you session-level rate limiting without durable identity.</li>
+                    <li><strong>Compliance may demand logs.</strong> Some regulations (PCI, some financial) mandate retention of specific log fields. Know which of your data actually falls under those regimes and minimize the rest.</li>
+                </ul>
+                <p>The goal isn't zero logs. The goal is logs that answer operational questions while being useless to an adversary who compels them from you. You can design for both.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

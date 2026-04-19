@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What To Do In The First 24 Hours — MacwanGrid</title>
+    <meta name="description" content="The calm-first playbook for the first day of a breach: isolate, preserve, engage counsel, out-of-band comms, and what not to do.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="What To Do In The First 24 Hours of a Breach">
+    <meta property="og:description" content="The calm-first playbook for the first day of a breach: isolate, preserve, engage counsel, out-of-band comms, and what not to do.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-29T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/first-24-hours-breach-response.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html" class="active">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-breach">BreachGrid</span>
+                <span>Published 2026-03-29</span>
+                <span>6 min read</span>
+            </div>
+            <h1>What To Do In The First 24 Hours</h1>
+            <div class="article-body">
+                <p>The first 24 hours of a confirmed breach are where most of the lasting damage — financial, legal, and reputational — either gets contained or gets amplified. In my experience, the defining characteristic of organizations that come through well is not the size of their security team. It is whether they followed a calm, sequenced playbook instead of panicking into a series of avoidable mistakes.</p>
+                <p>This is the playbook. It is intentionally ordered. Do not skip ahead.</p>
+
+                <h2>Hour 0-2: Verify, Then Isolate</h2>
+                <p>Before you do anything destructive, confirm the incident is real. An EDR alert is a signal, not a finding. Look for corroborating evidence: a second source, outbound traffic to a known-bad IP, a user reporting something consistent. False alarms happen and "panic declarations" damage trust with leadership you will need later.</p>
+                <p>Once you have corroboration:</p>
+                <ul>
+                    <li>Isolate the affected assets at the network layer, not the host. Network isolation preserves RAM and running processes for forensics. Do not shut down or reimage.</li>
+                    <li>Disable — do not delete — the credentials you suspect are compromised. Deletion loses logs you need.</li>
+                    <li>Open an incident bridge on a channel you know the attacker cannot read. If you suspect email or Slack is compromised, move to Signal group or phone.</li>
+                </ul>
+
+                <h2>Hour 1-3: Engage Legal BEFORE Talking to Outsiders</h2>
+                <p>This one is non-negotiable. Your first call after activating the IR team is your general counsel or outside breach counsel. Not the CEO. Not the PR firm. Not the cyber insurance carrier directly.</p>
+                <p>Why: counsel establishes attorney-client privilege and attorney work-product protection over the investigation. Conversations and reports generated under that umbrella are much harder to subpoena later. The same conversations, held without counsel in the loop, are often discoverable in litigation.</p>
+                <p>Counsel will then help you contact:</p>
+                <ul>
+                    <li>Your cyber insurance carrier (most policies require notification within 24-72 hours).</li>
+                    <li>An approved forensics firm (Mandiant, CrowdStrike, Stroz Friedberg, Kroll, etc.) working under a privilege agreement.</li>
+                    <li>Any regulatory body you have a statutory duty to notify at this early stage.</li>
+                </ul>
+
+                <h2>Hour 2-6: Out-of-Band Communications</h2>
+                <p>Assume the adversary has read your Slack, Teams, and email going back months. Many of them have.</p>
+                <ul>
+                    <li>Move the core IR team onto a dedicated Signal group with disappearing messages turned off for the duration.</li>
+                    <li>Use a clean laptop that has not been attached to the corp domain. Not the CISO's daily laptop.</li>
+                    <li>If you must call internal people, use their personal phone numbers, not DID extensions that route through systems that may be compromised.</li>
+                    <li>Document in a dedicated incident binder (physical or a separate cloud drive the adversary does not have access to).</li>
+                </ul>
+
+                <h2>Hour 4-12: Evidence Preservation</h2>
+                <p>Your forensics vendor will want full-disk and RAM captures of anything in scope. Either they will do it or your team will under their direction. Key points:</p>
+                <ul>
+                    <li>Preserve volatile memory first — running processes, network connections, recently used credentials. Once you reboot, it is gone.</li>
+                    <li>Extend log retention immediately. Cloud logs (CloudTrail, Azure Activity, Okta System Log) often default to 90 days or less — bump to max and export to cold storage.</li>
+                    <li>Preserve the EDR timeline exports. Many EDRs rotate detailed telemetry after 30 days.</li>
+                    <li>Chain of custody: who touched what, when, with what tool, logged to a dedicated notes file.</li>
+                </ul>
+
+                <h2>Hour 6-24: Scope, Don't Fix</h2>
+                <p>Resist the urge to "clean up." Every deleted file, every reimage, every password rotation before scoping is complete destroys evidence of the attacker's trail. First understand:</p>
+                <ul>
+                    <li>Where did they enter?</li>
+                    <li>How long have they been in?</li>
+                    <li>What did they touch? What did they exfiltrate?</li>
+                    <li>Do they still have persistence?</li>
+                </ul>
+                <p>Only after you can answer those do you plan eradication and recovery. Premature remediation is one of the most common mistakes in IR, and it usually results in the attacker coming back through a second backdoor you never found.</p>
+
+                <h2>What Not To Do</h2>
+                <ul>
+                    <li><strong>Do not wipe or reimage</strong> before forensics captures are done.</li>
+                    <li><strong>Do not pay a ransom</strong> without executive and counsel authorization. Payment to OFAC-sanctioned groups is a federal crime.</li>
+                    <li><strong>Do not publicly attribute</strong> the actor in the first 24 hours. You will be wrong and you will get sued.</li>
+                    <li><strong>Do not notify customers</strong> in the first 24 hours unless regulation requires it. You do not yet know enough to be accurate.</li>
+                    <li><strong>Do not tweet.</strong> Do not post a "we are aware" blog. Counsel will tell you when.</li>
+                </ul>
+
+                <h2>The Mindset</h2>
+                <p>Breaches feel like emergencies. They are crises, but rarely true emergencies in the ER sense — the building is not on fire, people are not dying, and the decisions that matter are measured in hours, not seconds. The teams that do this well slow down, follow the sequence, and let professionals do their work. The teams that panic make decisions they spend the next year explaining to regulators and plaintiffs.</p>
+                <p>Calm first. Then the playbook.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

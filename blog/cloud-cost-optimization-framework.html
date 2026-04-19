@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Cost Optimization: The Framework — MacwanGrid</title>
+    <meta name="description" content="FinOps isn't a team. It's a practice. The biggest cloud cost wins are in design, not cost-center dashboards. A framework for what actually moves the bill.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cloud Cost Optimization: The Framework">
+    <meta property="og:description" content="FinOps isn't a team. It's a practice. The biggest cloud cost wins are in design, not cost-center dashboards.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-23T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/cloud-cost-optimization-framework.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-02-23</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Cloud Cost Optimization: The Framework</h1>
+            <div class="article-body">
+                <p>FinOps became a job title around 2021. By 2023 it was a department. By 2026 most of those departments are still reporting the same 3-5% savings they reported the first quarter, because they've been asked to optimize a bill that's fundamentally a design problem. Rightsizing an EC2 instance is not the answer. It's the rounding error.</p>
+
+                <p>The biggest cloud cost wins are architectural. They're decided by engineers at design time, not by finance reviewing cost-center dashboards. What follows is the framework I use — and the order matters.</p>
+
+                <h2>Rightsizing vs. re-architecting</h2>
+                <p>Rightsizing is table stakes. Every cloud provider has a native tool (AWS Compute Optimizer, Azure Advisor, GCP Recommender) that will tell you which instances are oversized. Apply the recommendations, enforce instance-family standards, autoscale aggressively on stateless tiers. You will save 10-20% on compute. This is the first week's work.</p>
+                <p>Re-architecting is where the real money lives:</p>
+                <ul>
+                    <li>A chatty microservice topology crossing AZs at every request — move services that co-call into the same AZ or collapse them.</li>
+                    <li>A batch job running on an m5.24xlarge reserved instance 24/7 to handle a 4-hour overnight workload — move it to Spot or Batch.</li>
+                    <li>A managed database 4x oversized because you picked tier once and never revisited — evaluate Aurora Serverless v2 or equivalent.</li>
+                    <li>Lambda cold starts driving a business decision to provision a warm fleet — which then costs more than the equivalent ECS service would.</li>
+                </ul>
+                <p>Rightsizing is trimming. Re-architecting is stopping the bleeding.</p>
+
+                <h2>Commitments: RIs, Savings Plans, Spot</h2>
+                <p>The commitment hierarchy is well-understood but badly executed:</p>
+                <ul>
+                    <li><strong>Savings Plans (compute)</strong> — 1-year, no upfront, 20-30% off list for flexible workloads. This should cover your steady-state baseline. Almost everyone under-commits here.</li>
+                    <li><strong>Reserved Instances</strong> — for databases, ElastiCache, RedShift, where commitments are instance-specific. Higher discounts but less flexibility. Match to workloads that won't change shape for 12+ months.</li>
+                    <li><strong>Spot instances</strong> — 60-90% off for interruptible workloads. Should be the default for CI runners, async batch, stateless stateless autoscaled tiers, spark workers. The tooling (Karpenter on EKS, Spot.io) is good enough that "we can't risk interruptions" is rarely a valid excuse.</li>
+                </ul>
+                <p>The thing nobody does: continuously re-evaluate. A Savings Plan from 2024 covering workloads that have since moved to Graviton is burning money.</p>
+
+                <h2>The data transfer bill</h2>
+                <p>Data transfer is the most under-examined line item in the entire cloud bill. It doesn't show up as one category — it's scattered across "EC2 Data Transfer," "S3 Data Transfer," "CloudFront," "Inter-AZ." Add them up and it's often 10-20% of a mature cloud bill.</p>
+                <blockquote>An architecture that does not treat cross-AZ and cross-region traffic as expensive will get an expensive surprise on the invoice every month forever.</blockquote>
+                <p>Specific places to look:</p>
+                <ul>
+                    <li>NAT Gateway egress — $0.045/GB processing <em>plus</em> per-hour cost. A chatty service talking to the internet through a NAT gateway can rack up thousands a month. VPC endpoints for AWS services eliminate most of this.</li>
+                    <li>Cross-AZ replication in Kafka, Kubernetes, databases. Topology-aware routing (EKS) and rack-aware Kafka producers help.</li>
+                    <li>Logs shipped to a central aggregation account across regions. Compress and batch.</li>
+                    <li>S3 cross-region replication set up once for DR and never revisited — check if you still need it for every bucket.</li>
+                </ul>
+
+                <h2>Orphans, showback, and the cultural layer</h2>
+                <p>Every cloud account I've audited has 5-15% in pure orphaned resources: unattached EBS volumes, old snapshots, load balancers pointing to nothing, stopped EC2 instances still paying for EBS, NAT gateways in dev VPCs that no one uses. Automated cleanup (AWS Config rules, custom Lambdas, tools like Cloud Custodian) pays for itself in a month.</p>
+                <p>The cultural layer is where FinOps programs either work or fail:</p>
+                <ul>
+                    <li><strong>Showback</strong>: every team sees what they spend, weekly, via Slack or email. No chargeback. Just visibility. This alone drives 5-10% behavior change.</li>
+                    <li><strong>Chargeback</strong>: when cost shows up in the team's own P&L. More powerful, harder to implement fairly, and requires a tagging discipline most orgs don't have.</li>
+                    <li><strong>Unit economics</strong>: cost per customer, per order, per API call. This is what actually matters — absolute cloud cost is vanity, cost per unit of business output is strategy.</li>
+                </ul>
+
+                <h2>When cloud is actually more expensive than on-prem</h2>
+                <p>There's a cost crossover that nobody in cloud marketing will acknowledge. Sustained, predictable, high-throughput compute — the kind that runs 24/7 at 80%+ utilization — is often 2-4x more expensive in the cloud than colocated hardware amortized over 4 years. Storage at petabyte scale, same story. If you're running an HPC workload, a video encoding farm, or a petabyte analytics platform with steady utilization, do the math honestly. Companies that moved it back (37signals, Dropbox earlier) weren't wrong.</p>
+
+                <p><strong>The takeaway:</strong> If your FinOps program is mostly rightsizing reports and RI purchases, you're harvesting the easy 15% and missing the structural 40%. Design cost in — instance families, regions, transfer topology, commitment strategy — and treat orphans and cross-AZ traffic as bugs. And be honest about the workloads where cloud isn't the right answer in the first place.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

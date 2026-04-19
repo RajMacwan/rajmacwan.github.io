@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendor Threat Feeds: What You're Paying For — MacwanGrid</title>
+    <meta name="description" content="The $500k threat feed has 85% overlap with the $10k one, which has 70% overlap with free sources. The value is often elsewhere.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vendor Threat Feeds: What You're Paying For">
+    <meta property="og:description" content="The $500k threat feed has 85% overlap with the $10k one, which has 70% overlap with free sources. The value is often elsewhere.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-11T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/vendor-threat-feeds-reality.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-11</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Vendor Threat Feeds: What You're Paying For</h1>
+            <div class="article-body">
+                <p>Here is an exercise I have run in two different SOCs. Take three paid threat feeds — a premium one (Mandiant Advantage, Recorded Future, CrowdStrike Falcon Intelligence tier), a mid-market one (Anomali, ThreatConnect, Flashpoint), and a budget one — plus free sources (abuse.ch family, CISA KEV, AlienVault OTX). Deduplicate the indicators by hash/IP/domain. Measure uniqueness.</p>
+
+                <p>The results are consistent enough that I will generalize: the $500k feed has roughly 85% indicator overlap with the $10k feed, which has roughly 70% overlap with a reasonable free stack. A mature organization using only free sources would have seen the same technical indicators for the overwhelming majority of active campaigns.</p>
+
+                <p>So why do feeds cost what they cost? The value is real, but it is almost never in the raw IOCs.</p>
+
+                <h2>Where Paid Feeds Actually Differentiate</h2>
+                <p><strong>Enrichment.</strong> A free feed gives you <code>185.xxx.xxx.xxx → malicious</code>. A premium feed gives you: first-seen, last-seen, confidence score, associated malware family, associated actor, related infrastructure (pivot IPs, sibling domains, hosting ASN), campaign attribution, kill-chain stage, source sensor (email, web, endpoint), and STIX-formatted relationships. When you are pivoting during an incident at 2 a.m., enrichment is the difference between a 20-minute investigation and a 6-hour one.</p>
+
+                <p><strong>Non-public sources.</strong> Flashpoint, Intel 471, and KELA run analyst-mediated collections inside closed forums, Telegram channels, and private marketplaces you cannot access without operational tradecraft and time. If you want IAB listings, ransomware affiliate chatter, and stealer-log telemetry you can actually use, this is where real money is justified — and it is rarely sold as a "feed" in the IOC sense.</p>
+
+                <p><strong>Finished intel.</strong> Mandiant's M-Trends, Unit 42 Threat Report, CrowdStrike Global Threat Report, Recorded Future Insikt reports — the analyst writeups are what you are paying for, not the machine-readable feed attached to them. Treat the IOC feed as a bonus.</p>
+
+                <p><strong>Sector-specific.</strong> FS-ISAC for financial, H-ISAC for healthcare, E-ISAC for energy. ISACs are niche, community-vetted, and frequently the first to surface sector-targeted campaigns. Worth the dues.</p>
+
+                <h2>The SLA Reality</h2>
+                <p>Feed SLAs are often not what they appear. "Real-time" in a vendor's marketing usually means "within 15 minutes of confirmation by our analyst team" — and the analyst team is working business hours in one or two time zones. "Coverage of all major ransomware groups" typically means leak-site scraping you could do yourself. "Dark web coverage" typically means a few dozen forums and Telegram channels, not the underground as a whole. Read the MSA, not the glossy.</p>
+
+                <h2>Why You Still Might Pay</h2>
+                <p>There are legitimate reasons to write the check. If your audit framework requires a commercial threat-intel feed (some PCI/FedRAMP/HIPAA interpretations do), you pay. If you need attestation and indemnification around takedowns (phishing-domain, brand-abuse), you pay. If your SOAR needs programmatic enrichment at scale and the free sources cannot deliver the latency or API stability, you pay. If your IR retainer is bundled with a feed and the math works, you pay.</p>
+
+                <p>Also: if your team will actually <em>read</em> the finished intel reports, a premium subscription can be worth it just for that. I have seen seven-figure feed purchases where 90% of the ROI came from the weekly analyst briefings, not the IOC pipe.</p>
+
+                <h2>Negotiating Feed Contracts</h2>
+                <p>A few tactics that consistently move the list price:</p>
+
+                <ul>
+                    <li><strong>Unbundle.</strong> Most vendors sell in bundles (feed + platform + reports + analyst time). Ask for component pricing. The feed alone is often 20% of the bundle; you may only want the reports.</li>
+                    <li><strong>Trial with your real data.</strong> Do not accept a sanitized demo. Run a 60-day PoC where they push indicators into your SIEM and measure unique catches, false positives, and enrichment quality against your existing stack.</li>
+                    <li><strong>Benchmark against free.</strong> Bring a deduplication analysis to the negotiation. Vendors cannot defend premium pricing when you have a spreadsheet showing 85% overlap with sources you already have.</li>
+                    <li><strong>Multi-year for discount only if SLA has exit triggers.</strong> Intel vendor quality shifts rapidly with analyst team turnover. Lock in discount, keep exit optionality.</li>
+                    <li><strong>Ask for the ISAC-equivalent rate.</strong> Many premium vendors have undocumented lower tiers for small/mid teams. If you do not ask, you pay list.</li>
+                </ul>
+
+                <h2>The Practitioner's Heuristic</h2>
+                <p>If a vendor cannot tell you, in under two minutes, what their feed will catch that your free stack will not — and show it with real data on your environment — you are buying a logo, not intelligence. The feeds that survive this test are a short list, and they are worth what they cost. The rest are sold on anxiety.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

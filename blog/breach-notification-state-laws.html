@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breach Notification in the US: State-by-State Reality — MacwanGrid</title>
+    <meta name="description" content="There is no federal US breach notification law. Fifty states, fifty rules. Your legal team needs a matrix, not a checklist. What actually varies and why.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Breach Notification in the US: State-by-State Reality">
+    <meta property="og:description" content="There is no federal US breach notification law. Fifty states, fifty rules. Your legal team needs a matrix, not a checklist. What actually varies and why.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-28T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/breach-notification-state-laws.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-02-28</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Breach Notification in the US: State-by-State Reality</h1>
+            <div class="article-body">
+                <p>There is no federal US breach notification law. There is a patchwork of fifty state statutes, a handful of sector-specific federal rules, and a growing layer of regulator-specific obligations. If your incident response plan says "notify per applicable law," you do not have a plan. You have a sentence.</p>
+
+                <p>What you need is a matrix — jurisdiction by jurisdiction — that your legal team can run against the facts of an incident in the first 24 hours. This post is not legal advice. It is a field guide for the security leader who has to translate "we had an incident affecting customer data in 41 states" into a defensible notification workflow.</p>
+
+                <h2>The axes that actually vary</h2>
+                <p>Every state statute differs along the same handful of dimensions. Build your matrix around these:</p>
+                <ul>
+                    <li><strong>Definition of personal information.</strong> Some states stop at name + SSN/DL/account number. Others include biometrics, health data, tax IDs, usernames plus password or security question, or passport numbers. Illinois BIPA and the expanded Texas HB 300 are outliers.</li>
+                    <li><strong>Trigger standard.</strong> Strict (any unauthorized acquisition = notify) versus harm-based (notify only if there is a reasonable likelihood of harm, often called a "risk of harm" analysis). Most states are harm-based, but the bar varies.</li>
+                    <li><strong>Timing.</strong> "Most expeditious time possible and without unreasonable delay" is the default. Hard clocks exist: Florida and Colorado at 30 days, Maine at 30 days after scope determination, some others at 45 or 60. HIPAA is 60 days. SEC Form 8-K disclosure is 4 business days after materiality determination.</li>
+                    <li><strong>Regulator notification.</strong> Many states require parallel notice to the attorney general, often with a threshold (e.g., 500 or 1,000 residents affected). New York SHIELD and the California Attorney General portal are among the most actively enforced.</li>
+                    <li><strong>Substitute notice and media notice.</strong> Thresholds above which you must notify via website posting, email, and major media outlets.</li>
+                    <li><strong>Content requirements.</strong> Some states prescribe specific content — dates, categories of data, credit monitoring offers. California is the strictest; a non-conforming letter is itself a violation.</li>
+                </ul>
+
+                <h2>The ones you cannot fumble</h2>
+                <p>In practice, a few jurisdictions and regulators do most of the enforcement work. Get these right first:</p>
+                <ul>
+                    <li><strong>California (CCPA/CPRA).</strong> Broad definition of personal information, private right of action for certain data categories, active AG and CPPA enforcement.</li>
+                    <li><strong>New York (SHIELD Act, DFS 23 NYCRR 500).</strong> If you touch financial services, DFS has 72-hour notification requirements and has levied multi-million dollar penalties.</li>
+                    <li><strong>Texas (HB 300 for health data).</strong> Stricter than HIPAA in places; expanded identity data rules.</li>
+                    <li><strong>HIPAA / HITECH.</strong> 60 days to individuals, HHS, and sometimes media. Applies to business associates too.</li>
+                    <li><strong>SEC cyber disclosure rule.</strong> Public companies: Form 8-K within four business days of a materiality determination. The clock is on materiality, not on discovery, and the SEC has begun testing that in enforcement.</li>
+                    <li><strong>GLBA Safeguards Rule (FTC).</strong> 30-day notification to the FTC for incidents affecting 500+ consumers at nonbank financial institutions.</li>
+                </ul>
+
+                <h2>What your legal team actually needs from you</h2>
+                <p>Legal cannot run the matrix without facts. Your job during an incident is to produce, as early as possible:</p>
+                <ul>
+                    <li>Data categories implicated, with evidence (not guesses).</li>
+                    <li>Residency counts by state — not "roughly 100k records" but a per-state breakdown.</li>
+                    <li>Acquisition evidence: did the attacker access, or just have the ability to access? This distinction drives trigger analysis in many states.</li>
+                    <li>Timeline with specific dates for discovery, confirmation, and scope determination. Regulators will ask.</li>
+                </ul>
+
+                <blockquote>The worst time to build your state notification matrix is while the incident is active. The best time was yesterday. The second-best time is before the next quarterly tabletop.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Ask your general counsel for the current version of your state notification matrix. If it does not exist, or was last updated in 2022, that is the first finding of your next tabletop. The laws move quickly — Maryland, Pennsylvania, and New Hampshire all tightened in recent cycles, and more federal regulators are claiming jurisdiction over cyber disclosure every year. Notification is not an IT decision. It is a legal decision that depends entirely on the facts you give legal. Get the facts clean, early, and in writing.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

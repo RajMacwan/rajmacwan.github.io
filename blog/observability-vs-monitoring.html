@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observability vs Monitoring: A Practitioner's Take — MacwanGrid</title>
+    <meta name="description" content="Monitoring answers what you knew to ask. Observability answers what you didn't. Most orgs conflate them and lose both. A practitioner's take on what actually matters.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Observability vs Monitoring: A Practitioner's Take">
+    <meta property="og:description" content="Monitoring answers what you knew to ask. Observability answers what you didn't. Most orgs conflate them and lose both.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-16T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/observability-vs-monitoring.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-03-16</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Observability vs Monitoring: A Practitioner's Take</h1>
+            <div class="article-body">
+                <p>Monitoring tells you what you knew to ask. Observability tells you what you didn't. Those are not the same thing, and buying a "monitoring platform" and calling it observability does not make it so. I've sat through enough vendor demos where the Datadog rep explains that you can now ask novel questions because you bought APM to know this: <em>your ability to ask novel questions depends on the shape of the data, not the logo on the dashboard.</em></p>
+
+                <h2>The three pillars — and why they aren't enough</h2>
+                <p>Metrics, logs, traces. You know the list. The problem is that the three-pillars framing implies they're equal, orthogonal, and sufficient. They aren't.</p>
+                <ul>
+                    <li><strong>Metrics are cheap but pre-aggregated.</strong> A counter that's been bucketed to one-minute resolution has already thrown away the information you need to debug the weird tail latency.</li>
+                    <li><strong>Logs are expensive and unstructured.</strong> If your logs are text lines, you're grepping. Grep is not observability. Structured logs (JSON, key/value) plus indexed querying is the minimum bar.</li>
+                    <li><strong>Traces are structured but sampled.</strong> And the thing you want to debug is almost always in the 99.9th percentile — which your head-based sampler threw away.</li>
+                </ul>
+                <p>What actually gives you observability is the ability to slice a single unit of work — a request, a job, a transaction — by arbitrary dimensions you didn't pre-declare. Charity Majors calls this high-cardinality, wide events. She's right. If your telemetry library forces you to declare dimensions at ingest time, you've built a monitoring system.</p>
+
+                <h2>High-cardinality is the whole game</h2>
+                <p>Prometheus is wonderful until someone adds <code>user_id</code> as a label. Cardinality explodes, storage dies, and the on-call engineer deletes the metric at 3am. Prometheus is a metrics system, not an events system. Treating it as observability is a category error.</p>
+                <p>What you want is events with hundreds of dimensions per event, queryable ad-hoc. Honeycomb pioneered this. ClickHouse-backed stacks (think SigNoz, or rolling your own with OTel Collector → ClickHouse) do the same thing with open source. Grafana's <code>Loki</code> plus <code>Tempo</code> gets partway there. Datadog will do it if you're willing to pay for the cardinality tier.</p>
+
+                <h2>Sampling that doesn't lie to you</h2>
+                <p>Every non-trivial tracing deployment needs sampling. The wrong answer is <em>head-based sampling at 1%</em> — which is the default and which guarantees you never capture the interesting request. The right answer is tail-based sampling: let the request complete, then decide whether it's interesting based on errors, latency, or specific attributes.</p>
+                <blockquote>Keep every 5xx. Keep every request over the 99th-percentile latency. Keep a configurable fraction of the boring ones for baseline. Throw the rest away.</blockquote>
+                <p>OpenTelemetry Collector supports tail sampling natively. Use it. Pay for the collector tier instead of storing ten billion uninteresting spans.</p>
+
+                <h2>The log retention bill</h2>
+                <p>Naive log retention is the single biggest observability cost line I see. Teams ingest everything into Splunk or CloudWatch Logs at $0.50-$3/GB ingested, set retention to 90 days because "compliance," and wake up to a $400K annual bill for logs nobody ever queries past day 3.</p>
+                <p>What works:</p>
+                <ul>
+                    <li>Tiered retention: 7 days hot and queryable, 30 days warm in S3 with Athena or similar, archive beyond that.</li>
+                    <li>Drop noisy log sources at the collector — health checks, chatty frameworks, debug statements that shipped by accident.</li>
+                    <li>Convert high-volume structured logs into metrics at the edge. You don't need every access log line if the dimensions you care about are already in a histogram.</li>
+                </ul>
+
+                <h2>OTel is the convergence point</h2>
+                <p>OpenTelemetry isn't the fastest library, the prettiest SDK, or the cheapest way to get started. It is the only telemetry standard you should be betting on in 2026. Instrument once, ship to whatever backend, change backends when the vendor gets greedy without re-instrumenting. That alone is worth the tradeoffs.</p>
+                <p>The architecture that works: apps instrumented with OTel SDKs → OTel Collector (with sampling, enrichment, filtering) → your chosen backend. The collector is the seam. Own the seam.</p>
+
+                <p><strong>The takeaway:</strong> If your dashboards answer the question you're asking, you have monitoring, and that's fine for known failure modes. If novel incidents still mean SSH-ing into boxes and tailing logs, you don't have observability — no matter what you bought. Start with structured, wide events. Sample intelligently. Own the collector.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

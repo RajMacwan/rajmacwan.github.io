@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal OSINT Workstation Build — MacwanGrid</title>
+    <meta name="description" content="Compartmentalized browsers, a VPN stack, Maltego, SpiderFoot, and a case-file workflow. What a clean OSINT box looks like in 2026.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Personal OSINT Workstation Build">
+    <meta property="og:description" content="Compartmentalized browsers, a VPN stack, Maltego, SpiderFoot, and a case-file workflow. What a clean OSINT box looks like in 2026.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-22T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/personal-osint-workstation-build.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-02-22</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Personal OSINT Workstation Build</h1>
+            <div class="article-body">
+                <p>An OSINT workstation is not about how many tools you have installed. It is about discipline — keeping investigations compartmented, not contaminating sock-puppet accounts with your personal cookies, and producing evidence a lawyer or a threat-intel lead can actually use. Here is the setup I run.</p>
+
+                <h2>The Base</h2>
+                <p>A laptop dedicated to OSINT. Not your work machine. Not your personal daily driver. A ThinkPad T14 with 32 GB RAM running Ubuntu 24.04 LTS is overkill and underpriced at around $600 refurbished. Full-disk encryption with LUKS at install time. No single-sign-on to any of your real identities on this machine. Ever.</p>
+                <p>If you cannot dedicate hardware, do it in a Qubes 4.2 AppVM or a Whonix Workstation — both give you real compartmentalization. Just do not do OSINT from the same browser profile you check your Gmail from.</p>
+
+                <h2>Compartmentalized Browsers</h2>
+                <p>Firefox with the Multi-Account Containers extension. One container per investigation. Each container has its own cookies, localStorage, and — with the Containerise addon — an optional proxy rule that forces that container through a specific exit node.</p>
+                <p>Containers I keep permanent:</p>
+                <ul>
+                    <li><strong>Recon-Clean:</strong> No logins, cache disabled, used for first looks at unknown domains.</li>
+                    <li><strong>Sock-A, Sock-B, Sock-C:</strong> Three persistent fake-persona accounts on major platforms. Each with its own Protonmail, its own phone number from MySudo, and a consistent browser fingerprint.</li>
+                    <li><strong>Case-NNNN:</strong> A disposable container spun up per case and nuked when the case closes.</li>
+                </ul>
+                <p>Never cross-log sock-A into the case-NNNN container. That is how investigations get burned.</p>
+
+                <h2>The VPN Stack</h2>
+                <p>Two layers. ProtonVPN or Mullvad on the host (WireGuard, paid in cash or Monero if you are serious). A second VPN inside a specific container for sensitive recon — I use IVPN's multi-hop feature. For anything truly sensitive, bump to Whonix + Tor.</p>
+                <p>Rule of thumb: the target should never see an IP that ties back to a residential or corporate range you care about. Verify with <code>ipleak.net</code> inside each container before the session starts.</p>
+
+                <h2>The Tools</h2>
+                <ul>
+                    <li><strong>Maltego CE (free tier):</strong> Graph-based pivoting. 12 entities per transform is limiting but fine for small cases. The Community transforms plus a free CaseFile license covers a surprising amount.</li>
+                    <li><strong>SpiderFoot HX or the free SpiderFoot OSS:</strong> Automated enumeration against a target. I run it inside a Docker container bound to the case's VPN interface. The free version with API keys for Shodan, Censys, HIBP, and SecurityTrails (all have free tiers) is powerful.</li>
+                    <li><strong>theHarvester:</strong> Email and subdomain enumeration. Still essential.</li>
+                    <li><strong>Sherlock:</strong> Username pivot across social platforms. False positives happen; verify manually.</li>
+                    <li><strong>yt-dlp and gallery-dl:</strong> For archiving media from social platforms while you still can.</li>
+                    <li><strong>Obsidian:</strong> The case notebook. One vault per case, timestamped Markdown notes, inline screenshots. Git-encrypt the vault with git-crypt for longer-lived cases.</li>
+                </ul>
+
+                <h2>Screenshot Hygiene</h2>
+                <p>A screenshot that is not time-stamped, URL-bar-visible, and hash-committed is not evidence. It is a JPEG.</p>
+                <p>My standard: Firefox extension "FireShot" set to capture the entire page including the URL bar. Save as PDF/A for archival. Immediately hash:</p>
+                <pre><code>sha256sum case-0042/screenshots/*.pdf >> case-0042/manifest.txt
+git add case-0042/ &amp;&amp; git commit -m "capture: target profile 2026-02-22T14:03Z"</code></pre>
+                <p>The git commit timestamp plus the content hash gives you a chain of custody that holds up. For high-stakes work, timestamp the manifest with an RFC 3161 trusted timestamping service — opentimestamps.org is free and uses Bitcoin as its anchor.</p>
+
+                <h2>Case File Workflow</h2>
+                <p>Every case goes in the same directory structure:</p>
+                <pre><code>case-NNNN-shortname/
+  00-brief.md          # what was asked, by whom, scope
+  01-targets.md        # seed selectors (email, domain, handle)
+  02-timeline.md       # investigation log, chronological
+  03-findings.md       # confirmed facts with citations
+  screenshots/
+  exports/             # Maltego .mtgx, SpiderFoot .csv
+  manifest.txt         # hashes of every artifact
+  README.md            # cover sheet for handover</code></pre>
+                <p>When the case closes, zip, encrypt with a per-case key, and store offline. Destroy the working copy. Keep only the encrypted archive and the key in your password manager.</p>
+
+                <h2>What Not to Do</h2>
+                <ul>
+                    <li>Do not log into any real account from the OSINT browser. Even once.</li>
+                    <li>Do not reuse sock puppet identities across cases.</li>
+                    <li>Do not skip the VPN "just to check one thing."</li>
+                    <li>Do not store case files on Dropbox, iCloud, or Google Drive unencrypted.</li>
+                </ul>
+
+                <p>The workstation is 20% of the job. The discipline of using it correctly every single time is the other 80. Build it once, document your procedure, and follow it even when the target "is probably nobody." That is the case where sloppiness bites.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

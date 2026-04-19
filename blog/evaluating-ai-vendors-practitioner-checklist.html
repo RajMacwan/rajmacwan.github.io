@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluating AI Vendors: A Practitioner's Checklist — MacwanGrid</title>
+    <meta name="description" content="Every AI vendor deck looks the same. Here are the ten questions that separate real from fake when you are evaluating enterprise AI vendors.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Evaluating AI Vendors: A Practitioner's Checklist">
+    <meta property="og:description" content="Every AI vendor deck looks the same. Here are the ten questions that separate real from fake when you are evaluating enterprise AI vendors.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-08T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/evaluating-ai-vendors-practitioner-checklist.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-02-08</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Evaluating AI Vendors: A Practitioner's Checklist</h1>
+            <div class="article-body">
+                <p>I have sat through roughly fifty AI vendor pitches in the last eighteen months. The decks are almost interchangeable. Gradient background, a founder quote about transformation, a logo wall, a benchmark chart that is always favorable to the presenter, and a demo that works on the cherry-picked input.</p>
+
+                <p>Ten questions do most of the filtering. If a vendor cannot answer these, the pitch is the product, not the technology. Here they are.</p>
+
+                <h2>1. What exactly happens to the data we send you?</h2>
+                <p>Not "we take privacy seriously." Walk me through the path. Which systems touch the prompt, which subprocessors, how long is it stored, where is it stored, who at your company can read it, and under what circumstances. A vendor that cannot produce this diagram on request has not thought about it enough for me to trust them with regulated data.</p>
+
+                <h2>2. Show me evals on my data, not your demos.</h2>
+                <p>Demos are curated. Benchmarks are public and therefore contaminated. What I want is: give me a trial with a hundred of my real examples, show me the outputs, and let me grade them. If a vendor will not do this, there is a reason. Usually the reason is that their system works on the demo and not much else.</p>
+
+                <h2>3. How do you handle model versioning?</h2>
+                <p>Your vendor's underlying model will change. What is their policy when the provider ships a new version? Do they pin, do they pass-through, do they regression-test. I have watched a provider "transparently upgrade" a model and silently break production workflows. The right answer involves regression testing against a held-out suite before rolling customers forward, with a rollback path.</p>
+
+                <h2>4. What is your incident history?</h2>
+                <p>Every mature vendor has one. Ask to see it. A vendor that claims zero incidents in two years of production either does not run production or does not notice their incidents. Both are disqualifying. What I want to see is: they had incidents, they wrote postmortems, and the postmortems show learning.</p>
+
+                <h2>5. What does auditability look like?</h2>
+                <p>When a customer complaint comes in and the answer was wrong, can we reconstruct what the model saw, what it returned, and why? If the audit log is "the final answer," that is not enough. We need the prompt, the retrieved context identifiers, the tool calls if any, and the timestamp. This is table-stakes for regulated industries and increasingly table-stakes elsewhere.</p>
+
+                <h2>6. Show me the contract clauses on model changes and data use.</h2>
+                <p>Two clauses I read carefully: the training-use clause (is my data used to train their or anyone else's models) and the change-notification clause (will I be told before the underlying model changes, and can I opt out). If these are not in the draft contract, or they are phrased as "we may," assume the worst case and ask for tighter language.</p>
+
+                <h2>7. What is your privacy posture for subprocessors?</h2>
+                <p>The vendor's posture is only as strong as the weakest subprocessor they route to. A vendor hosting on AWS US-East and claiming EU data residency is either wrong or lying, and both outcomes are bad. Ask for the full list. Ask what happens if a subprocessor changes. Ask whether you will be notified.</p>
+
+                <h2>8. How good is the model card?</h2>
+                <p>A serious vendor has a model card: what the model does, what it does not do, known limitations, known failure modes, evaluation methodology. If the model card is marketing copy, the vendor is selling a brand. If it is technical and candid about limitations, the team behind it is serious.</p>
+
+                <h2>9. What customers have churned, and why?</h2>
+                <p>Nobody asks this. Ask it. The logos on the website are sales. The churn is operations. A vendor comfortable discussing why customers left has a healthy engineering culture. A vendor visibly thrown by the question does not.</p>
+
+                <h2>10. Who owns the prompt engineering and evals, you or us?</h2>
+                <p>This is the question that reveals the nature of the product. If the vendor owns the prompts and evals, you are buying an outcome and you are trusting them completely. If you own them, you are buying a platform and the work is yours. Both are valid. Many vendors are evasive about the answer because it is somewhere in between and the answer changes the price.</p>
+
+                <h2>How to use this list</h2>
+                <p>Do not send these as an email. Send three or four of them as part of the early conversation. The ones that matter most depend on your threat model, your regulatory context, and what you are buying. The point of the list is not to fail vendors. It is to find the ones who have been in production long enough to have the answers, and who respect you enough to give them straight.</p>
+
+                <p>Those vendors exist. They are worth the search.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

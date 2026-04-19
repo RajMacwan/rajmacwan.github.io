@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whonix Architecture Explained — MacwanGrid</title>
+    <meta name="description" content="A technical walk-through of Whonix's Gateway and Workstation model, why it separates application from network, and when it's the right tool.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Whonix Architecture Explained">
+    <meta property="og:description" content="A technical walk-through of Whonix's Gateway and Workstation model, why it separates application from network, and when it's the right tool.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-19T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/whonix-architecture-explained.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html" class="active">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published 2026-03-19</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Whonix Architecture Explained</h1>
+            <div class="article-body">
+                <p>Whonix is, in my opinion, one of the more elegant pieces of privacy engineering in open source. It doesn't try to be a one-disk amnesic system like Tails, and it doesn't try to be a full compartmentalization OS like Qubes. It solves one specific problem — "what if the application I'm running is compromised?" — and it solves it at the virtual-machine boundary.</p>
+
+                <h2>Gateway and Workstation</h2>
+                <p>The whole architecture rests on two VMs:</p>
+                <ul>
+                    <li><strong>Whonix-Gateway</strong> runs Tor. It has two network interfaces: one that reaches the internet, one that serves a private network for the Workstation.</li>
+                    <li><strong>Whonix-Workstation</strong> has a single interface, and its only route to the outside world is through the Gateway.</li>
+                </ul>
+                <p>This means the Workstation <em>cannot learn the host's real IP address</em>, because it never has access to a network that contains it. Even if a browser exploit lands, even if an application leaks, the process inside the Workstation cannot see clearnet. That's the property. It's simple, and it's strong.</p>
+
+                <h2>TransparentProxy vs. SocksPort</h2>
+                <p>Traffic from the Workstation reaches the Gateway one of two ways:</p>
+                <ul>
+                    <li><strong>TransparentProxy</strong> — iptables on the Gateway redirects arbitrary TCP from the Workstation's subnet into Tor's TransPort. Convenient: any application "just works" over Tor. Dangerous: stream isolation is weak, so multiple applications can share a circuit.</li>
+                    <li><strong>SocksPort (stream isolation)</strong> — each application points to a dedicated SOCKS port on the Gateway (9050, 9101, 9102...). Tor treats each port as a separate identity, building distinct circuits. This is what the Tor Browser inside Whonix uses, and what you want for anything identity-sensitive.</li>
+                </ul>
+                <p>The Whonix documentation is explicit about this, and it's worth reading before you fire up a new workflow.</p>
+
+                <h2>Why Guest Additions Are Forbidden</h2>
+                <p>If you've run VirtualBox, you know Guest Additions give you clipboard sharing, shared folders, dynamic resolution. In Whonix they are <em>not installed by default</em>, and the project actively warns against them. The reason is straightforward: Guest Additions open channels between Workstation and host, expanding attack surface in exactly the direction the whole design is built to close. A compromised Workstation that can talk to the host can enumerate host hardware, MAC addresses, and serials — any of which can deanonymize the user.</p>
+                <p>This is the kind of design decision that separates actual threat modeling from security theater. Comfort is traded for a clean invariant.</p>
+
+                <h2>Whonix vs. Tails vs. Qubes</h2>
+                <ul>
+                    <li><strong>Tails</strong> is a live USB OS. Amnesic by default, Tor-by-default. Great for one-off use from any laptop. Weak against persistent implants on your hardware.</li>
+                    <li><strong>Whonix</strong> is a pair of VMs. Persistent state is easy. Tor is enforced by network topology rather than by application config. Runs on top of an existing host.</li>
+                    <li><strong>Qubes-Whonix</strong> is the serious-business combination. Qubes gives you hardware-level compartmentalization via Xen; Whonix gives you the Tor-enforcing gateway. This is what high-threat-model users (journalists with nation-state adversaries, for instance) actually run.</li>
+                </ul>
+                <p>When is Whonix overkill? For casual Tor browsing on a personal laptop, Tor Browser alone is fine. When is it necessary? Any time you run non-browser tooling (SSH, IRC, custom scrapers, messaging clients) that you want strictly bound to Tor, with a hard guarantee that a bug in the tool cannot leak your real IP. That guarantee is the Gateway, and it's the whole point.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supply Chain Security: Five Years After SolarWinds — MacwanGrid</title>
+    <meta name="description" content="Five years after SolarWinds, most orgs still don't have real supply chain controls. SBOMs, vendor assessment, build pipeline security, and what actually matters.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Supply Chain Security: Five Years After SolarWinds">
+    <meta property="og:description" content="Five years after SolarWinds, most orgs still don't have real supply chain controls. SBOMs, vendor assessment, build pipeline security, and what actually matters.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-10T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/supply-chain-security-after-solarwinds.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-02-10</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Supply Chain Security: Five Years After SolarWinds</h1>
+            <div class="article-body">
+                <p>SolarWinds shifted the conversation in 2020. Five years on, the conversation has lapped the practice. Most organizations still do not have real supply chain controls. They have questionnaires, a copy of a SOC 2 report, and an SBOM they cannot parse. That is not supply chain security. That is procurement with a security lipstick.</p>
+
+                <h2>What has actually changed</h2>
+                <p>The executive orders landed. <code>NIST SSDF</code> and the Secure Software Development Framework are now referenced in federal procurement. CISA pushed hard on attestation and SBOM formats (<code>SPDX</code>, <code>CycloneDX</code>). The Kaseya, 3CX, and MOVEit incidents reinforced the pattern: the compromise is upstream of your perimeter and EDR will not see it coming.</p>
+                <p>What has not changed: most mid-market and enterprise security teams still treat supply chain as a vendor risk management checkbox. That was never enough, and it is especially not enough now.</p>
+
+                <h2>SBOM: useful, often misused</h2>
+                <p>An SBOM is an inventory. It tells you that <code>Acme Product 4.2</code> ships with Log4j 2.14.1 and OpenSSL 3.0.7. It does not tell you whether the vendor has patched, whether they used a private fork, or whether they shipped it securely. Treat the SBOM as raw material:</p>
+                <ul>
+                    <li>Ingest vendor SBOMs into the same system that tracks your own vulnerability data. Unread SBOMs are filing cabinets.</li>
+                    <li>Join against KEV and EPSS. When Log4Shell-grade events happen, you want to answer "which vendors shipped us this?" in minutes, not weeks.</li>
+                    <li>Require SBOMs in contracts for critical software, but do not pretend requiring is receiving.</li>
+                </ul>
+
+                <h2>Vendor risk management versus vendor security assessment</h2>
+                <p>These are different jobs and most programs conflate them.</p>
+                <ul>
+                    <li><strong>VRM</strong> is about the business relationship: onboarding, continuity, financial stability, data handling. Largely a procurement function.</li>
+                    <li><strong>Vendor security assessment</strong> is a technical review: architecture, identity integration, logging, IR obligations, actual controls. It belongs in security.</li>
+                </ul>
+                <p>A 200-question SIG questionnaire filled in by a vendor's sales engineer is neither. Prioritize: tier your vendors by access to data or infrastructure, and actually review the top 20. For the rest, a minimum control baseline in the contract is better than a questionnaire nobody reads.</p>
+
+                <h2>Open source dependencies</h2>
+                <p>For most organizations, the software supply chain risk is not commercial vendors. It is the five thousand open source packages your developers pulled from npm, PyPI, and Maven Central last quarter. The 2024 <code>xz-utils</code> backdoor was a near-miss that took three years of patient social engineering and was caught by one attentive engineer. Assume the next one is not caught.</p>
+                <p>Practical controls:</p>
+                <ul>
+                    <li>A software composition analysis tool with real developer workflow integration — Snyk, Dependabot, Semgrep Supply Chain, or equivalent. Not another dashboard.</li>
+                    <li>Internal package proxies (Artifactory, Nexus) so you are not pulling directly from public registries at build time.</li>
+                    <li>Dependency pinning and lockfiles as hard requirements. Floating versions in production is how typosquat attacks succeed.</li>
+                    <li>Signed artifacts (<code>Sigstore</code>, <code>cosign</code>) and provenance metadata (<code>SLSA</code>) for your own builds. The ecosystem is finally usable.</li>
+                </ul>
+
+                <h2>Your own build pipeline is part of someone else's supply chain</h2>
+                <p>This is the part most teams miss. If you ship software, your build pipeline is a supply chain risk for your customers. The SolarWinds compromise worked precisely because the attackers modified the build environment, not the source. Look at yours with the same skepticism you apply to vendors:</p>
+                <ul>
+                    <li>Who has access to push to the build system? When was the last time you reviewed it?</li>
+                    <li>Are builds reproducible? Can you detect a modified artifact?</li>
+                    <li>Are secrets scoped and rotated? CI runners are an enormously juicy target.</li>
+                    <li>Do you sign releases and publish provenance? Your customers will start asking.</li>
+                </ul>
+
+                <blockquote>Your security posture is now the maximum of your own controls and the minimum of your vendors' controls. The second number is usually lower.</blockquote>
+
+                <h2>The takeaway</h2>
+                <p>Pick one concrete improvement per supply chain domain for the next quarter: an SBOM you actually ingest, one tier-1 vendor you technically reassess, one open source control you enforce in CI, and one hardening task on your own build pipeline. Five years of supply chain rhetoric has produced a lot of slides and not a lot of controls. Make your next year more honest than that.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

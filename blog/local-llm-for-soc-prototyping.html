@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local LLM for SOC Prototyping — MacwanGrid</title>
+    <meta name="description" content="Running Ollama with Llama 3 on a dedicated box for SOC tooling prototypes. What you can build locally, and where local hits a ceiling.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Local LLM for SOC Prototyping">
+    <meta property="og:description" content="Running Ollama with Llama 3 on a dedicated box for SOC tooling prototypes. What you can build locally, and where local hits a ceiling.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-19T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/local-llm-for-soc-prototyping.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-19</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Local LLM for SOC Prototyping</h1>
+            <div class="article-body">
+                <p>Before I bring any AI idea to the vendors — SIEM copilots, ticket summarizers, phishing triagers — I prototype it on a local model first. Two reasons. First, my prototype data is real SIEM output. I am not sending EDR telemetry to someone else's API while I am sketching. Second, if the idea does not work against a decent 8B model, it is not going to magically work against GPT-5. Bad prompts do not get saved by big models.</p>
+
+                <h2>The Hardware</h2>
+                <p>One dedicated box sitting on the lab VLAN:</p>
+                <ul>
+                    <li>Ryzen 7 7700 (8 cores, cheap)</li>
+                    <li>64 GB DDR5</li>
+                    <li>RTX 4070 Ti Super with 16 GB VRAM — the sweet spot for models up to 13B at Q5_K_M</li>
+                    <li>2 TB NVMe because quantized models add up fast</li>
+                    <li>Ubuntu 24.04 LTS, nothing fancy</li>
+                </ul>
+                <p>Total around $1,800 in early 2026. A used 3090 with 24 GB is also excellent if you can find one under $800 — you get to run 34B models at usable speeds.</p>
+
+                <h2>The Stack</h2>
+                <p>Ollama is the boring right answer. Install:</p>
+                <pre><code>curl -fsSL https://ollama.com/install.sh | sh
+ollama pull llama3.1:8b
+ollama pull qwen2.5-coder:14b
+ollama pull nomic-embed-text</code></pre>
+                <p>Then a thin FastAPI wrapper and a Streamlit page for each experiment. Do not adopt LangChain on day one. You will spend more time debugging abstractions than writing prompts. A hundred lines of Python plus direct Ollama HTTP calls gets you further.</p>
+
+                <h2>What Actually Works Locally</h2>
+                <p>Prototype these without paying a cloud bill:</p>
+                <ul>
+                    <li><strong>Alert summarization.</strong> Feed a Splunk search result as JSON, ask for a three-bullet incident brief. Llama 3.1 8B does this at about 85% of GPT-4 quality after one round of prompt tuning.</li>
+                    <li><strong>Phishing triage.</strong> Email headers plus body → structured verdict with reasoning. Great for building a gold-standard dataset you can later evaluate models against.</li>
+                    <li><strong>Rule translation.</strong> Sigma to Splunk SPL, KQL to Splunk, YARA authoring from a sample. Code models like Qwen2.5-Coder:14B shine here.</li>
+                    <li><strong>Log normalization.</strong> Unknown vendor log → CEF. Deterministic enough that an 8B model is fine.</li>
+                    <li><strong>Semantic search over your own runbooks.</strong> Embed with nomic-embed-text, store in SQLite with the sqlite-vec extension. No pgvector cluster required.</li>
+                </ul>
+
+                <h2>What Does Not Work Locally</h2>
+                <p>Be honest about the ceiling. Things I stopped trying to prototype at home:</p>
+                <ul>
+                    <li><strong>Scale.</strong> A local box at 40 tokens per second will not tell you if your idea survives 10,000 alerts per hour. That is a production question.</li>
+                    <li><strong>Long-context reasoning.</strong> 128K windows exist locally but degrade badly past 32K on 8B quantized models. If your workflow needs a full week of logs in context, test on a hosted model.</li>
+                    <li><strong>Tool-use reliability.</strong> Function calling on small models is flaky. Prototype the shape of the workflow; do not benchmark reliability here.</li>
+                    <li><strong>Multi-agent orchestration.</strong> Latency compounds. Two 8B hops feel like waiting for dial-up.</li>
+                </ul>
+
+                <h2>A Workflow I Use Weekly</h2>
+                <p>"Does this prompt idea even deserve a meeting?" Pipeline:</p>
+                <ol>
+                    <li>Pull 50 representative inputs from prod (scrubbed).</li>
+                    <li>Write a naive prompt. Run it on Llama 3.1 8B.</li>
+                    <li>Hand-label outputs as good/bad.</li>
+                    <li>If I get less than 60% on a small model, GPT-4-class will maybe get me to 80%. Not enough for a production case.</li>
+                    <li>If I get above 70% locally, the idea is worth a real eval on a hosted model.</li>
+                </ol>
+                <p>That filter has killed more bad ideas than any strategy session. Three hours on a $1,800 box has saved me from three months of vendor POCs that were never going to succeed. Prototype locally. Ship with the best tool for the actual production load.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

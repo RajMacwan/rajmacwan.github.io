@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tier-1 SOC Triage: Six Months In — MacwanGrid</title>
+    <meta name="description" content="After six months of LLM-assisted tier-1 triage in a real SOC, here is what I would tell other IT leaders. The wins, the limits, the numbers.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI Tier-1 SOC Triage: Six Months In">
+    <meta property="og:description" content="After six months of LLM-assisted tier-1 triage in a real SOC, here is what I would tell other IT leaders. The wins, the limits, the numbers.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-13T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/ai-tier1-soc-triage-six-months.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html" class="active">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-03-13</span>
+                <span>6 min read</span>
+            </div>
+            <h1>AI Tier-1 SOC Triage: Six Months In</h1>
+            <div class="article-body">
+                <p>We turned on LLM-assisted tier-1 triage in our SOC in late summer 2025. Six months is long enough to separate the real signal from the launch-day adrenaline. Here is the honest report.</p>
+
+                <h2>What the thing actually does</h2>
+                <p>When an alert fires in our SIEM, a pipeline sends it to Claude Sonnet along with enrichment data: asset owner, recent login patterns, threat intel context, and the text of related historical tickets. The model writes a structured triage note: likely category, suggested priority, one-line rationale, and a confidence score. The analyst sees this in their queue alongside the raw alert. They can accept, override, or escalate. The model never closes a ticket by itself.</p>
+
+                <h2>What it handled well</h2>
+                <p>Enrichment was the biggest unambiguous win. Analysts used to spend the first 90 seconds of every ticket pulling context from four different tools. The model now arrives with that context already distilled. Saved roughly two minutes per ticket. At our volume, that is roughly 40 analyst-hours a week back.</p>
+
+                <p>Noise reduction was the second. We were drowning in low-fidelity phishing reports from the user-reported mailbox. The model does a first-pass classification and clusters duplicates. About 55 percent of that queue now resolves without a human opening it, because ten copies of the same phish campaign get auto-merged and one analyst closes the cluster. False negatives on this path are audited weekly. So far we have seen two. Neither was a real attack.</p>
+
+                <p>MTTD dropped roughly 20 percent. MTTR for tier-1 categories dropped about 30 percent. Neither number moved on tier-2 or above, which is the point.</p>
+
+                <h2>What it did not handle</h2>
+                <p>Novel attacks, by definition, have no precedent in the training data or the ticket history. The model either flags them as unknown (good) or confidently misclassifies them as something benign (bad). We caught one of these the hard way. The model called a living-off-the-land technique "expected admin activity" with 70 percent confidence. A human would have called it the same way from the same data. That is not a defense. It is a reminder that the model is not smarter than the analyst, and pretending otherwise is the failure mode that ends careers.</p>
+
+                <p>Political calls are the other limit. When a senior exec's account is implicated, the question is not just "is this malicious" but "how do we handle this." No model handles this. No model should.</p>
+
+                <h2>Analyst morale</h2>
+                <p>This surprised me. I expected resistance. What we got instead, after the first month, was pull. Analysts asked for the tool to be extended to more alert types. The reason, when I asked, was not "AI is cool." It was "the boring parts got shorter and the interesting parts got longer." Retention data is too early to be statistically meaningful but the survey deltas are encouraging.</p>
+
+                <p>The caveat: two senior analysts did not like it and said so. Their complaint was that junior analysts now trust the model's confidence score too much and skip the sanity checks senior folks internalized over years. They are right. We added a training module on how to disagree with the model and the metric we track is override rate. If override rate on a given alert type drops to near zero, we worry, we do not celebrate.</p>
+
+                <h2>Cost reality</h2>
+                <p>Inference costs landed at around four thousand dollars a month at current volume. Engineering time to build and maintain the pipeline was about one FTE for the first quarter, now roughly 20 percent of one FTE ongoing. The value of 40 analyst-hours a week at fully loaded cost is an order of magnitude above the spend. That is the honest ROI. It is not "AI replaces the SOC." It is "AI pays for one more senior hire."</p>
+
+                <h2>What I would tell another IT leader</h2>
+                <p>Start narrow. Pick the most repetitive, highest-volume, lowest-stakes alert category you have. Instrument heavily before you turn it on so you can tell a real improvement from a vibe. Keep the human as the decision-maker. Audit override rates monthly. And budget for the maintenance, because the alerting landscape changes and your prompts and evals will need to change with it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

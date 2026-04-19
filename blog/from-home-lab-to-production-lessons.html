@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Home Lab to Production: Lessons Learned — MacwanGrid</title>
+    <meta name="description" content="What home-lab skills translate to production — Terraform, containers, systems thinking — and what does not: scale, multi-region, politics, humans.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="From Home Lab to Production: Lessons Learned">
+    <meta property="og:description" content="What home-lab skills translate to production — Terraform, containers, systems thinking — and what does not: scale, multi-region, politics, humans.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-12T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/from-home-lab-to-production-lessons.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-02-12</span>
+                <span>6 min read</span>
+            </div>
+            <h1>From Home Lab to Production: Lessons Learned</h1>
+            <div class="article-body">
+                <p>I got my first enterprise job partly because I could talk about my home lab in the interview. Fifteen years later, I hire people partly on the same criterion. But there is a gap between what a lab teaches you and what production actually requires, and it is worth naming honestly.</p>
+
+                <h2>What Translates Directly</h2>
+                <h3>Infrastructure-as-Code Intuition</h3>
+                <p>If you have written Terraform to stand up a homelab from scratch — Proxmox VMs, DNS records, TLS certs, reverse proxy — you have the muscle memory to contribute to a production Terraform monorepo on day one. The size of the state file changes. The shape of the work does not.</p>
+                <p>Practice that paid off: a tfvars file per environment, remote state with locking (even if the backend is just a local MinIO in the lab), and a <code>terraform plan</code> in CI before any apply.</p>
+
+                <h3>Container and Kubernetes Fundamentals</h3>
+                <p>Running a small k3s cluster at home teaches you pod networking, RBAC, secrets management, and Helm in a way no course does. Production Kubernetes adds scale and SRE practices on top, but the primitives are the same.</p>
+
+                <h3>Systems Thinking</h3>
+                <p>When a home lab breaks, there is nobody else to blame. You have to chase the problem from DNS to TCP to application log to disk I/O. That habit is the single most useful trait in production incident response. I would rather hire someone who rebuilt their NAS three times than someone with a certification and no scars.</p>
+
+                <h3>Reading Documentation</h3>
+                <p>Labs force this. There is no staff engineer to ask. You read the upstream docs, the GitHub issues, the commit log if you have to. Production benefits from that exact same discipline.</p>
+
+                <h2>What Does Not Translate</h2>
+                <h3>Scale</h3>
+                <p>A three-node home cluster tells you nothing about a 300-node cluster. The failure modes at scale — cascading retries, noisy neighbors, congestion collapse, coordinated garbage collection pauses — do not show up in a lab. You will be wrong about what breaks first until you have seen it break at scale.</p>
+
+                <h3>Multi-Region Failure</h3>
+                <p>The first time you lose a region and realize your "highly available" DNS authority was actually single-homed, nothing in a lab prepared you. You did not have a second region. Your lab did not have a control plane dependency you forgot about. Production does. Every time.</p>
+
+                <h3>Politics</h3>
+                <p>In the lab, you decide. In production, the right technical answer loses to the VP who has another vendor in mind, the auditor who wants the "approved product list" only, or the PM who needs it shipped before the wrong certification deadline. Influence is 30% of a production role. Labs do not teach it.</p>
+
+                <h3>Humans Doing Things</h3>
+                <p>Labs have one operator — you. Production has operators across time zones, contractors who leave, new hires who misunderstand the runbook, and a CEO who did an emergency "fix" at 2am that no one documented. Systems are socio-technical. Labs are mostly just technical.</p>
+
+                <h3>Change Management</h3>
+                <p>The freedom to "just SSH in and fix it" is the lab's best and worst habit. In production, that instinct causes outages. Tickets, approvals, maintenance windows, peer review — these are the controls that keep a system healthy at scale, not bureaucracy for its own sake. The transition is mental: learn to want the review, not tolerate it.</p>
+
+                <h2>Advice for People Early in Their Careers</h2>
+                <ul>
+                    <li><strong>Keep a lab journal.</strong> Write down every outage you caused yourself, what you tried, what finally worked. This is your future library of interview stories.</li>
+                    <li><strong>Break things on purpose.</strong> Pull a disk. Kill a VM mid-migration. Simulate a DNS outage. Failures you have caused yourself are less scary when a paying customer does it to you.</li>
+                    <li><strong>Open-source your lab.</strong> A public Git repo of your Terraform, Ansible, and Helm charts is a better resume than a PDF. I have hired off GitHub profiles twice.</li>
+                    <li><strong>Don't over-complicate.</strong> Running five different service meshes in a lab teaches you less than running one well for a year.</li>
+                    <li><strong>Volunteer for on-call.</strong> When a real pager goes off at 3am, you learn more in one night than in a month of lab tinkering.</li>
+                </ul>
+
+                <h2>Advice for Hiring Managers</h2>
+                <p>A candidate with a healthy home lab has demonstrated curiosity, persistence, and willingness to be wrong in public. Ask them about an outage they caused and how they fixed it. The answer tells you more than any certification.</p>
+                <p>But do not mistake lab depth for production readiness. Pair a lab-heavy candidate with a mentor who has shipped at scale. The gap closes fast — usually within 18 months. Without the mentorship, it does not close; the person just gets frustrated with the "real world" and leaves.</p>
+
+                <p>Labs are the best school for the technical half of this work. Production is where you learn the other half. Do not skip either.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

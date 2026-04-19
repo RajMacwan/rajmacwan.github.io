@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Maturity: The Plateaus Nobody Warns You About — MacwanGrid</title>
+    <meta name="description" content="Most SOCs reach reactive detection fine. They plateau at proactive hunt, detection engineering, and purple team. Why that happens and what breaks it.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SOC Maturity: The Plateaus Nobody Warns You About">
+    <meta property="og:description" content="Most SOCs reach reactive detection fine. They plateau at proactive hunt, detection engineering, and purple team. Why that happens and what breaks it.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-02-22T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/soc-maturity-common-plateaus.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html" class="active">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-02-22</span>
+                <span>5 min read</span>
+            </div>
+            <h1>SOC Maturity: The Plateaus Nobody Warns You About</h1>
+            <div class="article-body">
+                <p>Most security operations centers reach a baseline of reactive detection reasonably well. You buy a SIEM, deploy an EDR, hire or outsource a tier-1 queue, and you close alerts. That is not maturity. That is the floor. Real plateaus — the ones that consume careers — come after.</p>
+
+                <p>I have watched SOC teams at three different organizations hit the same three walls in the same order. Naming them helps.</p>
+
+                <h2>Plateau one: escape from ticket-driven culture</h2>
+                <p>The tier-1 queue is a gravity well. Alerts come in, analysts triage, tickets close, metrics report. The operating model rewards volume. The problem is that the adversary does not care about your queue — the interesting activity rarely looks like an alert, and the analysts trained to close tickets quickly are trained away from curiosity.</p>
+                <p>Breaking this plateau requires permission and time:</p>
+                <ul>
+                    <li>Carve out hunt time — not "when the queue is clear" (it never is), but protected calendar time every week.</li>
+                    <li>Measure detection quality, not alert volume. A false-positive rate, a coverage map against <code>MITRE ATT&amp;CK</code>, or a count of net-new detections shipped.</li>
+                    <li>Hire or develop at least one senior analyst whose job is explicitly not the queue. If everyone is on tickets, nobody is hunting.</li>
+                </ul>
+
+                <h2>Plateau two: detection engineering as a discipline</h2>
+                <p>Most SOCs write detections the same way 2005 sysadmins wrote shell scripts — one analyst, one rule, deployed straight to production, no tests, no peer review, documented in a comment field if at all. Then a vendor update nukes half of them and nobody notices for six weeks.</p>
+                <p>Detection-as-code is the way out. In practice:</p>
+                <ul>
+                    <li>Detections live in a Git repository, with tests, reviews, and CI/CD into the SIEM or EDR platform.</li>
+                    <li>Every detection has a purpose, a data dependency, a known false-positive profile, and an owner.</li>
+                    <li>You have an engineering function — not a rotating analyst — that owns the rule lifecycle. Two people is enough to start.</li>
+                </ul>
+                <p>This sounds like process overhead until your first major platform migration. Then it becomes the only reason your detections survive.</p>
+
+                <h2>Plateau three: purple team and the MSSP question</h2>
+                <p>The third wall is proving your detections actually work against the behavior they claim to catch. Red teams find gaps once a year and file a PDF. Purple teams find gaps continuously, hand them to detection engineering, and fix them in sprint. If your red team exercises do not feed a backlog, they are entertainment.</p>
+                <p>Related: this is often the plateau where the MSSP relationship breaks. An MSSP can run the tier-1 queue forever. They cannot, in my experience, be the detection engineering function or the purple team. Those require context about your business that an outsourced team will never have. Most mid-market orgs hit a point where they pull hunt and detection engineering in-house and leave triage outsourced. That is fine. Naming it explicitly is how you get there without a messy transition.</p>
+
+                <blockquote>MTTD is a vanity metric if your detections only cover the behavior you already had detections for. Coverage against the adversary behaviors you have not yet detected is the metric that matters.</blockquote>
+
+                <h2>Metrics that push you past the plateau</h2>
+                <ul>
+                    <li>ATT&amp;CK technique coverage, not generic "alerts tuned."</li>
+                    <li>Detections added or retired per month, with a quality review of each.</li>
+                    <li>Mean time to <em>investigate</em> a hunt hypothesis, not mean time to close a ticket.</li>
+                    <li>Purple team findings closed versus open, with age.</li>
+                </ul>
+
+                <h2>The takeaway</h2>
+                <p>Map your SOC against these three plateaus honestly. If you are still arguing about alert volumes, you are at plateau one. If every detection change is an ad hoc edit in the console, plateau two. If your red team reports do not change what the blue team does on Monday, plateau three. Each plateau is broken by the same thing: making something that used to be a heroic one-off into an engineered practice with owners, measurements, and a backlog.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

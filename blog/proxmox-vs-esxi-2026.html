@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxmox vs ESXi in 2026 — MacwanGrid</title>
+    <meta name="description" content="After the Broadcom acquisition, ESXi pricing is a different world. Proxmox VE 8 covers 80% of the use cases at zero license cost — and the gaps are honest.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Proxmox vs ESXi in 2026">
+    <meta property="og:description" content="After the Broadcom acquisition, ESXi pricing is a different world. Proxmox VE 8 covers 80% of the use cases at zero license cost — and the gaps are honest.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-14T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/proxmox-vs-esxi-2026.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html" class="active">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-lab">LabGrid</span>
+                <span>Published 2026-03-14</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Proxmox vs ESXi in 2026</h1>
+            <div class="article-body">
+                <p>Two years into Broadcom's ownership of VMware, the conversation has changed. The per-core subscription model, the collapse of the perpetual license, and the consolidation of SKUs into VMware Cloud Foundation have pushed a lot of shops — mine included — to take Proxmox seriously for the first time. This is where I have landed.</p>
+
+                <h2>The Pricing Reality</h2>
+                <p>VMware Cloud Foundation 5.x is priced per core, with a 16-core minimum per CPU, billed annually. For a modest cluster — three hosts, two 16-core Xeons each — you are now writing checks that were quoted in the tens of thousands for what used to cost a few thousand on perpetual. Real numbers from a recent renewal I saw: roughly 3x the previous annual spend for the same hardware footprint.</p>
+                <p>Proxmox VE is free. The enterprise repository subscription is ~€110 per CPU per year for community support and is optional. For a three-host cluster that is ~€660/year. Not a typo.</p>
+
+                <h2>Where Proxmox Matches ESXi</h2>
+                <p>The features a typical mid-market shop actually uses are all present:</p>
+                <ul>
+                    <li><strong>Live migration</strong> between nodes in a cluster. Just works.</li>
+                    <li><strong>HA restart</strong> on host failure. Configured via the Datacenter → HA panel.</li>
+                    <li><strong>Snapshots and clones.</strong> Linked clones on ZFS are instantaneous.</li>
+                    <li><strong>Shared storage</strong> via NFS, iSCSI, or Ceph. Ceph is baked in.</li>
+                    <li><strong>Backups.</strong> Proxmox Backup Server is genuinely excellent — deduplicated, incremental-forever, and pairs with PVE natively.</li>
+                    <li><strong>Hardware passthrough.</strong> PCIe, SR-IOV, vGPU with a NVIDIA vGPU license.</li>
+                    <li><strong>Templates and cloud-init.</strong> First-class support.</li>
+                    <li><strong>Terraform and Ansible providers.</strong> The <code>bpg/proxmox</code> Terraform provider is production-grade.</li>
+                </ul>
+
+                <h2>The Honest Gaps</h2>
+                <p>Do not pretend these do not exist:</p>
+                <ul>
+                    <li><strong>DRS equivalent.</strong> Proxmox has no built-in load balancer that moves VMs based on CPU/memory heat. You can script it with ProxLB or cron + qm, but it is not native.</li>
+                    <li><strong>NSX-class SDN.</strong> Proxmox has an SDN module (VLAN, VXLAN, EVPN) but it is not distributed firewall with intent-based policy. If you live on NSX micro-segmentation, you stay on VMware or move to Cilium on Kubernetes.</li>
+                    <li><strong>vSAN equivalent beyond Ceph.</strong> Ceph is great, but it has a learning curve and wants dedicated networking. ZFS replication is simpler and covers two-node scenarios.</li>
+                    <li><strong>Vendor ecosystem.</strong> Your backup vendor, your EDR console, your monitoring platform — most list VMware first, Proxmox eventually. Veeam support landed in 2024, which helped a lot.</li>
+                    <li><strong>Phone-a-friend support.</strong> Proxmox Enterprise support is email-based, business-hours Vienna time. There is no 24x7 follow-the-sun with a TAM assigned to your account. Third parties like OSIT and Proxmox partners fill this gap if you need it.</li>
+                </ul>
+
+                <h2>Decision Framework</h2>
+                <p>My rough rule for where each wins:</p>
+                <ul>
+                    <li><strong>Home lab and small business (1-3 hosts):</strong> Proxmox. Not close.</li>
+                    <li><strong>Mid-market (10-50 hosts), no hard compliance mandate:</strong> Proxmox. Savings fund real headcount.</li>
+                    <li><strong>Regulated enterprise already running vSphere + NSX + Tanzu:</strong> Stay on VMware until your renewal math forces the conversation. Migration cost is not trivial.</li>
+                    <li><strong>Greenfield enterprise:</strong> Honestly, Kubernetes for new workloads, Proxmox for the lift-and-shift VMs. ESXi only if a platform-specific requirement demands it.</li>
+                </ul>
+
+                <h2>A Quick Migration Note</h2>
+                <p>Proxmox 8.2 added a direct ESXi import wizard. Point it at vCenter, pick VMs, import. It handles VMDK-to-qcow2 conversion and fixes VirtIO drivers for Windows guests reasonably well. A 200 GB Windows VM moved in about 25 minutes over 10GbE in testing.</p>
+
+                <pre><code># Import from ESXi via CLI
+pvesh create /nodes/pve01/storage/local/content \
+  --content import \
+  --filename esxi-import://vcenter.lab/VM-NAME</code></pre>
+
+                <p>The answer is no longer "of course ESXi." For a lot of shops in 2026, it is "Proxmox unless you can articulate why not." That is a healthier question to be asking.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

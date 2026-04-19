@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Hidden Cost of Multi-Cloud — MacwanGrid</title>
+    <meta name="description" content="Multi-cloud for resilience is often more fragile than single-cloud. The real costs are expertise duplication, data gravity, and egress fees. Here's the math.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Hidden Cost of Multi-Cloud">
+    <meta property="og:description" content="Multi-cloud for resilience is often more fragile than single-cloud. The real costs are expertise duplication, data gravity, and egress fees. Here's the math.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-20T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/hidden-cost-multi-cloud.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html" class="active">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-03-20</span>
+                <span>6 min read</span>
+            </div>
+            <h1>The Hidden Cost of Multi-Cloud</h1>
+            <div class="article-body">
+                <p>The multi-cloud pitch usually sounds like insurance: if AWS goes down, we fail over to Azure. If one vendor raises prices, we move. If a region burns, we're fine. It's a good story. It's also, in most deployments I've audited, wrong. The teams running true active-active multi-cloud aren't more resilient — they're more brittle, more expensive, and slower to ship.</p>
+
+                <p>Multi-cloud is a tool. Used for the right reasons, it works. Used for resilience, it usually makes the thing it was supposed to fix worse.</p>
+
+                <h2>The egress math nobody does before the decision</h2>
+                <p>AWS egress to the internet is roughly $0.09/GB after the first 100 GB. Cross-region traffic inside AWS is $0.02/GB. Azure and GCP land in similar territory. Move 50 TB of data between clouds in a month — a small analytics sync — and you're looking at north of $4,500 <em>just for the wire</em>. Every month. Forever.</p>
+                <p>Now multiply that by the reality of active-active: your primary dataset lives somewhere, and your secondary cloud needs a fresh copy. If it's not fresh, your failover is a fiction. If it is fresh, you're paying for continuous replication across a paid pipe. Tools like Aviatrix or Megaport help with the unit cost, not the underlying physics: <strong>data has gravity, and cross-cloud replication is a tax.</strong></p>
+
+                <h2>Expertise duplication is the real budget line</h2>
+                <p>Here's what nobody puts on the slide:</p>
+                <ul>
+                    <li>AWS IAM and Azure RBAC are different mental models. Your ops engineer who can debug a cross-account <code>sts:AssumeRole</code> issue at 2am is not, usually, the same person who can debug a managed identity token failure in AKS at 2am.</li>
+                    <li>CloudWatch and Azure Monitor have different query languages, retention defaults, and cost curves.</li>
+                    <li>Terraform modules for AWS and Azure aren't interchangeable — they're dialects. Your platform team writes both, tests both, upgrades both.</li>
+                </ul>
+                <p>You aren't hiring one SRE team. You're hiring 1.7 teams and paying them both to be on call. I've watched a 20-person platform org drop from 12 deploys a day to 4 inside six months of a "multi-cloud initiative." Not because the tech was broken. Because context-switching is a tax paid in human hours.</p>
+
+                <h2>When multi-cloud genuinely makes sense</h2>
+                <p>This is not an argument for single-cloud dogma. Multi-cloud is the right answer in specific cases:</p>
+                <blockquote>Regulation, not resilience, is the honest reason to run workloads across more than one cloud.</blockquote>
+                <ul>
+                    <li><strong>Data residency.</strong> Your European workloads run on a cloud with the right regional footprint; your US workloads run on another. These are isolated estates, not replicated ones.</li>
+                    <li><strong>Vendor-specific capability.</strong> You run analytics on BigQuery because the alternatives aren't close, and you run enterprise workloads on Azure because of your EA. Fine. That's polycloud, not multi-cloud.</li>
+                    <li><strong>Customer requirement.</strong> A hyperscaler customer won't run your SaaS on their competitor's cloud. Valid business reason. Accept the cost.</li>
+                    <li><strong>Acquisition inheritance.</strong> You bought a company that runs on GCP. You're multi-cloud for two years whether you wanted to be or not.</li>
+                </ul>
+                <p>What's <em>not</em> on that list: "in case AWS has an outage." Design for <em>multi-region within one cloud</em> first. A well-architected us-east-1 + us-west-2 deployment survives all but the most catastrophic AWS failure modes — and when that catastrophe hits, half the internet is down too, and your customers aren't going to notice you're up.</p>
+
+                <h2>The abstraction trap</h2>
+                <p>Teams try to paper over multi-cloud complexity with abstraction layers — Crossplane, Anthos, Kubernetes everywhere. The pitch is "write once, run anywhere." The reality is you write to the lowest common denominator, lose the managed services that made each cloud worth using, and add a platform your team has to operate on top of the ones you already have.</p>
+
+                <p><strong>The takeaway:</strong> Before you go multi-cloud, write down the specific failure mode you're protecting against and the dollar cost of protecting against it. If the answer isn't a regulatory or contractual requirement, you probably want multi-region, not multi-cloud. Resilience is an architectural property. It isn't a vendor count.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading the Threat Intelligence Landscape — MacwanGrid</title>
+    <meta name="description" content="Threat intel has a tier system nobody writes down. Strategic, operational, tactical, technical — and most orgs buy the wrong tier.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reading the Threat Intelligence Landscape">
+    <meta property="og:description" content="Threat intel has a tier system nobody writes down. Strategic, operational, tactical, technical — and most orgs buy the wrong tier.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-03-27T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="MacwanGrid Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/reading-the-threat-intelligence-landscape.html">
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html" class="active">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../breach-grid.html">BreachGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-03-27</span>
+                <span>7 min read</span>
+            </div>
+            <h1>Reading the Threat Intelligence Landscape</h1>
+            <div class="article-body">
+                <p>There is a tier system in threat intelligence that almost no vendor will explain to you, because explaining it honestly shrinks their addressable market. So I will. Threat intel comes in four tiers — strategic, operational, tactical, and technical — and most organizations spend six figures on the wrong tier for their actual security program.</p>
+
+                <h2>The Four Tiers</h2>
+                <p><strong>Strategic intel</strong> answers "what is the threat landscape for my industry over the next 12–24 months?" It is written for board members and CISOs. Think Mandiant's annual M-Trends, Verizon's DBIR, CrowdStrike's Global Threat Report, ENISA Threat Landscape. It shapes risk appetite and budget, not Monday-morning tickets.</p>
+
+                <p><strong>Operational intel</strong> answers "which threat groups are targeting organizations that look like mine, and how?" This is the campaign-level work: APT41 shifting to edge-device exploitation, Scattered Spider pivoting from retail to insurance, LockBit's rebrand splinters. It drives threat-informed defense and detection priorities.</p>
+
+                <p><strong>Tactical intel</strong> answers "what TTPs are adversaries using right now?" MITRE ATT&CK mappings, command lines observed in breaches, tooling fingerprints, living-off-the-land patterns. This is where detection engineering lives.</p>
+
+                <p><strong>Technical intel</strong> is the atomic layer — IPs, domains, hashes, JA3 fingerprints, YARA rules. Perishable. Useful only if your pipeline can ingest, deduplicate, age, and retire it on a schedule measured in hours.</p>
+
+                <h2>The Most Common Mismatches</h2>
+                <p>A mid-market manufacturer buys a $180k premium IOC feed and has no SIEM correlation rules to consume it. They needed operational intel — a quarterly briefing about what's hitting the sector — not another 40,000 indicators per day expiring in their firewall memory.</p>
+
+                <p>A Fortune 500 bank with a mature SOC buys glossy strategic reports and ignores operational feeds. They already know the landscape. What they need is the TTP update: that LockBit's post-affiliate diaspora is reusing the same Cobalt Strike watermarks, or that Volt Typhoon's living-off-the-land patterns now include specific PowerShell invocations.</p>
+
+                <p>A 50-person startup pays for tactical intel because the sales rep was good. They have two engineers and no detection engineering capacity. A free CISA KEV subscription and a weekly Krebs read would cover 90% of their decision-useful input.</p>
+
+                <h2>Paid vs. Free</h2>
+                <p>The uncomfortable truth: the delta between free and paid at the technical tier has collapsed. CISA KEV, abuse.ch (URLhaus, ThreatFox, MalwareBazaar), AlienVault OTX, Shodan free tier, Censys community — these cover the base case. Paid feeds matter when you need (a) enrichment (actor attribution, confidence scoring, first-seen timestamps), (b) non-public sources (underground forums, credential marketplaces), or (c) SLAs for takedowns and legal attestation.</p>
+
+                <p>At the strategic and operational tiers, the paid/free gap is wider — but much of the best operational work is published for free by Mandiant, CrowdStrike, Microsoft Threat Intelligence, Talos, Unit 42, Red Canary, and government CERTs. If your operational intel budget is zero, you still have plenty to read.</p>
+
+                <h2>A Practitioner's Reading List, By Tier</h2>
+                <p><strong>Strategic:</strong> Mandiant M-Trends (annual), Verizon DBIR (annual), CrowdStrike Global Threat Report, IBM X-Force Threat Intelligence Index, ENISA Threat Landscape.</p>
+
+                <p><strong>Operational:</strong> Mandiant blog, Microsoft Threat Intelligence, Google TAG, Unit 42 (Palo Alto), Red Canary Threat Detection Report, Cisco Talos, The DFIR Report, Recorded Future blog, Group-IB reports.</p>
+
+                <p><strong>Tactical:</strong> MITRE ATT&CK updates, Sigma rule repos, Atomic Red Team, Elastic Security Labs, SpecterOps posts, Florian Roth's rules.</p>
+
+                <p><strong>Technical:</strong> CISA KEV, abuse.ch family, URLhaus, Feodo Tracker, ThreatFox, MalwareBazaar, Shodan, Censys, VirusTotal Intelligence (paid, but the free tier covers a lot).</p>
+
+                <h2>The Question to Ask Before Buying</h2>
+                <p>Which decision will this intel change? If you cannot name a specific decision — a detection to write, a control to deploy, a vendor to call, a briefing to give — the intel will die in a dashboard nobody opens. Buy the tier that matches the decisions you actually make.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan — macwangrid.com</span>
+            <span><a href="../index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>
