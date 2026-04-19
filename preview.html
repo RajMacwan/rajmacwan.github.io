@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Visual Options — MacwanGrid Preview</title>
+    <title>Animated Hero Options — MacwanGrid Preview</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* =============================================================
-           SHARED PHOTO BASE - all options apply effects on top of this.
-           If /assets/images/raj-profile.jpg exists, each variation
-           will show with that photo. Otherwise shows SVG placeholder.
-           ============================================================= */
-
+        /* =========================================
+           SHARED
+           ========================================= */
         .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 2rem;
             margin: 2rem 0;
         }
@@ -22,7 +19,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-subtle);
             border-radius: var(--radius);
-            padding: 1.5rem;
+            padding: 1.75rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -34,228 +31,196 @@
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            text-align: center;
         }
-        .option-card .option-desc {
+        .preview-stage {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050509;
+        }
+        .option-desc {
             color: var(--text-secondary);
             font-size: 0.85rem;
-            line-height: 1.5;
+            line-height: 1.55;
             margin-top: 1.5rem;
             text-align: center;
         }
 
         /* ===========================================================
-           OPTION 1 — TERMINAL OPERATOR CARD
-           Photo inside a styled terminal window. macOS-style dots.
+           OPTION 1 — ASCII TYPING (types itself out, loops)
            =========================================================== */
-        .opt1-terminal {
-            background: #0a0a0f;
-            border: 1px solid rgba(0, 240, 255, 0.3);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.15);
-            width: 100%;
-            max-width: 320px;
+        .opt1-stage {
+            background: #050509;
+            border: 1px solid rgba(0, 240, 255, 0.25);
+            padding: 0.5rem;
         }
-        .opt1-terminal-bar {
-            background: #12121c;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 0.6rem 0.85rem;
+        .opt1-ascii {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: #00ff88;
+            font-size: 4.5px;
+            line-height: 5.2px;
+            white-space: pre;
+            letter-spacing: 0;
+            text-shadow: 0 0 4px rgba(0, 255, 136, 0.7);
+            overflow: hidden;
+        }
+        .opt1-cursor {
+            display: inline-block;
+            width: 5px;
+            height: 6px;
+            background: #00ff88;
+            animation: blink-cursor 0.7s step-end infinite;
+            vertical-align: middle;
+            box-shadow: 0 0 6px #00ff88;
+        }
+        @keyframes blink-cursor {
+            0%, 50%  { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* ===========================================================
+           OPTION 2 — PHOTO <> ASCII CROSSFADE (loops)
+           =========================================================== */
+        .opt2-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+        }
+        .opt2-photo-layer {
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            filter: grayscale(0.3) contrast(1.05);
+            animation: opt2-photo 10s ease-in-out infinite;
+        }
+        .opt2-ascii-layer {
+            position: absolute;
+            inset: 0;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            background: #050509;
+            color: #00ff88;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 5px;
+            line-height: 5.8px;
+            white-space: pre;
+            text-shadow: 0 0 4px rgba(0, 255, 136, 0.6);
+            animation: opt2-ascii 10s ease-in-out infinite;
         }
-        .opt1-terminal-bar .dot {
-            width: 9px; height: 9px; border-radius: 50%;
+        @keyframes opt2-photo {
+            0%, 40% { opacity: 1; }
+            50%, 90% { opacity: 0; }
+            100% { opacity: 1; }
         }
-        .opt1-terminal-bar .dot-r { background: #ff5f57; }
-        .opt1-terminal-bar .dot-y { background: #febc2e; }
-        .opt1-terminal-bar .dot-g { background: #28c840; }
-        .opt1-terminal-bar .file {
-            margin-left: auto;
+        @keyframes opt2-ascii {
+            0%, 40% { opacity: 0; }
+            50%, 90% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        /* ===========================================================
+           OPTION 3 — SCAN-LINE REVEAL (cyan beam sweeps down, loops)
+           =========================================================== */
+        .opt3-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            overflow: hidden;
+        }
+        .opt3-stage::before {
+            /* Noise/dark overlay */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(0deg, rgba(0, 255, 136, 0.05) 0, rgba(0, 255, 136, 0.05) 2px, transparent 2px, transparent 4px),
+                rgba(5, 8, 14, 0.5);
+            pointer-events: none;
+        }
+        .opt3-stage::after {
+            /* Cyan scan beam */
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom,
+                transparent,
+                rgba(0, 240, 255, 0.15),
+                rgba(0, 240, 255, 0.6),
+                rgba(0, 240, 255, 0.15),
+                transparent);
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
+            animation: opt3-scan 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes opt3-scan {
+            0%   { top: -40px; }
+            100% { top: 100%; }
+        }
+
+        /* ===========================================================
+           OPTION 4 — DATA STREAM OVERLAY (matrix rain over photo)
+           =========================================================== */
+        .opt4-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            overflow: hidden;
+        }
+        .opt4-stage::before {
+            /* Dark gradient over photo */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.15) 50%,
+                rgba(0, 0, 0, 0.4) 100%);
+            pointer-events: none;
+        }
+        .opt4-columns {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        .opt4-col {
+            position: absolute;
+            top: -100%;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: #00ff88;
+            text-shadow: 0 0 6px rgba(0, 255, 136, 0.8);
+            white-space: pre;
+            opacity: 0.75;
+            animation: opt4-fall linear infinite;
+            writing-mode: vertical-rl;
+            line-height: 1;
+            letter-spacing: -1px;
+        }
+        .opt4-col:nth-child(1)  { left: 4%;  animation-duration: 6s; animation-delay: 0s; }
+        .opt4-col:nth-child(2)  { left: 16%; animation-duration: 9s; animation-delay: 1.5s; }
+        .opt4-col:nth-child(3)  { left: 28%; animation-duration: 7s; animation-delay: 0.8s; }
+        .opt4-col:nth-child(4)  { left: 40%; animation-duration: 11s; animation-delay: 2.2s; color: #00f0ff; text-shadow: 0 0 6px rgba(0, 240, 255, 0.8); }
+        .opt4-col:nth-child(5)  { left: 52%; animation-duration: 8s; animation-delay: 0.5s; }
+        .opt4-col:nth-child(6)  { left: 64%; animation-duration: 10s; animation-delay: 1.8s; }
+        .opt4-col:nth-child(7)  { left: 76%; animation-duration: 7.5s; animation-delay: 3s; color: #00f0ff; text-shadow: 0 0 6px rgba(0, 240, 255, 0.8); }
+        .opt4-col:nth-child(8)  { left: 88%; animation-duration: 9.5s; animation-delay: 1.2s; }
+        @keyframes opt4-fall {
+            0%   { top: -120%; }
+            100% { top: 120%; }
+        }
+
+        .option-card .tag-line {
+            display: inline-block;
             font-family: var(--font-mono);
             font-size: 0.7rem;
             color: var(--text-muted);
-        }
-        .opt1-body {
-            padding: 1.25rem;
-        }
-        .opt1-photo {
-            width: 100%;
-            aspect-ratio: 1;
-            border-radius: 4px;
-            background: url('assets/images/raj-profile.jpg') center/cover, linear-gradient(135deg, #1e293b, #0f172a);
-            position: relative;
-            overflow: hidden;
-        }
-        .opt1-photo::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 240, 255, 0.03) 2px,
-                rgba(0, 240, 255, 0.03) 3px
-            );
-            pointer-events: none;
-        }
-        .opt1-info {
-            margin-top: 1rem;
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-        .opt1-info .row {
-            display: flex;
-            justify-content: space-between;
-            padding: 0.25rem 0;
-            border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
-        }
-        .opt1-info .row:last-child { border: none; }
-        .opt1-info .key { color: var(--grid-dark); }
-        .opt1-info .val { color: var(--text-primary); }
-
-        /* ===========================================================
-           OPTION 2 — DUOTONE GLITCH PORTRAIT
-           Cyan/green duotone filter, glow border, subtle chromatic shift
-           =========================================================== */
-        .opt2-wrap {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            aspect-ratio: 1;
-        }
-        .opt2-photo {
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            background: url('assets/images/raj-profile.jpg') center/cover, linear-gradient(135deg, #1e293b, #0f172a);
-            filter: grayscale(100%) contrast(1.1) brightness(0.9);
-            position: relative;
-            overflow: hidden;
-        }
-        .opt2-photo::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg,
-                rgba(0, 240, 255, 0.35),
-                rgba(0, 255, 136, 0.35));
-            mix-blend-mode: color;
-        }
-        .opt2-wrap::after {
-            content: "";
-            position: absolute;
-            inset: -2px;
-            border: 2px solid var(--accent);
-            border-radius: 10px;
-            animation: opt2-glow 3s ease-in-out infinite;
-            pointer-events: none;
-        }
-        @keyframes opt2-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 240, 255, 0.3); }
-            50%      { box-shadow: 0 0 40px rgba(0, 240, 255, 0.6); }
-        }
-
-        /* ===========================================================
-           OPTION 3 — HEX GRID OVERLAY
-           Portrait with hexagonal grid pattern over it
-           =========================================================== */
-        .opt3-wrap {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            aspect-ratio: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(0, 240, 255, 0.2);
-        }
-        .opt3-photo {
-            width: 100%;
-            height: 100%;
-            background: url('assets/images/raj-profile.jpg') center/cover, linear-gradient(135deg, #1e293b, #0f172a);
-        }
-        .opt3-wrap::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image:
-                linear-gradient(30deg, rgba(0, 240, 255, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 240, 255, 0.1) 87.5%, rgba(0, 240, 255, 0.1)),
-                linear-gradient(150deg, rgba(0, 240, 255, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 240, 255, 0.1) 87.5%, rgba(0, 240, 255, 0.1)),
-                linear-gradient(30deg, rgba(0, 240, 255, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 240, 255, 0.1) 87.5%, rgba(0, 240, 255, 0.1)),
-                linear-gradient(150deg, rgba(0, 240, 255, 0.1) 12%, transparent 12.5%, transparent 87%, rgba(0, 240, 255, 0.1) 87.5%, rgba(0, 240, 255, 0.1));
-            background-size: 40px 70px;
-            background-position: 0 0, 0 0, 20px 35px, 20px 35px;
-            pointer-events: none;
-        }
-
-        /* ===========================================================
-           OPTION 4 — MATRIX / CIRCUIT FRAME
-           Portrait inside animated circuit-pattern frame
-           =========================================================== */
-        .opt4-wrap {
-            position: relative;
-            width: 100%;
-            max-width: 280px;
-            aspect-ratio: 1;
-            padding: 15px;
-            border-radius: 8px;
-            background:
-                linear-gradient(135deg, rgba(0, 240, 255, 0.1), rgba(0, 255, 136, 0.1));
-            overflow: hidden;
-        }
-        .opt4-wrap::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background:
-                radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.15), transparent 20%),
-                radial-gradient(circle at 80% 70%, rgba(0, 255, 136, 0.15), transparent 20%),
-                linear-gradient(0deg, transparent 49%, rgba(0, 240, 255, 0.15) 49.5%, rgba(0, 240, 255, 0.15) 50.5%, transparent 51%),
-                linear-gradient(90deg, transparent 49%, rgba(0, 240, 255, 0.15) 49.5%, rgba(0, 240, 255, 0.15) 50.5%, transparent 51%);
-            background-size: 100% 100%, 100% 100%, 100% 20px, 20px 100%;
-            pointer-events: none;
-        }
-        .opt4-photo {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 4px;
-            background: url('assets/images/raj-profile.jpg') center/cover, linear-gradient(135deg, #1e293b, #0f172a);
-            border: 1px solid rgba(0, 240, 255, 0.4);
-            z-index: 1;
-        }
-        .opt4-corners::before,
-        .opt4-corners::after,
-        .opt4-corners span::before,
-        .opt4-corners span::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 2px solid var(--accent);
-        }
-        .opt4-corners::before { top: 0; left: 0; border-right: none; border-bottom: none; }
-        .opt4-corners::after  { top: 0; right: 0; border-left: none; border-bottom: none; }
-        .opt4-corners span::before { bottom: 0; left: 0; border-right: none; border-top: none; }
-        .opt4-corners span::after  { bottom: 0; right: 0; border-left: none; border-top: none; }
-
-        /* ===========================================================
-           PICK BUTTON
-           =========================================================== */
-        .pick-btn {
-            margin-top: 1.5rem;
-            background: var(--accent);
-            color: #000;
-            padding: 0.5rem 1rem;
-            border-radius: var(--radius-sm);
-            font-family: var(--font-mono);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 3px;
         }
     </style>
 </head>
@@ -274,101 +239,102 @@
 <section class="section">
     <div class="container">
         <div class="section-heading">
-            <span class="eyebrow">Hero Visual Options</span>
-            <h2>Pick a pattern for your portrait.</h2>
+            <span class="eyebrow">Hero Animated Options</span>
+            <h2>Pick a dynamic pattern for your portrait.</h2>
             <p class="section-lede">
-                Four treatments — each matches the dark/neon MacwanGrid aesthetic differently.
-                Save your photo as <code>assets/images/raj-profile.jpg</code> and these will render
-                with your actual face. <strong>Tell me which option (1–4) you want.</strong>
+                No static image. Each option is animated — looping continuously. Your actual
+                photo was converted to ASCII for the typing-based options.
+                <strong>Tell me which option (1–4) you want.</strong>
             </p>
         </div>
 
         <div class="options-grid">
 
             <!-- =========================================
-                 OPTION 1: TERMINAL OPERATOR CARD
+                 OPTION 1 — ASCII TYPING
                  ========================================= -->
             <div class="option-card">
-                <h3>Option 1 — Terminal Operator</h3>
-                <div class="opt1-terminal">
-                    <div class="opt1-terminal-bar">
-                        <span class="dot dot-r"></span>
-                        <span class="dot dot-y"></span>
-                        <span class="dot dot-g"></span>
-                        <span class="file">operator.jpg — macwangrid</span>
+                <h3>Option 1 — ASCII Types Itself</h3>
+                <div class="preview-stage opt1-stage">
+                    <pre class="opt1-ascii" id="opt1-target"></pre>
+                </div>
+                <span class="tag-line">100% ASCII · No photo visible</span>
+                <p class="option-desc">
+                    Your ASCII portrait <strong>types itself out character-by-character</strong>,
+                    pauses, clears, retypes. Cursor blinks continuously. Pure terminal vibe —
+                    most on-brand for MacwanGrid's <code>$ whoami</code> theme.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 2 — PHOTO ↔ ASCII CROSSFADE
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 2 — Photo ↔ ASCII Cycle</h3>
+                <div class="preview-stage opt2-stage">
+                    <div class="opt2-photo-layer"></div>
+                    <div class="opt2-ascii-layer"><pre id="opt2-ascii-content"></pre></div>
+                </div>
+                <span class="tag-line">Photo · then ASCII · alternates every 5s</span>
+                <p class="option-desc">
+                    <strong>Photo slowly fades out, ASCII art fades in</strong>, pauses, then reverses.
+                    Feels like a "persona shift" — the professional and the operator are both visible
+                    over time.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 3 — SCAN-LINE REVEAL
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 3 — Scan-Line Reveal</h3>
+                <div class="preview-stage opt3-stage"></div>
+                <span class="tag-line">Photo visible · cyan beam sweeps</span>
+                <p class="option-desc">
+                    Photo stays visible with <strong>subtle scanline texture</strong>. A
+                    <strong>cyan glow beam sweeps down</strong> continuously — feels like a
+                    system scanner / security scanning UI. Gentle, elegant, professional.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 4 — DATA STREAM OVERLAY
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 4 — Data Stream Overlay</h3>
+                <div class="preview-stage opt4-stage">
+                    <div class="opt4-columns">
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
+                        <div class="opt4-col"></div>
                     </div>
-                    <div class="opt1-body">
-                        <div class="opt1-photo"></div>
-                        <div class="opt1-info">
-                            <div class="row"><span class="key">$ id</span><span class="val">raj.macwan</span></div>
-                            <div class="row"><span class="key">$ role</span><span class="val">VP IT</span></div>
-                            <div class="row"><span class="key">$ grid</span><span class="val">OPERATOR</span></div>
-                            <div class="row"><span class="key">$ status</span><span class="val" style="color: var(--grid-dark);">ONLINE</span></div>
-                        </div>
-                    </div>
                 </div>
+                <span class="tag-line">Photo + matrix-style data rain</span>
                 <p class="option-desc">
-                    <strong>Terminal window</strong> with macOS-style dots, scanline overlay on photo, data table below.
-                    Most <em>"operator identity"</em> feel — fits the hacker/ops aesthetic perfectly.
-                </p>
-            </div>
-
-            <!-- =========================================
-                 OPTION 2: DUOTONE GLITCH PORTRAIT
-                 ========================================= -->
-            <div class="option-card">
-                <h3>Option 2 — Duotone Glitch</h3>
-                <div class="opt2-wrap">
-                    <div class="opt2-photo"></div>
-                </div>
-                <p class="option-desc">
-                    <strong>Cyan/green duotone</strong> filter on grayscale photo, pulsing neon border glow.
-                    Cleanest / most editorial feel. Photo keeps its shape but adopts the brand palette.
-                </p>
-            </div>
-
-            <!-- =========================================
-                 OPTION 3: HEX GRID OVERLAY
-                 ========================================= -->
-            <div class="option-card">
-                <h3>Option 3 — Hex Grid Overlay</h3>
-                <div class="opt3-wrap">
-                    <div class="opt3-photo"></div>
-                </div>
-                <p class="option-desc">
-                    <strong>Hexagonal grid pattern</strong> overlaid on photo. Subtle tech/data feel —
-                    "seen through a network." Lets the photo be mostly natural.
-                </p>
-            </div>
-
-            <!-- =========================================
-                 OPTION 4: CIRCUIT FRAME
-                 ========================================= -->
-            <div class="option-card">
-                <h3>Option 4 — Circuit Frame</h3>
-                <div class="opt4-wrap">
-                    <div class="opt4-corners"><span></span></div>
-                    <div class="opt4-photo"></div>
-                </div>
-                <p class="option-desc">
-                    <strong>Neon corner brackets</strong> + subtle circuit-trace background.
-                    Photo remains natural. Feels like a targeting viewfinder / HUD element.
+                    Photo visible beneath <strong>falling columns of characters</strong> (green
+                    and cyan). Matrix-rain vibe. Face still readable, but surrounded by data streams —
+                    implies you live inside the systems.
                 </p>
             </div>
 
         </div>
 
         <div class="section-heading" style="margin-top: 4rem;">
-            <h3>What to do next</h3>
-            <ol style="color: var(--text-secondary); line-height: 1.8;">
-                <li>Save your professional photo as:
-                    <code>C:\Users\rajma\Documents\RajMacwan-ClearSite\site\assets\images\raj-profile.jpg</code></li>
-                <li>Refresh this page — the photos above will render with your actual face</li>
-                <li>Tell me <strong>"I want Option X"</strong> — I'll apply it to the homepage hero</li>
-            </ol>
-            <p style="color: var(--text-muted); font-size: 0.85rem;">
-                <em>Tip: all four options work great on mobile too. Don't worry about responsiveness.</em>
-            </p>
+            <h3>How to pick</h3>
+            <p style="color: var(--text-secondary);">Just reply with:</p>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li><strong>"Option 1"</strong> — pure ASCII typing (most hacker)</li>
+                <li><strong>"Option 2"</strong> — photo/ASCII crossfade (most creative)</li>
+                <li><strong>"Option 3"</strong> — scan beam reveal (most elegant)</li>
+                <li><strong>"Option 4"</strong> — matrix data stream (most tech)</li>
+                <li><strong>"Mix X and Y"</strong> — combine elements</li>
+                <li><strong>"Show more"</strong> — I'll generate more variants</li>
+            </ul>
         </div>
     </div>
 </section>
@@ -377,11 +343,106 @@
 <footer class="site-footer">
     <div class="container">
         <div class="footer-bottom">
-            <span>MacwanGrid — preview page (temporary)</span>
+            <span>MacwanGrid — animated preview</span>
             <span><a href="index.html">← Back to Home</a></span>
         </div>
     </div>
 </footer>
+
+<!-- Inline ASCII art for the animations -->
+<script>
+// ============================================================
+// ASCII ART DATA (your actual photo converted to ASCII)
+// ============================================================
+const ASCII_ART = `---:::---===================----=====+++==-==--=-==+++++++=====++++++=
+=---:::::----========--:::.::::--=======---::.....:::::------------:::
+*###**-  .**###**###****-  .=*+***********+++==-..:====++++++======+++
+#@@@##*--=##@@@##@@@@##@*-:-***####@@@@#@@@@##@-  :@@@@##@@@##@@@#++#@
+#@@@##@@@@##@@@##@@@#######**######@@@###@@###@#++*#@@@###@######:  :#
+############################@@@@@@@@@###********#################+--=*
+#######################@@@@@@@@@@@@@@@@@#=------=*####################
+######################@@@@@@@@@@@@@#@@@@@@*======+#################**#
+#####################@@@@@@@@@@#@@@@#@@@@@@*=====+####################
+####################@@@@@@@@@@@@@@@@@@@@@@@@=====+####################
+####################@@@@@@@#+=-=+++===**@@@@=====+#################***
+##################*#@@@@#++-:::::----==+*@@@=====+################****
+##########*######***#@@@*===-----::===+***@######################*****
+####################**@*+**++*+=--++*+++++*=*****################*****
+####*+========+++++++-=*+=++++=+==+======+*-----=*###############*****
+*****+=--::::::--------*+==----==-==-::-=+*=----=*###############*****
+#######********++*****==*=--:-===-=+=--==+*----=+################*****
+##############*+*###*+++*+==========+==-=*+----=+######@@@#######*****
+#############-.:*##+:.:**+=-=====-======+*+----=+#@@@@@@@@@@@@####****
+#############+==+*#- .-+**+==+=--==-==++**=++---=#@@@@@@@@@@@@@@@@####
+*##############**##+..-+#+=*+++==--==+**+=:=@#*++#@@@@@@@@@@@@@@@@@@@@
+**#####**#####***##*:.-+#=:=+++++++++++=-..-*@@@######@@@@@@@@@@@@@@@@
++**####**#####***##*++**#=..:-=++=====-. ..:*##############@@@@@@@@@@@
+******************##*#**#=..  .::---:.  ....+**########******#####@@@@
+***************####*****#+....  :--=-.  ....+#******#*************#@@@
+************#####***#**##*......=*+++*=.....+#***#*****************#@@
+********#########**##**###...... :===+*.... +#*****##**********#*###@@
+******###########**#**####- .  .. :#==+. .. +#*****************#*####@
+*****#######***####****###= .   ..+*--=: .. +#****************##*#####
+*****#*#####***###*****###*. . . :*+=--:. ..+#*************++##**#####
+*****##*####***####****####: . . :*++===. ..+***************+##**#####
+******#**###****####***####= . . :+=++=-: ..+*****************#***####
+*********###****####******#+.  . .=----=-  .******************#+***###
+@@@**#****#*****#####****##*: .. .+=====-. .*******+***************###
+***###**********######*****#- .  .++=+==-. :*******+**********#***####`;
+
+// Trim to fit preview boxes
+const ASCII_COMPACT = ASCII_ART.split('\n').slice(0, 34).join('\n');
+
+// Set static ASCII for Option 2
+document.getElementById('opt2-ascii-content').textContent = ASCII_COMPACT;
+
+// ============================================================
+// OPTION 1: Typing effect — reveals ASCII char by char, loops
+// ============================================================
+const opt1Target = document.getElementById('opt1-target');
+const CHARS_PER_FRAME = 50;
+const PAUSE_MS = 2500;
+let pos = 0;
+let phase = 'typing'; // typing | paused | clearing
+
+function animateAscii() {
+    if (phase === 'typing') {
+        pos += CHARS_PER_FRAME;
+        if (pos >= ASCII_COMPACT.length) {
+            pos = ASCII_COMPACT.length;
+            opt1Target.innerHTML = ASCII_COMPACT + '<span class="opt1-cursor"></span>';
+            phase = 'paused';
+            setTimeout(() => { phase = 'clearing'; animateAscii(); }, PAUSE_MS);
+            return;
+        }
+        opt1Target.innerHTML = ASCII_COMPACT.slice(0, pos) + '<span class="opt1-cursor"></span>';
+    } else if (phase === 'clearing') {
+        pos = 0;
+        opt1Target.innerHTML = '<span class="opt1-cursor"></span>';
+        setTimeout(() => { phase = 'typing'; animateAscii(); }, 500);
+        return;
+    }
+    requestAnimationFrame(animateAscii);
+}
+animateAscii();
+
+// ============================================================
+// OPTION 4: Generate random characters for data stream columns
+// ============================================================
+const CHARS = 'アイウエオカキクケコサシスセソタチツテト0123456789@#$%&*+-/\\<>|';
+function randomColumn() {
+    let str = '';
+    for (let i = 0; i < 30; i++) {
+        str += CHARS[Math.floor(Math.random() * CHARS.length)] + '\n';
+    }
+    return str;
+}
+document.querySelectorAll('.opt4-col').forEach(col => {
+    col.textContent = randomColumn();
+    // Refresh chars every 3 seconds so it doesn't get stale
+    setInterval(() => { col.textContent = randomColumn(); }, 3000);
+});
+</script>
 
 </body>
 </html>
