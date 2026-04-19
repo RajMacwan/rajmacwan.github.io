@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Variants Round 2 — MacwanGrid Preview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .option-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .option-card h3 {
+            color: var(--accent);
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .preview-stage {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 1;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #050509;
+        }
+        .option-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+        .tag-line {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.6rem;
+            border: 1px solid var(--border-subtle);
+            border-radius: 3px;
+        }
+
+        /* ===========================================================
+           OPTION 5 — GLITCH / VHS DISTORTION
+           Three offset photo layers with RGB channel tints + random
+           clip-path jumps.
+           =========================================================== */
+        .opt5-stage { background: #0a0a0f; }
+        .opt5-photo {
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+        }
+        .opt5-photo.red {
+            background-blend-mode: screen;
+            background-color: rgba(255, 0, 80, 0.5);
+            mix-blend-mode: screen;
+            animation: opt5-glitch-r 4s steps(20) infinite;
+        }
+        .opt5-photo.green {
+            background-blend-mode: screen;
+            background-color: rgba(0, 255, 100, 0.35);
+            mix-blend-mode: screen;
+            animation: opt5-glitch-g 4s steps(20) infinite;
+        }
+        .opt5-photo.blue {
+            background-blend-mode: screen;
+            background-color: rgba(0, 150, 255, 0.35);
+            mix-blend-mode: screen;
+            animation: opt5-glitch-b 4s steps(20) infinite;
+        }
+        @keyframes opt5-glitch-r {
+            0%, 90%, 100% { transform: translate(0, 0); opacity: 1; }
+            10%  { transform: translate(-3px, 0); opacity: 0.9; }
+            20%  { transform: translate(2px, -1px); }
+            95%  { transform: translate(-4px, 2px); opacity: 0.6; }
+        }
+        @keyframes opt5-glitch-g {
+            0%, 90%, 100% { transform: translate(0, 0); }
+            15%  { transform: translate(2px, 0); }
+            92%  { transform: translate(3px, -2px); }
+        }
+        @keyframes opt5-glitch-b {
+            0%, 90%, 100% { transform: translate(0, 0); }
+            30%  { transform: translate(-2px, 1px); }
+            94%  { transform: translate(2px, 3px); }
+        }
+        .opt5-scanlines {
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0,
+                transparent 2px,
+                rgba(0, 0, 0, 0.3) 2px,
+                rgba(0, 0, 0, 0.3) 3px
+            );
+            pointer-events: none;
+        }
+        .opt5-glitch-bar {
+            position: absolute;
+            left: 0; right: 0;
+            height: 4px;
+            background: rgba(0, 240, 255, 0.7);
+            animation: opt5-bar 3s ease-out infinite;
+            pointer-events: none;
+        }
+        @keyframes opt5-bar {
+            0%   { top: 10%;  opacity: 0; }
+            10%  { opacity: 1; transform: translateX(-5px); }
+            12%  { transform: translateX(10px); }
+            15%  { opacity: 0; }
+            40%  { top: 60%;  opacity: 0; }
+            45%  { opacity: 1; transform: translateX(8px); }
+            48%  { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* ===========================================================
+           OPTION 6 — HOLOGRAPHIC SHIMMER
+           Rotating gradient overlay on photo
+           =========================================================== */
+        .opt6-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            overflow: hidden;
+        }
+        .opt6-stage::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(
+                from 0deg,
+                #ff00ff 0%,
+                #00f0ff 15%,
+                #00ff88 30%,
+                #ffff00 45%,
+                #ff3e5f 60%,
+                #b84dff 75%,
+                #00f0ff 90%,
+                #ff00ff 100%
+            );
+            mix-blend-mode: overlay;
+            opacity: 0.55;
+            animation: opt6-rotate 8s linear infinite;
+        }
+        .opt6-stage::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                transparent 40%,
+                rgba(255, 255, 255, 0.15) 50%,
+                transparent 60%);
+            animation: opt6-shine 3s linear infinite;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+        @keyframes opt6-rotate { to { transform: rotate(360deg); } }
+        @keyframes opt6-shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ===========================================================
+           OPTION 7 — THERMAL CAMERA
+           Hue-rotates photo like an infrared/thermal scanner
+           =========================================================== */
+        .opt7-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            filter: saturate(2) contrast(1.4) brightness(0.85);
+            animation: opt7-thermal 6s ease-in-out infinite;
+        }
+        @keyframes opt7-thermal {
+            0%   { filter: saturate(2) contrast(1.4) brightness(0.85) hue-rotate(0deg); }
+            25%  { filter: saturate(3) contrast(1.6) brightness(0.9)  hue-rotate(120deg); }
+            50%  { filter: saturate(3) contrast(1.5) brightness(1.0)  hue-rotate(240deg); }
+            75%  { filter: saturate(2.5) contrast(1.6) brightness(0.85) hue-rotate(330deg); }
+            100% { filter: saturate(2) contrast(1.4) brightness(0.85) hue-rotate(360deg); }
+        }
+        .opt7-label {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-family: var(--font-mono);
+            color: #00ff88;
+            font-size: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 3px 6px;
+            border: 1px solid rgba(0, 255, 136, 0.5);
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 4px #00ff88;
+            z-index: 1;
+        }
+        .opt7-label::before {
+            content: "●";
+            color: #ff3e5f;
+            margin-right: 4px;
+            animation: pulse-red 1s ease-in-out infinite;
+        }
+        @keyframes pulse-red { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        /* ===========================================================
+           OPTION 8 — NEON EDGE OUTLINE
+           Edge-detected portrait glowing cyan
+           =========================================================== */
+        .opt8-stage {
+            background: #05050a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        .opt8-edges {
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/raj-edges.png') center/cover;
+            filter: brightness(0.4) invert(1);
+            mix-blend-mode: screen;
+        }
+        .opt8-glow {
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/raj-edges.png') center/cover;
+            filter: brightness(0.6) invert(1) blur(4px);
+            mix-blend-mode: screen;
+            opacity: 0.7;
+            animation: opt8-pulse 2.5s ease-in-out infinite;
+        }
+        .opt8-tint {
+            position: absolute;
+            inset: 0;
+            background: #00f0ff;
+            mix-blend-mode: multiply;
+            opacity: 0.85;
+        }
+        @keyframes opt8-pulse {
+            0%, 100% { opacity: 0.6; }
+            50%      { opacity: 0.95; }
+        }
+
+        /* ===========================================================
+           OPTION 9 — DOT MATRIX LED DISPLAY
+           Photo as dots on LED board
+           =========================================================== */
+        .opt9-stage {
+            background: #050509;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .opt9-dots {
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/raj-dots.png') center/contain no-repeat;
+            animation: opt9-breathe 3s ease-in-out infinite;
+        }
+        @keyframes opt9-breathe {
+            0%, 100% { filter: brightness(1) drop-shadow(0 0 3px rgba(0, 240, 255, 0.5)); }
+            50%      { filter: brightness(1.3) drop-shadow(0 0 10px rgba(0, 240, 255, 0.8)); }
+        }
+        .opt9-stage::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+            pointer-events: none;
+        }
+
+        /* ===========================================================
+           OPTION 10 — PIXELATE BUILD-UP (resolves into clear photo, loops)
+           =========================================================== */
+        .opt10-stage {
+            position: relative;
+            background: url('assets/images/raj-profile.jpg') center/cover;
+            overflow: hidden;
+        }
+        .opt10-stage::before {
+            /* Blurred + pixelated overlay that fades */
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url('assets/images/raj-pixel.png') center/cover;
+            animation: opt10-reveal 5s ease-in-out infinite;
+            image-rendering: pixelated;
+        }
+        @keyframes opt10-reveal {
+            0%   { opacity: 1; filter: blur(0); }
+            40%  { opacity: 1; filter: blur(0); }
+            60%  { opacity: 0; filter: blur(10px); }
+            80%  { opacity: 0; filter: blur(10px); }
+            100% { opacity: 1; filter: blur(0); }
+        }
+        .opt10-stage::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 240, 255, 0.1));
+            animation: opt10-glow 5s ease-in-out infinite;
+            pointer-events: none;
+        }
+        @keyframes opt10-glow {
+            0%, 40% { opacity: 0; }
+            60%, 80% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="preview.html">← Previous batch (1-4)</a></li>
+            <li><a href="index.html">← Home</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+<section class="section">
+    <div class="container">
+        <div class="section-heading">
+            <span class="eyebrow">Hero Options · Round 2</span>
+            <h2>5 more variants.</h2>
+            <p class="section-lede">
+                Different visual languages — glitch, holographic, thermal, neon edges, LED dots, pixelate.
+                All animated, all using your photo (processed 5 different ways).
+            </p>
+        </div>
+
+        <div class="options-grid">
+
+            <!-- =========================================
+                 OPTION 5 — GLITCH / VHS
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 5 — Glitch / VHS</h3>
+                <div class="preview-stage opt5-stage">
+                    <div class="opt5-photo red"></div>
+                    <div class="opt5-photo green"></div>
+                    <div class="opt5-photo blue"></div>
+                    <div class="opt5-scanlines"></div>
+                    <div class="opt5-glitch-bar"></div>
+                </div>
+                <span class="tag-line">RGB channel split · scanlines · random glitch bars</span>
+                <p class="option-desc">
+                    <strong>Old CRT / VHS aesthetic.</strong> RGB channels drift apart subtly, scanlines
+                    throughout, cyan glitch bars flash occasionally. Feels broadcast-era tech or a
+                    surveillance tape.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 6 — HOLOGRAPHIC SHIMMER
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 6 — Holographic</h3>
+                <div class="preview-stage opt6-stage"></div>
+                <span class="tag-line">Rainbow conic gradient · shimmer sweep</span>
+                <p class="option-desc">
+                    <strong>Like a holographic trading card.</strong> Rainbow gradient rotates over
+                    the photo (blended), with a shine pass every 3s. Modern, premium, playful.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 7 — THERMAL CAMERA
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 7 — Thermal Scan</h3>
+                <div class="preview-stage opt7-stage">
+                    <div class="opt7-label">THERMAL · 36.7°C</div>
+                </div>
+                <span class="tag-line">Infrared palette cycling · recording label</span>
+                <p class="option-desc">
+                    <strong>Infrared / thermal camera</strong> — photo cycles through heat-map colors
+                    (red, green, purple, amber). "THERMAL · 36.7°C" label pulses in the corner like
+                    a recording indicator.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 8 — NEON EDGE OUTLINE
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 8 — Neon Edges</h3>
+                <div class="preview-stage opt8-stage">
+                    <div class="opt8-edges"></div>
+                    <div class="opt8-glow"></div>
+                    <div class="opt8-tint"></div>
+                </div>
+                <span class="tag-line">Edge-detected · glowing cyan outline</span>
+                <p class="option-desc">
+                    <strong>Pure outlines.</strong> Your photo reduced to edge-detected lines, glowing
+                    cyan against black with a subtle pulse. Minimalist, high-contrast, iconic —
+                    works amazing as a logo-like brand element.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 9 — DOT-MATRIX LED
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 9 — Dot Matrix LED</h3>
+                <div class="preview-stage opt9-stage">
+                    <div class="opt9-dots"></div>
+                </div>
+                <span class="tag-line">LED board style · cyan dots · breathes</span>
+                <p class="option-desc">
+                    <strong>Photo rendered as cyan LED dots</strong> like a stadium/subway sign.
+                    Dots breathe (brightness pulses). Gives strong "Blade Runner / cyberpunk
+                    stadium billboard" vibe.
+                </p>
+            </div>
+
+            <!-- =========================================
+                 OPTION 10 — PIXELATE BUILD-UP
+                 ========================================= -->
+            <div class="option-card">
+                <h3>Option 10 — Pixel Build-Up</h3>
+                <div class="preview-stage opt10-stage"></div>
+                <span class="tag-line">Pixelated → clear · 5s loop</span>
+                <p class="option-desc">
+                    Starts as <strong>low-res pixel blocks</strong>, resolves into a clear photo over
+                    a few seconds, then pixelates again. Feels like an image compressing/decompressing
+                    — or an AI generation in-progress.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="section-heading" style="margin-top: 4rem;">
+            <h3>Reply with your pick</h3>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li><strong>"Option 5"</strong> — Glitch / VHS (surveillance-era broadcast feel)</li>
+                <li><strong>"Option 6"</strong> — Holographic shimmer (premium/playful)</li>
+                <li><strong>"Option 7"</strong> — Thermal scan (infrared/surveillance vibe)</li>
+                <li><strong>"Option 8"</strong> — Neon edges (minimalist, iconic)</li>
+                <li><strong>"Option 9"</strong> — Dot-matrix LED (cyberpunk stadium)</li>
+                <li><strong>"Option 10"</strong> — Pixel build-up (AI-generation feel)</li>
+                <li><strong>"I want to combine X and Y"</strong> — mix two effects</li>
+                <li><strong>"Show more"</strong> — I'll generate round 3 (parallax 3D, morph, liquid, kaleidoscope, etc.)</li>
+            </ul>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">
+                <em>Previous batch still available at <a href="preview.html">preview.html</a> (Options 1–4: ASCII typing, ASCII crossfade, scan-line, data stream)</em>
+            </p>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <span>MacwanGrid — preview 2</span>
+            <span><a href="index.html">← Back to Home</a></span>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
