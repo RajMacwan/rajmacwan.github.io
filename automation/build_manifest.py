@@ -15,14 +15,16 @@ BLOG = ROOT / "blog"
 OUT = Path(__file__).resolve().parent / "post_manifest.json"
 
 GRID_LABELS = {
-    "grid-pill-dark": "DarkGrid",
-    "grid-pill-threat": "ThreatGrid",
-    "grid-pill-ai": "AIGrid",
-    "grid-pill-stack": "StackGrid",
-    "grid-pill-leadership": "LeadershipGrid",
-    "grid-pill-signal": "SignalGrid",
-    "grid-pill-breach": "BreachGrid",
-    "grid-pill-off": "OffGrid",
+    "grid-pill-threat":  "ThreatGrid",
+    "grid-pill-infra":   "InfraGrid",
+    "grid-pill-dark":    "DarkGrid",
+    "grid-pill-ai":      "AIGrid",
+    "grid-pill-intel":   "IntelGrid",
+    "grid-pill-lab":     "LabGrid",
+    "grid-pill-action":  "ActionGrid",
+    "grid-pill-off":     "OffGrid",
+    "grid-pill-wire":    "WireGrid",
+    "grid-pill-patch":   "PatchGrid",
 }
 
 def extract(path: Path):

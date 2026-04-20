@@ -1,16 +1,16 @@
-name: Today in Security
+name: WireGrid Weekly
 
 on:
   schedule:
-    # Daily at 06:00 UTC = 02:00 ET
-    - cron: "0 6 * * *"
+    # Fridays 14:00 UTC = 10:00 ET — end-of-week breach wrap
+    - cron: "0 14 * * 5"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  today:
+  wire:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,20 +19,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Update today-in-security widget
-        run: python automation/today_ticker.py
-
-      - name: Recompute threat meter
-        run: python automation/threat_meter.py
+      - name: Generate this week's WireGrid entry
+        run: python automation/weekly_wire.py
+        continue-on-error: true
 
       - name: Commit changes
         run: |
           git config user.name "macwangrid-bot"
           git config user.email "bot@macwangrid.com"
-          git add index.html wire-grid.html automation/threat_state.json
+          git add wire-grid.html automation/wire_state.json || true
           if ! git diff --cached --quiet; then
-            git commit -m "chore(today): daily brief $(date -u +%Y-%m-%d)"
+            git commit -m "feat(wire): weekly breach log $(date -u +%Y-%m-%d)"
             git push
           else
-            echo "No changes to commit."
+            echo "No new WireGrid entries this week."
           fi

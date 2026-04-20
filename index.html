@@ -68,7 +68,9 @@
             <li><a href="ai-grid.html">AIGrid</a></li>
             <li><a href="intel-grid.html">IntelGrid</a></li>
             <li><a href="lab-grid.html">LabGrid</a></li>
-            <li><a href="breach-grid.html">BreachGrid</a></li>
+            <li><a href="action-grid.html">ActionGrid</a></li>
+            <li><a href="wire-grid.html">WireGrid</a></li>
+            <li><a href="patch-grid.html">PatchGrid</a></li>
             <li><a href="off-grid.html">OffGrid</a></li>
             <li><a href="contact.html" class="nav-cta">Connect</a></li>
         </ul>
@@ -92,7 +94,7 @@
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
-            <span class="status-value">8 GRIDS</span>
+            <span class="status-value">10 GRIDS</span>
         </div>
         <div class="status-item alert">
             <span class="status-dot"></span>
@@ -2261,15 +2263,41 @@
 
 <main>
 
+    <!-- =================== THREAT METER (auto, daily) =================== -->
+    <section class="section threat-meter-section" style="padding-top: 2.5rem; padding-bottom: 0;">
+        <div class="container">
+            <!-- THREAT_METER_START -->
+            <a href="wire-grid.html" class="threat-meter meter-level-blue" id="threat-meter" title="Current threat level — click for live breach intel">
+                <div class="meter-info">
+                    <div class="meter-level">Threat Level</div>
+                    <div class="meter-label">ELEVATED</div>
+                </div>
+                <div class="meter-gauge">
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                </div>
+                <div class="meter-text">
+                    <strong>Steady traffic across the wire.</strong>
+                    <small>Auto-computed daily from CISA KEV · major breach count · active zero-days · click → WireGrid</small>
+                </div>
+            </a>
+            <!-- THREAT_METER_END -->
+        </div>
+    </section>
+
     <!-- =================== THE GRIDS =================== -->
     <section class="section">
         <div class="container">
             <div class="section-heading">
                 <span class="eyebrow">The Grids</span>
-                <h2>Eight grids. One practice.</h2>
+                <h2>Ten Grids. One Operator.</h2>
                 <p class="section-lede">
                     Every post is mapped to a <strong>Grid</strong> — a thematic bucket that
-                    organizes ideas by domain. Pick the one that matches what you're working on.
+                    organizes ideas by domain. Base 10 by design: ten signals across the stack,
+                    one mind tracking all of them. Pick the one that matches what you're working on.
                 </p>
             </div>
 
@@ -2311,10 +2339,22 @@
                     <div class="tile-meta">Experiments · 10 posts →</div>
                 </a>
 
-                <a href="breach-grid.html" class="grid-tile tile-breach">
-                    <div class="tile-name"><span class="tile-icon">🚨</span> BreachGrid</div>
+                <a href="action-grid.html" class="grid-tile tile-action">
+                    <div class="tile-name"><span class="tile-icon">🚨</span> ActionGrid</div>
                     <p class="tile-desc">What to do when your data has been breached — US authority contacts, immediate actions, identity theft recovery, and regulatory obligations.</p>
                     <div class="tile-meta">Breach Response · 10 posts →</div>
+                </a>
+
+                <a href="wire-grid.html" class="grid-tile tile-wire">
+                    <div class="tile-name"><span class="tile-icon">📻</span> WireGrid</div>
+                    <p class="tile-desc">Breach news across the wire. Weekly reflections on the largest publicly-disclosed incidents — attacker, vector, impact, and what it means for your stack.</p>
+                    <div class="tile-meta">Breach Intel · weekly →</div>
+                </a>
+
+                <a href="patch-grid.html" class="grid-tile tile-patch">
+                    <div class="tile-name"><span class="tile-icon">🩹</span> PatchGrid</div>
+                    <p class="tile-desc">Vendor security releases — Microsoft Patch Tuesday, Apple, Android, Chrome, VMware, Cisco, and more. Prioritized by KEV overlap and real-world exposure.</p>
+                    <div class="tile-meta">Vendor Updates · weekly →</div>
                 </a>
 
                 <a href="off-grid.html" class="grid-tile tile-off">
@@ -2513,7 +2553,9 @@
                 <ul>
                     <li><a href="intel-grid.html">IntelGrid</a></li>
                     <li><a href="lab-grid.html">LabGrid</a></li>
-            <li><a href="breach-grid.html">BreachGrid</a></li>
+            <li><a href="action-grid.html">ActionGrid</a></li>
+            <li><a href="wire-grid.html">WireGrid</a></li>
+            <li><a href="patch-grid.html">PatchGrid</a></li>
                     <li><a href="off-grid.html">OffGrid</a></li>
                     <li><a href="blog/feed.xml">RSS Feed</a></li>
                 </ul>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatchGrid — Vendor Security Releases — MacwanGrid</title>
+    <meta name="description" content="Weekly digest of vendor security releases — Microsoft Patch Tuesday, Apple, Android, Chrome, VMware, Cisco and more. Prioritized by KEV overlap and real-world exposure.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PatchGrid — Vendor Security Releases">
+    <meta property="og:description" content="Weekly digest of Patch Tuesday, Apple, Android, Chrome, and enterprise vendor releases — ranked by real-world risk.">
+    <meta property="og:site_name" content="MacwanGrid">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://macwangrid.com/patch-grid.html">
+    <link rel="alternate" type="application/rss+xml" title="PatchGrid RSS" href="patch-grid-feed.xml">
+
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="action-grid.html">ActionGrid</a></li>
+            <li><a href="wire-grid.html">WireGrid</a></li>
+            <li><a href="patch-grid.html" class="active">PatchGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="grid-banner grid-banner-patch">
+    <div class="container-narrow">
+        <span class="grid-label">PATCHGRID · Vendor Releases · Patch Priority</span>
+        <h1>Vendor patches, prioritized for humans.</h1>
+        <p class="grid-lede">
+            Weekly digest of material security releases from the vendors most enterprise stacks
+            actually run — Microsoft, Apple, Google, Mozilla, VMware, Cisco, Fortinet, Palo Alto,
+            Okta, Cloudflare, Ubuntu. Each release is tagged <code>IMMEDIATE</code>,
+            <code>THIS WEEK</code>, or <code>ROUTINE</code> based on KEV overlap, exploitation
+            evidence, and attack-surface exposure.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="patch-grid-feed.xml" class="btn btn-secondary">RSS ↗</a>
+            <a href="blog/kev-as-backlog.html" class="btn btn-secondary">KEV-as-backlog →</a>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+
+            <!-- =========================================
+                 PRIORITY LEGEND
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">How I Prioritize</span>
+                <h2>Three priority tiers.</h2>
+                <p class="section-lede">
+                    Not every vendor patch deserves your attention this week. These are the
+                    heuristics I apply when triaging a release — consistent with the
+                    <a href="blog/patching-priority-practitioner-framework.html">patching priority framework</a>
+                    I've published separately.
+                </p>
+            </div>
+
+            <div class="accordion-group">
+                <details class="accordion" open>
+                    <summary>
+                        <span class="accordion-header-label">Priority tiers — what the tags mean</span>
+                        <span class="accordion-header-meta">reference</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="accordion-tags" style="margin-bottom: 1rem;">
+                            <span class="accordion-tag priority-immediate">Immediate</span>
+                            <span class="accordion-tag priority-this-week">This Week</span>
+                            <span class="accordion-tag priority-routine">Routine</span>
+                        </div>
+                        <div class="fact-row"><span class="fact-key">Immediate</span><span class="fact-val">Active exploitation confirmed. CVE appears in CISA KEV within 7 days of release. Patch or mitigate within 24-48 hours.</span></div>
+                        <div class="fact-row"><span class="fact-key">This Week</span><span class="fact-val">Critical CVSS (9.0+) in an internet-facing or widely-deployed component. No KEV listing yet, but the exploit path is obvious from the advisory. Patch within the current maintenance window.</span></div>
+                        <div class="fact-row"><span class="fact-key">Routine</span><span class="fact-val">Standard monthly update. No active exploitation, no novel attack class. Goes through your normal test → stage → prod cycle.</span></div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- =========================================
+                 VENDOR RELEASES — ACCORDION BY VENDOR
+                 ========================================= -->
+            <div class="section-heading" style="margin-top: 3rem;">
+                <span class="eyebrow">Releases</span>
+                <h2>By vendor.</h2>
+                <p class="section-lede">
+                    Expand a vendor to see chronological release notes with priority tags and
+                    KEV cross-references. Releases older than 12 months collapse into an archive.
+                </p>
+            </div>
+
+            <!-- PATCH_LOG_START -->
+            <div class="accordion-group">
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🪟 Microsoft — Patch Tuesday April 2026</span>
+                        <span class="accordion-header-meta">121 CVEs · 3 critical</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-04-14, Tuesday</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">121</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">3</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">2 CVEs added to CISA KEV within 48 hours</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-29104 · Exchange Server · post-auth RCE in Transport service, CVSS 9.1, PoC circulating privately within 72h</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Immediate for Exchange Server; This Week for the rest. The Exchange CVE requires authentication but every Exchange install has thousands of low-privilege mailboxes that meet that bar, and the Transport service runs as SYSTEM — this is the same shape as ProxyLogon and ProxyNotShell, and defenders who learned nothing from 2021 will learn again. If you are still running on-prem Exchange in 2026, you have a two-day window: patch, then run the Microsoft Exchange Health Checker script, then check for webshells in <code>\inetpub\wwwroot\aspnet_client</code> and under the OWA virtual directory. The other two critical CVEs are in RRAS and HTTP.sys — both exploitable but only relevant if you are exposing those services, which almost nobody should be. For the 115 non-critical fixes, the only standout is a Windows Kernel EoP (CVE-2026-29087) that is already in KEV by Wednesday; prioritize it on domain controllers and privileged access workstations. See <a href="../blog/patching-priority-practitioner-framework.html">patching-priority framework</a> for how I stage a month like this.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-immediate">Immediate (Exchange)</span>
+                            <span class="accordion-tag">Microsoft</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🌐 Google Chrome — 135.0.7049.84 emergency</span>
+                        <span class="accordion-header-meta">1 CVE · 1 critical (0-day)</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-04-02, Thursday (out-of-band)</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">1</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">1</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">1 (added same day as Chrome release)</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-3071 · V8 JavaScript engine · type-confusion leading to sandboxed RCE, exploited in the wild per TAG</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Immediate. When Google ships a single-CVE emergency build and attributes in-the-wild exploitation to TAG, the exploit is typically already in a commercial spyware toolchain and has been for weeks before disclosure — the pattern from the last eight V8 zero-days is consistent. Force Chrome update enterprise-wide tonight via Intune, Jamf, Workspace, or your MDM of choice; do not wait for the user-driven "Relaunch Chrome" prompt to cycle through, because the average user ignores it for 4+ days. The companion action: confirm Edge (same V8 engine) and any Electron-based app in your fleet (Slack, Teams, Notion, 1Password desktop, VS Code) gets its own patch cycle — Electron lags Chromium by 1 to 3 weeks and is the long tail of this CVE. For managed Chromebooks, this is a forced restart. For BYOD, you cannot force anything; update your threat model accordingly.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-immediate">Immediate</span>
+                            <span class="accordion-tag">Google / Chrome</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🍎 Apple — iOS 18.5 / macOS 15.5</span>
+                        <span class="accordion-header-meta">24 CVEs · 4 critical (WebKit chain, in-the-wild)</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-03-31, Tuesday</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">24</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">4 (3 chained in the wild)</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">3 (the chained WebKit + kernel CVEs)</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-24441 · WebKit · memory corruption via crafted web content, chained with CVE-2026-24443 (kernel) for full device takeover; Citizen Lab credit, used against journalists</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Immediate for anyone in an elevated-risk role — executives, legal, journalists, activists, M&amp;A deal teams, security staff who carry sensitive data on device. Enforce via MDM (Jamf Pro, Intune, Kandji, Mosyle) as a required minimum OS version with a 48-hour grace period; block access to corporate email and VPN below that version. For everyone else, This Week is fine, but do not let it slip into the following Patch Tuesday cycle because iOS users drift faster than Windows users and the WebKit component is reachable from any rendered HTML in Mail preview, iMessage link unfurls, and in-app browsers. Turn on Lockdown Mode for the named at-risk group if you have not already — it meaningfully reduces the WebKit and JavaScriptCore attack surface and the usability cost is lower than most security leads assume. Remember Apple will not backport to iOS 17; any device on the older major version is now a known-vulnerable asset and should be on a documented replacement plan.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-immediate">Immediate (at-risk)</span>
+                            <span class="accordion-tag">Apple / iOS</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🪟 Microsoft — Patch Tuesday March 2026</span>
+                        <span class="accordion-header-meta">82 CVEs · 5 critical</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-03-10, Tuesday</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">82</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">5</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">1 within 10 days</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-21199 · Microsoft Outlook · NTLM hash leak via crafted meeting invite, no user interaction (preview pane triggers), CVSS 8.1</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>This Week, but the Outlook NTLM-leak CVE deserves Immediate treatment in any environment that still has NTLM enabled on domain controllers or on internet-exposed services. The exploitation pattern is straightforward: attacker sends a meeting invite with a UNC path pointing at an attacker-controlled SMB host, Outlook renders the invite, Windows helpfully authenticates with the user's NTLM hash. That hash is crackable offline or usable directly via relay attacks against LDAP, SMB, and AD-CS. Patch Outlook, yes — but also take this month to run <code>Get-ADDefaultDomainPasswordPolicy</code>, confirm your Exchange Online transport rules block external-sender UNC paths, and stand up the Entra ID NTLM decommissioning plan that Microsoft has been asking you to start since 2024. The other four critical CVEs are in the expected places (Windows Hyper-V, SharePoint, Azure Connected Machine Agent); patch on the normal two-week cycle unless you expose those services directly.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-this-week">This Week</span>
+                            <span class="accordion-tag">Microsoft</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">☁️ VMware — vCenter out-of-band advisory</span>
+                        <span class="accordion-header-meta">1 CVE · 1 critical (unauth RCE)</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-02-27, Friday (out-of-band)</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">1 (VMSA-2026-0004)</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">1</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">1 (added within 5 days of advisory)</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-21144 · vCenter Server DCERPC protocol · unauthenticated heap overflow leading to RCE as root on the vCenter appliance, CVSS 9.8</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Immediate — drop everything. vCenter is the most valuable pivot point in almost any virtualized environment: compromising it grants full control of every ESXi host and every VM on the cluster, plus typically domain-admin-equivalent credentials cached in vCenter service accounts. Unauth RCE on vCenter is a once-or-twice-a-year event and every time it has happened (CVE-2021-21972, CVE-2021-21985, the 2023 DCERPC family) mass exploitation followed within 10 to 14 days. Patch tonight if possible. If you cannot patch tonight, the mitigation is strict: confirm vCenter management interfaces are not reachable from the user VLAN or the internet; put an ACL on the management interface that allows only the PAM jump hosts (CyberArk, Delinea, Teleport) on TCP 443/902/2012. Do not accept "it's behind the firewall" as an answer — every vCenter breach of the last five years was "behind the firewall." After patching, check <code>vpxd.log</code> and <code>sps.log</code> for anomalous DCERPC calls in the 30 days prior; the PoC was in private circulation before disclosure.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-immediate">Immediate</span>
+                            <span class="accordion-tag">VMware / Broadcom</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🪟 Microsoft — Patch Tuesday February 2026</span>
+                        <span class="accordion-header-meta">56 CVEs · 2 critical</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-02-10, Tuesday</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">56</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">2</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">0 at release; 1 added 21 days later</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-14011 · Windows LDAP client · heap overflow via crafted referral response, CVSS 8.8, theoretical wormable but no in-the-wild exploitation observed</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Routine. This is the quietest Patch Tuesday of Q1 2026 and you should treat it as a catch-up month: use the cycle to clean up the backlog from January, validate that your Intune/WSUS/Tanium deployment metrics are actually hitting 95%+ within the SLA window you claim in the audit reports, and rehearse the rollback procedure on a canary ring because you will need it during a louder month. The LDAP client CVE is worth noting only because client-side LDAP bugs have a bad history of becoming wormable once a public exploit drops; keep an eye on it for the next 60 days and move to Immediate if a working PoC lands. Do not skip the Azure fixes — the monthly Azure rollup includes a Machine Configuration extension fix (CVE-2026-14039) that affects Arc-enabled servers and tends to get ignored by on-prem teams who do not realize they inherited Arc agents from the hybrid identity project. Check your Arc inventory.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-routine">Routine</span>
+                            <span class="accordion-tag">Microsoft</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🛡️ Fortinet — FortiGate SSL-VPN advisory</span>
+                        <span class="accordion-header-meta">1 CVE · 1 critical (pre-auth, exploited)</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-02-05, Thursday (FG-IR-26-011)</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">1 (plus 3 lower-severity in same bulletin)</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">1</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">1 (added within 24 hours)</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-22017 · FortiOS SSL-VPN · pre-auth heap overflow in web portal, CVSS 9.8, exploited in the wild per Fortinet PSIRT and Shadowserver honeypot data</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>Immediate. If you have FortiGate SSL-VPN exposed to the internet — and if your FortiGate is edge, you almost certainly do — you should have patched before finishing this paragraph. The CVE is pre-auth, the PoC was in private circulation before disclosure, and Shadowserver is showing thousands of honeypot hits within 48 hours of the advisory. This is the third FortiGate SSL-VPN pre-auth in roughly 18 months; at some point the architectural conclusion has to be that SSL-VPN on edge appliances is a business decision, not a security one, and the decision is getting harder to defend. Tactical response: patch to the fixed firmware listed in FG-IR-26-011, then assume compromise during the exposure window — check <code>/var/log/sslvpnd</code> for unusual <code>POST</code> requests to <code>/remote/</code> endpoints, check VPN user accounts for additions you did not make, and rotate every local admin credential on the appliance. Strategic: start the migration to ZTNA (Cloudflare, Zscaler ZPA, Netskope Private Access, Tailscale). The SSL-VPN replacement conversation is overdue in most shops.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-immediate">Immediate</span>
+                            <span class="accordion-tag">Fortinet</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐧 Ubuntu — LTS kernel update (USN-7184-1)</span>
+                        <span class="accordion-header-meta">6 CVEs · 1 high (local privesc)</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Released</span><span class="fact-val">2026-04-05, Sunday</span></div>
+                        <div class="fact-row"><span class="fact-key">Total CVEs</span><span class="fact-val">6</span></div>
+                        <div class="fact-row"><span class="fact-key">Critical</span><span class="fact-val">0 (1 high, 5 medium)</span></div>
+                        <div class="fact-row"><span class="fact-key">KEV overlap</span><span class="fact-val">0 at release</span></div>
+                        <div class="fact-row"><span class="fact-key">Highlight CVE</span><span class="fact-val">CVE-2026-1108 · Linux kernel netfilter (nf_tables) · use-after-free, local unprivileged user to root, affects 22.04 LTS and 24.04 LTS</span></div>
+                
+                        <h4>Patch priority call</h4>
+                        <p>This Week for multi-tenant or shared-compute Linux fleets; Routine for single-tenant production workloads that do not run untrusted code. Netfilter local-privesc bugs are the most-exploited Linux kernel class of the last five years — every container-escape scenario involving a shared kernel (Kubernetes nodes with nodes shared across teams, Jenkins build runners, GitLab Runners, university HPC clusters, any multi-tenant VPS) treats this as an urgent fix, because a low-privilege pod or user who reaches root on the node effectively reaches root on every workload on that host. Single-tenant production DB servers with no interactive user accounts and no container runtime can wait for the normal maintenance window. Apply via <code>unattended-upgrades</code> if configured, or <code>apt-get install --only-upgrade linux-image-generic</code> with a scheduled reboot — livepatch covers most of these for Ubuntu Pro subscribers but confirm the exact CVE is in the livepatch feed before relying on it; some netfilter UAFs require a full reboot to fully remediate. Red Hat, Debian, and SUSE will ship equivalents within the week.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag priority-this-week">This Week</span>
+                            <span class="accordion-tag">Linux / Ubuntu</span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- PATCH_LOG_END -->
+
+            <div class="section-heading" style="margin-top: 4rem;">
+                <h3>What's <em>not</em> in PatchGrid</h3>
+            </div>
+            <p>
+                I don't cover every vendor bulletin — that's what NVD is for. What lives here is
+                the subset with one of: <strong>active exploitation</strong>, <strong>broad
+                deployment footprint</strong>, <strong>management-plane exposure</strong>, or
+                <strong>an exceptionally clean primitive</strong> (unauth RCE with a trivial
+                exploit path). If a CVE doesn't fit any of those, it's routine maintenance and
+                I don't clutter the grid with it.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>MacwanGrid</h4>
+                <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                    Practitioner notes from Raj Macwan — VP of IT, MIT scholar, and the operator
+                    behind the DarkPulse Security onion site.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Grids</h4>
+                <ul>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="action-grid.html">ActionGrid</a></li>
+                    <li><a href="wire-grid.html">WireGrid</a></li>
+                    <li><a href="patch-grid.html">PatchGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>
