@@ -97,14 +97,478 @@
             </div>
 
             <!-- =========================================
-                 VENDOR RELEASES — ACCORDION BY VENDOR
+                 VENDORS ON THE RADAR
                  ========================================= -->
             <div class="section-heading" style="margin-top: 3rem;">
-                <span class="eyebrow">Releases</span>
-                <h2>By vendor.</h2>
+                <span class="eyebrow">Vendors on the Radar</span>
+                <h2>The 38-vendor watch list.</h2>
                 <p class="section-lede">
-                    Expand a vendor to see chronological release notes with priority tags and
-                    KEV cross-references. Releases older than 12 months collapse into an archive.
+                    Every vendor below publishes at a cadence I actively monitor. Each card
+                    describes their release rhythm, the components I prioritize, and the
+                    heuristic I use to decide if a given CVE gets IMMEDIATE treatment versus
+                    the normal patch window. Organized by category — tap any vendor to expand.
+                </p>
+            </div>
+
+            <!-- ===== ENDPOINT SECURITY ===== -->
+            <h3 style="margin-top: 2.5rem; color: var(--grid-threat); font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">Endpoint Security · AV · EDR · XDR</h3>
+            <div class="accordion-group">
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🦅 CrowdStrike — Falcon sensor &amp; cloud</span>
+                        <span class="accordion-header-meta">rolling · channel files daily</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Sensor point releases every 2-4 weeks; cloud-side channel file updates multiple times daily.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Sensor self-protection bypass, kernel-driver CVEs, cloud API auth advisories. Post-July-2024 I also watch channel-file rollout behavior closely.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Sensor driver CVE = <span class="accordion-tag priority-immediate">Immediate</span>. Channel file changes = <span class="accordion-tag priority-routine">Routine</span> but validated in a staged ring.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🛡️ SentinelOne — Singularity agent</span>
+                        <span class="accordion-header-meta">monthly releases · GA ring</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Monthly agent releases with GA / EA / early-access rings. Out-of-band for kernel advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Ranger network-discovery CVEs, Singularity Identity module (post-Attivo acquisition), and macOS system-extension advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Anything touching the kernel or LSASS-interaction paths ships on the GA ring within a week.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🟦 Microsoft Defender — for Endpoint / XDR</span>
+                        <span class="accordion-header-meta">monthly + MDAV daily</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">MDE platform updates monthly via Windows Update; MDAV engine + signatures multiple times daily.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">MpSigStub / NIS engine CVEs (they're weirdly frequent), and Attack Surface Reduction rule regressions.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Engine CVEs are often silently deployed by Microsoft; track against KB article vs observed engine version on endpoints.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🟧 Broadcom / Symantec — Endpoint Protection</span>
+                        <span class="accordion-header-meta">quarterly platform · signatures daily</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Quarterly platform versions (14.x RU-series); signature content continuous.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">SEPM management-console advisories (on-prem + cloud), LiveUpdate server CVEs, and any IPS-engine bypass.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Management console on-prem RCE = <span class="accordion-tag priority-immediate">Immediate</span>. Pointed attack surface for ransomware affiliates.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔵 Sophos — Intercept X · Firewall · Central</span>
+                        <span class="accordion-header-meta">monthly + firewall hotfixes</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Central / Intercept X monthly; XG/XGS firewall hotfixes as needed (often out-of-band for webadmin CVEs).</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Sophos Firewall webadmin auth bypasses — repeat offender in KEV. UTM end-of-life transitions.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any firewall webadmin or userportal-exposed CVE = <span class="accordion-tag priority-immediate">Immediate</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🟢 ESET — PROTECT · Endpoint · Server</span>
+                        <span class="accordion-header-meta">monthly module updates</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">ESET PROTECT console + endpoint modules updated monthly; engine updates via LiveGrid continuous.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Mail Security / Mail Plugin CVEs, and the occasional ecosystem advisory on smaller-footprint OS (NetWare, OS/2 — yes, still shipped).</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Mail-security gateway CVEs jump to <span class="accordion-tag priority-this-week">This Week</span> regardless of CVSS.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🟥 Trend Micro — Vision One · Deep Security · Apex One</span>
+                        <span class="accordion-header-meta">monthly + critical PAs</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Monthly maintenance; critical patch advisories (PAs) out-of-band. Deep Security Manager advisories are the ones to watch.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Apex One console RCEs (historic KEV regulars), Deep Security Manager auth bypasses, and IM-EDR agent tamper advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Apex One / Deep Security management console = <span class="accordion-tag priority-immediate">Immediate</span>. Endpoint agent = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐻 Bitdefender — GravityZone</span>
+                        <span class="accordion-header-meta">monthly</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">GravityZone console + endpoint monthly; engine continuous.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Admin-console CVEs on on-prem deployments; historically strong quality, but when issues land they land in the management plane.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Cloud console = managed for you. On-prem = treat console CVEs as <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- ===== AI PLATFORMS ===== -->
+            <h3 style="margin-top: 2.5rem; color: var(--grid-ai); font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">AI Platforms · LLM APIs · ML Infrastructure</h3>
+            <div class="accordion-group">
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🤖 OpenAI — API · ChatGPT Enterprise · Azure OpenAI</span>
+                        <span class="accordion-header-meta">advisory-driven · trust portal</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">No scheduled release calendar; status-page + trust portal advisories. Azure OpenAI follows Microsoft's cadence for platform CVEs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">API key leakage patterns, Assistants API / tool-use prompt-injection advisories, ChatGPT Enterprise SSO + data-residency changes.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any advisory affecting API-key handling or tool-use sandboxing = <span class="accordion-tag priority-immediate">Immediate</span> from a data-leakage perspective, not a CVE perspective.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🧠 Anthropic — Claude API · Claude for Enterprise</span>
+                        <span class="accordion-header-meta">advisory-driven · trust.anthropic.com</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Trust portal advisories; model-card security updates as capabilities change. Computer-use and tool-use add new attack surfaces.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Tool-use sandboxing, computer-use permission model, data-handling policy deltas between tiers.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Treat tool-use and agentic capabilities like browser JS runtimes — assume new privileges require a fresh threat model. See <a href="blog/prompt-injection-owasp-of-ai.html">Prompt injection: the OWASP of AI</a>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">💎 Google — Gemini · Vertex AI · Workspace AI</span>
+                        <span class="accordion-header-meta">monthly platform · advisories as needed</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Vertex AI follows Google Cloud release notes; Workspace AI advisories via Admin console + status page.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Gemini-for-Workspace data-access scope changes, Vertex private endpoint CVEs, IAM scope creep on new AI features.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any change to default data-access scope = audit DLP + admin logs same week.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🦙 Meta — Llama · Llama Guard · PyTorch</span>
+                        <span class="accordion-header-meta">model drops + PyTorch CVEs</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Model releases on their own schedule; PyTorch ecosystem CVEs flow through standard CVE channels.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">PyTorch pickle-deserialization CVEs (repeat offender), Llama Guard classifier bypasses, and model-weight provenance issues on HuggingFace mirrors.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">PyTorch CVEs that affect model loading = <span class="accordion-tag priority-this-week">This Week</span> because pickle is a code-execution primitive.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">⚡ NVIDIA — AI Enterprise · NeMo · Triton · GPU drivers</span>
+                        <span class="accordion-header-meta">quarterly security bulletins</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Quarterly security bulletins (GPU display driver, CUDA, AI Enterprise stack); out-of-band for Triton Inference Server.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Triton model-loading CVEs, GPU display driver EoP chains, and the CUDA toolkit installer advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Triton exposed to untrusted model uploads = <span class="accordion-tag priority-immediate">Immediate</span>. Display driver LPE = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🤗 Hugging Face — Hub · Transformers · Inference Endpoints</span>
+                        <span class="accordion-header-meta">rolling · advisories as needed</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Transformers library pushes weekly-ish; Hub advisories for malicious model discoveries.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Malicious model uploads (pickle-based RCE in <code>from_pretrained</code>), Spaces sandbox escapes, and ecosystem typosquats.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">If your CI loads models directly from the Hub, pin hashes and treat new Transformers CVEs as <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- ===== DATABASES ===== -->
+            <h3 style="margin-top: 2.5rem; color: var(--grid-intel); font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">Database Platforms · Data Warehouses</h3>
+            <div class="accordion-group">
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🏛️ Oracle — Database · WebLogic · Fusion Middleware</span>
+                        <span class="accordion-header-meta">quarterly CPU · Jan / Apr / Jul / Oct</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Critical Patch Update (CPU) on the Tuesday nearest the 17th of Jan / Apr / Jul / Oct. 300-500 CVEs per drop across the full Oracle stack.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">WebLogic pre-auth RCEs (KEV regulars), Fusion Middleware auth bypasses, E-Business Suite auth issues, Database listener CVEs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">WebLogic internet-facing = <span class="accordion-tag priority-immediate">Immediate</span>. Core Database listener CVEs = <span class="accordion-tag priority-this-week">This Week</span>. MySQL (Oracle-owned) tracked separately.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">📘 Microsoft SQL Server — all supported versions</span>
+                        <span class="accordion-header-meta">via Patch Tuesday · monthly</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">CU (Cumulative Update) model — rolled into Patch Tuesday for GDR; SQL-specific CUs out-of-band. Reporting Services has its own cadence.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">SSRS RCE CVEs (multiple per year), XML-parser issues, and the occasional <code>xp_cmdshell</code>-adjacent advisory. Don't forget Azure SQL Managed Instance.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Anything exposed on TCP 1433 to untrusted networks = <span class="accordion-tag priority-immediate">Immediate</span> regardless of CVSS.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐘 PostgreSQL — community core + major forks</span>
+                        <span class="accordion-header-meta">quarterly + out-of-band</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Quarterly minor releases (second Thursday of Feb/May/Aug/Nov); out-of-band for security-only.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">CREATE FUNCTION security-context CVEs, libpq client-side bugs, and any EXPLAIN / row-security bypass. Also watch managed forks (AWS RDS, Azure Database for PostgreSQL, Supabase).</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Server-side auth-context CVEs = <span class="accordion-tag priority-this-week">This Week</span>. Client-only = <span class="accordion-tag priority-routine">Routine</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🍃 MongoDB — Community · Enterprise · Atlas</span>
+                        <span class="accordion-header-meta">advisory-driven + major releases</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Advisories at alerts.mongodb.com; Atlas handled by MongoDB with customer-visible status notes.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Wire-protocol auth CVEs, driver-side BSON deserialization issues, and Ops Manager / Cloud Manager console bugs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Self-hosted with any internet exposure = <span class="accordion-tag priority-immediate">Immediate</span> — the MongoDB-exposed-to-internet problem still hasn't gone away.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐬 MySQL / MariaDB — CE + Percona</span>
+                        <span class="accordion-header-meta">Oracle CPU + community out-of-band</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">MySQL follows Oracle CPU quarterly; MariaDB + Percona push more frequently. Managed (RDS MySQL, Aurora, Azure DB for MySQL) handled by provider.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">InnoDB storage-engine bugs, replication-auth advisories, and the connector libraries shipped with ORMs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Server-side authenticated CVEs = <span class="accordion-tag priority-this-week">This Week</span>. Unauth (rare) = <span class="accordion-tag priority-immediate">Immediate</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">❄️ Snowflake — Data Cloud · Native Apps</span>
+                        <span class="accordion-header-meta">continuous · trust.snowflake.com</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Continuous deployment by Snowflake; customer-facing advisories via trust portal.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Network-policy default changes, OAuth integration advisories, and key-based auth rollout windows. The 2024 credential-stuffing campaign is the reference case.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any advisory affecting authentication flow = validate MFA + network policies same day.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔴 Redis — OSS · Stack · Enterprise</span>
+                        <span class="accordion-header-meta">advisories + major releases</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Advisories on redis.io; managed (ElastiCache, Azure Cache, Redis Cloud) handled by provider.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Lua-sandbox escape CVEs (recurring), module loading vulnerabilities, and unauth-exposed instances (still happening).</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any module-loading or Lua CVE in a self-hosted deployment = <span class="accordion-tag priority-immediate">Immediate</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔍 Elastic — Elasticsearch · Kibana · Logstash</span>
+                        <span class="accordion-header-meta">irregular · via discuss.elastic.co</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Security announcements via discuss.elastic.co; version bumps monthly-ish.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Kibana RCE chains (multiple in recent years), script-engine sandbox escapes, and Logstash input-plugin bugs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Kibana internet-facing = <span class="accordion-tag priority-immediate">Immediate</span>. Elasticsearch with disabled security = same.</span></div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- ===== ENTERPRISE SaaS & PLATFORMS ===== -->
+            <h3 style="margin-top: 2.5rem; color: var(--grid-infra); font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">Enterprise SaaS · Platforms · Collaboration</h3>
+            <div class="accordion-group">
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">⚙️ SAP — HANA · S/4HANA · NetWeaver · BTP</span>
+                        <span class="accordion-header-meta">monthly · Security Patch Day · 2nd Tuesday</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">SAP Security Patch Day on the second Tuesday of every month. 10-40 notes typically.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">NetWeaver Application Server auth bypasses (KEV regulars), SAP GUI privilege-escalation, and BTP / Fiori exposed admin endpoints.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">NetWeaver with Internet Communication Manager exposed = <span class="accordion-tag priority-immediate">Immediate</span>. Internal-only = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">☁️ Salesforce — Core · Commerce · Marketing Cloud</span>
+                        <span class="accordion-header-meta">3 major releases/year + weekly patches</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Three major releases (Spring/Summer/Winter); trust.salesforce.com advisories continuously; Apex / Lightning security updates monthly.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Connected-app OAuth scope issues, guest-user data-exposure advisories, Apex-class permissions bugs. The 2023 guest-user incidents remain reference cases.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any advisory on guest-user or connected-app scope = audit within 48 hours.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔧 ServiceNow — Now Platform · Utah / Vancouver / Washington</span>
+                        <span class="accordion-header-meta">2 family releases/year + patches</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Two family releases per year; patch releases monthly. HI portal for advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">ACL / data-access advisories (2023 public-data exposure remains a reference), UI Builder custom widget issues, and script-include injection.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">ACL / widget / public-facing record issues = <span class="accordion-tag priority-immediate">Immediate</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐙 Atlassian — Jira · Confluence · Bitbucket Server</span>
+                        <span class="accordion-header-meta">monthly + out-of-band</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Monthly Critical Security Advisories; out-of-band for Confluence Data Center CVEs (frequent).</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Confluence Data Center auth-bypass + RCE chains (recurring KEV). Jira Service Management SSRFs. Bitbucket Server auth issues.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any Confluence Data Center CVE with CVSS 9+ = <span class="accordion-tag priority-immediate">Immediate</span>. Treat it as pre-breach.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐈 GitHub · GitLab — Enterprise Server + SaaS</span>
+                        <span class="accordion-header-meta">GHES monthly · GitLab patch + major</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">GHES monthly + patch releases; GitLab CE/EE patch releases bi-weekly, major monthly. SaaS handled by provider with trust-portal advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">CI runner escape CVEs, OAuth / SAML bugs, repository-access scope issues, and webhook-token advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Self-hosted runner or repository-access scope CVE = <span class="accordion-tag priority-immediate">Immediate</span>. Webhook / OAuth token bugs = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">📞 Zoom — Client · Rooms · Workplace</span>
+                        <span class="accordion-header-meta">monthly Tuesdays + OOB</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Monthly bulletin on the second Tuesday; client-side pushed via auto-update. Zoom Rooms firmware on its own cadence.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Client auth-bypass / privilege-escalation, Rooms device firmware CVEs, and the Zoom app installer vectors (macOS particularly).</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Client auto-update is fine in most orgs; Rooms firmware needs tracked deployment.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔴 Adobe — Acrobat · Reader · ColdFusion · Commerce</span>
+                        <span class="accordion-header-meta">monthly · 2nd Tuesday</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">APSB advisories on Patch Tuesday; out-of-band for ColdFusion and Commerce (Magento).</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">ColdFusion pre-auth RCE (repeat offender in KEV), Acrobat Reader document-parsing chains, Commerce admin auth bypass.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">ColdFusion internet-facing = <span class="accordion-tag priority-immediate">Immediate</span>. Acrobat Reader = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- ===== OPEN SOURCE & RUNTIMES ===== -->
+            <h3 style="margin-top: 2.5rem; color: var(--grid-dark); font-family: var(--font-mono); font-size: 1rem; letter-spacing: 0.08em; text-transform: uppercase;">Open Source · Runtimes · Containers</h3>
+            <div class="accordion-group">
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🌐 Apache — httpd · Tomcat · Struts · ActiveMQ</span>
+                        <span class="accordion-header-meta">project-specific cadence</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Per-project release cycles; security@apache.org coordinated disclosure.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Struts pre-auth RCE (KEV mainstay since Equifax), Tomcat session-management advisories, httpd mod_proxy SSRFs, ActiveMQ OpenWire RCEs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Struts internet-facing = <span class="accordion-tag priority-immediate">Immediate</span>. Same for ActiveMQ on 61616 exposed.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🚀 nginx — OSS + Plus</span>
+                        <span class="accordion-header-meta">security releases as needed</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Security releases published to nginx.org with CVE numbers; Plus via F5 MyF5 portal.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">HTTP/3 + QUIC module CVEs (growing surface), mod_ssl issues, and third-party module compatibility.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">HTTP/3 QUIC CVEs on internet-edge = <span class="accordion-tag priority-this-week">This Week</span>. Core HTTP CVEs = <span class="accordion-tag priority-immediate">Immediate</span>.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🔐 OpenSSL — 3.x + FIPS provider</span>
+                        <span class="accordion-header-meta">advisories + quarterly releases</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Security advisories with severity rating (CRITICAL / HIGH / MODERATE / LOW). Sev-CRITICAL is extremely rare.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">X.509 parsing CVEs, TLS state-machine issues, and FIPS-provider compliance deltas.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">HIGH-severity affecting certificate parsing = <span class="accordion-tag priority-immediate">Immediate</span>. Most MODERATE ones can batch.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🐳 Docker · containerd · runc</span>
+                        <span class="accordion-header-meta">continuous releases</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Docker Engine, containerd, runc follow independent release cadences; advisories via GitHub Security Advisories.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">runc container-escape CVEs (Leaky-Vessels class, CVE-2024-21626 etc.), containerd socket-exposure issues, Docker Desktop macOS/Windows privilege escalation.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Any container-escape primitive = <span class="accordion-tag priority-immediate">Immediate</span> on any multi-tenant host.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">⎈ Kubernetes · kube-apiserver · ingress</span>
+                        <span class="accordion-header-meta">quarterly minors + patches</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Quarterly minor releases; patch releases monthly. kubernetes.io/security announces CVEs with severity.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">ingress-nginx admission-controller RCEs, kube-apiserver authz bypasses, service-account token-binding issues, and kubelet read-only port misconfigs.</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">ingress-nginx admission controller CVE = <span class="accordion-tag priority-immediate">Immediate</span>. API-server CVEs on hosted (EKS/GKE/AKS) handled by provider.</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">🦕 Node.js · Python · .NET · Go · Rust</span>
+                        <span class="accordion-header-meta">per-runtime cadence</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Cadence</span><span class="fact-val">Node.js monthly (even-numbered LTS); Python security-only patches; .NET Patch Tuesday; Go quarterly + OOB; Rust 6-weekly.</span></div>
+                        <div class="fact-row"><span class="fact-key">Watch for</span><span class="fact-val">Node.js crypto + fs.promises CVEs, Python pip install pre-execution issues, .NET deserialization advisories, Go net/http path-traversal, Rust std library memory safety (rare but notable).</span></div>
+                        <div class="fact-row"><span class="fact-key">Priority stance</span><span class="fact-val">Runtime advisories feed through application teams; track via SBOM. Any deserialization = <span class="accordion-tag priority-this-week">This Week</span>.</span></div>
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- =========================================
+                 VENDOR RELEASES — ACCORDION BY VENDOR
+                 ========================================= -->
+            <div class="section-heading" style="margin-top: 4rem;">
+                <span class="eyebrow">Release Log</span>
+                <h2>Specific releases, chronological.</h2>
+                <p class="section-lede">
+                    The watch list above is the roster; the log below is what actually dropped.
+                    Each entry is a specific release with priority call and KEV overlap.
                 </p>
             </div>
 
