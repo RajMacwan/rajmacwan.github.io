@@ -56,8 +56,9 @@
 <main>
     <section class="section">
         <div class="container-narrow">
-            <div class="article-body">
-                <h2>What this Grid covers</h2>
+            <details class="grid-intro-fold">
+                <summary><span class="fold-label">About this Grid</span><span class="fold-hint">expand for full context</span></summary>
+                <div class="grid-intro-body">
                 <p>IntelGrid is the hub for industry intelligence on MacwanGrid. The live aggregator lives at <a href="industry-watch.html">industry-watch.html</a> — a curated feed that auto-refreshes every six hours, pulling from a short list of sources I read anyway: infrastructure vendors, reputable security research, AI labs, and a small number of independent analysts who consistently beat the news cycle.</p>
 
                 <p>The point of this Grid isn't to be a news site. It's to make the signal/noise ratio defensible. Most industry feeds are overwhelmed with press releases, funding announcements, and recycled takes. The selection criteria here lean toward primary sources (CVE advisories, CISA alerts, vendor post-mortems, lab research) and away from secondary commentary unless the commentator has earned it.</p>
@@ -76,14 +77,13 @@
                     </a>
                 </div>
 
-                <h2>Posts in this Grid</h2>
-                <div class="article-item">
-                    <p><em>No commentary posts yet — the live aggregator above is the primary content. Subscribe to the <a href="blog/feed.xml">RSS feed</a> for signal-vs-noise writeups as they're published.</em></p>
                 </div>
-            </div>
+            </details>
         </div>
     </section>
 <!-- AUTO:POSTS_START -->
+    <section class="section">
+        <div class="container-narrow">
             <div class="section-heading" style="margin-top: 3rem;">
                 <h2>All Posts in This Grid</h2>
                 <p class="section-lede">10 articles · newest first</p>
@@ -170,6 +170,8 @@
                     <p>ATT&CK is a framework, not a checklist. Most orgs use it like bingo cards. How to use it as a design language.</p>
                 </a>
             </div>
+        </div>
+    </section>
 <!-- AUTO:POSTS_END -->
 </main>
 

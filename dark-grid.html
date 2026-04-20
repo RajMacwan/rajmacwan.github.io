@@ -56,29 +56,22 @@
 <main>
     <section class="section">
         <div class="container-narrow">
-            <div class="article-body">
-                <h2>What this Grid covers</h2>
+            <details class="grid-intro-fold">
+                <summary><span class="fold-label">About this Grid</span><span class="fold-hint">expand for full context</span></summary>
+                <div class="grid-intro-body">
                 <p>DarkGrid is where I write about privacy infrastructure from the inside. The focus is the engineering: how Tor hidden services actually work, how to operate a hardened .onion site safely, isolation with Whonix and qubes-style workstations, metadata hygiene, and the threat models that justify the operational overhead. It is a technical Grid, not a sensational one.</p>
 
                 <p>The flagship project documented here is <strong>DarkPulse Security</strong> — a research-focused .onion site I built to study cybersecurity topics in a Tor-native environment. That work is published under a separate pseudonymous identity, <em>TheMacwan</em>, to keep the research persona cleanly separated from my professional writing. The rationale, architecture, and operational lessons from that project live on the <a href="research.html">research page</a> and in posts below.</p>
 
                 <p>Expect Tor engineering notes, hidden-service operational security, reviews of privacy tools, and reflections on what the "dark web" actually is once you strip away the news-cycle framing. Visitors using Tor Browser should see an Onion-Location banner — this site advertises its .onion counterpart at the HTTP layer.</p>
 
-                <h2>Posts in this Grid</h2>
-                <div class="card-grid-2">
-                    <a href="blog/why-i-built-darkpulse.html" class="post-card">
-                        <div class="post-meta">
-                            <span class="grid-pill grid-pill-dark">DarkGrid</span>
-                            <span>Apr 15, 2026</span>
-                        </div>
-                        <h3>Why I Built a Dark Web Research Site (and What I Learned)</h3>
-                        <p>The origin story of DarkPulse Security — threat model, architecture choices, and what operating on Tor teaches you about the rest of the web.</p>
-                    </a>
                 </div>
-            </div>
+            </details>
         </div>
     </section>
 <!-- AUTO:POSTS_START -->
+    <section class="section">
+        <div class="container-narrow">
             <div class="section-heading" style="margin-top: 3rem;">
                 <h2>All Posts in This Grid</h2>
                 <p class="section-lede">10 articles · newest first</p>
@@ -173,6 +166,8 @@
                     <p>Running a v3 onion service isn't hard technically. The operational discipline is where people fail.</p>
                 </a>
             </div>
+        </div>
+    </section>
 <!-- AUTO:POSTS_END -->
 </main>
 
