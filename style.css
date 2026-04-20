@@ -1149,8 +1149,10 @@ main {
     font-size: 0.82rem;
     padding: 0.85rem 1rem;
     border-radius: var(--radius-sm);
-    margin: 1rem 0;
+    margin: 1rem auto;
     word-break: break-all;
+    text-align: center;
+    max-width: 640px;
     border: 1px solid rgba(0, 255, 136, 0.2);
 }
 
@@ -1985,3 +1987,9 @@ main {
     .off-grid-cards { grid-template-columns: 1fr; }
     .off-pullquote { padding: 1.25rem 1.25rem; font-size: 1rem; }
 }
+
+/* Center the onion-url box + dark-side tagline inside research-callout */
+.research-callout { text-align: center; }
+.research-callout p { text-align: left; }
+.research-callout .small,
+.research-callout > small { display: block; text-align: center; margin-top: 0.5rem; }
