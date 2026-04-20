@@ -1993,3 +1993,24 @@ main {
 .research-callout p { text-align: left; }
 .research-callout .small,
 .research-callout > small { display: block; text-align: center; margin-top: 0.5rem; }
+
+/* Ironclad centering for onion-url + tagline (overrides prior rules via specificity) */
+.research-callout .onion-url,
+.research-callout div.onion-url {
+    text-align: center !important;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.research-callout p.small,
+.research-callout > small {
+    display: block !important;
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-secondary);
+}
