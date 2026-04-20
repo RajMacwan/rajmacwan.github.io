@@ -2014,3 +2014,121 @@ main {
     margin-right: auto;
     color: var(--text-secondary);
 }
+
+/* =================== OFFGRID color enrichment =================== */
+
+/* Music card spans 2 columns on wide screens since it's now much richer */
+.off-card-wide {
+    grid-column: span 2;
+}
+@media (max-width: 860px) {
+    .off-card-wide { grid-column: span 1; }
+}
+
+/* Colored sub-headings inside cards */
+.off-subhead {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 1.5rem 0 0.6rem;
+    padding: 0.4rem 0.75rem;
+    border-left: 3px solid var(--sub-accent, var(--accent));
+    background: linear-gradient(90deg, var(--sub-wash, rgba(255, 85, 119, 0.08)), transparent 70%);
+    color: var(--sub-accent, var(--accent));
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+.off-subhead:first-child { margin-top: 0.5rem; }
+
+.off-sub-rose   { --sub-accent: #ff5577; --sub-wash: rgba(255, 85, 119, 0.10); }
+.off-sub-amber  { --sub-accent: #ffb020; --sub-wash: rgba(255, 176, 32, 0.10); }
+.off-sub-violet { --sub-accent: #b84dff; --sub-wash: rgba(184, 77, 255, 0.10); }
+.off-sub-cyan   { --sub-accent: #00f0ff; --sub-wash: rgba(0, 240, 255, 0.10); }
+.off-sub-mint   { --sub-accent: #36d399; --sub-wash: rgba(54, 211, 153, 0.10); }
+.off-sub-red    { --sub-accent: #ff3e5f; --sub-wash: rgba(255, 62, 95, 0.10); }
+.off-sub-orange { --sub-accent: #ff9544; --sub-wash: rgba(255, 149, 68, 0.10); }
+.off-sub-green  { --sub-accent: #00ff88; --sub-wash: rgba(0, 255, 136, 0.10); }
+.off-sub-blue   { --sub-accent: #3b82f6; --sub-wash: rgba(59, 130, 246, 0.10); }
+
+/* Inline list styling (for singer lists, etc.) */
+.off-inline-list {
+    margin: 0.5rem 0 1rem 0.25rem;
+    padding-left: 0.75rem;
+    list-style: none;
+}
+.off-inline-list li {
+    padding: 0.4rem 0 0.4rem 0.5rem;
+    border-left: 1px dashed var(--border-subtle);
+    padding-left: 0.85rem;
+    margin-bottom: 0.35rem;
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+.off-inline-list li strong { color: var(--text-primary); }
+.off-inline-list li em { color: var(--sub-accent, var(--accent)); font-style: normal; }
+
+/* Subtle colored background wash on each card — one more layer of color */
+.off-card {
+    background-image: radial-gradient(
+        ellipse at top right,
+        var(--card-glow, rgba(0, 240, 255, 0.08)),
+        transparent 60%
+    );
+    background-color: var(--bg-card);
+}
+.off-card:hover {
+    background-image: radial-gradient(
+        ellipse at top right,
+        var(--card-glow, rgba(0, 240, 255, 0.15)),
+        transparent 65%
+    );
+}
+
+/* Decorative corner accent on each card */
+.off-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at bottom right, var(--card-accent), transparent 70%);
+    opacity: 0.12;
+    pointer-events: none;
+    transition: opacity .25s;
+}
+.off-card:hover::after { opacity: 0.25; }
+
+/* Pull-quote gets a brighter gradient border */
+.off-pullquote {
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(to bottom,
+        #ffd166 0%,
+        #ff9544 25%,
+        #ff3e5f 50%,
+        #b84dff 75%,
+        #00f0ff 100%) 1;
+    background: linear-gradient(135deg,
+        rgba(255, 209, 102, 0.05),
+        rgba(184, 77, 255, 0.03) 50%,
+        rgba(0, 240, 255, 0.04));
+}
+
+/* Section heading for OffGrid specifically — slight rainbow underline */
+.off-section .section-heading h2 {
+    position: relative;
+    display: inline-block;
+}
+.off-section .section-heading h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 80%;
+    margin-top: 0.5rem;
+    background: linear-gradient(90deg,
+        #ff5577 0%, #ff9544 25%, #ffd166 50%,
+        #36d399 75%, #00f0ff 100%);
+    border-radius: 2px;
+    opacity: 0.85;
+}
