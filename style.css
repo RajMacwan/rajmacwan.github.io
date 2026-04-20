@@ -1738,3 +1738,250 @@ main {
     margin-bottom: 1em;
 }
 .grid-intro-body p:last-child { margin-bottom: 0; }
+
+/* ================================================================
+   OFFGRID — Personal page. Warmer. Colorful. Human.
+   Intentionally breaks the dark-ops discipline of the other Grids.
+   ================================================================ */
+.off-hero {
+    position: relative;
+    padding: 4.5rem 1.5rem 3.5rem;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-subtle);
+}
+.off-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 15% 30%, rgba(255, 62, 95, 0.10), transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(184, 77, 255, 0.10), transparent 55%),
+        radial-gradient(ellipse at 50% 90%, rgba(0, 240, 255, 0.08), transparent 60%),
+        radial-gradient(ellipse at 75% 70%, rgba(255, 176, 32, 0.07), transparent 55%),
+        radial-gradient(ellipse at 25% 75%, rgba(0, 255, 136, 0.07), transparent 55%);
+    pointer-events: none;
+    animation: off-hero-drift 24s ease-in-out infinite alternate;
+}
+@keyframes off-hero-drift {
+    from { transform: scale(1) translate(0, 0); }
+    to   { transform: scale(1.05) translate(-10px, 8px); }
+}
+.off-hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.off-grid-label {
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border: 1px solid var(--border-default);
+    border-radius: 40px;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+}
+.off-headline {
+    font-size: 3.4rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+.off-rainbow {
+    background: linear-gradient(
+        90deg,
+        #ff3e5f 0%, #ff9544 18%, #ffd166 33%, #36d399 50%,
+        #00f0ff 67%, #3b82f6 82%, #b84dff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.off-lede {
+    font-size: 1.15rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Pull-quote */
+.off-pullquote {
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(to bottom, #ffd166, #ff9544, #ff3e5f) 1;
+    padding: 1.5rem 1.75rem;
+    margin: 3rem 0 1rem;
+    background: linear-gradient(135deg, rgba(255, 209, 102, 0.04), rgba(255, 62, 95, 0.02));
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: var(--text-primary);
+    font-style: italic;
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+.off-pullquote p { color: var(--text-primary); margin-bottom: 0.75rem; }
+.off-pullquote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+}
+.off-motto-note {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+    padding-left: 0.25rem;
+}
+
+/* Passion cards grid */
+.off-grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.off-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.off-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--card-accent, var(--accent));
+    opacity: 0.85;
+}
+.off-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--card-accent, var(--accent));
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.4), 0 0 24px var(--card-glow, rgba(0, 240, 255, 0.12));
+}
+.off-card-icon {
+    font-size: 1.85rem;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+.off-card h3 {
+    font-size: 1.3rem;
+    color: var(--card-accent, var(--text-primary));
+    margin-bottom: 0.6rem;
+    letter-spacing: -0.01em;
+}
+.off-card-lead {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    line-height: 1.55;
+}
+.off-card-body {
+    color: var(--text-secondary);
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+.off-card-body p { margin-bottom: 0.85rem; }
+.off-card-body strong { color: var(--text-primary); }
+.off-card-tag {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid var(--card-accent, var(--accent));
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--text-secondary);
+}
+.off-community-list {
+    list-style: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+}
+.off-community-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-subtle);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+.off-community-list li:last-child { border-bottom: 0; }
+.off-community-list strong { color: var(--card-accent, var(--text-primary)); }
+
+/* Shayari / poetry blocks inside cards */
+.off-shayari {
+    font-family: 'Noto Serif Devanagari', 'Segoe UI', serif;
+    font-size: 1.1rem;
+    line-height: 1.85;
+    text-align: center;
+    color: var(--text-primary);
+    padding: 1.25rem 0.5rem 1rem;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+    margin: 1rem 0;
+}
+.off-shayari-gloss {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Per-card accent colors — rainbow across the passions */
+.off-card-music     { --card-accent: #ff5577;   --card-glow: rgba(255, 85, 119, 0.20); }
+.off-card-poetry    { --card-accent: #b84dff;   --card-glow: rgba(184, 77, 255, 0.20); }
+.off-card-cricket   { --card-accent: #36d399;   --card-glow: rgba(54, 211, 153, 0.20); }
+.off-card-faith     { --card-accent: #ffd166;   --card-glow: rgba(255, 209, 102, 0.20); }
+.off-card-community { --card-accent: #ff9544;   --card-glow: rgba(255, 149, 68, 0.20); }
+.off-card-film      { --card-accent: #ff3e5f;   --card-glow: rgba(255, 62, 95, 0.20); }
+.off-card-ideas     { --card-accent: #00ff88;   --card-glow: rgba(0, 255, 136, 0.20); }
+.off-card-stars     { --card-accent: #00f0ff;   --card-glow: rgba(0, 240, 255, 0.20); }
+.off-card-tech      { --card-accent: #3b82f6;   --card-glow: rgba(59, 130, 246, 0.20); }
+
+/* Closing note */
+.off-closing {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 209, 102, 0.04), rgba(184, 77, 255, 0.04));
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    margin: 2rem 0;
+}
+.off-closing-lead {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+.off-closing p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+}
+.off-cta-row {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Section spacing tweak for OffGrid only */
+.off-section { padding: 2rem 0; }
+
+@media (max-width: 720px) {
+    .off-headline { font-size: 2.3rem; }
+    .off-grid-cards { grid-template-columns: 1fr; }
+    .off-pullquote { padding: 1.25rem 1.25rem; font-size: 1rem; }
+}
