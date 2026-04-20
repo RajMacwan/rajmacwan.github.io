@@ -5,7 +5,7 @@
     "title": "1Password vs KeePassXC vs Bitwarden",
     "summary": "All three are good. None is universally the right answer. I have deployed all three in different contexts and the decision is always about the team's constraints, not about which tool is \"best.\"",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -41,7 +41,7 @@
     "title": "Attribution: When It Matters",
     "summary": "Attribution is simultaneously the most over-discussed and most under-used product of threat intelligence. Defenders debate APT28 versus Turla versus an unrelated \"UNC\" cluster while the adversary patches, rotates infrastructure, and come...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -50,7 +50,7 @@
     "title": "Bitwarden Enterprise Review",
     "summary": "We rolled Bitwarden Enterprise out to an organization with a few hundred users 18 months ago. This is the honest write-up. It is mostly positive, with some sharp edges worth knowing before you sign.",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -59,7 +59,7 @@
     "title": "The Case for Boring Technology",
     "summary": "Dan McKinley wrote \"Choose Boring Technology\" in 2015. A decade later, it's the most ignored piece of engineering writing I know. Every architecture review I've sat in has the same pattern \u2014 someone wants to introduce a new database, a n...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -67,8 +67,8 @@
     "url": "blog/breach-disclosure-letter-templates.html",
     "title": "Breach Disclosure Letter Templates",
     "summary": "Breach notification letters should do three things: state the facts, describe the impact honestly, and give the reader a specific next step. Most I have read do the opposite \u2014 lawyer-speak, euphemism, and no clear action. Below are templ...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -86,7 +86,7 @@
     "title": "Building an Intel-Driven Security Program",
     "summary": "\"Intel-driven\" is the most-claimed and least-practiced phrase in security. Almost every SOC deck I have reviewed says it. Almost none of them operate that way. What they actually operate is alert-driven \u2014 the tool vendors decided what is...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -94,8 +94,8 @@
     "url": "blog/business-email-compromise-recovery.html",
     "title": "Business Email Compromise Recovery",
     "summary": "Business Email Compromise remains the single most expensive cybercrime category tracked by the FBI IC3, with annual adjusted losses reported in the billions. Most BECs look mundane \u2014 a spoofed invoice, a wire redirected, a payroll change...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -104,7 +104,7 @@
     "title": "Cloud Cost Optimization: The Framework",
     "summary": "FinOps became a job title around 2021. By 2023 it was a department. By 2026 most of those departments are still reporting the same 3-5% savings they reported the first quarter, because they've been asked to optimize a bill that's fundame...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -112,8 +112,8 @@
     "url": "blog/credit-freeze-step-by-step.html",
     "title": "Credit Freezes: Step by Step",
     "summary": "Since September 2018, credit freezes have been free at all three major US consumer credit bureaus under federal law. They are the single most effective defensive step an individual can take after a breach \u2014 more than \"credit monitoring,\"...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -122,7 +122,7 @@
     "title": "Dark Web Intel: What Actually Matters",
     "summary": "Dark web monitoring is the most oversold product category in threat intelligence. Vendors sell you the aesthetic of a dimly-lit dashboard with forum avatars and Cyrillic handles, and what you get back is mostly noise: scraper-generated \"...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -140,7 +140,7 @@
     "title": "Data Platform Maturity: From Lake to Lakehouse",
     "summary": "The data lake was a promise: dump everything in S3, figure out schemas later, democratize analytics. A decade on, the swamp jokes write themselves. Most enterprise data lakes I've walked into are petabyte-scale write-only memory \u2014 full o...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -167,7 +167,7 @@
     "title": "Endpoint Management: Zero Trust for Devices",
     "summary": "A domain-joined Windows laptop in 2026 is the same security posture as a domain-joined Windows laptop in 2015 \u2014 full trust the moment it shows up on the VPN. If you haven't changed that model, the blast radius of a single phished employe...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -193,8 +193,8 @@
     "url": "blog/executive-breach-response-playbook.html",
     "title": "Executive Breach Response Playbook",
     "summary": "This is written for the CEO, the General Counsel, and the board. The technical team has their own playbook. Yours is about the decisions only you can make, in the 48 to 72 hour window where the trajectory of the incident \u2014 including its...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -202,8 +202,8 @@
     "url": "blog/first-24-hours-breach-response.html",
     "title": "What To Do In The First 24 Hours",
     "summary": "The first 24 hours of a confirmed breach are where most of the lasting damage \u2014 financial, legal, and reputational \u2014 either gets contained or gets amplified. In my experience, the defining characteristic of organizations that come throug...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -212,7 +212,7 @@
     "title": "The Five Sources I Read Every Morning",
     "summary": "A 20-minute curated read-in at 7 a.m. beats a two-hour dashboard crawl at 10 a.m. every time. Dashboards are designed to generate engagement; your morning rotation should be designed to generate decisions. Here are the five sources I hav...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -221,7 +221,7 @@
     "title": "From Home Lab to Production: Lessons Learned",
     "summary": "I got my first enterprise job partly because I could talk about my home lab in the interview. Fifteen years later, I hire people partly on the same criterion. But there is a gap between what a lab teaches you and what production actually...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -229,8 +229,8 @@
     "url": "blog/gdpr-breach-notification-requirements.html",
     "title": "GDPR Breach Notification Requirements",
     "summary": "Article 33 of the GDPR requires controllers to notify the competent supervisory authority of a personal data breach within 72 hours of becoming aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -239,7 +239,7 @@
     "title": "Hardening Your Home Network",
     "summary": "My home network has about 40 devices. A third of them are IoT junk I would not let near a corporate VLAN. Hardening this is not glamorous work. It is mostly segmentation and saying no to default settings. Here is the short list that actu...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -248,7 +248,7 @@
     "title": "The Hidden Cost of Multi-Cloud",
     "summary": "The multi-cloud pitch usually sounds like insurance: if AWS goes down, we fail over to Azure. If one vendor raises prices, we move. If a region burns, we're fine. It's a good story. It's also, in most deployments I've audited, wrong. The...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -266,7 +266,7 @@
     "title": "The Home Lab Threat Model",
     "summary": "Here is the uncomfortable truth about the home lab: you are running real services on real infrastructure in a real residential network with no change control. If a security professional's job is to think about threat models, they should...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -275,7 +275,7 @@
     "title": "Home Security Lab: Minimum Viable Stack",
     "summary": "Most home labs I see on Reddit are over-engineered museums. Three Dell R730s humming in a closet because \"more is better,\" but the owner has never actually detonated malware or replayed a phishing chain end-to-end. The point of a securit...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -284,7 +284,7 @@
     "title": "Identity as the New Perimeter",
     "summary": "If you want to know where a modern enterprise's security program is really maturing, don't look at the firewall. Look at the IAM org chart. More specifically, look at who runs it: if your identity program reports into HR or shares a mana...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -301,8 +301,8 @@
     "url": "blog/identity-theft-recovery-workflow.html",
     "title": "Identity Theft Recovery Workflow",
     "summary": "Identity theft recovery feels like an administrative nightmare. It is, a little. But the federal government has done meaningful work to turn it into a process you can actually follow. identitytheft.gov, operated by the FTC, is genuinely...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -329,7 +329,7 @@
     "title": "Kubernetes for Enterprise IT (Not Just Developers)",
     "summary": "Every breach postmortem I've read in the last two years where Kubernetes was involved has the same root cause buried three paragraphs down: nobody in enterprise IT owned the cluster. A product team stood it up. A DevOps engineer wired it...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -347,7 +347,7 @@
     "title": "Local LLM for SOC Prototyping",
     "summary": "Before I bring any AI idea to the vendors \u2014 SIEM copilots, ticket summarizers, phishing triagers \u2014 I prototype it on a local model first. Two reasons. First, my prototype data is real SIEM output. I am not sending EDR telemetry to someon...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -374,7 +374,7 @@
     "title": "MITRE ATT&amp;CK for Defenders",
     "summary": "ATT&amp;CK is the best thing to happen to detection engineering in twenty years, and it is also widely misused. Most orgs treat the matrix as a bingo card \u2014 colour a cell green when they have \"coverage,\" count the greens, brief the board...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -392,7 +392,7 @@
     "title": "Network Architecture for Hybrid Work",
     "summary": "In March 2020, every enterprise VPN concentrator got a call it wasn't sized for. Ops teams doubled capacity over a weekend, pushed full-tunnel configs to laptops that would now route Zoom through headquarters, and declared victory. Six y...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -401,7 +401,7 @@
     "title": "Observability vs Monitoring: A Practitioner's Take",
     "summary": "Monitoring tells you what you knew to ask. Observability tells you what you didn't. Those are not the same thing, and buying a \"monitoring platform\" and calling it observability does not make it so. I've sat through enough vendor demos w...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -419,7 +419,7 @@
     "title": "OSINT for IT Leaders",
     "summary": "You do not need a Threat Intelligence Platform to get started with intel. I will go further: the free OSINT stack is the correct starting point even if you eventually buy one, because it teaches you what you actually want the paid produc...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -437,7 +437,7 @@
     "title": "Personal OSINT Workstation Build",
     "summary": "An OSINT workstation is not about how many tools you have installed. It is about discipline \u2014 keeping investigations compartmented, not contaminating sock-puppet accounts with your personal cookies, and producing evidence a lawyer or a t...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -473,7 +473,7 @@
     "title": "Proxmox vs ESXi in 2026",
     "summary": "Two years into Broadcom's ownership of VMware, the conversation has changed. The per-core subscription model, the collapse of the perpetual license, and the consolidation of SKUs into VMware Cloud Foundation have pushed a lot of shops \u2014...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -499,8 +499,8 @@
     "url": "blog/ransomware-negotiation-when-not-to-pay.html",
     "title": "Ransomware Negotiation: When Not to Pay",
     "summary": "The ransomware decision is not technical. It is strategic, financial, and legal \u2014 made by the CEO and counsel, with the CFO and cyber insurer in the room, informed by the IR team. The question should never be \"should we pay?\" first. It s...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -518,7 +518,7 @@
     "title": "Reading the Threat Intelligence Landscape",
     "summary": "There is a tier system in threat intelligence that almost no vendor will explain to you, because explaining it honestly shrinks their addressable market. So I will. Threat intel comes in four tiers \u2014 strategic, operational, tactical, and...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -536,7 +536,7 @@
     "title": "Setting Up Whonix: Step by Step",
     "summary": "Whonix is two VMs working together: a Gateway that talks to Tor, and a Workstation that routes all its traffic through the Gateway. Nothing on the Workstation can leak outside Tor \u2014 not DNS, not an NTP query, not a misbehaving app. That...",
     "pill_class": "grid-pill-lab",
-    "grid": "SignalGrid",
+    "grid": "LabGrid",
     "date": ""
   },
   {
@@ -554,7 +554,7 @@
     "title": "Signal vs Noise: The Security News Firehose",
     "summary": "There is too much security news. NVD publishes thousands of CVEs per year. LinkedIn fills with CVE-of-the-day hot takes. Vendor marketing teams push \"the next SolarWinds\" every six weeks. Trade press runs the same breach three ways. By h...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -571,8 +571,8 @@
     "url": "blog/supply-chain-breach-your-responsibilities.html",
     "title": "Supply Chain Breach: Your Responsibilities",
     "summary": "Your vendor gets breached. Your company's data is in scope. You are not the one with the incident to remediate, but you still have work \u2014 legal, communications, technical, and contractual \u2014 that is on you, not on them. The organizations...",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -599,7 +599,7 @@
     "title": "Threat Landscape Q1 2026: Patterns",
     "summary": "This is not a \"threats are evolving\" piece. Threats are always evolving. This is a practitioner's read on what actually shifted in the last few months, based on public reporting from Mandiant, Unit 42, Microsoft Threat Intelligence, Red...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -616,8 +616,8 @@
     "url": "blog/us-cyber-authorities-who-to-call.html",
     "title": "US Cyber Authorities: Who to Call",
     "summary": "The US federal response to cybercrime is split across multiple agencies, each with a different mandate. Calling the wrong one wastes time you do not have. This is the short directory I keep printed on the inside of our incident binder.",
-    "pill_class": "grid-pill-breach",
-    "grid": "BreachGrid",
+    "pill_class": "grid-pill-action",
+    "grid": "ActionGrid",
     "date": ""
   },
   {
@@ -626,7 +626,7 @@
     "title": "Vendor Threat Feeds: What You're Paying For",
     "summary": "Here is an exercise I have run in two different SOCs. Take three paid threat feeds \u2014 a premium one (Mandiant Advantage, Recorded Future, CrowdStrike Falcon Intelligence tier), a mid-market one (Anomali, ThreatConnect, Flashpoint), and a...",
     "pill_class": "grid-pill-intel",
-    "grid": "SignalGrid",
+    "grid": "IntelGrid",
     "date": ""
   },
   {
@@ -662,7 +662,7 @@
     "title": "Why Your SRE Team Isn't Scaling",
     "summary": "Here's the pattern I see in every struggling SRE org: a team of eight is drowning. Leadership approves five more headcount. A year later the team of thirteen is drowning harder, the backlog is bigger, and the best two engineers are updat...",
     "pill_class": "grid-pill-infra",
-    "grid": "SignalGrid",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
