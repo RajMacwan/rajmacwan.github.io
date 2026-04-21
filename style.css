@@ -3240,3 +3240,31 @@ body { overflow-anchor: auto; }
 /* When a details opens, browsers don't auto-scroll. The scroll-jump
    comes from the PRIOR open details closing (height collapse).
    overflow-anchor: auto on body preserves the clicked summary in view. */
+
+/* =================================================================
+   Tighten spacing around grid-intro-fold (the 'About this Grid' accordion)
+   Was rendering with 4rem+ above and below because both the fold's
+   section and the AUTO:POSTS section had full .section padding,
+   plus a stale inline margin-top on the posts heading.
+   ================================================================= */
+main > section:has(.grid-intro-fold) {
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+/* Fold itself — tighten vertical margins */
+.grid-intro-fold {
+    margin: 0 !important;
+}
+/* The AUTO:POSTS section on a grid landing page — don't double-pad */
+main > section + section {
+    padding-top: 1.5rem;
+}
+.grid-intro-fold + * { margin-top: 0; }
+
+/* Fallback for browsers without :has() (Firefox older, etc.) */
+@supports not selector(:has(*)) {
+    main > section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
