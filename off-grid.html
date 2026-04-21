@@ -200,8 +200,27 @@
                         <h4 class="off-subhead off-sub-mint">🏏 Live scorecards — my two teams</h4>
                         <div class="score-tile-row">
                             <a href="https://www.espncricinfo.com/cricket-teams/india-6" target="_blank" rel="noopener" class="score-tile score-tile-india">
+                                <div class="score-crest" aria-hidden="true">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="indFlag" x1="0" x2="0" y1="0" y2="1">
+                                                <stop offset="0%"  stop-color="#ff9933"/>
+                                                <stop offset="50%" stop-color="#ffffff"/>
+                                                <stop offset="100%" stop-color="#138808"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M50 8 L90 26 V50 C90 74 72 88 50 94 C28 88 10 74 10 50 V26 Z" fill="url(#indFlag)" stroke="#000080" stroke-width="1.5"/>
+                                        <circle cx="50" cy="50" r="9" fill="none" stroke="#000080" stroke-width="1.5"/>
+                                        <g stroke="#000080" stroke-width="0.6" fill="none">
+                                            <line x1="50" y1="41" x2="50" y2="59"/>
+                                            <line x1="41" y1="50" x2="59" y2="50"/>
+                                            <line x1="43.6" y1="43.6" x2="56.4" y2="56.4"/>
+                                            <line x1="56.4" y1="43.6" x2="43.6" y2="56.4"/>
+                                        </g>
+                                        <text x="50" y="76" font-family="Georgia,serif" font-size="7" font-weight="700" fill="#000080" text-anchor="middle">INDIA</text>
+                                    </svg>
+                                </div>
                                 <div class="score-tile-header">
-                                    <span class="score-flag">🇮🇳</span>
                                     <span class="score-name">Team India</span>
                                 </div>
                                 <div class="score-tile-body">
@@ -210,8 +229,20 @@
                                 </div>
                             </a>
                             <a href="https://www.espncricinfo.com/cricket-teams/australia-2" target="_blank" rel="noopener" class="score-tile score-tile-aus">
+                                <div class="score-crest" aria-hidden="true">
+                                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="ausFlag" x1="0" x2="1" y1="0" y2="1">
+                                                <stop offset="0%"  stop-color="#003d1f"/>
+                                                <stop offset="100%" stop-color="#ffb81c"/>
+                                            </linearGradient>
+                                        </defs>
+                                        <path d="M50 8 L90 26 V50 C90 74 72 88 50 94 C28 88 10 74 10 50 V26 Z" fill="url(#ausFlag)" stroke="#003d1f" stroke-width="1.5"/>
+                                        <path d="M50 28 L54 42 L68 42 L57 50 L61 64 L50 56 L39 64 L43 50 L32 42 L46 42 Z" fill="#ffffff" stroke="#003d1f" stroke-width="0.5"/>
+                                        <text x="50" y="80" font-family="Georgia,serif" font-size="6.5" font-weight="700" fill="#ffffff" text-anchor="middle">AUSTRALIA</text>
+                                    </svg>
+                                </div>
                                 <div class="score-tile-header">
-                                    <span class="score-flag">🇦🇺</span>
                                     <span class="score-name">Team Australia</span>
                                 </div>
                                 <div class="score-tile-body">
@@ -220,6 +251,35 @@
                                 </div>
                             </a>
                         </div>
+
+                        <h4 class="off-subhead off-sub-green">📊 The greats — my personal XI</h4>
+                        <div class="cricket-greats">
+                            <div class="cricket-col">
+                                <h5>🇮🇳 India</h5>
+                                <ul>
+                                    <li>Sachin Tendulkar</li>
+                                    <li>Rahul Dravid</li>
+                                    <li>Sunil Gavaskar</li>
+                                    <li>Kapil Dev</li>
+                                    <li>Anil Kumble</li>
+                                    <li>Virat Kohli</li>
+                                    <li>MS Dhoni</li>
+                                </ul>
+                            </div>
+                            <div class="cricket-col">
+                                <h5>🇦🇺 Australia</h5>
+                                <ul>
+                                    <li>Ricky Ponting</li>
+                                    <li>Steve Waugh</li>
+                                    <li>Mark Waugh</li>
+                                    <li>Shane Warne</li>
+                                    <li>Glenn McGrath</li>
+                                    <li>Adam Gilchrist</li>
+                                    <li>Allan Border</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <p class="off-note">When India plays Australia, I don't pick. I just watch.</p>
                     </div>
                 </details>
@@ -334,7 +394,7 @@
                         <div class="movie-marquee-row">
                             <div class="movie-marquee movie-sholay">
                                 <div class="movie-poster">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Sholay_poster.jpg/320px-Sholay_poster.jpg"
+                                    <img src="assets/off-grid/sholay.jpg"
                                          alt="Sholay (1975) theatrical release poster"
                                          loading="lazy">
                                 </div>
@@ -347,7 +407,7 @@
                             </div>
                             <div class="movie-marquee movie-godfather">
                                 <div class="movie-poster">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/Godfather_ver1.jpg/320px-Godfather_ver1.jpg"
+                                    <img src="assets/off-grid/godfather.jpg"
                                          alt="The Godfather (1972) theatrical release poster"
                                          loading="lazy">
                                 </div>
@@ -378,7 +438,7 @@
                         <div class="quote-card-row">
                             <figure class="quote-card quote-gandhi">
                                 <div class="quote-card-portrait portrait-photo">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Portrait_Gandhi.jpg/240px-Portrait_Gandhi.jpg"
+                                    <img src="assets/off-grid/gandhi.jpg"
                                          alt="Mahatma Gandhi portrait (public domain)"
                                          loading="lazy" width="240" height="240">
                                 </div>
@@ -390,7 +450,7 @@
 
                             <figure class="quote-card quote-mlk">
                                 <div class="quote-card-portrait portrait-photo">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Martin_Luther_King%2C_Jr..jpg/240px-Martin_Luther_King%2C_Jr..jpg"
+                                    <img src="assets/off-grid/mlk.jpg"
                                          alt="Martin Luther King Jr. (public domain)"
                                          loading="lazy" width="240" height="240">
                                 </div>
@@ -541,5 +601,6 @@
 </footer>
 
 <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    <script src="assets/accordion-scroll.js" defer></script>
 </body>
 </html>

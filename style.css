@@ -3142,3 +3142,101 @@ main {
 
 /* Retire the now-unused .movie-title-card block */
 .movie-title-card { display: none; }
+
+/* =================================================================
+   Cricket card — crests + greats-list + accordion scroll fix
+   ================================================================= */
+
+/* Team crest shields inside score-tiles */
+.score-crest {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+.score-crest svg {
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    transition: transform .25s;
+}
+.score-tile:hover .score-crest svg {
+    transform: scale(1.08) rotate(-2deg);
+}
+.score-tile .score-tile-header {
+    justify-content: center;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Greats list — two columns side-by-side */
+.cricket-greats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin: 1rem 0 1.25rem;
+}
+.cricket-col {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+}
+.cricket-col h5 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 0.65rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--border-subtle);
+}
+.cricket-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.cricket-col li {
+    padding: 0.3rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.04);
+}
+.cricket-col li:last-child { border-bottom: 0; }
+.cricket-col:first-child h5 { color: #ff9544; }
+.cricket-col:last-child h5  { color: #ffd166; }
+
+@media (max-width: 520px) {
+    .cricket-greats { grid-template-columns: 1fr; }
+}
+
+/* =================================================================
+   ACCORDION SCROLL FIX
+   When clicking Cricket (or any other short card) that sits BELOW an
+   open longer card, the exclusive-accordion behavior closes the long
+   one and the browser's scroll anchoring sometimes mis-tracks, leaving
+   the newly-opened short content out of view.
+
+   Fix: give every fold a scroll-margin so when it's scrolled into view
+   it lands below the sticky nav, and enable overflow-anchor so the
+   summary stays in view when the layout shifts above it.
+   ================================================================= */
+.off-passion-fold,
+.action-fold {
+    scroll-margin-top: 80px;  /* accounts for sticky site-nav */
+    overflow-anchor: auto;
+}
+.off-passion-fold > summary,
+.action-fold > summary {
+    scroll-margin-top: 80px;
+}
+
+/* Ensure the document itself allows anchor-preserving scrolls */
+html { overflow-anchor: auto; }
+body { overflow-anchor: auto; }
+
+/* When a details opens, browsers don't auto-scroll. The scroll-jump
+   comes from the PRIOR open details closing (height collapse).
+   overflow-anchor: auto on body preserves the clicked summary in view. */
