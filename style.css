@@ -3268,3 +3268,27 @@ main > section + section {
         padding-bottom: 2rem;
     }
 }
+
+/* =================================================================
+   FORCEFUL spacing collapse for grid-intro-fold layout
+   Prior rule used :has() which is supported but may have been
+   overridden by the shorthand .section { padding: 4rem 0 3rem; }.
+   Use !important shorthand to win definitively.
+   ================================================================= */
+main > section:has(> .container-narrow > .grid-intro-fold),
+main > section:has(.grid-intro-fold) {
+    padding: 1.5rem 0 0 !important;
+}
+main > section:has(.grid-intro-fold) + section {
+    padding: 1rem 0 3rem !important;
+}
+/* Collapse margin on the section-heading inside the posts section */
+main > section:has(.grid-intro-fold) + section .section-heading {
+    margin-bottom: 1.5rem;
+    margin-top: 0 !important;
+}
+/* Also kill any margin on the .grid-intro-fold itself definitively */
+details.grid-intro-fold {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
