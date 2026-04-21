@@ -2132,3 +2132,13 @@ main {
     border-radius: 2px;
     opacity: 0.85;
 }
+
+/* Gujarati shayari block — proper font stack + slightly smaller size for longer verse */
+.off-shayari-gu {
+    font-family: 'Noto Serif Gujarati', 'Shruti', 'Lohit Gujarati', 'Segoe UI', serif;
+    font-size: 1.05rem;
+    line-height: 2.1;
+    letter-spacing: 0.005em;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
