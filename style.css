@@ -2154,3 +2154,82 @@ main {
     padding-right: 1rem;
     letter-spacing: 0.02em;
 }
+
+/* =================== YOUTUBE LIVE TILE (Choir card) =================== */
+.yt-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 260px;
+    margin: 1.5rem auto 0.5rem;
+    padding: 1.25rem;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 0, 0.12), transparent 70%),
+        linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.yt-tile:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: #FF0000;
+    box-shadow: 0 0 32px rgba(255, 0, 0, 0.35);
+}
+.yt-tile-live {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: #ff6b6b;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+.yt-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #FF0000;
+    box-shadow: 0 0 8px #FF0000;
+    animation: yt-live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes yt-live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%      { opacity: 0.5; transform: scale(1.25); }
+}
+.yt-play {
+    width: 72px;
+    height: 52px;
+    filter: drop-shadow(0 0 18px rgba(255, 0, 0, 0.55));
+    transition: transform .25s;
+}
+.yt-tile:hover .yt-play {
+    transform: scale(1.1);
+}
+.yt-tile-caption {
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+.yt-tile-caption strong {
+    display: block;
+    color: #fff;
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+}
+.yt-tile-caption span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+}
