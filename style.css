@@ -2813,3 +2813,207 @@ main {
     .action-summary-h2 { font-size: 1.2rem; }
     .action-body { padding: 1.25rem 1rem 1.5rem; }
 }
+
+/* =================================================================
+   BIBLE TILE (Catholic daily readings) + side-by-side with YouTube
+   ================================================================= */
+.choir-tile-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 0.5rem;
+    justify-items: center;
+    max-width: 560px;
+}
+.choir-tile-row .yt-tile { margin: 0; }
+
+.bible-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 260px;
+    padding: 1.25rem;
+    background:
+        radial-gradient(circle at 50% 40%, rgba(212, 169, 97, 0.12), transparent 70%),
+        linear-gradient(135deg, #1a1308 0%, #0a0604 100%);
+    border: 1px solid rgba(212, 169, 97, 0.3);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s, border-color .25s;
+}
+.bible-tile:hover {
+    transform: translateY(-3px) scale(1.02);
+    border-color: #d4a961;
+    box-shadow: 0 0 32px rgba(212, 169, 97, 0.3);
+}
+.bible-tile-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: #d4a961;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-start;
+}
+.bible-cross {
+    font-size: 1rem;
+    color: #d4a961;
+    line-height: 1;
+}
+.bible-verse-icon {
+    width: 68px;
+    height: 68px;
+    filter: drop-shadow(0 0 14px rgba(212, 169, 97, 0.35));
+    transition: transform .3s;
+}
+.bible-verse-icon svg { width: 100%; height: 100%; }
+.bible-tile:hover .bible-verse-icon { transform: scale(1.08) rotate(2deg); }
+.bible-tile-caption {
+    text-align: center;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+}
+.bible-tile-caption strong {
+    display: block;
+    color: #f0e4c5;
+    font-size: 0.92rem;
+    margin-bottom: 0.15rem;
+}
+.bible-tile-caption span {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+}
+
+/* =================================================================
+   ACCORDION AFFORDANCE — make it obvious what's clickable
+   Applies to both OffGrid passion folds and ActionGrid section folds
+   ================================================================= */
+
+/* Pulse the chevron so it draws the eye */
+.off-passion-chevron,
+.action-chevron {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid currentColor;
+    border-radius: 40px;
+    background: rgba(0, 240, 255, 0.04);
+    transition: transform .3s ease, background .2s, box-shadow .2s;
+    animation: fold-hint-pulse 2.6s ease-in-out infinite;
+    white-space: nowrap;
+}
+.action-chevron {
+    background: rgba(255, 149, 68, 0.08);
+}
+
+/* Add the "Tap to expand" / "Close" text via ::before on the chevron */
+.off-passion-chevron::before,
+.action-chevron::before {
+    content: "Tap to expand";
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.off-passion-fold[open] .off-passion-chevron::before,
+.action-fold[open] .action-chevron::before {
+    content: "Close";
+}
+
+/* When open, stop the pulse and drop the ring background */
+.off-passion-fold[open] .off-passion-chevron,
+.action-fold[open] .action-chevron {
+    animation: none;
+    background: transparent;
+    border-color: transparent;
+    opacity: 0.7;
+}
+
+/* Hover state on whole summary: lift a touch, glow the chevron */
+.off-passion-fold:not([open]):hover .off-passion-chevron,
+.action-fold:not([open]):hover .action-chevron {
+    background: rgba(0, 240, 255, 0.12);
+    box-shadow: 0 0 14px var(--card-glow, rgba(0, 240, 255, 0.3));
+}
+.action-fold:not([open]):hover .action-chevron {
+    background: rgba(255, 149, 68, 0.18);
+    box-shadow: 0 0 14px rgba(255, 149, 68, 0.3);
+}
+
+@keyframes fold-hint-pulse {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0.9; }
+    50%      { transform: translateY(-1px) scale(1.04); opacity: 1; }
+}
+
+/* Rotation still applied to the triangle character inside */
+.off-passion-fold[open] .off-passion-chevron,
+.action-fold[open] .action-chevron {
+    /* keep rotation behavior — chevron char rotates via the container's transform */
+}
+
+/* Make the whole summary row feel unambiguously clickable on hover */
+.off-passion-summary,
+.action-fold .action-summary {
+    position: relative;
+}
+.off-passion-summary::after,
+.action-fold .action-summary::after {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    right: 1.5rem;
+    bottom: 0.35rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--card-accent, var(--accent)), transparent);
+    opacity: 0;
+    transition: opacity .2s;
+}
+.action-fold .action-summary::after {
+    background: linear-gradient(90deg, transparent, var(--grid-action), transparent);
+}
+.off-passion-fold:not([open]):hover .off-passion-summary::after,
+.action-fold:not([open]):hover .action-summary::after {
+    opacity: 0.5;
+}
+
+@media (max-width: 640px) {
+    .off-passion-chevron::before,
+    .action-chevron::before {
+        content: "Tap";
+    }
+    .off-passion-fold[open] .off-passion-chevron::before,
+    .action-fold[open] .action-chevron::before {
+        content: "Close";
+    }
+}
+
+/* Override prior rotation — the text-change carries the state signal instead */
+.off-passion-fold[open] .off-passion-chevron,
+.action-fold[open] .action-chevron {
+    transform: none !important;
+}
+/* Hide the raw ▸ character inside the pill — ::before provides the label */
+.off-passion-chevron,
+.action-chevron {
+    font-size: 0;  /* hides the ▸ char */
+}
+.off-passion-chevron::before,
+.action-chevron::before {
+    font-size: 0.68rem;  /* restore size for the ::before pseudo text */
+}
