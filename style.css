@@ -2142,3 +2142,15 @@ main {
     text-align: center;
     padding: 1.5rem 1rem;
 }
+
+/* Attribution line inside a shayari block (right-aligned italic, muted) */
+.off-shayari-attr {
+    display: block;
+    text-align: right;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+    padding-right: 1rem;
+    letter-spacing: 0.02em;
+}
