@@ -1,0 +1,36 @@
+name: BreachedGrid Ticker
+
+on:
+  schedule:
+    # Daily at 05:00 UTC = 01:00 ET — one hour before the today-in-security run
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ticker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Refresh breach ticker (HIBP + BleepingComputer)
+        run: python automation/breach_ticker.py
+        continue-on-error: true
+
+      - name: Commit changes
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add breached-grid.html automation/breach_ticker_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(breached): daily ticker refresh $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No ticker changes today."
+          fi
