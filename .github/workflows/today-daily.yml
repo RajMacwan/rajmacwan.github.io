@@ -29,7 +29,7 @@ jobs:
         run: |
           git config user.name "macwangrid-bot"
           git config user.email "bot@macwangrid.com"
-          git add index.html wire-grid.html automation/threat_state.json
+          git add index.html breached-grid.html automation/threat_state.json
           if ! git diff --cached --quiet; then
             git commit -m "chore(today): daily brief $(date -u +%Y-%m-%d)"
             git push

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreachedGrid — Breach News Across the Wire — MacwanGrid</title>
+    <meta name="description" content="Weekly reflections on the largest publicly-disclosed data breaches. Attacker, vector, impact, and what each incident means for your stack — curated by Raj Macwan.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BreachedGrid — Breach News Across the Wire">
+    <meta property="og:description" content="Weekly reflections on major publicly-disclosed breaches. Attacker, vector, impact, takeaway.">
+    <meta property="og:site_name" content="MacwanGrid">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://macwangrid.com/breached-grid.html">
+    <link rel="alternate" type="application/rss+xml" title="BreachedGrid RSS" href="breached-grid-feed.xml">
+
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="action-grid.html">ActionGrid</a></li>
+            <li><a href="breached-grid.html" class="active">BreachedGrid</a></li>
+            <li><a href="patch-grid.html">PatchGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="grid-banner grid-banner-breached">
+    <div class="container-narrow">
+        <span class="grid-label">BREACHEDGRID · Breach Intel · Weekly Reflections</span>
+        <h1>Breach news across the wire.</h1>
+        <p class="grid-lede">
+            A running log of the largest publicly-disclosed data breaches — victim, vector,
+            impact, attribution, and what each incident means for practitioners. Updated weekly.
+            Sources are public disclosures, SEC 8-Ks, and authority announcements; my notes are
+            opinions, not official analysis.
+        </p>
+        <div style="margin-top: 1.5rem;">
+            <a href="#meter" class="btn btn-secondary">Threat meter ↓</a>
+            <a href="breached-grid-feed.xml" class="btn btn-secondary">RSS ↗</a>
+            <a href="action-grid.html" class="btn btn-primary" style="background: var(--grid-action); color: #0a0a0f;">If this just happened to you → ActionGrid</a>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+
+            <!-- =========================================
+                 THREAT METER
+                 ========================================= -->
+            <div id="meter">
+                <!-- BREACHED_METER_START -->
+            <a href="#" class="threat-meter meter-level-yellow" style="cursor: default;" title="Current threat level — click for live breach intel">
+                <div class="meter-info">
+                    <div class="meter-level">Threat Level</div>
+                    <div class="meter-label">YELLOW</div>
+                </div>
+                <div class="meter-gauge">
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                    <span class="meter-seg"></span>
+                </div>
+                <div class="meter-text">
+                    <strong>Heightened activity.</strong>
+                    <small>Above-average KEV adds this week. Watch your management-plane exposure. · KEV adds 7d: 11 · ransomware-linked: 0 · updated 2026-04-21</small>
+                </div>
+            </a>
+            <!-- BREACHED_METER_END -->
+            </div>
+
+            <!-- =========================================
+                 FILTER TAGS (static for now)
+                 ========================================= -->
+            <div style="margin: 2.5rem 0 1rem; color: var(--text-muted); font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;">
+                Filter by vector
+            </div>
+            <div class="accordion-tags" style="margin-bottom: 2rem;">
+                <span class="accordion-tag vector-ransomware">Ransomware</span>
+                <span class="accordion-tag vector-supply">Supply Chain</span>
+                <span class="accordion-tag vector-vuln">Vuln Chain</span>
+                <span class="accordion-tag vector-insider">Insider</span>
+                <span class="accordion-tag vector-misconfig">Misconfig</span>
+            </div>
+
+            <!-- =========================================
+                 BREACH LOG — ACCORDION BY MONTH
+                 ========================================= -->
+            <div class="section-heading">
+                <span class="eyebrow">Breach Log</span>
+                <h2>Across the wire.</h2>
+                <p class="section-lede">
+                    Expand a month to see the week-by-week entries. Each entry links to the
+                    primary disclosure and includes my 200-400 word take on what it means for
+                    anyone defending a similar stack.
+                </p>
+            </div>
+
+            <!-- BREACHED_LOG_START -->
+            <div class="accordion-group">
+                <details class="accordion is-new">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-04-15] · Delta Medical Network</span>
+                        <span class="accordion-header-meta">Healthcare · 6.1M patient records</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Delta Medical Network — 14-hospital regional system, ~28,000 employees</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Healthcare</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">6.1M patient records · names, DOB, SSN, diagnosis codes, partial insurance claims data</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Ransomware — Citrix NetScaler appliance compromised via known CVE, lateral movement to VMware ESXi hosts, encryption of clinical file shares and Epic backup volumes</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">RansomHub affiliate (self-claimed on leak site)</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">HHS OCR breach portal filing; follow-up 8-K from parent holding company</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>If you run a hospital system and you are still operating with Epic recovery that lives on the same VMware cluster as production, this breach is an indictment of your backup architecture, not a surprise attack. The Citrix entry point is a recurring story — the appliance was a patch behind, and the attackers almost certainly got in through something that had been in CISA KEV for months. I would not waste time on the ransomware narrative. The real question is why an internet-facing NetScaler could reach ESXi management on TCP 443 without a jump host, and why the backup repository credentials were domain-joined.</p>
+                        <p>Three things to audit this week. First, pull your NetScaler, Ivanti, Fortinet, and Palo Alto appliance inventory against KEV and confirm patch-lag in days, not weeks — see <a href="../blog/kev-as-backlog.html">KEV as backlog</a> for how I structure that list. Second, confirm that your Veeam, Rubrik, or Cohesity proxies cannot be authenticated-to with the same service account that runs daily domain operations; if the ransomware operator pivots from vCenter to backup in one hop, your RTO is fiction. Third, if you are in healthcare, run the tabletop where Epic Hyperspace is offline for 72 hours and your downtime procedures are paper — most clinical directors I have talked to have not rehearsed past hour 12.</p>
+                        <p>The OCR fine will land in 2027. The operational cost — diverted ambulances, cancelled surgeries, locum staffing — is already in the tens of millions. If your cyber-insurance renewal is this quarter, expect the carrier to ask for proof of immutable backups and out-of-band recovery networks. Have the diagrams ready.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-ransomware">Ransomware</span>
+                            <span class="accordion-tag">Healthcare</span>
+                            <span class="accordion-tag">VMware</span>
+                            <span class="accordion-tag">Citrix</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-04-08] · Corestack Cloud</span>
+                        <span class="accordion-header-meta">SaaS · ~200 downstream tenants</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Corestack Cloud — mid-market observability SaaS, ~1,800 paying customers</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">SaaS / DevOps tooling</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">API keys and OAuth tokens scraped from ~200 customer tenants over 11 days — primarily AWS IAM access keys, GitHub PATs, Datadog keys</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Supply-chain — malicious version of <code>@corestack/agent-sdk</code> published to npm after typosquat on a maintainer 2FA recovery email; postinstall script exfiltrated env vars to Cloudflare Worker under attacker control</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">Unattributed; TTPs consistent with the npm-targeting cluster active since mid-2025</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">Vendor blog post, coordinated with GitHub Security Lab; CISA advisory AA26-099A</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>The failure mode here is the one I keep flagging in vendor reviews: the maintainer account had 2FA, but the recovery email still pointed at a personal Gmail from 2019. npm token compromise is the oldest story in the supply-chain playbook, and it still works because most SaaS shops do not gate publish with hardware-backed attestation. If your build pipeline installs anything via <code>npm</code> or <code>pip</code> without a lockfile pin plus a cosigned provenance check, you are one typosquat away from being entry 201 on this list.</p>
+                        <p>For defenders, the concrete move this week is to pull every CI/CD runner's outbound egress log for the last 30 days and look for calls to newly-registered Cloudflare Workers, Vercel functions, and ngrok tunnels. That is where postinstall beaconing hides. Second, rotate every long-lived cloud credential that sat in an environment variable on a build runner — if you cannot produce the rotation timestamp for your GitHub Actions <code>AWS_ACCESS_KEY_ID</code> in the last 90 days, that is your remediation. Third, this is exactly the pattern <a href="../blog/supply-chain-breach-your-responsibilities.html">supply-chain breach — your responsibilities</a> is about: you do not get to point at the vendor. Your AWS root account got touched because <em>you</em> shipped the agent.</p>
+                        <p>On the vendor side, Corestack did two things right and one thing wrong. Right: they pulled the package within 4 hours of the SBOM diff alert firing, and they published per-customer IOC lists (Worker hostnames, hashes). Wrong: their incident page still says "no customer data accessed" while simultaneously telling customers to rotate AWS keys. Those statements cannot both be true. Read the disclosure skeptically.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-supply">Supply chain</span>
+                            <span class="accordion-tag">SaaS</span>
+                            <span class="accordion-tag">npm</span>
+                            <span class="accordion-tag">DevOps</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-04-01] · Anvilford Industries</span>
+                        <span class="accordion-header-meta">Manufacturing / F500 · ~340 GB source code</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Anvilford Industries — Fortune 300 industrial controls manufacturer, ~62,000 employees</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Manufacturing / industrial IoT</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">~340 GB of proprietary firmware source, PLC ladder logic, and three years of JIRA tickets — exfiltrated to a personal Dropbox Business tenant</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Insider — senior firmware engineer, 30-day notice period, used sanctioned Dropbox client on corporate laptop; DLP rules were configured for the old Box tenant after a 2024 migration and never re-baselined for Dropbox</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">Named employee; FBI complaint filed</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">SEC 8-K (Item 1.05) followed by press release; federal indictment unsealed 2026-04-10</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>This is not a sophisticated attack story. It is a DLP hygiene story. A company migrated from Box to Dropbox in 2024, did not rewrite the Netskope / Zscaler policy that blocked <code>*.box.com</code> uploads, and for two years any employee could sync a 340 GB repo to a personal Dropbox over the corporate network at line rate. The exit-interview detection came from Git commit audit logs, not from the DLP stack. Your DLP stack is probably in the same shape.</p>
+                        <p>What to do about it. First, generate a list of every SaaS storage domain your proxy allows — OneDrive, Dropbox, Google Drive, iCloud, Sync.com, pCloud, Mega — and compare it to the list of sanctioned corporate tenants. Anything on the allow list that is not your tenant is an exfil path. Second, for departing employees in code-adjacent roles, enforce a 30-day "read-only + monitor" mode on source-control and artifact repos the moment notice is given; this is a control Okta, Entra, and GitHub Enterprise all support but almost nobody turns on. Third, require device-bound tokens on any GitHub / GitLab access — personal access tokens on a personally-owned device should be architecturally impossible, not merely against policy.</p>
+                        <p>The insider case is the hardest breach to defend because the user is authorized. But a 340 GB transfer over 11 days is not a stealth operation — it is a monitoring gap. If your SIEM cannot alert on "single user, outbound upload &gt; 10 GB/day to a non-corporate domain," fix that before you buy another UEBA product.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-insider">Insider</span>
+                            <span class="accordion-tag">Manufacturing</span>
+                            <span class="accordion-tag">DLP</span>
+                            <span class="accordion-tag">IP theft</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-03-25] · Meridian Financial Partners</span>
+                        <span class="accordion-header-meta">Finance · ~2.4M client records</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Meridian Financial Partners — regional wealth management firm, $48B AUM</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Financial services / wealth management</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">~2.4M client records · names, account numbers, partial SSN, brokerage statement PDFs going back to 2019</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Vuln-chain — internet-facing SSL-VPN appliance (Fortinet FortiGate, firmware 3 minor versions behind) exploited via pre-auth heap overflow, pivoted to Active Directory via cached service-account NTLM hash, exfil over DNS tunneling to avoid the web proxy</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">Unattributed; access broker post on a Russian-speaking forum 11 days before the intrusion</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">SEC 8-K (Item 1.05); FINRA notice; state AG filings in NY, NJ, MA</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>FortiGate, Ivanti Connect Secure, Citrix NetScaler, Palo Alto GlobalProtect. Pick any month in the last three years and one of them has been the entry point for a major breach. The pattern is always the same: appliance sits on the edge, runs a closed-source TLS stack, ships with a pre-auth memory-corruption bug once or twice a year. If your risk register does not treat internet-facing VPN concentrators as a distinct asset class with a 72-hour patch SLA, you are betting the firm on the research cadence of three vendors.</p>
+                        <p>Concrete actions for finance IT leaders. First, inventory every edge appliance by model, firmware, and last-patch date, and post it on the CISO's wall. If the number of appliances more than 30 days behind is non-zero, that is the only metric that matters this week. Second, push Zero Trust Network Access (Cloudflare, Zscaler ZPA, Tailscale Enterprise) for any new remote-access use case; the SSL-VPN box should be on a decommissioning plan, not a refresh cycle. Third, and this is where most firms lose — audit every service account with domain-admin-equivalent privilege that authenticates via NTLM. If you still have NTLM enabled on domain controllers in 2026, you are accepting pass-the-hash as a risk.</p>
+                        <p>The DNS exfil detail is the useful tell. Meridian had a web proxy but no DNS-layer egress control. If your outbound DNS can reach arbitrary upstream resolvers, you cannot claim data-exfil containment. Force all workstations through a logged recursive resolver (Umbrella, Quad9 Enterprise, Pi-hole + sinkhole lists, whatever) and alert on non-standard TXT volume. See <a href="../blog/first-24-hours-breach-response.html">first 24 hours of breach response</a> for the triage order.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-vuln">Vuln-chain</span>
+                            <span class="accordion-tag">Finance</span>
+                            <span class="accordion-tag">Fortinet</span>
+                            <span class="accordion-tag">VPN</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-03-18] · Hartwell County Revenue Dept.</span>
+                        <span class="accordion-header-meta">Government · 1.2M citizen records</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Hartwell County Department of Revenue — U.S. county government, population ~950K</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Government / municipal</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">1.2M citizen tax records · names, SSN, filed return PDFs (2020-2025), direct-deposit routing/account numbers</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Misconfig — AWS S3 bucket holding tax return backups set to "public-read" during a 2023 data-lake migration; never re-locked. Discovered by a security researcher via grayhatwarfare-style indexer and reported responsibly</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">No malicious access confirmed from CloudTrail logs; exposure window of ~27 months</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">State AG press conference; researcher disclosure post; county council hearing</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>Public S3 buckets in 2026 is not an excusable story. AWS has shipped Block Public Access at the account level since 2018 and turned it on by default in 2023 for new buckets. This exposure means Hartwell either inherited buckets from before the default flip and never audited, or someone explicitly overrode BPA for a "temporary" migration. Both are organizational failures, not technical ones.</p>
+                        <p>What to go do. First, in every AWS account you own, confirm that Block Public Access is enforced at the account level — not just the bucket level. Run <code>aws s3control get-public-access-block --account-id ...</code> across every account via Organizations and make the output a monthly auditor artifact. Second, for any bucket holding regulated data (tax, health, PCI), make S3 Object Lock with governance mode the default, not the exception; this would not have prevented the exposure but it would have prevented silent deletion of the audit trail. Third, the CloudTrail-based "no malicious access" claim depends entirely on whether CloudTrail S3 data events were enabled. They almost never are by default because the cost scares people. For sensitive buckets, turn them on and ship to a separate log archive account. Without data events, you are guessing.</p>
+                        <p>The harder lesson for government IT: the researcher found this in a public index. So did everyone else who bothered to look. Assume that any S3 bucket that was ever public has been crawled, and plan your notification strategy accordingly. The 27-month exposure window means the breach happened in 2023; what you are experiencing now is the disclosure, not the compromise.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-misconfig">Misconfig</span>
+                            <span class="accordion-tag">Government</span>
+                            <span class="accordion-tag">AWS S3</span>
+                            <span class="accordion-tag">Cloud posture</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-03-11] · Briarcliff Retail Group</span>
+                        <span class="accordion-header-meta">Retail · ~18M loyalty accounts</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Briarcliff Retail Group — specialty apparel chain, 2,100 stores across US/Canada</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Retail</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">~18M loyalty accounts · email, phone, hashed password (bcrypt), purchase history, birth month, last-4 of payment card</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Third-party — breach originated at a marketing-automation vendor (invented: "Plumeria CDP"); attacker obtained a long-lived API key with read access to the full customer-data-platform export endpoint</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">Unattributed; data offered for sale on BreachForums successor</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">Vendor notified customer on 2026-03-09; Briarcliff 8-K filed 2026-03-12</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>The retail pattern keeps repeating because marketing tech is the softest vendor tier any enterprise integrates with. The CMO signs a CDP contract, the data team wires a full customer export to the vendor's S3 bucket on a nightly job, security reviews the SOC 2 and moves on. Two years later the vendor has a breach and your 18M loyalty records are the headline. The CDP vendor was not the target — your data was.</p>
+                        <p>Do these three things this quarter. First, pull every API key your marketing, analytics, and CDP vendors hold and confirm (a) scope is read-only and least-privilege, (b) rotation cadence is &lt;= 90 days, (c) IP allowlisting is enforced server-side. The 18M number happened because one key with no rotation and no IP allowlist was valid for three years. Second, audit what you are actually sending to these vendors. In my experience, about 40% of the fields flowing to a typical CDP are not needed for the documented use case; you are shipping birth-year and last-4 because the ETL was copy-pasted, not designed. Minimize before you encrypt. Third, if your privacy/GRC function has not classified your marketing vendors as high-criticality third parties, escalate — they hold more PII than most of your actual business systems.</p>
+                        <p>On consumer notification: bcrypt with a cost factor &gt;= 12 is holding up fine, so the password hashes are a low-velocity concern. The high-velocity concern is the "birth month + email + purchase history" combo, which is enough to drive credible phishing against the loyalty base for the next 18 months. Tell your customers to expect it.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-supply">Third-party</span>
+                            <span class="accordion-tag">Retail</span>
+                            <span class="accordion-tag">Marketing tech</span>
+                            <span class="accordion-tag">API keys</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-02-25] · Nyxrate Exchange</span>
+                        <span class="accordion-header-meta">Crypto · ~$142M hot-wallet loss</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Nyxrate Exchange — mid-tier centralized crypto exchange, Singapore-regulated, ~3.4M users</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Crypto / financial services</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">No customer PII exfiltrated; ~$142M in ETH, USDT, and SOL drained from 4 hot wallets over ~90 minutes</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">MFA-bypass phishing of a wallet-operations engineer — Okta AiTM proxy page captured session cookie; attacker imported cookie into controlled browser, approved a pending withdrawal-policy change, then initiated outflows. TOTP was in use; no FIDO2</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">Consistent with Lazarus sub-cluster per on-chain tracing (Chainalysis, TRM Labs)</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">Vendor status page; Singapore MAS statement; on-chain forensics public within 6 hours</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>In 2026, if your high-value operators authenticate with TOTP, you are choosing to be on this list eventually. Adversary-in-the-middle phishing kits (Evilginx, Muraena, and the commercial variants sold in Telegram channels) defeat TOTP and push-notification MFA with a single click from the user. The only thing they do not defeat is origin-bound FIDO2 / WebAuthn, because the cryptographic challenge is tied to the actual domain, not a visual one.</p>
+                        <p>If you operate anything with custody — crypto exchange, fintech treasury, payment processor, stablecoin issuer — your wallet operators, SRE leads, and anyone who can approve an outbound transfer should be on hardware security keys with phishing-resistant auth enforced at the Okta/Entra policy layer, not at the user's discretion. Conditional access policy: <em>require authenticator strength = phishingResistant for this application group</em>. That is a one-line change in Entra ID. In Okta it is the "FIDO2 (WebAuthn)" factor under Authenticator Enrollment with a sign-on policy that excludes all other factors for the privileged group. Do it this week.</p>
+                        <p>Second lesson: the withdrawal-policy change was approved by a single operator. Any movement of custody funds should require M-of-N hardware approval with a time-delay on policy mutations — this is how cold-storage custodians work, and hot-wallet operations should import the same pattern. Fireblocks, Copper, BitGo all support it; in-house wallet software almost never does. Third: Nyxrate's SIEM did not alert on the withdrawal-volume anomaly because the threshold was calibrated to normal daily outflow. Calibrate for 90-minute windows, not 24-hour windows, or the drain finishes before the SOC pages.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-vuln">AiTM phishing</span>
+                            <span class="accordion-tag">Crypto</span>
+                            <span class="accordion-tag">Okta</span>
+                            <span class="accordion-tag">FIDO2</span>
+                        </div>
+                    </div>
+                </details>
+                
+                <details class="accordion">
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-02-18] · Kestrel Forge Manufacturing</span>
+                        <span class="accordion-header-meta">Manufacturing · production halt 9 days</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Kestrel Forge Manufacturing — mid-market auto-parts supplier, 14 plants, ~9,500 employees</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Manufacturing / automotive supply</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">Primarily operational impact — 9-day halt across 6 plants. Data exfil ~280 GB (engineering drawings, HR, email archives); ransom demand $20M in XMR</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">BlackCat-style ransomware via unpatched VMware vCenter (CVE-2026-21144, unauth RCE disclosed 2026-01-17); attacker reached vCenter because OT and IT VMware clusters shared the same management VLAN</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val">RA World affiliate (self-claimed); BlackCat-derived locker binary</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val">SEC 8-K; customer letters to Tier 1 OEMs; statement via external counsel</span></div>
+                
+                        <h4>What it means for practitioners</h4>
+                        <p>vCenter continues to be the most effective pivot point in enterprise networks because it holds the keys to every VM on the cluster and is rarely segmented from production admin networks. The January 2026 CVE had a public PoC within 10 days of disclosure. Kestrel had 40 days to patch and did not, because the OT organization owned the ESXi hosts running the plant-floor HMIs and the IT organization owned the vCenter, and nobody owned the cross-cutting patch decision.</p>
+                        <p>If you run any manufacturing, utility, or logistics environment with OT under IT-owned virtualization, the ownership gap is the vulnerability. Concrete moves: first, publish a named accountable owner for every vCenter, Hyper-V, and Nutanix cluster — one human, not a team. Second, put vCenter management interfaces on a dedicated admin VLAN reachable only from a PAM jump host (CyberArk, Delinea, Teleport — pick one), and confirm that no plant-floor workstation can reach TCP 443 on any vCenter. Third, for OT specifically, run the IEC 62443 zone/conduit exercise even if you do not have to; the conversation forces the segmentation gaps into a diagram where the CFO can see them.</p>
+                        <p>The $20M demand is a sideshow. The real cost for Kestrel will be the OEM contract penalties for missed JIT deliveries, which in automotive can exceed the ransom by an order of magnitude. If you supply a Tier 1, your contract almost certainly has clauses about production continuity that your security team has never read. Go read them. That is the number you are defending, not the ransom.</p>
+                
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-ransomware">Ransomware</span>
+                            <span class="accordion-tag">Manufacturing</span>
+                            <span class="accordion-tag">VMware</span>
+                            <span class="accordion-tag">OT/IT</span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+            <!-- BREACHED_LOG_END -->
+
+            <div class="section-heading" style="margin-top: 4rem;">
+                <h3>How I write these</h3>
+            </div>
+            <p>
+                Each breach entry is short by design — ~300 words, not a 5,000-word post-mortem.
+                The target reader is a senior IT or security practitioner who will scan ten of
+                these a month and remember the patterns. The goal is signal density over narrative.
+            </p>
+            <p>
+                Every entry includes: <strong>Victim · Industry · Records · Vector · Attribution · Takeaway</strong>.
+                Where the primary source is an SEC 8-K, I link it. Where it's a vendor disclosure, I link that.
+                Where there is no primary source and I'm reading attacker claims on leak sites, I flag it explicitly.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>MacwanGrid</h4>
+                <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                    Practitioner notes from Raj Macwan — VP of IT, MIT scholar, and the operator
+                    behind the DarkPulse Security onion site.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Grids</h4>
+                <ul>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="action-grid.html">ActionGrid</a></li>
+                    <li><a href="breached-grid.html">BreachedGrid</a></li>
+                    <li><a href="patch-grid.html">PatchGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

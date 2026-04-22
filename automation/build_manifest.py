@@ -23,7 +23,7 @@ GRID_LABELS = {
     "grid-pill-lab":     "LabGrid",
     "grid-pill-action":  "ActionGrid",
     "grid-pill-off":     "OffGrid",
-    "grid-pill-wire":    "WireGrid",
+    "grid-pill-breached":    "BreachedGrid",
     "grid-pill-patch":   "PatchGrid",
 }
 

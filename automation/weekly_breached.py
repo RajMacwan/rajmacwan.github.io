@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-weekly_wire.py
-Auto-appends a placeholder "Week of YYYY-MM-DD" entry to WireGrid so the
+weekly_breached.py
+Auto-appends a placeholder "Week of YYYY-MM-DD" entry to BreachedGrid so the
 accordion always shows the current week at the top. You (Raj) fill in the
 actual breach content manually — the workflow just makes sure the scaffold
 is there every Friday.
@@ -13,13 +13,13 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-WIRE = ROOT / "wire-grid.html"
+WIRE = ROOT / "breached-grid.html"
 
-START = "<!-- WIRE_LOG_START -->"
+START = "<!-- BREACHED_LOG_START -->"
 
 def main():
     if not WIRE.exists():
-        print("[skip] wire-grid.html missing.")
+        print("[skip] breached-grid.html missing.")
         return
 
     today = dt.date.today()
@@ -49,7 +49,7 @@ def main():
 
     idx = html.find(START)
     if idx == -1:
-        print("[error] WIRE_LOG_START marker not found.")
+        print("[error] BREACHED_LOG_START marker not found.")
         return
     insert_at = idx + len(START) + 1  # after newline
     # Find indent of first existing <details> to match

@@ -2,8 +2,8 @@
 """
 threat_meter.py
 Computes current threat level from CISA KEV and injects the meter into
-index.html (between <!-- THREAT_METER_START/END -->) and wire-grid.html
-(between <!-- WIRE_METER_START/END -->).
+index.html (between <!-- THREAT_METER_START/END -->) and breached-grid.html
+(between <!-- BREACHED_METER_START/END -->).
 
 Level formula (simple, explainable, tunable):
   score = min(10, kev_adds_7d // 2 + active_zero_days * 2)
@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 AUTO = Path(__file__).resolve().parent
 STATE = AUTO / "threat_state.json"
 INDEX = ROOT / "index.html"
-WIRE = ROOT / "wire-grid.html"
+WIRE = ROOT / "breached-grid.html"
 
 KEV_URL = "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
 
@@ -77,7 +77,7 @@ def compute(kev):
 
 def render(level, headline, body, meta, small_source):
     slug = level.lower()
-    return f'''<a href="wire-grid.html" class="threat-meter meter-level-{slug}" id="threat-meter" title="Current threat level — click for live breach intel">
+    return f'''<a href="breached-grid.html" class="threat-meter meter-level-{slug}" id="threat-meter" title="Current threat level — click for live breach intel">
                 <div class="meter-info">
                     <div class="meter-level">Threat Level</div>
                     <div class="meter-label">{level}</div>
@@ -111,8 +111,8 @@ def main():
         inject(INDEX, "<!-- THREAT_METER_START -->", "<!-- THREAT_METER_END -->", rendered)
     if WIRE.exists():
         # Wire meter uses its own markers; replace with the same rendered block but with static (non-link) behavior
-        wire_rendered = rendered.replace('href="wire-grid.html"', 'href="#"').replace('id="threat-meter"', 'style="cursor: default;"')
-        inject(WIRE, "<!-- WIRE_METER_START -->", "<!-- WIRE_METER_END -->", wire_rendered)
+        wire_rendered = rendered.replace('href="breached-grid.html"', 'href="#"').replace('id="threat-meter"', 'style="cursor: default;"')
+        inject(WIRE, "<!-- BREACHED_METER_START -->", "<!-- BREACHED_METER_END -->", wire_rendered)
 
     STATE.write_text(json.dumps({
         "level": level,

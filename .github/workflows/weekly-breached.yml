@@ -1,4 +1,4 @@
-name: WireGrid Weekly
+name: BreachedGrid Weekly
 
 on:
   schedule:
@@ -19,18 +19,18 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Generate this week's WireGrid entry
-        run: python automation/weekly_wire.py
+      - name: Generate this week's BreachedGrid entry
+        run: python automation/weekly_breached.py
         continue-on-error: true
 
       - name: Commit changes
         run: |
           git config user.name "macwangrid-bot"
           git config user.email "bot@macwangrid.com"
-          git add wire-grid.html automation/wire_state.json || true
+          git add breached-grid.html automation/wire_state.json || true
           if ! git diff --cached --quiet; then
             git commit -m "feat(wire): weekly breach log $(date -u +%Y-%m-%d)"
             git push
           else
-            echo "No new WireGrid entries this week."
+            echo "No new BreachedGrid entries this week."
           fi

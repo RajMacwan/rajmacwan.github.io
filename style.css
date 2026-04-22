@@ -45,7 +45,7 @@
     --grid-lab:     #ffb020;
     --grid-action:  #ff9544;
     --grid-off:     #6b7280;
-    --grid-wire:    #ff5577;
+    --grid-breached:    #ff5577;
     --grid-patch:   #36d399;
 
     /* Grid glows */
@@ -1463,18 +1463,18 @@ main {
     letter-spacing: 0.05em;
 }
 
-/* =================== WireGrid + PatchGrid tile/pill extensions =================== */
-.grid-tile.tile-wire::before  { background: var(--grid-wire); }
+/* =================== BreachedGrid + PatchGrid tile/pill extensions =================== */
+.grid-tile.tile-breached::before  { background: var(--grid-breached); }
 .grid-tile.tile-patch::before { background: var(--grid-patch); }
-.grid-tile.tile-wire:hover  { box-shadow: 0 0 32px rgba(255, 85, 119, 0.4); }
+.grid-tile.tile-breached:hover  { box-shadow: 0 0 32px rgba(255, 85, 119, 0.4); }
 .grid-tile.tile-patch:hover { box-shadow: 0 0 32px rgba(54, 211, 153, 0.4); }
-.grid-tile.tile-wire  .tile-meta, .grid-tile.tile-wire  .tile-icon { color: var(--grid-wire); }
+.grid-tile.tile-breached  .tile-meta, .grid-tile.tile-breached  .tile-icon { color: var(--grid-breached); }
 .grid-tile.tile-patch .tile-meta, .grid-tile.tile-patch .tile-icon { color: var(--grid-patch); }
-.grid-pill-wire  { color: var(--grid-wire);  background: rgba(255, 85, 119, 0.1); border-color: rgba(255, 85, 119, 0.3); }
+.grid-pill-breached  { color: var(--grid-breached);  background: rgba(255, 85, 119, 0.1); border-color: rgba(255, 85, 119, 0.3); }
 .grid-pill-patch { color: var(--grid-patch); background: rgba(54, 211, 153, 0.1); border-color: rgba(54, 211, 153, 0.3); }
-.grid-banner-wire::before  { background: linear-gradient(90deg, transparent, var(--grid-wire),  transparent); }
+.grid-banner-breached::before  { background: linear-gradient(90deg, transparent, var(--grid-breached),  transparent); }
 .grid-banner-patch::before { background: linear-gradient(90deg, transparent, var(--grid-patch), transparent); }
-.grid-banner-wire  .grid-label { color: var(--grid-wire);  border-color: rgba(255, 85, 119, 0.3); }
+.grid-banner-breached  .grid-label { color: var(--grid-breached);  border-color: rgba(255, 85, 119, 0.3); }
 .grid-banner-patch .grid-label { color: var(--grid-patch); border-color: rgba(54, 211, 153, 0.3); }
 
 /* =================== ACCORDION COMPONENT =================== */
@@ -3291,4 +3291,125 @@ main > section:has(.grid-intro-fold) + section .section-heading {
 details.grid-intro-fold {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+}
+
+/* =================================================================
+   BREACHEDGRID — attention-grabbing pulse effects
+   1. Small red dot next to nav link (every page)
+   2. Breathing glow ring on homepage tile
+   3. Pulsing ● NEW tag on latest accordion entry (first 7 days)
+   ================================================================= */
+
+/* ---------------- 1. Nav pulse dot ---------------- */
+/* Applied to every <a href="breached-grid.html"> INSIDE the .site-nav */
+.site-nav a[href="breached-grid.html"],
+.site-nav a[href="../breached-grid.html"] {
+    position: relative;
+    padding-right: 1.4rem !important;  /* room for the dot */
+}
+.site-nav a[href="breached-grid.html"]::after,
+.site-nav a[href="../breached-grid.html"]::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0.35rem;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ff3e5f;
+    box-shadow: 0 0 6px #ff3e5f, 0 0 12px rgba(255, 62, 95, 0.5);
+    animation: breached-nav-pulse 1.8s ease-in-out infinite;
+}
+@keyframes breached-nav-pulse {
+    0%, 100% { opacity: 1;   transform: translateY(-50%) scale(1); }
+    50%      { opacity: 0.4; transform: translateY(-50%) scale(1.4); }
+}
+
+/* ---------------- 2. Homepage tile — breathing glow ---------------- */
+/* Applied to the .tile-breached tile specifically (richer than base hover) */
+.grid-tile.tile-breached {
+    position: relative;
+    overflow: visible;
+    animation: breached-tile-breathe 3.2s ease-in-out infinite;
+}
+@keyframes breached-tile-breathe {
+    0%, 100% {
+        box-shadow:
+            0 0 0 1px rgba(255, 85, 119, 0.15),
+            0 0 12px rgba(255, 85, 119, 0.15);
+    }
+    50% {
+        box-shadow:
+            0 0 0 1px rgba(255, 85, 119, 0.5),
+            0 0 28px rgba(255, 85, 119, 0.35),
+            0 0 60px rgba(255, 62, 95, 0.15);
+    }
+}
+/* Additional pulsing "LIVE" ribbon on the tile */
+.grid-tile.tile-breached::after {
+    content: "● LIVE";
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #ff3e5f;
+    background: rgba(255, 62, 95, 0.08);
+    border: 1px solid rgba(255, 62, 95, 0.4);
+    padding: 0.15rem 0.5rem;
+    border-radius: 40px;
+    animation: breached-tile-live 1.6s ease-in-out infinite;
+    z-index: 2;
+}
+@keyframes breached-tile-live {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.45; }
+}
+
+/* Hover: pause the breathe so hover lift doesn't fight the animation */
+.grid-tile.tile-breached:hover {
+    animation-play-state: paused;
+    box-shadow: 0 0 36px rgba(255, 62, 95, 0.5);
+}
+
+/* ---------------- 3. Newest-entry NEW tag ---------------- */
+/* Applied to the first <details class="accordion"> inside a
+   .breached-newest container. Pulses for 7 days after publication.
+   Markup: <details class="accordion is-new">...</details> */
+.accordion.is-new > summary {
+    position: relative;
+}
+.accordion.is-new > summary::after {
+    content: "● NEW";
+    display: inline-block;
+    margin-left: 0.75rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 40px;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #ff3e5f;
+    background: rgba(255, 62, 95, 0.1);
+    border: 1px solid rgba(255, 62, 95, 0.4);
+    animation: breached-new-tag 1.6s ease-in-out infinite;
+    vertical-align: middle;
+}
+@keyframes breached-new-tag {
+    0%, 100% { opacity: 1;    transform: scale(1); }
+    50%      { opacity: 0.55; transform: scale(1.06); }
+}
+
+/* Reduce motion: respect the user's preference */
+@media (prefers-reduced-motion: reduce) {
+    .site-nav a[href="breached-grid.html"]::after,
+    .site-nav a[href="../breached-grid.html"]::after,
+    .grid-tile.tile-breached,
+    .grid-tile.tile-breached::after,
+    .accordion.is-new > summary::after {
+        animation: none !important;
+    }
 }
