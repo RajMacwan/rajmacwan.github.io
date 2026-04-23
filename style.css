@@ -3623,3 +3623,92 @@ details.grid-intro-fold {
         margin: 0 auto;
     }
 }
+
+/* =================================================================
+   Portrait strips — small circular thumbnails of celebrities
+   Used across OffGrid cards: music, poetry, cricket, movies, ideas
+   ================================================================= */
+.portrait-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(84px, 1fr));
+    gap: 0.85rem 0.5rem;
+    margin: 0.85rem 0 1.25rem;
+    max-width: 100%;
+}
+.portrait-strip.strip-dense {
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+    gap: 0.6rem 0.35rem;
+}
+.pstrip-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+    transition: transform .2s;
+}
+.pstrip-item:hover {
+    transform: translateY(-2px);
+}
+.pstrip-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 2px solid var(--border-default);
+    background: var(--bg-secondary);
+    filter: sepia(8%) contrast(1.03);
+    transition: border-color .2s, filter .2s, box-shadow .2s;
+    display: block;
+}
+.strip-dense .pstrip-img {
+    width: 54px;
+    height: 54px;
+}
+.pstrip-item:hover .pstrip-img {
+    filter: sepia(0%) contrast(1.08);
+    box-shadow: 0 0 12px var(--strip-glow, rgba(0, 240, 255, 0.3));
+}
+/* Per-section accent rings */
+.strip-rose   .pstrip-item:hover .pstrip-img { border-color: #ff5577; --strip-glow: rgba(255,85,119,0.35); }
+.strip-amber  .pstrip-item:hover .pstrip-img { border-color: #ffd166; --strip-glow: rgba(255,209,102,0.35); }
+.strip-violet .pstrip-item:hover .pstrip-img { border-color: #b84dff; --strip-glow: rgba(184,77,255,0.35); }
+.strip-cyan   .pstrip-item:hover .pstrip-img { border-color: #00f0ff; --strip-glow: rgba(0,240,255,0.35); }
+.strip-saffron .pstrip-item:hover .pstrip-img { border-color: #ff9544; --strip-glow: rgba(255,149,68,0.35); }
+.strip-gold   .pstrip-item:hover .pstrip-img { border-color: #ffd166; --strip-glow: rgba(255,209,102,0.35); }
+.strip-red    .pstrip-item:hover .pstrip-img { border-color: #ff3e5f; --strip-glow: rgba(255,62,95,0.35); }
+.strip-green  .pstrip-item:hover .pstrip-img { border-color: #36d399; --strip-glow: rgba(54,211,153,0.35); }
+
+.pstrip-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    max-width: 88px;
+}
+.strip-dense .pstrip-label {
+    font-size: 0.62rem;
+    max-width: 72px;
+}
+
+@media (max-width: 420px) {
+    .portrait-strip { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Cricket team-title labels above portrait strips */
+.cricket-team-title {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin: 1.25rem 0 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px dashed var(--border-subtle);
+}
+.cricket-team-india { color: #ff9544; }
+.cricket-team-aus   { color: #ffd166; }
+
+/* Hide the old cricket-greats two-column layout (portrait strips replace it) */
+.cricket-greats { display: none; }
