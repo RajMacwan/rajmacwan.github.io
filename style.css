@@ -3559,3 +3559,67 @@ details.grid-intro-fold {
 @media (prefers-reduced-motion: reduce) {
     .ticker-dot { animation: none !important; }
 }
+
+/* =================================================================
+   Rafi portrait next to the "Man Re" YouTube tile (Music card)
+   ================================================================= */
+.rafi-tile-row {
+    display: flex;
+    align-items: stretch;
+    gap: 1rem;
+    margin: 1.5rem 0 0.5rem;
+    flex-wrap: wrap;
+}
+.rafi-portrait {
+    flex: 0 0 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 149, 68, 0.10), rgba(255, 209, 102, 0.06));
+    border: 1px solid rgba(255, 209, 102, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 0.85rem 0.65rem;
+    transition: transform .25s, border-color .25s, box-shadow .25s;
+}
+.rafi-portrait:hover {
+    transform: translateY(-2px);
+    border-color: #ffd166;
+    box-shadow: 0 0 24px rgba(255, 209, 102, 0.25);
+}
+.rafi-portrait img {
+    width: 100%;
+    max-width: 136px;
+    height: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 209, 102, 0.35);
+    filter: sepia(12%) saturate(1.05) contrast(1.02);
+    display: block;
+}
+.rafi-caption {
+    margin-top: 0.65rem;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+}
+.rafi-caption strong {
+    display: block;
+    color: #ffd166;
+    font-size: 0.82rem;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.02em;
+}
+.rafi-tile-row .yt-tile {
+    flex: 1 1 320px;
+    margin: 0;
+    max-width: none;
+}
+@media (max-width: 640px) {
+    .rafi-portrait {
+        flex: 1 1 auto;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+}
