@@ -1,11 +1,11 @@
 {
   "level": "RED",
-  "score": 9,
+  "score": 10,
   "headline": "Critical \u2014 surge in progress.",
   "body": "Pronounced uptick in active exploitation. Treat patch windows as incident response.",
   "meta": {
-    "kev_adds_7d": 10,
+    "kev_adds_7d": 14,
     "active_zero_days": 2
   },
-  "updated": "2026-04-24T07:48:15.960001Z"
+  "updated": "2026-04-25T07:02:11.433337Z"
 }
