@@ -145,7 +145,37 @@
 
             <!-- BREACHED_LOG_START -->
             <div class="accordion-group">
-                <details class="accordion is-new">
+
+                <details class="accordion is-new" open>
+                    <summary>
+                        <span class="accordion-header-label">[Week of 2026-05-11] · US gas-station tank gauges — Iran-linked intrusions</span>
+                        <span class="accordion-header-meta">Energy / Retail Fuel · multi-site · CISA AA26-097A</span>
+                    </summary>
+                    <div class="accordion-body">
+                        <div class="fact-row"><span class="fact-key">Victim</span><span class="fact-val">Multiple US gas-station operators — automatic tank gauge (ATG) systems exposed to the internet on Orpak / Gasboy / Veeder-Root and adjacent fuel-management platforms. CNN broke the story 2026-05-15; CISA had warned about the same TTPs five weeks earlier.</span></div>
+                        <div class="fact-row"><span class="fact-key">Industry</span><span class="fact-val">Critical infrastructure — Energy (retail fuel distribution) and adjacent Government Services, Water &amp; Wastewater, and Energy sector targets named in the CISA advisory.</span></div>
+                        <div class="fact-row"><span class="fact-key">Records</span><span class="fact-val">Not a data-exfiltration event — this was an operational technology (OT) intrusion. Attackers manipulated <em>displayed</em> tank-level readings; physical fuel levels and dispensing were not altered in the cases publicly disclosed.</span></div>
+                        <div class="fact-row"><span class="fact-key">Vector</span><span class="fact-val">Internet-exposed ATGs reachable without authentication or with vendor default credentials. Where deeper access was obtained, the group's <strong>IOCONTROL</strong> Linux IoT malware (Claroty Team82 attribution) provides MQTT-based C2, AES-encrypted config, persistence, arbitrary command execution, internal network scan, and self-delete on Linux-based site controllers and payment terminals.</span></div>
+                        <div class="fact-row"><span class="fact-key">Attribution</span><span class="fact-val"><strong>CyberAv3ngers</strong> (aka Shahid Kaveh Group · Microsoft <em>Storm-0784</em> · Dragos <em>Bauxite</em> · Mandiant <em>UNC5691</em> · <em>Hydro Kitten</em> · MITRE ATT&amp;CK <code>G1027</code>) — operating on behalf of Iran's IRGC Cyber-Electronic Command (IRGC-CEC). DOJ statement and the six-agency joint advisory both name the IRGC link directly.</span></div>
+                        <div class="fact-row"><span class="fact-key">Disclosure</span><span class="fact-val"><a href="https://www.cnn.com/2026/05/15/politics/iran-hackers-tank-readers-gas-stations" target="_blank" rel="noopener">CNN exclusive</a> · <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-097a" target="_blank" rel="noopener">CISA AA26-097A</a> (Apr 7, 2026, six-agency joint) · <a href="https://www.ic3.gov/CSA/2026/260407.pdf" target="_blank" rel="noopener">FBI IC3 CSA 260407</a> · Claroty Team82 IOCONTROL technical analysis · Dragos 2026 OT/ICS Year in Review.</span></div>
+
+                        <h4>What it means for practitioners</h4>
+                        <p>This is the same campaign you've been reading about for two years, evolved one rung. CyberAv3ngers started in 2023 with Unitronics PLC defacements on US water utilities — opportunistic, embarrassing, low-effort. In 2024-2025 they added IOCONTROL, which is purpose-built malware for Linux-based OT and IoT devices (not Windows endpoints — pay attention to that). What this week's CNN piece confirms is that they have now moved from <em>defacing PLCs as a propaganda exercise</em> into <em>operational manipulation of safety-relevant readings inside US fuel infrastructure</em>. Dragos's 2026 year-in-review used the phrase "moving beyond pre-positioning to actively mapping control loops" — that's exactly what this is.</p>
+                        <p>The intrusion vector remains embarrassingly old: ATGs reachable on the open internet, either with no auth or with the documented vendor default. If you operate, service, or insure retail fuel infrastructure, three things this week. <strong>One:</strong> Shodan-query your own footprint for ATG protocols on TCP/10001 and Orpak/Gasboy/Veeder-Root signatures, then take everything you find off the public internet — VPN-only, period. <strong>Two:</strong> Pull the IOCONTROL IOCs from the <a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-097a" target="_blank" rel="noopener">CISA AA26-097A appendix</a> and run them across any Linux-based site controller, payment terminal, or router (Teltonika, Phoenix Contact, Red Lion in particular). <strong>Three:</strong> Validate that the safety case for your tank-leak detection does not depend solely on the digital reading at the ATG — environmental sensors, ground-water monitoring, and reconciliation against dispenser totals are independent controls and you should know which of them you actually have.</p>
+                        <p>The bigger reframe: stop treating fuel-management systems as IT. They are OT. They sit alongside the same threat model as water-treatment SCADA — small operator, lean budget, vendor-default everything, internet-reachable because someone wanted remote convenience. Iran has just demonstrated for the second straight year that this is the soft underbelly. The next adversary to mature here is unlikely to be Iran.</p>
+
+                        <div class="accordion-tags">
+                            <span class="accordion-tag vector-vuln">Vuln + Default Creds</span>
+                            <span class="accordion-tag">OT / ICS</span>
+                            <span class="accordion-tag">Iran (IRGC-CEC)</span>
+                            <span class="accordion-tag">Critical Infra</span>
+                            <span class="accordion-tag">Fuel / Energy</span>
+                            <span class="accordion-tag">IOCONTROL</span>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="accordion">
                     <summary>
                         <span class="accordion-header-label">[Week of 2026-04-15] · Delta Medical Network</span>
                         <span class="accordion-header-meta">Healthcare · 6.1M patient records</span>
