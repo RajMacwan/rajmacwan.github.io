@@ -360,6 +360,15 @@
     "date": ""
   },
   {
+    "slug": "mid-year-threat-landscape",
+    "url": "blog/mid-year-threat-landscape.html",
+    "title": "Mid-Year Threat Landscape: What's Actually Changed in 2026",
+    "summary": "The perimeter didn't die in 2026 \u2014 it just got a new name. We're now calling it \"identity,\" and every practitioner I talk with is fighting the same war: attackers who no longer need to land a payload because they log in with a valid sess...",
+    "pill_class": "grid-pill-intel",
+    "grid": "IntelGrid",
+    "date": ""
+  },
+  {
     "slug": "mit-week-1",
     "url": "blog/mit-week-1.html",
     "title": "MIT Week 1: Back in a Classroom After 20 Years",

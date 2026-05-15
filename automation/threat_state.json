@@ -1,11 +1,11 @@
 {
-  "level": "RED",
-  "score": 8,
-  "headline": "Critical \u2014 surge in progress.",
-  "body": "Pronounced uptick in active exploitation. Treat patch windows as incident response.",
+  "level": "GREEN",
+  "score": 1,
+  "headline": "Calm across the wire.",
+  "body": "Background-noise KEV adds. No active-exploitation surges.",
   "meta": {
-    "kev_adds_7d": 9,
-    "active_zero_days": 2
+    "kev_adds_7d": 2,
+    "active_zero_days": 0
   },
-  "updated": "2026-04-22T07:20:08.090028Z"
+  "updated": "2026-05-15T08:38:23.110817Z"
 }
