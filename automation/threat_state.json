@@ -1,11 +1,11 @@
 {
-  "level": "ORANGE",
-  "score": 7,
-  "headline": "High \u2014 active campaigns.",
-  "body": "Exploitation campaigns underway. Validate patch status on internet-facing assets.",
+  "level": "BLUE",
+  "score": 2,
+  "headline": "Elevated but steady.",
+  "body": "Normal breach cadence. Routine patch discipline sufficient.",
   "meta": {
-    "kev_adds_7d": 7,
-    "active_zero_days": 2
+    "kev_adds_7d": 5,
+    "active_zero_days": 0
   },
-  "updated": "2026-06-03T10:42:17.643667Z"
+  "updated": "2026-06-04T09:42:22.705569Z"
 }
