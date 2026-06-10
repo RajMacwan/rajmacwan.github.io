@@ -1,0 +1,180 @@
+{
+  "polled": "2026-06-10T21:08:26.256629Z",
+  "services": {
+    "cloudflare": {
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Network Connectivity issues in Western North America impacting R2 and Containers",
+      "fetched": true
+    },
+    "fastly": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "vercel": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "digitalocean": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "heroku": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "linode": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "[Fragnesia] Linux Privilege Escalation Vulnerability",
+      "fetched": true
+    },
+    "github": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "gitlab": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "atlassian": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "notion": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "zoom": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "dropbox": {
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Shared content downloads are degraded",
+      "fetched": true
+    },
+    "openai": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "anthropic": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "huggingface": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "together": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "mistral": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "okta": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "auth0": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "onepassword": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "crowdstrike": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "datadog": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "stripe": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "plaid": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "square": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "twilio": {
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "SMS Delivery Failures from Twilio Long Codes to Orange Polska Poland",
+      "fetched": true
+    },
+    "sendgrid": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "discord": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
+      "fetched": true
+    },
+    "pagerduty": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    }
+  },
+  "html_written": "2026-06-10T21:08:26.256654Z"
+}
