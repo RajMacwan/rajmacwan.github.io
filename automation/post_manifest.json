@@ -27,6 +27,15 @@
     "date": ""
   },
   {
+    "slug": "ai-ops-six-months-in",
+    "url": "blog/ai-ops-six-months-in.html",
+    "title": "Six Months of Production AI in IT Ops: What Worked",
+    "summary": "Six months ago I greenlit a handful of LLM-backed workflows into production IT ops. Not a pilot, not a lab \u2014 actual tickets, actual changes, actual on-call. I promised myself I would write an honest retrospective at the half-year mark, w...",
+    "pill_class": "grid-pill-ai",
+    "grid": "AIGrid",
+    "date": ""
+  },
+  {
     "slug": "ai-tier1-soc-triage-six-months",
     "url": "blog/ai-tier1-soc-triage-six-months.html",
     "title": "AI Tier-1 SOC Triage: Six Months In",
