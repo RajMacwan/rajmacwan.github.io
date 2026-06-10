@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status — Is It Just Me, Or Is It Broken? — MacwanGrid</title>
+    <meta name="description" content="Live status board for major SaaS, cloud, AI, identity, payments and dev-comms services. Polled directly from official Statuspage feeds every 10 minutes.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Status · MacwanGrid">
+    <meta property="og:description" content="Live status of ~30 major SaaS, cloud, AI, identity, payments and dev-comms services. Polled from official Statuspage feeds every 10 minutes.">
+    <meta property="og:site_name" content="MacwanGrid">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://macwangrid.com/status.html">
+
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="threat-grid.html">ThreatGrid</a></li>
+            <li><a href="infra-grid.html">InfraGrid</a></li>
+            <li><a href="dark-grid.html">DarkGrid</a></li>
+            <li><a href="ai-grid.html">AIGrid</a></li>
+            <li><a href="intel-grid.html">IntelGrid</a></li>
+            <li><a href="lab-grid.html">LabGrid</a></li>
+            <li><a href="action-grid.html">ActionGrid</a></li>
+            <li><a href="breached-grid.html">BreachedGrid</a></li>
+            <li><a href="patch-grid.html">PatchGrid</a></li>
+            <li><a href="off-grid.html">OffGrid</a></li>
+            <li><a href="status.html" class="nav-status active">Status</a></li>
+            <li><a href="contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="grid-banner grid-banner-status">
+    <div class="container-narrow">
+        <span class="grid-label">STATUS · LIVE SERVICE DASHBOARD · POLLED EVERY 10 MIN</span>
+        <h1>Is it just me, or is it broken?</h1>
+        <p class="grid-lede">
+            A live status board for the SaaS, cloud, AI, identity, payments and dev-comms
+            services people actually ask me about. Polled directly from each vendor's
+            official Statuspage feed — no crowdsourced noise, no scraping. If it says
+            <strong>down</strong>, the vendor itself is saying down.
+        </p>
+        <div class="status-meta">
+            <span class="status-updated">last refresh: loading…</span>
+            <span class="status-sources">29 services · 6 categories · Statuspage API only</span>
+        </div>
+    </div>
+</section>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+
+            <!-- STATUS_BANNER_START -->
+            <div class="status-banner status-banner-op">
+                <div class="banner-pulse"><span class="banner-dot banner-dot-op"></span></div>
+                <div class="banner-text">
+                    <strong>Loading status…</strong>
+                    <small>Fetching from upstream Statuspage feeds. First refresh lands within 10 minutes.</small>
+                </div>
+            </div>
+            <!-- STATUS_BANNER_END -->
+
+            <p class="status-howto">
+                Tap a category to expand. Categories with anything not-green auto-expand.
+                Each service links to its vendor's official incident page.
+            </p>
+
+            <!-- STATUS_BOARD_START -->
+            <div class="status-board-empty">
+                <p>The board populates on the first cron run. Auto-refresh every 10 minutes via GitHub Actions.</p>
+            </div>
+            <!-- STATUS_BOARD_END -->
+
+            <div class="status-footnote">
+                <h3>What this is — and what it isn't</h3>
+                <p>
+                    <strong>What it is:</strong> a public-utility dashboard. The same call I make to
+                    Stripe's <code>/api/v2/summary.json</code> is the call Stripe themselves use to power
+                    their <code>status.stripe.com</code> banner. There's no middleman.
+                </p>
+                <p>
+                    <strong>What it isn't:</strong> a substitute for Downdetector. Telcos (Verizon, AT&amp;T,
+                    T-Mobile), banks, and most consumer apps don't publish a Statuspage feed, so they're not
+                    on this board <em>yet</em>. A crowdsourced telco/banking tier is on the roadmap once
+                    licensing is figured out.
+                </p>
+                <p>
+                    <strong>How to read it:</strong>
+                    🟢 operational · 🟡 degraded (some users affected) · 🟠 major outage
+                    (broad impact) · 🔴 down (full outage) · 🔵 scheduled maintenance.
+                    "Status unknown" means our prober couldn't reach the upstream feed in the
+                    last poll — usually transient.
+                </p>
+                <p>
+                    <strong>Want a service added?</strong> If it has a Statuspage at
+                    <code>status.&lt;vendor&gt;.com</code>,
+                    <a href="contact.html">send me the URL</a> and I'll add it.
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>MacwanGrid</h4>
+                <p style="color: var(--text-secondary); font-size: 0.88rem;">
+                    Practitioner notes from Raj Macwan — VP of IT, MIT scholar, operator of the
+                    DarkPulse Security onion site.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Grids</h4>
+                <ul>
+                    <li><a href="threat-grid.html">ThreatGrid</a></li>
+                    <li><a href="infra-grid.html">InfraGrid</a></li>
+                    <li><a href="dark-grid.html">DarkGrid</a></li>
+                    <li><a href="ai-grid.html">AIGrid</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                    <li><a href="intel-grid.html">IntelGrid</a></li>
+                    <li><a href="lab-grid.html">LabGrid</a></li>
+                    <li><a href="action-grid.html">ActionGrid</a></li>
+                    <li><a href="breached-grid.html">BreachedGrid</a></li>
+                    <li><a href="patch-grid.html">PatchGrid</a></li>
+                    <li><a href="off-grid.html">OffGrid</a></li>
+                    <li><a href="status.html">Status</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>MacwanGrid — The Art of Smart Technologies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

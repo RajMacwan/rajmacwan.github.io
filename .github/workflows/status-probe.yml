@@ -1,0 +1,39 @@
+name: Status Probe
+
+on:
+  schedule:
+    # Every 10 minutes
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: status-probe
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Poll Statuspage feeds and refresh status.html
+        run: python automation/status_probe.py
+        continue-on-error: true
+
+      - name: Commit changes (only if status board moved)
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add status.html automation/status_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(status): refresh $(date -u +%Y-%m-%dT%H:%MZ)"
+            git push
+          else
+            echo "No board changes."
+          fi
