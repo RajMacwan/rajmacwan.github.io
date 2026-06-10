@@ -1,11 +1,11 @@
 {
-  "polled": "2026-06-10T22:23:09.354596Z",
+  "polled": "2026-06-10T23:56:44.629199Z",
   "services": {
     "cloudflare": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Image Resizing on R2 issues",
+      "fetched": true
     },
     "fastly": {
       "indicator": "unknown",
@@ -14,22 +14,22 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "netlify": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "render": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "digitalocean": {
       "indicator": "none",
@@ -44,10 +44,10 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "[Fragnesia] Linux Privilege Escalation Vulnerability",
+      "fetched": true
     },
     "aws": {
       "indicator": "none",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "89 active Salesforce incidents",
+      "description": "90 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,10 +92,10 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "databricks": {
       "indicator": "unknown",
@@ -104,10 +104,10 @@
       "fetched": false
     },
     "github": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "gitlab": {
       "indicator": "unknown",
@@ -116,10 +116,10 @@
       "fetched": false
     },
     "atlassian": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "figma": {
       "indicator": "unknown",
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Multiple Atlassian services are experiencing issues",
+      "fetched": true
     },
     "asana": {
       "indicator": "unknown",
@@ -152,10 +152,10 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "dropbox": {
       "indicator": "minor",
@@ -170,16 +170,16 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "cursor": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "replicate": {
       "indicator": "none",
@@ -218,10 +218,10 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "bitwarden": {
       "indicator": "unknown",
@@ -236,10 +236,10 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "crowdstrike": {
       "indicator": "unknown",
@@ -248,10 +248,10 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "stripe": {
       "indicator": "unknown",
@@ -278,16 +278,16 @@
       "fetched": true
     },
     "twilio": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "SMS Delivery Failures from Twilio Long Codes to Orange Polska Poland",
+      "fetched": true
     },
     "sendgrid": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "postmark": {
       "indicator": "unknown",
@@ -308,10 +308,10 @@
       "fetched": true
     },
     "discord": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "pagerduty": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-10T22:23:09.354626Z"
+  "html_written": "2026-06-10T23:56:44.629226Z"
 }
