@@ -3888,7 +3888,6 @@ details.grid-intro-fold {
     font-size: 0.8rem;
     transition: transform .3s;
 }
-.status-cat[open] .cat-chevron { transform: rotate(90deg); }
 .cat-rows {
     padding: 0.25rem 0.5rem 0.75rem;
     border-top: 1px solid var(--border-subtle);
