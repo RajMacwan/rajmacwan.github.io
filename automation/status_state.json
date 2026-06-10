@@ -1,11 +1,11 @@
 {
-  "polled": "2026-06-10T21:08:26.256629Z",
+  "polled": "2026-06-10T22:23:09.354596Z",
   "services": {
     "cloudflare": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Network Connectivity issues in Western North America impacting R2 and Containers",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "fastly": {
       "indicator": "unknown",
@@ -14,10 +14,22 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
+    },
+    "netlify": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "render": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "digitalocean": {
       "indicator": "none",
@@ -32,16 +44,70 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "[Fragnesia] Linux Privilege Escalation Vulnerability",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
-    "github": {
+    "aws": {
       "indicator": "none",
-      "description": "All Systems Operational",
+      "description": "All AWS services operating normally",
       "incident_name": "",
       "fetched": true
+    },
+    "azure": {
+      "indicator": "none",
+      "description": "All Azure services operating normally",
+      "incident_name": "",
+      "fetched": true
+    },
+    "gcp": {
+      "indicator": "minor",
+      "description": "1 active GCP incident",
+      "incident_name": "Network traffic to Google Cloud originating from Delhi, Chennai, Mumbai and surrounding areas is experiencing intermittent periods of elevat",
+      "fetched": true
+    },
+    "oci": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "salesforce": {
+      "indicator": "minor",
+      "description": "89 active Salesforce incidents",
+      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
+      "fetched": true
+    },
+    "sap": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "servicenow": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "snowflake": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "databricks": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "github": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "gitlab": {
       "indicator": "unknown",
@@ -50,10 +116,34 @@
       "fetched": false
     },
     "atlassian": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
+    },
+    "figma": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "linear": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "loom": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "asana": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "notion": {
       "indicator": "unknown",
@@ -62,10 +152,10 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "dropbox": {
       "indicator": "minor",
@@ -80,6 +170,18 @@
       "fetched": true
     },
     "anthropic": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "cursor": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
       "incident_name": "",
@@ -116,10 +218,28 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
+    },
+    "bitwarden": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "lastpass": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "duo": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "crowdstrike": {
       "indicator": "unknown",
@@ -128,10 +248,10 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "stripe": {
       "indicator": "unknown",
@@ -151,23 +271,47 @@
       "incident_name": "",
       "fetched": true
     },
-    "twilio": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio Long Codes to Orange Polska Poland",
+    "coinbase": {
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
+    "twilio": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
     "sendgrid": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "postmark": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "mailchimp": {
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
+    },
+    "intercom": {
       "indicator": "none",
       "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
     "discord": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "pagerduty": {
       "indicator": "unknown",
@@ -176,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-10T21:08:26.256654Z"
+  "html_written": "2026-06-10T22:23:09.354626Z"
 }

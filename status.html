@@ -52,7 +52,7 @@
             <strong>down</strong>, the vendor itself is saying down.
         </p>
         <div class="status-meta">
-            <span class="status-updated">last refresh: 2026-06-10 21:08 UTC</span>
+            <span class="status-updated">last refresh: 2026-06-10 22:23 UTC</span>
             <span class="status-sources">53 services · 7 categories · multi-source (Statuspage · RSS · JSON)</span>
         </div>
     </div>
@@ -67,7 +67,7 @@
     <div class="banner-pulse"><span class="banner-dot banner-dot-min"></span></div>
     <div class="banner-text">
         <strong>Some services degraded.</strong>
-        <small>15 of 29 services not fully operational (Cloudflare, Fastly, Heroku, GitLab, Notion and 10 more).</small>
+        <small>44 of 53 services not fully operational (Cloudflare, Fastly, Vercel, Netlify, Render and 39 more).</small>
     </div>
 </div>
 <!-- STATUS_BANNER_END -->
@@ -78,103 +78,153 @@
             </p>
 
             <!-- STATUS_BOARD_START -->
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
         <span class="cat-emoji">☁️</span>
-        <span class="cat-title">Cloud & CDN</span>
-        <span class="cat-badge">3 of 6 not green</span>
-        <span class="cat-count">6 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Cloud & CDN</span>
+            <span class="cat-count">8 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 7 of 8</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
-        <a href="https://www.cloudflarestatus.com" target="_blank" rel="noopener" class="svc-row svc-row-min"><span class="svc-dot svc-dot-min" aria-hidden="true"></span><span class="svc-name">Cloudflare</span><span class="svc-label svc-label-min">Degraded</span><span class="svc-incident"><span class="svc-dot-min"></span>Network Connectivity issues in Western North America impacting R2 and Containers</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.cloudflarestatus.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Cloudflare</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.fastly.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Fastly</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://www.vercel-status.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Vercel</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.vercel-status.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Vercel</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.netlifystatus.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Netlify</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.render.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Render</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.digitalocean.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">DigitalOcean</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.heroku.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Heroku</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.linode.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Akamai (Linode)</span><span class="svc-label svc-label-op">Operational</span><span class="svc-incident"><span class="svc-dot-min"></span>[Fragnesia] Linux Privilege Escalation Vulnerability</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.linode.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Akamai (Linode)</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
 
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
-        <span class="cat-emoji">💼</span>
-        <span class="cat-title">Dev & Productivity</span>
-        <span class="cat-badge">3 of 6 not green</span>
-        <span class="cat-count">6 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <span class="cat-emoji">🏢</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Enterprise & Data</span>
+            <span class="cat-count">9 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 7 of 9</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
-        <a href="https://www.githubstatus.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">GitHub</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://health.aws.amazon.com/health/status" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">AWS</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.azure.com/en-us/status" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Microsoft Azure</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.cloud.google.com/" target="_blank" rel="noopener" class="svc-row svc-row-min"><span class="svc-dot svc-dot-min" aria-hidden="true"></span><span class="svc-name">Google Cloud</span><span class="svc-label svc-label-min">Degraded</span><span class="svc-incident"><span class="svc-dot-min"></span>Network traffic to Google Cloud originating from Delhi, Chennai, Mumbai and surrounding areas is experiencing intermittent periods of elevat</span><span class="svc-arrow">↗</span></a>
+        <a href="https://ocistatus.oraclecloud.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Oracle Cloud (OCI)</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.salesforce.com/" target="_blank" rel="noopener" class="svc-row svc-row-min"><span class="svc-dot svc-dot-min" aria-hidden="true"></span><span class="svc-name">Salesforce</span><span class="svc-label svc-label-min">Degraded</span><span class="svc-incident"><span class="svc-dot-min"></span>{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.sap.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">SAP</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.servicenow.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">ServiceNow</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.snowflake.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Snowflake</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.databricks.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Databricks</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+    </div>
+</details>
+
+<details class="status-cat" name="status-cats" open>
+    <summary class="cat-summary">
+        <span class="cat-emoji">💼</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Dev & Productivity</span>
+            <span class="cat-count">10 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 10 of 10</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
+    </summary>
+    <div class="cat-rows">
+        <a href="https://www.githubstatus.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">GitHub</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.gitlab.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">GitLab</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.atlassian.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Atlassian</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.atlassian.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Atlassian</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.figmastatus.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Figma</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.linear.app" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Linear</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.loom.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Loom</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://trust.asana.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Asana</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.notion.so" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Notion</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.zoom.us" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Zoom</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.zoom.us" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Zoom</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.dropbox.com" target="_blank" rel="noopener" class="svc-row svc-row-min"><span class="svc-dot svc-dot-min" aria-hidden="true"></span><span class="svc-name">Dropbox</span><span class="svc-label svc-label-min">Degraded</span><span class="svc-incident"><span class="svc-dot-min"></span>Shared content downloads are degraded</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
 
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
         <span class="cat-emoji">🤖</span>
-        <span class="cat-title">AI Services</span>
-        <span class="cat-badge">3 of 5 not green</span>
-        <span class="cat-count">5 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <div class="cat-title-block">
+            <span class="cat-title">AI Services</span>
+            <span class="cat-count">7 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 5 of 7</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
         <a href="https://status.openai.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">OpenAI</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.anthropic.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Anthropic</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.anthropic.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Anthropic</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.cursor.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Cursor</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.replicatestatus.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Replicate</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.huggingface.co" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Hugging Face</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.together.ai" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Together AI</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.mistral.ai" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Mistral</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
 
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
         <span class="cat-emoji">🛡️</span>
-        <span class="cat-title">Identity & Security</span>
-        <span class="cat-badge">3 of 5 not green</span>
-        <span class="cat-count">5 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Identity & Security</span>
+            <span class="cat-count">8 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 8 of 8</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
         <a href="https://status.okta.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Okta</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.auth0.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Auth0</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.1password.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">1Password</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.1password.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">1Password</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.bitwarden.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Bitwarden</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.lastpass.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">LastPass</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.duo.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Cisco Duo</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.crowdstrike.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">CrowdStrike</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.datadoghq.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Datadog</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.datadoghq.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Datadog</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
 
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
         <span class="cat-emoji">💳</span>
-        <span class="cat-title">Payments</span>
-        <span class="cat-badge">1 of 3 not green</span>
-        <span class="cat-count">3 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Payments & Money</span>
+            <span class="cat-count">4 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 1 of 4</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
         <a href="https://status.stripe.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Stripe</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.plaid.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Plaid</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
         <a href="https://www.issquareup.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Square</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.coinbase.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Coinbase</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
 
-<details class="status-cat" open>
+<details class="status-cat" name="status-cats">
     <summary class="cat-summary">
         <span class="cat-emoji">📞</span>
-        <span class="cat-title">Dev Comms</span>
-        <span class="cat-badge">2 of 4 not green</span>
-        <span class="cat-count">4 services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <div class="cat-title-block">
+            <span class="cat-title">Dev Comms & Email</span>
+            <span class="cat-count">7 services</span>
+        </div>
+        <span class="cat-badge cat-badge-min">● 6 of 7</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
-        <a href="https://status.twilio.com" target="_blank" rel="noopener" class="svc-row svc-row-min"><span class="svc-dot svc-dot-min" aria-hidden="true"></span><span class="svc-name">Twilio</span><span class="svc-label svc-label-min">Degraded</span><span class="svc-incident"><span class="svc-dot-min"></span>SMS Delivery Failures from Twilio Long Codes to Orange Polska Poland</span><span class="svc-arrow">↗</span></a>
-        <a href="https://status.sendgrid.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">SendGrid</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
-        <a href="https://discordstatus.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Discord</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.twilio.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Twilio</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.sendgrid.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">SendGrid</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.postmarkapp.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Postmark</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://status.mailchimp.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Mailchimp</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
+        <a href="https://www.intercomstatus.com" target="_blank" rel="noopener" class="svc-row svc-row-op"><span class="svc-dot svc-dot-op" aria-hidden="true"></span><span class="svc-name">Intercom</span><span class="svc-label svc-label-op">Operational</span><span class="svc-arrow">↗</span></a>
+        <a href="https://discordstatus.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">Discord</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
         <a href="https://status.pagerduty.com" target="_blank" rel="noopener" class="svc-row svc-row-unknown"><span class="svc-dot svc-dot-unknown" aria-hidden="true"></span><span class="svc-name">PagerDuty</span><span class="svc-label svc-label-unknown">Status unknown</span><span class="svc-arrow">↗</span></a>
     </div>
 </details>
