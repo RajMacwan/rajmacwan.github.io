@@ -42,6 +42,8 @@ SERVICES = [
     ("cloudflare",    "Cloudflare",    "cloud",    "https://www.cloudflarestatus.com/api/v2/summary.json"),
     ("fastly",        "Fastly",        "cloud",    "https://status.fastly.com/api/v2/summary.json"),
     ("vercel",        "Vercel",        "cloud",    "https://www.vercel-status.com/api/v2/summary.json"),
+    ("netlify",       "Netlify",       "cloud",    "https://www.netlifystatus.com/api/v2/summary.json"),
+    ("render",        "Render",        "cloud",    "https://status.render.com/api/v2/summary.json"),
     ("digitalocean",  "DigitalOcean",  "cloud",    "https://status.digitalocean.com/api/v2/summary.json"),
     ("heroku",        "Heroku",        "cloud",    "https://status.heroku.com/api/v2/summary.json"),
     ("linode",        "Akamai (Linode)","cloud",   "https://status.linode.com/api/v2/summary.json"),
@@ -50,6 +52,10 @@ SERVICES = [
     ("github",        "GitHub",        "dev",      "https://www.githubstatus.com/api/v2/summary.json"),
     ("gitlab",        "GitLab",        "dev",      "https://status.gitlab.com/api/v2/summary.json"),
     ("atlassian",     "Atlassian",     "dev",      "https://status.atlassian.com/api/v2/summary.json"),
+    ("figma",         "Figma",         "dev",      "https://www.figmastatus.com/api/v2/summary.json"),
+    ("linear",        "Linear",        "dev",      "https://status.linear.app/api/v2/summary.json"),
+    ("loom",          "Loom",          "dev",      "https://status.loom.com/api/v2/summary.json"),
+    ("asana",         "Asana",         "dev",      "https://trust.asana.com/api/v2/summary.json"),
     ("notion",        "Notion",        "dev",      "https://status.notion.so/api/v2/summary.json"),
     ("zoom",          "Zoom",          "dev",      "https://status.zoom.us/api/v2/summary.json"),
     ("dropbox",       "Dropbox",       "dev",      "https://status.dropbox.com/api/v2/summary.json"),
@@ -57,6 +63,8 @@ SERVICES = [
     # 🤖 AI Services
     ("openai",        "OpenAI",        "ai",       "https://status.openai.com/api/v2/summary.json"),
     ("anthropic",     "Anthropic",     "ai",       "https://status.anthropic.com/api/v2/summary.json"),
+    ("cursor",        "Cursor",        "ai",       "https://status.cursor.com/api/v2/summary.json"),
+    ("replicate",     "Replicate",     "ai",       "https://www.replicatestatus.com/api/v2/summary.json"),
     ("huggingface",   "Hugging Face",  "ai",       "https://status.huggingface.co/api/v2/summary.json"),
     ("together",      "Together AI",   "ai",       "https://status.together.ai/api/v2/summary.json"),
     ("mistral",       "Mistral",       "ai",       "https://status.mistral.ai/api/v2/summary.json"),
@@ -65,17 +73,24 @@ SERVICES = [
     ("okta",          "Okta",          "identity", "https://status.okta.com/api/v2/summary.json"),
     ("auth0",         "Auth0",         "identity", "https://status.auth0.com/api/v2/summary.json"),
     ("onepassword",   "1Password",     "identity", "https://status.1password.com/api/v2/summary.json"),
+    ("bitwarden",     "Bitwarden",     "identity", "https://status.bitwarden.com/api/v2/summary.json"),
+    ("lastpass",      "LastPass",      "identity", "https://status.lastpass.com/api/v2/summary.json"),
+    ("duo",           "Cisco Duo",     "identity", "https://status.duo.com/api/v2/summary.json"),
     ("crowdstrike",   "CrowdStrike",   "identity", "https://status.crowdstrike.com/api/v2/summary.json"),
     ("datadog",       "Datadog",       "identity", "https://status.datadoghq.com/api/v2/summary.json"),
 
-    # 💳 Payments
+    # 💳 Payments & Money
     ("stripe",        "Stripe",        "payments", "https://status.stripe.com/api/v2/summary.json"),
     ("plaid",         "Plaid",         "payments", "https://status.plaid.com/api/v2/summary.json"),
     ("square",        "Square",        "payments", "https://www.issquareup.com/api/v2/summary.json"),
+    ("coinbase",      "Coinbase",      "payments", "https://status.coinbase.com/api/v2/summary.json"),
 
-    # 📞 Dev Comms
+    # 📞 Dev Comms & Email
     ("twilio",        "Twilio",        "comms",    "https://status.twilio.com/api/v2/summary.json"),
     ("sendgrid",      "SendGrid",      "comms",    "https://status.sendgrid.com/api/v2/summary.json"),
+    ("postmark",      "Postmark",      "comms",    "https://status.postmarkapp.com/api/v2/summary.json"),
+    ("mailchimp",     "Mailchimp",     "comms",    "https://status.mailchimp.com/api/v2/summary.json"),
+    ("intercom",      "Intercom",      "comms",    "https://www.intercomstatus.com/api/v2/summary.json"),
     ("discord",       "Discord",       "comms",    "https://discordstatus.com/api/v2/summary.json"),
     ("pagerduty",     "PagerDuty",     "comms",    "https://status.pagerduty.com/api/v2/summary.json"),
 ]
@@ -85,8 +100,8 @@ CATEGORIES = [
     ("dev",      "💼", "Dev & Productivity"),
     ("ai",       "🤖", "AI Services"),
     ("identity", "🛡️", "Identity & Security"),
-    ("payments", "💳", "Payments"),
-    ("comms",    "📞", "Dev Comms"),
+    ("payments", "💳", "Payments & Money"),
+    ("comms",    "📞", "Dev Comms & Email"),
 ]
 
 # Statuspage indicator → (css class suffix, label)
@@ -212,21 +227,63 @@ def render_service_row(r):
     )
 
 
-def render_category_block(cat_id, emoji, title, results):
+def cat_severity(cat_id, results):
+    """How bad is this category? Returns severity rank for ordering."""
+    rows = [r for r in results if r["cat"] == cat_id]
+    worst = "none"
+    for r in rows:
+        if SEVERITY.index(r["indicator"]) < SEVERITY.index(worst):
+            worst = r["indicator"]
+    not_green = sum(1 for r in rows if r["indicator"] not in ("none",))
+    return (SEVERITY.index(worst), -not_green)
+
+
+def pick_default_open(results):
+    """Of all categories, pick the one with the worst severity to auto-open.
+    Returns the cat_id, or None if everything is green."""
+    candidates = []
+    for cat_id, _, _ in CATEGORIES:
+        rows = [r for r in results if r["cat"] == cat_id]
+        worst = "none"
+        for r in rows:
+            if SEVERITY.index(r["indicator"]) < SEVERITY.index(worst):
+                worst = r["indicator"]
+        if worst != "none":
+            candidates.append((SEVERITY.index(worst), cat_id))
+    if not candidates:
+        return None
+    candidates.sort()
+    return candidates[0][1]
+
+
+def render_category_block(cat_id, emoji, title, results, default_open_cat):
     rows = [r for r in results if r["cat"] == cat_id]
     not_green = sum(1 for r in rows if r["indicator"] not in ("none",))
-    open_attr = " open" if not_green > 0 else ""
+    is_open = (cat_id == default_open_cat)
+    open_attr = " open" if is_open else ""
     badge = ""
+    badge_class = ""
     if not_green > 0:
-        badge = f'<span class="cat-badge">{not_green} of {len(rows)} not green</span>'
+        # determine worst class for the badge accent
+        worst = "min"
+        for r in rows:
+            ind = r["indicator"]
+            if ind == "critical": worst = "crit"; break
+            if ind == "major":    worst = "maj"
+            if ind == "minor" and worst not in ("crit","maj"): worst = "min"
+            if ind == "maintenance" and worst not in ("crit","maj","min"): worst = "maint"
+        badge_class = f" cat-badge-{worst}"
+        badge = f'<span class="cat-badge{badge_class}">● {not_green} of {len(rows)}</span>'
     row_html = "\n        ".join(render_service_row(r) for r in rows)
-    return f'''<details class="status-cat"{open_attr}>
+    return f'''<details class="status-cat" name="status-cats"{open_attr}>
     <summary class="cat-summary">
         <span class="cat-emoji">{emoji}</span>
-        <span class="cat-title">{title}</span>
+        <div class="cat-title-block">
+            <span class="cat-title">{title}</span>
+            <span class="cat-count">{len(rows)} services</span>
+        </div>
         {badge}
-        <span class="cat-count">{len(rows)} services</span>
-        <span class="cat-chevron" aria-hidden="true">▸</span>
+        <span class="cat-chevron" aria-hidden="true"></span>
     </summary>
     <div class="cat-rows">
         {row_html}
@@ -246,9 +303,10 @@ def render_banner(results):
 
 
 def render_board(results):
+    default_open = pick_default_open(results)
     blocks = []
     for cat_id, emoji, title in CATEGORIES:
-        blocks.append(render_category_block(cat_id, emoji, title, results))
+        blocks.append(render_category_block(cat_id, emoji, title, results, default_open))
     return "\n\n".join(blocks)
 
 
