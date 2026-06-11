@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-11T19:37:07.105317Z",
+  "polled": "2026-06-11T21:37:44.532442Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Incident with Webhooks",
       "fetched": true
     },
     "gitlab": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated error rates for GPT 5.5 in Codex",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to United Wireless and Panhandle Telecommunications Systems United St",
+      "incident_name": "SMS Delivery Failures from Multiple Networks in United Kingdom to a Subset of Twilio Long Codes",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-11T19:37:07.105353Z"
+  "html_written": "2026-06-11T21:37:44.532482Z"
 }
