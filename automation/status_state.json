@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-10T23:56:44.629199Z",
+  "polled": "2026-06-11T04:26:05.942364Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Image Resizing on R2 issues",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "90 active Salesforce incidents",
+      "description": "85 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-10T23:56:44.629226Z"
+  "html_written": "2026-06-11T04:26:05.942391Z"
 }
