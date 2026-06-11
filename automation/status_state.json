@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-11T12:53:23.597480Z",
+  "polled": "2026-06-11T16:55:50.380270Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,15 +26,15 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Queued deploys stuck",
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "DeepSeek V4 Pro is returning HTTP 429 \"Rate limit exceeded\"",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "85 active Salesforce incidents",
+      "description": "86 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors across models",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MPT Myanmar",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Babilon-M Tajikistan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-11T12:53:23.597513Z"
+  "html_written": "2026-06-11T16:55:50.380310Z"
 }
