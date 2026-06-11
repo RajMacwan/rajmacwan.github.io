@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-11T04:26:05.942364Z",
+  "polled": "2026-06-11T09:00:31.644209Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio Long Codes to Orange Polska Poland",
+      "incident_name": "SMS Delivery Delays from Twilio to MPT Myanmar",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-11T04:26:05.942391Z"
+  "html_written": "2026-06-11T09:00:31.644236Z"
 }
