@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-12T01:41:20.214815Z",
+  "polled": "2026-06-12T06:21:15.706827Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "84 active Salesforce incidents",
+      "description": "85 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Glo Nigeria",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tigo Paraguay",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T01:41:20.214851Z"
+  "html_written": "2026-06-12T06:21:15.706861Z"
 }
