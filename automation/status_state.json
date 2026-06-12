@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-12T16:46:05.645231Z",
+  "polled": "2026-06-12T18:54:22.220004Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "87 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "INC20000033",
       "fetched": true
     },
     "databricks": {
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Shared content downloads are degraded",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "openai": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Evaluation",
       "fetched": true
     },
     "stripe": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio Phone Numbers to Movilnet Venezuela",
+      "incident_name": "Delivery Delays and Failures from WhatsApp, Verify, Conversations, and Messenger Platform",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T16:46:05.645267Z"
+  "html_written": "2026-06-12T18:54:22.220035Z"
 }
