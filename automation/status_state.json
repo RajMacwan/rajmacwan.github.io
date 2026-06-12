@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-12T18:54:22.220004Z",
+  "polled": "2026-06-12T21:02:15.371178Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "87 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000033",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Evaluation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delivery Delays and Failures from WhatsApp, Verify, Conversations, and Messenger Platform",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to United Wireless and Panhandle Telecommunications Systems United St",
       "fetched": true
     },
     "sendgrid": {
@@ -302,9 +302,9 @@
       "fetched": false
     },
     "intercom": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Delays sending and receiving messages to/from Meta properties (Facebook, Instagram, WhatsApp)",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "discord": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T18:54:22.220035Z"
+  "html_written": "2026-06-12T21:02:15.371211Z"
 }
