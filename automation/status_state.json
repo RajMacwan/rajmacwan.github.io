@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-12T13:55:59.179398Z",
+  "polled": "2026-06-12T16:46:05.645231Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Waiting Room analytics showing a drop in number of active users",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tigo Paraguay",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio Phone Numbers to Movilnet Venezuela",
       "fetched": true
     },
     "sendgrid": {
@@ -302,9 +302,9 @@
       "fetched": false
     },
     "intercom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Delays sending and receiving messages to/from Meta properties (Facebook, Instagram, WhatsApp)",
       "fetched": true
     },
     "discord": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T13:55:59.179432Z"
+  "html_written": "2026-06-12T16:46:05.645267Z"
 }
