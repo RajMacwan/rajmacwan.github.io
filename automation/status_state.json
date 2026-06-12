@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-12T10:49:18.999835Z",
+  "polled": "2026-06-12T13:55:59.179398Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Billing Invoice UI issue",
+      "incident_name": "Waiting Room analytics showing a drop in number of active users",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T10:49:18.999867Z"
+  "html_written": "2026-06-12T13:55:59.179432Z"
 }
