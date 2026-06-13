@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-13T19:00:18.178587Z",
+  "polled": "2026-06-13T20:38:40.119286Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "AI Gateway: Claude Fable 5 unavailable",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "89 active Salesforce incidents",
+      "description": "90 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Disabled Sends/Receives - XLM",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-13T19:00:18.178619Z"
+  "html_written": "2026-06-13T20:38:40.119316Z"
 }
