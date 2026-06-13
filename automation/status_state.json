@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-12T22:44:27.973899Z",
+  "polled": "2026-06-13T00:07:36.092294Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "88 active Salesforce incidents",
+      "description": "87 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -220,7 +220,7 @@
     "onepassword": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Device Trust Authentication Service Experiencing Timeout Errors",
+      "incident_name": "",
       "fetched": true
     },
     "bitwarden": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to United Wireless and Panhandle Telecommunications Systems United St",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-12T22:44:27.973925Z"
+  "html_written": "2026-06-13T00:07:36.092331Z"
 }
