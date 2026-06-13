@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-13T08:14:40.896466Z",
+  "polled": "2026-06-13T10:40:49.175538Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -22,7 +22,7 @@
     "netlify": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "AI Gateway: Claude Fable 5 unavailable",
       "fetched": true
     },
     "render": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-13T08:14:40.896498Z"
+  "html_written": "2026-06-13T10:40:49.175568Z"
 }
