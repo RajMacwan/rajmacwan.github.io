@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-13T00:07:36.092294Z",
+  "polled": "2026-06-13T04:49:20.479978Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "87 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-13T00:07:36.092331Z"
+  "html_written": "2026-06-13T04:49:20.480004Z"
 }
