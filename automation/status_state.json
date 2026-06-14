@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-14T20:01:13.056093Z",
+  "polled": "2026-06-14T21:36:29.403705Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated latency and errors in FRA1 Vercel Region (Frankfurt, Germany)",
       "fetched": true
     },
     "netlify": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-14T20:01:13.056119Z"
+  "html_written": "2026-06-14T21:36:29.403735Z"
 }
