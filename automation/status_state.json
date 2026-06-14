@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-14T16:56:03.190955Z",
+  "polled": "2026-06-14T18:16:27.284711Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -284,8 +284,8 @@
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Email Sending Delays",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-14T16:56:03.190984Z"
+  "html_written": "2026-06-14T18:16:27.284734Z"
 }
