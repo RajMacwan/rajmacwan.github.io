@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-14T08:51:25.041624Z",
+  "polled": "2026-06-14T11:31:01.228600Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "maintenance",
-      "description": "Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
+      "incident_name": "SMS Delivery Delays from Twilio to Smart Philippines",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-14T08:51:25.041651Z"
+  "html_written": "2026-06-14T11:31:01.228631Z"
 }
