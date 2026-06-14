@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-13T23:05:44.838786Z",
+  "polled": "2026-06-14T00:19:47.687676Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Intermittent Slow Cache Responses",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "90 active Salesforce incidents",
+      "description": "86 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-13T23:05:44.838816Z"
+  "html_written": "2026-06-14T00:19:47.687741Z"
 }
