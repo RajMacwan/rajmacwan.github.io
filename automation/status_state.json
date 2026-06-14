@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-14T05:13:15.799168Z",
+  "polled": "2026-06-14T08:51:25.041624Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "87 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-14T05:13:15.799203Z"
+  "html_written": "2026-06-14T08:51:25.041651Z"
 }
