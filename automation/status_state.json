@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-15T16:26:36.218620Z",
+  "polled": "2026-06-15T20:03:21.728541Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "90 active Salesforce incidents",
+      "description": "92 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Increased latency with webhooks",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Meeting Recordings",
+      "incident_name": "Incorrect offline status display for Zoom Rooms Scheduling Displays",
       "fetched": true
     },
     "dropbox": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "OAuth Account Creation / Login Error",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity Gateway API Failure Increase in Canada",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric and Long Codes to Multiple Networks in Mexico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-15T16:26:36.218651Z"
+  "html_written": "2026-06-15T20:03:21.728657Z"
 }
