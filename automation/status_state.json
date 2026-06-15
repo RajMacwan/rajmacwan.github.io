@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-14T23:57:26.460271Z",
+  "polled": "2026-06-15T05:09:20.335128Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,15 +14,15 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated latency and errors in FRA1 Vercel Region (Frankfurt, Germany)",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Connectivity issues affecting Bolt-powered sites",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "AI Gateway: Claude Fable 5 unavailable",
       "fetched": true
     },
     "render": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "87 active Salesforce incidents",
+      "description": "85 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting My Notes",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
+      "incident_name": "SMS Delivery Failures From a Subset of Twilio Short Codes to Google Voice United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-14T23:57:26.460313Z"
+  "html_written": "2026-06-15T05:09:20.335162Z"
 }
