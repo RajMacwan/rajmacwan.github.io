@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-15T05:09:20.335128Z",
+  "polled": "2026-06-15T11:23:34.908161Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -22,7 +22,7 @@
     "netlify": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "AI Gateway: Claude Fable 5 unavailable",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "85 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting My Notes",
+      "incident_name": "Service Degradation Affecting Zoom Web AIC Docs creation.",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-15T05:09:20.335162Z"
+  "html_written": "2026-06-15T11:23:34.908198Z"
 }
