@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-15T11:23:34.908161Z",
+  "polled": "2026-06-15T16:26:36.218620Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "88 active Salesforce incidents",
+      "description": "90 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000034",
       "fetched": true
     },
     "databricks": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Increased latency with webhooks",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Web AIC Docs creation.",
+      "incident_name": "Service Degradation Affecting Zoom Meeting Recordings",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures From a Subset of Twilio Short Codes to Google Voice United States",
+      "incident_name": "User Authentication Identity Gateway API Failure Increase in Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-15T11:23:34.908198Z"
+  "html_written": "2026-06-15T16:26:36.218651Z"
 }
