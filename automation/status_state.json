@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-16T10:30:48.059579Z",
+  "polled": "2026-06-16T15:32:51.368550Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Cloudflare is aware of and investigating Workers AI experiencing degraded availability in some models.",
       "fetched": true
     },
     "fastly": {
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Partial disruption of Observability, Analytics, Firewall, and Usage in dashboard",
       "fetched": true
     },
     "netlify": {
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Issue: Longview",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Emerging Service Issue - Networking - US-MIA (Miami)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "89 active Salesforce incidents",
+      "description": "90 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends / Receives - Monad (MON)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Pre-Registered Sender ID Numbers to Multiple Networks in India.",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-16T10:30:48.059614Z"
+  "html_written": "2026-06-16T15:32:51.368579Z"
 }
