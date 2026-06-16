@@ -1,11 +1,11 @@
 {
-  "level": "ORANGE",
-  "score": 7,
-  "headline": "High \u2014 active campaigns.",
-  "body": "Exploitation campaigns underway. Validate patch status on internet-facing assets.",
+  "level": "YELLOW",
+  "score": 5,
+  "headline": "Heightened activity.",
+  "body": "Above-average KEV adds this week. Watch your management-plane exposure.",
   "meta": {
     "kev_adds_7d": 7,
-    "active_zero_days": 2
+    "active_zero_days": 1
   },
-  "updated": "2026-06-15T11:44:35.166550Z"
+  "updated": "2026-06-16T10:52:41.955504Z"
 }
