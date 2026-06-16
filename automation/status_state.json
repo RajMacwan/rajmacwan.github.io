@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-16T21:47:21.590984Z",
+  "polled": "2026-06-16T23:14:30.216445Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare is aware of and investigating Workers AI experiencing degraded availability in some models.",
+      "incident_name": "We are investigating an issue where customers see paid invoices as unpaid.",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Intermittent 500 Errors on Serverless/GenAI Inference API",
       "fetched": true
     },
     "heroku": {
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors for Claude Opus 4.8",
+      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated Latency Affecting Knowledge Retrieval in Conversation Intelligence and Flex Copilot.",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-16T21:47:21.591014Z"
+  "html_written": "2026-06-16T23:14:30.216476Z"
 }
