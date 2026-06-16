@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-15T22:27:15.537738Z",
+  "polled": "2026-06-16T00:13:23.828365Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "Mitigated \u2013 Customers leveraging a subset of services may experience 401 authentication errors",
       "fetched": true
     },
     "gcp": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "92 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "FedRAMP workspaces and API orgs have degraded performance",
+      "incident_name": "Users may experience issue with Codex Cloud tasks",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-15T22:27:15.537770Z"
+  "html_written": "2026-06-16T00:13:23.828403Z"
 }
