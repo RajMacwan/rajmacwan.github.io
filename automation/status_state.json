@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-16T05:38:08.288048Z",
+  "polled": "2026-06-16T10:30:48.059579Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Emerging Service Issue - Linode Migrations",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Issue: Longview",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "88 active Salesforce incidents",
+      "description": "89 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000034",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "INC0159144",
       "fetched": true
     },
     "databricks": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-16T05:38:08.288078Z"
+  "html_written": "2026-06-16T10:30:48.059614Z"
 }
