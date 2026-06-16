@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-16T00:13:23.828365Z",
+  "polled": "2026-06-16T05:38:08.288048Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "[Fragnesia] Linux Privilege Escalation Vulnerability",
+      "incident_name": "Emerging Service Issue - Linode Migrations",
       "fetched": true
     },
     "aws": {
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "minor",
-      "description": "1 Azure incident in last 12h",
-      "incident_name": "Mitigated \u2013 Customers leveraging a subset of services may experience 401 authentication errors",
+      "indicator": "none",
+      "description": "All Azure services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "gcp": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Incorrect offline status display for Zoom Rooms Scheduling Displays",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Service Degradation Affecting Zoom Meeting Recordings",
       "fetched": true
     },
     "dropbox": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Users may experience issue with Codex Cloud tasks",
+      "incident_name": "FedRAMP workspaces and API orgs have degraded performance",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to H3G Sweden",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Google Voice United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-16T00:13:23.828403Z"
+  "html_written": "2026-06-16T05:38:08.288078Z"
 }
