@@ -1,11 +1,11 @@
 {
-  "polled": "2026-06-16T15:32:51.368550Z",
+  "polled": "2026-06-16T19:06:29.110859Z",
   "services": {
     "cloudflare": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Cloudflare is aware of and investigating Workers AI experiencing degraded availability in some models.",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "fastly": {
       "indicator": "unknown",
@@ -14,22 +14,22 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Partial disruption of Observability, Analytics, Firewall, and Usage in dashboard",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "digitalocean": {
       "indicator": "none",
@@ -44,10 +44,10 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Emerging Service Issue - Networking - US-MIA (Miami)",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "aws": {
       "indicator": "none",
@@ -92,10 +92,10 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC0159144",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "databricks": {
       "indicator": "unknown",
@@ -104,10 +104,10 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "gitlab": {
       "indicator": "unknown",
@@ -116,10 +116,10 @@
       "fetched": false
     },
     "atlassian": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "figma": {
       "indicator": "unknown",
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Multiple Atlassian services are experiencing issues",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "asana": {
       "indicator": "unknown",
@@ -152,10 +152,10 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Meeting Recordings",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "dropbox": {
       "indicator": "none",
@@ -170,16 +170,16 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "replicate": {
       "indicator": "none",
@@ -218,10 +218,10 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "bitwarden": {
       "indicator": "unknown",
@@ -236,10 +236,10 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "crowdstrike": {
       "indicator": "unknown",
@@ -248,10 +248,10 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "stripe": {
       "indicator": "unknown",
@@ -274,20 +274,20 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends / Receives - Monad (MON)",
+      "incident_name": "Delayed Sends / Receives - Axelar (AXL)",
       "fetched": true
     },
     "twilio": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Pre-Registered Sender ID Numbers to Multiple Networks in India.",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "sendgrid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "postmark": {
       "indicator": "unknown",
@@ -308,10 +308,10 @@
       "fetched": true
     },
     "discord": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "pagerduty": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-16T15:32:51.368579Z"
+  "html_written": "2026-06-16T19:06:29.110904Z"
 }
