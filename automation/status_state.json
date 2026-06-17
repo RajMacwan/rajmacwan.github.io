@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-17T19:51:57.984417Z",
+  "polled": "2026-06-17T22:01:39.911774Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Verizon United States",
+      "incident_name": "Elevated Latency Affecting Knowledge Retrieval in Conversation Intelligence and Flex Copilot",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-17T19:51:57.984449Z"
+  "html_written": "2026-06-17T22:01:39.911803Z"
 }
