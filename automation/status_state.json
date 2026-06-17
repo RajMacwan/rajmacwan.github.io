@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-17T06:53:43.442019Z",
+  "polled": "2026-06-17T11:48:58.758835Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Customers may see incorrect invoice payment status",
+      "incident_name": "Cloudflare Network Interconnect 2.0 BGP Route Propagation Issues",
       "fetched": true
     },
     "fastly": {
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "87 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures from a Subset of Twilio Short Codes to Verizon United States",
+      "incident_name": "MMS Delivery Failures From a Subset of Twilio Short Codes to Verizon Wireless United States",
       "fetched": true
     },
     "sendgrid": {
@@ -302,10 +302,10 @@
       "fetched": false
     },
     "intercom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "discord": {
       "indicator": "none",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-17T06:53:43.442051Z"
+  "html_written": "2026-06-17T11:48:58.758865Z"
 }
