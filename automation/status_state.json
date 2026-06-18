@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-17T23:49:02.855904Z",
+  "polled": "2026-06-18T02:06:48.966274Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "94 active Salesforce incidents",
+      "description": "92 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated Latency Affecting Knowledge Retrieval in Conversation Intelligence and Flex Copilot",
+      "incident_name": "Intelligent Alerts Unavailable",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-17T23:49:02.855946Z"
+  "html_written": "2026-06-18T02:06:48.966307Z"
 }
