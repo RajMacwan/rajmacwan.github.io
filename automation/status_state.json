@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-18T11:16:34.608616Z",
+  "polled": "2026-06-18T14:26:10.506408Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "SSO login errors for some ChatGPT Enterprise workspaces",
+      "incident_name": "FedRAMP workspaces and API orgs have degraded performance",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-18T11:16:34.608645Z"
+  "html_written": "2026-06-18T14:26:10.506462Z"
 }
