@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-18T17:42:24.966780Z",
+  "polled": "2026-06-18T19:59:25.189012Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "101 active Salesforce incidents",
+      "description": "103 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,8 +170,8 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "V3 Transcription API experiencing service issues",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-18T17:42:24.966815Z"
+  "html_written": "2026-06-18T19:59:25.189038Z"
 }
