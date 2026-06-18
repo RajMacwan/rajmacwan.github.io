@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-18T19:59:25.189012Z",
+  "polled": "2026-06-18T22:22:33.013759Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Customers may see incorrect invoice payment status",
+      "incident_name": "Cloudflare pages build failures",
       "fetched": true
     },
     "fastly": {
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Slow/failing wildcard certificates related to LetsEncrypt incident",
       "fetched": true
     },
     "digitalocean": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "103 active Salesforce incidents",
+      "description": "106 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-18T19:59:25.189038Z"
+  "html_written": "2026-06-18T22:22:33.013791Z"
 }
