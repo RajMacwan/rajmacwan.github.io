@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-19T16:24:17.106270Z",
+  "polled": "2026-06-19T18:16:59.413155Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Reported Durable Objects count discrepancies",
+      "incident_name": "Browser Isolation experiencing intermittent issues with keyboard input",
       "fetched": true
     },
     "fastly": {
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Monitoring Graphs in the Cloud Control Panel",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Surf Telecom Brazil",
+      "incident_name": "Voice Call Failures from Network Subscribers to Twilio Singapore Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-19T16:24:17.106299Z"
+  "html_written": "2026-06-19T18:16:59.413189Z"
 }
