@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-19T00:09:33.165515Z",
+  "polled": "2026-06-19T05:24:25.170661Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -28,7 +28,7 @@
     "render": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Slow/failing wildcard certificates related to LetsEncrypt incident",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "107 active Salesforce incidents",
+      "description": "122 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "V3 Transcription API experiencing service issues",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-19T00:09:33.165540Z"
+  "html_written": "2026-06-19T05:24:25.170687Z"
 }
