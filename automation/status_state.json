@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-19T05:24:25.170661Z",
+  "polled": "2026-06-19T09:59:59.423208Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Durable Objects seeing increased error rates in ENAM region",
+      "incident_name": "Reported Durable Objects count discrepancies",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Airtel Kenya",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-19T05:24:25.170687Z"
+  "html_written": "2026-06-19T09:59:59.423235Z"
 }
