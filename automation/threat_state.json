@@ -1,11 +1,11 @@
 {
-  "level": "YELLOW",
-  "score": 4,
-  "headline": "Heightened activity.",
-  "body": "Above-average KEV adds this week. Watch your management-plane exposure.",
+  "level": "BLUE",
+  "score": 2,
+  "headline": "Elevated but steady.",
+  "body": "Normal breach cadence. Routine patch discipline sufficient.",
   "meta": {
-    "kev_adds_7d": 5,
-    "active_zero_days": 1
+    "kev_adds_7d": 4,
+    "active_zero_days": 0
   },
-  "updated": "2026-06-19T10:11:16.703482Z"
+  "updated": "2026-06-20T08:39:35.537756Z"
 }
