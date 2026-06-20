@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-20T01:54:15.328315Z",
+  "polled": "2026-06-20T06:23:00.712265Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Reported Durable Objects count discrepancies",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
-      "incident_name": "Service Degradation Affecting Zoom Meeting Recordings",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Singapore to Twilio Singapore Phone Numbers",
+      "incident_name": "User Authentication Identity SNA Missing Redirects for PLDT Smart in Philippines",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-20T01:54:15.328341Z"
+  "html_written": "2026-06-20T06:23:00.712298Z"
 }
