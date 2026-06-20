@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-20T21:25:12.283681Z",
+  "polled": "2026-06-20T22:42:20.475149Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Customers may see incorrect invoice payment status",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-20T21:25:12.283708Z"
+  "html_written": "2026-06-20T22:42:20.475176Z"
 }
