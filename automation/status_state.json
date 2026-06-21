@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-21T17:06:10.267954Z",
+  "polled": "2026-06-21T18:47:30.830670Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Degradation Affecting Zoom Mail, Calendar and Scheduler services in US Region.",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-21T17:06:10.267984Z"
+  "html_written": "2026-06-21T18:47:30.830698Z"
 }
