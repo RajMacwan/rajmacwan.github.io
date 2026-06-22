@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-22T05:34:41.497260Z",
+  "polled": "2026-06-22T11:19:25.072116Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
+      "incident_name": "Elevated errors for Claude Opus 4.8",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-22T05:34:41.497290Z"
+  "html_written": "2026-06-22T11:19:25.072142Z"
 }
