@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-21T22:54:12.380494Z",
+  "polled": "2026-06-22T00:13:13.859306Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "[Fragnesia] Linux Privilege Escalation Vulnerability",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "127 active Salesforce incidents",
+      "description": "122 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Mail, Calendar and Scheduler services in US Region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Cannot Change Phone Number Home Region in the Twilio Legacy Console",
+      "incident_name": "SMS Delivery Delays from Twilio to Surf Telecom Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-21T22:54:12.380525Z"
+  "html_written": "2026-06-22T00:13:13.859334Z"
 }
