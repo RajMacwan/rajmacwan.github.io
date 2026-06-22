@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-22T11:19:25.072116Z",
+  "polled": "2026-06-22T16:06:46.113628Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Customers may see incorrect invoice payment status",
+      "incident_name": "Increased Error Rates",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "122 active Salesforce incidents",
+      "description": "123 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors for Claude Opus 4.8",
+      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Algar Telecom Brazil",
+      "incident_name": "Incorrect Suspended Banner on Console Front Page",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-22T11:19:25.072142Z"
+  "html_written": "2026-06-22T16:06:46.113661Z"
 }
