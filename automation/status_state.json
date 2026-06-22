@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-22T21:51:30.844560Z",
+  "polled": "2026-06-22T23:20:55.421162Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "126 active Salesforce incidents",
+      "description": "127 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,8 +92,8 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "AWS - US West (Oregon): INC0159680",
       "fetched": true
     },
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Metrics Queries",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Etisalat United Arab Emirates",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Surf Telecom Brazil",
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Marketing Campaign Data Delayed",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-22T21:51:30.844594Z"
+  "html_written": "2026-06-22T23:20:55.421203Z"
 }
