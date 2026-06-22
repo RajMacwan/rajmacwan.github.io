@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-22T19:44:52.948897Z",
+  "polled": "2026-06-22T21:51:30.844560Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increased Error Rates",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "125 active Salesforce incidents",
+      "description": "126 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "AWS - US West (Oregon): INC0159680",
       "fetched": true
     },
     "databricks": {
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors across many models",
+      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Metrics Queries",
       "fetched": true
     },
     "stripe": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Etisalat UAE",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Etisalat United Arab Emirates",
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Marketing Campaign Data Delayed",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-22T19:44:52.948933Z"
+  "html_written": "2026-06-22T21:51:30.844594Z"
 }
