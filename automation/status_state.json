@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-23T19:28:43.952557Z",
+  "polled": "2026-06-23T21:16:03.840556Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degraded Performance - Payment Method Addition (Cards)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-23T19:28:43.952583Z"
+  "html_written": "2026-06-23T21:16:03.840585Z"
 }
