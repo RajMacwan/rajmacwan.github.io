@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-23T01:30:38.523198Z",
+  "polled": "2026-06-23T05:50:20.991630Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "122 active Salesforce incidents",
+      "description": "123 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "INC20000046",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -236,9 +236,9 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "UAE Telephony SMS issue",
       "fetched": true
     },
     "crowdstrike": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Surf Telecom Brazil",
+      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in United Arab Emirates, Trinidad and Tobago, Jamaica, and Haiti",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-23T01:30:38.523227Z"
+  "html_written": "2026-06-23T05:50:20.991673Z"
 }
