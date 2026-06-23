@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-23T15:35:22.341820Z",
+  "polled": "2026-06-23T17:28:49.103094Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "INC20000047",
       "fetched": true
     },
     "databricks": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Contact Center Services and Incorrect Offline Status Display for Zoom Rooms Scheduling in U.S Region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -164,21 +164,21 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Users may experience elevated errors in ChatGPT uploading and downloading files",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "FedRAMP workspaces and API orgs have degraded performance",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated error rate across multiple models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "We\u2019ve suspended access to Claude Mythos 5 and Claude Fable 5",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors across Anthropic models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-23T15:35:22.341842Z"
+  "html_written": "2026-06-23T17:28:49.103129Z"
 }
