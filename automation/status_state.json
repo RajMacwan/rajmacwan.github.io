@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-23T05:50:20.991630Z",
+  "polled": "2026-06-23T09:40:44.011726Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom Contact Center Services and Incorrect Offline Status Display for Zoom Rooms Scheduling in U.S Region.",
       "fetched": true
     },
     "dropbox": {
@@ -236,8 +236,8 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "UAE Telephony SMS issue",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in United Arab Emirates, Trinidad and Tobago, Jamaica, and Haiti",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Etisalat United Arab Emirates",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-23T05:50:20.991673Z"
+  "html_written": "2026-06-23T09:40:44.011752Z"
 }
