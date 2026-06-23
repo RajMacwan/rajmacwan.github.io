@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-22T23:20:55.421162Z",
+  "polled": "2026-06-23T01:30:38.523198Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "127 active Salesforce incidents",
+      "description": "122 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "AWS - US West (Oregon): INC0159680",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "INC20000046",
       "fetched": true
     },
     "databricks": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-22T23:20:55.421203Z"
+  "html_written": "2026-06-23T01:30:38.523227Z"
 }
