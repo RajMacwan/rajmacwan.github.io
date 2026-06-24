@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-24T20:53:58.865252Z",
+  "polled": "2026-06-24T22:18:31.018918Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Sends and Receives - Avalanche",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Orange Botswana",
+      "incident_name": "Messaging Service Whatsapp Geo Match Degraded",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-24T20:53:58.865282Z"
+  "html_written": "2026-06-24T22:18:31.018950Z"
 }
