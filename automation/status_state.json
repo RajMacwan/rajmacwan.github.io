@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-24T05:53:14.846854Z",
+  "polled": "2026-06-24T09:31:57.043659Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "124 active Salesforce incidents",
+      "description": "125 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "INC20000047",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-24T05:53:14.846897Z"
+  "html_written": "2026-06-24T09:31:57.043686Z"
 }
