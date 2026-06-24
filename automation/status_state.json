@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-24T19:02:38.805067Z",
+  "polled": "2026-06-24T20:53:58.865252Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Messaging Service Whatsapp Geo Match Degraded",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Orange Botswana",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-24T19:02:38.805100Z"
+  "html_written": "2026-06-24T20:53:58.865282Z"
 }
