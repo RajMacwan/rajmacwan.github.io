@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-25T05:50:19.186348Z",
+  "polled": "2026-06-25T09:23:54.105107Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Increase in Workflow runs stuck as pending",
       "fetched": true
     },
     "netlify": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "118 active Salesforce incidents",
+      "description": "119 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom Web Service in Philippines.",
       "fetched": true
     },
     "dropbox": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "FedRAMP workspaces and API orgs have degraded performance",
+      "incident_name": "Users may encounter issues using access token with Codex",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Sender IDs to SmartFren Indonesia",
+      "incident_name": "SMS Delivery Failures From a Subset of Twilio Short Codes to Verizon United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-25T05:50:19.186379Z"
+  "html_written": "2026-06-25T09:23:54.105136Z"
 }
