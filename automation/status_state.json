@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-26T13:24:22.885307Z",
+  "polled": "2026-06-26T15:39:22.817649Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Errors when uploading Custom Certificates",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Elevated Errors on Vercel Dashboard",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "120 active Salesforce incidents",
+      "description": "121 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-26T13:24:22.885337Z"
+  "html_written": "2026-06-26T15:39:22.817676Z"
 }
