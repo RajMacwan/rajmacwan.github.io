@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-27T21:19:27.012912Z",
+  "polled": "2026-06-27T22:33:15.094056Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Codex Usage Limits Depleting Faster Than Expected",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Issues with ChatGPT Windows desktop app",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-27T21:19:27.012942Z"
+  "html_written": "2026-06-27T22:33:15.094081Z"
 }
