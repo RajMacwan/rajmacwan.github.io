@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-28T17:22:35.030545Z",
+  "polled": "2026-06-28T18:45:24.615257Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Disruption with some GitHub services",
       "fetched": true
     },
     "gitlab": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Access Malawi",
+      "incident_name": "SMS Delivery Delays from Twilio to Lycamobile United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-28T17:22:35.030569Z"
+  "html_written": "2026-06-28T18:45:24.615285Z"
 }
