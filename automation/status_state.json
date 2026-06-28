@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-27T23:39:01.364109Z",
+  "polled": "2026-06-28T01:52:11.549015Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "120 active Salesforce incidents",
+      "description": "118 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degraded Performance - Asset Recovery",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
+      "incident_name": "SMS Delivery Delays and Failures From & To a Subset of Twilio Phone Numbers and Multiple Networks in Peru",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-27T23:39:01.364133Z"
+  "html_written": "2026-06-28T01:52:11.549044Z"
 }
