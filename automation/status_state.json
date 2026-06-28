@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-28T09:38:43.633397Z",
+  "polled": "2026-06-28T11:24:53.277462Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "maintenance",
-      "description": "Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded Performance - Asset Recovery",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-28T09:38:43.633422Z"
+  "html_written": "2026-06-28T11:24:53.277489Z"
 }
