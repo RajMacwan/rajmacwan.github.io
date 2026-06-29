@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-29T16:06:45.551780Z",
+  "polled": "2026-06-29T18:21:11.182980Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Codex Usage Limits Depleting Faster Than Expected",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Etisalat United Arab Emirates",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Lycamobile United Kingdom",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Microsoft Feedback Loop (Spam Reports) Processing Delays",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-29T16:06:45.551813Z"
+  "html_written": "2026-06-29T18:21:11.183005Z"
 }
