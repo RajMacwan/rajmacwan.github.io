@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-29T20:25:02.060809Z",
+  "polled": "2026-06-29T21:52:08.904484Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare for SaaS API",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "intermittent Service Degradation Affecting ZoomMate in the US Region.",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tigo Paraguay",
+      "incident_name": "USD Charges Are Failing for Customers in Twilio Mexico Cisa Subsidiary",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-29T20:25:02.060838Z"
+  "html_written": "2026-06-29T21:52:08.904553Z"
 }
