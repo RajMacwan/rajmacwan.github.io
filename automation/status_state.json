@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-29T21:52:08.904484Z",
+  "polled": "2026-06-29T22:58:44.155026Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "intermittent Service Degradation Affecting ZoomMate in the US Region.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Provisioned users with SSO enforcement encounter a 403 error when accepting their invitation",
       "fetched": true
     },
     "bitwarden": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "USD Charges Are Failing for Customers in Twilio Mexico Cisa Subsidiary",
+      "incident_name": "SMS Delivery Delays from Twilio to Etisalat United Arab Emirates",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-29T21:52:08.904553Z"
+  "html_written": "2026-06-29T22:58:44.155052Z"
 }
