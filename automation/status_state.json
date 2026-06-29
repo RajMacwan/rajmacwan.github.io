@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-29T18:21:11.182980Z",
+  "polled": "2026-06-29T20:25:02.060809Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Cloudflare for SaaS API",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Lycamobile United Kingdom",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tigo Paraguay",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-29T18:21:11.183005Z"
+  "html_written": "2026-06-29T20:25:02.060838Z"
 }
