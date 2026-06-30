@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-29T22:58:44.155026Z",
+  "polled": "2026-06-30T00:14:25.175539Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "minor",
-      "description": "1 active GCP incident",
-      "incident_name": "Network traffic to Google Cloud originating from Delhi, Chennai, Mumbai and surrounding areas is experiencing intermittent periods of elevat",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Etisalat United Arab Emirates",
+      "incident_name": "USD Charges Are Failing for Customers in Twilio Mexico Cisa Subsidiary",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-29T22:58:44.155052Z"
+  "html_written": "2026-06-30T00:14:25.175566Z"
 }
