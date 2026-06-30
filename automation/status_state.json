@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-30T00:14:25.175539Z",
+  "polled": "2026-06-30T04:37:45.240480Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -286,7 +286,7 @@
     "sendgrid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Microsoft Feedback Loop (Spam Reports) Processing Delays",
+      "incident_name": "",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T00:14:25.175566Z"
+  "html_written": "2026-06-30T04:37:45.240509Z"
 }
