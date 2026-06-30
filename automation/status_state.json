@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-30T20:19:16.366252Z",
+  "polled": "2026-06-30T21:50:29.704526Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Delayed data processing and errors in multiple products",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T20:19:16.366277Z"
+  "html_written": "2026-06-30T21:50:29.704555Z"
 }
