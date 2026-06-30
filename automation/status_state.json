@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-30T16:05:26.419100Z",
+  "polled": "2026-06-30T18:10:04.133744Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Delayed data processing and errors in multiple products",
       "fetched": true
     },
     "stripe": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Yettel Bulgaria",
+      "incident_name": "SMS Delivery Delays from Twilio to MTS Russia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T16:05:26.419135Z"
+  "html_written": "2026-06-30T18:10:04.133768Z"
 }
