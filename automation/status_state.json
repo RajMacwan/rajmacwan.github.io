@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-30T04:37:45.240480Z",
+  "polled": "2026-06-30T08:19:30.300194Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "119 active Salesforce incidents",
+      "description": "121 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "USD Charges Are Failing for Customers in Twilio Mexico Cisa Subsidiary",
+      "incident_name": "SMS Delivery Delays from Twilio to MTS Russia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T04:37:45.240509Z"
+  "html_written": "2026-06-30T08:19:30.300220Z"
 }
