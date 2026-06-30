@@ -1,5 +1,5 @@
 {
-  "polled": "2026-06-30T21:50:29.704526Z",
+  "polled": "2026-06-30T23:14:07.982044Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Issue - Block Storage - Singapore Expansion, SP (sg-sin-2)",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000063",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to MTN Nigeria",
+      "incident_name": "Conversation Intelligence Is Not Processing Conversations and Will Have Delays Running Operators",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T21:50:29.704555Z"
+  "html_written": "2026-06-30T23:14:07.982072Z"
 }
