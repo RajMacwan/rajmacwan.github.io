@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-01T20:08:48.555055Z",
+  "polled": "2026-07-01T21:46:24.720816Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -250,7 +250,7 @@
     "datadog": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated Error Rates",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
+      "incident_name": "User Authentication Identity SNA Missing Redirects in Philippines",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-01T20:08:48.555080Z"
+  "html_written": "2026-07-01T21:46:24.720844Z"
 }
