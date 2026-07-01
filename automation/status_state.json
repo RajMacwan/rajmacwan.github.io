@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-01T06:09:09.590825Z",
+  "polled": "2026-07-01T10:13:20.357315Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Agent Timeouts While Retrieving Data from Knowledge Bases",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "118 active Salesforce incidents",
+      "description": "119 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-01T06:09:09.590854Z"
+  "html_written": "2026-07-01T10:13:20.357342Z"
 }
