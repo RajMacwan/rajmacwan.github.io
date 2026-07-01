@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-01T21:46:24.720816Z",
+  "polled": "2026-07-01T22:56:29.593191Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degraded Performance - Ethereum Network Asset Recovery",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects in Philippines",
+      "incident_name": "SMS Delivery Failures from Twilio to Natcom Haiti",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-01T21:46:24.720844Z"
+  "html_written": "2026-07-01T22:56:29.593217Z"
 }
