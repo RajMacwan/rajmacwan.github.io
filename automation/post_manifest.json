@@ -585,6 +585,15 @@
     "date": ""
   },
   {
+    "slug": "summer-reading-security-books",
+    "url": "blog/summer-reading-security-books.html",
+    "title": "Summer Reading: The Security & Tech Books I Recommend",
+    "summary": "Every July I get the same question from junior engineers and new IT leaders: \"What should I read?\" The honest answer is \"not the latest bestseller on cybersecurity.\" The books that shaped how I actually do the job are older, narrower, an...",
+    "pill_class": "grid-pill-lab",
+    "grid": "LabGrid",
+    "date": ""
+  },
+  {
     "slug": "supply-chain-breach-your-responsibilities",
     "url": "blog/supply-chain-breach-your-responsibilities.html",
     "title": "Supply Chain Breach: Your Responsibilities",
