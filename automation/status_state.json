@@ -1,10 +1,10 @@
 {
-  "polled": "2026-06-30T23:14:07.982044Z",
+  "polled": "2026-07-01T01:34:59.693101Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Phoenix, AZ",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - Block Storage - Singapore Expansion, SP (sg-sin-2)",
+      "incident_name": "Service Issue - ACLP Metrics",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "121 active Salesforce incidents",
+      "description": "118 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000063",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Conversation Intelligence Is Not Processing Conversations and Will Have Delays Running Operators",
+      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-06-30T23:14:07.982072Z"
+  "html_written": "2026-07-01T01:34:59.693129Z"
 }
