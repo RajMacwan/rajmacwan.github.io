@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-01T10:13:20.357315Z",
+  "polled": "2026-07-01T13:12:56.778806Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Agent Timeouts While Retrieving Data from Knowledge Bases",
+      "incident_name": "Droplet Resize",
       "fetched": true
     },
     "heroku": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delays in copilot budget limits resets for some users",
       "fetched": true
     },
     "gitlab": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects in Philippines",
+      "incident_name": "SMS Delivery Failures from Twilio to Globul Bulgaria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-01T10:13:20.357342Z"
+  "html_written": "2026-07-01T13:12:56.778831Z"
 }
