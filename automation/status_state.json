@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T14:56:59.940684Z",
+  "polled": "2026-07-02T16:54:26.268599Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Workers build delays",
+      "incident_name": "Realtimekit Issues",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Tigo Bolivia",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Vivo Telefonica Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T14:56:59.940721Z"
+  "html_written": "2026-07-02T16:54:26.268632Z"
 }
