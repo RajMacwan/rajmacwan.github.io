@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T12:32:33.189580Z",
+  "polled": "2026-07-02T14:56:59.940684Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Cloudflare Workers build delays",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "120 active Salesforce incidents",
+      "description": "121 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
+      "incident_name": "SMS Delivery Failures from Twilio to Tigo Bolivia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T12:32:33.189626Z"
+  "html_written": "2026-07-02T14:56:59.940721Z"
 }
