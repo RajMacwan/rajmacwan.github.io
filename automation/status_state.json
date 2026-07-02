@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-02T16:54:26.268599Z",
+  "polled": "2026-07-02T18:25:18.220435Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Incident with Pages",
       "fetched": true
     },
     "gitlab": {
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Degradation Affecting Meta integration for Zoom.",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Vivo Telefonica Brazil",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Altice Dominican Republic",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T16:54:26.268632Z"
+  "html_written": "2026-07-02T18:25:18.220466Z"
 }
