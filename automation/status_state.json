@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-02T04:33:18.687594Z",
+  "polled": "2026-07-02T07:53:55.759814Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Meta integration for Zoom.",
       "fetched": true
     },
     "dropbox": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded Performance - Ethereum Network Asset Recovery",
+      "incident_name": "Delayed Receives - Base Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures From Bitel In Peru To a Subset Of Twilio Shortcode",
+      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T04:33:18.687622Z"
+  "html_written": "2026-07-02T07:53:55.759877Z"
 }
