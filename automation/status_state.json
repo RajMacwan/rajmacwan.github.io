@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T21:21:56.889447Z",
+  "polled": "2026-07-02T22:36:24.700007Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Realtimekit Issues",
+      "incident_name": "Cloudflare Workers build delays",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Managed Database Clusters",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric Numbers to Airtel Niger",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Zong Pakistan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T21:21:56.889483Z"
+  "html_written": "2026-07-02T22:36:24.700032Z"
 }
