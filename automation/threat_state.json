@@ -1,11 +1,11 @@
 {
-  "level": "GREEN",
-  "score": 1,
-  "headline": "Calm across the wire.",
-  "body": "Background-noise KEV adds. No active-exploitation surges.",
+  "level": "BLUE",
+  "score": 2,
+  "headline": "Elevated but steady.",
+  "body": "Normal breach cadence. Routine patch discipline sufficient.",
   "meta": {
-    "kev_adds_7d": 3,
+    "kev_adds_7d": 4,
     "active_zero_days": 0
   },
-  "updated": "2026-07-01T09:28:16.165747Z"
+  "updated": "2026-07-02T08:40:53.691197Z"
 }
