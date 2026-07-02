@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T07:53:55.759814Z",
+  "polled": "2026-07-02T10:41:22.451273Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare is investigating issues with network performance in ENAM and WNAM, US",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "119 active Salesforce incidents",
+      "description": "120 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Meta integration for Zoom.",
+      "incident_name": "Service Degradation Affecting Zoom AI Services in Japan.",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T07:53:55.759877Z"
+  "html_written": "2026-07-02T10:41:22.451300Z"
 }
