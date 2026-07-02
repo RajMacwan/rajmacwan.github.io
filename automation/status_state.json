@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-02T10:41:22.451273Z",
+  "polled": "2026-07-02T12:32:33.189580Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom AI Services in Japan.",
+      "incident_name": "Service Degradation Affecting Meta integration for Zoom.",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T10:41:22.451300Z"
+  "html_written": "2026-07-02T12:32:33.189626Z"
 }
