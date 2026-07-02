@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T22:36:24.700007Z",
+  "polled": "2026-07-02T23:43:21.047011Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Workers build delays",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Receives - Base Network",
+      "incident_name": "Degraded Performance - Ethereum Network Asset Recovery",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Zong Pakistan",
+      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T22:36:24.700032Z"
+  "html_written": "2026-07-02T23:43:21.047038Z"
 }
