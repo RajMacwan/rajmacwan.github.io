@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-03T22:15:12.720938Z",
+  "polled": "2026-07-03T23:30:46.814793Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Free WARP and WARP+ new registrations",
+      "incident_name": "Resolution Issues for .AL Domains",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Asia Cell Iraq",
+      "incident_name": "SMS Delivery Failures from Twilio to Tigo Bolivia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-03T22:15:12.720965Z"
+  "html_written": "2026-07-03T23:30:46.814821Z"
 }
