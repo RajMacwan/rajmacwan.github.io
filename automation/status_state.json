@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-03T13:15:47.309728Z",
+  "polled": "2026-07-03T15:29:05.187383Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - ACLP Metrics",
+      "incident_name": "Service Issue - GPU and VPU Booting issues",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "122 active Salesforce incidents",
+      "description": "162 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-03T13:15:47.309753Z"
+  "html_written": "2026-07-03T15:29:05.187447Z"
 }
