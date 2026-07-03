@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-03T18:17:58.418961Z",
+  "polled": "2026-07-03T19:54:31.014519Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Resolution Issues for .AL Domains",
+      "incident_name": "Loadbalancing and Standalone Healthcheck Services for FedRAMP customers are degraded",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-03T18:17:58.418991Z"
+  "html_written": "2026-07-03T19:54:31.014547Z"
 }
