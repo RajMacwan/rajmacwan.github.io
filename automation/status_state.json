@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-02T23:43:21.047011Z",
+  "polled": "2026-07-03T01:20:13.243117Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Issues with network performance in ENAM and WNAM, US",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "121 active Salesforce incidents",
+      "description": "120 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Errors Pulling Container Images",
       "fetched": true
     },
     "stripe": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded Performance - Ethereum Network Asset Recovery",
+      "incident_name": "Delayed Receives - Base Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issue With Some Verified Senders Appearing as Unverified",
+      "incident_name": "SMS Delivery Receipt Delays From a Subset of Twilio Long Codes to Zong Pakistan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-02T23:43:21.047038Z"
+  "html_written": "2026-07-03T01:20:13.243147Z"
 }
