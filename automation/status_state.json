@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-04T09:55:16.877077Z",
+  "polled": "2026-07-04T11:27:36.224192Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "Delayed Receives - Base Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Tigo Bolivia",
+      "incident_name": "SMS Delivery Failures from Twilio to Natcom Haiti",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-04T09:55:16.877101Z"
+  "html_written": "2026-07-04T11:27:36.224223Z"
 }
