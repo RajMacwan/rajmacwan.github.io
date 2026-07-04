@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-04T22:10:55.898036Z",
+  "polled": "2026-07-04T23:17:02.480232Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Vectorize Issues",
+      "incident_name": "Issues with network performance in North America",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Limited access to Deepseek V4 Pro model",
       "fetched": true
     },
     "heroku": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-04T22:10:55.898061Z"
+  "html_written": "2026-07-04T23:17:02.480258Z"
 }
