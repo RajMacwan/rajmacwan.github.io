@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-04T12:46:15.390334Z",
+  "polled": "2026-07-04T14:18:31.352855Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "163 active Salesforce incidents",
+      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
+      "fetched": true
     },
     "sap": {
       "indicator": "unknown",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Natcom Haiti",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Italy",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-04T12:46:15.390362Z"
+  "html_written": "2026-07-04T14:18:31.352890Z"
 }
