@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-05T01:10:47.121905Z",
+  "polled": "2026-07-05T05:10:55.254678Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Degraded Performance - ALEO Send Transactions",
+      "incident_name": "Delayed Receives - Base Network",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-05T01:10:47.121935Z"
+  "html_written": "2026-07-05T05:10:55.254705Z"
 }
