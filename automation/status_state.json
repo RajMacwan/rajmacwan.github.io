@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-05T17:45:40.749974Z",
+  "polled": "2026-07-05T18:50:16.548559Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -272,8 +272,8 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Delayed Receives - Base Network",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-05T17:45:40.750002Z"
+  "html_written": "2026-07-05T18:50:16.548591Z"
 }
