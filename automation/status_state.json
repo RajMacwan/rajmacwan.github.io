@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-05T05:10:55.254678Z",
+  "polled": "2026-07-05T08:20:19.891972Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-05T05:10:55.254705Z"
+  "html_written": "2026-07-05T08:20:19.891999Z"
 }
