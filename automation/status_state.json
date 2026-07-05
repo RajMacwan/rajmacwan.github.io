@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-04T23:17:02.480232Z",
+  "polled": "2026-07-05T01:10:47.121905Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Limited access to Deepseek V4 Pro model",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "163 active Salesforce incidents",
+      "description": "162 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Asia Cell Iraq",
+      "incident_name": "SMS Delivery Failures from Twilio to Tigo Bolivia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-04T23:17:02.480258Z"
+  "html_written": "2026-07-05T01:10:47.121935Z"
 }
