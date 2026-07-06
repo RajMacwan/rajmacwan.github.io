@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-06T17:24:38.207489Z",
+  "polled": "2026-07-06T19:16:31.672385Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - GPU and VPU Booting issues",
+      "incident_name": "Emerging Service Issue - Managed Databases - All Regions",
       "fetched": true
     },
     "aws": {
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "minor",
-      "description": "164 active Salesforce incidents",
-      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "sap": {
       "indicator": "unknown",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Gather Speech Degraded in Eu-West-1",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-06T17:24:38.207514Z"
+  "html_written": "2026-07-06T19:16:31.672428Z"
 }
