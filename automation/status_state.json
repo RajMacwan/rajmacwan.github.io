@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-06T14:32:28.807342Z",
+  "polled": "2026-07-06T17:24:38.207489Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "163 active Salesforce incidents",
+      "description": "164 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Emergency Call Failures from Twilio Phone Numbers to United States and Spain",
+      "incident_name": "Voice Gather Speech Degraded in Eu-West-1",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-06T14:32:28.807376Z"
+  "html_written": "2026-07-06T17:24:38.207514Z"
 }
