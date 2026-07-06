@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-06T22:33:36.386302Z",
+  "polled": "2026-07-06T23:42:08.811345Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Durable Objects Increased Error Rate in ENAM",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-06T22:33:36.386328Z"
+  "html_written": "2026-07-06T23:42:08.811371Z"
 }
