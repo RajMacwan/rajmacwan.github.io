@@ -11,8 +11,9 @@
     "model-selection-for-enterprise-it",
     "network-architecture-hybrid-work",
     "patching-priority-practitioner-framework",
-    "personal-osint-workstation-build"
+    "personal-osint-workstation-build",
+    "rag-for-internal-documentation"
   ],
-  "last_run": "2026-06-29T09:21:45.138931Z",
-  "last_slug": "personal-osint-workstation-build"
+  "last_run": "2026-07-06T08:54:51.954288Z",
+  "last_slug": "rag-for-internal-documentation"
 }
