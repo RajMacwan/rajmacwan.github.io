@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-06T21:04:42.633490Z",
+  "polled": "2026-07-06T22:33:36.386302Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "165 active Salesforce incidents",
+      "description": "166 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Claude Tag seeing elevated GitHub operation failures",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-06T21:04:42.633517Z"
+  "html_written": "2026-07-06T22:33:36.386328Z"
 }
