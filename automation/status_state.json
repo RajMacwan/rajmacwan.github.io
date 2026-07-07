@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T05:44:54.528325Z",
+  "polled": "2026-07-07T08:56:17.878363Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "160 active Salesforce incidents",
+      "description": "161 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Live Streaming in Singapore Region.",
       "fetched": true
     },
     "dropbox": {
@@ -170,8 +170,8 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Claude Tag seeing elevated GitHub operation failures",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T05:44:54.528360Z"
+  "html_written": "2026-07-07T08:56:17.878392Z"
 }
