@@ -1,11 +1,11 @@
 {
   "level": "GREEN",
-  "score": 1,
+  "score": 0,
   "headline": "Calm across the wire.",
   "body": "Background-noise KEV adds. No active-exploitation surges.",
   "meta": {
-    "kev_adds_7d": 2,
+    "kev_adds_7d": 1,
     "active_zero_days": 0
   },
-  "updated": "2026-07-06T09:54:27.908005Z"
+  "updated": "2026-07-07T09:22:20.049924Z"
 }
