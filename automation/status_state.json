@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T19:07:36.401172Z",
+  "polled": "2026-07-07T20:57:08.990412Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors for some models",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Entel Bolivia, Softbank Japan, and MTN Ghana",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T19:07:36.401207Z"
+  "html_written": "2026-07-07T20:57:08.990441Z"
 }
