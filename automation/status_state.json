@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T22:15:54.474366Z",
+  "polled": "2026-07-07T23:17:16.124688Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Degraded Performance for Anthropic Models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -236,9 +236,9 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Duo - Phone call and SMS authentication issues - Australia",
       "fetched": true
     },
     "crowdstrike": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T22:15:54.474401Z"
+  "html_written": "2026-07-07T23:17:16.124729Z"
 }
