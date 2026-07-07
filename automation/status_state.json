@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-07T16:58:29.776350Z",
+  "polled": "2026-07-07T19:07:36.401172Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Registrar operations issues",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Entel Bolivia and Softbank Japan",
+      "incident_name": "SMS Delivery Failures from Twilio to Entel Bolivia, Softbank Japan, and MTN Ghana",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T16:58:29.776378Z"
+  "html_written": "2026-07-07T19:07:36.401207Z"
 }
