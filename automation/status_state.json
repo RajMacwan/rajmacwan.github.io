@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-07T11:54:26.756544Z",
+  "polled": "2026-07-07T14:36:08.472419Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "New members invitations to accounts not being sent",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "162 active Salesforce incidents",
+      "description": "163 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Actions and Codespaces APIs experiencing partial failures",
       "fetched": true
     },
     "gitlab": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T11:54:26.756570Z"
+  "html_written": "2026-07-07T14:36:08.472450Z"
 }
