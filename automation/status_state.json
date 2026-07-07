@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T01:27:18.496124Z",
+  "polled": "2026-07-07T05:44:54.528325Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Real Time Media Streams (RTMS)",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Phone Support: Higher Than Expected Wait Times",
       "fetched": true
     },
     "coinbase": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Console A2P Campaign Editing Unavailable",
+      "incident_name": "Voice Gather Speech Degraded in Eu-West-1",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T01:27:18.496170Z"
+  "html_written": "2026-07-07T05:44:54.528360Z"
 }
