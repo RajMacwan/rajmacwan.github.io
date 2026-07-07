@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T20:57:08.990412Z",
+  "polled": "2026-07-07T22:15:54.474366Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "163 active Salesforce incidents",
+      "description": "166 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Degradation Affecting Zoom Phone and Zoom Contact Center Inbound calls in India",
       "fetched": true
     },
@@ -171,14 +171,14 @@
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "description": "Minor Service Outage",
       "incident_name": "Elevated errors for some models",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Degraded Performance for Anthropic Models",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Liberty Puerto Rico",
+      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T20:57:08.990441Z"
+  "html_written": "2026-07-07T22:15:54.474401Z"
 }
