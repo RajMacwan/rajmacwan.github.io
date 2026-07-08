@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T18:22:07.810524Z",
+  "polled": "2026-07-08T20:04:17.888108Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "GitHub Issue",
       "fetched": true
     },
     "gcp": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "179 active Salesforce incidents",
+      "description": "180 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors on Claude Opus 4.8",
+      "incident_name": "Degraded performance for Claude Code on the web, Cowork Remote, Claude Tag, and Claude Code Review sessions",
       "fetched": true
     },
     "cursor": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends and Receives - Solana",
+      "incident_name": "XLM - Delayed Sends and Receives",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
+      "incident_name": "MMS Delivery Delays From Network Subscribers to a Subset of Twilio United States Short Codes",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T18:22:07.810550Z"
+  "html_written": "2026-07-08T20:04:17.888134Z"
 }
