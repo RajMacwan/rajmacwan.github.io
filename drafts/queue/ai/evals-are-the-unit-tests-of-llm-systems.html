@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evals Are the Unit Tests Your LLM Feature Doesn't Have — Raj Macwan</title>
+    <meta name="description" content="You would never ship code with no tests, but most teams ship LLM features with no evals — then tune prompts by vibes. A practical case for treating evaluation as the foundation, not an afterthought.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Evals Are the Unit Tests Your LLM Feature Doesn't Have">
+    <meta property="og:description" content="Shipping an LLM feature with no evals is shipping code with no tests. Build a small, honest eval set first — it's the difference between engineering and vibes.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/evals-are-the-unit-tests-of-llm-systems.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Evals Are the Unit Tests Your LLM Feature Doesn't Have</h1>
+
+            <div class="article-body">
+                <p class="lead">You would never ship a payment system with no tests. Yet most teams ship LLM features with no evals at all, then "improve" them by changing the prompt and eyeballing a few outputs. That is not engineering. It is vibes with a deploy button. Evals are the unit tests of an LLM system, and until you have them, you are not iterating — you are guessing and hoping the guesses trend upward.</p>
+
+                <h2>Why "it looks better" is a trap</h2>
+
+                <p>Without evals, every prompt change is evaluated by spot-checking a handful of outputs. This feels reasonable and is deeply misleading. You fix the one bad case you noticed, ship it, and silently break three cases you did not look at. Because generation is non-deterministic and inputs vary widely, small samples tell you almost nothing about aggregate behavior. Teams in this mode oscillate: every change fixes something visible and breaks something invisible, and quality wanders sideways for months while everyone feels busy.</p>
+
+                <h2>What an eval actually is</h2>
+
+                <p>An eval is a set of representative inputs paired with a way to judge whether the output was good. That is the whole idea. It ranges from simple to sophisticated, and you should start simple:</p>
+
+                <ul>
+                    <li><strong>Exact or structural checks.</strong> For anything with a right answer — extraction, classification, valid JSON, a required field — you can assert programmatically. These are cheap and should exist first. They catch regressions instantly.</li>
+                    <li><strong>Reference-based scoring.</strong> For tasks with a known-good answer, compare the output against it. Not always applicable, but powerful where it is.</li>
+                    <li><strong>LLM-as-judge.</strong> For open-ended quality — tone, helpfulness, faithfulness to sources — a separate model call scores the output against a rubric. Imperfect, but consistent and scalable, and far better than a human glancing at five examples.</li>
+                    <li><strong>Human review on a sample.</strong> Still the gold standard for the subtle cases. The trick is to spend it where automated evals cannot reach, not on everything.</li>
+                </ul>
+
+                <h2>The smallest eval set that changes everything</h2>
+
+                <p>You do not need a thousand cases to start. You need twenty to fifty that represent the real distribution of inputs — including the weird ones, the adversarial ones, and the failure cases you have already hit in production. That small set, run automatically on every prompt or model change, converts "I think this is better" into "this moved the score from 0.71 to 0.78 and regressed nothing." The first time an eval catches a change that improved your spot-check but tanked the aggregate, you will never ship without one again.</p>
+
+                <blockquote>A prompt change with no eval is a code change with no test: it might be an improvement, it might be a regression, and you have chosen not to know which.</blockquote>
+
+                <p>Evals are not the glamorous part of building with LLMs. Nobody demos their eval harness at a conference. But they are the difference between a feature that improves on a measurable curve and one that drifts on the strength of whoever last touched the prompt. Build the small honest eval set first. Everything downstream — prompt tuning, model selection, context work — only becomes real engineering once you can measure it.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="rag-for-internal-documentation.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-03-17</span>
+                    </div>
+                    <h3>RAG for Internal Documentation</h3>
+                    <p>The most boring, most useful enterprise AI pattern, done right.</p>
+                </a>
+                <a href="model-selection-for-enterprise-it.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-03-07</span>
+                    </div>
+                    <h3>Model Selection for Enterprise IT</h3>
+                    <p>The model you pick for enterprise IT isn't the one on the homepage.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

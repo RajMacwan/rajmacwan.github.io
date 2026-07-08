@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading a Ransomware Leak Site Like an Analyst — Raj Macwan</title>
+    <meta name="description" content="Ransomware leak sites are theater designed to pressure victims. Reading them as an analyst — for what they reveal, not what they claim — turns adversary propaganda into usable intelligence.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Reading a Ransomware Leak Site Like an Analyst">
+    <meta property="og:description" content="A ransomware leak site is a pressure tool, not a fact sheet. Reading one like an analyst — signal vs. staging — turns adversary propaganda into usable intelligence.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/reading-a-ransomware-leak-site.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Reading a Ransomware Leak Site Like an Analyst</h1>
+
+            <div class="article-body">
+                <p class="lead">A ransomware group's leak site is not a news source. It is a pressure instrument, built to frighten a victim into paying by threatening to publish stolen data on a countdown. But read the way an analyst reads it — for what it inadvertently reveals rather than what it claims — a leak site becomes a genuine source of intelligence about how a group operates. The skill is separating the signal from the staging.</p>
+
+                <h2>Everything on the site is an argument</h2>
+
+                <p>Start from the right assumption: every element of a leak post is there to make the victim pay. The countdown timer, the "proof" samples, the breathless description of how much data was taken, the professional-looking branding — these are persuasion, not reporting. Groups routinely inflate volumes, claim data they only partially have, and re-list old victims to look busier than they are. If you read a leak site as a factual account, the adversary is writing your threat assessment for you, and they are writing it to manipulate.</p>
+
+                <h2>What the site reveals despite itself</h2>
+
+                <p>The intelligence is in the things the group cannot easily fake or chooses not to hide:</p>
+
+                <ul>
+                    <li><strong>Victimology.</strong> Across many posts, the pattern of who a group hits — sector, size, geography — is hard to fake and tells you whether you are in their target profile. One victim is anecdote; fifty is a targeting doctrine.</li>
+                    <li><strong>Cadence and tempo.</strong> How often they post, whether volume is rising or falling, and any gaps that line up with law-enforcement action. A group that suddenly goes quiet or rebrands is a signal worth correlating with public takedown news.</li>
+                    <li><strong>Proof structure.</strong> The kind of proof samples they publish hints at what they actually exfiltrate and how they organize a breach — file trees, document types, whether they show credentials or just corporate documents.</li>
+                    <li><strong>Operational maturity.</strong> The professionalism of the site, the negotiation terms, the presence of a "press" section — these separate an organized ransomware-as-a-service operation from an opportunist. That distinction changes how you model the threat.</li>
+                </ul>
+
+                <h2>The discipline of looking without touching</h2>
+
+                <p>Reading these sites responsibly is its own skill. You are observing adversary infrastructure, and the rules matter: do not download victim data — handling stolen data carries real legal and ethical weight, and it is not yours to hold. Access from properly isolated infrastructure, never from a machine tied to your identity or your employer's network. Record what you observe, not what you take. The goal is to understand the operation, not to participate in the harm it is inflicting on a victim who is having the worst week of their professional life.</p>
+
+                <blockquote>A leak site tells you almost nothing reliable about the specific breach it is advertising. Read across many of them over time, and it tells you a great deal about the group behind them.</blockquote>
+
+                <p>That is the analyst's move: treat the individual post as propaganda and the aggregate as intelligence. The group controls the story of any single victim. It does not control the pattern that emerges when you watch the whole operation, patiently, over months — and that pattern is where the usable intelligence lives.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="dark-web-intel-what-actually-matters.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-03-21</span>
+                    </div>
+                    <h3>Dark Web Intel: What Actually Matters</h3>
+                    <p>Only two classes of dark-web findings actually change defender behavior.</p>
+                </a>
+                <a href="ethics-of-dark-web-research.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Dark Web</span>
+                        <span>2026-03-09</span>
+                    </div>
+                    <h3>Ethics of Dark Web Research</h3>
+                    <p>Observing versus participating. Legal research versus crossing lines.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

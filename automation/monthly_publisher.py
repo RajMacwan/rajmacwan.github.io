@@ -46,10 +46,25 @@ def promote(draft: Path) -> Path:
 def rebuild_manifest():
     subprocess.check_call([sys.executable, str(AUTO / "build_manifest.py")])
 
+# Grids served by the weekly rotation publisher (weekly_grid_publisher.py).
+# The monthly publisher must NOT publish to these — they have their own cadence.
+ROTATION_GRIDS = {"threat", "infra", "dark", "ai", "intel"}
+
+def draft_grid(draft: Path):
+    """Return the grid slug from a draft's grid-pill class, or None."""
+    m = re.search(r"grid-pill grid-pill-(\w+)", draft.read_text(encoding="utf-8", errors="ignore"))
+    return m.group(1) if m else None
+
 def main():
     draft = find_draft()
     if not draft:
         print(f"No draft for {dt.date.today().strftime('%Y-%m')} — skipping.")
+        return
+    grid = draft_grid(draft)
+    if grid in ROTATION_GRIDS:
+        print(f"[skip] {draft.name} is a {grid}Grid post — those five grids are "
+              f"served by the weekly rotation now (weekly_grid_publisher.py). "
+              f"Monthly publisher will not publish it. Leaving the draft in place.")
         return
     promote(draft)
     # Delegate index/feed/sitemap regen to the existing shell script if present

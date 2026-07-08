@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Engineering as a Product, Not a Project — Raj Macwan</title>
+    <meta name="description" content="Detections decay. Treating detection engineering as a one-time project is why your SOC drowns in stale rules. Run it like a product with a backlog, owners, and a decommission process.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Detection Engineering as a Product, Not a Project">
+    <meta property="og:description" content="Detections rot the moment they ship. Run detection engineering like a product — backlog, owners, coverage metrics, and a decommission path — not a one-time project.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/detection-engineering-as-a-product.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Detection Engineering as a Product, Not a Project</h1>
+
+            <div class="article-body">
+                <p class="lead">Every detection you write starts dying the moment it ships. The environment drifts, the adversary changes tradecraft, a logging source gets renamed, and the rule that fired perfectly in the demo quietly stops matching anything real. Most SOCs never account for this. They treat detection engineering as a project — build a pile of rules, declare coverage, move on — and then wonder why alert quality erodes year over year.</p>
+
+                <p>The teams that stay ahead treat detection as a product. Not a metaphor — an actual product, with a backlog, owners, a release process, usage metrics, and a decommission path. The difference shows up in the alert queue within a quarter.</p>
+
+                <h2>Why the project mindset fails</h2>
+
+                <p>A project has a finish line. You scope it, build it, ship it, and close the ticket. Detection has no finish line, because the thing it points at will not hold still. When you run it as a project you get three predictable failures: rules nobody owns after the author leaves, coverage claims that were true on the day they were measured and never again, and an ever-growing backlog of noisy alerts nobody dares turn off because "what if it catches something."</p>
+
+                <h2>What running it as a product looks like</h2>
+
+                <p>Four practices separate a detection product from a detection pile.</p>
+
+                <p><strong>Every detection has an owner and an expiry.</strong> The owner is responsible for the rule's health — is it still firing, still precise, still mapped to a technique that matters. The expiry forces a review. A rule that has not been looked at in a year is not an asset; it is a liability with a timestamp.</p>
+
+                <p><strong>Coverage is measured against a framework, not a vibe.</strong> Map detections to MITRE ATT&CK techniques you actually care about, given your environment and threat model. "We have 400 rules" is not coverage. "We detect these 30 techniques, with these gaps, and here is why the gaps are acceptable" is coverage.</p>
+
+                <p><strong>Precision is a first-class metric.</strong> Track the true-positive rate of every rule. A detection that fires fifty times a week and is right twice is not protecting you — it is training your analysts to ignore alerts. Low-precision rules get tuned or retired, on a schedule, not when someone finally snaps.</p>
+
+                <p><strong>There is a decommission process.</strong> This is the one nobody builds, and it is the most important. Retiring a detection has to be as normal and blameless as writing one. Without it, the pile only grows, and the signal-to-noise ratio only falls.</p>
+
+                <h2>The backlog is the program</h2>
+
+                <p>A detection product runs off a prioritized backlog, fed by three streams: threat intelligence about what adversaries targeting you are actually doing, incidents and near-misses that exposed a gap, and coverage analysis against your chosen framework. Each candidate detection gets prioritized against that backlog like any product feature. What you choose not to build is a real decision, made on purpose, not an accident of who had time that week.</p>
+
+                <blockquote>A pile of detections is measured by how many rules it has. A detection product is measured by how much real attacker behavior it catches, at what analyst cost, and how fast it adapts when that behavior changes.</blockquote>
+
+                <p>The reframe is not cosmetic. When detection is a product, someone owns its health, decay is expected and managed, and the program improves on a curve instead of degrading on one. That is the whole difference between a SOC that gets sharper every year and one that slowly drowns in its own alerts.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="edr-alone-not-enough.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-15</span>
+                    </div>
+                    <h3>EDR Alone Isn't Enough</h3>
+                    <p>Attackers moved up to identity and out to SaaS. What else the stack needs.</p>
+                </a>
+                <a href="mitre-attack-for-defenders.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-02-14</span>
+                    </div>
+                    <h3>MITRE ATT&CK for Defenders</h3>
+                    <p>A framework, not a checklist. How to use it as a design language.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

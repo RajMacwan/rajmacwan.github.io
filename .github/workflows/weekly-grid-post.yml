@@ -1,0 +1,53 @@
+name: Weekly Grid Post (rotating)
+
+on:
+  schedule:
+    # Tuesdays. Two triggers so exactly one lands at 11:00 America/New_York
+    # year-round: 15:00 UTC == 11:00 EDT (summer), 16:00 UTC == 11:00 EST (winter).
+    # The publisher's time gate runs only at local 11:00 and no-ops otherwise.
+    - cron: "0 15 * * 2"
+    - cron: "0 16 * * 2"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Bypass the 11:00-ET Tuesday time gate and publish now"
+        type: boolean
+        default: false
+      publish_date:
+        description: "Override publish date (YYYY-MM-DD) — determines which grid"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Publish this week's grid post
+        env:
+          FORCE_PUBLISH: ${{ (github.event_name == 'workflow_dispatch' && inputs.force) && '1' || '0' }}
+          PUBLISH_DATE_OVERRIDE: ${{ github.event_name == 'workflow_dispatch' && inputs.publish_date || '' }}
+        run: python automation/weekly_grid_publisher.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "macwangrid-bot"
+          git config user.email "bot@macwangrid.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "feat(blog): weekly grid post $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "Nothing published this week (queue empty or outside publish window)."
+          fi
