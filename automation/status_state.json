@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T03:49:58.357376Z",
+  "polled": "2026-07-08T06:19:13.253286Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to T-Mobile Czech Republic",
+      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T03:49:58.357403Z"
+  "html_written": "2026-07-08T06:19:13.253312Z"
 }
