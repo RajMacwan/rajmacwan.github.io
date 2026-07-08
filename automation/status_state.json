@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T06:19:13.253286Z",
+  "polled": "2026-07-08T09:03:14.128392Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Phone and Zoom Contact Center Inbound calls in India",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T06:19:13.253312Z"
+  "html_written": "2026-07-08T09:03:14.128423Z"
 }
