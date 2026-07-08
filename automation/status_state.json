@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T20:04:17.888108Z",
+  "polled": "2026-07-08T21:20:53.181950Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance for Claude Code on the web, Cowork Remote, Claude Tag, and Claude Code Review sessions",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "XLM - Delayed Sends and Receives",
+      "incident_name": "Delayed Sends and Receives - Solana",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays From Network Subscribers to a Subset of Twilio United States Short Codes",
+      "incident_name": "Voice Call Audio Quality Degradation from Colombia to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T20:04:17.888134Z"
+  "html_written": "2026-07-08T21:20:53.181983Z"
 }
