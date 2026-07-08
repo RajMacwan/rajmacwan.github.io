@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T12:55:07.268267Z",
+  "polled": "2026-07-08T15:22:25.049232Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "177 active Salesforce incidents",
+      "description": "179 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Zoom Healthcare Integration services in US Region",
       "fetched": true
     },
     "dropbox": {
@@ -236,9 +236,9 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Duo - Phone call and SMS authentication issues - Australia",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "crowdstrike": {
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends and Receives - DYDX",
+      "incident_name": "Delayed Sends and Receives - Solana",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T12:55:07.268292Z"
+  "html_written": "2026-07-08T15:22:25.049269Z"
 }
