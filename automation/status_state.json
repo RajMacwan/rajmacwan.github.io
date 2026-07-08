@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T11:14:44.960376Z",
+  "polled": "2026-07-08T12:55:07.268267Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "167 active Salesforce incidents",
+      "description": "177 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends and Receives - Solana",
+      "incident_name": "Delayed Sends and Receives - DYDX",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
+      "incident_name": "One Console Page not Found for Products & Services > Numbers & Senders > Port and Host > Port-in US Local",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T11:14:44.960404Z"
+  "html_written": "2026-07-08T12:55:07.268292Z"
 }
