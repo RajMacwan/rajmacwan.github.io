@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-08T16:56:59.072153Z",
+  "polled": "2026-07-08T18:22:07.810524Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delays Processing Builds",
       "fetched": true
     },
     "netlify": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors on Claude Opus 4.8",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Whatsapp and RCS Pages on One Console Are Not Loading",
+      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-08T16:56:59.072186Z"
+  "html_written": "2026-07-08T18:22:07.810550Z"
 }
