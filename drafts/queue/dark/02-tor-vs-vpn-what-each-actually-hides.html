@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tor vs. VPN: What Each Actually Hides — Raj Macwan</title>
+    <meta name="description" content="Tor and a VPN both 'hide your IP,' which is where most explanations stop and most misunderstandings start. They protect against different adversaries with different trust models. Knowing which is which is the whole point.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Tor vs. VPN: What Each Actually Hides">
+    <meta property="og:description" content="Tor and a VPN both hide your IP — and there the similarity ends. Different adversaries, different trust models. Picking wrong doesn't just underprotect; it misprotects.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/tor-vs-vpn-what-each-actually-hides.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-dark">DarkGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Tor vs. VPN: What Each Actually Hides</h1>
+
+            <div class="article-body">
+                <p class="lead">Tor and a VPN both "hide your IP address," and that shared headline is where most explanations stop — and where most of the dangerous misunderstandings begin. They are not two flavors of the same thing. They defend against different adversaries, rest on different trust models, and fail in different ways. Choosing the wrong one for your threat model does not just underprotect you; it can protect you against the wrong thing entirely while you believe you are covered.</p>
+
+                <h2>The trust question is everything</h2>
+
+                <p>A VPN moves your trust to one company. Your traffic is encrypted to the VPN provider, who can see where you are going and, potentially, who you are. You are not anonymous to them — you are anonymous to everyone <em>past</em> them, and completely visible <em>to</em> them. That is a fine trade against some adversaries: your ISP, someone sniffing the coffee-shop WiFi, a website trying to geolocate you. It is a terrible trade if the VPN provider itself is the thing you need to worry about, because you have concentrated all your exposure into a single company that can log, be subpoenaed, or simply lie about its no-logs policy.</p>
+
+                <p>Tor distributes trust so that no single party sees both ends. Your traffic passes through three relays run by different volunteers; the first knows who you are but not where you are going, the last knows the destination but not who you are, and the middle knows neither. No one point can link you to your activity. That is a fundamentally stronger anonymity model — and it comes with real costs the VPN does not have.</p>
+
+                <h2>What each actually defends against</h2>
+
+                <ul>
+                    <li><strong>VPN, at its best:</strong> hiding your traffic and location from your local network and your ISP, defeating simple geolocation, and getting a trusted encrypted tunnel on hostile WiFi. It is about privacy from the network you are on, not anonymity from the world.</li>
+                    <li><strong>VPN, at its worst:</strong> a false sense of anonymity. Against a serious adversary, "trust this one company completely" is a single point of failure you have paid for.</li>
+                    <li><strong>Tor, at its best:</strong> genuine anonymity where no single party can deanonymize you, and access to services that require it. This is the tool when the adversary is powerful and the stakes are real.</li>
+                    <li><strong>Tor, at its worst:</strong> slow, conspicuous (using it can itself draw attention), and unforgiving of user error — one identifying login or leaked detail can undo the network's protection.</li>
+                </ul>
+
+                <h2>Why "just use both" is not automatically the answer</h2>
+
+                <p>Chaining them ("Tor over VPN" or "VPN over Tor") is often suggested as a belt-and-suspenders move, but each ordering changes who can see what, and the wrong combination can weaken your position rather than strengthen it — for instance, by making your traffic more fingerprintable or by reintroducing the single-provider trust you were trying to escape. The combination is a real technique for specific threat models, not a default to reach for because more sounds safer.</p>
+
+                <blockquote>A VPN answers "who on my network can see my traffic?" Tor answers "can anyone link me to my activity at all?" Those are different questions. Buying the answer to one when you needed the other is the most common privacy mistake there is.</blockquote>
+
+                <p>Start from the adversary, not the tool. Name who you are actually trying to hide from and what they can do, and the right choice usually becomes obvious. Skip that step and you will pick based on marketing — which is exactly how people end up trusting one logging-capable company completely and calling it anonymity.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="tor-for-it-professionals-primer.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Dark Web</span>
+                        <span>2026-03-23</span>
+                    </div>
+                    <h3>Tor for IT Professionals: A Primer</h3>
+                    <p>A critical privacy tool, not just a route to the illicit.</p>
+                </a>
+                <a href="reading-a-ransomware-leak-site.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Dark Web</span>
+                        <span>2026-07-28</span>
+                    </div>
+                    <h3>Reading a Ransomware Leak Site Like an Analyst</h3>
+                    <p>Read a leak site for what it reveals, not what it claims.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardrails Are Not a Security Model — Raj Macwan</title>
+    <meta name="description" content="Content filters and system-prompt rules are useful, but treating them as your LLM application's security is a mistake. Guardrails reduce probability; they don't enforce boundaries. Real security lives in the architecture around the model.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Guardrails Are Not a Security Model">
+    <meta property="og:description" content="A guardrail lowers the odds of bad output. It doesn't enforce a boundary. If your LLM app's security is a system prompt and a content filter, you don't have a security model.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/guardrails-are-not-a-security-model.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Guardrails Are Not a Security Model</h1>
+
+            <div class="article-body">
+                <p class="lead">Ask a team how their LLM application is secured and you will often hear about guardrails: a carefully worded system prompt telling the model what not to do, plus a content filter on inputs and outputs. These are useful. They are not a security model. A guardrail lowers the probability of bad behavior; it does not enforce a boundary. And building your security on something probabilistic, against adversaries who get unlimited attempts, is building on sand.</p>
+
+                <h2>The category error</h2>
+
+                <p>Traditional security controls enforce. A permission check either lets an action through or it does not — there is no "usually." Guardrails, by contrast, are statistical. A system prompt saying "never reveal the admin data" makes disclosure less likely, but the model is a probabilistic system responding to adversarial input, and "less likely" is not "impossible." Prompt injection is the standing proof: a determined attacker crafting inputs will, often enough, talk the model past its instructions. Treating a guardrail as a boundary is a category error — using a nudge where you need a wall.</p>
+
+                <h2>Where security actually has to live</h2>
+
+                <p>The security model belongs in the architecture around the model, where enforcement is deterministic and does not depend on the model choosing to comply:</p>
+
+                <ul>
+                    <li><strong>The model runs with the user's privileges, never more.</strong> If the model can call tools or reach data, those calls must carry the actual user's authorization and be checked by the same enforcement that guards any other access. A model tricked into requesting data the user cannot see should be stopped by the permission layer, not by the model's good judgment. This single principle defuses most of the damage prompt injection can do.</li>
+                    <li><strong>Untrusted content is never trusted instructions.</strong> Anything the model reads — retrieved documents, tool outputs, web pages — can contain injected instructions. The architecture must assume that and constrain what acting on those instructions can achieve, rather than hoping the model ignores them.</li>
+                    <li><strong>Actions with real consequences require deterministic checks or a human.</strong> Sending money, deleting data, emailing customers — these do not hang on the model's compliance. They pass through the same authorization, validation, and approval gates you would demand of any other automation.</li>
+                    <li><strong>Assume the system prompt is not secret.</strong> Users can often extract it. Nothing in your security should depend on the instructions staying hidden.</li>
+                </ul>
+
+                <h2>So what are guardrails good for?</h2>
+
+                <p>Plenty — as a quality and safety layer, not a security perimeter. They reduce the rate of unwanted output, catch the careless and the casual, improve the average interaction, and are entirely worth having. The mistake is not using them; it is mistaking them for the thing that keeps a determined adversary from crossing a boundary. That job belongs to enforcement that does not negotiate.</p>
+
+                <blockquote>A guardrail changes the odds. A security control enforces a limit. If the only thing standing between a user and data they should not have is a sentence in a system prompt, you do not have a security model — you have a suggestion.</blockquote>
+
+                <p>Design the system so that even a fully compromised, fully manipulated model cannot do anything the user was not already allowed to do. Get that right and prompt injection degrades from a breach into a nuisance. Skip it, and no amount of prompt wordsmithing will save you from the first attacker who is patient enough to keep trying.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="evals-are-the-unit-tests-of-llm-systems.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-08-04</span>
+                    </div>
+                    <h3>Evals Are the Unit Tests Your LLM Feature Doesn't Have</h3>
+                    <p>Ship LLM features with evals, not vibes.</p>
+                </a>
+                <a href="prompt-injection-owasp-of-ai.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-03-21</span>
+                    </div>
+                    <h3>Prompt Injection: The OWASP of AI</h3>
+                    <p>The SQL injection of 2026. Map your attack surface.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

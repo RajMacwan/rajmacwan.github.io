@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Teaming Without the Theater — Raj Macwan</title>
+    <meta name="description" content="Most 'purple team' exercises are a red team demo with defenders watching. Real purple teaming is a tight loop that ends with new detections shipped and gaps closed — not a slide deck.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Purple Teaming Without the Theater">
+    <meta property="og:description" content="A purple team exercise that ends in a slide deck failed. The only output that counts is shipped detections and closed gaps. How to run the loop that produces them.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/purple-teaming-without-the-theater.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Purple Teaming Without the Theater</h1>
+
+            <div class="article-body">
+                <p class="lead">Most exercises sold as "purple teaming" are a red team engagement with an audience. The red team runs their attack, the blue team watches, everyone gathers for a readout, and a report gets filed. That is theater. Real purple teaming is not an event with spectators — it is a tight, iterative loop whose only acceptable output is new detections shipped and gaps closed. If your last purple team exercise ended in a slide deck, it was a demonstration, not a purple team.</p>
+
+                <h2>The difference is the loop</h2>
+
+                <p>A red team engagement is adversarial and quiet by design: they try to get in without being caught, and they tell you afterward how they did. Valuable, but the feedback is delayed and the defenders learn nothing in the moment. Purple teaming inverts that. Red and blue sit in the same room, and the work runs technique by technique: the red operator executes one specific behavior, both sides watch the telemetry together in real time, and they answer one question — did we see it? If yes, is the detection precise enough to survive production? If no, why not, and what would it take?</p>
+
+                <p>Then — and this is the part theater skips — they fix it on the spot or ticket it, and re-run the technique to confirm the fix works. That execute-observe-tune-verify cycle, repeated across a list of techniques, is the entire method. The room does not move on from a technique until it either detects reliably or has an owned ticket to make it so.</p>
+
+                <h2>What makes it produce results</h2>
+
+                <ul>
+                    <li><strong>Pick techniques from your threat model, not a generic list.</strong> Run the behaviors that groups targeting your sector actually use. A purple team exercise against irrelevant techniques produces detections for attacks you will never face.</li>
+                    <li><strong>Instrument before you start.</strong> The point is to observe telemetry as the technique fires. If you cannot see the relevant logs live, the first finding is a visibility gap — which is itself one of the most valuable outcomes.</li>
+                    <li><strong>Tune to precision, not just detection.</strong> "We alerted" is not success if the rule will fire two hundred times a day in production. Test each new detection against normal activity in the same session.</li>
+                    <li><strong>Track two numbers: detection coverage gained and mean time to detect.</strong> Before-and-after on the techniques you exercised. That is the ROI, and it is concrete.</li>
+                </ul>
+
+                <h2>Why teams avoid the real version</h2>
+
+                <p>The theatrical version is easier to schedule, easier to present to leadership, and produces a satisfying artifact. The real version is messier: it exposes that your logging has gaps, that detections you were proud of do not fire on live behavior, that "coverage" was aspirational. That discomfort is the whole point. A purple team exercise that made everyone feel good and changed nothing was expensive entertainment.</p>
+
+                <blockquote>The deliverable of a purple team is not a report. It is a diff: the detections your environment has after that did not exist before, and the visibility gaps you found and filled.</blockquote>
+
+                <p>Run it as a loop, aim it at threats you actually face, and measure the coverage you gained. Do that and purple teaming becomes one of the highest-yield activities a security program has. Run it as a show, and it becomes one of the most expensive ways to feel prepared while staying exactly as exposed as you were.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="detection-engineering-as-a-product.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-07-14</span>
+                    </div>
+                    <h3>Detection Engineering as a Product, Not a Project</h3>
+                    <p>Detections decay. Run them like a product with owners and a backlog.</p>
+                </a>
+                <a href="tabletop-exercises-that-work.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-18</span>
+                    </div>
+                    <h3>Tabletop Exercises That Actually Stress Your Plan</h3>
+                    <p>Most tabletops are theatre. A good one sends you back with real gaps.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

@@ -11,7 +11,10 @@ No state file — a missed or re-run week self-corrects.
 
 Each run:
   1. Decide today's grid from the rotation.
-  2. Pick the oldest draft in drafts/queue/<grid>/*.html.
+  2. Pick the next draft in drafts/queue/<grid>/*.html. Drafts publish in
+     filename order, so prefix them NN- (e.g. 01-, 02-) to set the order;
+     the prefix is stripped from the published slug/URL. Unprefixed drafts
+     are fine too (they just sort by name).
      (If the queue is empty, log and exit 0 — nothing to publish.)
   3. Promote it to blog/<slug>.html, stamping the publish date and read time.
   4. Insert a card into <grid>-grid.html and into blog/index.html.
@@ -241,7 +244,7 @@ def main():
         log(f"Queue drafts/queue/{grid}/ is empty — nothing to publish this week. Exiting cleanly.")
         return
 
-    slug = draft.stem
+    slug = re.sub(r"^\d+-", "", draft.stem)  # strip NN- ordering prefix
     dest = BLOG / f"{slug}.html"
     if dest.exists():
         log(f"blog/{slug}.html already exists — skipping to avoid overwrite. "

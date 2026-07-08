@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indicators Expire. Behaviors Don't. — Raj Macwan</title>
+    <meta name="description" content="A feed of IPs and hashes feels like threat intelligence and ages like milk. Adversaries rotate infrastructure in hours. The intel worth building on is the behavior underneath — the part they can't cheaply change.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Indicators Expire. Behaviors Don't.">
+    <meta property="og:description" content="Indicator feeds age in hours because rotating an IP is trivial. Behavioral intelligence lasts because changing how you operate is expensive. Build on the durable layer.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="__PUBDATE_ISO__T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/indicators-expire-behaviors-dont.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published __PUBDATE_ISO__</span>
+                <span>__READMIN__ min read</span>
+            </div>
+            <h1>Indicators Expire. Behaviors Don't.</h1>
+
+            <div class="article-body">
+                <p class="lead">A feed of malicious IP addresses and file hashes feels like threat intelligence. It arrives constantly, it is concrete, it plugs straight into your tools. It also ages like milk. An adversary rotates infrastructure in hours and recompiles malware to change a hash in minutes. The indicators you blocked this morning point at nothing by this afternoon. The intelligence actually worth building your program on is the layer underneath the indicators — the behavior, the part the adversary cannot change cheaply.</p>
+
+                <h2>Why indicator feeds disappoint</h2>
+
+                <p>Indicators of compromise — IPs, domains, hashes — sit at the bottom of the value pyramid for a simple reason: they are trivial for the adversary to change. Blocking them imposes almost no cost on a competent attacker; they spin up new infrastructure and keep going. So an indicator feed buys you a narrow, fleeting window: it catches the lazy, the automated, and the reuse, and it catches nothing from an adversary who rotates. Programs that equate "threat intelligence" with "indicator feeds" end up busy, current, and shallow — always up to date on things that no longer matter.</p>
+
+                <h2>The layer that lasts</h2>
+
+                <p>Above the indicators sit the things that are expensive for an adversary to change: their tools, and above those, their techniques and behaviors — how they gain access, how they move, how they persist, how they exfiltrate. Changing a hash is free. Changing the fundamental way you operate — retraining operators, rebuilding tooling, abandoning a technique that works — is slow and costly. That is exactly why behavioral intelligence is durable: you are detecting on the part of the adversary they are most reluctant and least able to alter.</p>
+
+                <p>A detection tied to "this IP" dies when the IP rotates. A detection tied to "this sequence of actions that this class of adversary performs to establish persistence" survives infrastructure changes, survives new malware builds, and often survives across different groups that share tradecraft. One is a tripwire good for a day. The other is a capability good for years.</p>
+
+                <h2>What this means for the program</h2>
+
+                <ul>
+                    <li><strong>Use indicators, but budget them honestly.</strong> They are cheap, high-volume, low-durability — worth ingesting for the easy catches, never worth mistaking for your defense. Automate them and move on.</li>
+                    <li><strong>Invest analyst time up the pyramid.</strong> The scarce, expensive human effort should go into understanding and detecting behavior, not curating IP lists a machine could handle.</li>
+                    <li><strong>Measure durability, not just volume.</strong> "We ingest two million indicators" is a vanity metric. "We detect these adversary behaviors regardless of infrastructure" is a capability metric. Track the second.</li>
+                    <li><strong>Convert behavioral intel into behavioral detection.</strong> The value is only realized when what you learned about how an adversary operates becomes a detection that fires on that operation — the last mile that most intel never crosses.</li>
+                </ul>
+
+                <blockquote>Blocking an indicator inconveniences an adversary for an afternoon. Detecting a behavior forces them to change how they work. Only one of those is worth the name intelligence.</blockquote>
+
+                <p>Indicators will always be part of the picture, and there is no shame in using them for what they are. The mistake is letting the endless, satisfying stream of them stand in for the harder, slower, far more valuable work of understanding the adversary at the level they cannot cheaply escape. Build on the durable layer. The indicators were never going to hold.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="from-intel-to-detection-the-last-mile.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-08-11</span>
+                    </div>
+                    <h3>From Intel to Detection: Closing the Last Mile</h3>
+                    <p>Intel that never becomes a detection is trivia.</p>
+                </a>
+                <a href="mitre-attack-for-defenders.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-02-14</span>
+                    </div>
+                    <h3>MITRE ATT&CK for Defenders</h3>
+                    <p>A framework, not a checklist. Use it as a design language.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>
