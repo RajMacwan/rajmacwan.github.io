@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-07T23:17:16.124688Z",
+  "polled": "2026-07-08T00:15:41.243838Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "166 active Salesforce incidents",
+      "description": "165 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated errors for some models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Liberty Puerto Rico",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to T-Mobile Czech Republic",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-07T23:17:16.124729Z"
+  "html_written": "2026-07-08T00:15:41.243866Z"
 }
