@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Engineering: After the Hype Cycle — Raj Macwan</title>
+    <meta name="description" content="Internal developer platforms were the answer to everything two years ago. Here is what survived contact with production — and what quietly died.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Platform Engineering: After the Hype Cycle">
+    <meta property="og:description" content="The platform engineering hype has cooled. What survived contact with production, what quietly died, and how to start now.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-07-08T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/platform-engineering-after-hype.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-infra">InfraGrid</span>
+                <span>Published 2026-07-08</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Platform Engineering: After the Hype Cycle</h1>
+
+            <div class="article-body">
+                <p class="lead">Two years ago, platform engineering was going to fix DevOps, developer experience, cloud costs, and morale in one move. The hype has cooled and the conference circuit has moved on to AI agents. That is good news, because it lets us look at what is left honestly — and the parts that survived are genuinely useful.</p>
+
+                <h2>What actually survived</h2>
+
+                <p>Strip away the keynotes and three things from the platform engineering wave have proven durable in real enterprises:</p>
+
+                <ul>
+                    <li><strong>Golden paths.</strong> A paved road from "new service" to "running in production with logging, alerts, and a pipeline" that takes hours instead of weeks. Teams that built one honest golden path for their most common workload captured most of the promised value.</li>
+                    <li><strong>Self-service with guardrails.</strong> Developers provision their own namespaces, databases, and DNS entries through templates that encode the security and cost policies. The ticket queue for routine infrastructure requests disappears — and so does the shadow infrastructure people built to dodge the queue.</li>
+                    <li><strong>Platform-as-product discipline.</strong> The teams that treated internal developers as customers — with a roadmap, feedback loops, and adoption metrics — kept their funding. The teams that treated the platform as an architecture diagram did not.</li>
+                </ul>
+
+                <h2>What quietly died</h2>
+
+                <p>Three patterns failed almost everywhere I watched them play out.</p>
+
+                <p><strong>Portal-first thinking.</strong> A lot of organizations heard "platform engineering," installed a service catalog UI, and stopped. A portal in front of the same broken provisioning process is a veneer, not a platform. The portal is the last ten percent — it only pays off after the workflows behind it are actually self-service. If clicking the button files a ticket for a human, you have built an expensive ticket form.</p>
+
+                <p><strong>Platforms built for the platform team.</strong> The failure mode: a group of strong infrastructure engineers builds the platform they always wanted — elegant abstractions, sophisticated multi-cluster topology — and product teams do not adopt it, because it does not solve a problem they actually have. Adoption is the only metric that matters, and adoption follows pain relief, not elegance.</p>
+
+                <p><strong>Mandated adoption.</strong> If the platform has to be made compulsory to get users, that is the feedback. Mandates convert the platform team from a service provider into an internal regulator, and every future outage becomes politically radioactive. The healthy pattern is migration by attraction: the paved road is simply the easiest way to ship.</p>
+
+                <h2>The size question nobody wants to answer</h2>
+
+                <p>Platform engineering has a minimum viable scale. Below roughly fifty engineers, a dedicated platform team is usually overhead pretending to be leverage — you are better served by strong conventions, a shared infrastructure-as-code module repository, and one or two people who care. The full product-managed platform organization starts to make sense in the hundreds of engineers. Plenty of mid-size shops burned eighteen months building an internal platform for twelve development teams that a managed platform-as-a-service would have served better and cheaper.</p>
+
+                <h2>If you are starting now</h2>
+
+                <p>Starting after the hype is an advantage — the tooling matured and the failure stories are public. The playbook that works:</p>
+
+                <ul>
+                    <li>Interview your developers and find the two workflows they hate most. Usually it is "getting a new service to production" and "getting access to something." Fix those first. Nothing else until those are fixed.</li>
+                    <li>Staff the platform team with people who have carried a pager for production services. Platform decisions made by people who have never been paged produce abstractions that leak at two in the morning.</li>
+                    <li>Measure time-to-first-deploy for a new service, and track voluntary adoption week over week. Report those two numbers. Ignore feature count.</li>
+                    <li>Write down what the platform will <em>not</em> do. Scope creep killed more platform teams than technical debt ever did.</li>
+                </ul>
+
+                <blockquote>Boring, focused, adopted — in that order. That is the whole discipline.</blockquote>
+
+                <p>The hype moving on takes the pressure off. Platform engineering can go back to being what it always was when it worked: paving the roads people already drive on, and getting out of the way.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="why-sre-not-scaling.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Infrastructure</span>
+                        <span>2026-03-08</span>
+                    </div>
+                    <h3>Why Your SRE Team Isn't Scaling</h3>
+                    <p>SRE scales by reducing toil and raising abstraction — not by hiring more SREs.</p>
+                </a>
+                <a href="boring-technology-case.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Infrastructure</span>
+                        <span>2026-02-13</span>
+                    </div>
+                    <h3>The Case for Boring Technology</h3>
+                    <p>Novel tech is expensive in ways that never show up in a proof of concept.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

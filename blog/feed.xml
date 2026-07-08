@@ -6,8 +6,48 @@
     <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
     <language>en-us</language>
     <atom:link href="https://macwangrid.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 19 Apr 2026 08:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 08:00:00 GMT</lastBuildDate>
 
+    <item>
+      <title>The Patch Window Is Dead: Defending at N-Day Speed</title>
+      <link>https://macwangrid.com/blog/patch-window-is-dead.html</link>
+      <description>Median time-to-exploit is now days, not weeks. What that does to a monthly patch cycle — and the tiered, trigger-driven model that replaces it.</description>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/patch-window-is-dead.html</guid>
+      <category>ThreatGrid</category>
+    </item>
+    <item>
+      <title>Platform Engineering: After the Hype Cycle</title>
+      <link>https://macwangrid.com/blog/platform-engineering-after-hype.html</link>
+      <description>Internal developer platforms were the answer to everything two years ago. What survived contact with production, and what quietly died.</description>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/platform-engineering-after-hype.html</guid>
+      <category>InfraGrid</category>
+    </item>
+    <item>
+      <title>Tor Bridges and the Censorship Arms Race</title>
+      <link>https://macwangrid.com/blog/tor-bridges-and-the-censorship-arms-race.html</link>
+      <description>Bridges, pluggable transports, and why the fight over Tor reachability is really a fight over traffic that looks like nothing at all.</description>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/tor-bridges-and-the-censorship-arms-race.html</guid>
+      <category>DarkGrid</category>
+    </item>
+    <item>
+      <title>Context Engineering Beats Prompt Engineering</title>
+      <link>https://macwangrid.com/blog/context-engineering-beats-prompt-engineering.html</link>
+      <description>The prompt was never the bottleneck. In production LLM systems, what you retrieve and assemble into context is what separates working from flaky.</description>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/context-engineering-beats-prompt-engineering.html</guid>
+      <category>AIGrid</category>
+    </item>
+    <item>
+      <title>Intelligence Requirements Come First</title>
+      <link>https://macwangrid.com/blog/intelligence-requirements-come-first.html</link>
+      <description>Most intel programs collect first and ask questions later. Reverse it: write the questions down, and let them decide what you collect and ignore.</description>
+      <pubDate>Wed, 08 Jul 2026 10:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/intelligence-requirements-come-first.html</guid>
+      <category>IntelGrid</category>
+    </item>
     <item>
       <title>Why I Built a Dark Web Research Site (and What I Learned)</title>
       <link>https://macwangrid.com/blog/why-i-built-darkpulse.html</link>
@@ -612,9 +652,9 @@ hreatGrid</category>
 iGrid</category>
     </item>
     <item>
-      <title>MITRE ATT&CK for Defenders</title>
+      <title>MITRE ATT&amp;CK for Defenders</title>
       <link>https://macwangrid.com/blog/mitre-attack-for-defenders.html</link>
-      <description>ATT&CK is a framework, not a checklist.</description>
+      <description>ATT&amp;CK is a framework, not a checklist.</description>
       <pubDate>Sat, 14 Feb 2026 10:00:00 GMT</pubDate>
       <guid isPermaLink="true">https://macwangrid.com/blog/mitre-attack-for-defenders.html</guid>
       <category>I

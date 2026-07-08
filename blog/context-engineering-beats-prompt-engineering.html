@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Context Engineering Beats Prompt Engineering — Raj Macwan</title>
+    <meta name="description" content="The prompt was never the bottleneck. In production LLM systems, the quality of what you retrieve and assemble into context is what separates working from flaky.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Context Engineering Beats Prompt Engineering">
+    <meta property="og:description" content="The model is a function. The prompt configures it. The context is the argument — and the argument is where your answer is won or lost.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-07-08T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/context-engineering-beats-prompt-engineering.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-ai">AIGrid</span>
+                <span>Published 2026-07-08</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Context Engineering Beats Prompt Engineering</h1>
+
+            <div class="article-body">
+                <p class="lead">"Prompt engineering" made it sound like the magic words were the hard part. In every production LLM system I have watched succeed or fail, the prompt was never the bottleneck. The context was — the material you assemble around the question, on every single request. That assembly is the real engineering discipline, and the popular name badly undersells it.</p>
+
+                <h2>The prompt is the easy ten percent</h2>
+
+                <p>A good system prompt matters. It sets role, tone, and guardrails. But you write it once and it stops being the variable. What changes on every request, and what actually determines whether the answer is right, is the material you assemble <em>around</em> the question: the retrieved documents, the tool outputs, the conversation history, the schema you are asking the model to fill. Call it context engineering — the practice of getting the right information, in the right form, in the right amount, into the model's window at inference time. When an LLM feature is flaky in production, the prompt is almost never the reason. One of the following usually is.</p>
+
+                <h2>The four failure modes</h2>
+
+                <p><strong>Too little context.</strong> The model was not given the fact it needed, so it guessed — and a fluent guess reads exactly like a confident answer. This is the classic retrieval miss: the answer lived in a document that ranked seventh when you only passed the top five. The model did not hallucinate from nothing; it hallucinated from absence.</p>
+
+                <p><strong>Too much context.</strong> The opposite, and more common than people expect. Stuff forty documents into the window "to be safe" and two things degrade: the signal you need gets buried in the middle, where models attend to it least, and your cost and latency balloon. More context is not more accuracy. Past a point, it is less.</p>
+
+                <p><strong>Wrong-shaped context.</strong> The right facts in a form the model cannot use well. A two-hundred-row table pasted as raw text when a three-row summary would have answered the question. A deeply nested data blob where the relevant field sits on line four thousand. Format is not cosmetic — it changes what the model can actually extract.</p>
+
+                <p><strong>Stale or conflicting context.</strong> Two retrieved documents disagree, or one is six months out of date, and nothing in the context tells the model which to trust. It will pick one, confidently, and you will not know which until a user does.</p>
+
+                <h2>What context engineering looks like in practice</h2>
+
+                <p>Treating context as the primary surface changes where you spend effort:</p>
+
+                <ul>
+                    <li><strong>Retrieval quality is the product.</strong> The highest-leverage investment in most retrieval-augmented systems is better retrieval — hybrid search, reranking, and honest evaluation of recall — not a cleverer prompt. If the right chunk is not in the top results, no prompt saves you.</li>
+                    <li><strong>Compress before you inject.</strong> Summarize, extract, or structure retrieved material before it hits the window. A pre-processing step that turns ten documents into one dense brief usually beats passing all ten. Let a cheap model do the compression.</li>
+                    <li><strong>Budget the window explicitly.</strong> Decide how many tokens each source gets — history, retrieval, tools, instructions — and enforce it. Uncontrolled context growth is how a feature that worked in the demo falls over on the long conversation.</li>
+                    <li><strong>Position deliberately.</strong> Put the most important material at the start or end of the context, not buried in the middle. Models have a well-documented recency and primacy bias; use it instead of fighting it.</li>
+                    <li><strong>Label provenance and freshness.</strong> Tag each piece of context with where it came from and how current it is, and tell the model how to arbitrate conflicts. Ambiguity you do not resolve, the model resolves for you — silently.</li>
+                </ul>
+
+                <h2>Why the reframing matters</h2>
+
+                <p>If you believe the prompt is the lever, you tune wording for weeks and get marginal gains. If you believe the context is the lever, you build retrieval evaluation, compression steps, and token budgets — the boring infrastructure that actually moves accuracy. The teams shipping reliable LLM features today stopped hunting for magic words a while ago. They spend their time on the pipeline that decides what the model sees.</p>
+
+                <blockquote>The model is a function. The prompt configures it. The context is the argument — and the argument is where your answer is won or lost.</blockquote>
+
+                <p>None of this is glamorous. There is no clever incantation to screenshot for the team channel. There is just the unglamorous work of making sure the right information, in a usable shape, is in front of the model at the moment it answers. That work is the difference between a demo and a product.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="rag-for-internal-documentation.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-03-17</span>
+                    </div>
+                    <h3>RAG for Internal Documentation</h3>
+                    <p>The most boring, most useful enterprise AI pattern — and what it takes to get it right.</p>
+                </a>
+                <a href="prompt-injection-owasp-of-ai.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">AI & Automation</span>
+                        <span>2026-03-21</span>
+                    </div>
+                    <h3>Prompt Injection: The OWASP of AI</h3>
+                    <p>The SQL injection of 2026. Most teams have not even mapped their attack surface yet.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

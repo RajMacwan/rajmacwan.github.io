@@ -117,6 +117,15 @@
     "date": ""
   },
   {
+    "slug": "context-engineering-beats-prompt-engineering",
+    "url": "blog/context-engineering-beats-prompt-engineering.html",
+    "title": "Context Engineering Beats Prompt Engineering",
+    "summary": "\"Prompt engineering\" made it sound like the magic words were the hard part. In every production LLM system I have watched succeed or fail, the prompt was never the bottleneck. The context was \u2014 the material you assemble around the questi...",
+    "pill_class": "grid-pill-ai",
+    "grid": "AIGrid",
+    "date": ""
+  },
+  {
     "slug": "credit-freeze-step-by-step",
     "url": "blog/credit-freeze-step-by-step.html",
     "title": "Credit Freezes: Step by Step",
@@ -324,6 +333,15 @@
     "date": ""
   },
   {
+    "slug": "intelligence-requirements-come-first",
+    "url": "blog/intelligence-requirements-come-first.html",
+    "title": "Intelligence Requirements Come First",
+    "summary": "Ask most threat intel teams what they are collecting and you will get a list of feeds. Ask what questions those feeds are meant to answer and the room goes quiet. That silence is the whole problem.",
+    "pill_class": "grid-pill-intel",
+    "grid": "IntelGrid",
+    "date": ""
+  },
+  {
     "slug": "kev-as-backlog",
     "url": "blog/kev-as-backlog.html",
     "title": "The CISA KEV Catalog as a Prioritized Patch Backlog",
@@ -441,6 +459,15 @@
     "date": ""
   },
   {
+    "slug": "patch-window-is-dead",
+    "url": "blog/patch-window-is-dead.html",
+    "title": "The Patch Window Is Dead: Defending at N-Day Speed",
+    "summary": "Your patch cycle was designed for a world where exploitation took weeks. That world is gone. The median time from public disclosure to in-the-wild exploitation is now measured in days \u2014 and for internet-facing edge devices, sometimes hou...",
+    "pill_class": "grid-pill-threat",
+    "grid": "ThreatGrid",
+    "date": ""
+  },
+  {
     "slug": "patching-priority-practitioner-framework",
     "url": "blog/patching-priority-practitioner-framework.html",
     "title": "A Practitioner's Patching Priority Framework",
@@ -465,6 +492,15 @@
     "summary": "PGP has a deserved UX reputation. Matthew Green and Moxie Marlinspike have both written persuasive essays about why PGP's email-encryption use case is a mess: bad key discovery, bad forward secrecy, bad defaults. I agree with most of it....",
     "pill_class": "grid-pill-dark",
     "grid": "DarkGrid",
+    "date": ""
+  },
+  {
+    "slug": "platform-engineering-after-hype",
+    "url": "blog/platform-engineering-after-hype.html",
+    "title": "Platform Engineering: After the Hype Cycle",
+    "summary": "Two years ago, platform engineering was going to fix DevOps, developer experience, cloud costs, and morale in one move. The hype has cooled and the conference circuit has moved on to AI agents. That is good news, because it lets us look...",
+    "pill_class": "grid-pill-infra",
+    "grid": "InfraGrid",
     "date": ""
   },
   {
@@ -627,6 +663,15 @@
     "summary": "This is not a \"threats are evolving\" piece. Threats are always evolving. This is a practitioner's read on what actually shifted in the last few months, based on public reporting from Mandiant, Unit 42, Microsoft Threat Intelligence, Red...",
     "pill_class": "grid-pill-intel",
     "grid": "IntelGrid",
+    "date": ""
+  },
+  {
+    "slug": "tor-bridges-and-the-censorship-arms-race",
+    "url": "blog/tor-bridges-and-the-censorship-arms-race.html",
+    "title": "Tor Bridges and the Censorship Arms Race",
+    "summary": "Getting onto the Tor network is now, for much of the world, the hard part. The relays have not changed much. The fight has moved entirely to the first hop \u2014 and it has become a contest over whether encrypted traffic can be made to look l...",
+    "pill_class": "grid-pill-dark",
+    "grid": "DarkGrid",
     "date": ""
   },
   {

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Patch Window Is Dead: Defending at N-Day Speed — Raj Macwan</title>
+    <meta name="description" content="Median time-to-exploit is now measured in days, not weeks. What that does to a monthly patch cycle — and the tiered, trigger-driven model that replaces it.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="The Patch Window Is Dead: Defending at N-Day Speed">
+    <meta property="og:description" content="Your patch cycle was built for a world where exploitation took weeks. That world is gone. A tiered, trigger-driven model for N-day speed.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-07-08T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/patch-window-is-dead.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-threat">ThreatGrid</span>
+                <span>Published 2026-07-08</span>
+                <span>6 min read</span>
+            </div>
+            <h1>The Patch Window Is Dead: Defending at N-Day Speed</h1>
+
+            <div class="article-body">
+                <p class="lead">Your patch cycle was designed for a world where exploitation took weeks. That world is gone. The median time from public disclosure to in-the-wild exploitation is now measured in days — and for internet-facing edge devices, sometimes hours. A process built around a monthly rhythm is, structurally, handing adversaries a head start you can no longer afford.</p>
+
+                <p>Most enterprise patch programs still run on that monthly rhythm: Patch Tuesday lands, packages get tested for a week or two, a change window opens, and roughly thirty days later the estate is mostly current. That cadence was defensible when the average vulnerability took thirty to sixty days to see real exploitation. It is not defensible now.</p>
+
+                <h2>The math stopped working</h2>
+
+                <p>Look at the last two years of mass-exploitation events — file transfer appliances, VPN concentrators, email gateways. In case after case, exploitation began within seventy-two hours of public disclosure, and in the worst cases the vulnerability was already being exploited as a zero-day before the vendor advisory shipped. If your fastest realistic path to production is thirty days, you are offering attackers a four-week window on your most exposed assets. The patch window did not shrink. It closed.</p>
+
+                <h2>Stop treating the estate as one thing</h2>
+
+                <p>The fix is not "patch everything faster." Nobody can, and trying burns the ops team out for no gain. The fix is recognizing that your estate contains tiers with wildly different risk clocks:</p>
+
+                <ul>
+                    <li><strong>Tier 1 — internet-facing.</strong> VPNs, gateways, load balancers, anything with a login page reachable from the internet. These need an emergency lane: twenty-four to seventy-two hours from advisory to mitigation, pre-authorized, no change board meeting required.</li>
+                    <li><strong>Tier 2 — identity and management planes.</strong> Domain controllers, hypervisor management, privileged access management, backup infrastructure. Days, not weeks. These are where attackers pivot after initial access.</li>
+                    <li><strong>Tier 3 — everything else.</strong> The internal fleet. Monthly is still fine here. Genuinely fine — do not let the urgency of Tier 1 spill into panic-patching workstations.</li>
+                </ul>
+
+                <p>Most organizations invert this. They patch workstations aggressively because the tooling makes it easy, while the VPN appliance waits for a quarterly maintenance window because rebooting it is scary. That is exactly backwards, and it is exactly the pattern the exploitation data punishes.</p>
+
+                <h2>Triggers, not calendars</h2>
+
+                <p>For Tier 1 and Tier 2, the patch trigger should not be a date — it should be a signal. Two signals do most of the work: an entry in the CISA Known Exploited Vulnerabilities catalog, and a high EPSS score on software you actually expose. Either one fires the emergency lane. Keeping the lane tied to real exploitation evidence keeps it rare enough that people take it seriously when it fires.</p>
+
+                <p>The emergency lane itself has to be pre-negotiated. The worst time to debate change management policy is during an active mass-exploitation event. Get the standing approval in writing: for KEV-listed vulnerabilities on Tier 1 assets, the ops team patches first and files the change record after. If your change board will not agree to that, show them the timeline of any recent edge-device campaign and ask which meeting they would have scheduled the approval into.</p>
+
+                <h2>When you cannot patch, mitigate</h2>
+
+                <p>Sometimes the patch is not out yet, breaks something, or needs downtime you cannot take immediately. The emergency lane should treat mitigation as a first-class outcome, not a failure:</p>
+
+                <ul>
+                    <li>Pull the management interface off the internet. A striking fraction of exploited devices never needed to be exposed at all.</li>
+                    <li>Apply the vendor's interim mitigation — disable the vulnerable feature, restrict source addresses — and record it so it gets revisited when the real fix ships.</li>
+                    <li>Isolate and elevate monitoring. If you cannot close the hole for forty-eight hours, watch the asset as though it is already compromised, because statistically it may be.</li>
+                </ul>
+
+                <h2>Measure time-to-mitigate, not patch compliance</h2>
+
+                <p>The metric that matters is the gap between public disclosure and the moment the asset is no longer exploitable — by patch or by mitigation. Report that number for Tier 1, per event, to leadership. "Ninety-eight percent patch compliance" is a comfortable number that hides the two internet-facing boxes that stayed vulnerable for three weeks. One number per incident — hours exposed — tells the real story, and it is the number a regulator or an attorney will eventually reconstruct anyway.</p>
+
+                <blockquote>Build the tiers. Wire the triggers. Pre-approve the lane. Then let the monthly cycle keep doing what it is still good for: everything that is not on fire.</blockquote>
+
+                <p>The patch window is not coming back. The organizations that stay ahead are not the ones patching fastest across the board — they are the ones who decided, in advance, which small set of assets earns an emergency response, and built the plumbing to deliver it before the advisory drops.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="kev-as-backlog.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-04-10</span>
+                    </div>
+                    <h3>The CISA KEV Catalog as a Prioritized Patch Backlog</h3>
+                    <p>Why KEV beats CVSS as a prioritization signal, and how to wire it into a workflow that moves.</p>
+                </a>
+                <a href="zero-trust-reality.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Security</span>
+                        <span>2026-03-28</span>
+                    </div>
+                    <h3>Zero Trust Is Harder Than Vendors Admit</h3>
+                    <p>The architecture is sound. The products sold under its name rarely are.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>

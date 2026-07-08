@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligence Requirements Come First — Raj Macwan</title>
+    <meta name="description" content="Most threat intel programs collect first and ask questions later. Reverse it: write the questions down, and let them decide what you collect, keep, and ignore.">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Intelligence Requirements Come First">
+    <meta property="og:description" content="An intel program without requirements can't say no to anything, so it drowns. Write the questions first — collection, analysis, and dissemination all serve them.">
+    <meta property="article:author" content="Raj Macwan">
+    <meta property="article:published_time" content="2026-07-08T00:00:00Z">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="alternate" type="application/rss+xml" title="Raj Macwan Blog" href="feed.xml">
+    <link rel="canonical" href="https://macwangrid.com/blog/intelligence-requirements-come-first.html">
+
+    <!-- Tor Onion-Location: advertises the .onion research site to Tor Browser users -->
+    <meta http-equiv="onion-location" content="http://547wvakqims5btixp25iob3cmouz32i77ar24eaddlqpqnh3mja3lqyd.onion">
+
+    <!-- Security meta tags (replacing nginx headers for GitHub Pages) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://platform.linkedin.com; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://platform.linkedin.com; font-src 'self' data:; frame-src https://platform.linkedin.com; connect-src 'self'; form-action 'self'; base-uri 'self';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=(), usb=()">
+
+</head>
+<body>
+
+<nav class="site-nav">
+    <div class="container">
+        <a href="../index.html" class="site-logo">MacwanGrid<span class="logo-dot">.</span></a>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../threat-grid.html">ThreatGrid</a></li>
+            <li><a href="../infra-grid.html">InfraGrid</a></li>
+            <li><a href="../dark-grid.html">DarkGrid</a></li>
+            <li><a href="../ai-grid.html">AIGrid</a></li>
+            <li><a href="../intel-grid.html">IntelGrid</a></li>
+            <li><a href="../lab-grid.html">LabGrid</a></li>
+            <li><a href="../action-grid.html">ActionGrid</a></li>
+            <li><a href="../breached-grid.html">BreachedGrid</a></li>
+            <li><a href="../patch-grid.html">PatchGrid</a></li>
+            <li><a href="../off-grid.html">OffGrid</a></li>
+            <li><a href="../status.html" class="nav-status">Status</a></li>
+            <li><a href="../contact.html" class="nav-cta">Connect</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <section class="section">
+        <div class="container-narrow">
+            <div class="article-meta">
+                <span class="grid-pill grid-pill-intel">IntelGrid</span>
+                <span>Published 2026-07-08</span>
+                <span>6 min read</span>
+            </div>
+            <h1>Intelligence Requirements Come First</h1>
+
+            <div class="article-body">
+                <p class="lead">Ask most threat intel teams what they are collecting and you will get a list of feeds. Ask what questions those feeds are meant to answer and the room goes quiet. That silence is the whole problem.</p>
+
+                <h2>Collection without requirements is hoarding</h2>
+
+                <p>The default failure mode of a threat intel function is to collect first and figure out relevance later. Feeds get subscribed to because they were available, indicators pile up in a platform, and analysts spend their days triaging a firehose whose purpose no one ever defined. It feels productive — the dashboards are full — but it produces almost nothing that changes a defender's behavior.</p>
+
+                <p>The discipline that fixes this is older than cyber: <strong>intelligence requirements</strong>. Before you collect anything, you write down the specific questions the organization needs answered. Then collection, analysis, and dissemination all serve those questions — and everything that does not serve them, you are allowed to ignore. That permission to ignore is the entire value. An intel program without requirements cannot say no to anything, so it drowns.</p>
+
+                <h2>What a real requirement looks like</h2>
+
+                <p>"Monitor the threat landscape" is not a requirement. It is a mission statement, and you cannot collect against it. A real intelligence requirement is specific enough that you can tell whether a given piece of information answers it. Compare:</p>
+
+                <ul>
+                    <li><strong>Vague:</strong> "Track ransomware threats." Against this, everything is relevant, so nothing gets prioritized.</li>
+                    <li><strong>Real:</strong> "Which ransomware groups have, in the last ninety days, targeted mid-market healthcare providers in our region, and what initial-access techniques did they use?" Now you know exactly which sources to watch, what to extract, and when a finding is done.</li>
+                </ul>
+
+                <p>The good requirement scopes the actor, the target profile that resembles you, the timeframe, and the decision it feeds. It has an owner who will actually use the answer, and it has an expiry — requirements go stale, and a list you never prune becomes the same firehose you were trying to escape.</p>
+
+                <h2>Three tiers of requirement, three audiences</h2>
+
+                <p>Requirements are not one list. They stratify by who consumes the answer, and conflating the tiers is why intel reports so often land wrong:</p>
+
+                <ul>
+                    <li><strong>Strategic</strong> — for leadership and risk decisions. "Is our sector seeing a shift in attacker objectives that should change our security investment next year?" Answered in briefings, measured in quarters.</li>
+                    <li><strong>Operational</strong> — for the SOC and detection engineering. "What techniques are the groups targeting us actually using this month, and do our detections cover them?" Answered in detection rules and hunt hypotheses.</li>
+                    <li><strong>Tactical</strong> — for the tools and the responders. "What indicators tied to active campaigns against us should be blocking or alerting right now?" Answered in feeds and firewall rules, measured in hours.</li>
+                </ul>
+
+                <p>Most programs write tactical requirements — indicators are easy to collect — and then wonder why leadership finds the intel useless. Leadership had strategic questions you never wrote down, so you never answered them.</p>
+
+                <h2>The feedback loop that keeps it honest</h2>
+
+                <p>Requirements are not set once. The cycle is: requirements drive collection, collection feeds analysis, analysis produces answers, and — critically — the consumers of those answers tell you whether they were useful, which reshapes the requirements. Skip that last step and requirements drift from reality within a quarter. The single best question an intel lead can ask a stakeholder is: "Of the last month of reporting, what actually changed a decision you made?" The honest answer is usually humbling, and it is the most valuable input you will get.</p>
+
+                <h2>Where to start</h2>
+
+                <p>If your intel program grew organically around feeds, run the exercise backwards. Sit down with the SOC lead, the CISO, and whoever owns risk, and ask each: "What do you wish you knew about threats that you currently do not?" Write the answers as specific, scoped, owned questions. That list — usually shorter than people expect, often under fifteen items — becomes your collection plan. Everything you are collecting that does not serve it is a candidate to cut, and cutting it is how you win back the analyst hours to actually answer the questions that matter.</p>
+
+                <blockquote>Intelligence is not the data. It is the answer to a question someone needed answered. Write the questions first.</blockquote>
+
+                <p>Everything downstream — the feeds, the platform, the analyst headcount — is justified only to the extent it answers a question you wrote down on purpose. Start with the questions, and the rest of the program finally has something to be accountable to.</p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <div class="text-center">
+                <p class="text-muted">Written by Raj Macwan — VP Information Technology</p>
+                <p>
+                    <a href="../about.html" class="btn btn-secondary">About the Author</a>
+                    <a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener" class="btn btn-primary">Connect on LinkedIn ↗</a>
+                </p>
+            </div>
+
+            <hr style="margin: 3rem 0 2rem;">
+            <h3>Related</h3>
+            <div class="card-grid-2">
+                <a href="reading-the-threat-intelligence-landscape.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-03-27</span>
+                    </div>
+                    <h3>Reading the Threat Intelligence Landscape</h3>
+                    <p>Strategic, operational, tactical, technical — most orgs buy the wrong tier.</p>
+                </a>
+                <a href="building-intel-driven-security-program.html" class="post-card">
+                    <div class="post-meta">
+                        <span class="post-category">Threat Intel</span>
+                        <span>2026-03-16</span>
+                    </div>
+                    <h3>Building an Intel-Driven Security Program</h3>
+                    <p>Most SOCs claim intel-driven but operate alert-driven. What actually changes.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col brand">
+                <div class="site-logo">MacwanGrid<span class="logo-dot">.</span></div>
+                <p class="mt-2">IT infrastructure, cybersecurity, and emerging technology — from a practitioner's desk.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Site</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../expertise.html">Expertise</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Deeper</h4>
+                <ul>
+                    <li><a href="../research.html">Research</a></li>
+                    <li><a href="../mit-journey.html">MIT Journey</a></li>
+                    <li><a href="../industry-watch.html">Industry Watch</a></li>
+                    <li><a href="feed.xml">RSS Feed</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://www.linkedin.com/in/raj-macwan" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Raj Macwan. Views are my own.</span>
+            <span>Built with HTML, CSS, and intent. No tracking, no cookies.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
+</body>
+</html>
