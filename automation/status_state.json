@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-09T17:31:03.481643Z",
+  "polled": "2026-07-09T19:11:39.441817Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Emerging Service Issue - Cloud Manager",
+      "incident_name": "Service Issue - GPU and VPU Booting issues",
       "fetched": true
     },
     "aws": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Content Approval for Types With Media Is Failing",
+      "incident_name": "SMS Delivery Delays from Twilio to Zain Jordan",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Retroactive Incident: Global Open and Clicks Engagement Stat Delays",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-09T17:31:03.481666Z"
+  "html_written": "2026-07-09T19:11:39.441861Z"
 }
