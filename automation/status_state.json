@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-09T20:57:51.349022Z",
+  "polled": "2026-07-09T22:38:25.891754Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "182 active Salesforce incidents",
+      "description": "184 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Zain Jordan",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes and Short Codes to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-09T20:57:51.349047Z"
+  "html_written": "2026-07-09T22:38:25.891784Z"
 }
