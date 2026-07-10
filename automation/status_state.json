@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T16:02:20.944600Z",
+  "polled": "2026-07-10T17:58:26.533526Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "184 active Salesforce incidents",
+      "description": "185 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "INC20000082",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting My Notes for Third-Party Meetings in Europe and US Region.",
       "fetched": true
     },
     "dropbox": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Elevated Item add errors",
       "fetched": true
     },
     "square": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - DYDX",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects in United Kingdom",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Issues with billing operations",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T16:02:20.944632Z"
+  "html_written": "2026-07-10T17:58:26.533552Z"
 }
