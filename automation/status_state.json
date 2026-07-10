@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T22:04:32.782619Z",
+  "polled": "2026-07-10T23:11:37.357961Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "OpenAI website and Help Center content may be unavailable",
+      "incident_name": "Codex, workspace analytics, conversation search, searching for custom GPTs, ChatGPT user invites, and Compliance Log Platform download endpo",
       "fetched": true
     },
     "anthropic": {
@@ -182,9 +182,9 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "High contention on H100 hardware",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to Sunrise and Salt Switzerland",
+      "incident_name": "Failing Knowledge Sources of Type 'Web' are Stuck In Progress",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T22:04:32.782645Z"
+  "html_written": "2026-07-10T23:11:37.357988Z"
 }
