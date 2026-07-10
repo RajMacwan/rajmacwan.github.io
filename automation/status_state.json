@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T08:44:36.811517Z",
+  "polled": "2026-07-10T11:36:39.232135Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes and Short Codes to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric Numbers to SFR France",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T08:44:36.811547Z"
+  "html_written": "2026-07-10T11:36:39.232160Z"
 }
