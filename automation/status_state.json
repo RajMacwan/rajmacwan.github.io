@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T20:55:23.492330Z",
+  "polled": "2026-07-10T22:04:32.782619Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -16,7 +16,7 @@
     "vercel": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Erroneous budget notifications",
+      "incident_name": "Increased Build failure rates",
       "fetched": true
     },
     "netlify": {
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Codex, workspace analytics, conversation search, searching for custom GPTs, ChatGPT user invites, and Compliance Log Platform download endpo",
+      "incident_name": "OpenAI website and Help Center content may be unavailable",
       "fetched": true
     },
     "anthropic": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "IDV Performance Degradation",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays From a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Sunrise and Salt Switzerland",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to Sunrise and Salt Switzerland",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T20:55:23.492356Z"
+  "html_written": "2026-07-10T22:04:32.782645Z"
 }
