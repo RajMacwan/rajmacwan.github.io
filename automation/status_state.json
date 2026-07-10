@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T05:12:47.590749Z",
+  "polled": "2026-07-10T08:44:36.811517Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "183 active Salesforce incidents",
+      "description": "184 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes and Short Codes to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T05:12:47.590777Z"
+  "html_written": "2026-07-10T08:44:36.811547Z"
 }
