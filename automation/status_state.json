@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-09T23:49:43.636395Z",
+  "polled": "2026-07-10T01:19:53.856225Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Kubernetes Deployments in NYC1",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "184 active Salesforce incidents",
+      "description": "182 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays From a Subset of Twilio Long Codes and Short Codes to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes and Short Codes to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-09T23:49:43.636420Z"
+  "html_written": "2026-07-10T01:19:53.856251Z"
 }
