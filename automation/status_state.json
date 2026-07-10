@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T17:58:26.533526Z",
+  "polled": "2026-07-10T19:45:20.327987Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -16,7 +16,7 @@
     "vercel": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Erroneous budget notifications",
       "fetched": true
     },
     "netlify": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting My Notes for Third-Party Meetings in Europe and US Region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Elevated Item add errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "IDV Performance Degradation",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to Sunrise and Salt Switzerland",
       "fetched": true
     },
     "sendgrid": {
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Issues with billing operations",
+      "incident_name": "",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T17:58:26.533552Z"
+  "html_written": "2026-07-10T19:45:20.328015Z"
 }
