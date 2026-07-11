@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-10T23:11:37.357961Z",
+  "polled": "2026-07-11T00:13:19.771220Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -16,7 +16,7 @@
     "vercel": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Increased Build failure rates",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "185 active Salesforce incidents",
+      "description": "182 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends/Receives - Blast Network",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-10T23:11:37.357988Z"
+  "html_written": "2026-07-11T00:13:19.771253Z"
 }
