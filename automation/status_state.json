@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-11T13:49:10.161974Z",
+  "polled": "2026-07-11T14:41:55.677210Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Multiple Networks in Peru",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-11T13:49:10.162020Z"
+  "html_written": "2026-07-11T14:41:55.677237Z"
 }
