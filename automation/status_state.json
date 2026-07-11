@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-11T18:35:04.041979Z",
+  "polled": "2026-07-11T19:49:28.879453Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000085",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-11T18:35:04.042011Z"
+  "html_written": "2026-07-11T19:49:28.879482Z"
 }
