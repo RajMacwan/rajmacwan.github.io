@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-12T21:51:48.321810Z",
+  "polled": "2026-07-12T22:50:05.144827Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare dash is unavailable",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-12T21:51:48.321834Z"
+  "html_written": "2026-07-12T22:50:05.144857Z"
 }
