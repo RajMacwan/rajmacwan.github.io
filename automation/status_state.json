@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-12T04:42:49.984653Z",
+  "polled": "2026-07-12T07:18:45.716578Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated API errors",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Failures from Twilio Phone Numbers to Pelephone Israel",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-12T04:42:49.984681Z"
+  "html_written": "2026-07-12T07:18:45.716608Z"
 }
