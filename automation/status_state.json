@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-12T18:40:53.224396Z",
+  "polled": "2026-07-12T19:55:55.103353Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio Phone Numbers to Pelephone Israel",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to GTA Wireless United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-12T17:41:56.083259Z"
+  "html_written": "2026-07-12T19:55:55.103385Z"
 }
