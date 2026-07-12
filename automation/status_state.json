@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-12T09:21:30.560288Z",
+  "polled": "2026-07-12T10:53:19.475851Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Cloudflare Dashboard login issue",
       "fetched": true
     },
     "fastly": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated conversation error rates on ChatGPT for iOS",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-12T09:21:30.560317Z"
+  "html_written": "2026-07-12T10:53:19.475881Z"
 }
