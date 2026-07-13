@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-13T11:32:30.668658Z",
+  "polled": "2026-07-13T13:39:42.283993Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Actions runs are experiencing failures to start",
       "fetched": true
     },
     "gitlab": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Vodafone Australia",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Portugal",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-13T11:32:30.668688Z"
+  "html_written": "2026-07-13T13:39:42.284021Z"
 }
