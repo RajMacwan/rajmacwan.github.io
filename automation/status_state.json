@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-12T23:39:19.790451Z",
+  "polled": "2026-07-13T01:14:11.683218Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "182 active Salesforce incidents",
+      "description": "176 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to GTA Wireless United States",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-12T22:50:05.144857Z"
+  "html_written": "2026-07-13T01:14:11.683242Z"
 }
