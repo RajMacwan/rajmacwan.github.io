@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-13T13:39:42.283993Z",
+  "polled": "2026-07-13T16:12:46.662434Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Actions runs are experiencing failures to start",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Users may experience elevated errors uploading, deleting, and navigating files in the ChatGPT Library",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Portugal",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN in Multiple Countries",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-13T13:39:42.284021Z"
+  "html_written": "2026-07-13T16:12:46.662459Z"
 }
