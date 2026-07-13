@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-13T08:17:12.762799Z",
+  "polled": "2026-07-13T11:32:30.668658Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "176 active Salesforce incidents",
+      "description": "178 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Users may experience elevated errors uploading, deleting, and navigating files in the ChatGPT Library",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-13T08:17:12.762866Z"
+  "html_written": "2026-07-13T11:32:30.668688Z"
 }
