@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T00:06:51.124971Z",
+  "polled": "2026-07-14T03:30:12.311762Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Phone Support: Higher Than Expected Wait Times",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to XL Axiatia Indonesia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T00:06:51.124995Z"
+  "html_written": "2026-07-14T03:30:12.311800Z"
 }
