@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T18:45:41.750513Z",
+  "polled": "2026-07-14T19:59:31.355787Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - Linode API/CLI",
+      "incident_name": "Service Issue - GPU and VPU Booting issues",
       "fetched": true
     },
     "aws": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating service degradation - Sol",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T18:45:41.750549Z"
+  "html_written": "2026-07-14T19:59:31.355813Z"
 }
