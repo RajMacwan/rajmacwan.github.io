@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T21:08:38.222534Z",
+  "polled": "2026-07-14T22:11:30.418977Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Partial outage of claude.ai: container creation",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures Between a Subset of Twilio Long code and Multiple Networks in Germany",
+      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T21:08:38.222576Z"
+  "html_written": "2026-07-14T22:11:30.419007Z"
 }
