@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-14T17:36:31.804080Z",
+  "polled": "2026-07-14T18:45:41.750513Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated R2 errors in WEUR region",
+      "incident_name": "Elevated errors in item PUT requests to AI Search",
       "fetched": true
     },
     "fastly": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded performance on multiple platforms",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "Flex AI Copilot Wrap-up notes and topics classification requests timing out - OpenAI Timeouts",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T17:36:31.804120Z"
+  "html_written": "2026-07-14T18:45:41.750549Z"
 }
