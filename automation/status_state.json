@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T12:54:42.031098Z",
+  "polled": "2026-07-14T14:52:06.352040Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Issue - Linode API/CLI",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "176 active Salesforce incidents",
+      "description": "177 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends and Receives - FLR",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Portugal",
+      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T12:54:42.031125Z"
+  "html_written": "2026-07-14T14:52:06.352087Z"
 }
