@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-14T14:52:06.352040Z",
+  "polled": "2026-07-14T16:15:46.967144Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated errors in item PUT requests to AI Search",
+      "incident_name": "Elevated R2 errors in WEUR region",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "177 active Salesforce incidents",
+      "description": "179 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "Users are unable to create a SIP Trunking Phone Number Resource",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T14:52:06.352087Z"
+  "html_written": "2026-07-14T16:15:46.967182Z"
 }
