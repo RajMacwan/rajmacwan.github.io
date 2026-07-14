@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T11:43:15.778758Z",
+  "polled": "2026-07-14T12:54:42.031098Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Service Issue - GPU and VPU Booting issues",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Issue - Linode API/CLI",
       "fetched": true
     },
     "aws": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to XL Axiata Indonesia",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Portugal",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T11:43:15.778784Z"
+  "html_written": "2026-07-14T12:54:42.031125Z"
 }
