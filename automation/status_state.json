@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-14T03:30:12.311762Z",
+  "polled": "2026-07-14T05:55:19.427625Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Elevated errors in item PUT requests to AI Search",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to XL Axiatia Indonesia",
+      "incident_name": "SMS Delivery Failures from Twilio Alphanumeric Sender IDs to Vodafone Australia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T03:30:12.311800Z"
+  "html_written": "2026-07-14T05:55:19.427650Z"
 }
