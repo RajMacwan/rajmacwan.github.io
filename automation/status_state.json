@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T16:15:46.967144Z",
+  "polled": "2026-07-14T17:36:31.804080Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -182,9 +182,9 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "H100 GPU shortage resulting in high queue times",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - FLR",
+      "incident_name": "Degraded performance on multiple platforms",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Users are unable to create a SIP Trunking Phone Number Resource",
+      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T16:15:46.967182Z"
+  "html_written": "2026-07-14T17:36:31.804120Z"
 }
