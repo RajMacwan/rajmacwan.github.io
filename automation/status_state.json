@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T20:42:02.398542Z",
+  "polled": "2026-07-15T21:42:20.179461Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Italy",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T20:42:02.398570Z"
+  "html_written": "2026-07-15T21:42:20.179487Z"
 }
