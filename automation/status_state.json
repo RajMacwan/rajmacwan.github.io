@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-14T23:13:54.210223Z",
+  "polled": "2026-07-15T00:08:24.316632Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "179 active Salesforce incidents",
+      "description": "175 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Elevated errors affecting ChatGPT",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric Numbers to Vodafone Italy",
+      "incident_name": "SMS Delivery Delays and Failures From a Subset of Twilio Short Codes and Long Codes to Vodafone New Zealand",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-14T23:13:54.210260Z"
+  "html_written": "2026-07-15T00:08:24.316660Z"
 }
