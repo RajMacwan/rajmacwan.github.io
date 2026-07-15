@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T21:42:20.179461Z",
+  "polled": "2026-07-15T22:42:54.742867Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,15 +26,15 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Some users enrolled in 2FA are experiencing login issues",
       "fetched": true
     },
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Serverless Inference - Gemma4 Latency Issues Causing Timeouts & Slow Responses",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "181 active Salesforce incidents",
+      "description": "183 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN Nigeria",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T21:42:20.179487Z"
+  "html_written": "2026-07-15T22:42:54.742896Z"
 }
