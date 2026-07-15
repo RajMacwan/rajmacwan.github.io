@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-15T15:45:17.284881Z",
+  "polled": "2026-07-15T16:57:48.329175Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated R2 errors in ENAM region",
+      "incident_name": "Elevated errors in ENAM region",
       "fetched": true
     },
     "fastly": {
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "179 active Salesforce incidents",
+      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
+      "fetched": true
     },
     "sap": {
       "indicator": "unknown",
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "BLAST - Delayed Sends & Receives",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T15:45:17.284915Z"
+  "html_written": "2026-07-15T16:57:48.329200Z"
 }
