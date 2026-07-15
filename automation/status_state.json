@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-15T14:01:50.677261Z",
+  "polled": "2026-07-15T15:45:17.284881Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance issues - Increased HTTP 502 Errors in HKG",
+      "incident_name": "Elevated R2 errors in ENAM region",
       "fetched": true
     },
     "fastly": {
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "minor",
-      "description": "177 active Salesforce incidents",
-      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "sap": {
       "indicator": "unknown",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures between Twilio Long Codes and Bouygues Telecom France",
+      "incident_name": "SMS Delivery Delays from Twilio to Ooredoo Algeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T14:01:50.677290Z"
+  "html_written": "2026-07-15T15:45:17.284915Z"
 }
