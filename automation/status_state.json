@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T22:42:54.742867Z",
+  "polled": "2026-07-15T23:43:40.316955Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Some users enrolled in 2FA are experiencing login issues",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T22:42:54.742896Z"
+  "html_written": "2026-07-15T23:43:40.316979Z"
 }
