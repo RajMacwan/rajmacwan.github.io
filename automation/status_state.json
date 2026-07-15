@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-15T11:58:29.315411Z",
+  "polled": "2026-07-15T14:01:50.677261Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated errors in item PUT requests to AI Search",
+      "incident_name": "Network Performance issues - Increased HTTP 502 Errors in HKG",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "175 active Salesforce incidents",
+      "description": "177 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T11:58:29.315441Z"
+  "html_written": "2026-07-15T14:01:50.677290Z"
 }
