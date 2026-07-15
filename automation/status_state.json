@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-15T19:39:41.116808Z",
+  "polled": "2026-07-15T20:42:02.398542Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance issues - Increased HTTP 502 Errors in HKG",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T19:39:41.116833Z"
+  "html_written": "2026-07-15T20:42:02.398570Z"
 }
