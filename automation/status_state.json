@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T03:31:58.642154Z",
+  "polled": "2026-07-15T05:57:25.701087Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "minor",
-      "description": "1 active GCP incident",
-      "incident_name": "Google Cloud VMware Engine (GCVE) Stretched Cluster customers are experiencing zonal outages impacting network connectivity across multiple ",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T03:31:58.642180Z"
+  "html_written": "2026-07-15T05:57:25.701121Z"
 }
