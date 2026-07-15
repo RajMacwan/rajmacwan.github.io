@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T10:21:17.824210Z",
+  "polled": "2026-07-15T11:58:29.315411Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Romania",
+      "incident_name": "SMS Delivery Delays and Failures between Twilio Long Codes and Bouygues Telecom France",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T10:21:17.824240Z"
+  "html_written": "2026-07-15T11:58:29.315441Z"
 }
