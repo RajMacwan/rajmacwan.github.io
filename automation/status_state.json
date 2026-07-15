@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T18:13:52.982063Z",
+  "polled": "2026-07-15T19:39:41.116808Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "180 active Salesforce incidents",
+      "description": "181 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "BLAST - Delayed Sends & Receives",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays From a Subset of Twilio Long Codes to Multiple Networks in Italy",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Italy",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T18:13:52.982082Z"
+  "html_written": "2026-07-15T19:39:41.116833Z"
 }
