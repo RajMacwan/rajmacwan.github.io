@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-15T16:57:48.329175Z",
+  "polled": "2026-07-15T18:13:52.982063Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated errors in ENAM region",
+      "incident_name": "Network Performance issues - Increased HTTP 502 Errors in HKG",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "179 active Salesforce incidents",
+      "description": "180 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Ooredoo Algeria",
+      "incident_name": "SMS Delivery Delays From a Subset of Twilio Long Codes to Multiple Networks in Italy",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Processing for SendGrid Account Actions",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T16:57:48.329200Z"
+  "html_written": "2026-07-15T18:13:52.982082Z"
 }
