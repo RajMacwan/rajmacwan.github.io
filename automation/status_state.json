@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-15T08:25:55.753693Z",
+  "polled": "2026-07-15T10:21:17.824210Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Serverless Inference - Gemma4 Latency Issues Causing Timeouts & Slow Responses",
       "fetched": true
     },
@@ -178,7 +178,7 @@
     "cursor": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Investigating service degradation",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays from Twilio to Romania",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-15T08:25:55.753730Z"
+  "html_written": "2026-07-15T10:21:17.824240Z"
 }
