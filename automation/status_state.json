@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-16T15:02:36.019266Z",
+  "polled": "2026-07-16T16:39:15.030947Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated Error Rates For SSO Login",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -184,7 +184,7 @@
     "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "HuggingFace download issues",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T15:02:36.019293Z"
+  "html_written": "2026-07-16T16:39:15.030991Z"
 }
