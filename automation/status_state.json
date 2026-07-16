@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-16T12:54:58.486233Z",
+  "polled": "2026-07-16T15:02:36.019266Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Reserved IP routing in TOR1",
       "fetched": true
     },
     "heroku": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors for Claude Opus 4.7",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
+      "incident_name": "SMS Delivery Delays from Twilio to Vodafone Egypt",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T12:54:58.486263Z"
+  "html_written": "2026-07-16T15:02:36.019293Z"
 }
