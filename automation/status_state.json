@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T09:24:40.243900Z",
+  "polled": "2026-07-16T11:17:25.085145Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Magic WAN / Magic Transit tunnel health alert delivery",
+      "incident_name": "Cloudflare Dashboard and Cloudflare API service issues",
       "fetched": true
     },
     "fastly": {
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "SAML Single Sign-On (SSO) errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "179 active Salesforce incidents",
+      "description": "180 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -171,14 +171,14 @@
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Enterprise SSO sign-in failures",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors for Claude Opus 4.7",
       "fetched": true
     },
     "cursor": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Authentication System degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Elevated dashboard.plaid.com error rates",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures and Delays between a Subset of Twilio Long Codes and Multiple Networks in Mexico",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T09:24:40.243926Z"
+  "html_written": "2026-07-16T11:17:25.085175Z"
 }
