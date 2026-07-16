@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T11:17:25.085145Z",
+  "polled": "2026-07-16T12:54:58.486233Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Dashboard and Cloudflare API service issues",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "minor",
-      "description": "1 active GCP incident",
-      "incident_name": "Google Cloud VMware Engine (GCVE), Google Cloud NetApp Volumes, and Bare Metal Solutions (BMS) services are experiencing a service outage in",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Disruption with some GitHub services",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T11:17:25.085175Z"
+  "html_written": "2026-07-16T12:54:58.486263Z"
 }
