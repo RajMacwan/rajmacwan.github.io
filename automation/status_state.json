@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T17:51:25.656383Z",
+  "polled": "2026-07-16T19:11:56.664999Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Durable Objects Increased Errors",
+      "incident_name": "CNI 2.0 Experiencing Intermittent 5XX Errors",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "181 active Salesforce incidents",
+      "description": "182 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors for multiple models",
       "fetched": true
     },
     "cursor": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - ATOM",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
+      "incident_name": "SMS and MMS Delivery Delays and Failures from Twilio to T-Mobile United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Processing for SendGrid Account Actions",
+      "incident_name": "",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T17:51:25.656410Z"
+  "html_written": "2026-07-16T19:11:56.665025Z"
 }
