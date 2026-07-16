@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T04:28:04.358549Z",
+  "polled": "2026-07-16T07:03:29.363746Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare R2 Issues",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Missing Build CPU Minutes Usage Data",
       "fetched": true
     },
     "netlify": {
@@ -64,7 +64,7 @@
     "gcp": {
       "indicator": "minor",
       "description": "1 active GCP incident",
-      "incident_name": "Google Cloud VMware Engine (GCVE), Google Cloud NetApp Volumes, and Bare Metal Solutions (BMS) services are experiencing temperature alerts ",
+      "incident_name": "Google Cloud VMware Engine (GCVE), Google Cloud NetApp Volumes, and Bare Metal Solutions (BMS) services are experiencing a service outage in",
       "fetched": true
     },
     "oci": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Investigating Grok 4.5 degradation",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Italy",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T04:28:04.358576Z"
+  "html_written": "2026-07-16T07:03:29.363775Z"
 }
