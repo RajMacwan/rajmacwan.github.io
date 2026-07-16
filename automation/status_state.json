@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T16:39:15.030947Z",
+  "polled": "2026-07-16T17:51:25.656383Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Durable Objects Increased Errors",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Reserved IP routing in TOR1",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "180 active Salesforce incidents",
+      "description": "181 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends and Receives - ATOM",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Vodafone Egypt",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Nigeria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T16:39:15.030991Z"
+  "html_written": "2026-07-16T17:51:25.656410Z"
 }
