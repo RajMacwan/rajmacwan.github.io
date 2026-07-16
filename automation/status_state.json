@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T01:10:39.876146Z",
+  "polled": "2026-07-16T04:28:04.358549Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Cloudflare R2 Issues",
       "fetched": true
     },
     "fastly": {
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "none",
-      "description": "All Google Cloud services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 active GCP incident",
+      "incident_name": "Google Cloud VMware Engine (GCVE), Google Cloud NetApp Volumes, and Bare Metal Solutions (BMS) services are experiencing temperature alerts ",
       "fetched": true
     },
     "oci": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "178 active Salesforce incidents",
+      "description": "179 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Payment Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T01:10:39.876176Z"
+  "html_written": "2026-07-16T04:28:04.358576Z"
 }
