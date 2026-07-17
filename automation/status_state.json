@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-17T15:21:50.458058Z",
+  "polled": "2026-07-17T16:40:29.685476Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,13 +166,13 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "New ChatGPT App Not Available For Enterprise Users Without Codex Permissions",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors for Claude Opus 4.8",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Chunghwa Taiwan",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio India",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T15:21:50.458088Z"
+  "html_written": "2026-07-17T16:40:29.685515Z"
 }
