@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-16T23:33:59.972282Z",
+  "polled": "2026-07-17T01:08:56.245031Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated Errors China Network",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -14,21 +14,21 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Errors logging in with GitHub",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
     "render": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "GitHub outage affecting new service creation and service deploys",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "182 active Salesforce incidents",
+      "description": "180 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded REST API Availability",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors for Github connector",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Investigating service degradation \u2014 Cloud Agents",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "API Errors",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-16T23:33:59.972312Z"
+  "html_written": "2026-07-17T01:08:56.245064Z"
 }
