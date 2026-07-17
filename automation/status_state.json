@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-17T12:00:56.523963Z",
+  "polled": "2026-07-17T13:59:23.286068Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "182 active Salesforce incidents",
+      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
+      "fetched": true
     },
     "sap": {
       "indicator": "unknown",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors on Sonnet 5 and Haiku 4.5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Investigating Anthropic degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Sends - ETH and ERC-20 Tokens",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to MPT Myanmar",
+      "incident_name": "SMS Delivery Delays from Twilio to MTS Russia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T12:00:56.523996Z"
+  "html_written": "2026-07-17T13:59:23.286094Z"
 }
