@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-17T13:59:23.286068Z",
+  "polled": "2026-07-17T15:21:50.458058Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Paris, France (CDG)",
+      "incident_name": "POST requests not succeeding",
       "fetched": true
     },
     "fastly": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors for Claude Opus 4.8",
       "fetched": true
     },
     "cursor": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends - ETH and ERC-20 Tokens",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTS Russia",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Chunghwa Taiwan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T13:59:23.286094Z"
+  "html_written": "2026-07-17T15:21:50.458088Z"
 }
