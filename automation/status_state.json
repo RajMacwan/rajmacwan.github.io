@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-17T10:49:40.295909Z",
+  "polled": "2026-07-17T12:00:56.523963Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Email Delivery Delays",
+      "incident_name": "Network Performance Issues in Paris, France (CDG)",
       "fetched": true
     },
     "fastly": {
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "minor",
-      "description": "182 active Salesforce incidents",
-      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "sap": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T10:49:40.295937Z"
+  "html_written": "2026-07-17T12:00:56.523996Z"
 }
