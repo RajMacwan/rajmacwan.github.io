@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-17T22:52:36.820193Z",
+  "polled": "2026-07-17T23:53:22.677211Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio Alphanumeric Sender IDs to Vodafone Australia",
+      "incident_name": "Voice Call Failures From Twilio Phone Numbers to Reliance Jio India",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T21:56:17.523640Z"
+  "html_written": "2026-07-17T23:53:22.677235Z"
 }
