@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-17T18:45:20.296062Z",
+  "polled": "2026-07-17T19:52:21.538933Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cache Reserve users may see increased write errors in the APAC region",
+      "incident_name": "Containers Logs Issues",
       "fetched": true
     },
     "fastly": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated errors across Fable 5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio Network in India",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio India",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T18:45:20.296098Z"
+  "html_written": "2026-07-17T19:52:21.538967Z"
 }
