@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-17T17:49:50.379171Z",
+  "polled": "2026-07-17T18:45:20.296062Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Containers Logs Issues",
+      "incident_name": "Cache Reserve users may see increased write errors in the APAC region",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "182 active Salesforce incidents",
+      "description": "183 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors across Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-17T17:49:50.379199Z"
+  "html_written": "2026-07-17T18:45:20.296098Z"
 }
