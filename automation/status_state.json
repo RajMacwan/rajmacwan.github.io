@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T07:11:50.329741Z",
+  "polled": "2026-07-18T09:01:22.077789Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service degradation affecting both inbound and outbound calls for a single Provider Exchange partner in the Japan region.",
       "fetched": true
     },
     "dropbox": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Some users are unable to access Codex",
       "fetched": true
     },
     "anthropic": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends / Receives - ZEC",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Chunghwa Taiwan",
+      "incident_name": "Voice Call Failures from Netwokr Subscribers In South Africa to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T07:11:50.329767Z"
+  "html_written": "2026-07-18T09:01:22.077820Z"
 }
