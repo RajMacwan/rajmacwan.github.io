@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T22:23:02.942507Z",
+  "polled": "2026-07-18T23:26:34.149151Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Pelephone Israel",
+      "incident_name": "SMS Delivery Failures from Twilio to MTS Russia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T22:23:02.942540Z"
+  "html_written": "2026-07-18T23:26:34.149176Z"
 }
