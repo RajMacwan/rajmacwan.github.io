@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T18:12:31.923711Z",
+  "polled": "2026-07-18T19:35:51.405429Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends and Receives - Kusama",
+      "incident_name": "Degraded Performance - SEPA Direct Debit Deposits (EU)",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T18:12:31.923746Z"
+  "html_written": "2026-07-18T19:35:51.405455Z"
 }
