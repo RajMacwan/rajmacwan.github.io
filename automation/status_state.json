@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T12:35:34.143047Z",
+  "polled": "2026-07-18T14:05:32.095136Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Some users are unable to access Codex",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - SEPA Direct Debit Deposits (EU)",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T12:35:34.143076Z"
+  "html_written": "2026-07-18T14:05:32.095163Z"
 }
