@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T14:05:32.095136Z",
+  "polled": "2026-07-18T15:10:52.507571Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Audio Quality of Outbound Calls of Zoom Revenue Accelerator's Auto-Dialer in Japan Region",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTS Russia",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Pelephone Israel",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T14:05:32.095163Z"
+  "html_written": "2026-07-18T15:10:52.507600Z"
 }
