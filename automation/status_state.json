@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-18T09:01:22.077789Z",
+  "polled": "2026-07-18T10:37:44.999068Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service degradation affecting both inbound and outbound calls for a single Provider Exchange partner in the Japan region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Netwokr Subscribers In South Africa to a Subset of Twilio Phone Numbers",
+      "incident_name": "Voice Call Failures from Network Subscribers in South Africa to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-18T09:01:22.077820Z"
+  "html_written": "2026-07-18T10:37:44.999099Z"
 }
