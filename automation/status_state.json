@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-19T01:02:35.164579Z",
+  "polled": "2026-07-19T04:31:37.898773Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "GitHub git clone 403 errors",
       "fetched": true
     },
     "digitalocean": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to MTS Russia",
+      "incident_name": "SMS Delivery Delays and Failures From a Subset of Twilio Alphanumeric and Long Codes to Pelephone Israel",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-19T01:02:35.164603Z"
+  "html_written": "2026-07-19T04:31:37.898805Z"
 }
