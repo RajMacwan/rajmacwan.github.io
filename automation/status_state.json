@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-19T11:58:36.612041Z",
+  "polled": "2026-07-19T13:43:01.092603Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Block Storage Volume NYC1 and NYC3",
+      "incident_name": "Block Storage Volume NYC1, NYC3, SGP1, SYD1 and BLR1",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity Gateway API Failure Increase in Canada",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Algar Telecom Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-19T11:58:36.612067Z"
+  "html_written": "2026-07-19T13:43:01.092641Z"
 }
