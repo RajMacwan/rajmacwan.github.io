@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-19T14:42:25.377376Z",
+  "polled": "2026-07-19T15:41:01.078230Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Block Storage Volume NYC1, NYC3, SGP1, SYD1 and BLR1",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Elevated errors affecting ChatGPT",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric and Long Codes to Pelephone Israel",
+      "incident_name": "User Authentication Identity Gateway API Failure Increase in Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-19T14:42:25.377400Z"
+  "html_written": "2026-07-19T15:41:01.078257Z"
 }
