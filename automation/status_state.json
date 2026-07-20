@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-20T16:24:04.883017Z",
+  "polled": "2026-07-20T18:28:29.239120Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "175 active Salesforce incidents",
+      "description": "178 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "maintenance",
       "description": "Service Under Maintenance",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to a subset of network subscribers in Germany.",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Altan Redes Mexico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-20T16:24:04.883082Z"
+  "html_written": "2026-07-20T18:28:29.239148Z"
 }
