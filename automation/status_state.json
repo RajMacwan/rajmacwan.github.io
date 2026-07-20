@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-20T20:08:35.868611Z",
+  "polled": "2026-07-20T21:31:13.486485Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "minor",
-      "description": "178 active Salesforce incidents",
-      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "sap": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-20T20:08:35.868648Z"
+  "html_written": "2026-07-20T21:31:13.486540Z"
 }
