@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-20T10:25:21.402300Z",
+  "polled": "2026-07-20T12:31:57.470840Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Elevated error rates for Opus 4.5",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Investigating service degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Pelephone Israel",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Germany",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-20T10:25:21.402325Z"
+  "html_written": "2026-07-20T12:31:57.470870Z"
 }
