@@ -13,8 +13,9 @@
     "patching-priority-practitioner-framework",
     "personal-osint-workstation-build",
     "rag-for-internal-documentation",
-    "ransomware-negotiation-when-not-to-pay"
+    "ransomware-negotiation-when-not-to-pay",
+    "reading-the-threat-intelligence-landscape"
   ],
-  "last_run": "2026-07-13T08:09:43.716989Z",
-  "last_slug": "ransomware-negotiation-when-not-to-pay"
+  "last_run": "2026-07-20T07:52:09.794391Z",
+  "last_slug": "reading-the-threat-intelligence-landscape"
 }
