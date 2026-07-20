@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-20T12:31:57.470840Z",
+  "polled": "2026-07-20T14:53:21.076536Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Elevated error rates for Opus 4.5",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors for Claude Opus 4.8",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-20T12:31:57.470870Z"
+  "html_written": "2026-07-20T14:53:21.076563Z"
 }
