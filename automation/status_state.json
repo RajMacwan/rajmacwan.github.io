@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-21T04:27:57.408117Z",
+  "polled": "2026-07-21T07:13:12.184683Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "173 active Salesforce incidents",
+      "description": "175 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors on Haiku 4.5",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Access Malawi",
+      "incident_name": "SMS Delivery Delays from Twilio to Multiple Networks in Mexico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-21T04:27:57.408143Z"
+  "html_written": "2026-07-21T07:13:12.184730Z"
 }
