@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-21T19:47:35.944243Z",
+  "polled": "2026-07-21T20:53:27.437422Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Access Malawi",
+      "incident_name": "SMS Delivery Failures from Twilio Phone Numbers to Rakuten Japan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-21T19:47:35.944269Z"
+  "html_written": "2026-07-21T20:53:27.437454Z"
 }
