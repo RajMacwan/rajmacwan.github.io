@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-21T18:03:29.872270Z",
+  "polled": "2026-07-21T19:47:35.944243Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,19 +166,19 @@
     "openai": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Image generation unavailable in ChatGPT",
+      "incident_name": "Elevated errors for API image generation",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Service disruption on Claude services",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Anthropic elevated errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio Phone Numbers to Rakuten Japan",
+      "incident_name": "SMS Delivery Failures from Twilio to Access Malawi",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-21T18:03:29.872302Z"
+  "html_written": "2026-07-21T19:47:35.944269Z"
 }
