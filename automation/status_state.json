@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-20T23:36:23.302691Z",
+  "polled": "2026-07-21T01:05:19.870458Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "178 active Salesforce incidents",
+      "description": "172 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Access Malawi",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio India",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-20T23:36:23.302714Z"
+  "html_written": "2026-07-21T01:05:19.870485Z"
 }
