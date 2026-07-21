@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-21T13:03:09.279111Z",
+  "polled": "2026-07-21T15:15:26.369267Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "175 active Salesforce incidents",
+      "description": "176 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -166,13 +166,13 @@
     "openai": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Image generation unavailable in ChatGPT and API",
+      "incident_name": "Image generation unavailable in ChatGPT",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors on Haiku 4.5",
       "fetched": true
     },
     "cursor": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Deposits and Withdrawals - SEPA",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation Between Twilio Phone Numbers and Multiple Networks in United Kingdom",
+      "incident_name": "SMS Delivery Delays and Failures From Network Subscribers to Twilio Romania Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-21T13:03:09.279140Z"
+  "html_written": "2026-07-21T15:15:26.369299Z"
 }
