@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-21T11:31:12.220606Z",
+  "polled": "2026-07-21T13:03:09.279111Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Some SSH connections using deploy keys are failing",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Image generation unavailable for some ChatGPT users",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Image generation unavailable in ChatGPT and API",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors across Fable 5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation between Twilio Phone Numbers and Multiple Networks in United Kingdom",
+      "incident_name": "Voice Call Audio Quality Degradation Between Twilio Phone Numbers and Multiple Networks in United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-21T11:31:12.220636Z"
+  "html_written": "2026-07-21T13:03:09.279140Z"
 }
