@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-22T17:45:21.986155Z",
+  "polled": "2026-07-22T18:49:40.609948Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "Customers unable to create Access and Device Enrollment policies via the Dashboard and API",
       "fetched": true
     },
     "fastly": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service disruption on Claude Services",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Microsoft Office add-in availability",
       "fetched": true
     },
     "cursor": {
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Account governance functions are unavailable in SaaS Manager",
       "fetched": true
     },
     "bitwarden": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T17:45:21.986181Z"
+  "html_written": "2026-07-22T18:49:40.609977Z"
 }
