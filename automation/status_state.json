@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-22T12:50:02.824236Z",
+  "polled": "2026-07-22T14:50:42.813657Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,13 +166,13 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated Errors Affecting File Uploads and Image Generation",
+      "incident_name": "Elevated errors for Workspace Agent",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors on Opus 4.8 and Haiku 4.5",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
+      "incident_name": "Voice Connection Errors",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T12:50:02.824274Z"
+  "html_written": "2026-07-22T14:50:42.813691Z"
 }
