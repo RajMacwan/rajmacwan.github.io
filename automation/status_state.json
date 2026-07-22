@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-22T09:03:03.957524Z",
+  "polled": "2026-07-22T11:17:10.097280Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increase in errors from R2 in ENAM",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T09:03:03.957552Z"
+  "html_written": "2026-07-22T11:17:10.097319Z"
 }
