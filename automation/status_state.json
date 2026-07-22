@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-22T18:49:40.609948Z",
+  "polled": "2026-07-22T20:03:25.059911Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Customers unable to create Access and Device Enrollment policies via the Dashboard and API",
+      "incident_name": "Workers AI experiencing degraded availability in some models",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Gradient AI Serverless Inference Requests Timing Out for qwen3.5-397b-a17b",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Account governance functions are unavailable in SaaS Manager",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "bitwarden": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Connection Errors",
+      "incident_name": "Users unable to register their Authy Android app",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T18:49:40.609977Z"
+  "html_written": "2026-07-22T20:03:25.059938Z"
 }
