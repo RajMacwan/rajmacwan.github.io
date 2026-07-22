@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-22T06:16:45.569339Z",
+  "polled": "2026-07-22T09:03:03.957524Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Newly entitled R2 accounts are seeing delays when trying to access the S3-compatible API",
+      "incident_name": "Increase in errors from R2 in ENAM",
       "fetched": true
     },
     "fastly": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated Errors Affecting File Uploads and Image Generation",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T06:16:45.569365Z"
+  "html_written": "2026-07-22T09:03:03.957552Z"
 }
