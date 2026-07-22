@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-22T14:50:42.813657Z",
+  "polled": "2026-07-22T16:19:57.472746Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors for Workspace Agent",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors on Opus 4.8 and Haiku 4.5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Transaction Updates Delayed",
       "fetched": true
     },
     "square": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-22T14:50:42.813691Z"
+  "html_written": "2026-07-22T16:19:57.472776Z"
 }
