@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T11:42:21.132919Z",
+  "polled": "2026-07-23T13:13:53.100256Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Llama-4-Maverick Model Availability",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T11:42:21.132953Z"
+  "html_written": "2026-07-23T13:13:53.100286Z"
 }
