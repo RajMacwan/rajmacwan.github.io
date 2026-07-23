@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T21:05:15.115819Z",
+  "polled": "2026-07-23T22:12:31.749416Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Transfer Status Upates Delays",
+      "incident_name": "Transaction Updates Delayed",
       "fetched": true
     },
     "square": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T21:05:15.115845Z"
+  "html_written": "2026-07-23T22:12:31.749483Z"
 }
