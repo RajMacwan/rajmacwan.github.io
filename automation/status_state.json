@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T18:18:57.867864Z",
+  "polled": "2026-07-23T19:51:34.388593Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "Issues connecting to resources in West US",
       "fetched": true
     },
     "gcp": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Healthcare Integration services in US Region",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Network Subscribers to a Subset of Twilio Romania Short Codes",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Dish United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T18:18:57.867889Z"
+  "html_written": "2026-07-23T19:51:34.388617Z"
 }
