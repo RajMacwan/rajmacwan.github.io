@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T19:51:34.388593Z",
+  "polled": "2026-07-23T21:05:15.115819Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "minor",
-      "description": "1 Azure incident in last 12h",
-      "incident_name": "Issues connecting to resources in West US",
+      "indicator": "none",
+      "description": "All Azure services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "gcp": {
@@ -164,8 +164,8 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Elevated Error Rates",
       "fetched": true
     },
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Transaction Updates Delayed",
+      "incident_name": "Transfer Status Upates Delays",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Dish United States",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Dish Network in the United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T19:51:34.388617Z"
+  "html_written": "2026-07-23T21:05:15.115845Z"
 }
