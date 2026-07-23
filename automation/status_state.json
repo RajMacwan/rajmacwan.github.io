@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T15:27:43.837548Z",
+  "polled": "2026-07-23T16:59:34.542953Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "",
       "fetched": true
     },
@@ -152,21 +152,21 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Zoom Healthcare Integration services in US Region",
       "fetched": true
     },
     "dropbox": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Dropbox is not working as expected for some users",
-      "fetched": true
-    },
-    "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
       "incident_name": "",
+      "fetched": true
+    },
+    "openai": {
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated error rates",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures From Network Subscribers to a subset of Twilio Romania Short Codes",
+      "incident_name": "Gather Speech-to-Text Failure",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T15:27:43.837571Z"
+  "html_written": "2026-07-23T16:59:34.542977Z"
 }
