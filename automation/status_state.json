@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T09:40:45.525904Z",
+  "polled": "2026-07-23T11:42:21.132919Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Llama-4-Maverick Model Availability",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "143 active Salesforce incidents",
+      "description": "144 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Transaction Updates Delayed",
+      "incident_name": "Payouts/Refunds API degraded",
       "fetched": true
     },
     "square": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T09:40:45.525934Z"
+  "html_written": "2026-07-23T11:42:21.132953Z"
 }
