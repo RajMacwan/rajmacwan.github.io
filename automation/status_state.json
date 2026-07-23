@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-23T01:08:49.350520Z",
+  "polled": "2026-07-23T04:32:46.033182Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -182,8 +182,8 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Hitting GPU Capacity for H100s creating large queue times for some models",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to India",
+      "incident_name": "SMS Delivery Delays from Twilio to Zain Jordan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T01:08:49.350556Z"
+  "html_written": "2026-07-23T04:32:46.033254Z"
 }
