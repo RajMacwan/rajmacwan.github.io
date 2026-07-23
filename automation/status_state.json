@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-23T13:13:53.100256Z",
+  "polled": "2026-07-23T15:27:43.837548Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI experiencing degraded availability in some models",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Dropbox is not working as expected for some users",
       "fetched": true
     },
     "openai": {
@@ -184,7 +184,7 @@
     "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Hitting GPU Capacity for H100s creating large queue times for some models",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Payouts/Refunds API degraded",
+      "incident_name": "Transaction Updates Delayed",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to India",
+      "incident_name": "SMS Delivery Failures From Network Subscribers to a subset of Twilio Romania Short Codes",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-23T13:13:53.100286Z"
+  "html_written": "2026-07-23T15:27:43.837571Z"
 }
