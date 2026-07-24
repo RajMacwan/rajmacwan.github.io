@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-24T20:19:52.586470Z",
+  "polled": "2026-07-24T21:32:55.058336Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Incident with Pull Requests",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Delayed sales reporting data disruption",
       "fetched": true
     },
     "coinbase": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Tigo Honduras",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-24T20:19:52.586500Z"
+  "html_written": "2026-07-24T21:32:55.058361Z"
 }
