@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-24T21:32:55.058336Z",
+  "polled": "2026-07-24T22:39:58.996056Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Delayed sales reporting data disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-24T21:32:55.058361Z"
+  "html_written": "2026-07-24T22:39:58.996083Z"
 }
