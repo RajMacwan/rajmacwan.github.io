@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-24T08:46:14.399658Z",
+  "polled": "2026-07-24T10:50:12.698540Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Network Connectivity from India to NYC",
       "fetched": true
     },
     "heroku": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated Errors in Codex Review",
+      "incident_name": "Elevated Error Rates",
       "fetched": true
     },
     "anthropic": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Transaction Updates Delayed",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Gather Speech-to-Text Failure",
+      "incident_name": "User Authentication Identity SNA Failure Increase and Gateway API Failure Increase for T-Mobile in United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-24T08:46:14.399687Z"
+  "html_written": "2026-07-24T10:50:12.698582Z"
 }
