@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-24T06:15:26.284111Z",
+  "polled": "2026-07-24T08:46:14.399658Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Elevated Error Rates",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated Errors in Codex Review",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Tigo Honduras",
+      "incident_name": "Gather Speech-to-Text Failure",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-24T06:15:26.284142Z"
+  "html_written": "2026-07-24T08:46:14.399687Z"
 }
