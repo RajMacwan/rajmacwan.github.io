@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-25T21:28:42.931049Z",
+  "polled": "2026-07-25T22:29:45.360624Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated errors affecting ChatGPT conversations",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-25T21:28:42.931080Z"
+  "html_written": "2026-07-25T22:29:45.360648Z"
 }
