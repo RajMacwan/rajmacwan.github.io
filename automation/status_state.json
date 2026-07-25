@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-25T11:52:18.496568Z",
+  "polled": "2026-07-25T13:27:17.279369Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated error rates",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-25T11:52:18.496598Z"
+  "html_written": "2026-07-25T13:27:17.279402Z"
 }
