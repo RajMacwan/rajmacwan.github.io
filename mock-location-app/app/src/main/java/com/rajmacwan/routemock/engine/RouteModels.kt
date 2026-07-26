@@ -73,7 +73,19 @@ data class SimParams(
     val decelMps2: Double = 2.5,          // comfortable braking
     val lateralAccelMps2: Double = 3.5,   // cornering comfort limit (~0.35 g)
     val minCurveSpeedMps: Double = 4.0,   // never crawl below this in a curve
-    val speedJitterFrac: Double = 0.03,   // ±3% cruise noise so it isn't robotic
     val baseAccuracyM: Float = 4.0f,      // reported horizontal accuracy
+
+    // Smooth (correlated) speed noise — real throttle drifts over seconds, it
+    // does not flicker every tick. Modeled as an AR(1) / Ornstein-Uhlenbeck process.
+    val speedNoiseStdMps: Double = 0.5,        // steady std of the speed wobble (~1.1 mph)
+    val speedNoiseProportional: Double = 0.02, // extra wobble that grows with speed
+    val speedNoiseCorrelation: Double = 0.85,  // 0 = white noise, →1 = very smooth
+
+    // GPS position drift — a real fix wanders a metre or two from multipath, most
+    // visibly while stopped at a light. Also an AR(1) process, in meters.
+    val posDriftStdM: Double = 0.9,        // steady std of the wander, meters
+    val posDriftCorrelation: Double = 0.9, // smoothness of the wander
+    val posDriftMovingScale: Double = 0.5, // drift is smaller while actually moving
+
     val randomSeed: Long = 42L
 )

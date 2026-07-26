@@ -79,6 +79,64 @@ class MotionSimulatorTest {
         assertEquals(0.0, samples.last().speedMps, 0.001)
     }
 
+    @Test
+    fun `wanders a little while stopped but stays bounded`() {
+        val line = straightRoute()
+        val limits = DoubleArray(line.points.size - 1) { 14.0 }
+        val stopAt = line.totalLength / 2
+        val stops = listOf(StopEvent(stopAt, EventType.TRAFFIC_SIGNAL, willStop = true, dwellSeconds = 20.0))
+
+        val samples = MotionSimulator(line, limits, stops).simulate()
+        val dwell = longestZeroSpeedRun(samples)
+
+        assertTrue("dwell run should be captured", dwell.size >= 15)
+        val centroidLat = dwell.map { it.lat }.average()
+        val centroidLng = dwell.map { it.lng }.average()
+        val centroid = LatLng(centroidLat, centroidLng)
+        val maxDev = dwell.maxOf { GeoUtils.haversine(centroid, LatLng(it.lat, it.lng)) }
+        val distinctPositions = dwell.map { it.lat to it.lng }.distinct().size
+
+        assertTrue("stationary position should actually drift", distinctPositions > 1)
+        assertTrue("drift must stay within a few meters, was $maxDev", maxDev in 0.05..6.0)
+    }
+
+    @Test
+    fun `speed noise is present but smooth between ticks`() {
+        val line = straightRoute()
+        val limits = DoubleArray(line.points.size - 1) { 20.0 }
+        val samples = MotionSimulator(line, limits, emptyList()).simulate()
+
+        // Look at the cruise plateau, where the underlying speed is roughly constant.
+        val cruise = samples.filter { it.speedMps > 17.0 }
+        assertTrue("need a cruise section", cruise.size > 5)
+
+        val speeds = cruise.map { it.speedMps }
+        assertTrue("noise should make cruise speeds vary", speeds.distinct().size > 1)
+
+        var maxStep = 0.0
+        for (i in 1 until cruise.size) {
+            maxStep = maxOf(maxStep, kotlin.math.abs(cruise[i].speedMps - cruise[i - 1].speedMps))
+        }
+        assertTrue("correlated noise should not jump wildly tick-to-tick, was $maxStep",
+            maxStep < 2.0)
+    }
+
+    /** Longest contiguous run of near-zero-speed samples (a dwell). */
+    private fun longestZeroSpeedRun(samples: List<GpsSample>): List<GpsSample> {
+        var best = emptyList<GpsSample>()
+        var run = ArrayList<GpsSample>()
+        for (s in samples) {
+            if (s.speedMps < 0.05) {
+                run.add(s)
+            } else {
+                if (run.size > best.size) best = run.toList()
+                run = ArrayList()
+            }
+        }
+        if (run.size > best.size) best = run.toList()
+        return best
+    }
+
     private fun pointArc(line: Polyline, s: GpsSample): Double =
         line.projectToArcLength(LatLng(s.lat, s.lng))
 }

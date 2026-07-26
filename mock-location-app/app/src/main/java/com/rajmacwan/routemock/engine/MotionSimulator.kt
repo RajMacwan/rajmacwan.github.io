@@ -1,6 +1,9 @@
 package com.rajmacwan.routemock.engine
 
+import kotlin.math.PI
 import kotlin.math.abs
+import kotlin.math.cos
+import kotlin.math.ln
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.roundToInt
@@ -33,6 +36,11 @@ class MotionSimulator(
     private val params: SimParams = SimParams()
 ) {
     private val random = Random(params.randomSeed)
+
+    // Carried across ticks so the noise is correlated (smooth), not per-tick white noise.
+    private var speedNoise = 0.0
+    private var driftEastM = 0.0
+    private var driftNorthM = 0.0
 
     fun simulate(): List<GpsSample> = integrate(buildSpeedCeiling())
 
@@ -145,11 +153,44 @@ class MotionSimulator(
     private fun emit(out: MutableList<GpsSample>, t: Double, s: Double, vMps: Double) {
         val pos = line.positionAt(s)
         val bearing = line.bearingAt(s)
-        val jitter =
-            if (vMps > 1.0) 1.0 + (random.nextDouble() - 0.5) * 2 * params.speedJitterFrac else 1.0
-        val reported = max(0.0, vMps * jitter)
-        val accuracy = params.baseAccuracyM + (random.nextDouble(-0.8, 0.8)).toFloat()
-        out.add(GpsSample(t, pos.lat, pos.lng, bearing, reported, accuracy))
+
+        // #1 Smooth speed noise: an AR(1) process, so the speedometer drifts up
+        // and down over seconds rather than flickering. Zero when stopped.
+        val reported: Double
+        if (vMps > 0.5) {
+            val phi = params.speedNoiseCorrelation
+            val std = params.speedNoiseStdMps + params.speedNoiseProportional * vMps
+            speedNoise = phi * speedNoise + sqrt(1 - phi * phi) * std * gaussian()
+            reported = max(0.0, vMps + speedNoise)
+        } else {
+            speedNoise = 0.0
+            reported = 0.0
+        }
+
+        // #3 GPS position drift: a bounded AR(1) wander in meters, larger while
+        // stationary. Makes a car waiting at a light oscillate a metre or two
+        // instead of freezing on one exact coordinate.
+        val phiP = params.posDriftCorrelation
+        val scale = if (vMps > 0.5) params.posDriftMovingScale else 1.0
+        val innov = sqrt(1 - phiP * phiP) * params.posDriftStdM * scale
+        val bound = params.posDriftStdM * 3.0
+        driftEastM = (phiP * driftEastM + innov * gaussian()).coerceIn(-bound, bound)
+        driftNorthM = (phiP * driftNorthM + innov * gaussian()).coerceIn(-bound, bound)
+
+        val mPerDegLat = 111_320.0
+        val mPerDegLng = 111_320.0 * cos(Math.toRadians(pos.lat))
+        val lat = pos.lat + driftNorthM / mPerDegLat
+        val lng = pos.lng + driftEastM / mPerDegLng
+
+        val accuracy = params.baseAccuracyM + random.nextDouble(-0.8, 0.8).toFloat()
+        out.add(GpsSample(t, lat, lng, bearing, reported, accuracy))
+    }
+
+    /** Standard-normal sample via Box–Muller (kotlin.random has no Gaussian). */
+    private fun gaussian(): Double {
+        val u1 = random.nextDouble().coerceIn(1e-9, 1.0)
+        val u2 = random.nextDouble()
+        return sqrt(-2.0 * ln(u1)) * cos(2.0 * PI * u2)
     }
 }
 

@@ -40,9 +40,13 @@ domain** (arc-length `s` along the route):
      starts early (`v² = v_next² + 2·a_decel·Δs`) — this is what makes the car
      slow down *on the off-ramp*, not after it;
    - **forward integration in time** accelerates a tracked speed toward the
-     ceiling within comfort limits (~1.8 m/s² accelerate, ~2.5 m/s² brake), holds
-     position for each stop's dwell, and adds ±3 % cruise jitter so it isn't
-     robotically constant;
+     ceiling within comfort limits (~1.8 m/s² accelerate, ~2.5 m/s² brake) and
+     holds position for each stop's dwell;
+   - **smooth, correlated noise** so nothing looks robotic: the speed reading
+     drifts up and down over seconds (an AR(1) / Ornstein-Uhlenbeck process, not
+     per-tick white noise), and the position wanders a metre or two from
+     multipath — most visibly while stopped at a light, where a real phone never
+     freezes on one exact coordinate;
    - every emitted fix carries a **consistent** position, `bearing`, and `speed`,
      which is itself a realism signal.
 
@@ -131,8 +135,9 @@ mock-location-app/
 ## Tuning
 
 All the knobs live in `SimParams` (in `RouteModels.kt`): acceleration/braking
-comfort, lateral-acceleration limit for corners, cruise jitter, GPS tick rate, and
-the random seed. The road-class default speeds live in the `RoadClass` enum — for
+comfort, lateral-acceleration limit for corners, speed-noise amplitude and
+smoothness, GPS position-drift amplitude and smoothness, tick rate, and the random
+seed. The road-class default speeds live in the `RoadClass` enum — for
 legal accuracy per country, swap that lookup for the
 [`osm-legal-default-speeds`](https://github.com/westnordost/osm-legal-default-speeds)
 Kotlin library.
