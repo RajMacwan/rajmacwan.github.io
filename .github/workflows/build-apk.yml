@@ -1,0 +1,47 @@
+name: Build RouteMock APK
+
+# Builds the debug APK for the mock-location-app in the cloud and uploads it as a
+# downloadable artifact. Runs on pushes that touch the app, or on demand from the
+# Actions tab (Run workflow). No local Android toolchain needed.
+
+on:
+  push:
+    branches:
+      - "claude/flash-go-gps-replica-52gts1"
+    paths:
+      - "mock-location-app/**"
+      - ".github/workflows/build-apk.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install SDK packages
+        run: sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+
+      - name: Build debug APK
+        working-directory: mock-location-app
+        run: ./gradlew :app:assembleDebug --no-daemon --stacktrace
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: routemock-debug-apk
+          path: mock-location-app/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
