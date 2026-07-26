@@ -33,7 +33,10 @@ class MotionSimulator(
     /** Speed limit in m/s for each polyline segment; size = points - 1. */
     private val segmentLimitMps: DoubleArray,
     private val stops: List<StopEvent>,
-    private val params: SimParams = SimParams()
+    private val params: SimParams = SimParams(),
+    /** When set, drive the whole route at this constant speed (m/s), ignoring
+     *  posted limits, corners and traffic lights — the "fixed speed" mode. */
+    private val fixedSpeedMps: Double? = null
 ) {
     private val random = Random(params.randomSeed)
 
@@ -60,14 +63,19 @@ class MotionSimulator(
 
         for (k in 0 until n) {
             val s = min(k * ds, total)
-            val limit = segmentLimitMps[line.segmentIndexAt(s)]
-            ceiling[k] = min(limit, curveSpeedAt(s))
+            ceiling[k] = if (fixedSpeedMps != null) {
+                fixedSpeedMps
+            } else {
+                val limit = segmentLimitMps[line.segmentIndexAt(s)]
+                min(limit, curveSpeedAt(s))
+            }
         }
 
         // Backstop the sampling-based curve check with a cap keyed off each real
         // turn vertex, so a sharp intersection drawn as a single vertex is still
         // slowed for regardless of how the sampling window happened to land.
-        applyCornerCaps(ceiling, ds)
+        // (Skipped in fixed-speed mode, which is deliberately constant.)
+        if (fixedSpeedMps == null) applyCornerCaps(ceiling, ds)
 
         forceStop(ceiling, ds, total, total) // always brake to a stop at the destination
         for (e in stops) if (e.willStop) forceStop(ceiling, ds, total, e.distanceAlongRoute)

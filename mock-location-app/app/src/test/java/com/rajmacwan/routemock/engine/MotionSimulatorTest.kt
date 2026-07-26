@@ -79,6 +79,15 @@ class MotionSimulatorTest {
         assertEquals(0.0, samples.last().speedMps, 0.001)
     }
 
+    @Test
+    fun `fixed speed ignores road limits`() {
+        val line = straightRoute()
+        val limits = DoubleArray(line.points.size - 1) { 5.0 } // ~18 km/h posted limit
+        val samples = MotionSimulator(line, limits, emptyList(), fixedSpeedMps = 20.0).simulate()
+        val topSpeed = samples.maxOf { it.speedMps }
+        assertTrue("fixed speed should exceed the posted limit, was $topSpeed", topSpeed > 17.0)
+    }
+
     /** An L-shaped route: ~220 m east, a sharp 90° left, then ~220 m north —
      *  drawn with few vertices, like a sparse routing polyline at an intersection. */
     private fun lRoute(): Polyline {

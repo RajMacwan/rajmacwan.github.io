@@ -17,11 +17,19 @@ class RouteRepository(
     private val overpass: OverpassClient = OverpassClient(),
     private val random: Random = Random.Default
 ) {
-    suspend fun buildPlan(start: LatLng, dest: LatLng, apiKey: String): RoutePlan {
+    suspend fun buildPlan(
+        start: LatLng,
+        dest: LatLng,
+        apiKey: String,
+        includeStops: Boolean = true
+    ): RoutePlan {
         val routed = graphHopper.route(start, dest, apiKey)
         val line = Polyline(routed.points)
-        val features = overpass.featuresAlong(routed.points)
-        val stops = toStopEvents(line, features)
+        val stops = if (includeStops) {
+            toStopEvents(line, overpass.featuresAlong(routed.points))
+        } else {
+            emptyList()
+        }
         return RoutePlan(line, routed.segmentLimitMps, stops)
     }
 

@@ -115,10 +115,24 @@ Set a **start** and a **destination** two ways, in any combination:
 - **Tap the map**: first tap = start, second tap = destination. Tapped pins are
   reverse-geocoded, so the status line shows the real address, not just numbers.
 
-The first point you set is the start, the second is the destination. Then hit
-**Start** and watch the notification — it shows live progress and speed. **Stop**
-ends playback and resets mock mode. Open any map/navigation app and you'll see the
-marker drive the route, obeying limits and pausing at lights.
+The first point you set is the start, the second is the destination.
+
+Then choose what to do:
+
+- **Fixed Location** — hold the GPS at the start pin permanently (until you change
+  it or Stop). This is the "teleport / stay here" mode; set one point and tap it.
+- **Start** — drive the route. You're asked to pick the speed:
+  - *Realistic* — obeys each road's speed limit, slows for corners, stops at lights.
+  - *Fixed speed* — a constant mph you enter, ignoring limits and lights.
+- **Pause / Resume** — during a route, hold the GPS in place, then continue. While
+  paused (or even while driving) you can set a **new destination** (tap or search)
+  and hit **Start** again to re-route from the current position.
+- **Stop** — end everything and hand GPS back to the real provider.
+
+While a route plays, the map shows the **planned route** (blue), a **trail** of
+where you've driven (red), and a live marker at the current position — so you always
+see where the mock is. The notification mirrors progress and speed. Open any
+map/navigation app to see the same movement.
 
 ---
 
