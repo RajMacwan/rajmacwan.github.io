@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-25T23:34:45.111266Z",
+  "polled": "2026-07-26T01:11:43.986126Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "143 active Salesforce incidents",
+      "description": "138 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,8 +164,8 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Elevated errors affecting ChatGPT conversations",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from United States to a Subset of Twilio Short Codes",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio India",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-25T23:34:45.111291Z"
+  "html_written": "2026-07-26T01:11:43.986150Z"
 }
