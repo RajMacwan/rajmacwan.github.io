@@ -106,9 +106,18 @@ check movement. It is **not** a way to fool an app that specifically checks
 
 ### Using it
 
-Tap the map once for the **start**, once more for the **destination**, then
-**Start**. Watch the notification — it shows live progress and speed. **Stop** ends
-playback and resets mock mode. Open any map/navigation app and you'll see the
+Set a **start** and a **destination** two ways, in any combination:
+
+- **Search bar** (top): type an address ("1600 Amphitheatre Pkwy, Mountain View")
+  or raw `lat, lng`, hit search, and pick from the geocoded matches — the pin
+  drops exactly on the address. Geocoding uses your GraphHopper key, falling back
+  to OpenStreetMap/Nominatim if no key is set.
+- **Tap the map**: first tap = start, second tap = destination. Tapped pins are
+  reverse-geocoded, so the status line shows the real address, not just numbers.
+
+The first point you set is the start, the second is the destination. Then hit
+**Start** and watch the notification — it shows live progress and speed. **Stop**
+ends playback and resets mock mode. Open any map/navigation app and you'll see the
 marker drive the route, obeying limits and pausing at lights.
 
 ---
