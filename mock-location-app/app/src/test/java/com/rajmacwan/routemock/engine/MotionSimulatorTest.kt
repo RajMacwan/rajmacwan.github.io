@@ -79,6 +79,35 @@ class MotionSimulatorTest {
         assertEquals(0.0, samples.last().speedMps, 0.001)
     }
 
+    /** An L-shaped route: ~220 m east, a sharp 90° left, then ~220 m north —
+     *  drawn with few vertices, like a sparse routing polyline at an intersection. */
+    private fun lRoute(): Polyline {
+        val pts = ArrayList<LatLng>()
+        for (i in 0..5) pts.add(LatLng(37.0, -122.0 + i * 0.0005)) // eastbound leg
+        val cornerLng = -122.0 + 5 * 0.0005
+        for (i in 1..5) pts.add(LatLng(37.0 + i * 0.00045, cornerLng)) // northbound leg
+        return Polyline(pts)
+    }
+
+    @Test
+    fun `slows through a sharp corner then speeds back up`() {
+        val line = lRoute()
+        val limits = DoubleArray(line.points.size - 1) { 25.0 } // ~90 km/h everywhere
+        val samples = MotionSimulator(line, limits, emptyList()).simulate()
+
+        val cornerArc = line.cumDist[5]
+        val nearCorner = samples.filter { kotlin.math.abs(pointArc(line, it) - cornerArc) < 10.0 }
+        assertTrue("should have samples near the corner", nearCorner.isNotEmpty())
+        val minAtCorner = nearCorner.minOf { it.speedMps }
+        assertTrue("must markedly slow for the 90° turn, was $minAtCorner m/s", minAtCorner < 9.0)
+
+        // It should still reach real speed on the straight before the corner,
+        // proving the slowdown is the turn and not just the route ends.
+        val onStraight = samples.filter { pointArc(line, it) in 60.0..120.0 }
+        assertTrue("should reach speed on the straight leg",
+            onStraight.maxOf { it.speedMps } > 14.0)
+    }
+
     @Test
     fun `wanders a little while stopped but stays bounded`() {
         val line = straightRoute()

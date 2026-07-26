@@ -35,7 +35,10 @@ domain** (arc-length `s` along the route):
 3. **A comfortable motion model** (`MotionSimulator`) turns all of that into a
    1 Hz stream of GPS fixes:
    - a **speed ceiling** at every 2 m = min(road limit, curvature-limited speed);
-     tight corners slow you down via `v = sqrt(a_lateral / curvature)`;
+     tight corners slow you down via `v = sqrt(a_lateral / curvature)`, with a
+     backstop cap computed at each real turn vertex from its deflection angle, so
+     a sharp intersection is slowed for even when the routing engine draws it with
+     a single vertex;
    - a **backward pass** lowers the ceiling *before* every stop/curve so braking
      starts early (`v² = v_next² + 2·a_decel·Δs`) — this is what makes the car
      slow down *on the off-ramp*, not after it;

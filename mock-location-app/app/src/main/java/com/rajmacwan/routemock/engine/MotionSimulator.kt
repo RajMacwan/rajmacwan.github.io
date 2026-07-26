@@ -64,6 +64,11 @@ class MotionSimulator(
             ceiling[k] = min(limit, curveSpeedAt(s))
         }
 
+        // Backstop the sampling-based curve check with a cap keyed off each real
+        // turn vertex, so a sharp intersection drawn as a single vertex is still
+        // slowed for regardless of how the sampling window happened to land.
+        applyCornerCaps(ceiling, ds)
+
         forceStop(ceiling, ds, total, total) // always brake to a stop at the destination
         for (e in stops) if (e.willStop) forceStop(ceiling, ds, total, e.distanceAlongRoute)
 
@@ -79,6 +84,34 @@ class MotionSimulator(
     private fun forceStop(ceiling: DoubleArray, ds: Double, total: Double, s: Double) {
         val k = (s.coerceIn(0.0, total) / ds).roundToInt().coerceIn(0, ceiling.size - 1)
         ceiling[k] = 0.0
+    }
+
+    /**
+     * Lower the ceiling around every turn vertex, using the vertex's real
+     * deflection angle. A turn of angle θ taken over a fixed maneuver length L
+     * has curvature θ/L, so v = sqrt(a_lat · L / θ) — the same physics as
+     * [curveSpeedAt] but measured at the actual corner, so it is immune to how
+     * densely the routing engine drew the polyline.
+     */
+    private fun applyCornerCaps(ceiling: DoubleArray, ds: Double) {
+        val pts = line.points
+        val deadband = Math.toRadians(params.cornerDeadbandDeg)
+        val half = params.cornerManeuverLengthM / 2.0
+        for (i in 1 until pts.size - 1) {
+            var turn = abs(line.segBearing[i] - line.segBearing[i - 1])
+            if (turn > 180.0) turn = 360.0 - turn
+            val turnRad = Math.toRadians(turn)
+            if (turnRad <= deadband) continue
+
+            val speed = max(
+                params.minCurveSpeedMps,
+                sqrt(params.lateralAccelMps2 * params.cornerManeuverLengthM / turnRad)
+            )
+            val cornerArc = line.cumDist[i]
+            val kFrom = ((cornerArc - half) / ds).toInt().coerceIn(0, ceiling.size - 1)
+            val kTo = ((cornerArc + half) / ds).toInt().coerceIn(0, ceiling.size - 1)
+            for (k in kFrom..kTo) ceiling[k] = min(ceiling[k], speed)
+        }
     }
 
     /** Curvature-limited speed at s: v = sqrt(a_lat / kappa). Straight road -> no limit. */

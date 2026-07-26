@@ -73,6 +73,8 @@ data class SimParams(
     val decelMps2: Double = 2.5,          // comfortable braking
     val lateralAccelMps2: Double = 3.5,   // cornering comfort limit (~0.35 g)
     val minCurveSpeedMps: Double = 4.0,   // never crawl below this in a curve
+    val cornerManeuverLengthM: Double = 18.0, // assumed arc length of a turn maneuver
+    val cornerDeadbandDeg: Double = 8.0,  // ignore heading changes smaller than this
     val baseAccuracyM: Float = 4.0f,      // reported horizontal accuracy
 
     // Smooth (correlated) speed noise — real throttle drifts over seconds, it
