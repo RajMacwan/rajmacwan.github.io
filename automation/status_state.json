@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-27T20:10:28.232313Z",
+  "polled": "2026-07-27T21:31:58.567534Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,8 +26,8 @@
       "fetched": true
     },
     "render": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Degraded dashboard performance",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "We\u2019re seeing elevated latency, timeouts, and interrupted streaming across gpt 5.1 mini model and gpt 4.1 mini",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -238,7 +238,7 @@
     "duo": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "VoIP and SMS Delivery Issues in Israel",
+      "incident_name": "",
       "fetched": true
     },
     "crowdstrike": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Virtual Account perfomance degradation",
+      "incident_name": "Virtual Account perfomance degradation (UK and Europe)",
       "fetched": true
     },
     "square": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-27T20:10:28.232336Z"
+  "html_written": "2026-07-27T21:31:58.567557Z"
 }
