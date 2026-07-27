@@ -134,6 +134,10 @@ where you've driven (red), and a live marker at the current position — so you 
 see where the mock is. The notification mirrors progress and speed. Open any
 map/navigation app to see the same movement.
 
+**History** keeps your recent routes and fixed locations — tap **History**, pick
+one, and it loads the pins back so you can re-run it with one tap. Your GraphHopper
+**API key is saved as you type** and restored on every launch, so you enter it once.
+
 ---
 
 ## Project layout

@@ -18,6 +18,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.widget.doAfterTextChanged
 import com.rajmacwan.routemock.data.GeocodeResult
 import com.rajmacwan.routemock.data.GeocodingClient
 import com.rajmacwan.routemock.engine.LatLng
@@ -38,7 +39,8 @@ import org.osmdroid.views.overlay.Polyline
 /**
  * Set a start and destination (tap the map or search an address), then either
  * fix the GPS at one spot or drive a route (realistic or fixed speed) with
- * pause/resume. A live marker and trail show where the mock is on the map.
+ * pause/resume. A live marker and trail show where the mock is. Recent routes
+ * and fixed locations are kept in History; the API key is saved as you type.
  */
 class MainActivity : AppCompatActivity() {
 
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
     private val geocoder = GeocodingClient()
     private val ui = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+    private lateinit var history: HistoryStore
 
     private var start: LatLng? = null
     private var dest: LatLng? = null
@@ -87,15 +90,19 @@ class MainActivity : AppCompatActivity() {
         apiKeyField = findViewById(R.id.apiKey)
         searchField = findViewById(R.id.search)
         pauseButton = findViewById(R.id.pauseButton)
+        history = HistoryStore(this)
 
         setupMap()
-        restoreApiKey()
+        apiKeyField.setText(prefs().getString(KEY_API, ""))
+        // Persist the key immediately as it is typed, so it is always remembered.
+        apiKeyField.doAfterTextChanged { saveApiKey() }
 
         findViewById<Button>(R.id.searchButton).setOnClickListener { onSearch() }
         searchField.setOnEditorActionListener { _, _, _ -> onSearch(); true }
 
         findViewById<Button>(R.id.startButton).setOnClickListener { onDriveClicked() }
         findViewById<Button>(R.id.fixedButton).setOnClickListener { onFixedClicked() }
+        findViewById<Button>(R.id.historyButton).setOnClickListener { showHistoryDialog() }
         pauseButton.setOnClickListener { onPauseClicked() }
         findViewById<Button>(R.id.stopButton).setOnClickListener {
             startService(Intent(this, MockLocationService::class.java).setAction(MockLocationService.ACTION_STOP))
@@ -217,6 +224,45 @@ class MainActivity : AppCompatActivity() {
         return LatLng(lat, lng)
     }
 
+    // ---- history ------------------------------------------------------------
+
+    private fun showHistoryDialog() {
+        val entries = history.all()
+        if (entries.isEmpty()) {
+            toast("No history yet")
+            return
+        }
+        val titles = entries.map { it.title() }.toTypedArray()
+        AlertDialog.Builder(this)
+            .setTitle("History — tap to load")
+            .setItems(titles) { _, i -> loadHistory(entries[i]) }
+            .setNeutralButton("Clear all") { _, _ ->
+                history.clear()
+                toast("History cleared")
+            }
+            .setNegativeButton("Close", null)
+            .show()
+    }
+
+    private fun loadHistory(entry: HistoryEntry) {
+        clearPins()
+        start = entry.start
+        startMarker = addMarker(entry.start, "Start")
+        startLabel = entry.startLabel
+        if (entry.type == "ROUTE" && entry.dest != null) {
+            dest = entry.dest
+            destMarker = addMarker(entry.dest, "Destination")
+            destLabel = entry.destLabel
+            map.controller.animateTo(GeoPoint(entry.dest.lat, entry.dest.lng))
+            toast("Loaded — tap Start to drive")
+        } else {
+            map.controller.animateTo(GeoPoint(entry.start.lat, entry.start.lng))
+            toast("Loaded — tap Fixed Location to set")
+        }
+        map.invalidate()
+        updateStatus()
+    }
+
     // ---- pins ---------------------------------------------------------------
 
     private fun assignPoint(point: LatLng, label: String?) {
@@ -284,6 +330,7 @@ class MainActivity : AppCompatActivity() {
             toast("Set a location first (tap the map or search)")
             return
         }
+        val label = startLabel ?: fmt(point)
         withLocationPermission {
             val intent = Intent(this, MockLocationService::class.java).apply {
                 action = MockLocationService.ACTION_FIXED
@@ -291,6 +338,7 @@ class MainActivity : AppCompatActivity() {
                 putExtra(MockLocationService.EXTRA_LNG, point.lng)
             }
             ContextCompat.startForegroundService(this, intent)
+            history.addFixed(point, label)
             toast("GPS fixed at location")
         }
     }
@@ -298,7 +346,8 @@ class MainActivity : AppCompatActivity() {
     private fun onDriveClicked() {
         saveApiKey()
         val state = Playback.state.value
-        val startPoint = if (state.mode == PlaybackMode.ROUTING && state.current != null) state.current else start
+        val active = state.mode == PlaybackMode.ROUTING && state.current != null
+        val startPoint = if (active) state.current else start
         val destPoint = dest
         if (startPoint == null || destPoint == null) {
             toast("Set a start and a destination (tap the map or search)")
@@ -308,18 +357,20 @@ class MainActivity : AppCompatActivity() {
             toast("Enter your GraphHopper API key")
             return
         }
-        withLocationPermission { chooseSpeedThenDrive(startPoint, destPoint) }
+        val sLabel = if (active) "current position" else (startLabel ?: fmt(startPoint))
+        val dLabel = destLabel ?: fmt(destPoint)
+        withLocationPermission { chooseSpeedThenDrive(startPoint, destPoint, sLabel, dLabel) }
     }
 
-    private fun chooseSpeedThenDrive(startPoint: LatLng, destPoint: LatLng) {
+    private fun chooseSpeedThenDrive(startPoint: LatLng, destPoint: LatLng, sLabel: String, dLabel: String) {
         val options = arrayOf("Realistic — obey limits & lights", "Fixed speed…")
         AlertDialog.Builder(this)
             .setTitle("Route speed")
             .setItems(options) { _, which ->
                 if (which == 0) {
-                    drive(startPoint, destPoint, -1.0)
+                    drive(startPoint, destPoint, sLabel, dLabel, -1.0)
                 } else {
-                    promptFixedSpeed { mph -> drive(startPoint, destPoint, mph * 0.44704) }
+                    promptFixedSpeed { mph -> drive(startPoint, destPoint, sLabel, dLabel, mph * 0.44704) }
                 }
             }
             .show()
@@ -341,7 +392,7 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun drive(startPoint: LatLng, destPoint: LatLng, fixedSpeedMps: Double) {
+    private fun drive(startPoint: LatLng, destPoint: LatLng, sLabel: String, dLabel: String, fixedSpeedMps: Double) {
         val intent = Intent(this, MockLocationService::class.java).apply {
             action = MockLocationService.ACTION_ROUTE
             putExtra(MockLocationService.EXTRA_START_LAT, startPoint.lat)
@@ -352,6 +403,7 @@ class MainActivity : AppCompatActivity() {
             putExtra(MockLocationService.EXTRA_FIXED_SPEED, fixedSpeedMps)
         }
         ContextCompat.startForegroundService(this, intent)
+        history.addRoute(startPoint, sLabel, destPoint, dLabel, fixedSpeedMps)
         toast(if (fixedSpeedMps > 0) "Routing at fixed speed" else "Routing — realistic")
     }
 
@@ -386,10 +438,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun fmt(p: LatLng) = "%.5f, %.5f".format(p.lat, p.lng)
-
-    private fun restoreApiKey() {
-        apiKeyField.setText(prefs().getString(KEY_API, ""))
-    }
 
     private fun saveApiKey() {
         prefs().edit().putString(KEY_API, apiKeyField.text.toString().trim()).apply()
