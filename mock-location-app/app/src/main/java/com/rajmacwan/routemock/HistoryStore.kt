@@ -15,6 +15,7 @@ data class HistoryEntry(
     val dest: LatLng?,
     val destLabel: String?,
     val fixedSpeedMps: Double,    // route only: -1 = realistic, > 0 = fixed mph
+    val speedFactor: Double,      // realistic routes: fraction of the posted limit
     val timestamp: Long
 ) {
     /** One-line label for the History list. */
@@ -24,7 +25,7 @@ data class HistoryEntry(
         val speed = if (fixedSpeedMps > 0) {
             " • ${(fixedSpeedMps / 0.44704).roundToInt()} mph"
         } else {
-            " • realistic"
+            " • ${(speedFactor * 100).roundToInt()}% limit"
         }
         "$startLabel  →  ${destLabel ?: "?"}$speed"
     }
@@ -51,6 +52,7 @@ class HistoryStore(context: Context) {
                     } else null,
                     destLabel = if (o.has("dLabel")) o.optString("dLabel") else null,
                     fixedSpeedMps = o.optDouble("speed", -1.0),
+                    speedFactor = o.optDouble("factor", 1.0),
                     timestamp = o.optLong("ts", 0L)
                 )
             )
@@ -58,12 +60,12 @@ class HistoryStore(context: Context) {
         return out
     }
 
-    fun addRoute(start: LatLng, startLabel: String, dest: LatLng, destLabel: String, fixedSpeedMps: Double) {
-        prepend(HistoryEntry("ROUTE", start, startLabel, dest, destLabel, fixedSpeedMps, System.currentTimeMillis()))
+    fun addRoute(start: LatLng, startLabel: String, dest: LatLng, destLabel: String, fixedSpeedMps: Double, speedFactor: Double) {
+        prepend(HistoryEntry("ROUTE", start, startLabel, dest, destLabel, fixedSpeedMps, speedFactor, System.currentTimeMillis()))
     }
 
     fun addFixed(pos: LatLng, label: String) {
-        prepend(HistoryEntry("FIXED", pos, label, null, null, -1.0, System.currentTimeMillis()))
+        prepend(HistoryEntry("FIXED", pos, label, null, null, -1.0, 1.0, System.currentTimeMillis()))
     }
 
     fun clear() {
@@ -101,6 +103,7 @@ class HistoryStore(context: Context) {
                 o.put("dLabel", e.destLabel)
             }
             o.put("speed", e.fixedSpeedMps)
+            o.put("factor", e.speedFactor)
             o.put("ts", e.timestamp)
             arr.put(o)
         }

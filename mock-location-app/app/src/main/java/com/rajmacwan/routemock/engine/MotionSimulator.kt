@@ -36,7 +36,10 @@ class MotionSimulator(
     private val params: SimParams = SimParams(),
     /** When set, drive the whole route at this constant speed (m/s), ignoring
      *  posted limits, corners and traffic lights — the "fixed speed" mode. */
-    private val fixedSpeedMps: Double? = null
+    private val fixedSpeedMps: Double? = null,
+    /** Multiplier on each segment's posted limit in realistic mode: 1.0 = drive
+     *  the limit, 1.1 = 10% over, 0.9 = 10% under. Curves/corners still cap. */
+    private val speedFactor: Double = 1.0
 ) {
     private val random = Random(params.randomSeed)
 
@@ -66,7 +69,7 @@ class MotionSimulator(
             ceiling[k] = if (fixedSpeedMps != null) {
                 fixedSpeedMps
             } else {
-                val limit = segmentLimitMps[line.segmentIndexAt(s)]
+                val limit = segmentLimitMps[line.segmentIndexAt(s)] * speedFactor
                 min(limit, curveSpeedAt(s))
             }
         }

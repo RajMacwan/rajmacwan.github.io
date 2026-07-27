@@ -122,8 +122,14 @@ Then choose what to do:
 - **Fixed Location** — hold the GPS at the start pin permanently (until you change
   it or Stop). This is the "teleport / stay here" mode; set one point and tap it.
 - **Start** — drive the route. You're asked to pick the speed:
-  - *Realistic* — obeys each road's speed limit, slows for corners, stops at lights.
+  - *Realistic* — you enter a **percent of the posted limit** (100 = drive the
+    limit, 110 = 10% over, 90 = under). It still obeys each road's limit as the
+    base, slows for corners, and stops at lights. There is **no live traffic** —
+    the drive is free-flow plus randomized light/stop dwells.
   - *Fixed speed* — a constant mph you enter, ignoring limits and lights.
+
+When a route finishes, the GPS **holds at the destination** (a fixed position)
+until you Stop — or set a new destination and Start to drive on from there.
 - **Pause / Resume** — during a route, hold the GPS in place, then continue. While
   paused (or even while driving) you can set a **new destination** (tap or search)
   and hit **Start** again to re-route from the current position.

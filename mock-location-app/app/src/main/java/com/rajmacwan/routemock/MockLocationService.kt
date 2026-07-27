@@ -83,11 +83,12 @@ class MockLocationService : Service() {
                 )
                 val apiKey = intent.getStringExtra(EXTRA_API_KEY).orEmpty()
                 val fixedSpeed = intent.getDoubleExtra(EXTRA_FIXED_SPEED, -1.0)
+                val speedFactor = intent.getDoubleExtra(EXTRA_SPEED_FACTOR, 1.0)
                 if (start.lat.isNaN() || dest.lat.isNaN() || apiKey.isBlank()) {
                     return START_NOT_STICKY
                 }
                 startForegroundCompat(notification("Preparing route…"))
-                startRoute(start, dest, apiKey, if (fixedSpeed > 0) fixedSpeed else null)
+                startRoute(start, dest, apiKey, if (fixedSpeed > 0) fixedSpeed else null, speedFactor)
             }
             else -> {
                 stopEverything()
@@ -119,7 +120,7 @@ class MockLocationService : Service() {
 
     // ---- route playback -----------------------------------------------------
 
-    private fun startRoute(start: LatLng, dest: LatLng, apiKey: String, fixedSpeedMps: Double?) {
+    private fun startRoute(start: LatLng, dest: LatLng, apiKey: String, fixedSpeedMps: Double?, speedFactor: Double) {
         job?.cancel()
         paused = false
         job = scope.launch {
@@ -130,7 +131,8 @@ class MockLocationService : Service() {
                     plan.line,
                     plan.segmentLimitMps,
                     if (fixedSpeedMps == null) plan.stops else emptyList(),
-                    fixedSpeedMps = fixedSpeedMps
+                    fixedSpeedMps = fixedSpeedMps,
+                    speedFactor = speedFactor
                 ).simulate()
 
                 if (samples.isEmpty()) {
@@ -162,11 +164,15 @@ class MockLocationService : Service() {
                     delay(TICK_MS)
                 }
 
-                // Hold at the destination so the GPS stays put until changed/stopped.
+                // Arrived: flip into a fixed hold at the destination so the GPS
+                // stays put until the user Stops (or drives on from here).
                 val end = samples.last()
                 val endPos = LatLng(end.lat, end.lng)
-                Playback.update { it.copy(current = endPos, running = true, info = "Arrived — holding") }
-                updateNotification("Arrived — holding at destination")
+                paused = false
+                Playback.update {
+                    it.copy(mode = PlaybackMode.FIXED, running = true, current = endPos, info = "Holding at destination")
+                }
+                updateNotification("Holding at destination — Stop to release")
                 while (isActive) {
                     push(hold(endPos))
                     delay(TICK_MS)
@@ -283,6 +289,7 @@ class MockLocationService : Service() {
         const val EXTRA_DEST_LNG = "dest_lng"
         const val EXTRA_API_KEY = "api_key"
         const val EXTRA_FIXED_SPEED = "fixed_speed_mps"
+        const val EXTRA_SPEED_FACTOR = "speed_factor"
 
         private const val TICK_MS = 1000L
         private const val NOTIF_ID = 42

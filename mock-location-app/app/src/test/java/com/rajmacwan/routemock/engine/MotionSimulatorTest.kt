@@ -80,6 +80,16 @@ class MotionSimulatorTest {
     }
 
     @Test
+    fun `speed factor scales the cruise speed above the limit`() {
+        val line = straightRoute()
+        val limits = DoubleArray(line.points.size - 1) { 14.0 } // ~50 km/h posted
+        val atLimit = MotionSimulator(line, limits, emptyList()).simulate().maxOf { it.speedMps }
+        val over = MotionSimulator(line, limits, emptyList(), speedFactor = 1.2)
+            .simulate().maxOf { it.speedMps }
+        assertTrue("120% should exceed 100% (limit=$atLimit over=$over)", over > atLimit + 1.0)
+    }
+
+    @Test
     fun `fixed speed ignores road limits`() {
         val line = straightRoute()
         val limits = DoubleArray(line.points.size - 1) { 5.0 } // ~18 km/h posted limit

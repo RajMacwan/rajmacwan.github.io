@@ -266,9 +266,10 @@ class MainActivity : AppCompatActivity() {
     // ---- pins ---------------------------------------------------------------
 
     private fun assignPoint(point: LatLng, label: String?) {
-        // While a route is playing, a new point becomes the new destination
-        // (the start is implicitly wherever the GPS is right now).
-        val active = Playback.state.value.mode == PlaybackMode.ROUTING
+        // While a route is playing OR the GPS is held fixed, a new point becomes
+        // the new destination (the start is implicitly where the GPS is now).
+        val mode = Playback.state.value.mode
+        val active = mode == PlaybackMode.ROUTING || mode == PlaybackMode.FIXED
         val asStart = !active && (start == null || dest != null)
         if (asStart) {
             clearPins()
@@ -325,7 +326,7 @@ class MainActivity : AppCompatActivity() {
     // ---- actions ------------------------------------------------------------
 
     private fun onFixedClicked() {
-        val point = start ?: dest
+        val point = dest ?: start
         if (point == null) {
             toast("Set a location first (tap the map or search)")
             return
@@ -346,7 +347,7 @@ class MainActivity : AppCompatActivity() {
     private fun onDriveClicked() {
         saveApiKey()
         val state = Playback.state.value
-        val active = state.mode == PlaybackMode.ROUTING && state.current != null
+        val active = (state.mode == PlaybackMode.ROUTING || state.mode == PlaybackMode.FIXED) && state.current != null
         val startPoint = if (active) state.current else start
         val destPoint = dest
         if (startPoint == null || destPoint == null) {
@@ -363,16 +364,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun chooseSpeedThenDrive(startPoint: LatLng, destPoint: LatLng, sLabel: String, dLabel: String) {
-        val options = arrayOf("Realistic — obey limits & lights", "Fixed speed…")
+        val options = arrayOf("Realistic — % of speed limit", "Fixed speed…")
         AlertDialog.Builder(this)
             .setTitle("Route speed")
             .setItems(options) { _, which ->
                 if (which == 0) {
-                    drive(startPoint, destPoint, sLabel, dLabel, -1.0)
+                    promptPercentage { factor -> drive(startPoint, destPoint, sLabel, dLabel, -1.0, factor) }
                 } else {
-                    promptFixedSpeed { mph -> drive(startPoint, destPoint, sLabel, dLabel, mph * 0.44704) }
+                    promptFixedSpeed { mph -> drive(startPoint, destPoint, sLabel, dLabel, mph * 0.44704, 1.0) }
                 }
             }
+            .show()
+    }
+
+    /** Percent of the posted limit: 100 = drive the limit, 110 = 10% over, 90 = under. */
+    private fun promptPercentage(onValue: (Double) -> Unit) {
+        val input = EditText(this).apply {
+            inputType = InputType.TYPE_CLASS_NUMBER
+            hint = "Percent of speed limit"
+            setText("100")
+        }
+        AlertDialog.Builder(this)
+            .setTitle("Speed (% of limit)")
+            .setMessage("100 = drive the limit, 110 = 10% over, 90 = 10% under. Curves and lights still slow you.")
+            .setView(input)
+            .setPositiveButton("Drive") { _, _ ->
+                val pct = input.text.toString().toDoubleOrNull() ?: 100.0
+                onValue(pct.coerceIn(30.0, 200.0) / 100.0)
+            }
+            .setNegativeButton("Cancel", null)
             .show()
     }
 
@@ -392,7 +412,14 @@ class MainActivity : AppCompatActivity() {
             .show()
     }
 
-    private fun drive(startPoint: LatLng, destPoint: LatLng, sLabel: String, dLabel: String, fixedSpeedMps: Double) {
+    private fun drive(
+        startPoint: LatLng,
+        destPoint: LatLng,
+        sLabel: String,
+        dLabel: String,
+        fixedSpeedMps: Double,
+        speedFactor: Double
+    ) {
         val intent = Intent(this, MockLocationService::class.java).apply {
             action = MockLocationService.ACTION_ROUTE
             putExtra(MockLocationService.EXTRA_START_LAT, startPoint.lat)
@@ -401,10 +428,11 @@ class MainActivity : AppCompatActivity() {
             putExtra(MockLocationService.EXTRA_DEST_LNG, destPoint.lng)
             putExtra(MockLocationService.EXTRA_API_KEY, apiKeyField.text.toString().trim())
             putExtra(MockLocationService.EXTRA_FIXED_SPEED, fixedSpeedMps)
+            putExtra(MockLocationService.EXTRA_SPEED_FACTOR, speedFactor)
         }
         ContextCompat.startForegroundService(this, intent)
-        history.addRoute(startPoint, sLabel, destPoint, dLabel, fixedSpeedMps)
-        toast(if (fixedSpeedMps > 0) "Routing at fixed speed" else "Routing — realistic")
+        history.addRoute(startPoint, sLabel, destPoint, dLabel, fixedSpeedMps, speedFactor)
+        toast(if (fixedSpeedMps > 0) "Routing at fixed speed" else "Routing — ${(speedFactor * 100).toInt()}% of limit")
     }
 
     private fun onPauseClicked() {
