@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-27T01:21:26.032259Z",
+  "polled": "2026-07-27T05:11:11.796077Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "139 active Salesforce incidents",
+      "description": "140 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay and Failures from Twilio Phone Numbers to Claro Guatemala",
+      "incident_name": "SMS Delivery Delays and Failures from Network Subscribers to a Subset of Twilio United States Short Codes",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-27T01:21:26.032298Z"
+  "html_written": "2026-07-27T05:11:11.796112Z"
 }
