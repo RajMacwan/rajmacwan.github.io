@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-27T12:02:42.355809Z",
+  "polled": "2026-07-27T15:09:52.955193Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Issues with Snippets API",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded dashboard performance",
       "fetched": true
     },
     "digitalocean": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "141 active Salesforce incidents",
+      "description": "142 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Degradation Affecting Offline Meeting transcription in US Region.",
       "fetched": true
     },
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Elevated errors affecting ChatGPT conversations",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Image generation unavailable in ChatGPT",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors on Claude Opus 5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Mascom and Orange Botswana",
+      "incident_name": "Voice Call Post Dial Delay and Failures from Twilio Phone Numbers to Claro Guatemala",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-27T12:02:42.355849Z"
+  "html_written": "2026-07-27T15:09:52.955219Z"
 }
