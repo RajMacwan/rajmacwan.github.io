@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T01:08:09.927539Z",
+  "polled": "2026-07-28T04:26:23.700954Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Beeline Armenia",
+      "incident_name": "SMS Delivery Delays from Twilio to T-Mobile United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T01:08:09.927570Z"
+  "html_written": "2026-07-28T04:26:23.700987Z"
 }
