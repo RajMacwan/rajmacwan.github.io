@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T21:49:09.530123Z",
+  "polled": "2026-07-28T22:45:44.213906Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to MTN Zambia",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN Zambia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T21:49:09.530147Z"
+  "html_written": "2026-07-28T22:45:44.213934Z"
 }
