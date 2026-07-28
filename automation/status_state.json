@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T16:21:00.551119Z",
+  "polled": "2026-07-28T17:54:29.808490Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Failure Increase for EE in United Kingdom",
+      "incident_name": "Delays in Transcription being available",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T16:21:00.551150Z"
+  "html_written": "2026-07-28T17:54:29.808516Z"
 }
