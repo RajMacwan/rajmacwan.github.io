@@ -5,6 +5,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
@@ -30,6 +32,7 @@ import kotlinx.coroutines.launch
 import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.BoundingBox
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.MapEventsOverlay
@@ -65,6 +68,10 @@ class MainActivity : AppCompatActivity() {
     private var routeOverlay: Polyline? = null
     private var trailOverlay: Polyline? = null
     private var currentMarker: Marker? = null
+    private var fittedRouteSize = 0
+
+    private val markerGreen = Color.parseColor("#2E7D32")
+    private val markerRed = Color.parseColor("#E53935")
 
     private var pendingAfterPermission: (() -> Unit)? = null
 
@@ -163,9 +170,18 @@ class MainActivity : AppCompatActivity() {
         currentMarker = state.current?.let { c ->
             Marker(map).apply {
                 position = GeoPoint(c.lat, c.lng)
+                icon = dotIcon(markerRed, 18) // live/fixed GPS marker: red, larger
                 setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
                 title = "Now"
             }.also { map.overlays.add(it) }
+        }
+
+        // Fit the whole route on screen once, when it first arrives.
+        if (state.route.size > 1 && state.route.size != fittedRouteSize) {
+            fittedRouteSize = state.route.size
+            fitTo(state.route)
+        } else if (state.route.isEmpty()) {
+            fittedRouteSize = 0
         }
 
         map.invalidate()
@@ -247,13 +263,13 @@ class MainActivity : AppCompatActivity() {
     private fun loadHistory(entry: HistoryEntry) {
         clearPins()
         start = entry.start
-        startMarker = addMarker(entry.start, "Start")
+        startMarker = addMarker(entry.start, "Start", markerGreen)
         startLabel = entry.startLabel
         if (entry.type == "ROUTE" && entry.dest != null) {
             dest = entry.dest
-            destMarker = addMarker(entry.dest, "Destination")
+            destMarker = addMarker(entry.dest, "Destination", markerGreen)
             destLabel = entry.destLabel
-            map.controller.animateTo(GeoPoint(entry.dest.lat, entry.dest.lng))
+            fitTo(listOf(entry.start, entry.dest))
             toast("Loaded — tap Start to drive")
         } else {
             map.controller.animateTo(GeoPoint(entry.start.lat, entry.start.lng))
@@ -274,15 +290,21 @@ class MainActivity : AppCompatActivity() {
         if (asStart) {
             clearPins()
             start = point
-            startMarker = addMarker(point, "Start")
+            startMarker = addMarker(point, "Start", markerGreen)
             startLabel = label ?: fmt(point)
         } else {
             destMarker?.let { map.overlays.remove(it) }
             dest = point
-            destMarker = addMarker(point, "Destination")
+            destMarker = addMarker(point, "Destination", markerGreen)
             destLabel = label ?: fmt(point)
         }
-        map.controller.animateTo(GeoPoint(point.lat, point.lng))
+        val s = start
+        val d = dest
+        if (s != null && d != null) {
+            fitTo(listOf(s, d)) // show the whole route once both ends are set
+        } else {
+            map.controller.animateTo(GeoPoint(point.lat, point.lng))
+        }
         map.invalidate()
         updateStatus()
         if (label == null) reverseGeocode(point, asStart)
@@ -302,13 +324,40 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun addMarker(point: LatLng, title: String): Marker =
+    private fun addMarker(point: LatLng, title: String, color: Int): Marker =
         Marker(map).apply {
             position = GeoPoint(point.lat, point.lng)
-            setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_BOTTOM)
+            icon = dotIcon(color, 15)
+            setAnchor(Marker.ANCHOR_CENTER, Marker.ANCHOR_CENTER)
             this.title = title
             map.overlays.add(this)
         }
+
+    /** A solid coloured dot with a white outline, sized in dp. */
+    private fun dotIcon(color: Int, sizeDp: Int): Drawable {
+        val density = resources.displayMetrics.density
+        val px = (sizeDp * density).toInt()
+        return GradientDrawable().apply {
+            shape = GradientDrawable.OVAL
+            setColor(color)
+            setStroke((2 * density).toInt(), Color.WHITE)
+            setSize(px, px)
+            setBounds(0, 0, px, px)
+        }
+    }
+
+    /** Zoom/pan the map so all [points] fit on screen with a margin. */
+    private fun fitTo(points: List<LatLng>) {
+        if (points.size < 2) return
+        val lats = points.map { it.lat }
+        val lngs = points.map { it.lng }
+        val north = lats.maxOrNull() ?: return
+        val south = lats.minOrNull() ?: return
+        val east = lngs.maxOrNull() ?: return
+        val west = lngs.minOrNull() ?: return
+        val box = BoundingBox(north, east, south, west).increaseByScale(1.25f)
+        map.post { runCatching { map.zoomToBoundingBox(box, true, 100) } }
+    }
 
     private fun clearPins() {
         startMarker?.let { map.overlays.remove(it) }

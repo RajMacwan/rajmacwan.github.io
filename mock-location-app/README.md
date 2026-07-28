@@ -135,10 +135,11 @@ until you Stop — or set a new destination and Start to drive on from there.
   and hit **Start** again to re-route from the current position.
 - **Stop** — end everything and hand GPS back to the real provider.
 
-While a route plays, the map shows the **planned route** (blue), a **trail** of
-where you've driven (red), and a live marker at the current position — so you always
-see where the mock is. The notification mirrors progress and speed. Open any
-map/navigation app to see the same movement.
+When both ends are set the map **auto-fits** so the whole route is on screen. While
+a route plays it shows the **planned route** (blue), a **trail** of where you've
+driven (red), **green** start/destination pins, and a **red** marker at the current
+(or fixed) GPS position — so you always see where the mock is. The notification
+mirrors progress and speed. Open any map/navigation app to see the same movement.
 
 **History** keeps your recent routes and fixed locations — tap **History**, pick
 one, and it loads the pins back so you can re-run it with one tap. Your GraphHopper
