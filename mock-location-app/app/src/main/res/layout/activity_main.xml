@@ -38,14 +38,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="12dp">
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="6dp">
+
+        <TextView
+            android:id="@+id/modeChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="○ Idle · Mock: —" />
 
         <TextView
             android:id="@+id/status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
-            android:paddingBottom="8dp"
+            android:textSize="12sp"
+            android:paddingTop="2dp"
+            android:paddingBottom="4dp"
             android:text="Start: tap map or search\nDest:  tap map or search" />
 
         <EditText
@@ -57,11 +67,26 @@
             android:inputType="textNoSuggestions"
             android:maxLines="1" />
 
+        <Button
+            android:id="@+id/editKeyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:text="API key ✓  ·  edit"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/devSettingsButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠ Not the mock app — tap to select"
+            android:visibility="gone" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingTop="8dp">
+            android:paddingTop="4dp">
 
             <Button
                 android:id="@+id/startButton"
@@ -111,11 +136,5 @@
                 android:layout_weight="1"
                 android:text="Clear" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/devSettingsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Open Developer Settings (select mock app)" />
     </LinearLayout>
 </LinearLayout>

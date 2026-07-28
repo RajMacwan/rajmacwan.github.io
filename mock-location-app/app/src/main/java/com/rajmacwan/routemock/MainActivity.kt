@@ -20,6 +20,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
 import com.rajmacwan.routemock.data.GeocodeResult
 import com.rajmacwan.routemock.data.GeocodingClient
@@ -52,6 +53,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var apiKeyField: EditText
     private lateinit var searchField: EditText
     private lateinit var pauseButton: Button
+    private lateinit var fixedButton: Button
+    private lateinit var modeChip: TextView
+    private lateinit var devSettingsButton: Button
+    private lateinit var editKeyButton: Button
+    private var mockSelected = false
 
     private val geocoder = GeocodingClient()
     private val ui = CoroutineScope(SupervisorJob() + Dispatchers.Main)
@@ -97,18 +103,23 @@ class MainActivity : AppCompatActivity() {
         apiKeyField = findViewById(R.id.apiKey)
         searchField = findViewById(R.id.search)
         pauseButton = findViewById(R.id.pauseButton)
+        fixedButton = findViewById(R.id.fixedButton)
+        modeChip = findViewById(R.id.modeChip)
+        devSettingsButton = findViewById(R.id.devSettingsButton)
+        editKeyButton = findViewById(R.id.editKeyButton)
         history = HistoryStore(this)
 
         setupMap()
         apiKeyField.setText(prefs().getString(KEY_API, ""))
         // Persist the key immediately as it is typed, so it is always remembered.
         apiKeyField.doAfterTextChanged { saveApiKey() }
+        bindApiKeyUi()
 
         findViewById<Button>(R.id.searchButton).setOnClickListener { onSearch() }
         searchField.setOnEditorActionListener { _, _, _ -> onSearch(); true }
 
         findViewById<Button>(R.id.startButton).setOnClickListener { onDriveClicked() }
-        findViewById<Button>(R.id.fixedButton).setOnClickListener { onFixedClicked() }
+        fixedButton.setOnClickListener { onFixedClicked() }
         findViewById<Button>(R.id.historyButton).setOnClickListener { showHistoryDialog() }
         pauseButton.setOnClickListener { onPauseClicked() }
         findViewById<Button>(R.id.stopButton).setOnClickListener {
@@ -116,7 +127,11 @@ class MainActivity : AppCompatActivity() {
             toast("Stopping")
         }
         findViewById<Button>(R.id.clearButton).setOnClickListener { clearPins() }
-        findViewById<Button>(R.id.devSettingsButton).setOnClickListener {
+        editKeyButton.setOnClickListener {
+            apiKeyField.isVisible = !apiKeyField.isVisible
+            if (apiKeyField.isVisible) apiKeyField.requestFocus()
+        }
+        devSettingsButton.setOnClickListener {
             startActivity(Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS))
         }
 
@@ -188,6 +203,29 @@ class MainActivity : AppCompatActivity() {
 
         pauseButton.isEnabled = state.mode == PlaybackMode.ROUTING
         pauseButton.text = if (state.mode == PlaybackMode.ROUTING && !state.running) "Resume" else "Pause"
+
+        val locked = state.mode == PlaybackMode.FIXED
+        fixedButton.text = if (locked) "Fixed — Locked" else "Fixed Location"
+
+        val (dot, label) = when {
+            state.mode == PlaybackMode.IDLE -> "○" to "Idle"
+            state.mode == PlaybackMode.FIXED -> "●" to "Fixed"
+            state.running -> "▶" to "Driving"
+            else -> "❚❚" to "Paused"
+        }
+        modeChip.text = "$dot $label  ·  Mock: ${if (mockSelected) "ENABLED" else "DISABLED"}"
+    }
+
+    private fun refreshMockStatus() {
+        mockSelected = MockStatus.isSelectedMockApp(this)
+        devSettingsButton.isVisible = !mockSelected
+        renderPlayback(Playback.state.value)
+    }
+
+    private fun bindApiKeyUi() {
+        val hasKey = prefs().getString(KEY_API, "").orEmpty().isNotBlank()
+        apiKeyField.isVisible = !hasKey
+        editKeyButton.isVisible = hasKey
     }
 
     // ---- search / geocoding -------------------------------------------------
@@ -531,6 +569,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         map.onResume()
+        refreshMockStatus() // the user may select us as mock app in Settings, then return
     }
 
     override fun onPause() {

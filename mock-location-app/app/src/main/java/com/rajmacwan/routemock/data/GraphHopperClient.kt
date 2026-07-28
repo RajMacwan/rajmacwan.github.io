@@ -39,6 +39,11 @@ class GraphHopperClient(
                 append("&details=max_speed")
                 append("&details=road_class")
                 append("&instructions=false")
+                // Keep the start/end from snapping onto a freeway/ferry/tunnel when the
+                // pin is really on a surface street — a common cause of "wrong road".
+                append("&snap_prevention=motorway")
+                append("&snap_prevention=ferry")
+                append("&snap_prevention=tunnel")
                 append("&key=").append(apiKey)
             }
             val request = Request.Builder().url(url).build()
