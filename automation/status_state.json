@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T22:45:44.213906Z",
+  "polled": "2026-07-28T23:44:22.541883Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN Zambia",
+      "incident_name": "Voice Call Post Dial Delay and Failures from Twilio Phone Numbers to Guatemala",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T22:45:44.213934Z"
+  "html_written": "2026-07-28T23:44:22.541928Z"
 }
