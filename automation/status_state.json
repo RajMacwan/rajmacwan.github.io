@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T19:24:30.382362Z",
+  "polled": "2026-07-28T20:44:07.431007Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -28,7 +28,7 @@
     "render": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded dashboard performance",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - Block Storage - Several Regions",
+      "incident_name": "Service Issue - Host Job Performance Degradation - Several Regions",
       "fetched": true
     },
     "aws": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - STX",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - Coinbase Payments",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From Twilio Phone Numbers to United States",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Altan Mexico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T19:24:30.382400Z"
+  "html_written": "2026-07-28T20:44:07.431036Z"
 }
