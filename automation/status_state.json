@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-29T18:42:33.886328Z",
+  "polled": "2026-07-29T20:03:43.395977Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,16 +20,16 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "digitalocean": {
       "indicator": "minor",
@@ -92,10 +92,10 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "databricks": {
       "indicator": "unknown",
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Multiple Atlassian services are experiencing issues",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "asana": {
       "indicator": "unknown",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Elevated errors across all models",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Elevated errors affecting Anthropic models",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Fastweb SpA Italy",
+      "incident_name": "SMS Delivery Delays From a Subset of Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T18:42:33.886355Z"
+  "html_written": "2026-07-29T20:03:43.396007Z"
 }
