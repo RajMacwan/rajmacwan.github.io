@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-29T22:15:43.711664Z",
+  "polled": "2026-07-29T23:17:40.390498Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated errors across all models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Elevated errors affecting Anthropic models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Sends / Receives - ZEC",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T22:15:43.711690Z"
+  "html_written": "2026-07-29T23:17:40.390529Z"
 }
