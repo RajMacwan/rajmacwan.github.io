@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-29T17:41:31.260484Z",
+  "polled": "2026-07-29T18:42:33.886328Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Gradient AI Model Kimi K3 Responses Issues",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "143 active Salesforce incidents",
+      "description": "144 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T17:41:31.260516Z"
+  "html_written": "2026-07-29T18:42:33.886355Z"
 }
