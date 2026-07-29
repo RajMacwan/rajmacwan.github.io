@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-29T04:35:00.406869Z",
+  "polled": "2026-07-29T07:27:55.195004Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom MCP Claude Marketplace Integration",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to MTN Zambia",
+      "incident_name": "SMS Delivery Delays from Twilio to Metfone Cambodia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T04:35:00.406898Z"
+  "html_written": "2026-07-29T07:27:55.195045Z"
 }
