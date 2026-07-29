@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-29T07:27:55.195004Z",
+  "polled": "2026-07-29T10:11:54.040698Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Possible Network Congestion between Singapore and Tokyo",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "142 active Salesforce incidents",
+      "description": "143 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating Composer degradation",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T07:27:55.195045Z"
+  "html_written": "2026-07-29T10:11:54.040731Z"
 }
