@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-29T20:03:43.395977Z",
+  "polled": "2026-07-29T21:10:12.116382Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,16 +20,16 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "render": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "digitalocean": {
       "indicator": "minor",
@@ -92,10 +92,10 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "databricks": {
       "indicator": "unknown",
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Incident with Copilot AI Model Providers",
       "fetched": true
     },
     "gitlab": {
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Multiple Atlassian services are experiencing issues",
+      "fetched": true
     },
     "asana": {
       "indicator": "unknown",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays From a Subset of Twilio Short Codes and Long Codes to Liberty Puerto Rico",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T20:03:43.396007Z"
+  "html_written": "2026-07-29T21:10:12.116411Z"
 }
