@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-29T10:11:54.040698Z",
+  "polled": "2026-07-29T12:23:56.952941Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Possible Network Congestion between Singapore and Tokyo",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Investigating Composer degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Metfone Cambodia",
+      "incident_name": "SMS Delivery Delays from Twilio to MTN Zambia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-29T10:11:54.040731Z"
+  "html_written": "2026-07-29T12:23:56.952966Z"
 }
