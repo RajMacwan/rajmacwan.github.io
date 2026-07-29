@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-28T23:44:22.541883Z",
+  "polled": "2026-07-29T01:12:02.636569Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "143 active Salesforce incidents",
+      "description": "142 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated error rates with the invalid_prompt error code",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay and Failures from Twilio Phone Numbers to Guatemala",
+      "incident_name": "SMS Delivery Delays from Twilio to Metfone Cambodia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-28T23:44:22.541928Z"
+  "html_written": "2026-07-29T01:12:02.636600Z"
 }
