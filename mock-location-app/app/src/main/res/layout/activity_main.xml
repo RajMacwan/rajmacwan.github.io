@@ -145,5 +145,15 @@
                 android:layout_weight="1"
                 android:text="Clear" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/versionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.55"
+            android:gravity="end"
+            android:paddingTop="2dp"
+            android:textSize="10sp"
+            android:text="v" />
     </LinearLayout>
 </LinearLayout>

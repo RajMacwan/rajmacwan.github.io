@@ -146,6 +146,9 @@ class MainActivity : AppCompatActivity() {
             requestNotifications.launch(Manifest.permission.POST_NOTIFICATIONS)
         }
 
+        findViewById<TextView>(R.id.versionLabel).text =
+            "v${BuildConfig.VERSION_NAME} · ${BuildConfig.BUILD_LABEL}"
+
         ui.launch { Playback.state.collect { renderPlayback(it) } }
         updateStatus()
     }

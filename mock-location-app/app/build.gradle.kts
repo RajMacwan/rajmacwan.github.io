@@ -13,6 +13,15 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+
+        // A human-readable build id shown in the app, passed by CI as
+        // -PbuildLabel="b<run#>-<shortSHA>"; defaults to "local" for IDE builds.
+        val buildLabel = (project.findProperty("buildLabel") as String?) ?: "local"
+        buildConfigField("String", "BUILD_LABEL", "\"$buildLabel\"")
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
