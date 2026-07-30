@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-30T21:14:22.823457Z",
+  "polled": "2026-07-30T22:29:52.052170Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Phone Numbers to C+W LIME Cayman Islands",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Metfone Cambodia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-30T21:14:22.823483Z"
+  "html_written": "2026-07-30T22:29:52.052199Z"
 }
