@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-30T22:29:52.052170Z",
+  "polled": "2026-07-30T23:34:36.299717Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Metfone Cambodia",
+      "incident_name": "SMS Delivery Delays from Twilio to Africell Angola",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-30T22:29:52.052199Z"
+  "html_written": "2026-07-30T23:34:36.299748Z"
 }
