@@ -13,6 +13,7 @@ data class PlaybackState(
     val current: LatLng? = null,           // the position being mocked right now
     val route: List<LatLng> = emptyList(), // planned route polyline
     val trail: List<LatLng> = emptyList(), // where we have driven so far
+    val parked: Boolean = false,           // FIXED reached by finishing a route (vs. manual)
     val info: String = ""
 )
 

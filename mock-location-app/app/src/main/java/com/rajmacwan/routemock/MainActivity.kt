@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var map: MapView
     private lateinit var status: TextView
     private lateinit var apiKeyField: EditText
+    private lateinit var mapboxField: EditText
     private lateinit var searchField: EditText
     private lateinit var pauseButton: Button
     private lateinit var fixedButton: Button
@@ -75,6 +76,7 @@ class MainActivity : AppCompatActivity() {
     private var trailOverlay: Polyline? = null
     private var currentMarker: Marker? = null
     private var fittedRouteSize = 0
+    private var lastMode: PlaybackMode = PlaybackMode.IDLE
 
     private val markerGreen = Color.parseColor("#2E7D32")
     private val markerRed = Color.parseColor("#E53935")
@@ -101,6 +103,7 @@ class MainActivity : AppCompatActivity() {
         map = findViewById(R.id.map)
         status = findViewById(R.id.status)
         apiKeyField = findViewById(R.id.apiKey)
+        mapboxField = findViewById(R.id.mapboxToken)
         searchField = findViewById(R.id.search)
         pauseButton = findViewById(R.id.pauseButton)
         fixedButton = findViewById(R.id.fixedButton)
@@ -111,8 +114,10 @@ class MainActivity : AppCompatActivity() {
 
         setupMap()
         apiKeyField.setText(prefs().getString(KEY_API, ""))
-        // Persist the key immediately as it is typed, so it is always remembered.
-        apiKeyField.doAfterTextChanged { saveApiKey() }
+        mapboxField.setText(prefs().getString(KEY_MAPBOX, ""))
+        // Persist keys immediately as they are typed, so they are always remembered.
+        apiKeyField.doAfterTextChanged { saveKeys() }
+        mapboxField.doAfterTextChanged { saveKeys() }
         bindApiKeyUi()
 
         findViewById<Button>(R.id.searchButton).setOnClickListener { onSearch() }
@@ -128,8 +133,10 @@ class MainActivity : AppCompatActivity() {
         }
         findViewById<Button>(R.id.clearButton).setOnClickListener { clearPins() }
         editKeyButton.setOnClickListener {
-            apiKeyField.isVisible = !apiKeyField.isVisible
-            if (apiKeyField.isVisible) apiKeyField.requestFocus()
+            val show = !apiKeyField.isVisible
+            apiKeyField.isVisible = show
+            mapboxField.isVisible = show
+            if (show) apiKeyField.requestFocus()
         }
         devSettingsButton.setOnClickListener {
             startActivity(Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS))
@@ -205,15 +212,21 @@ class MainActivity : AppCompatActivity() {
         pauseButton.text = if (state.mode == PlaybackMode.ROUTING && !state.running) "Resume" else "Pause"
 
         val locked = state.mode == PlaybackMode.FIXED
-        fixedButton.text = if (locked) "Fixed — Locked" else "Fixed Location"
+        fixedButton.text = if (locked) "Location Locked" else "Fixed Location"
 
         val (dot, label) = when {
             state.mode == PlaybackMode.IDLE -> "○" to "Idle"
-            state.mode == PlaybackMode.FIXED -> "●" to "Fixed"
+            state.mode == PlaybackMode.FIXED -> if (state.parked) "⏸" to "Parked" else "●" to "Fixed"
             state.running -> "▶" to "Driving"
             else -> "❚❚" to "Paused"
         }
         modeChip.text = "$dot $label  ·  Mock: ${if (mockSelected) "ENABLED" else "DISABLED"}"
+
+        // On entering a fixed hold (parked or manual), clean up to a single marker.
+        if (state.mode == PlaybackMode.FIXED && lastMode != PlaybackMode.FIXED) {
+            enterFixedView(state.current)
+        }
+        lastMode = state.mode
     }
 
     private fun refreshMockStatus() {
@@ -223,9 +236,30 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun bindApiKeyUi() {
-        val hasKey = prefs().getString(KEY_API, "").orEmpty().isNotBlank()
+        val hasKey = prefs().getString(KEY_API, "").orEmpty().isNotBlank() ||
+            prefs().getString(KEY_MAPBOX, "").orEmpty().isNotBlank()
         apiKeyField.isVisible = !hasKey
+        mapboxField.isVisible = !hasKey
         editKeyButton.isVisible = hasKey
+    }
+
+    private fun enterFixedView(current: LatLng?) {
+        // Clean "parked here" view: drop the route pins, zoom to the held point.
+        startMarker?.let { map.overlays.remove(it) }
+        destMarker?.let { map.overlays.remove(it) }
+        startMarker = null
+        destMarker = null
+        start = null
+        dest = null
+        startLabel = null
+        destLabel = null
+        fittedRouteSize = 0
+        updateStatus()
+        current?.let {
+            map.controller.setZoom(17.0)
+            map.controller.animateTo(GeoPoint(it.lat, it.lng))
+        }
+        map.invalidate()
     }
 
     // ---- search / geocoding -------------------------------------------------
@@ -432,7 +466,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onDriveClicked() {
-        saveApiKey()
+        saveKeys()
         val state = Playback.state.value
         val active = (state.mode == PlaybackMode.ROUTING || state.mode == PlaybackMode.FIXED) && state.current != null
         val startPoint = if (active) state.current else start
@@ -441,8 +475,8 @@ class MainActivity : AppCompatActivity() {
             toast("Set a start and a destination (tap the map or search)")
             return
         }
-        if (apiKeyField.text.isBlank()) {
-            toast("Enter your GraphHopper API key")
+        if (apiKeyField.text.isBlank() && mapboxField.text.isBlank()) {
+            toast("Add a GraphHopper key or Mapbox token (tap the key button)")
             return
         }
         val sLabel = if (active) "current position" else (startLabel ?: fmt(startPoint))
@@ -514,6 +548,7 @@ class MainActivity : AppCompatActivity() {
             putExtra(MockLocationService.EXTRA_DEST_LAT, destPoint.lat)
             putExtra(MockLocationService.EXTRA_DEST_LNG, destPoint.lng)
             putExtra(MockLocationService.EXTRA_API_KEY, apiKeyField.text.toString().trim())
+            putExtra(MockLocationService.EXTRA_MAPBOX_TOKEN, mapboxField.text.toString().trim())
             putExtra(MockLocationService.EXTRA_FIXED_SPEED, fixedSpeedMps)
             putExtra(MockLocationService.EXTRA_SPEED_FACTOR, speedFactor)
         }
@@ -554,8 +589,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun fmt(p: LatLng) = "%.5f, %.5f".format(p.lat, p.lng)
 
-    private fun saveApiKey() {
-        prefs().edit().putString(KEY_API, apiKeyField.text.toString().trim()).apply()
+    private fun saveKeys() {
+        prefs().edit()
+            .putString(KEY_API, apiKeyField.text.toString().trim())
+            .putString(KEY_MAPBOX, mapboxField.text.toString().trim())
+            .apply()
     }
 
     private fun prefs() = getSharedPreferences("routemock", Context.MODE_PRIVATE)
@@ -584,5 +622,6 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val KEY_API = "graphhopper_api_key"
+        private const val KEY_MAPBOX = "mapbox_token"
     }
 }

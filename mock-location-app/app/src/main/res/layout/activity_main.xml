@@ -67,6 +67,15 @@
             android:inputType="textNoSuggestions"
             android:maxLines="1" />
 
+        <EditText
+            android:id="@+id/mapboxToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="off"
+            android:hint="Mapbox token (optional — Google-like traffic)"
+            android:inputType="textNoSuggestions"
+            android:maxLines="1" />
+
         <Button
             android:id="@+id/editKeyButton"
             android:layout_width="wrap_content"

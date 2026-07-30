@@ -14,16 +14,24 @@ import kotlin.random.Random
  */
 class RouteRepository(
     private val graphHopper: GraphHopperClient = GraphHopperClient(),
+    private val mapbox: MapboxDirectionsClient = MapboxDirectionsClient(),
     private val overpass: OverpassClient = OverpassClient(),
     private val random: Random = Random.Default
 ) {
     suspend fun buildPlan(
         start: LatLng,
         dest: LatLng,
-        apiKey: String,
+        graphHopperKey: String,
+        mapboxToken: String,
         includeStops: Boolean = true
     ): RoutePlan {
-        val routed = graphHopper.route(start, dest, apiKey)
+        // Prefer Mapbox's traffic-aware routing when a token is present (closer to
+        // Google); otherwise use GraphHopper's free static routing.
+        val routed = if (mapboxToken.isNotBlank()) {
+            mapbox.route(start, dest, mapboxToken)
+        } else {
+            graphHopper.route(start, dest, graphHopperKey)
+        }
         val line = Polyline(routed.points)
         val stops = if (includeStops) {
             toStopEvents(line, overpass.featuresAlong(routed.points))

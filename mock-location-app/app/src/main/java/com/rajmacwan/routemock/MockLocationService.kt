@@ -82,13 +82,14 @@ class MockLocationService : Service() {
                     intent.getDoubleExtra(EXTRA_DEST_LNG, Double.NaN)
                 )
                 val apiKey = intent.getStringExtra(EXTRA_API_KEY).orEmpty()
+                val mapboxToken = intent.getStringExtra(EXTRA_MAPBOX_TOKEN).orEmpty()
                 val fixedSpeed = intent.getDoubleExtra(EXTRA_FIXED_SPEED, -1.0)
                 val speedFactor = intent.getDoubleExtra(EXTRA_SPEED_FACTOR, 1.0)
-                if (start.lat.isNaN() || dest.lat.isNaN() || apiKey.isBlank()) {
+                if (start.lat.isNaN() || dest.lat.isNaN() || (apiKey.isBlank() && mapboxToken.isBlank())) {
                     return START_NOT_STICKY
                 }
                 startForegroundCompat(notification("Preparing route…"))
-                startRoute(start, dest, apiKey, if (fixedSpeed > 0) fixedSpeed else null, speedFactor)
+                startRoute(start, dest, apiKey, mapboxToken, if (fixedSpeed > 0) fixedSpeed else null, speedFactor)
             }
             else -> {
                 stopEverything()
@@ -120,13 +121,20 @@ class MockLocationService : Service() {
 
     // ---- route playback -----------------------------------------------------
 
-    private fun startRoute(start: LatLng, dest: LatLng, apiKey: String, fixedSpeedMps: Double?, speedFactor: Double) {
+    private fun startRoute(
+        start: LatLng,
+        dest: LatLng,
+        apiKey: String,
+        mapboxToken: String,
+        fixedSpeedMps: Double?,
+        speedFactor: Double
+    ) {
         job?.cancel()
         paused = false
         job = scope.launch {
             try {
                 Playback.set(PlaybackState(PlaybackMode.ROUTING, running = true, current = start, info = "Preparing route…"))
-                val plan = repository.buildPlan(start, dest, apiKey, includeStops = fixedSpeedMps == null)
+                val plan = repository.buildPlan(start, dest, apiKey, mapboxToken, includeStops = fixedSpeedMps == null)
                 val samples = MotionSimulator(
                     plan.line,
                     plan.segmentLimitMps,
@@ -169,10 +177,19 @@ class MockLocationService : Service() {
                 val end = samples.last()
                 val endPos = LatLng(end.lat, end.lng)
                 paused = false
+                // Clear the route/trail so the map shows only where we're parked.
                 Playback.update {
-                    it.copy(mode = PlaybackMode.FIXED, running = true, current = endPos, info = "Holding at destination")
+                    it.copy(
+                        mode = PlaybackMode.FIXED,
+                        running = true,
+                        current = endPos,
+                        route = emptyList(),
+                        trail = emptyList(),
+                        parked = true,
+                        info = "Parked at destination"
+                    )
                 }
-                updateNotification("Holding at destination — Stop to release")
+                updateNotification("Parked at destination — Stop to release")
                 while (isActive) {
                     push(hold(endPos))
                     delay(TICK_MS)
@@ -288,6 +305,7 @@ class MockLocationService : Service() {
         const val EXTRA_DEST_LAT = "dest_lat"
         const val EXTRA_DEST_LNG = "dest_lng"
         const val EXTRA_API_KEY = "api_key"
+        const val EXTRA_MAPBOX_TOKEN = "mapbox_token"
         const val EXTRA_FIXED_SPEED = "fixed_speed_mps"
         const val EXTRA_SPEED_FACTOR = "speed_factor"
 

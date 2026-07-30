@@ -124,12 +124,21 @@ Then choose what to do:
 - **Start** — drive the route. You're asked to pick the speed:
   - *Realistic* — you enter a **percent of the posted limit** (100 = drive the
     limit, 110 = 10% over, 90 = under). It still obeys each road's limit as the
-    base, slows for corners, and stops at lights. There is **no live traffic** —
-    the drive is free-flow plus randomized light/stop dwells.
+    base, slows for corners, and stops at lights. With GraphHopper there is **no
+    live traffic** (free-flow + randomized dwells); add a **Mapbox token** (see
+    below) to route on the traffic-aware `driving-traffic` profile, whose roads
+    and per-segment speeds track Google Maps much more closely.
   - *Fixed speed* — a constant mph you enter, ignoring limits and lights.
 
-When a route finishes, the GPS **holds at the destination** (a fixed position)
-until you Stop — or set a new destination and Start to drive on from there.
+When a route finishes, the GPS flips into a **Parked** hold at the destination:
+the route/trail clear, the map zooms to a single marker, and the position stays
+put until you Stop — or set a new destination and Start to drive on from there.
+
+**Routing source:** enter a **GraphHopper** key for free static routing, and/or a
+**Mapbox** token for traffic-aware routing. When a Mapbox token is present it is
+used (Google-like, ~100k free requests/month, https://account.mapbox.com/);
+otherwise GraphHopper is used. Both keys collapse behind the "API key ✓" button
+once saved.
 - **Pause / Resume** — during a route, hold the GPS in place, then continue. While
   paused (or even while driving) you can set a **new destination** (tap or search)
   and hit **Start** again to re-route from the current position.
