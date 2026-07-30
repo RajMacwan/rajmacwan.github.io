@@ -154,6 +154,12 @@ mirrors progress and speed. Open any map/navigation app to see the same movement
 one, and it loads the pins back so you can re-run it with one tap. Your GraphHopper
 **API key is saved as you type** and restored on every launch, so you enter it once.
 
+On launch the map **centers on your current location**, and **Fixed Location** with
+no pin set locks the GPS right where you are. Live **speed and progress** show in the
+status line and the notification; the **⚙ Settings** button (top-right of the panel)
+switches speed units between **mph** and **km/h**. The app version shows faintly in
+the bottom-right corner (`v1.0 · b<build>-<sha>`) so you always know which build you're on.
+
 ---
 
 ## Project layout

@@ -14,6 +14,9 @@ data class PlaybackState(
     val route: List<LatLng> = emptyList(), // planned route polyline
     val trail: List<LatLng> = emptyList(), // where we have driven so far
     val parked: Boolean = false,           // FIXED reached by finishing a route (vs. manual)
+    val speedMps: Double = 0.0,            // current speed
+    val progress: Int = 0,                 // samples emitted so far
+    val total: Int = 0,                    // total samples in the route
     val info: String = ""
 )
 

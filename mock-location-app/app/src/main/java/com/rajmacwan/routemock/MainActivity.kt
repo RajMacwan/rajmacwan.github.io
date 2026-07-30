@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
+import com.google.android.gms.location.LocationServices
 import com.rajmacwan.routemock.data.GeocodeResult
 import com.rajmacwan.routemock.data.GeocodingClient
 import com.rajmacwan.routemock.engine.LatLng
@@ -30,6 +31,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
+import kotlin.math.roundToInt
 import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
@@ -58,6 +60,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var modeChip: TextView
     private lateinit var devSettingsButton: Button
     private lateinit var editKeyButton: Button
+    private lateinit var settingsButton: Button
+    private val fusedLocation by lazy { LocationServices.getFusedLocationProviderClient(this) }
+    private var deviceLocation: LatLng? = null
     private var mockSelected = false
 
     private val geocoder = GeocodingClient()
@@ -110,6 +115,7 @@ class MainActivity : AppCompatActivity() {
         modeChip = findViewById(R.id.modeChip)
         devSettingsButton = findViewById(R.id.devSettingsButton)
         editKeyButton = findViewById(R.id.editKeyButton)
+        settingsButton = findViewById(R.id.settingsButton)
         history = HistoryStore(this)
 
         setupMap()
@@ -141,6 +147,7 @@ class MainActivity : AppCompatActivity() {
         devSettingsButton.setOnClickListener {
             startActivity(Intent(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS))
         }
+        settingsButton.setOnClickListener { showSettingsDialog() }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             requestNotifications.launch(Manifest.permission.POST_NOTIFICATIONS)
@@ -151,6 +158,9 @@ class MainActivity : AppCompatActivity() {
 
         ui.launch { Playback.state.collect { renderPlayback(it) } }
         updateStatus()
+
+        // Show the device's current location on open (and enable "fix here").
+        withLocationPermission { locateAndCenter() }
     }
 
     private fun setupMap() {
@@ -220,16 +230,59 @@ class MainActivity : AppCompatActivity() {
         val (dot, label) = when {
             state.mode == PlaybackMode.IDLE -> "○" to "Idle"
             state.mode == PlaybackMode.FIXED -> if (state.parked) "⏸" to "Parked" else "●" to "Fixed"
-            state.running -> "▶" to "Driving"
+            state.running -> {
+                val pct = if (state.total > 0) " · ${state.progress * 100 / state.total}%" else ""
+                "▶" to "${formatSpeed(state.speedMps)}$pct"
+            }
             else -> "❚❚" to "Paused"
         }
         modeChip.text = "$dot $label  ·  Mock: ${if (mockSelected) "ENABLED" else "DISABLED"}"
 
-        // On entering a fixed hold (parked or manual), clean up to a single marker.
+        // Transitions: entering a fixed hold cleans up to one marker; leaving one
+        // (Stop while parked) clears the lingering "locked" label.
         if (state.mode == PlaybackMode.FIXED && lastMode != PlaybackMode.FIXED) {
             enterFixedView(state.current)
+        } else if (state.mode == PlaybackMode.IDLE && lastMode == PlaybackMode.FIXED) {
+            clearPins()
         }
         lastMode = state.mode
+    }
+
+    private fun useMph(): Boolean = prefs().getString(KEY_UNITS, "mph") != "kmh"
+
+    private fun formatSpeed(mps: Double): String =
+        if (useMph()) "${(mps * 2.23694).roundToInt()} mph" else "${(mps * 3.6).roundToInt()} km/h"
+
+    private fun showSettingsDialog() {
+        val options = arrayOf("Miles per hour (mph)", "Kilometers per hour (km/h)")
+        val current = if (useMph()) 0 else 1
+        AlertDialog.Builder(this)
+            .setTitle("Settings — Speed units")
+            .setSingleChoiceItems(options, current) { dialog, which ->
+                prefs().edit().putString(KEY_UNITS, if (which == 0) "mph" else "kmh").apply()
+                renderPlayback(Playback.state.value)
+                dialog.dismiss()
+            }
+            .setNegativeButton("Close", null)
+            .show()
+    }
+
+    private fun locateAndCenter() {
+        try {
+            fusedLocation.lastLocation.addOnSuccessListener { loc ->
+                if (loc != null) {
+                    val p = LatLng(loc.latitude, loc.longitude)
+                    deviceLocation = p
+                    // Only recenter if we're idle and haven't set pins (don't fight the user).
+                    if (Playback.state.value.mode == PlaybackMode.IDLE && start == null && dest == null) {
+                        map.controller.setZoom(16.0)
+                        map.controller.animateTo(GeoPoint(p.lat, p.lng))
+                    }
+                }
+            }
+        } catch (e: SecurityException) {
+            // no location permission; ignore
+        }
     }
 
     private fun refreshMockStatus() {
@@ -247,20 +300,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enterFixedView(current: LatLng?) {
-        // Clean "parked here" view: drop the route pins, zoom to the held point.
+        // Clean "parked here" view: drop the route pins, zoom to the held point,
+        // and show the held position's address in the Start line (so it's clear a
+        // new destination will route from here).
         startMarker?.let { map.overlays.remove(it) }
         destMarker?.let { map.overlays.remove(it) }
         startMarker = null
         destMarker = null
         start = null
         dest = null
-        startLabel = null
         destLabel = null
+        startLabel = current?.let { "📍 ${fmt(it)}" }
         fittedRouteSize = 0
         updateStatus()
-        current?.let {
+        current?.let { c ->
             map.controller.setZoom(17.0)
-            map.controller.animateTo(GeoPoint(it.lat, it.lng))
+            map.controller.animateTo(GeoPoint(c.lat, c.lng))
+            ui.launch {
+                val addr = geocoder.reverse(c, apiKeyField.text.toString().trim())
+                if (addr.isNotBlank() && Playback.state.value.mode == PlaybackMode.FIXED) {
+                    startLabel = "📍 $addr"
+                    updateStatus()
+                }
+            }
         }
         map.invalidate()
     }
@@ -450,9 +512,12 @@ class MainActivity : AppCompatActivity() {
     // ---- actions ------------------------------------------------------------
 
     private fun onFixedClicked() {
-        val point = dest ?: start
+        // Fall back to the device's current location so "Fixed Location" works even
+        // with no pin set — one tap to lock GPS where you are.
+        val point = dest ?: start ?: deviceLocation
         if (point == null) {
-            toast("Set a location first (tap the map or search)")
+            toast("Getting current location… tap the map, or try again")
+            withLocationPermission { locateAndCenter() }
             return
         }
         val label = startLabel ?: fmt(point)
@@ -626,5 +691,6 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val KEY_API = "graphhopper_api_key"
         private const val KEY_MAPBOX = "mapbox_token"
+        private const val KEY_UNITS = "units"
     }
 }

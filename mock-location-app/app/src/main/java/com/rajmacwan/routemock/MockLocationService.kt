@@ -165,9 +165,18 @@ class MockLocationService : Service() {
                     if (!isActive) break
                     push(s)
                     trail.add(p)
-                    Playback.update { it.copy(current = p, trail = ArrayList(trail), running = true) }
+                    Playback.update {
+                        it.copy(
+                            current = p,
+                            trail = ArrayList(trail),
+                            running = true,
+                            speedMps = s.speedMps,
+                            progress = i + 1,
+                            total = samples.size
+                        )
+                    }
                     if (i % 5 == 0 || i == samples.size - 1) {
-                        updateNotification("Driving • ${i + 1}/${samples.size} • ${(s.speedMps * 3.6).toInt()} km/h")
+                        updateNotification("Driving • ${i + 1}/${samples.size} • ${formatSpeed(s.speedMps)}")
                     }
                     delay(TICK_MS)
                 }
@@ -186,6 +195,7 @@ class MockLocationService : Service() {
                         route = emptyList(),
                         trail = emptyList(),
                         parked = true,
+                        speedMps = 0.0,
                         info = "Parked at destination"
                     )
                 }
@@ -213,6 +223,13 @@ class MockLocationService : Service() {
 
     /** A stationary fix at [p] (speed 0), used for holds and the fixed mode. */
     private fun hold(p: LatLng) = GpsSample(0.0, p.lat, p.lng, 0.0, 0.0, 4.0f)
+
+    /** Format a speed using the user's unit preference (mph default). */
+    private fun formatSpeed(mps: Double): String {
+        val mph = getSharedPreferences("routemock", Context.MODE_PRIVATE)
+            .getString("units", "mph") != "kmh"
+        return if (mph) "${Math.round(mps * 2.23694)} mph" else "${Math.round(mps * 3.6)} km/h"
+    }
 
     private fun fmt(p: LatLng) = "%.5f, %.5f".format(p.lat, p.lng)
 
