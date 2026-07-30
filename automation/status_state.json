@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-30T03:36:07.497249Z",
+  "polled": "2026-07-30T06:11:27.802458Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Possible Network Congestion in North America region",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "141 active Salesforce incidents",
+      "description": "146 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000115",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors across many models",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Core Communications United States",
+      "incident_name": "SMS Delivery Delays from Twilio to Zamtel Zambia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-30T03:36:07.497272Z"
+  "html_written": "2026-07-30T06:11:27.802483Z"
 }
