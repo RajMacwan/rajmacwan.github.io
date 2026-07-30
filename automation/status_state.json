@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-30T06:11:27.802458Z",
+  "polled": "2026-07-30T09:07:00.170887Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Response Degradation Impacting Kimi-K3",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "146 active Salesforce incidents",
+      "description": "149 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom MCP Claude Marketplace Integration",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating service degradation \u2014 IDE",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-30T06:11:27.802483Z"
+  "html_written": "2026-07-30T09:07:00.170922Z"
 }
