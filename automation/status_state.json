@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-31T12:21:37.900531Z",
+  "polled": "2026-07-31T14:58:45.063400Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare API Availability Reduced",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "152 active Salesforce incidents",
+      "description": "153 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Whiteboard Service in US Region.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Service Degradation Affecting Zoom Whiteboard and Task Services in US Region.",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Metfone Cambodia",
+      "incident_name": "Voice Call Failures and Post Dial Delay from Twilio Phone Numbers to Multiple Networks in Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-31T12:21:37.900554Z"
+  "html_written": "2026-07-31T14:58:45.063425Z"
 }
