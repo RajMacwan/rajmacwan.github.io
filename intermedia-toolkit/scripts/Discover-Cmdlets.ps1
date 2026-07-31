@@ -1,14 +1,15 @@
 <#
 .SYNOPSIS
-  Dumps every HostPilot cmdlet relevant to this toolkit, with its full syntax,
-  to reference\cmdlet-syntax.txt.
+  Dumps every HostPilot/Exchange cmdlet relevant to this toolkit, with its
+  full syntax, to reference\cmdlet-syntax.txt.
 
 .DESCRIPTION
-  Intermedia's public KB is bot-blocked, so the exact parameter names of some
-  cmdlets could not be verified when this toolkit was written. Run this ONCE
-  inside HostPilot PowerShell after logging in, then let Claude read
-  reference\cmdlet-syntax.txt and align the other scripts with what your
-  account's build actually exposes.
+  Run ONCE inside the connected HostPilot PowerShell session, then let Claude
+  read reference\cmdlet-syntax.txt and align the other scripts with what your
+  environment actually exposes.
+
+  Output is built entirely in memory and written in a single operation —
+  per-line appends get intermittently locked by OneDrive sync on synced paths.
 
 .EXAMPLE
   .\Discover-Cmdlets.ps1
@@ -32,19 +33,33 @@ $patterns = @(
 $cmds = foreach ($p in $patterns) { Get-Command $p -ErrorAction SilentlyContinue }
 $cmds = $cmds | Sort-Object Name -Unique
 
-"HostPilot PowerShell cmdlet inventory - generated $((Get-Date).ToString('o'))" | Set-Content $outFile
-"Cmdlet count: $($cmds.Count)" | Add-Content $outFile
-'' | Add-Content $outFile
+$lines = New-Object System.Collections.Generic.List[string]
+$lines.Add("HostPilot PowerShell cmdlet inventory - generated $((Get-Date).ToString('o'))")
+$lines.Add("Cmdlet count: $($cmds.Count)")
+$lines.Add('')
+
+# Quick index of all names first, so the file is useful even if Get-Help
+# fails for some cmdlets.
+$lines.Add('==== INDEX ====')
+foreach ($c in $cmds) { $lines.Add($c.Name) }
+$lines.Add('')
 
 foreach ($c in $cmds) {
-    "==== $($c.Name) ====" | Add-Content $outFile
+    $lines.Add("==== $($c.Name) ====")
     try {
-        (Get-Help $c.Name -Detailed | Out-String) | Add-Content $outFile
+        # Syntax block is compact and always available; -Detailed help can be
+        # slow/unavailable over implicit remoting.
+        $syntax = (Get-Command $c.Name -Syntax | Out-String).Trim()
+        if ($syntax) { $lines.Add($syntax) }
+        $help = (Get-Help $c.Name -ErrorAction SilentlyContinue | Out-String).Trim()
+        if ($help) { $lines.Add($help) }
     } catch {
-        "  (Get-Help failed: $($_.Exception.Message))" | Add-Content $outFile
+        $lines.Add("  (help/syntax unavailable: $($_.Exception.Message))")
     }
-    '' | Add-Content $outFile
+    $lines.Add('')
 }
+
+Set-Content -Path $outFile -Value $lines -Encoding UTF8
 
 Write-Host "Wrote $($cmds.Count) cmdlet definitions to $outFile"
 Write-Host "Next: open this folder in Claude Code and ask it to calibrate the scripts against the reference file."

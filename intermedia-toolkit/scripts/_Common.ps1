@@ -43,7 +43,19 @@ function Write-OpLog {
         detail    = $Detail
     }
     $file = Join-Path $script:LogDir ("ops-{0}.jsonl" -f (Get-Date).ToString('yyyy-MM-dd'))
-    $entry | ConvertTo-Json -Compress | Add-Content -Path $file
+    $json = $entry | ConvertTo-Json -Compress
+    # Retry writes: OneDrive sync intermittently locks files on synced paths
+    # ("Stream was not readable"), so one attempt is not enough.
+    $written = $false
+    for ($i = 0; $i -lt 5 -and -not $written; $i++) {
+        try {
+            Add-Content -Path $file -Value $json -ErrorAction Stop
+            $written = $true
+        } catch {
+            Start-Sleep -Milliseconds (200 * ($i + 1))
+        }
+    }
+    if (-not $written) { Write-Warning "Could not write to log file ${file}: $json" }
     $entry
 }
 
