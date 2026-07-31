@@ -7,13 +7,24 @@ toolkit. Do not "fix" scripts back to guessed syntax — check here first.
 
 ## Environment facts
 
-- Platform: **DEX** (dedicated Exchange), endpoint `https://dex.intermedia.net/powershell`.
+- Platform: **SEH** (shared hosted Exchange), endpoint
+  `https://exchange.intermedia.net/powershell`. Confirmed by DNS:
+  autodiscover CNAMEs to an `exchNNN.serverdata.net` shared cluster.
+  (An earlier DEX login "succeeded" at connection level but every data
+  cmdlet returned AccessDenied — auth is central, data is per-platform.
+  Do not use dex.)
+- Credential type: **User (U) ONLY**. Per Intermedia KB 12563,
+  "Administrator type is used only by Intermedia Administrators" — an
+  Administrator login connects but gets AccessDenied on every data cmdlet.
+  The User login flow prompts for the numeric AccountID and registers it
+  via Set-ConnectionSettings; cmdlets then need NO auth parameters.
+  Passing -AccountID/-Credential per call is the KB 12323 "run as another
+  account" override — avoid it.
 - Launcher: dot-source `HostPilot.PowerShell\Scripts\Hosting.PowerShell.ps1`;
-  platform `dex`; credential type **A** (Administrator) works on DEX with the
-  account's admin login (the "use User" guidance applies to SEH, not here).
-  Never write the actual login address or AccountID into tracked files —
-  this repo is public. The AccountID lives in reference/connection.local.json
-  (gitignored), created on first script run.
+  platform `seh`; press Enter at the credential-type prompt (User is
+  default). Never write the actual login address or AccountID into tracked
+  files — this repo is public. The AccountID lives in
+  reference/connection.local.json (gitignored), created on first script run.
 - Credentials are cached after first login (`Clear-SavedHPCredential` resets).
 - Cmdlets are implicit-remoting proxy functions. **Do not** run per-cmdlet
   `Get-Help`/`Get-Command -Syntax` loops against them — remote round-trips

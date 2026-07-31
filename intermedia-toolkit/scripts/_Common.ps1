@@ -76,43 +76,23 @@ function Ensure-HPConnection {
         Write-Warning 'GetHPCred not available; skipping connection seeding.'
         return
     }
+    # Per Intermedia KB 12323: cmdlet-level CredentialType/Credential/AccountID
+    # are only needed when Set-ConnectionSettings was NOT run - passing them
+    # explicitly is the "run as another account" override and can itself
+    # produce AccessDenied. So the correct posture is: re-register
+    # Set-ConnectionSettings (mirroring the login flow) and pass NOTHING on
+    # individual cmdlet calls.
+    if (-not (Test-HPCmdlet 'Set-ConnectionSettings')) { return }
     try {
         $creds = GetHPCred -plat $plat -credentialType $credType -IgnoreExisting $false
         if ($creds -is [object[]]) { $creds = $creds[-1] }
-        $accountId = Get-ToolkitAccountId
-
-        $hpCmdlets = @(
-            'Get-User', 'Set-User', 'New-User', 'Remove-User', 'Enable-User', 'Disable-User',
-            'Get-UserMemberOf', 'Reset-UserPassword',
-            'Get-DistributionGroup', 'Get-DistributionGroupMember',
-            'Add-DistributionGroupMember', 'Remove-DistributionGroupMember',
-            'New-DistributionGroup', 'Set-DistributionGroup', 'Remove-DistributionGroup',
-            'Grant-RecipientPermission', 'Revoke-RecipientPermission',
-            'Grant-ExchangeMailboxPermission', 'Revoke-ExchangeMailboxPermission',
-            'Get-ExchangeMailbox', 'Set-ExchangeMailbox', 'Enable-ExchangeMailbox', 'Disable-ExchangeMailbox',
-            'Add-EmailAddress', 'Remove-EmailAddress', 'Set-PrimaryEmailAddress',
-            'Get-Domain', 'Get-OrganizationalUnit'
-        )
-        if ($null -eq $global:PSDefaultParameterValues) {
-            $global:PSDefaultParameterValues = New-Object System.Management.Automation.DefaultParameterDictionary
-        }
-        foreach ($n in $hpCmdlets) {
-            $global:PSDefaultParameterValues["${n}:CredentialType"] = $credType
-            $global:PSDefaultParameterValues["${n}:Credential"]     = $creds
-            $global:PSDefaultParameterValues["${n}:AccountID"]      = $accountId
-        }
-
-        if (Test-HPCmdlet 'Set-ConnectionSettings') {
-            try {
-                Set-ConnectionSettings -Credential $creds -CredentialType $credType -AccountID $accountId -ErrorAction Stop
-            } catch {
-                try { Set-ConnectionSettings -Credential $creds -CredentialType $credType -ErrorAction Stop } catch {
-                    Write-Warning "Set-ConnectionSettings failed: $($_.Exception.Message) (defaults seeding still applies)"
-                }
-            }
+        if ($credType -eq 'User') {
+            Set-ConnectionSettings -Credential $creds -CredentialType $credType -AccountID (Get-ToolkitAccountId) -ErrorAction Stop
+        } else {
+            Set-ConnectionSettings -Credential $creds -CredentialType $credType -ErrorAction Stop
         }
     } catch {
-        Write-Warning "Could not seed HostPilot connection parameters: $($_.Exception.Message)"
+        Write-Warning "Could not re-register HostPilot connection settings: $($_.Exception.Message)"
     }
 }
 
