@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-31T14:58:45.063400Z",
+  "polled": "2026-07-31T16:49:52.468230Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Network Performance Issues in Hamburg, Germany",
       "fetched": true
     },
     "fastly": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Whiteboard and Task Services in US Region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures and Post Dial Delay from Twilio Phone Numbers to Multiple Networks in Brazil",
+      "incident_name": "Delays with Inbound and Outbound Message Delivery for RCS and WhatsApp",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-31T14:58:45.063425Z"
+  "html_written": "2026-07-31T16:49:52.468257Z"
 }
