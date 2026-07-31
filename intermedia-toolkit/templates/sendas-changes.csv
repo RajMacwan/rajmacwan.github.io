@@ -1,0 +1,4 @@
+Mailbox,Trustee,Action
+info@yourdomain.com,jdoe@yourdomain.com,Grant
+ceo@yourdomain.com,assistant@yourdomain.com,Grant
+support@yourdomain.com,departed.user@yourdomain.com,Revoke

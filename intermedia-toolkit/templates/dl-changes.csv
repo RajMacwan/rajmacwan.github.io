@@ -1,0 +1,4 @@
+DistributionList,Member,Action
+sales@yourdomain.com,jdoe@yourdomain.com,Add
+sales@yourdomain.com,asmith@yourdomain.com,Add
+allstaff@yourdomain.com,departed.user@yourdomain.com,Remove
