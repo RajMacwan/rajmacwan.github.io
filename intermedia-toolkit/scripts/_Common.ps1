@@ -94,7 +94,7 @@ function Ensure-HPConnection {
             'Get-Domain', 'Get-OrganizationalUnit'
         )
         if ($null -eq $global:PSDefaultParameterValues) {
-            $global:PSDefaultParameterValues = @{}
+            $global:PSDefaultParameterValues = New-Object System.Management.Automation.DefaultParameterDictionary
         }
         foreach ($n in $hpCmdlets) {
             $global:PSDefaultParameterValues["${n}:CredentialType"] = $credType
@@ -104,9 +104,11 @@ function Ensure-HPConnection {
 
         if (Test-HPCmdlet 'Set-ConnectionSettings') {
             try {
-                Set-ConnectionSettings -Credential $creds -CredentialType $credType -AccountID $accountId
+                Set-ConnectionSettings -Credential $creds -CredentialType $credType -AccountID $accountId -ErrorAction Stop
             } catch {
-                try { Set-ConnectionSettings -Credential $creds -CredentialType $credType } catch { }
+                try { Set-ConnectionSettings -Credential $creds -CredentialType $credType -ErrorAction Stop } catch {
+                    Write-Warning "Set-ConnectionSettings failed: $($_.Exception.Message) (defaults seeding still applies)"
+                }
             }
         }
     } catch {
