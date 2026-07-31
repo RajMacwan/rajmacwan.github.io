@@ -97,12 +97,17 @@ function Ensure-HPConnection {
 }
 
 function Assert-HostPilotSession {
+    # Presence check only. Deliberately does NOT touch the connection: the
+    # login flow already registered Set-ConnectionSettings, and issuing extra
+    # remote calls before the first data cmdlet is suspected of contributing
+    # to WinRM 12152 channel failures. If cmdlets start prompting for
+    # CredentialType/AccountID (a rebuilt session lost its settings), run
+    # Ensure-HPConnection manually or re-login in a fresh window.
     if (-not (Test-HPCmdlet 'Get-User')) {
         throw ("HostPilot cmdlets not found. Launch the HostPilot PowerShell session " +
                "(dot-source Hosting.Powershell.ps1), log in, then run this script " +
                "from that window. See README.md.")
     }
-    Ensure-HPConnection
 }
 
 function Write-OpLog {
