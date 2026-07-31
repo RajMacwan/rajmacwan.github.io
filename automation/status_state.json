@@ -1,10 +1,10 @@
 {
-  "polled": "2026-07-31T19:56:39.925206Z",
+  "polled": "2026-07-31T21:10:38.665726Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increased HTTP Errors in London",
+      "incident_name": "Network Performance Issues in Hamburg, Germany",
       "fetched": true
     },
     "fastly": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "critical",
-      "description": "Major System Outage",
-      "incident_name": "Investigating service degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - Kusama",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-31T19:56:39.925240Z"
+  "html_written": "2026-07-31T21:10:38.665770Z"
 }
