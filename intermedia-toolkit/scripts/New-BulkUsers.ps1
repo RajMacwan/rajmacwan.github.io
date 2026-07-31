@@ -16,8 +16,9 @@
   Two-step model per Intermedia's KB: New-User creates the directory user,
   Enable-ExchangeMailbox turns on the mailbox. Intermedia recommends batches
   of ~25 when creating Exchange mailboxes — the script warns above that.
-  Exact New-User parameters are not publicly documented (KB is bot-blocked);
-  if binding errors occur, run Discover-Cmdlets.ps1 and recalibrate.
+  Calibrated 2026-07-31 against DEX signatures (reference\CALIBRATION.md):
+  New-User -UserPrincipalName <upn> -DisplayName <name>. Passwords are
+  omitted, so Intermedia generates them.
 #>
 [CmdletBinding()]
 param(
@@ -79,11 +80,11 @@ if (-not $Force) {
 # ---- Create ----------------------------------------------------------------
 $results = foreach ($row in $rows) {
     try {
-        New-User -DisplayName $row.DisplayName -EmailAddress $row.EmailAddress
+        New-User -UserPrincipalName $row.EmailAddress -DisplayName $row.DisplayName
         Write-OpLog -Script 'New-BulkUsers' -Action 'New-User' -Target $row.EmailAddress -Status 'ok'
         if ($EnableExchange) {
             try {
-                Enable-ExchangeMailbox $row.EmailAddress
+                Enable-ExchangeMailbox -Identity $row.EmailAddress -Confirm:$false
                 Write-OpLog -Script 'New-BulkUsers' -Action 'Enable-ExchangeMailbox' -Target $row.EmailAddress -Status 'ok'
             } catch {
                 Write-OpLog -Script 'New-BulkUsers' -Action 'Enable-ExchangeMailbox' -Target $row.EmailAddress -Status 'error' -Detail $_.Exception.Message

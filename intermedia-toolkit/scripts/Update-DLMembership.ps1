@@ -15,9 +15,8 @@
   # CSV columns: DistributionList,Member,Action   (Action = Add | Remove)
 
 .NOTES
-  Cmdlet names follow Intermedia's "Manage Distribution Groups" KB article
-  (a_id 12512). If a parameter binding error occurs on your account's build,
-  run Discover-Cmdlets.ps1 and recalibrate.
+  Calibrated 2026-07-31 against the DEX environment's actual signatures
+  (see reference\CALIBRATION.md): -Identity <dl> -Members <array>.
 #>
 [CmdletBinding()]
 param(
@@ -73,9 +72,9 @@ $results = foreach ($c in $changes) {
     }
     try {
         if ($c.Action -eq 'Add') {
-            Add-DistributionGroupMember $c.DL -Member $c.Member
+            Add-DistributionGroupMember -Identity $c.DL -Members $c.Member
         } else {
-            Remove-DistributionGroupMember $c.DL -Member $c.Member
+            Remove-DistributionGroupMember -Identity $c.DL -Members $c.Member -Confirm:$false
         }
         Write-OpLog -Script 'Update-DLMembership' -Action $c.Action -Target $target -Status 'ok'
     } catch {

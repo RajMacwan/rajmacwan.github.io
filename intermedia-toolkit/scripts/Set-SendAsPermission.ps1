@@ -14,11 +14,13 @@
   # CSV columns: Mailbox,Trustee,Action   (Action = Grant | Revoke)
 
 .NOTES
-  Grant side uses Grant-RecipientPermission (Intermedia KB a_id 15840). The
-  revoke cmdlet name is not publicly documented, so this script discovers it
-  at runtime from the likely candidates. If neither exists on your build, run
-  Discover-Cmdlets.ps1, check reference\cmdlet-syntax.txt for the real name,
-  and recalibrate.
+  Calibrated 2026-07-31 against the DEX environment's actual signatures
+  (see reference\CALIBRATION.md):
+    Grant-RecipientPermission  -Identity <mailbox> -Recipient <trustee> -AccessRights <string>
+    Revoke-RecipientPermission -Identity <mailbox> -Recipient <trustee> -AccessRights <string>
+  -AccessRights defaults to 'SendAs'. If the server rejects that value, try
+  'Send-As' or run Get-Help Grant-RecipientPermission in the DEX session to
+  see the accepted strings, then pass -AccessRights explicitly.
 #>
 [CmdletBinding()]
 param(
@@ -26,18 +28,13 @@ param(
     [string]$Trustee,
     [ValidateSet('Grant', 'Revoke')]
     [string]$Action = 'Grant',
+    [string]$AccessRights = 'SendAs',
     [string]$CsvPath,
     [switch]$DryRun
 )
 
 . "$PSScriptRoot\_Common.ps1"
 Assert-HostPilotSession
-
-$grantCmd = Find-FirstCmdlet -Candidates @('Grant-RecipientPermission', 'Add-RecipientPermission')
-$revokeCmd = Find-FirstCmdlet -Candidates @('Revoke-RecipientPermission', 'Remove-RecipientPermission')
-if (-not $grantCmd) {
-    throw 'No grant cmdlet found (tried Grant-RecipientPermission, Add-RecipientPermission). Run Discover-Cmdlets.ps1 and recalibrate.'
-}
 
 # ---- Build the change list -------------------------------------------------
 $changes = @()
@@ -61,10 +58,6 @@ if ($CsvPath) {
     $changes += [pscustomobject]@{ Mailbox = $Mailbox; Trustee = $Trustee; Action = $Action }
 }
 
-if (($changes | Where-Object { $_.Action -eq 'Revoke' }) -and -not $revokeCmd) {
-    throw 'Revoke requested, but no revoke cmdlet was found in this session. Run Discover-Cmdlets.ps1 and recalibrate.'
-}
-
 # ---- Validate that mailboxes and trustees exist before changing anything ---
 $identities = @($changes | ForEach-Object { $_.Mailbox }) + @($changes | ForEach-Object { $_.Trustee })
 foreach ($id in ($identities | Sort-Object -Unique)) {
@@ -72,22 +65,21 @@ foreach ($id in ($identities | Sort-Object -Unique)) {
     if (-not $found) { throw "User/mailbox not found on this account: $id" }
 }
 
-Write-Host ("Planned changes: {0}  (dry-run: {1})  grant-cmdlet: {2}  revoke-cmdlet: {3}" -f `
-    $changes.Count, [bool]$DryRun, $grantCmd, $revokeCmd)
+Write-Host ("Planned changes: {0}  (dry-run: {1})  access-rights: {2}" -f $changes.Count, [bool]$DryRun, $AccessRights)
 $changes | Format-Table Mailbox, Trustee, Action -AutoSize
 
 # ---- Apply -----------------------------------------------------------------
 $results = foreach ($c in $changes) {
-    $target = "$($c.Trustee) send-as $($c.Mailbox)"
+    $target = "$($c.Trustee) $AccessRights $($c.Mailbox)"
     if ($DryRun) {
         Write-OpLog -Script 'Set-SendAsPermission' -Action "$($c.Action)-DryRun" -Target $target -Status 'planned'
         continue
     }
     try {
         if ($c.Action -eq 'Grant') {
-            & $grantCmd $c.Mailbox -Trustee $c.Trustee
+            Grant-RecipientPermission -Identity $c.Mailbox -Recipient $c.Trustee -AccessRights $AccessRights
         } else {
-            & $revokeCmd $c.Mailbox -Trustee $c.Trustee
+            Revoke-RecipientPermission -Identity $c.Mailbox -Recipient $c.Trustee -AccessRights $AccessRights
         }
         Write-OpLog -Script 'Set-SendAsPermission' -Action $c.Action -Target $target -Status 'ok'
     } catch {
