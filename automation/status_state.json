@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-30T23:34:36.299717Z",
+  "polled": "2026-07-31T01:10:16.068798Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "152 active Salesforce incidents",
+      "description": "151 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Africell Angola",
+      "incident_name": "Voice Call Failures and Dialing Delays from a Subset of Twilio Phone Numbers to Multiple Networks in Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-30T23:34:36.299748Z"
+  "html_written": "2026-07-31T01:10:16.068822Z"
 }
