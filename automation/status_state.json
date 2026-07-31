@@ -1,5 +1,5 @@
 {
-  "polled": "2026-07-31T21:10:38.665726Z",
+  "polled": "2026-07-31T22:17:07.394767Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -182,9 +182,9 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Degraded scale-out due to failed setups pulling from huggingface",
       "fetched": true
     },
     "huggingface": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends/Receives - MultiversX (EGLD)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures and Post Dial Delay from Twilio Phone Numbers to Brazil",
+      "incident_name": "SMS Delivery Delays from Twilio to Unitel Angola",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-07-31T21:10:38.665770Z"
+  "html_written": "2026-07-31T22:17:07.394792Z"
 }
