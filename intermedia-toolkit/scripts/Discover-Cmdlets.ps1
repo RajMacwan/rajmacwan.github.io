@@ -1,15 +1,19 @@
 <#
 .SYNOPSIS
-  Dumps every HostPilot/Exchange cmdlet relevant to this toolkit, with its
-  full syntax, to reference\cmdlet-syntax.txt.
+  Dumps every cmdlet relevant to this toolkit, with its parameter syntax, to
+  reference\cmdlet-syntax.txt.
 
 .DESCRIPTION
   Run ONCE inside the connected HostPilot PowerShell session, then let Claude
   read reference\cmdlet-syntax.txt and align the other scripts with what your
   environment actually exposes.
 
-  Output is built entirely in memory and written in a single operation —
-  per-line appends get intermittently locked by OneDrive sync on synced paths.
+  DEX sessions use implicit remoting: cmdlets are local proxy functions for a
+  remote Exchange endpoint. This script introspects those proxies entirely
+  locally (ParameterSets), because per-cmdlet remote calls (Get-Help, or
+  Get-Command -Syntax) both fail on proxies and can overload the WinRM
+  channel. Output is built in memory and written once (OneDrive-synced paths
+  intermittently lock per-line appends).
 
 .EXAMPLE
   .\Discover-Cmdlets.ps1
@@ -38,23 +42,26 @@ $lines.Add("HostPilot PowerShell cmdlet inventory - generated $((Get-Date).ToStr
 $lines.Add("Cmdlet count: $($cmds.Count)")
 $lines.Add('')
 
-# Quick index of all names first, so the file is useful even if Get-Help
-# fails for some cmdlets.
 $lines.Add('==== INDEX ====')
-foreach ($c in $cmds) { $lines.Add($c.Name) }
+foreach ($c in $cmds) { $lines.Add("$($c.Name)  [$($c.CommandType)]") }
 $lines.Add('')
 
 foreach ($c in $cmds) {
     $lines.Add("==== $($c.Name) ====")
     try {
-        # Syntax block is compact and always available; -Detailed help can be
-        # slow/unavailable over implicit remoting.
-        $syntax = (Get-Command $c.Name -Syntax | Out-String).Trim()
-        if ($syntax) { $lines.Add($syntax) }
-        $help = (Get-Help $c.Name -ErrorAction SilentlyContinue | Out-String).Trim()
-        if ($help) { $lines.Add($help) }
+        # ParameterSets are populated on the local proxy object - no remote call.
+        $sets = @($c.ParameterSets)
+        if ($sets.Count -gt 0) {
+            foreach ($ps in $sets) {
+                $lines.Add(("  {0} {1}" -f $c.Name, $ps.ToString()))
+            }
+        } elseif ($c.Definition) {
+            $lines.Add(($c.Definition | Out-String).Trim())
+        } else {
+            $lines.Add('  (no local parameter metadata)')
+        }
     } catch {
-        $lines.Add("  (help/syntax unavailable: $($_.Exception.Message))")
+        $lines.Add("  (introspection failed: $($_.Exception.Message))")
     }
     $lines.Add('')
 }
