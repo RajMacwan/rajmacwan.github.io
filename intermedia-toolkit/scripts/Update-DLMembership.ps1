@@ -54,10 +54,16 @@ if ($CsvPath) {
     foreach ($m in $Remove) { $changes += [pscustomobject]@{ DL = $DistributionList; Member = $m; Action = 'Remove' } }
 }
 
-# ---- Validate all targets BEFORE touching anything -------------------------
+# ---- Validate and resolve all targets BEFORE touching anything -------------
+# Identity params accept only GUID/DistinguishedName (KB 12330), so emails
+# are resolved to DN strings up front; resolution failure aborts everything.
+$dlMap = @{}
 foreach ($dl in ($changes | ForEach-Object { $_.DL } | Sort-Object -Unique)) {
-    $found = Get-DistributionGroup $dl -ErrorAction SilentlyContinue
-    if (-not $found) { throw "Distribution list not found on this account: $dl" }
+    $dlMap[$dl] = Get-HPIdentityString (Resolve-HPDistributionGroup -Email $dl)
+}
+$memberMap = @{}
+foreach ($m in ($changes | ForEach-Object { $_.Member } | Sort-Object -Unique)) {
+    $memberMap[$m] = Get-HPIdentityString (Resolve-HPRecipient -Email $m)
 }
 
 Write-Host ("Planned changes: {0}  (dry-run: {1})" -f $changes.Count, [bool]$DryRun)
@@ -72,9 +78,9 @@ $results = foreach ($c in $changes) {
     }
     try {
         if ($c.Action -eq 'Add') {
-            Add-DistributionGroupMember -Identity $c.DL -Members $c.Member
+            Add-DistributionGroupMember -Identity $dlMap[$c.DL] -Members $memberMap[$c.Member]
         } else {
-            Remove-DistributionGroupMember -Identity $c.DL -Members $c.Member -Confirm:$false
+            Remove-DistributionGroupMember -Identity $dlMap[$c.DL] -Members $memberMap[$c.Member] -Confirm:$false
         }
         Write-OpLog -Script 'Update-DLMembership' -Action $c.Action -Target $target -Status 'ok'
     } catch {

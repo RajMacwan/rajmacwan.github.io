@@ -58,11 +58,13 @@ if ($CsvPath) {
     $changes += [pscustomobject]@{ Mailbox = $Mailbox; Trustee = $Trustee; Action = $Action }
 }
 
-# ---- Validate that mailboxes and trustees exist before changing anything ---
+# ---- Validate and resolve mailboxes/trustees before changing anything ------
+# Identity params accept only GUID/DistinguishedName (KB 12330), so emails
+# are resolved to identity strings up front; failure aborts everything.
+$idMap = @{}
 $identities = @($changes | ForEach-Object { $_.Mailbox }) + @($changes | ForEach-Object { $_.Trustee })
 foreach ($id in ($identities | Sort-Object -Unique)) {
-    $found = Get-User $id -ErrorAction SilentlyContinue
-    if (-not $found) { throw "User/mailbox not found on this account: $id" }
+    $idMap[$id] = Get-HPIdentityString (Resolve-HPRecipient -Email $id)
 }
 
 Write-Host ("Planned changes: {0}  (dry-run: {1})  access-rights: {2}" -f $changes.Count, [bool]$DryRun, $AccessRights)
@@ -77,9 +79,9 @@ $results = foreach ($c in $changes) {
     }
     try {
         if ($c.Action -eq 'Grant') {
-            Grant-RecipientPermission -Identity $c.Mailbox -Recipient $c.Trustee -AccessRights $AccessRights
+            Grant-RecipientPermission -Identity $idMap[$c.Mailbox] -Recipient $idMap[$c.Trustee] -AccessRights $AccessRights
         } else {
-            Revoke-RecipientPermission -Identity $c.Mailbox -Recipient $c.Trustee -AccessRights $AccessRights
+            Revoke-RecipientPermission -Identity $idMap[$c.Mailbox] -Recipient $idMap[$c.Trustee] -AccessRights $AccessRights
         }
         Write-OpLog -Script 'Set-SendAsPermission' -Action $c.Action -Target $target -Status 'ok'
     } catch {

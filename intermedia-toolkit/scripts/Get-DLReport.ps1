@@ -37,7 +37,7 @@ $rows = foreach ($dl in $dls) {
               else { "$dl" }
     if ($memberCmd) {
         $members = @()
-        try { $members = @(& $memberCmd $dlName) } catch { }
+        try { $members = @(& $memberCmd (Get-HPIdentityString $dl)) } catch { }
         if ($members.Count -eq 0) {
             [pscustomobject]@{ DistributionList = $dlName; Member = '(none or not readable)' }
         } else {

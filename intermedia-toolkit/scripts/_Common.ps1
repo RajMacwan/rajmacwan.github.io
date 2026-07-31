@@ -146,6 +146,55 @@ function Write-OpLog {
     $entry
 }
 
+function Resolve-HPMailbox {
+    # Email -> mailbox object. Per KB 12330, identity parameters
+    # (ADObjectIDParameter) accept only GUID or DistinguishedName; emails must
+    # be resolved first. Get-ExchangeMailbox accepts an email address directly.
+    param([Parameter(Mandatory)][string]$Email)
+    $mbx = Get-ExchangeMailbox $Email -ErrorAction SilentlyContinue
+    if ($mbx -is [object[]]) { $mbx = $mbx[0] }
+    if (-not $mbx) { throw "Mailbox not found on this account: $Email" }
+    return $mbx
+}
+
+function Resolve-HPDistributionGroup {
+    # Email -> DL object. Get-DistributionGroup resolves an email address
+    # directly (verified live); wildcard name search (KB 12414) is the
+    # fallback for aliases the direct lookup misses.
+    param([Parameter(Mandatory)][string]$Email)
+    $dl = Get-DistributionGroup $Email -ErrorAction SilentlyContinue
+    if ($dl -is [object[]]) { $dl = $dl[0] }
+    if ($dl) { return $dl }
+    $local = ($Email -split '@')[0]
+    $cands = @(Get-DistributionGroup -Identity "*$local*" -ErrorAction SilentlyContinue)
+    $hit = $cands | Where-Object {
+        ($_.PSObject.Properties['EmailAddress'] -and "$($_.EmailAddress)" -eq $Email) -or
+        ($_.PSObject.Properties['EmailAddresses'] -and $_.EmailAddresses -contains $Email)
+    } | Select-Object -First 1
+    if ($hit) { return $hit }
+    throw "Distribution list not found on this account: $Email"
+}
+
+function Resolve-HPRecipient {
+    # Email -> mailbox object, falling back to distribution group (DL members
+    # and permission trustees can be either kind of object).
+    param([Parameter(Mandatory)][string]$Email)
+    $mbx = Get-ExchangeMailbox $Email -ErrorAction SilentlyContinue
+    if ($mbx -is [object[]]) { $mbx = $mbx[0] }
+    if ($mbx) { return $mbx }
+    return Resolve-HPDistributionGroup -Email $Email
+}
+
+function Get-HPIdentityString {
+    # Object -> identity string acceptable to ADObjectIDParameter
+    # (DistinguishedName preferred, GUID fallback).
+    param([Parameter(Mandatory)]$Object)
+    foreach ($p in @('DistinguishedName', 'GUID', 'Guid')) {
+        if ($Object.PSObject.Properties[$p] -and $Object.$p) { return [string]$Object.$p }
+    }
+    throw "Resolved object exposes no DistinguishedName/GUID property - run Get-DistributionGroup <name> | Format-List * and recalibrate."
+}
+
 function Find-FirstCmdlet {
     # Returns the first cmdlet name from the candidate list that exists in
     # this session, or $null. Local-only check (see Test-HPCmdlet).

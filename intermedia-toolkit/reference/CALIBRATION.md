@@ -85,6 +85,32 @@ Get-UserMemberOf               [-Identity] <ADObjectIDParameter> [-Force]
   _Common.ps1) and also re-runs `Set-ConnectionSettings`. AccountID is cached
   in reference/connection.local.json after being asked once.
 
+## Identity formats (KB 12330, verified live 2026-07-31)
+
+- Identity parameters (ADObjectIDParameter) accept ONLY a GUID or a full AD
+  DistinguishedName — never an email address ("The format of identity
+  'x@domain.com' is not supported").
+- DN shape on this account: `CN=<alias>@amspecllc2013,OU=amspecllc2013,OU=Hosting,DC=exch128,DC=serverpod,DC=net`.
+- Resolution pattern: `Get-DistributionGroup <email>` and
+  `Get-ExchangeMailbox <email>` DO accept emails and return objects with
+  `DistinguishedName`, `GUID`, `EmailAddress`, `EmailAddresses`,
+  `DisplayName` properties; feed `.DistinguishedName` (or `.GUID`) to the
+  member/permission cmdlets. _Common.ps1 helpers: Resolve-HPDistributionGroup,
+  Resolve-HPMailbox, Resolve-HPRecipient, Get-HPIdentityString.
+- `Get-DistributionGroup -Identity *name*` supports wildcard search.
+
+## Transport (12152) findings
+
+- Small/targeted calls (Get-Domain, single-object lookups) work reliably.
+  The no-argument full `Get-DistributionGroup` enumeration reliably dies
+  with WinRM HTTP 12152 — large responses break on this network path or
+  server backend. Toolkit design: always use targeted lookups; avoid
+  unbounded enumerations.
+- After a 12152 the remote session is dead; the next call rebuilds it
+  WITHOUT connection settings and prompts for CredentialType. Recovery
+  without re-login: `. .\scripts\_Common.ps1; Ensure-HPConnection`
+  (verified working live).
+
 ## Open items
 
 - `-AccessRights` accepted string values are unverified; scripts default to
