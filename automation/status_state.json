@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-01T01:04:15.774412Z",
+  "polled": "2026-08-01T04:31:44.300014Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Reliance Jio India",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Metfone Cambodia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-01T01:04:15.774441Z"
+  "html_written": "2026-08-01T04:31:44.300036Z"
 }
