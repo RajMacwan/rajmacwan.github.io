@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-01T15:00:38.288252Z",
+  "polled": "2026-08-01T16:10:38.324538Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Hamburg, Germany",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-01T15:00:38.288290Z"
+  "html_written": "2026-08-01T16:10:38.324570Z"
 }
