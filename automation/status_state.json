@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-02T20:38:52.999308Z",
+  "polled": "2026-08-02T21:36:41.317114Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Safaricom Kenya",
+      "incident_name": "SMS Delivery Delays from Twilio to Unitel Angola",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-02T19:49:35.706548Z"
+  "html_written": "2026-08-02T21:36:41.317141Z"
 }
