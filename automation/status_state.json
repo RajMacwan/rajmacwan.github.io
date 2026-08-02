@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-02T16:16:24.528855Z",
+  "polled": "2026-08-02T17:27:45.249921Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -184,7 +184,7 @@
     "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "API degraded for A100s",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-02T16:16:24.528888Z"
+  "html_written": "2026-08-02T17:27:45.249949Z"
 }
