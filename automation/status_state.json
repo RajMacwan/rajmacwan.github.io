@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-03T11:58:30.648954Z",
+  "polled": "2026-08-03T15:08:44.280912Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Dedicated Egress in London",
+      "incident_name": "Cloudflare Workers build failures",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Cloud Control Panel Access",
       "fetched": true
     },
     "heroku": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000129",
       "fetched": true
     },
     "databricks": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Service Disruption Impacting Bank of America connections",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Econet Burundi",
+      "incident_name": "User Authentication Identity SNA Failure Increase for Indosat in Indonesia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-03T11:58:30.648982Z"
+  "html_written": "2026-08-03T15:08:44.280947Z"
 }
