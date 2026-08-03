@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-03T17:18:09.641656Z",
+  "polled": "2026-08-03T19:00:11.535273Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Cloud Control Panel Access",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -279,8 +279,8 @@
     },
     "twilio": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Issues using Speech-to-Text when using DeepGram for ConversationRelay",
+      "description": "Minor Service Outage",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to MTN Zambia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-03T17:18:09.641688Z"
+  "html_written": "2026-08-03T19:00:11.535314Z"
 }
