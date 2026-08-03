@@ -1,6 +1,5 @@
 {
   "history": [
-    "mitre-attack-for-defenders",
     "bitwarden-enterprise-review",
     "onion-services-v3-operator-notes",
     "osint-for-it-leaders",
@@ -15,8 +14,9 @@
     "rag-for-internal-documentation",
     "ransomware-negotiation-when-not-to-pay",
     "reading-the-threat-intelligence-landscape",
-    "running-a-warrant-canary"
+    "running-a-warrant-canary",
+    "setting-up-whonix-step-by-step"
   ],
-  "last_run": "2026-07-27T08:21:47.487770Z",
-  "last_slug": "running-a-warrant-canary"
+  "last_run": "2026-08-03T08:20:37.265053Z",
+  "last_slug": "setting-up-whonix-step-by-step"
 }
