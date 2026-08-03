@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-03T22:43:37.661830Z",
+  "polled": "2026-08-03T23:52:34.181392Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "AI Terms Page Presented When Using Twilio Conversations",
+      "incident_name": "SMS Delivery Delays from Twilio to Econet Burundi",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-03T22:43:37.661872Z"
+  "html_written": "2026-08-03T23:52:34.181427Z"
 }
