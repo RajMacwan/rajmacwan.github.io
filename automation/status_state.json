@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-03T19:00:11.535273Z",
+  "polled": "2026-08-03T20:35:56.888133Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -279,8 +279,8 @@
     },
     "twilio": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Alphanumeric and Long Codes to MTN Zambia",
+      "description": "Partially Degraded Service",
+      "incident_name": "SMS Delivery Delays From Twilio Short Codes, Long Codes, and Toll-Free Numbers to Bell Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-03T19:00:11.535314Z"
+  "html_written": "2026-08-03T20:35:56.888188Z"
 }
