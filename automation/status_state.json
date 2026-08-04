@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-04T18:47:44.244993Z",
+  "polled": "2026-08-04T20:14:13.114329Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "502 errors observed around Singapore, Jakarta and Bangkok",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -308,9 +308,9 @@
       "fetched": false
     },
     "discord": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Messaging failures",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-04T18:47:44.245019Z"
+  "html_written": "2026-08-04T20:14:13.114353Z"
 }
