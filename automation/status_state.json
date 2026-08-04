@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-04T17:02:06.903149Z",
+  "polled": "2026-08-04T18:47:44.244993Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "502 errors observed around Singapore, Jakarta and Bangkok",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "141 active Salesforce incidents",
+      "description": "142 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated 500 Errors on Multiple Twilio APIs",
+      "incident_name": "SMS Delivery Delays From Twilio Short Codes, Long Codes, and Toll-Free Numbers to Bell Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-04T17:02:06.903193Z"
+  "html_written": "2026-08-04T18:47:44.245019Z"
 }
