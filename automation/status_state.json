@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-04T02:34:19.608377Z",
+  "polled": "2026-08-04T05:32:58.159982Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Workers deployment Issues",
+      "incident_name": "Cloudflare Workers Runtime API issues",
       "fetched": true
     },
     "fastly": {
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Upstream Loss - Some Paths (in-maa/in-bom-2 to US Region)",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Claro Brazil",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Metfone Cambodia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-04T02:34:19.608404Z"
+  "html_written": "2026-08-04T05:32:58.160028Z"
 }
