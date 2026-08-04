@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-04T21:40:00.003638Z",
+  "polled": "2026-08-04T22:44:28.020684Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Spaces Cold Storage Billing",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors across many models",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated 500 Errors on Multiple Twilio APIs",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to One NZ New Zealand",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-04T21:40:00.003668Z"
+  "html_written": "2026-08-04T22:44:28.020716Z"
 }
