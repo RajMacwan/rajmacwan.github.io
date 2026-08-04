@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-04T08:06:34.960492Z",
+  "polled": "2026-08-04T10:48:27.389677Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Upstream Loss - Some Paths (in-maa/in-bom-2 to US Region)",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "140 active Salesforce incidents",
+      "description": "141 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-04T08:06:34.960529Z"
+  "html_written": "2026-08-04T10:48:27.389703Z"
 }
