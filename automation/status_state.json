@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-05T07:18:20.244614Z",
+  "polled": "2026-08-05T10:01:33.438582Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -172,19 +172,19 @@
     "anthropic": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance for Claude Mythos 5, Claude Fable 5, and Claude Opus 5",
+      "incident_name": "Degraded performance of multiple models",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating service degradation",
       "fetched": true
     },
     "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Significant degradation",
       "fetched": true
     },
     "huggingface": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issues Connecting to Video Rooms in in1 region",
+      "incident_name": "Issues Connecting to Video Rooms in the IN1 region",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T07:18:20.244640Z"
+  "html_written": "2026-08-05T10:01:33.438638Z"
 }
