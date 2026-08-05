@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-05T10:01:33.438582Z",
+  "polled": "2026-08-05T12:11:40.151620Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Some Copilot Cloud Agent jobs not starting",
       "fetched": true
     },
     "gitlab": {
@@ -184,7 +184,7 @@
     "replicate": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Significant degradation",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T10:01:33.438638Z"
+  "html_written": "2026-08-05T12:11:40.151652Z"
 }
