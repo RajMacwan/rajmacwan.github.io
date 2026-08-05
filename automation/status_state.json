@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-05T14:37:50.161783Z",
+  "polled": "2026-08-05T16:20:33.821377Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated errors with image generation",
       "fetched": true
     },
     "anthropic": {
@@ -272,15 +272,15 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded Performance - Banking Circle",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Robi/Axoata Bangladesh",
+      "incident_name": "User Authentication Identity SNA Missing Redirects for Three in United Kingdom",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T14:37:50.161811Z"
+  "html_written": "2026-08-05T16:20:33.821410Z"
 }
