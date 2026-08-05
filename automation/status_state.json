@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-05T22:20:06.633623Z",
+  "polled": "2026-08-05T23:26:06.472629Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Issues with Custom GPT actions",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T22:20:06.633686Z"
+  "html_written": "2026-08-05T23:26:06.472656Z"
 }
