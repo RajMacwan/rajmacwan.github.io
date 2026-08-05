@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-05T04:29:06.891433Z",
+  "polled": "2026-08-05T07:18:20.244614Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Managed Challenge Issues in China",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance for Claude Mythos 5, Claude Fable 5, and Claude Opus 5",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to C+W Sure United Kingdom",
+      "incident_name": "Issues Connecting to Video Rooms in in1 region",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T04:29:06.891458Z"
+  "html_written": "2026-08-05T07:18:20.244640Z"
 }
