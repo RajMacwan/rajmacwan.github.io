@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-05T23:26:06.472629Z",
+  "polled": "2026-08-06T00:51:43.516433Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "117 active Salesforce incidents",
+      "description": "105 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Failures from Twilio to Robi/Axoata Bangladesh",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Multiple Networks in Italy",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-05T23:26:06.472656Z"
+  "html_written": "2026-08-06T00:51:43.516463Z"
 }
