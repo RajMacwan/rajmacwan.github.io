@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-06T11:52:43.691845Z",
+  "polled": "2026-08-06T14:10:11.960207Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays from Twilio to Multiple Networks in Malaysia and Multiple Networks in Multiple Countries in Africa",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-06T11:52:43.691875Z"
+  "html_written": "2026-08-06T14:10:11.960238Z"
 }
