@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-07T13:49:11.825421Z",
+  "polled": "2026-08-07T14:42:10.895961Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Chicago (ORD)",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T13:49:11.825449Z"
+  "html_written": "2026-08-07T14:42:10.895982Z"
 }
