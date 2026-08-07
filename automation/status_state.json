@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-07T15:39:01.396837Z",
+  "polled": "2026-08-07T16:33:17.313104Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Worker's Observarbility Issues",
       "fetched": true
     },
     "fastly": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "MCP authentication failures in Automations and Cloud Agents",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "On Call Engineers are Investigating",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Chile",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T15:39:01.396868Z"
+  "html_written": "2026-08-07T16:33:17.313131Z"
 }
