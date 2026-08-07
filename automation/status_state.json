@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-07T17:29:44.114865Z",
+  "polled": "2026-08-07T18:25:44.025176Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Worker's Observarbility Issues",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Chile",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric Sender IDs and Long Codes to Orange Guinea",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T17:29:44.114889Z"
+  "html_written": "2026-08-07T18:25:44.025204Z"
 }
