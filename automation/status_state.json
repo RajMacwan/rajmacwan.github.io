@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-07T08:41:50.609820Z",
+  "polled": "2026-08-07T09:44:02.747167Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Failures from Twilio to Robi/Axoata Bangladesh",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T07:48:21.936453Z"
+  "html_written": "2026-08-07T09:44:02.747195Z"
 }
