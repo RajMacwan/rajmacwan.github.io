@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-07T10:37:24.783845Z",
+  "polled": "2026-08-07T11:30:03.924004Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Robi/Axoata Bangladesh",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T09:44:02.747195Z"
+  "html_written": "2026-08-07T11:30:03.924064Z"
 }
