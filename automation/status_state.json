@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-07T22:22:12.983628Z",
+  "polled": "2026-08-07T23:06:08.962959Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -308,9 +308,9 @@
       "fetched": false
     },
     "discord": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Issues sending messages for bots and users",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T22:22:12.983653Z"
+  "html_written": "2026-08-07T23:06:08.962988Z"
 }
