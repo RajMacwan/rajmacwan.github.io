@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-07T00:12:06.714633Z",
+  "polled": "2026-08-07T03:19:39.964325Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Incident with Actions",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Computer use errors in the ChatGPT desktop app",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T00:12:06.714665Z"
+  "html_written": "2026-08-07T03:19:39.964352Z"
 }
