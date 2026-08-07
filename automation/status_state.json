@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-07T21:48:29.521217Z",
+  "polled": "2026-08-07T22:22:12.983628Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Chile",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -308,9 +308,9 @@
       "fetched": false
     },
     "discord": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Issues sending messages for bots and users",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-07T20:57:56.892169Z"
+  "html_written": "2026-08-07T22:22:12.983653Z"
 }
