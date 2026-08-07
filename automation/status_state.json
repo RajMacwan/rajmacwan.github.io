@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-06T14:10:11.960207Z",
+  "polled": "2026-08-07T00:12:06.714633Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "105 active Salesforce incidents",
+      "description": "108 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Incident with Actions",
       "fetched": true
     },
     "gitlab": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Computer use errors in the ChatGPT desktop app",
       "fetched": true
     },
     "anthropic": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delayed Sends/Receives - Kite (KITE)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Multiple Networks in Malaysia and Multiple Networks in Multiple Countries in Africa",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-06T14:10:11.960238Z"
+  "html_written": "2026-08-07T00:12:06.714665Z"
 }
