@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-08T18:16:26.994799Z",
+  "polled": "2026-08-08T19:03:27.196866Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Account Registration, Droplets, and Related Services",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "110 active Salesforce incidents",
+      "description": "111 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,8 +272,8 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Delayed Sends/Receives - Kite (KITE)",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T17:49:33.966176Z"
+  "html_written": "2026-08-08T19:03:27.196893Z"
 }
