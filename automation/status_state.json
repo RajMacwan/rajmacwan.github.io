@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-08T08:08:19.951587Z",
+  "polled": "2026-08-08T08:58:40.105184Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "R2 Availability Issues",
+      "incident_name": "Network Performance Issues in Istanbul",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T07:30:09.057073Z"
+  "html_written": "2026-08-08T08:58:40.105215Z"
 }
