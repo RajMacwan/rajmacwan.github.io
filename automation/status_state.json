@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-08T15:29:55.846716Z",
+  "polled": "2026-08-08T15:58:37.670965Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Connectivity Issues in Egypt",
+      "incident_name": "Connectivity issues affecting access to some website from certain networks in Egypt",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T15:29:55.846741Z"
+  "html_written": "2026-08-08T15:58:37.670999Z"
 }
