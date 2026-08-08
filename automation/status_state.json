@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-08T14:54:07.307423Z",
+  "polled": "2026-08-08T15:29:55.846716Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Long Codes to Cellularone NE Arizona United States",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Multiple Networks in Portugal",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T14:54:07.307445Z"
+  "html_written": "2026-08-08T15:29:55.846741Z"
 }
