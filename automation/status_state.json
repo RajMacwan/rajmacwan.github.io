@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-08T14:19:19.844727Z",
+  "polled": "2026-08-08T14:54:07.307423Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "R2 Availability Issues",
+      "incident_name": "Connectivity Issues in Egypt",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to Multiple Networks in Portugal",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio Long Codes to Cellularone NE Arizona United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T13:48:37.038918Z"
+  "html_written": "2026-08-08T14:54:07.307445Z"
 }
