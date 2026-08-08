@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-08T10:16:18.700472Z",
+  "polled": "2026-08-08T10:55:01.917159Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Istanbul",
+      "incident_name": "R2 Availability Issues",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Multiple Networks in Portugal",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T10:16:18.700513Z"
+  "html_written": "2026-08-08T10:55:01.917185Z"
 }
