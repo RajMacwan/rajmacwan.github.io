@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T20:13:51.413274Z",
+  "polled": "2026-08-09T20:55:11.183092Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio United States Phone Numbers",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T19:46:22.340032Z"
+  "html_written": "2026-08-09T20:55:11.183119Z"
 }
