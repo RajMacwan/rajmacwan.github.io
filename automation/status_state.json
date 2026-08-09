@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T07:12:14.688059Z",
+  "polled": "2026-08-09T08:04:26.791008Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Delayed Sends/Receives - Kite (KITE)",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - Prediction Markets",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T07:12:14.688086Z"
+  "html_written": "2026-08-09T08:04:26.791034Z"
 }
