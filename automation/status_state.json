@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T10:57:12.971551Z",
+  "polled": "2026-08-09T11:35:16.107834Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "maintenance",
-      "description": "Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Delayed Capital One Transactions Updates",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T10:57:12.971581Z"
+  "html_written": "2026-08-09T11:35:16.107860Z"
 }
