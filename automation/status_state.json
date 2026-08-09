@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-08T23:41:13.477682Z",
+  "polled": "2026-08-09T00:35:40.248750Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Account Registration, Droplets, and Related Services",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "111 active Salesforce incidents",
+      "description": "105 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -236,9 +236,9 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Duo Phone Call Authentication Failures - United States",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "crowdstrike": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Long Codes to Multiple Networks in South Africa",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Mobile Numbers to Verizon United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-08T23:41:13.477715Z"
+  "html_written": "2026-08-09T00:35:40.248780Z"
 }
