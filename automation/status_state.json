@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-09T00:35:40.248750Z",
+  "polled": "2026-08-09T02:48:52.481893Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "R2 Availability Issues",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Account Registration, Droplets, and Related Services",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Mobile Numbers to Verizon United States",
+      "incident_name": "SMS Delivery Delays and Failures between Twilio Long Codes to Multiple Networks in South Africa",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T00:35:40.248780Z"
+  "html_written": "2026-08-09T02:48:52.481918Z"
 }
