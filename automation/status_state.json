@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T11:59:58.097438Z",
+  "polled": "2026-08-09T13:08:59.167415Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Rakuten Japan",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T11:35:16.107860Z"
+  "html_written": "2026-08-09T13:08:59.167442Z"
 }
