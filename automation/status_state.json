@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T16:35:39.708166Z",
+  "polled": "2026-08-09T17:08:13.422434Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Long Codes to Multiple Networks in South Africa",
+      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio United States Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T16:35:39.708191Z"
+  "html_written": "2026-08-09T17:08:13.422463Z"
 }
