@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-10T23:18:36.702770Z",
+  "polled": "2026-08-10T23:55:15.486792Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
+      "incident_name": "MMS Delivery Receipt Delays from Twilio to AT&T United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T23:18:36.702818Z"
+  "html_written": "2026-08-10T23:55:15.486831Z"
 }
