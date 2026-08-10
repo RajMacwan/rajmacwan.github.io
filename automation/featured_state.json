@@ -1,6 +1,5 @@
 {
   "history": [
-    "bitwarden-enterprise-review",
     "onion-services-v3-operator-notes",
     "osint-for-it-leaders",
     "dark-web-intel-what-actually-matters",
@@ -15,8 +14,9 @@
     "ransomware-negotiation-when-not-to-pay",
     "reading-the-threat-intelligence-landscape",
     "running-a-warrant-canary",
-    "setting-up-whonix-step-by-step"
+    "setting-up-whonix-step-by-step",
+    "shadow-ai-what-it-doesnt-know"
   ],
-  "last_run": "2026-08-03T08:20:37.265053Z",
-  "last_slug": "setting-up-whonix-step-by-step"
+  "last_run": "2026-08-10T06:06:05.750156Z",
+  "last_slug": "shadow-ai-what-it-doesnt-know"
 }
