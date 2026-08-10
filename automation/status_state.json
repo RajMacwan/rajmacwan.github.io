@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-10T22:39:48.769438Z",
+  "polled": "2026-08-10T23:18:36.702770Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -238,7 +238,7 @@
     "duo": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "New Signups Unavailable",
+      "incident_name": "",
       "fetched": true
     },
     "crowdstrike": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T22:39:48.769473Z"
+  "html_written": "2026-08-10T23:18:36.702818Z"
 }
