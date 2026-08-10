@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-10T21:56:11.341474Z",
+  "polled": "2026-08-10T22:39:48.769438Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends/Receives - Story",
+      "incident_name": "Delayed Sends/Receives - Kite (KITE)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio Phone Numbers to National Telecom and True Thailand",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T21:56:11.341517Z"
+  "html_written": "2026-08-10T22:39:48.769473Z"
 }
