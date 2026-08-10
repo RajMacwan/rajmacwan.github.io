@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-10T09:51:59.811699Z",
+  "polled": "2026-08-10T11:08:33.980768Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Issues with 1.1.1.1 public resolver in Tel Aviv (TLV)",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "96 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
+      "incident_name": "Voice Call Audio Quality Degradation From Network Subscribers to Twilio Colombia and Philippines Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T09:51:59.811728Z"
+  "html_written": "2026-08-10T11:08:33.980805Z"
 }
