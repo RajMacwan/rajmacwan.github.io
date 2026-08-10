@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-10T20:20:01.429242Z",
+  "polled": "2026-08-10T21:07:21.334008Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Disruption with Copilot for access to some models",
       "fetched": true
     },
     "gitlab": {
@@ -182,9 +182,9 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Delayed scaling due to node failure",
       "fetched": true
     },
     "huggingface": {
@@ -238,7 +238,7 @@
     "duo": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "New Signups Unavailable",
       "fetched": true
     },
     "crowdstrike": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T19:32:05.697323Z"
+  "html_written": "2026-08-10T21:07:21.334034Z"
 }
