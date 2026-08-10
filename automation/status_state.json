@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-10T11:57:42.263520Z",
+  "polled": "2026-08-10T13:25:28.578691Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Issues with 1.1.1.1 public resolver in Tel Aviv (TLV)",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation From Network Subscribers to Twilio Colombia and Philippines Phone Numbers",
+      "incident_name": "Voice Call Audio Quality Degradation From Network Subscribers to Twilio Colombia and Philippines Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-10T11:08:33.980805Z"
+  "html_written": "2026-08-10T13:25:28.578730Z"
 }
