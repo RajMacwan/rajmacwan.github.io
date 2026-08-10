@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-09T23:50:55.161623Z",
+  "polled": "2026-08-10T01:50:06.940854Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "105 active Salesforce incidents",
+      "description": "95 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-09T23:14:24.956026Z"
+  "html_written": "2026-08-10T01:50:06.940881Z"
 }
