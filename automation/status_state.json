@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-11T18:31:37.672195Z",
+  "polled": "2026-08-11T19:42:29.776758Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays From a Subset of Twilio Long Codes to Lebara France",
+      "incident_name": "Voice Call Audio Quality Degradation from Network Subscribers to Twilio Colombia Landline Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-11T17:35:42.767185Z"
+  "html_written": "2026-08-11T19:42:29.776800Z"
 }
