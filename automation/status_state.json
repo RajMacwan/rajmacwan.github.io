@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-11T13:06:08.287248Z",
+  "polled": "2026-08-11T14:30:17.343463Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Cloudflare Analytics Delays",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Germany",
+      "incident_name": "Voice Call Audio Quality Degradation From a Subset of Twilio Phone Numbers to Multiple Countries in Europe",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-11T13:06:08.287274Z"
+  "html_written": "2026-08-11T14:30:17.343494Z"
 }
