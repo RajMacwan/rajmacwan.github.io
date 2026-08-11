@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-11T21:23:15.467074Z",
+  "polled": "2026-08-11T22:12:03.375741Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Increase in errors on API, Codex and Work Mode",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-11T20:27:34.802238Z"
+  "html_written": "2026-08-11T22:12:03.375766Z"
 }
