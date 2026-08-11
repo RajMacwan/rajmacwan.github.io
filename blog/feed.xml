@@ -6,8 +6,16 @@
     <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
     <language>en-us</language>
     <atom:link href="https://macwangrid.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 08 Jul 2026 08:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2026 15:00:00 GMT</lastBuildDate>
 
+    <item>
+      <title>From Intel to Detection: Closing the Last Mile</title>
+      <link>https://macwangrid.com/blog/from-intel-to-detection-the-last-mile.html</link>
+      <description>Most threat intel dies in a report nobody operationalizes. The value is in the last mile — turning what you learned about an adversary into a detection that fires. Here's how that handoff actually works.</description>
+      <pubDate>Tue, 11 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/from-intel-to-detection-the-last-mile.html</guid>
+      <category>IntelGrid</category>
+    </item>
     <item>
       <title>The Patch Window Is Dead: Defending at N-Day Speed</title>
       <link>https://macwangrid.com/blog/patch-window-is-dead.html</link>

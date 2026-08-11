@@ -243,6 +243,15 @@
     "date": ""
   },
   {
+    "slug": "from-intel-to-detection-the-last-mile",
+    "url": "blog/from-intel-to-detection-the-last-mile.html",
+    "title": "From Intel to Detection: Closing the Last Mile",
+    "summary": "Most threat intelligence dies in a document. A well-researched report on an adversary's tradecraft gets written, circulated, admired, and filed \u2014 and nothing in the environment changes as a result. The value of intel is not the knowing....",
+    "pill_class": "grid-pill-intel",
+    "grid": "IntelGrid",
+    "date": ""
+  },
+  {
     "slug": "gdpr-breach-notification-requirements",
     "url": "blog/gdpr-breach-notification-requirements.html",
     "title": "GDPR Breach Notification Requirements",
