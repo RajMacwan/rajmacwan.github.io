@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-12T18:06:23.959143Z",
+  "polled": "2026-08-12T19:17:36.089071Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "84 active Salesforce incidents",
+      "description": "85 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance for multiple models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From a Subset of Twilio Phone Numbers to Multiple Networks in Peru",
+      "incident_name": "Phone Number Configuration Failures",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-12T18:06:23.959176Z"
+  "html_written": "2026-08-12T19:17:36.089102Z"
 }
