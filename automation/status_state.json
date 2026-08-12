@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-12T07:00:02.486725Z",
+  "polled": "2026-08-12T08:25:25.019408Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,14 +280,14 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity Gateway API Failure Increase for Three in United Kingdom",
+      "incident_name": "IP Retrieval Failing for EU Regional Customers",
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "postmark": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-12T07:00:02.486755Z"
+  "html_written": "2026-08-12T08:25:25.019438Z"
 }
