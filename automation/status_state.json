@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-12T14:00:08.839275Z",
+  "polled": "2026-08-12T15:07:25.313984Z",
   "services": {
     "cloudflare": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Email Security delivery impacted by Spamhaus listing",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "83 active Salesforce incidents",
+      "description": "84 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Zong Pakistan",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Peru",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-12T14:00:08.839306Z"
+  "html_written": "2026-08-12T15:07:25.314013Z"
 }
