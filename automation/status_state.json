@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-12T12:28:54.785252Z",
+  "polled": "2026-08-12T14:00:08.839275Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance for multiple models",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "IP Retrieval Failing for EU Regional Customers",
+      "incident_name": "SMS Delivery Failures from Twilio to Zong Pakistan",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-12T12:28:54.785277Z"
+  "html_written": "2026-08-12T14:00:08.839306Z"
 }
