@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-13T20:06:12.980869Z",
+  "polled": "2026-08-13T20:59:46.786109Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Sky UK",
+      "incident_name": "SendGrid product switcher signup unavailable",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-13T20:06:12.980927Z"
+  "html_written": "2026-08-13T20:59:46.786143Z"
 }
