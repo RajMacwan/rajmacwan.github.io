@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-13T14:02:21.661964Z",
+  "polled": "2026-08-13T15:11:40.552770Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Cloudflare Workers AI errors with Specific models",
       "fetched": true
     },
     "fastly": {
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Incident with Webhooks",
       "fetched": true
     },
     "gitlab": {
@@ -166,19 +166,19 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Error while creating custom RBAC roles for Enterprise users",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors for Claude Mythos 5, Claude Fable 5, and Claude Sonnet 5",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Investigating service degradation \u2014 Automations, Cloud Agents, and IDE",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-13T14:02:21.661991Z"
+  "html_written": "2026-08-13T15:11:40.552826Z"
 }
