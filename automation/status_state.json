@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-12T23:41:06.364341Z",
+  "polled": "2026-08-13T00:45:06.557793Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "82 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Peru",
+      "incident_name": "User Authentication Identity Gateway API Failure Increase for Bell in Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-12T23:41:06.364373Z"
+  "html_written": "2026-08-13T00:45:06.557833Z"
 }
