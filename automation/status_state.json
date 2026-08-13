@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-13T20:59:46.786109Z",
+  "polled": "2026-08-13T21:55:29.955788Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increased 503s when making changes to Cloudflare dash and API for Magic Transit and Cloudflare WAN and CF1 Appliance",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Emerging Service Issue - API - All Regions",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Issue - Linode Kubernetes Engine - IAD2 (Washington)",
       "fetched": true
     },
     "aws": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SendGrid product switcher signup unavailable",
+      "incident_name": "SMS Delivery Delays from Twilio to Sky UK",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-13T20:59:46.786143Z"
+  "html_written": "2026-08-13T21:55:29.955830Z"
 }
