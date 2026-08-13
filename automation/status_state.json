@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-13T05:12:57.089615Z",
+  "polled": "2026-08-13T06:50:17.750842Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "maintenance",
       "description": "Under Maintenance",
-      "incident_name": "Service Disruption Impacting Navy Federal Credit Union connections",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity Gateway API Failure Increase for Bell in Canada",
+      "incident_name": "SMS Delivery Delays From a Subset of Twilio Short Codes and Toll-Free Numbers to Verizon United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-13T05:12:57.089649Z"
+  "html_written": "2026-08-13T06:50:17.750884Z"
 }
