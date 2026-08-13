@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-13T21:55:29.955788Z",
+  "polled": "2026-08-13T22:42:58.768229Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Error while creating custom RBAC roles for Enterprise users",
+      "incident_name": "Elevated errors in ChatGPT conversations for Free users",
       "fetched": true
     },
     "anthropic": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Sky UK",
+      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Short Codes to T-Mobile United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-13T21:55:29.955830Z"
+  "html_written": "2026-08-13T22:42:58.768259Z"
 }
