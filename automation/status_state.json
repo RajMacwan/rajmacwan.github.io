@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-14T00:08:04.905743Z",
+  "polled": "2026-08-14T02:44:05.710971Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Network Performance Issues in Quer\u00e9taro, Mexico",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Emerging Service Issue - API - All Regions",
+      "incident_name": "Upstream Issues - Ubuntu",
       "fetched": true
     },
     "aws": {
@@ -170,10 +170,10 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "cursor": {
       "indicator": "none",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to DiGi Malaysia",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T00:08:04.905776Z"
+  "html_written": "2026-08-14T02:44:05.711000Z"
 }
