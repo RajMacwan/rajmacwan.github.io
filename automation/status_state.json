@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-14T19:58:17.208971Z",
+  "polled": "2026-08-14T20:37:46.635262Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Durable Objects and Cloudflare Workflows availability drop",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Upstream Issues - Ubuntu",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Connectivity Issue - IT-MIL (Milan) data center",
       "fetched": true
     },
     "aws": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Service disruption on Claude services",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T19:58:17.209033Z"
+  "html_written": "2026-08-14T20:37:46.635294Z"
 }
