@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T08:51:07.782644Z",
+  "polled": "2026-08-14T10:02:24.878124Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Sky United Kingdom",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T08:51:07.782677Z"
+  "html_written": "2026-08-14T10:02:24.878165Z"
 }
