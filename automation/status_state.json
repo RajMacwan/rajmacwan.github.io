@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T04:30:15.677916Z",
+  "polled": "2026-08-14T06:03:41.600399Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "Active -Azure Portal access  issues affecting Australia Regions",
       "fetched": true
     },
     "gcp": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T04:30:15.677952Z"
+  "html_written": "2026-08-14T06:03:41.600431Z"
 }
