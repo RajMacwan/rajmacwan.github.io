@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T10:02:24.878124Z",
+  "polled": "2026-08-14T11:06:48.026791Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,10 +170,10 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "cursor": {
       "indicator": "none",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T10:02:24.878165Z"
+  "html_written": "2026-08-14T11:06:48.026818Z"
 }
