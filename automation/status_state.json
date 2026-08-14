@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T21:56:36.179469Z",
+  "polled": "2026-08-14T22:27:53.621127Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Unexpected GPT-5.6 Terra responses",
       "fetched": true
     },
     "anthropic": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Service disruption on Claude services",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T21:56:36.179508Z"
+  "html_written": "2026-08-14T22:27:53.621155Z"
 }
