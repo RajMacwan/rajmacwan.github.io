@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-14T19:10:35.769009Z",
+  "polled": "2026-08-14T19:58:17.208971Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Durable Objects and Cloudflare Workflows availability drop",
       "fetched": true
     },
     "fastly": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000158",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Short Codes to T-Mobile United States",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T19:10:35.769038Z"
+  "html_written": "2026-08-14T19:58:17.209033Z"
 }
