@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T13:06:39.276447Z",
+  "polled": "2026-08-14T14:19:24.856934Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Upstream Issues - Ubuntu",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "82 active Salesforce incidents",
+      "description": "83 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T13:06:39.276476Z"
+  "html_written": "2026-08-14T14:19:24.856978Z"
 }
