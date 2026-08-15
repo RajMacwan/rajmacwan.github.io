@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-14T23:47:45.765205Z",
+  "polled": "2026-08-15T00:24:11.197444Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Elevated errors for Claude Fable 5",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-14T22:52:18.571696Z"
+  "html_written": "2026-08-15T00:24:11.197476Z"
 }
