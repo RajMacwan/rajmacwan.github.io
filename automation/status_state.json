@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T13:54:18.663403Z",
+  "polled": "2026-08-15T14:22:38.369970Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Colombia",
+      "incident_name": "Elevated Microsoft 365 IP Blocks Causing Delivery Failures for Multiple Users",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T13:54:18.663432Z"
+  "html_written": "2026-08-15T14:22:38.370000Z"
 }
