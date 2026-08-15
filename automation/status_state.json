@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T21:33:24.787090Z",
+  "polled": "2026-08-15T21:53:43.565278Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telemat Cel Brazil",
+      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in Middle East & African Countries",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T21:33:24.787123Z"
+  "html_written": "2026-08-15T21:53:43.565331Z"
 }
