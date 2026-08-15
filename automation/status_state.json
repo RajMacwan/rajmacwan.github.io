@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T00:24:11.197444Z",
+  "polled": "2026-08-15T01:56:30.406756Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors for Claude Fable 5",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "cbETH Network Support Update",
+      "incident_name": "SUI - Delayed Sends/Receives",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Colombia",
+      "incident_name": "Widespread Microsoft 365 IP Block Causing Delivery Failures for Multiple Users",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T00:24:11.197476Z"
+  "html_written": "2026-08-15T01:56:30.406791Z"
 }
