@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T01:56:30.406756Z",
+  "polled": "2026-08-15T02:54:43.210314Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "SUI - Delayed Sends/Receives",
+      "incident_name": "cbETH Network Support Update",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Widespread Microsoft 365 IP Block Causing Delivery Failures for Multiple Users",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T01:56:30.406791Z"
+  "html_written": "2026-08-15T02:54:43.210342Z"
 }
