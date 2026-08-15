@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T05:24:10.026348Z",
+  "polled": "2026-08-15T05:50:55.675336Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -266,15 +266,15 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "cbETH Network Support Update",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - Card Withdrawals",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T04:50:35.585746Z"
+  "html_written": "2026-08-15T05:50:55.675361Z"
 }
