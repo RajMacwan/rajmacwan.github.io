@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T08:48:33.705538Z",
+  "polled": "2026-08-15T09:12:13.239694Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Unexpected GPT-5.6 Terra responses",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T08:48:33.705570Z"
+  "html_written": "2026-08-15T09:12:13.239726Z"
 }
