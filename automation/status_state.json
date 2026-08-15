@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-15T08:10:23.823484Z",
+  "polled": "2026-08-15T08:48:33.705538Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to KDDI Japan",
+      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in Multiple Countries",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-15T08:10:23.823517Z"
+  "html_written": "2026-08-15T08:48:33.705570Z"
 }
