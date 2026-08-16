@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-16T22:20:31.785484Z",
+  "polled": "2026-08-16T22:46:53.570853Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Service disruption on Claude services",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-16T22:20:31.785511Z"
+  "html_written": "2026-08-16T22:46:53.570882Z"
 }
