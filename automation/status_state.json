@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-16T01:19:06.981561Z",
+  "polled": "2026-08-16T02:36:31.024275Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "83 active Salesforce incidents",
+      "description": "84 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to KDDI Japan",
+      "incident_name": "SMS Delivery Delays from Twilio to Telemat Cel Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-16T01:19:06.981626Z"
+  "html_written": "2026-08-16T02:36:31.024327Z"
 }
