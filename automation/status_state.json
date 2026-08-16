@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-16T18:00:28.195313Z",
+  "polled": "2026-08-16T18:43:45.880617Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,8 +260,8 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "maintenance",
-      "description": "Under Maintenance",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
       "incident_name": "Service Disruption Impacting Navy Federal Credit Union connections",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-16T18:00:28.195342Z"
+  "html_written": "2026-08-16T18:43:45.880644Z"
 }
