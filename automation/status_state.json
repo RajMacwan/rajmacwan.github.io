@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T05:49:24.110011Z",
+  "polled": "2026-08-17T06:23:56.230313Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors impacting Interconnect in Frankfurt Edge",
+      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T05:08:38.015133Z"
+  "html_written": "2026-08-17T06:23:56.230346Z"
 }
