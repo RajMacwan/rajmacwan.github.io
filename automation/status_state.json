@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T15:10:28.668703Z",
+  "polled": "2026-08-17T15:43:55.926585Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -172,13 +172,13 @@
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded performance for Claude Opus 5, Claude Sonnet 5",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "GitHub degradation affecting some Cursor services \u2014 Automations and Cloud Agents",
+      "incident_name": "GitHub degradation affecting some Cursor services \u2014 Automations, Cloud Agents, Codebase",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T15:10:28.668762Z"
+  "html_written": "2026-08-17T15:43:55.926612Z"
 }
