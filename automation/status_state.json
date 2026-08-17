@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-17T19:57:22.854343Z",
+  "polled": "2026-08-17T20:33:17.233867Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Phoenix, Los Angeles",
+      "incident_name": "Lists Service Degraded",
       "fetched": true
     },
     "fastly": {
@@ -15,7 +15,7 @@
     },
     "vercel": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
+      "description": "Partially Degraded Service",
       "incident_name": "Partial disruption of Observability, Analytics, Firewall, Usage, and Login in Dashboard",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Disruption: Inbound Voice Calls to France Numbers and Frankfurt Interconnect",
+      "incident_name": "User Authentication Identity SNA Failure Increase for AT&T in United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T19:57:22.854372Z"
+  "html_written": "2026-08-17T20:33:17.233901Z"
 }
