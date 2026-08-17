@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T01:16:27.973195Z",
+  "polled": "2026-08-17T02:35:02.972946Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Mobile Numbers to Iraq",
+      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T01:16:27.973230Z"
+  "html_written": "2026-08-17T02:35:02.972977Z"
 }
