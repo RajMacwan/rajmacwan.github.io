@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T16:41:24.278991Z",
+  "polled": "2026-08-17T17:11:18.847873Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -15,13 +15,13 @@
     },
     "vercel": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "description": "Minor Service Outage",
       "incident_name": "Partial disruption of Observability, Analytics, Firewall, Usage, and Login in Dashboard",
       "fetched": true
     },
     "netlify": {
-      "indicator": "major",
-      "description": "Partial System Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T16:41:24.279032Z"
+  "html_written": "2026-08-17T17:11:18.847904Z"
 }
