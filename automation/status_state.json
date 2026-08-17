@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-17T19:01:50.518581Z",
+  "polled": "2026-08-17T19:37:10.690726Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Dashboard Issues",
+      "incident_name": "Network Performance Issues in Phoenix",
       "fetched": true
     },
     "fastly": {
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "major",
-      "description": "Partial System Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Virtual Agent",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T19:01:50.518622Z"
+  "html_written": "2026-08-17T19:37:10.690757Z"
 }
