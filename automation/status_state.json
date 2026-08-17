@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T03:30:51.812002Z",
+  "polled": "2026-08-17T04:23:27.695828Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
