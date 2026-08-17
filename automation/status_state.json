@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T21:33:17.529434Z",
+  "polled": "2026-08-17T21:56:39.988380Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Grok 4.6 availability issues",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T21:33:17.529463Z"
+  "html_written": "2026-08-17T21:56:39.988419Z"
 }
