@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T06:23:56.230313Z",
+  "polled": "2026-08-17T07:32:08.201511Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Claro Colombia",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T06:23:56.230346Z"
+  "html_written": "2026-08-17T07:32:08.201549Z"
 }
