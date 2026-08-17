@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-17T11:57:02.183212Z",
+  "polled": "2026-08-17T12:54:19.460388Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Lists Bulk Actions failing",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to DiGi Malaysia",
+      "incident_name": "SMS Delivery Delays from Twilio to Telemat Cel Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T11:57:02.183242Z"
+  "html_written": "2026-08-17T12:54:19.460422Z"
 }
