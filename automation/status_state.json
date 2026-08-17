@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T20:59:36.569713Z",
+  "polled": "2026-08-17T21:33:17.529434Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Partial disruption of Observability, Analytics, Firewall, Usage, and Login in Dashboard",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Incident with GitHub.com",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Telemat Cel Brazil",
+      "incident_name": "Voice Call Audio Quality Degradation from a Subset of Twilio Phone Numbers to Turkey",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T20:59:36.569744Z"
+  "html_written": "2026-08-17T21:33:17.529463Z"
 }
