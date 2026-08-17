@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T14:40:20.410076Z",
+  "polled": "2026-08-17T15:10:28.668703Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "major",
+      "description": "Partial System Outage",
       "incident_name": "",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delay with transcript availability in Twilio Console",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Iraq",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T14:40:20.410110Z"
+  "html_written": "2026-08-17T15:10:28.668762Z"
 }
