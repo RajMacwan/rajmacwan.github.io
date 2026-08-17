@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T20:33:17.233867Z",
+  "polled": "2026-08-17T20:59:36.569713Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "GitHub degradation affecting some Cursor services \u2014 Automations, Cloud Agents, Codebase",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Failure Increase for AT&T in United States",
+      "incident_name": "SMS Delivery Failures from Twilio to Telemat Cel Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T20:33:17.233901Z"
+  "html_written": "2026-08-17T20:59:36.569744Z"
 }
