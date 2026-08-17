@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-17T04:23:27.695828Z",
+  "polled": "2026-08-17T05:08:38.015103Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telemat Cel and Algar Telecom Brazil",
+      "incident_name": "Elevated errors impacting Interconnect in Frankfurt Edge",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-17T03:30:51.812043Z"
+  "html_written": "2026-08-17T05:08:38.015133Z"
 }
