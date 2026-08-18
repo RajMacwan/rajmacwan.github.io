@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T19:00:34.670096Z",
+  "polled": "2026-08-18T19:36:14.719128Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated errors deploying Sites",
       "fetched": true
     },
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degraded performance for multiple models",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Flex login errors with SSOv2",
+      "incident_name": "1Console Login Unavailable",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T19:00:34.670132Z"
+  "html_written": "2026-08-18T19:36:14.719159Z"
 }
