@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T03:54:09.312101Z",
+  "polled": "2026-08-18T04:35:23.362975Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation from a Subset of Twilio Phone Numbers to Turkey",
+      "incident_name": "SMS Delivery Delays from Twilio to Free Caraibe France",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T03:54:09.312133Z"
+  "html_written": "2026-08-18T04:35:23.363011Z"
 }
