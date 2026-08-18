@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T16:00:34.072745Z",
+  "polled": "2026-08-18T16:45:46.153761Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance for multiple models",
       "fetched": true
     },
     "cursor": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from T-Mobile Network Subscribers to a Subset of Twilio United States Phone Numbers",
+      "incident_name": "SMS Delivery Delays from Twilio to Free Caraibe France",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T16:00:34.072777Z"
+  "html_written": "2026-08-18T16:45:46.153793Z"
 }
