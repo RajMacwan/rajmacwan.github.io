@@ -6,8 +6,16 @@
     <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
     <language>en-us</language>
     <atom:link href="https://macwangrid.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 11 Aug 2026 15:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 18 Aug 2026 15:00:00 GMT</lastBuildDate>
 
+    <item>
+      <title>Detection Engineering as a Product, Not a Project</title>
+      <link>https://macwangrid.com/blog/detection-engineering-as-a-product.html</link>
+      <description>Detections decay. Treating detection engineering as a one-time project is why your SOC drowns in stale rules. Run it like a product with a backlog, owners, and a decommission process.</description>
+      <pubDate>Tue, 18 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/detection-engineering-as-a-product.html</guid>
+      <category>ThreatGrid</category>
+    </item>
     <item>
       <title>From Intel to Detection: Closing the Last Mile</title>
       <link>https://macwangrid.com/blog/from-intel-to-detection-the-last-mile.html</link>

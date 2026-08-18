@@ -162,6 +162,15 @@
     "date": ""
   },
   {
+    "slug": "detection-engineering-as-a-product",
+    "url": "blog/detection-engineering-as-a-product.html",
+    "title": "Detection Engineering as a Product, Not a Project",
+    "summary": "Every detection you write starts dying the moment it ships. The environment drifts, the adversary changes tradecraft, a logging source gets renamed, and the rule that fired perfectly in the demo quietly stops matching anything real. Most...",
+    "pill_class": "grid-pill-threat",
+    "grid": "ThreatGrid",
+    "date": ""
+  },
+  {
     "slug": "economics-of-genai-in-enterprise",
     "url": "blog/economics-of-genai-in-enterprise.html",
     "title": "The Economics of GenAI in Enterprise",
