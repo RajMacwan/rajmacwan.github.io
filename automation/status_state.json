@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T19:36:14.719128Z",
+  "polled": "2026-08-18T19:55:00.372965Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors deploying Sites",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -178,7 +178,7 @@
     "cursor": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Grok Bot connector delays",
+      "incident_name": "GitHub-connected Cloud Agent workflows degraded",
       "fetched": true
     },
     "replicate": {
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Chat Support Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T19:36:14.719159Z"
+  "html_written": "2026-08-18T19:55:00.372996Z"
 }
