@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T12:46:32.445922Z",
+  "polled": "2026-08-18T13:31:35.163393Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "INC20000163",
       "fetched": true
     },
     "databricks": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T11:51:21.293531Z"
+  "html_written": "2026-08-18T13:31:35.163427Z"
 }
