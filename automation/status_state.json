@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T20:50:00.524883Z",
+  "polled": "2026-08-18T21:10:50.767696Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Flex login errors with SSOv2",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Claro Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T20:50:00.524912Z"
+  "html_written": "2026-08-18T21:10:50.767727Z"
 }
