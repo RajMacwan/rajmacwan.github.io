@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T18:14:44.117182Z",
+  "polled": "2026-08-18T19:00:34.670096Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Degraded performance for multiple models",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Grok Bot connector delays",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T18:14:44.117211Z"
+  "html_written": "2026-08-18T19:00:34.670132Z"
 }
