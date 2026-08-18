@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-18T16:45:46.153761Z",
+  "polled": "2026-08-18T17:12:50.836742Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Free Caraibe France",
+      "incident_name": "Flex login errors with SSOv2",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-18T16:45:46.153793Z"
+  "html_written": "2026-08-18T17:12:50.836774Z"
 }
