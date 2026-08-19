@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T14:15:59.101776Z",
+  "polled": "2026-08-19T14:56:03.826033Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Degraded Performance in MKC1",
+      "incident_name": "Major Service Interruption in MKC1",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telecall Brazil",
+      "incident_name": "IncomingPhoneNumbers API Failures",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T14:15:59.101815Z"
+  "html_written": "2026-08-19T14:56:03.826075Z"
 }
