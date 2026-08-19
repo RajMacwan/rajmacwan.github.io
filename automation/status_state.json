@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T22:04:22.013567Z",
+  "polled": "2026-08-19T22:37:01.943314Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in United States",
+      "incident_name": "Increased Latency and Failures on Porting APIs",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T22:04:22.013594Z"
+  "html_written": "2026-08-19T22:37:01.943344Z"
 }
