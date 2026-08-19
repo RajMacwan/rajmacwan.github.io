@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-19T17:11:15.953672Z",
+  "polled": "2026-08-19T17:44:40.633112Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers AI GLM 5.2 is unavailable",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T17:11:15.953704Z"
+  "html_written": "2026-08-19T17:44:40.633181Z"
 }
