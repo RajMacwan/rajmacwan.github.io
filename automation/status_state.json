@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T01:15:32.656519Z",
+  "polled": "2026-08-19T02:33:11.751562Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays From a Subset of Twilio Long Codes to C-Spire United States",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T01:15:32.656553Z"
+  "html_written": "2026-08-19T02:33:11.751602Z"
 }
