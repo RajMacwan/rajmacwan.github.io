@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T22:37:01.943314Z",
+  "polled": "2026-08-19T22:58:33.387964Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Increased Latency and Failures on Porting APIs",
+      "incident_name": "Event Streams Delivery Stopped",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T22:37:01.943344Z"
+  "html_written": "2026-08-19T22:58:33.387995Z"
 }
