@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T14:56:03.826033Z",
+  "polled": "2026-08-19T15:33:46.804943Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "major",
+      "description": "Partial System Outage",
       "incident_name": "Major Service Interruption in MKC1",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T14:56:03.826075Z"
+  "html_written": "2026-08-19T15:33:46.805000Z"
 }
