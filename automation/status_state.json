@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-19T06:00:14.541946Z",
+  "polled": "2026-08-19T07:01:34.953636Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Increased Errors for Durable Objects in the Hong Kong region",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "79 active Salesforce incidents",
+      "description": "80 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Telecall Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T06:00:14.541976Z"
+  "html_written": "2026-08-19T07:01:34.953670Z"
 }
