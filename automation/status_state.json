@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T07:50:14.908005Z",
+  "polled": "2026-08-19T08:37:16.207682Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Telecall Brazil",
+      "incident_name": "SMS Delivery Delays from Twilio to Telenet Belgium",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T07:50:14.908035Z"
+  "html_written": "2026-08-19T08:37:16.207717Z"
 }
