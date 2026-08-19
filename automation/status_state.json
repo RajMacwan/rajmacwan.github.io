@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T15:33:46.804943Z",
+  "polled": "2026-08-19T16:01:12.881147Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Increased error rates for Composer 2.5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T15:33:46.805000Z"
+  "html_written": "2026-08-19T16:01:12.881179Z"
 }
