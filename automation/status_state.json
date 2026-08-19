@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-19T22:58:33.387964Z",
+  "polled": "2026-08-19T23:29:58.619658Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated error rates in Chicago (ORD) region.",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Fable 5 unavailable",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Event Streams Delivery Stopped",
+      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T22:58:33.387995Z"
+  "html_written": "2026-08-19T23:29:58.619700Z"
 }
