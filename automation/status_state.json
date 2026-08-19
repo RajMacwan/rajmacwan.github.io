@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T11:53:24.822389Z",
+  "polled": "2026-08-19T12:46:58.616862Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telenet BidCo NV and Base Networks in Belgium",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to Bell Aliant Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T11:29:36.752772Z"
+  "html_written": "2026-08-19T12:46:58.616893Z"
 }
