@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-19T16:01:12.881147Z",
+  "polled": "2026-08-19T16:44:01.174251Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Workers AI GLM 5.2 is unavailable",
       "fetched": true
     },
     "fastly": {
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "cbETH Network Support Update",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - CDP Wallets",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T16:01:12.881179Z"
+  "html_written": "2026-08-19T16:44:01.174280Z"
 }
