@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T10:28:53.159951Z",
+  "polled": "2026-08-19T10:56:47.542925Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,8 +170,8 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Degraded performance for Claude Opus 5 and Claude Haiku 4.5",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures From a Subset of Twilio Long Codes to Bell Aliant Canada",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to Bell Aliant Canada",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T09:52:13.538815Z"
+  "html_written": "2026-08-19T10:56:47.542959Z"
 }
