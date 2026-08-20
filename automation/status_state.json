@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-20T03:26:59.437032Z",
+  "polled": "2026-08-20T04:08:45.548695Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,10 +152,10 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "dropbox": {
       "indicator": "none",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T03:26:59.437067Z"
+  "html_written": "2026-08-20T04:08:45.548729Z"
 }
