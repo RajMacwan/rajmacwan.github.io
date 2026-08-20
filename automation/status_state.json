@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-20T14:42:40.209871Z",
+  "polled": "2026-08-20T15:17:48.397055Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in India",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Intermittent failures creating agent tasks",
       "fetched": true
     },
     "gitlab": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T14:42:40.209902Z"
+  "html_written": "2026-08-20T15:17:48.397086Z"
 }
