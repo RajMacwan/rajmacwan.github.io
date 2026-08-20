@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-20T15:52:31.984597Z",
+  "polled": "2026-08-20T16:35:02.856709Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to T-Mobile United States",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T15:52:31.984638Z"
+  "html_written": "2026-08-20T16:35:02.856736Z"
 }
