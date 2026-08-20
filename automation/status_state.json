@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-20T19:04:23.407622Z",
+  "polled": "2026-08-20T19:41:26.698599Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated Errors R2 and Durable Objects",
+      "incident_name": "Missing R2 Audit Logs",
       "fetched": true
     },
     "fastly": {
@@ -28,7 +28,7 @@
     "render": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Deployment Issues",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "major",
-      "description": "1 active GCP incident",
-      "incident_name": "We are investigating an issue where customers may experience timeouts, service degradations, errors, and elevated latencies across multiple ",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors on requests to multiple models",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T19:04:23.407648Z"
+  "html_written": "2026-08-20T19:41:26.698627Z"
 }
