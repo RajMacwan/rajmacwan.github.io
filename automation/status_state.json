@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-19T23:51:44.592797Z",
+  "polled": "2026-08-20T01:14:31.118068Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "79 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "cbETH Network Support Update",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Event Streams Delivery Stopped",
+      "description": "Partially Degraded Service",
+      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-19T23:51:44.592849Z"
+  "html_written": "2026-08-20T01:14:31.118099Z"
 }
