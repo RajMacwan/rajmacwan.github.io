@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-20T17:41:51.460404Z",
+  "polled": "2026-08-20T18:15:07.502965Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Durable Objects and Downstream Service Errors",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -14,20 +14,20 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "New container functions are failing",
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "render": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Deployment Issues",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated Codex API authentication errors",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T17:41:51.460446Z"
+  "html_written": "2026-08-20T18:15:07.503000Z"
 }
