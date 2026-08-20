@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-20T11:37:52.953790Z",
+  "polled": "2026-08-20T12:00:32.751698Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Network Performance Issues in India",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T11:01:20.655866Z"
+  "html_written": "2026-08-20T12:00:32.751727Z"
 }
