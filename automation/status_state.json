@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-20T15:17:48.397055Z",
+  "polled": "2026-08-20T15:52:31.984597Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Deployment Issues",
       "fetched": true
     },
     "digitalocean": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "INC20000168",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T15:17:48.397086Z"
+  "html_written": "2026-08-20T15:52:31.984638Z"
 }
