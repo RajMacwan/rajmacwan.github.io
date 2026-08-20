@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-20T01:14:31.118068Z",
+  "polled": "2026-08-20T02:31:49.613712Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "79 active Salesforce incidents",
+      "description": "80 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Fable 5 unavailable",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T01:14:31.118099Z"
+  "html_written": "2026-08-20T02:31:49.613752Z"
 }
