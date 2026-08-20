@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-20T16:35:02.856709Z",
+  "polled": "2026-08-20T17:04:24.271028Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "",
+      "incident_name": "Durable Objects and Downstream Service Errors",
       "fetched": true
     },
     "fastly": {
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "none",
-      "description": "All Google Cloud services operating normally",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "1 active GCP incident",
+      "incident_name": "We are investigating an issue where customers may experience timeouts, service degradations, errors, and elevated latencies across multiple ",
       "fetched": true
     },
     "oci": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated Errors for Thinking mode in ChatGPT",
+      "incident_name": "Elevated Codex API authentication errors",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T16:35:02.856736Z"
+  "html_written": "2026-08-20T17:04:24.271076Z"
 }
