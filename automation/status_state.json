@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-20T02:31:49.613712Z",
+  "polled": "2026-08-20T03:26:59.437032Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,10 +152,10 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "dropbox": {
       "indicator": "none",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in United States",
+      "incident_name": "",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-20T02:31:49.613752Z"
+  "html_written": "2026-08-20T03:26:59.437067Z"
 }
