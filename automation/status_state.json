@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T23:04:46.962899Z",
+  "polled": "2026-08-21T23:34:56.901559Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "89 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Unexpected logouts for some ChatGPT web users",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends - Ethereum Network",
+      "incident_name": "Delayed Receives - ARBETH",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T23:04:46.962927Z"
+  "html_written": "2026-08-21T23:34:56.901585Z"
 }
