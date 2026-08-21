@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-21T08:18:13.605052Z",
+  "polled": "2026-08-21T09:02:28.282944Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Access Browser-based RDP Issue",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T07:30:44.311712Z"
+  "html_written": "2026-08-21T09:02:28.282972Z"
 }
