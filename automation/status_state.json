@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T10:15:40.706910Z",
+  "polled": "2026-08-21T10:51:46.112275Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Canvas in US Region.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T10:15:40.706944Z"
+  "html_written": "2026-08-21T10:51:46.112306Z"
 }
