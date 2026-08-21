@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T09:02:28.282944Z",
+  "polled": "2026-08-21T09:49:34.121222Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating service degradation",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T09:02:28.282972Z"
+  "html_written": "2026-08-21T09:49:34.121263Z"
 }
