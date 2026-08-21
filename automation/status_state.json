@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T12:47:42.115844Z",
+  "polled": "2026-08-21T13:34:30.424614Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Container Registry and Spaces Accessibility",
       "fetched": true
     },
     "heroku": {
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Dropbox is not working as expected for some users",
       "fetched": true
     },
     "openai": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T12:47:42.115873Z"
+  "html_written": "2026-08-21T13:34:30.424648Z"
 }
