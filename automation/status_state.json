@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T19:53:42.084300Z",
+  "polled": "2026-08-21T20:25:43.576070Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Meta integration for Zoom.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -164,8 +164,8 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
       "incident_name": "Unexpected logouts for some ChatGPT web users",
       "fetched": true
     },
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Viva Dominican Republic",
+      "incident_name": "SMS Delivery Failures from Twilio to Dukagjjni Kosovo",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T19:53:42.084326Z"
+  "html_written": "2026-08-21T20:25:43.576101Z"
 }
