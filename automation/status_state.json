@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-22T18:08:27.341117Z",
+  "polled": "2026-08-22T18:47:48.484711Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to I.C.E Costa Rica",
+      "incident_name": "SMS Delivery Delays from Twilio to Vivacom Bulgaria",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-22T18:08:27.341142Z"
+  "html_written": "2026-08-22T18:47:48.484738Z"
 }
