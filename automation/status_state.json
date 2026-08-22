@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-22T02:35:02.208289Z",
+  "polled": "2026-08-22T03:23:33.459929Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated R2 errors in Dubai (DXB)",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Dukagjini Kosovo",
+      "incident_name": "MMS Delivery Delays from a Subset of Twilio Phone Numbers to Telefonica El Salvador",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-22T02:35:02.208317Z"
+  "html_written": "2026-08-22T03:23:33.459955Z"
 }
