@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-22T14:35:02.289967Z",
+  "polled": "2026-08-22T14:55:33.358617Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Phone Numbers to Telefonica El Salvador",
+      "incident_name": "SMS Delivery Failures from Twilio to Dukagjini Kosovo",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-22T14:04:40.755462Z"
+  "html_written": "2026-08-22T14:55:33.358646Z"
 }
