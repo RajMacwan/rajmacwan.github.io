@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-21T23:56:29.651402Z",
+  "polled": "2026-08-22T01:24:27.208171Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,13 +274,13 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Receives - ARBETH",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Phone Numbers to Telefonica El Salvador",
+      "incident_name": "SMS Delivery Failures from Twilio to Dukagjini Kosovo",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-21T23:34:56.901585Z"
+  "html_written": "2026-08-22T01:24:27.208200Z"
 }
