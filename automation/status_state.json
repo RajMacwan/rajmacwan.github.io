@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-22T11:07:58.496005Z",
+  "polled": "2026-08-22T11:33:26.943639Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -272,9 +272,9 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - Coinbase Payments",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-22T10:22:46.696847Z"
+  "html_written": "2026-08-22T11:33:26.943668Z"
 }
