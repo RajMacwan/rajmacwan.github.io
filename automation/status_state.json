@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-22T08:50:56.769105Z",
+  "polled": "2026-08-22T09:26:22.002032Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting File Search in Zoom Hub",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-22T08:10:29.183341Z"
+  "html_written": "2026-08-22T09:26:22.002063Z"
 }
