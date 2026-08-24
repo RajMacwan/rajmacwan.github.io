@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T04:57:38.298653Z",
+  "polled": "2026-08-24T05:43:58.164927Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors for multiple models",
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors for Claude Opus 5",
       "fetched": true
     },
     "replicate": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated API errors",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to ICE Costa Rica",
+      "incident_name": "Flex Orchestration Service Disruption",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T04:57:38.298683Z"
+  "html_written": "2026-08-24T05:43:58.164956Z"
 }
