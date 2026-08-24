@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T16:58:30.336691Z",
+  "polled": "2026-08-24T17:37:19.983282Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Cloud Control Panel and API",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "80 active Salesforce incidents",
+      "description": "81 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T16:58:30.336721Z"
+  "html_written": "2026-08-24T17:37:19.983312Z"
 }
