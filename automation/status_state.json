@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-24T08:24:50.718755Z",
+  "polled": "2026-08-24T09:22:51.046706Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "DO and D1 are degraded in Hong Kong and Singapore",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Meeting Chat Services",
       "fetched": true
     },
     "dropbox": {
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated errors for multiple models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors for Claude Opus 5",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T08:24:50.718782Z"
+  "html_written": "2026-08-24T09:22:51.046753Z"
 }
