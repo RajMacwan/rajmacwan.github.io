@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T11:58:31.773300Z",
+  "polled": "2026-08-24T13:05:14.420049Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -236,10 +236,10 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "crowdstrike": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T11:32:35.762499Z"
+  "html_written": "2026-08-24T13:05:14.420079Z"
 }
