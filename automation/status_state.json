@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T13:05:14.420049Z",
+  "polled": "2026-08-24T13:59:05.828510Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Actions delays in starting runs",
       "fetched": true
     },
     "gitlab": {
@@ -236,10 +236,10 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "crowdstrike": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T13:05:14.420079Z"
+  "html_written": "2026-08-24T13:59:05.828544Z"
 }
