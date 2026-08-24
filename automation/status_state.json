@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T14:51:52.175579Z",
+  "polled": "2026-08-24T15:39:24.541350Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -158,8 +158,8 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -284,10 +284,10 @@
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "postmark": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T14:51:52.175622Z"
+  "html_written": "2026-08-24T15:39:24.541376Z"
 }
