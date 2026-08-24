@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-24T06:25:39.963624Z",
+  "polled": "2026-08-24T07:37:22.950448Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increased HTTP 5xx Errors in Chicago",
+      "incident_name": "DO and D1 are degraded in Hong Kong and Singapore",
       "fetched": true
     },
     "fastly": {
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors on Fable 5 due to upstream provider",
       "fetched": true
     },
     "gitlab": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to ICE Costa Rica",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to I.C.E Costa Rica",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T06:25:39.963653Z"
+  "html_written": "2026-08-24T07:37:22.950484Z"
 }
