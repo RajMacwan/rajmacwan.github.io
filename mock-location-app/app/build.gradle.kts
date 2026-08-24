@@ -24,9 +24,25 @@ android {
         buildConfig = true
     }
 
+    // A committed, stable signing key so every build (local or CI) is signed the
+    // same way and installs as an update over the previous one — no uninstall
+    // needed. Fine for a personal, sideloaded app that is not on the Play Store.
+    signingConfigs {
+        create("routemock") {
+            storeFile = file("routemock.keystore")
+            storePassword = "routemock"
+            keyAlias = "routemock"
+            keyPassword = "routemock"
+        }
+    }
+
     buildTypes {
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("routemock")
+        }
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("routemock")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
