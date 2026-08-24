@@ -1,6 +1,5 @@
 {
   "history": [
-    "osint-for-it-leaders",
     "dark-web-intel-what-actually-matters",
     "soc-maturity-common-plateaus",
     "observability-vs-monitoring",
@@ -15,8 +14,9 @@
     "running-a-warrant-canary",
     "setting-up-whonix-step-by-step",
     "shadow-ai-what-it-doesnt-know",
-    "economics-of-genai-in-enterprise"
+    "economics-of-genai-in-enterprise",
+    "network-architecture-hybrid-work"
   ],
-  "last_run": "2026-08-17T05:26:28.542561Z",
-  "last_slug": "economics-of-genai-in-enterprise"
+  "last_run": "2026-08-24T05:30:21.874640Z",
+  "last_slug": "network-architecture-hybrid-work"
 }
