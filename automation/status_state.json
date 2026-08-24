@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-24T20:40:14.221816Z",
+  "polled": "2026-08-24T21:13:51.139798Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated API errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to ICE Costa Rica",
+      "incident_name": "Voice Call Silent and One-Way Audio from Brazil to Twilio Brazil Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-24T20:40:14.221848Z"
+  "html_written": "2026-08-24T21:13:51.139828Z"
 }
