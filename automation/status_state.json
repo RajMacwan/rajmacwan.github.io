@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T03:29:04.116165Z",
+  "polled": "2026-08-25T04:11:27.276258Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "Investigating- Issues in Southeast Asia",
       "fetched": true
     },
     "gcp": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000175",
       "fetched": true
     },
     "databricks": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Small Carriers in United States",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to I.C.E Costa Rica",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T03:29:04.116198Z"
+  "html_written": "2026-08-25T04:11:27.276291Z"
 }
