@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T22:09:55.406672Z",
+  "polled": "2026-08-25T22:44:37.231251Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Phone Numbers to Drillisch 1&1 Germany",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio Phone Numbers to Telefonica Chile",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T22:09:55.406705Z"
+  "html_written": "2026-08-25T22:44:37.231285Z"
 }
