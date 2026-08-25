@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T19:04:13.354019Z",
+  "polled": "2026-08-25T19:42:37.006865Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated build initialization times",
       "fetched": true
     },
     "netlify": {
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Cloud Control Panel and API",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to I.C.E Costa Rica",
+      "incident_name": "Voice Call Failures, Post Dial Delay, and Silent and One-Way Audio between a Subset of Twilio Phone Numbers and Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T19:04:13.354053Z"
+  "html_written": "2026-08-25T19:42:37.006916Z"
 }
