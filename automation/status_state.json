@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T13:16:24.719319Z",
+  "polled": "2026-08-25T14:08:36.910463Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Claro Dominican Republic",
+      "incident_name": "Voice Call Failures, Post Dial Delay, and Silent and One-Way Audio Between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T13:16:24.719349Z"
+  "html_written": "2026-08-25T14:08:36.910486Z"
 }
