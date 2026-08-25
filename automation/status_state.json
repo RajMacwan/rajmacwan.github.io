@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T07:54:51.706194Z",
+  "polled": "2026-08-25T08:42:08.646158Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Claro Dominican Republic",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Small Carriers United States",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T07:54:51.706222Z"
+  "html_written": "2026-08-25T08:42:08.646187Z"
 }
