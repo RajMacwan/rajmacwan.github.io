@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-25T14:08:36.910463Z",
+  "polled": "2026-08-25T15:03:34.375211Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Increased Latency",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "79 active Salesforce incidents",
+      "description": "80 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance of Grok 4.6",
       "fetched": true
     },
     "replicate": {
@@ -280,7 +280,7 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures, Post Dial Delay, and Silent and One-Way Audio Between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Claro Dominican Republic",
       "fetched": true
     },
     "sendgrid": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T14:08:36.910486Z"
+  "html_written": "2026-08-25T15:03:34.375245Z"
 }
