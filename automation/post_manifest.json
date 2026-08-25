@@ -342,6 +342,15 @@
     "date": ""
   },
   {
+    "slug": "immutable-infrastructure-is-a-discipline",
+    "url": "blog/immutable-infrastructure-is-a-discipline.html",
+    "title": "Immutable Infrastructure Is a Discipline, Not a Tool",
+    "summary": "You can adopt every tool associated with immutable infrastructure \u2014 image builders, orchestration, infrastructure-as-code \u2014 and still be running mutable servers. The tooling is not the point. The point is a discipline: you never change a...",
+    "pill_class": "grid-pill-infra",
+    "grid": "InfraGrid",
+    "date": ""
+  },
+  {
     "slug": "insider-threat-uncomfortable-truth",
     "url": "blog/insider-threat-uncomfortable-truth.html",
     "title": "Insider Threat: The Uncomfortable Conversation Nobody Wants",

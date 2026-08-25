@@ -6,8 +6,16 @@
     <description>Notes on infrastructure, cybersecurity, AI, and leadership from a practitioner's desk.</description>
     <language>en-us</language>
     <atom:link href="https://macwangrid.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Tue, 18 Aug 2026 15:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 25 Aug 2026 15:00:00 GMT</lastBuildDate>
 
+    <item>
+      <title>Immutable Infrastructure Is a Discipline, Not a Tool</title>
+      <link>https://macwangrid.com/blog/immutable-infrastructure-is-a-discipline.html</link>
+      <description>You can buy the tooling for immutable infrastructure and still run mutable servers. The value is in the discipline of never patching in place — and the operational habits that enforce it.</description>
+      <pubDate>Tue, 25 Aug 2026 15:00:00 GMT</pubDate>
+      <guid isPermaLink="true">https://macwangrid.com/blog/immutable-infrastructure-is-a-discipline.html</guid>
+      <category>InfraGrid</category>
+    </item>
     <item>
       <title>Detection Engineering as a Product, Not a Project</title>
       <link>https://macwangrid.com/blog/detection-engineering-as-a-product.html</link>
