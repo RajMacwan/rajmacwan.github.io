@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-25T04:57:41.720354Z",
+  "polled": "2026-08-25T05:37:56.077798Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Cloud Control Panel and API",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-25T04:57:41.720380Z"
+  "html_written": "2026-08-25T05:37:56.077824Z"
 }
