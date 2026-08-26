@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-26T01:55:21.752325Z",
+  "polled": "2026-08-26T03:05:11.559983Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Globe Philippines",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Telefonica Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Globe Philippines",
+      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Telefonica Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-26T01:55:21.752362Z"
+  "html_written": "2026-08-26T03:05:11.560025Z"
 }
