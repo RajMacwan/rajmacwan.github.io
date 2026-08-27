@@ -1,10 +1,10 @@
 {
-  "polled": "2026-08-26T21:48:45.491644Z",
+  "polled": "2026-08-27T02:16:12.990919Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Durable Objects and Downstream Service Errors",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "66 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Disruption with GitHub Billing",
       "fetched": true
     },
     "gitlab": {
@@ -182,9 +182,9 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "A100 hardware partial outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "huggingface": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to I.C.E Costa Rica",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Small Carriers in United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to I.C.E Costa Rica",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Small Carriers in United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-26T21:48:45.491665Z"
+  "html_written": "2026-08-27T02:16:12.990947Z"
 }
