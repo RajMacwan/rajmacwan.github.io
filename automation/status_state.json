@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-30T05:54:47.559331Z",
+  "polled": "2026-08-30T11:24:22.901974Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "63 active Salesforce incidents",
+      "description": "64 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Ooredoo Kuwait",
+      "incident_name": "SMS Delivery Failures from Twilio to DiGi Malaysia",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Ooredoo Kuwait",
+      "incident_name": "SMS Delivery Failures from Twilio to DiGi Malaysia",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-30T05:54:47.559389Z"
+  "html_written": "2026-08-30T11:24:22.902015Z"
 }
