@@ -1,6 +1,5 @@
 {
   "history": [
-    "dark-web-intel-what-actually-matters",
     "soc-maturity-common-plateaus",
     "observability-vs-monitoring",
     "mit-week-1",
@@ -15,8 +14,9 @@
     "setting-up-whonix-step-by-step",
     "shadow-ai-what-it-doesnt-know",
     "economics-of-genai-in-enterprise",
-    "network-architecture-hybrid-work"
+    "network-architecture-hybrid-work",
+    "tor-for-it-professionals-primer"
   ],
-  "last_run": "2026-08-24T05:30:21.874640Z",
-  "last_slug": "network-architecture-hybrid-work"
+  "last_run": "2026-08-31T11:14:28.545314Z",
+  "last_slug": "tor-for-it-professionals-primer"
 }
