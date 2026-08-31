@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-31T04:08:27.050222Z",
+  "polled": "2026-08-31T10:49:58.083239Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Paused Sends/Receives - Core DAO Network",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-31T04:08:27.050253Z"
+  "html_written": "2026-08-31T10:49:58.083282Z"
 }
