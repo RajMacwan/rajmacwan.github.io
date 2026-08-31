@@ -1,5 +1,5 @@
 {
-  "polled": "2026-08-31T10:49:58.083239Z",
+  "polled": "2026-08-31T17:43:22.659264Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Service instability in Singapore",
       "fetched": true
     },
     "digitalocean": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000188",
       "fetched": true
     },
     "databricks": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "ChatGPT Work seeing elevated errors and latency",
       "fetched": true
     },
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degraded performance on claude.ai",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Telma Madagascar",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Phone Numbers to Telefonica El Salvador",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from Twilio to Telma Madagascar",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Phone Numbers to Telefonica El Salvador",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-08-31T10:49:58.083282Z"
+  "html_written": "2026-08-31T17:43:22.659292Z"
 }
