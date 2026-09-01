@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-01T18:48:44.235924Z",
+  "polled": "2026-09-01T21:26:08.355342Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "HTTP/3 issue affecting R2 custom domains",
+      "incident_name": "Cloudflare Access one-time PIN emails blocked by certain email security gateways, including Proofpoint",
       "fetched": true
     },
     "fastly": {
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "minor",
-      "description": "1 active GCP incident",
-      "incident_name": "Multiple products in us-central1-b are experiencing network service degradation.",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated latency in the Responses API",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "On Call Engineers are Investigating",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to H3G United Kingdom",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "On Call Engineers are Investigating",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to H3G United Kingdom",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T18:48:44.235963Z"
+  "html_written": "2026-09-01T21:26:08.355374Z"
 }
