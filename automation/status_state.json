@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-01T11:47:37.973201Z",
+  "polled": "2026-09-01T15:34:52.108129Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Requests from wrangler or other OAuth clients may experience elevated errors",
+      "incident_name": "HTTP/3 issue affecting R2 custom domains",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "66 active Salesforce incidents",
+      "description": "67 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -93,8 +93,8 @@
     },
     "snowflake": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "INC20000190",
+      "description": "Partially Degraded Service",
+      "incident_name": "INC20000150",
       "fetched": true
     },
     "databricks": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delays in commit processing",
       "fetched": true
     },
     "gitlab": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Node.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Firebase Outage Impacting Notification Delivery for Twilio Customers",
+      "incident_name": "User Authentication Identity SNA Failure Increase and SNA Missing Redirects for Globe Telecom in Philippines",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Firebase Outage Impacting Notification Delivery for Twilio Customers",
+      "incident_name": "User Authentication Identity SNA Failure Increase and SNA Missing Redirects for Globe Telecom in Philippines",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T11:47:37.973232Z"
+  "html_written": "2026-09-01T15:34:52.108160Z"
 }
