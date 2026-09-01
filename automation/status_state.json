@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-01T01:16:20.555129Z",
+  "polled": "2026-09-01T06:16:58.101161Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -74,10 +74,10 @@
       "fetched": false
     },
     "salesforce": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "65 active Salesforce incidents",
+      "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
+      "fetched": true
     },
     "sap": {
       "indicator": "unknown",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Inconsistencies with Suppressions - Block Lists",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Inconsistencies with Suppressions - Block Lists",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T01:16:20.555165Z"
+  "html_written": "2026-09-01T06:16:58.101192Z"
 }
