@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-01T15:34:52.108129Z",
+  "polled": "2026-09-01T18:48:44.235924Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "none",
-      "description": "All Google Cloud services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 active GCP incident",
+      "incident_name": "Multiple products in us-central1-b are experiencing network service degradation.",
       "fetched": true
     },
     "oci": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delays in commit processing",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends/Receives - Injective Network",
+      "incident_name": "Paused Sends/Receives - Core DAO Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Failure Increase and SNA Missing Redirects for Globe Telecom in Philippines",
+      "incident_name": "On Call Engineers are Investigating",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "User Authentication Identity SNA Failure Increase and SNA Missing Redirects for Globe Telecom in Philippines",
+      "incident_name": "On Call Engineers are Investigating",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T15:34:52.108160Z"
+  "html_written": "2026-09-01T18:48:44.235963Z"
 }
