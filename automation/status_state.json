@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-01T21:26:08.355342Z",
+  "polled": "2026-09-01T23:28:47.071255Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Access one-time PIN emails blocked by certain email security gateways, including Proofpoint",
+      "incident_name": "Pipelines Creation Issue",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "67 active Salesforce incidents",
+      "description": "68 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delays in credit purchases",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T21:26:08.355374Z"
+  "html_written": "2026-09-01T23:28:47.071293Z"
 }
