@@ -54,6 +54,15 @@
     "date": ""
   },
   {
+    "slug": "back-to-school-leader-learning",
+    "url": "blog/back-to-school-leader-learning.html",
+    "title": "Back to School: What Every IT Leader Should Keep Learning",
+    "summary": "The most dangerous moment in a technology career isn't when you don't know enough. It's when you're senior enough that nobody is going to make you learn anything new.",
+    "pill_class": "grid-pill-off",
+    "grid": "OffGrid",
+    "date": ""
+  },
+  {
     "slug": "bitwarden-enterprise-review",
     "url": "blog/bitwarden-enterprise-review.html",
     "title": "Bitwarden Enterprise Review",
