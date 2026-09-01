@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-01T06:16:58.101161Z",
+  "polled": "2026-09-01T11:47:37.973201Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "HTTP/3 issue affecting R2 custom domains",
+      "incident_name": "Requests from wrangler or other OAuth clients may experience elevated errors",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "65 active Salesforce incidents",
+      "description": "66 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -93,8 +93,8 @@
     },
     "snowflake": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "description": "Minor Service Outage",
+      "incident_name": "INC20000190",
       "fetched": true
     },
     "databricks": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "Firebase Outage Impacting Notification Delivery for Twilio Customers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "Firebase Outage Impacting Notification Delivery for Twilio Customers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T06:16:58.101192Z"
+  "html_written": "2026-09-01T11:47:37.973232Z"
 }
