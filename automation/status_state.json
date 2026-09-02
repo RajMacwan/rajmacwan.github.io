@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-01T23:28:47.071255Z",
+  "polled": "2026-09-02T01:17:59.432731Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Pipelines Creation Issue",
+      "incident_name": "Cloudflare Workers Issues in Narita",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "68 active Salesforce incidents",
+      "description": "66 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Investigating service degradation",
       "fetched": true
     },
     "replicate": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed DBM Monitor Evaluation",
       "fetched": true
     },
     "stripe": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Paused Sends/Receives - Core DAO Network",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance - Coinbase Onramp",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to H3G United Kingdom",
+      "incident_name": "Live Chat Support Failing for Customers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to H3G United Kingdom",
+      "incident_name": "Live Chat Support Failing for Customers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-01T23:28:47.071293Z"
+  "html_written": "2026-09-02T01:17:59.432758Z"
 }
