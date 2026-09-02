@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-02T01:17:59.432731Z",
+  "polled": "2026-09-02T05:56:17.297557Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Workers Issues in Narita",
+      "incident_name": "Pipelines Creation Issue",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "66 active Salesforce incidents",
+      "description": "67 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delays in credit purchases",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Investigating service degradation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed DBM Monitor Evaluation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance - Coinbase Onramp",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Paused Sends/Receives - Core DAO Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Live Chat Support Failing for Customers",
+      "incident_name": "SMS Delivery Failures from Twilio to Telma Madagascar",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Live Chat Support Failing for Customers",
+      "incident_name": "SMS Delivery Failures from Twilio to Telma Madagascar",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-02T01:17:59.432758Z"
+  "html_written": "2026-09-02T05:56:17.297601Z"
 }
