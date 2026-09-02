@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-02T21:15:50.802747Z",
+  "polled": "2026-09-02T23:22:01.516824Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Paused Sends/Receives - Core DAO Network",
+      "incident_name": "Delayed Sends and Receives - Ethereum Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Algar Telecom Brazil",
+      "incident_name": "RCS Sender Registration Issues in US",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Algar Telecom Brazil",
+      "incident_name": "RCS Sender Registration Issues in US",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-02T21:15:50.802772Z"
+  "html_written": "2026-09-02T23:22:01.516858Z"
 }
