@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-02T18:34:05.265775Z",
+  "polled": "2026-09-02T21:15:50.802747Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "70 active Salesforce incidents",
+      "description": "71 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated errors creating new accounts",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Long Codes to Multiple Networks in Netherlands",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Algar Telecom Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Long Codes to Multiple Networks in Netherlands",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Algar Telecom Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-02T18:34:05.265802Z"
+  "html_written": "2026-09-02T21:15:50.802772Z"
 }
