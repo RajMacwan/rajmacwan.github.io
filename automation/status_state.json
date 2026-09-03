@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-03T18:07:30.957615Z",
+  "polled": "2026-09-03T20:59:58.737108Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "HTTP/3 issue affecting R2 custom domains",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance of Grok 4.6",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-03T18:07:30.957646Z"
+  "html_written": "2026-09-03T20:59:58.737144Z"
 }
