@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-03T20:59:58.737108Z",
+  "polled": "2026-09-03T23:13:00.609904Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "78 active Salesforce incidents",
+      "description": "79 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Customer support via telephone may be unavailable for some users",
       "fetched": true
     },
     "openai": {
@@ -236,9 +236,9 @@
       "fetched": false
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Duo - Partial Hardware Token Authentication Issues - United States",
       "fetched": true
     },
     "crowdstrike": {
@@ -248,9 +248,9 @@
       "fetched": false
     },
     "datadog": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed CICD Optimization, Code Coverage, Code Security, and DORA data",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "stripe": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from Twilio to Multiple Networks in United States",
+      "incident_name": "Intermittent Delays and Failures in Message Delivery",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from Twilio to Multiple Networks in United States",
+      "incident_name": "Intermittent Delays and Failures in Message Delivery",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-03T20:59:58.737144Z"
+  "html_written": "2026-09-03T23:13:00.609936Z"
 }
