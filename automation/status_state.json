@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-04T19:55:07.137432Z",
+  "polled": "2026-09-04T22:10:08.482618Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Elevated number of R2 503 errors in Eastern North America region",
       "fetched": true
     },
     "fastly": {
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated latency in VCR, Blob, and Sandbox API",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "80 active Salesforce incidents",
+      "description": "81 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degradation in repos contents API",
       "fetched": true
     },
     "gitlab": {
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Africell and Qcell Gambia",
+      "incident_name": "Voice Call Failures From a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple Countri",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Africell and Qcell Gambia",
+      "incident_name": "Voice Call Failures From a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple Countri",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-04T19:55:07.137462Z"
+  "html_written": "2026-09-04T22:10:08.482644Z"
 }
