@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-04T01:03:17.841100Z",
+  "polled": "2026-09-04T05:50:14.580211Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers Builds elevated queue times",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Customer support via telephone may be unavailable for some users",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "openai": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Delayed Sends/Receives - Mina",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance - Derivatives Positions",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to H3G United Kingdom",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to H3G United Kingdom",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-04T01:03:17.841136Z"
+  "html_written": "2026-09-04T05:50:14.580244Z"
 }
