@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-05T00:06:44.120462Z",
+  "polled": "2026-09-05T04:21:36.691668Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated number of R2 503 errors in Eastern North America region",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "83 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Toll-Free, Landline, and Mobile Phone Numbers to Multiple Networks in Multiple Countries",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Switzerland",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Toll-Free, Landline, and Mobile Phone Numbers to Multiple Networks in Multiple Countries",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Switzerland",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-05T00:06:44.120488Z"
+  "html_written": "2026-09-05T04:21:36.691695Z"
 }
