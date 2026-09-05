@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-04T22:10:08.482618Z",
+  "polled": "2026-09-05T00:06:44.120462Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Degradation in repos contents API",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple Countri",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Toll-Free, Landline, and Mobile Phone Numbers to Multiple Networks in Multiple Countries",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple Countri",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Toll-Free, Landline, and Mobile Phone Numbers to Multiple Networks in Multiple Countries",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-04T22:10:08.482644Z"
+  "html_written": "2026-09-05T00:06:44.120488Z"
 }
