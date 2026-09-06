@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-06T20:40:04.327639Z",
+  "polled": "2026-09-06T22:22:04.943693Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Purchased domains from registrar not appearing in Cloudflare Dashboard",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-06T20:40:04.327666Z"
+  "html_written": "2026-09-06T22:22:04.943725Z"
 }
