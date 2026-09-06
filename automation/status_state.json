@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-06T09:26:21.789170Z",
+  "polled": "2026-09-06T13:03:05.997013Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Mauritel Mauritania",
+      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Mauritel Mauritania",
+      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-06T09:26:21.789196Z"
+  "html_written": "2026-09-06T13:03:05.997046Z"
 }
