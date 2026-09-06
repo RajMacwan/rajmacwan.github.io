@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-06T00:48:04.407593Z",
+  "polled": "2026-09-06T05:09:50.143144Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom AI Companion in US Region",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-06T00:48:04.407630Z"
+  "html_written": "2026-09-06T05:09:50.143176Z"
 }
