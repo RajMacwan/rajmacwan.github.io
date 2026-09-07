@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-07T04:52:39.107654Z",
+  "polled": "2026-09-07T09:58:13.851487Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "82 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Robi Bangladesh",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Robi Bangladesh",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-07T04:52:39.107697Z"
+  "html_written": "2026-09-07T09:58:13.851510Z"
 }
