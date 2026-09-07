@@ -1,6 +1,5 @@
 {
   "history": [
-    "soc-maturity-common-plateaus",
     "observability-vs-monitoring",
     "mit-week-1",
     "model-selection-for-enterprise-it",
@@ -15,8 +14,9 @@
     "shadow-ai-what-it-doesnt-know",
     "economics-of-genai-in-enterprise",
     "network-architecture-hybrid-work",
-    "tor-for-it-professionals-primer"
+    "tor-for-it-professionals-primer",
+    "ai-in-ops-reality-check"
   ],
-  "last_run": "2026-08-31T11:14:28.545314Z",
-  "last_slug": "tor-for-it-professionals-primer"
+  "last_run": "2026-09-07T09:50:43.980905Z",
+  "last_slug": "ai-in-ops-reality-check"
 }
