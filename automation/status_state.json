@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-07T15:43:40.505793Z",
+  "polled": "2026-09-07T19:24:36.144239Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Magic Transit route parsing issues in dashboard",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "82 active Salesforce incidents",
+      "description": "83 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Degraded Performance - Derivatives Positions",
+      "incident_name": "Degraded Performance - Futures and Prediction Markets Trading",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "MMS Delivery Delays from a Subset of Australia Subscribers to Twilio Australia Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "MMS Delivery Delays from a Subset of Australia Subscribers to Twilio Australia Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-07T15:43:40.505819Z"
+  "html_written": "2026-09-07T19:24:36.144265Z"
 }
