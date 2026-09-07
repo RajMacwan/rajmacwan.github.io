@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-07T09:58:13.851487Z",
+  "polled": "2026-09-07T15:43:40.505793Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Magic Transit route parsing issues in dashboard",
       "fetched": true
     },
     "fastly": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Robi Bangladesh",
+      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Robi Bangladesh",
+      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-07T09:58:13.851510Z"
+  "html_written": "2026-09-07T15:43:40.505819Z"
 }
