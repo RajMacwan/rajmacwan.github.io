@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-08T00:29:00.013859Z",
+  "polled": "2026-09-08T05:06:33.897308Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Cache Reserve Issue in Paris",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "92 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Nex-Tech Wireless United States",
+      "incident_name": "SMS Delivery Delays from Twilio to AT&T Mexico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Nex-Tech Wireless United States",
+      "incident_name": "SMS Delivery Delays from Twilio to AT&T Mexico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-08T00:29:00.013884Z"
+  "html_written": "2026-09-08T05:06:33.897339Z"
 }
