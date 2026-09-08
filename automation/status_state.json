@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-08T20:19:53.874719Z",
+  "polled": "2026-09-08T22:46:05.664177Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Intermittent issues accessing the Dashboard on Firefox and Safari",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors for image generation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -272,8 +272,8 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-08T20:19:53.874746Z"
+  "html_written": "2026-09-08T22:46:05.664205Z"
 }
