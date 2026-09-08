@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-08T17:46:50.853543Z",
+  "polled": "2026-09-08T20:19:53.874719Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Intermittent issues accessing the Dashboard on Firefox and Safari",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "92 active Salesforce incidents",
+      "description": "94 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Nex-Tech Wireless United States",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric Sender IDs and Short Codes to Vodafone Italy",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Nex-Tech Wireless United States",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric Sender IDs and Short Codes to Vodafone Italy",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-08T17:46:50.853571Z"
+  "html_written": "2026-09-08T20:19:53.874746Z"
 }
