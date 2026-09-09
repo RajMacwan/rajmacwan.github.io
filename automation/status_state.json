@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-09T20:49:42.930810Z",
+  "polled": "2026-09-09T22:47:42.542990Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "93 active Salesforce incidents",
+      "description": "94 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000211",
       "fetched": true
     },
     "databricks": {
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Device Trust Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "bitwarden": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-09T20:49:42.930832Z"
+  "html_written": "2026-09-09T22:47:42.543019Z"
 }
