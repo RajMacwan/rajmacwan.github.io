@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-08T22:46:05.664177Z",
+  "polled": "2026-09-09T00:42:46.782827Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "94 active Salesforce incidents",
+      "description": "91 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric Sender IDs and Short Codes to Vodafone Italy",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Argentina",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Alphanumeric Sender IDs and Short Codes to Vodafone Italy",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Argentina",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-08T22:46:05.664205Z"
+  "html_written": "2026-09-09T00:42:46.782856Z"
 }
