@@ -1,11 +1,11 @@
 {
-  "level": "YELLOW",
-  "score": 4,
-  "headline": "Heightened activity.",
-  "body": "Above-average KEV adds this week. Watch your management-plane exposure.",
+  "level": "ORANGE",
+  "score": 6,
+  "headline": "High \u2014 active campaigns.",
+  "body": "Exploitation campaigns underway. Validate patch status on internet-facing assets.",
   "meta": {
-    "kev_adds_7d": 8,
+    "kev_adds_7d": 12,
     "active_zero_days": 0
   },
-  "updated": "2026-09-08T10:15:28.669738Z"
+  "updated": "2026-09-09T10:21:19.211681Z"
 }
