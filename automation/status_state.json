@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-09T00:42:46.782827Z",
+  "polled": "2026-09-09T05:22:48.047248Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "91 active Salesforce incidents",
+      "description": "92 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom Services",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-09T00:42:46.782856Z"
+  "html_written": "2026-09-09T05:22:48.047292Z"
 }
