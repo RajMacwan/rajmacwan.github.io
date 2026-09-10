@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-10T00:39:52.150826Z",
+  "polled": "2026-09-10T05:19:11.303417Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Unable to open shared ChatGPT Project using direct link",
       "fetched": true
     },
     "anthropic": {
@@ -182,10 +182,10 @@
       "fetched": true
     },
     "replicate": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
       "incident_name": "",
-      "fetched": true
+      "fetched": false
     },
     "huggingface": {
       "indicator": "unknown",
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Transactions - Optimism",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-10T00:39:52.150852Z"
+  "html_written": "2026-09-10T05:19:11.303451Z"
 }
