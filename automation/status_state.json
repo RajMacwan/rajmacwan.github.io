@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-10T14:06:13.086263Z",
+  "polled": "2026-09-10T17:40:44.220289Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Degradation Affecting Zoom Phone, Zoom Contact Center and Zoom Meetings in Europe",
       "fetched": true
     },
     "dropbox": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Unable to open shared ChatGPT Project using direct link",
-      "fetched": true
-    },
-    "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
       "incident_name": "",
+      "fetched": true
+    },
+    "anthropic": {
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded functionality for Claude Cowork on Windows",
       "fetched": true
     },
     "cursor": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Degraded Peformance - Prediction Markets Trading",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Iliad Italy",
+      "incident_name": "User Authentication Identity SNA Failure Increase in Indonesia",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Iliad Italy",
+      "incident_name": "User Authentication Identity SNA Failure Increase in Indonesia",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-10T14:06:13.086302Z"
+  "html_written": "2026-09-10T17:40:44.220319Z"
 }
