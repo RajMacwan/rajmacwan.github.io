@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-10T20:05:17.492351Z",
+  "polled": "2026-09-10T22:32:22.749085Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "DNS Update Delays",
+      "incident_name": "Workers Cron Triggers degraded",
       "fetched": true
     },
     "fastly": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Delays in customer support responses",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Degraded functionality for Claude Cowork on Windows",
+      "incident_name": "Elevated latency on the Claude API for some users",
       "fetched": true
     },
     "cursor": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Degraded Peformance - Prediction Markets Trading",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Iliad Italy",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to Appalachian Wireless United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Iliad Italy",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes and Long Codes to Appalachian Wireless United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-10T20:05:17.492375Z"
+  "html_written": "2026-09-10T22:32:22.749113Z"
 }
