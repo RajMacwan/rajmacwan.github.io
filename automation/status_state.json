@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-11T17:34:49.978517Z",
+  "polled": "2026-09-11T20:00:44.501237Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workers Cron Triggers degraded",
+      "incident_name": "Network Performance Issues with Taiwan datacenter (TPE)",
       "fetched": true
     },
     "fastly": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Insights Console Dashboard Error",
+      "incident_name": "MMS Delivery Failures from Telstra Australia to Twilio Australia Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Insights Console Dashboard Error",
+      "incident_name": "MMS Delivery Failures from Telstra Australia to Twilio Australia Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -308,9 +308,9 @@
       "fetched": false
     },
     "discord": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Media Proxy Latency High",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-11T17:34:49.978545Z"
+  "html_written": "2026-09-11T20:00:44.501270Z"
 }
