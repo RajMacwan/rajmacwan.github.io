@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-11T20:00:44.501237Z",
+  "polled": "2026-09-11T22:31:49.167696Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues with Taiwan datacenter (TPE)",
+      "incident_name": "Cloudflare Tunnel Availability Issues",
       "fetched": true
     },
     "fastly": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Statements API downtime",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures from Telstra Australia to Twilio Australia Phone Numbers",
+      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures from Telstra Australia to Twilio Australia Phone Numbers",
+      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-11T20:00:44.501270Z"
+  "html_written": "2026-09-11T22:31:49.167731Z"
 }
