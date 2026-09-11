@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-11T09:49:11.146023Z",
+  "polled": "2026-09-11T13:54:02.568067Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000213",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "INC20000150",
       "fetched": true
     },
     "databricks": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors for GPT-5.6 Sol on the API",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures From A Subset Of Network Subscribers In Australia To Twilio Australia Phone Numbers.",
+      "incident_name": "Video Voice Integration Test Failures",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures From A Subset Of Network Subscribers In Australia To Twilio Australia Phone Numbers.",
+      "incident_name": "Video Voice Integration Test Failures",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-11T09:49:11.146047Z"
+  "html_written": "2026-09-11T13:54:02.568095Z"
 }
