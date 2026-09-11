@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-11T13:54:02.568067Z",
+  "polled": "2026-09-11T17:34:49.978517Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,14 +164,14 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "1% of ChatGPT Work (mobile/web) turns are failing for existing threads",
       "fetched": true
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "description": "Minor Service Outage",
       "incident_name": "Degraded functionality for Claude Cowork on Windows",
       "fetched": true
     },
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Statements API downtime",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Video Voice Integration Test Failures",
+      "incident_name": "Voice Insights Console Dashboard Error",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Video Voice Integration Test Failures",
+      "incident_name": "Voice Insights Console Dashboard Error",
       "fetched": true
     },
     "postmark": {
@@ -308,9 +308,9 @@
       "fetched": false
     },
     "discord": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Media Proxy Latency High",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-11T13:54:02.568095Z"
+  "html_written": "2026-09-11T17:34:49.978545Z"
 }
