@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-12T18:19:36.152476Z",
+  "polled": "2026-09-12T20:42:08.478935Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -171,7 +171,7 @@
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
+      "description": "Partially Degraded Service",
       "incident_name": "Degraded functionality for Claude Cowork on Windows",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-12T18:19:36.152503Z"
+  "html_written": "2026-09-12T20:42:08.478964Z"
 }
