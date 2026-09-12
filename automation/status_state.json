@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-12T00:36:27.397925Z",
+  "polled": "2026-09-12T05:00:35.171838Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "1% of ChatGPT Work (mobile/web) turns are failing for existing threads",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Hong Kong",
+      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Hong Kong",
+      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-12T00:36:27.397953Z"
+  "html_written": "2026-09-12T05:00:35.171863Z"
 }
