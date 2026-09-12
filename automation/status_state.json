@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-12T05:00:35.171838Z",
+  "polled": "2026-09-12T09:15:07.814150Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Tunnel Availability Issues",
+      "incident_name": "Issues creating and updating Cloud Connector Rules",
       "fetched": true
     },
     "fastly": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Hong Kong",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Short Codes and Long Codes to Liberty Puerto Rico",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Hong Kong",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-12T05:00:35.171863Z"
+  "html_written": "2026-09-12T09:15:07.814178Z"
 }
