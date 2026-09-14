@@ -1,6 +1,5 @@
 {
   "history": [
-    "observability-vs-monitoring",
     "mit-week-1",
     "model-selection-for-enterprise-it",
     "network-architecture-hybrid-work",
@@ -15,8 +14,9 @@
     "economics-of-genai-in-enterprise",
     "network-architecture-hybrid-work",
     "tor-for-it-professionals-primer",
-    "ai-in-ops-reality-check"
+    "ai-in-ops-reality-check",
+    "ai-tier1-soc-triage-six-months"
   ],
-  "last_run": "2026-09-07T09:50:43.980905Z",
-  "last_slug": "ai-in-ops-reality-check"
+  "last_run": "2026-09-14T10:12:39.120201Z",
+  "last_slug": "ai-tier1-soc-triage-six-months"
 }
