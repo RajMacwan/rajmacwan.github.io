@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-16T05:13:36.384481Z",
+  "polled": "2026-09-16T10:01:50.128857Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Issues in Los Angeles",
+      "incident_name": "Support Helpdesk Availability Issues",
       "fetched": true
     },
     "fastly": {
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Support Portal Service Disruption",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "87 active Salesforce incidents",
+      "description": "89 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Degradation with Gemini 3.8 Flash",
       "fetched": true
     },
     "gitlab": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded Performance \u2014 Customer Support Response Times",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Tigo Paraguay",
+      "incident_name": "SMS Delivery Delays from Twilio to Airtel India",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Tigo Paraguay",
+      "incident_name": "SMS Delivery Delays from Twilio to Airtel India",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-16T05:13:36.384505Z"
+  "html_written": "2026-09-16T10:01:50.128894Z"
 }
