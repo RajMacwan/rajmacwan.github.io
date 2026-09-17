@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-17T21:31:03.212263Z",
+  "polled": "2026-09-17T23:39:26.189642Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Replicate Pruna issue",
+      "incident_name": "Increased Errors for Durable Objects and Downstream Services in Asia Pacific (APAC) Region",
       "fetched": true
     },
     "fastly": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated rate of errors for OpenAI models provided by Copilot",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "We are seeing elevated error rates across API models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-17T21:31:03.212290Z"
+  "html_written": "2026-09-17T23:39:26.189673Z"
 }
