@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-17T18:20:10.301208Z",
+  "polled": "2026-09-17T21:31:03.212263Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Elevated rate of errors for OpenAI models provided by Copilot",
       "fetched": true
     },
     "gitlab": {
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "We are seeing elevated error rates across API models",
       "fetched": true
     },
     "anthropic": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Investigating service degradation \u2014 Cloud Agents and Automations",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -262,7 +262,7 @@
     "plaid": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Disruption Impacting Chime connections",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to Orange and Tigo Democratic Republic of the Congo",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Failures from a Subset of Twilio Short Codes to Multiple Networks in United States",
+      "incident_name": "SMS Delivery Failures from a Subset of Twilio Long Codes to Orange and Tigo Democratic Republic of the Congo",
       "fetched": true
     },
     "postmark": {
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Issue / Delay in establishing call connection",
+      "incident_name": "",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-17T18:20:10.301236Z"
+  "html_written": "2026-09-17T21:31:03.212290Z"
 }
