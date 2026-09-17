@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-16T23:53:31.525958Z",
+  "polled": "2026-09-17T03:47:24.740027Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Replicate Pruna issue",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "91 active Salesforce incidents",
+      "description": "89 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-16T23:53:31.525983Z"
+  "html_written": "2026-09-17T03:47:24.740064Z"
 }
