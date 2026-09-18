@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-18T21:13:49.187179Z",
+  "polled": "2026-09-18T23:21:48.419085Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -14,9 +14,9 @@
       "fetched": false
     },
     "vercel": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated Errors Triggering Deployments",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "netlify": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Overbilling for OpenAI-hosted containers in the Agent API",
       "fetched": true
     },
     "anthropic": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Investigating service degradation \u2014 Grok Bot",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-18T21:13:49.187205Z"
+  "html_written": "2026-09-18T23:21:48.419110Z"
 }
