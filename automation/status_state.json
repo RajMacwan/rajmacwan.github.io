@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-20T16:15:53.965031Z",
+  "polled": "2026-09-20T18:52:31.287124Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric and Long Codes to Tigo and Orange Democratic Republic of the Congo",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric and Long Codes to Tigo and Orange Democratic Republic of the Congo",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-20T16:15:53.965055Z"
+  "html_written": "2026-09-20T18:52:31.287173Z"
 }
