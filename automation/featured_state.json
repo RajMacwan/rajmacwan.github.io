@@ -1,6 +1,5 @@
 {
   "history": [
-    "mit-week-1",
     "model-selection-for-enterprise-it",
     "network-architecture-hybrid-work",
     "patching-priority-practitioner-framework",
@@ -15,8 +14,9 @@
     "network-architecture-hybrid-work",
     "tor-for-it-professionals-primer",
     "ai-in-ops-reality-check",
-    "ai-tier1-soc-triage-six-months"
+    "ai-tier1-soc-triage-six-months",
+    "back-to-school-leader-learning"
   ],
-  "last_run": "2026-09-14T10:12:39.120201Z",
-  "last_slug": "ai-tier1-soc-triage-six-months"
+  "last_run": "2026-09-21T10:18:23.109873Z",
+  "last_slug": "back-to-school-leader-learning"
 }
