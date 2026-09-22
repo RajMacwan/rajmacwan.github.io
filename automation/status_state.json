@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-21T22:19:14.073725Z",
+  "polled": "2026-09-22T00:55:26.367763Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Emerging Service Issue - [DNS] - [eu-west]",
+      "incident_name": "Emerging Service Issue - Cloud Manager and API",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "77 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "WMTX-USD to Limit Only",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From Network Subscribers to a Subset of Twilio Israel Phone Numbers",
+      "incident_name": "Delayed Intelligent Alerts Notifications and Stale Alert History in Console",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From Network Subscribers to a Subset of Twilio Israel Phone Numbers",
+      "incident_name": "Delayed Intelligent Alerts Notifications and Stale Alert History in Console",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-21T22:19:14.073760Z"
+  "html_written": "2026-09-22T00:55:26.367790Z"
 }
