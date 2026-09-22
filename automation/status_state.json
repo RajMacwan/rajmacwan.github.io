@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-22T19:04:04.887222Z",
+  "polled": "2026-09-22T22:03:17.922276Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Cloudflare One Clients are incorrectly challenged on some sites",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "79 active Salesforce incidents",
+      "description": "80 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Delayed Sends/Receives - Avalanche (AVAX)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Pakistan",
+      "incident_name": "Customers Are Unable to See All of Their Free Credits in the Free Unit Tracker in the New Twilio Console",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Pakistan",
+      "incident_name": "Customers Are Unable to See All of Their Free Credits in the Free Unit Tracker in the New Twilio Console",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-22T19:04:04.887250Z"
+  "html_written": "2026-09-22T22:03:17.922302Z"
 }
