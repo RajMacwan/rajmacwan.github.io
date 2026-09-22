@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-22T15:30:01.065466Z",
+  "polled": "2026-09-22T19:04:04.887222Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Elevated error rates for Stream Live LL-HLS",
+      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
       "fetched": true
     },
     "fastly": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "maintenance",
       "description": "Service Under Maintenance",
-      "incident_name": "Service Degradation Affecting Apple Login for Zoom Sign-in.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated Error Rates for ChatGPT Work, across Plus, Pro, Business, Enterprise and Education plans.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Paused Sends/Receives - COSMOS",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Sends/Receives - Avalanche (AVAX)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Pakistan",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Pakistan",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-22T15:30:01.065491Z"
+  "html_written": "2026-09-22T19:04:04.887250Z"
 }
