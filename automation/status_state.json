@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-22T11:05:23.657202Z",
+  "polled": "2026-09-22T15:30:01.065466Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Partial visibility of Workers and Durable Objects analytics for Fedramp High customers",
+      "incident_name": "Elevated error rates for Stream Live LL-HLS",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "77 active Salesforce incidents",
+      "description": "79 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Elevated Error Rates for ChatGPT Work, across Plus, Pro, Business, Enterprise and Education plans.",
       "fetched": true
     },
     "anthropic": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "WMTX-USD to Limit Only",
+      "incident_name": "Paused Sends/Receives - COSMOS",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Airtel India",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Airtel India",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-22T11:05:23.657239Z"
+  "html_written": "2026-09-22T15:30:01.065491Z"
 }
