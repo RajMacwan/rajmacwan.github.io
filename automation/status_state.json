@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-23T09:55:44.059692Z",
+  "polled": "2026-09-23T14:45:48.066787Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Incident across several services",
       "fetched": true
     },
     "gitlab": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tele2 Sweden",
+      "incident_name": "SMS Delivery Delays from Twilio to MASS Response Austria",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Phone Numbers to Tele2 Sweden",
+      "incident_name": "SMS Delivery Delays from Twilio to MASS Response Austria",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-23T09:55:44.059723Z"
+  "html_written": "2026-09-23T14:45:48.066845Z"
 }
