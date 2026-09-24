@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-24T14:24:56.351532Z",
+  "polled": "2026-09-24T18:34:05.066917Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Network Performance Degradation \u2014 Asia-Pacific",
+      "incident_name": "Delays Starting Cloudflare Workers Builds",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "73 active Salesforce incidents",
+      "description": "74 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Disruption with billing information updates",
       "fetched": true
     },
     "gitlab": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Live Transcription Services.",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures From a Subset of Twilio Alphanumeric Sender IDs to Telkomsel Indonesia",
+      "incident_name": "Voice Call Failures From Twilio Mobile Numbers to Vodafone in the United Kingdom of Great Britain and Northern Ireland",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures From a Subset of Twilio Alphanumeric Sender IDs to Telkomsel Indonesia",
+      "incident_name": "Voice Call Failures From Twilio Mobile Numbers to Vodafone in the United Kingdom of Great Britain and Northern Ireland",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-24T14:24:56.351569Z"
+  "html_written": "2026-09-24T18:34:05.066944Z"
 }
