@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-24T00:01:50.714141Z",
+  "polled": "2026-09-24T04:41:10.429642Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Live Transcription Services.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Norway",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Mobile Numbers to United Kingdom",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Norway",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Mobile Numbers to United Kingdom",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-24T00:01:50.714191Z"
+  "html_written": "2026-09-24T04:41:10.429682Z"
 }
