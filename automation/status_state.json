@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-25T04:50:52.863269Z",
+  "polled": "2026-09-25T10:01:20.836910Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "75 active Salesforce incidents",
+      "description": "76 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "An unintended pop-up message appear for users in US region during initial invocation of Zoom AI\u2019s Catch Me Up feature",
       "fetched": true
     },
     "dropbox": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends and Receives - EGLD (MultiversX)",
+      "incident_name": "Delayed Sends/Receives - VeChain (VET)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Claro Brazil",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Cellularone NE Arizona United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Claro Brazil",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Cellularone NE Arizona United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-25T04:50:52.863297Z"
+  "html_written": "2026-09-25T10:01:20.836963Z"
 }
