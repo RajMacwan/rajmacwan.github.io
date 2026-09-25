@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-25T19:18:49.633320Z",
+  "polled": "2026-09-25T22:31:41.112166Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
+      "incident_name": "An unintended pop-up message appear for users in US and Europe regions during initial invocation of Zoom AI\u2019s Catch Me Up feature",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Jazz Pakistan",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-25T19:18:49.633358Z"
+  "html_written": "2026-09-25T22:31:41.112220Z"
 }
