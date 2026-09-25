@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-25T00:04:23.721544Z",
+  "polled": "2026-09-25T04:50:52.863269Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Workflows stuck in Queued state",
+      "incident_name": "Issues with Durable Objects",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "74 active Salesforce incidents",
+      "description": "75 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Datora Brazil",
+      "incident_name": "SMS Delivery Delays from Twilio to Claro Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Datora Brazil",
+      "incident_name": "SMS Delivery Delays from Twilio to Claro Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-25T00:04:23.721596Z"
+  "html_written": "2026-09-25T04:50:52.863297Z"
 }
