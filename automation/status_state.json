@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-24T21:46:50.565115Z",
+  "polled": "2026-09-25T00:04:23.721544Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Intermittent 500 errors for backend services on Replicate",
+      "incident_name": "Workflows stuck in Queued state",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "75 active Salesforce incidents",
+      "description": "74 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Live Transcription Services.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends - SUIWAL",
+      "incident_name": "Delayed Sends and Receives - EGLD (MultiversX)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Vodafone in the United Kingdom of Great Britain and Northern Ireland",
+      "incident_name": "SMS Delivery Delays from Twilio to Datora Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Vodafone in the United Kingdom of Great Britain and Northern Ireland",
+      "incident_name": "SMS Delivery Delays from Twilio to Datora Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-24T21:46:50.565143Z"
+  "html_written": "2026-09-25T00:04:23.721596Z"
 }
