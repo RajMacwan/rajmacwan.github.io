@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-25T22:31:41.112166Z",
+  "polled": "2026-09-26T00:51:31.219364Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "79 active Salesforce incidents",
+      "description": "77 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "An unintended pop-up message appear for users in US and Europe regions during initial invocation of Zoom AI\u2019s Catch Me Up feature",
+      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Brazil",
+      "incident_name": "Intermittent Trial Unit Errors for Verify 'Try it out' Feature",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Brazil",
+      "incident_name": "Intermittent Trial Unit Errors for Verify 'Try it out' Feature",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-25T22:31:41.112220Z"
+  "html_written": "2026-09-26T00:51:31.219389Z"
 }
