@@ -1,10 +1,10 @@
 {
-  "polled": "2026-09-26T10:56:08.761326Z",
+  "polled": "2026-09-26T14:54:51.209248Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Cloud Access Security Broker (CASB) Issues",
+      "incident_name": "Network Performance Degradation \u2014 Asia-Pacific",
       "fetched": true
     },
     "fastly": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays From a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to MTN Cameroon",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays From a Subset of Twilio Long Codes to GCI United States",
+      "incident_name": "SMS Delivery Receipt Delays from Twilio to MTN Cameroon",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-26T10:56:08.761401Z"
+  "html_written": "2026-09-26T14:54:51.209274Z"
 }
