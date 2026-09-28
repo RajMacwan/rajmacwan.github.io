@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-28T02:00:41.129288Z",
+  "polled": "2026-09-28T08:38:30.039677Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Proximus Belgium",
+      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in Spain",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Proximus Belgium",
+      "incident_name": "SMS Delivery Failures from Twilio to Multiple Networks in Spain",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-28T02:00:41.129313Z"
+  "html_written": "2026-09-28T08:38:30.039708Z"
 }
