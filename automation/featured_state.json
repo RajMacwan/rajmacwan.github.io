@@ -1,6 +1,5 @@
 {
   "history": [
-    "model-selection-for-enterprise-it",
     "network-architecture-hybrid-work",
     "patching-priority-practitioner-framework",
     "personal-osint-workstation-build",
@@ -15,8 +14,9 @@
     "tor-for-it-professionals-primer",
     "ai-in-ops-reality-check",
     "ai-tier1-soc-triage-six-months",
-    "back-to-school-leader-learning"
+    "back-to-school-leader-learning",
+    "boring-technology-case"
   ],
-  "last_run": "2026-09-21T10:18:23.109873Z",
-  "last_slug": "back-to-school-leader-learning"
+  "last_run": "2026-09-28T11:20:22.101343Z",
+  "last_slug": "boring-technology-case"
 }
