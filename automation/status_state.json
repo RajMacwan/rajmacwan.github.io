@@ -1,5 +1,5 @@
 {
-  "polled": "2026-09-30T20:19:37.912896Z",
+  "polled": "2026-09-30T23:58:46.770188Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -56,9 +56,9 @@
       "fetched": true
     },
     "azure": {
-      "indicator": "none",
-      "description": "All Azure services operating normally",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "1 Azure incident in last 12h",
+      "incident_name": "Active - Multiple services experiencing connectivity issues in multiple regions",
       "fetched": true
     },
     "gcp": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated latency for some API requests",
+      "incident_name": "Elevated errors in ChatGPT Space Pages",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Multiple Networks in Chile",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks In Colombia",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Short Codes to Multiple Networks in Chile",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Multiple Networks In Colombia",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-09-30T20:19:37.912927Z"
+  "html_written": "2026-09-30T23:58:46.770226Z"
 }
