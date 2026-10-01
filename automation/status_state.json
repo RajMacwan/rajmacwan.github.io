@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-01T05:36:42.826848Z",
+  "polled": "2026-10-01T11:47:41.066130Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Kolbi Costa Rica",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to DigiMobil (Movistar) Spain",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Kolbi Costa Rica",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to DigiMobil (Movistar) Spain",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-01T05:36:42.826866Z"
+  "html_written": "2026-10-01T11:47:41.066159Z"
 }
