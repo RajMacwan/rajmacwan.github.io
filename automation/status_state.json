@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-01T17:30:32.367956Z",
+  "polled": "2026-10-01T21:59:22.713399Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare Workers build delays",
+      "incident_name": "Network Performance Issues in Madrid",
       "fetched": true
     },
     "fastly": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Actions Job Delays",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affected Incoming and Outgoing Calls of Zoom Contact Center, Virtual Agents, Mail, Calendar, Meetings, Cloud Meeting Rec",
+      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
       "fetched": true
     },
     "dropbox": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance on the Claude API and platform.claude.com",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Delayed credits on the Claude Platform",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures and Post Dial Delay from Twilio Phone Numbers to DigiMobil Spain",
+      "incident_name": "A2P Campaign Registration Delays",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures and Post Dial Delay from Twilio Phone Numbers to DigiMobil Spain",
+      "incident_name": "A2P Campaign Registration Delays",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-01T17:30:32.367981Z"
+  "html_written": "2026-10-01T21:59:22.713431Z"
 }
