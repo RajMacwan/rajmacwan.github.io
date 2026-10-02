@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-01T21:59:22.713399Z",
+  "polled": "2026-10-02T01:34:00.070641Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "78 active Salesforce incidents",
+      "description": "80 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors in ChatGPT Space Pages",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed credits on the Claude Platform",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "A2P Campaign Registration Delays",
+      "incident_name": "SMS Delivery Delays from Twilio to Jio India",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "A2P Campaign Registration Delays",
+      "incident_name": "SMS Delivery Delays from Twilio to Jio India",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-01T21:59:22.713431Z"
+  "html_written": "2026-10-02T01:34:00.070669Z"
 }
