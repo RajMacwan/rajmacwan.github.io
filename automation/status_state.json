@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-02T19:14:19.945169Z",
+  "polled": "2026-10-02T23:02:22.404735Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Issue - Object Storage - US-Southeast (Atlanta)",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Service Issue - GPU and VPU Booting issues",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "82 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Delayed Sends & Receives - ALEO",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "500 Errors for Conversations Classic Conversations Updates",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Hi3G Italy",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "500 Errors for Conversations Classic Conversations Updates",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Hi3G Italy",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-02T19:14:19.945195Z"
+  "html_written": "2026-10-02T23:02:22.404765Z"
 }
