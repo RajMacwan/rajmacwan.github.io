@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-03T01:54:06.813610Z",
+  "polled": "2026-10-03T07:42:00.251188Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Cloudflare One Clients are incorrectly challenged on some sites",
+      "incident_name": "Issues with Workers Build failing to start",
       "fetched": true
     },
     "fastly": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-03T01:54:06.813677Z"
+  "html_written": "2026-10-03T07:42:00.251222Z"
 }
