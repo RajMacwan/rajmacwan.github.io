@@ -1,6 +1,5 @@
 {
   "history": [
-    "network-architecture-hybrid-work",
     "patching-priority-practitioner-framework",
     "personal-osint-workstation-build",
     "rag-for-internal-documentation",
@@ -15,8 +14,9 @@
     "ai-in-ops-reality-check",
     "ai-tier1-soc-triage-six-months",
     "back-to-school-leader-learning",
-    "boring-technology-case"
+    "boring-technology-case",
+    "breach-notification-state-laws"
   ],
-  "last_run": "2026-09-28T11:20:22.101343Z",
-  "last_slug": "boring-technology-case"
+  "last_run": "2026-10-05T11:56:24.615656Z",
+  "last_slug": "breach-notification-state-laws"
 }
