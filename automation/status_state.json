@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-05T11:47:20.845895Z",
+  "polled": "2026-10-05T19:51:29.607310Z",
   "services": {
     "cloudflare": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "API Shield JWT Validation Errors",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Durable Objects Availability Issue in Eastern North America",
       "fetched": true
     },
     "fastly": {
@@ -20,10 +20,10 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "render": {
       "indicator": "none",
@@ -34,7 +34,7 @@
     "digitalocean": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "VPC Networking Availability",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "81 active Salesforce incidents",
+      "description": "83 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Incident with Actions",
       "fetched": true
     },
     "gitlab": {
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Multiple Atlassian services are experiencing issues",
+      "fetched": true
     },
     "asana": {
       "indicator": "unknown",
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated Work Mode errors",
+      "incident_name": "Admin Console Intermittently Inaccessible",
       "fetched": true
     },
     "anthropic": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends & Receives - ALEO",
+      "incident_name": "Delayed Sends and Receives - EGLD (MultiversX)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio France Phone Numbers",
+      "incident_name": "SMS Delivery Delays From a Subset of Twilio Short Codes to Brisanet Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio France Phone Numbers",
+      "incident_name": "SMS Delivery Delays From a Subset of Twilio Short Codes to Brisanet Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-05T11:47:20.845931Z"
+  "html_written": "2026-10-05T19:51:29.607336Z"
 }
