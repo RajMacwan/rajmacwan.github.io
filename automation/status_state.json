@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-04T23:52:40.462290Z",
+  "polled": "2026-10-05T04:28:27.717603Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "83 active Salesforce incidents",
+      "description": "79 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Rooms Management and Workspaces Management in SA01.",
+      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-04T23:52:40.462318Z"
+  "html_written": "2026-10-05T04:28:27.717634Z"
 }
