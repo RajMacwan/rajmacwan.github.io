@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-06T23:20:55.164519Z",
+  "polled": "2026-10-07T02:36:32.840928Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "82 active Salesforce incidents",
+      "description": "72 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Several services are degraded",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
+      "incident_name": "Service Degradation Affecting Zoom Slides Generation in US Region",
       "fetched": true
     },
     "dropbox": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Workspace Agents Degraded and Responses Impacted",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors loading usage data on platform.claude.com",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to O! Kyrgyzstan",
+      "incident_name": "SMS Delivery Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to O! Kyrgyzstan",
+      "incident_name": "SMS Delivery Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-06T23:20:55.164542Z"
+  "html_written": "2026-10-07T02:36:32.840975Z"
 }
