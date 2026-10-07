@@ -1,11 +1,11 @@
 {
   "level": "BLUE",
-  "score": 3,
+  "score": 2,
   "headline": "Elevated but steady.",
   "body": "Normal breach cadence. Routine patch discipline sufficient.",
   "meta": {
-    "kev_adds_7d": 6,
+    "kev_adds_7d": 5,
     "active_zero_days": 0
   },
-  "updated": "2026-10-06T12:23:51.564033Z"
+  "updated": "2026-10-07T12:16:39.697694Z"
 }
