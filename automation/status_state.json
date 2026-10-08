@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-07T21:34:31.575846Z",
+  "polled": "2026-10-08T01:17:22.078079Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "74 active Salesforce incidents",
+      "description": "71 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -171,7 +171,7 @@
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
+      "description": "Partially Degraded Service",
       "incident_name": "Elevated errors on platform.claude.com",
       "fetched": true
     },
@@ -266,27 +266,27 @@
       "fetched": true
     },
     "square": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Service Disruption",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends/Receives - Injective Network",
+      "incident_name": "Delayed Sends and Receives - EGLD (MultiversX)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
+      "incident_name": "SMS Delivery Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
+      "incident_name": "SMS Delivery Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-07T21:34:31.575874Z"
+  "html_written": "2026-10-08T01:17:22.078125Z"
 }
