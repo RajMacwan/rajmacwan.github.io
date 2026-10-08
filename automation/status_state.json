@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-08T07:31:56.697330Z",
+  "polled": "2026-10-08T14:54:58.736018Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "71 active Salesforce incidents",
+      "description": "73 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Opus 5.5 is Experiencing 429s",
       "fetched": true
     },
     "replicate": {
@@ -272,8 +272,8 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "Delayed Sends and Receives - EGLD (MultiversX)",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-08T07:31:56.697360Z"
+  "html_written": "2026-10-08T14:54:58.736040Z"
 }
