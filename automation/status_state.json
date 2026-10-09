@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-09T00:37:19.464280Z",
+  "polled": "2026-10-09T06:41:47.573132Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Service Issue - Cloud Manager and API",
       "fetched": true
     },
     "aws": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Verizon United States",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Verizon United States",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Movistar El Salvador",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-09T00:37:19.464307Z"
+  "html_written": "2026-10-09T06:41:47.573167Z"
 }
