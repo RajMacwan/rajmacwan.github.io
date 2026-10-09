@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-09T13:50:20.523861Z",
+  "polled": "2026-10-09T19:17:40.274946Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Cloudflare One Clients are incorrectly challenged on some sites",
+      "incident_name": "Cloudflare API service issues",
       "fetched": true
     },
     "fastly": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Delayed Costs data in the Compliance API",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Alphanumeric Sender IDs to Telenor Norway",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Mobile China",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio Alphanumeric Sender IDs to Telenor Norway",
+      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Alphanumeric Sender IDs to Mobile China",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-09T13:50:20.523890Z"
+  "html_written": "2026-10-09T19:17:40.274972Z"
 }
