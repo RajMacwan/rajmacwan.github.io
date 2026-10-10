@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-10T02:26:35.657973Z",
+  "polled": "2026-10-10T08:50:37.981644Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Cloudflare One Clients are incorrectly challenged on some sites",
+      "incident_name": "Elevated Errors in China Network Colos",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "70 active Salesforce incidents",
+      "description": "72 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Customer Using Polycom Devices Going Offline",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Brisanet Brazil",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Zamtel Zambia",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Brisanet Brazil",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Zamtel Zambia",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-10T02:26:35.658001Z"
+  "html_written": "2026-10-10T08:50:37.981671Z"
 }
