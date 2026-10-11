@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-11T14:10:50.323309Z",
+  "polled": "2026-10-11T18:59:10.944177Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Multiple Networks in New Zealand",
+      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Multiple Networks in New Zealand",
+      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-11T14:10:50.323328Z"
+  "html_written": "2026-10-11T18:59:10.944204Z"
 }
