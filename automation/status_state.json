@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-11T07:17:50.091281Z",
+  "polled": "2026-10-11T14:10:50.323309Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Beeline Kazakhstan",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Multiple Networks in New Zealand",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Beeline Kazakhstan",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Short Codes to Multiple Networks in New Zealand",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-11T07:17:50.091299Z"
+  "html_written": "2026-10-11T14:10:50.323328Z"
 }
