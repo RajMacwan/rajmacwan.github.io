@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-11T22:46:50.683707Z",
+  "polled": "2026-10-12T01:50:15.987075Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -32,9 +32,9 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "DNS Resolution for Managed Kubernetes",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "heroku": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "62 active Salesforce incidents",
+      "description": "59 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Scheduler.",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-11T22:46:50.683732Z"
+  "html_written": "2026-10-12T01:50:15.987103Z"
 }
