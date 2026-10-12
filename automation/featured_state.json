@@ -1,6 +1,5 @@
 {
   "history": [
-    "patching-priority-practitioner-framework",
     "personal-osint-workstation-build",
     "rag-for-internal-documentation",
     "ransomware-negotiation-when-not-to-pay",
@@ -15,8 +14,9 @@
     "ai-tier1-soc-triage-six-months",
     "back-to-school-leader-learning",
     "boring-technology-case",
-    "breach-notification-state-laws"
+    "breach-notification-state-laws",
+    "business-email-compromise-recovery"
   ],
-  "last_run": "2026-10-05T11:56:24.615656Z",
-  "last_slug": "breach-notification-state-laws"
+  "last_run": "2026-10-12T12:35:31.126423Z",
+  "last_slug": "business-email-compromise-recovery"
 }
