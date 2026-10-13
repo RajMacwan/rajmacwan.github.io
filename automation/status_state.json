@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-13T15:02:20.089447Z",
+  "polled": "2026-10-13T20:37:49.204567Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Audit Logs v2 ingestion is missing multiple Cloudflare products",
+      "incident_name": "Cloudflare Workers - Cron Trigger Activation Issues",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "57 active Salesforce incidents",
+      "description": "58 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -94,7 +94,7 @@
     "snowflake": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "incident_name": "INC20000277",
       "fetched": true
     },
     "databricks": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service degradation affecting Zoom Meeting API in US region",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Degraded performance in GPT-6.1 Sol Codex and Work mode",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors on platform.claude.com",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-13T15:02:20.089480Z"
+  "html_written": "2026-10-13T20:37:49.204605Z"
 }
