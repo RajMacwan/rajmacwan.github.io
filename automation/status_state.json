@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-13T23:53:17.784559Z",
+  "polled": "2026-10-14T03:50:47.428561Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Cloudflare Workers - Cron Trigger Activation Issues",
+      "incident_name": "Audit Logs v2 ingestion is missing multiple Cloudflare products",
       "fetched": true
     },
     "fastly": {
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Zoom Clips",
       "fetched": true
     },
     "dropbox": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Vivacom Bulgaria",
+      "incident_name": "SMS Delivery Delays and Failures Between Twilio and Multiple Networks in Brazil and Italy",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Vivacom Bulgaria",
+      "incident_name": "SMS Delivery Delays and Failures Between Twilio and Multiple Networks in Brazil and Italy",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-13T23:53:17.784586Z"
+  "html_written": "2026-10-14T03:50:47.428586Z"
 }
