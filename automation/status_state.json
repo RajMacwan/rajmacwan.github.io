@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-15T21:44:25.635491Z",
+  "polled": "2026-10-15T23:54:40.376569Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -26,8 +26,8 @@
       "fetched": true
     },
     "render": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Dashboard not updating in real time; Some Workflows SDK requests timing out",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors affecting Grok models",
       "fetched": true
     },
     "replicate": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From Network Subscribers to Twilio Austria Mobile Phone Numbers",
+      "incident_name": "SMS Delivery Receipt Delays From a Subset of Twilio Short Codes to Brisanet Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures From Network Subscribers to Twilio Austria Mobile Phone Numbers",
+      "incident_name": "SMS Delivery Receipt Delays From a Subset of Twilio Short Codes to Brisanet Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-15T21:44:25.635525Z"
+  "html_written": "2026-10-15T23:54:40.376607Z"
 }
