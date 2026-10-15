@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-15T18:33:34.346022Z",
+  "polled": "2026-10-15T21:44:25.635491Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Pages.dev sites experiencing availability issues in Norway",
+      "incident_name": "Audit Logs v2 ingestion is missing multiple Cloudflare products",
       "fetched": true
     },
     "fastly": {
@@ -26,9 +26,9 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Dashboard not updating in real time; Some Workflows SDK requests timing out",
       "fetched": true
     },
     "digitalocean": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "maintenance",
       "description": "Service Under Maintenance",
-      "incident_name": "Guest-to-Host KVM Escape [CVE-2026-99999]",
+      "incident_name": "(PwnEscape) Guest-to-Host KVM Escape [CVE-2026-99999]",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "61 active Salesforce incidents",
+      "description": "63 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -94,7 +94,7 @@
     "snowflake": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "INC20000277",
+      "incident_name": "INC20000150",
       "fetched": true
     },
     "databricks": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "CCA Automations are delayed when starting an Automation",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple ",
+      "incident_name": "Voice Call Failures From Network Subscribers to Twilio Austria Mobile Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Toll-Free Numbers, Landline Numbers, and Mobile Numbers to Multiple Networks in Multiple ",
+      "incident_name": "Voice Call Failures From Network Subscribers to Twilio Austria Mobile Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-15T18:33:34.346046Z"
+  "html_written": "2026-10-15T21:44:25.635525Z"
 }
