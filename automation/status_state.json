@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-16T03:28:02.972054Z",
+  "polled": "2026-10-16T08:27:15.164038Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "65 active Salesforce incidents",
+      "description": "66 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors affecting Grok models",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -274,7 +274,7 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Celestia - Delayed Sends and Receives",
+      "incident_name": "Delayed Sends - TON Network",
       "fetched": true
     },
     "twilio": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-16T03:28:02.972083Z"
+  "html_written": "2026-10-16T08:27:15.164066Z"
 }
