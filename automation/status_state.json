@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-16T13:28:03.196507Z",
+  "polled": "2026-10-16T17:39:01.646794Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "67 active Salesforce incidents",
+      "description": "69 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Some users are unable to view vault profiles using the web interface",
       "fetched": true
     },
     "bitwarden": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "Delayed A2P Campaign Approvals",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "Delayed A2P Campaign Approvals",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-16T13:28:03.196549Z"
+  "html_written": "2026-10-16T17:39:01.646817Z"
 }
