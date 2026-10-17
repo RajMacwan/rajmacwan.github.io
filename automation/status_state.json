@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-17T05:04:53.709176Z",
+  "polled": "2026-10-17T09:17:01.568825Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -20,9 +20,9 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated Build Errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "70 active Salesforce incidents",
+      "description": "71 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-17T05:04:53.709214Z"
+  "html_written": "2026-10-17T09:17:01.568854Z"
 }
