@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-16T22:47:42.162089Z",
+  "polled": "2026-10-17T00:49:07.304921Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -218,9 +218,9 @@
       "fetched": false
     },
     "onepassword": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "High error rate on 1Password.com",
       "fetched": true
     },
     "bitwarden": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-16T22:47:42.162119Z"
+  "html_written": "2026-10-17T00:49:07.304960Z"
 }
