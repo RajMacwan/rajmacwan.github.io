@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-17T13:02:01.961887Z",
+  "polled": "2026-10-17T16:21:35.062530Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-17T13:02:01.961930Z"
+  "html_written": "2026-10-17T16:21:35.062557Z"
 }
