@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-18T00:58:16.944818Z",
+  "polled": "2026-10-18T05:42:15.896186Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -266,9 +266,9 @@
       "fetched": true
     },
     "square": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "Service Disruption",
       "fetched": true
     },
     "coinbase": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-18T00:58:16.944860Z"
+  "html_written": "2026-10-18T05:42:15.896252Z"
 }
