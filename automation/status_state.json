@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-17T23:04:52.850792Z",
+  "polled": "2026-10-18T00:58:16.944818Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "71 active Salesforce incidents",
+      "description": "68 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "SMS Delivery Failures from Twilio Alphanumeric Sender IDs to Multiple Networks in Turkey",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "SMS Delivery Failures from Twilio Alphanumeric Sender IDs to Multiple Networks in Turkey",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-17T23:04:52.850813Z"
+  "html_written": "2026-10-18T00:58:16.944860Z"
 }
