@@ -1,6 +1,5 @@
 {
   "history": [
-    "personal-osint-workstation-build",
     "rag-for-internal-documentation",
     "ransomware-negotiation-when-not-to-pay",
     "reading-the-threat-intelligence-landscape",
@@ -15,8 +14,9 @@
     "back-to-school-leader-learning",
     "boring-technology-case",
     "breach-notification-state-laws",
-    "business-email-compromise-recovery"
+    "business-email-compromise-recovery",
+    "context-engineering-beats-prompt-engineering"
   ],
-  "last_run": "2026-10-12T12:35:31.126423Z",
-  "last_slug": "business-email-compromise-recovery"
+  "last_run": "2026-10-19T10:24:08.918532Z",
+  "last_slug": "context-engineering-beats-prompt-engineering"
 }
