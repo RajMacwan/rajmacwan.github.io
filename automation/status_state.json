@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-19T07:00:23.237243Z",
+  "polled": "2026-10-19T14:37:12.275866Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -26,10 +26,10 @@
       "fetched": true
     },
     "render": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "digitalocean": {
       "indicator": "none",
@@ -44,10 +44,10 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "(PwnEscape) Guest-to-Host KVM Escape [CVE-2026-99999]",
+      "fetched": true
     },
     "aws": {
       "indicator": "none",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "69 active Salesforce incidents",
+      "description": "70 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,16 +152,16 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
-      "incident_name": "",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Service Degradation Affecting Zoom Website in UK region",
       "fetched": true
     },
     "dropbox": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
-      "fetched": false
+      "fetched": true
     },
     "openai": {
       "indicator": "none",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Surf Telecom Brazil",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Mobile Numbers to Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Surf Telecom Brazil",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Mobile Numbers to Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-19T07:00:23.237275Z"
+  "html_written": "2026-10-19T14:37:12.275892Z"
 }
