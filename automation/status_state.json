@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-20T12:57:11.920067Z",
+  "polled": "2026-10-20T17:51:40.910286Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -62,9 +62,9 @@
       "fetched": true
     },
     "gcp": {
-      "indicator": "minor",
-      "description": "1 active GCP incident",
-      "incident_name": "Multiple services are experiencing issues in the europe-west2 region.",
+      "indicator": "none",
+      "description": "All Google Cloud services operating normally",
+      "incident_name": "",
       "fetched": true
     },
     "oci": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "67 active Salesforce incidents",
+      "description": "69 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000294",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "INC20000150",
       "fetched": true
     },
     "databricks": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Delayed Sends - TON Network",
+      "incident_name": "GYEN conversion to USDC",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Romania",
+      "incident_name": "Issue with Flex Agent Copilot Auto Wrap-up Notes",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Romania",
+      "incident_name": "Issue with Flex Agent Copilot Auto Wrap-up Notes",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-20T12:57:11.920097Z"
+  "html_written": "2026-10-20T17:51:40.910316Z"
 }
