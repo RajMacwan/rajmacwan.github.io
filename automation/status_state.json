@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-21T04:28:19.272784Z",
+  "polled": "2026-10-21T09:31:58.187168Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Multiple Atlassian services are experiencing issues",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "asana": {
       "indicator": "unknown",
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Service Disruption Impacting Chase connections",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay From a Subset of Twilio Phone Numbers to Israel",
+      "incident_name": "Voice Call Failures and Post Dial Delay From a Subset of Twilio Mobile Numbers to Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay From a Subset of Twilio Phone Numbers to Israel",
+      "incident_name": "Voice Call Failures and Post Dial Delay From a Subset of Twilio Mobile Numbers to Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-21T04:28:19.272810Z"
+  "html_written": "2026-10-21T09:31:58.187218Z"
 }
