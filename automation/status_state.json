@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-21T14:39:13.377394Z",
+  "polled": "2026-10-21T18:55:39.391566Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Increased Latency in India",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "(PwnEscape) Guest-to-Host KVM Escape [CVE-2026-99999]",
+      "incident_name": "Customer Security Advisory: PHP Remote Code Execution Vulnerabilities",
       "fetched": true
     },
     "aws": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000301",
       "fetched": true
     },
     "databricks": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Delays for Pull Requests and Webhook deliveries",
       "fetched": true
     },
     "gitlab": {
@@ -164,8 +164,8 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "major",
-      "description": "Partial System Outage",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Elevated FedRAMP API error rates for Astra and Sol",
       "fetched": true
     },
@@ -280,14 +280,14 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Orange France",
+      "incident_name": "SMS Delivery Delays and Failures between a Subset of Twilio Long Codes and Multiple Networks in Italy",
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "unknown",
-      "description": "Status feed unreachable",
-      "incident_name": "",
-      "fetched": false
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "SMS Delivery Delays and Failures between a Subset of Twilio Long Codes and Multiple Networks in Italy",
+      "fetched": true
     },
     "postmark": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-21T14:39:13.377419Z"
+  "html_written": "2026-10-21T18:55:39.391596Z"
 }
