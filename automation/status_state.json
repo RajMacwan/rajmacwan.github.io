@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-20T23:58:16.804197Z",
+  "polled": "2026-10-21T04:28:19.272784Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -28,7 +28,7 @@
     "render": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Deploying from GitLab may intermittently fail",
+      "incident_name": "",
       "fetched": true
     },
     "digitalocean": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Service Disruption Impacting Chase connections",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "WhatsApp Embedded Signup Configuration Failures",
+      "incident_name": "Voice Call Post Dial Delay From a Subset of Twilio Phone Numbers to Israel",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "WhatsApp Embedded Signup Configuration Failures",
+      "incident_name": "Voice Call Post Dial Delay From a Subset of Twilio Phone Numbers to Israel",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-20T23:58:16.804227Z"
+  "html_written": "2026-10-21T04:28:19.272810Z"
 }
