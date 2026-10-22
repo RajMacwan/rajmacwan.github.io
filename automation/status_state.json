@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-22T10:30:17.937032Z",
+  "polled": "2026-10-22T15:37:39.816519Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Incorrect geo location for some Cloudflare WARP users",
+      "incident_name": "Cloudflare Workers API Latency",
       "fetched": true
     },
     "fastly": {
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "72 active Salesforce incidents",
+      "description": "73 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Errors loading Issues, Pull Requests, and search results",
       "fetched": true
     },
     "gitlab": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "GYEN conversion to USDC",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Card Payment Unavailable (US) - Try Another",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Israel",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Malitel Mali",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Israel",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Malitel Mali",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-22T10:30:17.937061Z"
+  "html_written": "2026-10-22T15:37:39.816560Z"
 }
