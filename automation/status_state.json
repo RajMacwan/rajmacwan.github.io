@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-22T19:29:34.069643Z",
+  "polled": "2026-10-22T22:40:34.980229Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -20,9 +20,9 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Edge Functions and Functions logs",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Customer Security Advisory: PHP Remote Code Execution Vulnerabilities",
+      "incident_name": "Customer Security Advisory: Critical F5/NGINX Out-of-Band Vulnerabilities",
       "fetched": true
     },
     "aws": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Errors loading Issues, Pull Requests, and search results",
+      "incident_name": "Project updates delayed",
       "fetched": true
     },
     "gitlab": {
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Service Degradation Affecting Zoom Meetings Services in the US.",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Degraded Performance of Dots on Enterprise",
+      "incident_name": "New Ad Accounts failing to provision admins",
       "fetched": true
     },
     "anthropic": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Mina - Delayed Sends & Receives",
+      "incident_name": "GYEN conversion to USDC",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issue with 500 Errors on Porting Request Submissions",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Malitel Mali",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Issue with 500 Errors on Porting Request Submissions",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Malitel Mali",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-22T19:29:34.069678Z"
+  "html_written": "2026-10-22T22:40:34.980257Z"
 }
