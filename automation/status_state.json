@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-22T05:27:09.105269Z",
+  "polled": "2026-10-22T10:30:17.937032Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -22,7 +22,7 @@
     "netlify": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Delays in build logs appearing in the UI",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "71 active Salesforce incidents",
+      "description": "72 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -164,15 +164,15 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "ChatGPT conversion failures in India, Japan and Korea. And Response API errors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors affecting Connectors",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "cursor": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded Performance - Derivatives Portfolio Transfers",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "GYEN conversion to USDC",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) Failure Increase in Netherlands",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Israel",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) Failure Increase in Netherlands",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Israel",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-22T05:27:09.105302Z"
+  "html_written": "2026-10-22T10:30:17.937061Z"
 }
