@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-23T15:51:36.022664Z",
+  "polled": "2026-10-23T19:48:51.898134Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Degraded network performance affecting some traffic between Cloudflare data centers",
+      "incident_name": "Delayed, missed, and duplicated Workers Cron Triggers",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "84 active Salesforce incidents",
+      "description": "78 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Disruption with Dependabot Alerts",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Degradation Affecting Zoom Meetings Services in the US.",
+      "incident_name": "",
       "fetched": true
     },
     "dropbox": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Delayed Sends/Receives - TON Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Failures from Twilio to South Africa",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Liberty Mobile Puerto Rico",
+      "incident_name": "SMS Delivery Failures from Twilio to South Africa",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-23T15:51:36.022691Z"
+  "html_written": "2026-10-23T19:48:51.898171Z"
 }
