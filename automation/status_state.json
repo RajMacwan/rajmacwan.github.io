@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-23T06:00:04.151156Z",
+  "polled": "2026-10-23T11:28:21.209331Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Support Helpdesk Availability Issues",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Customer Security Advisory: Critical F5/NGINX Out-of-Band Vulnerabilities",
+      "incident_name": "Connectivity Issue - Dallas Data Center (IPv6 Traffic to Google)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "78 active Salesforce incidents",
+      "description": "84 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telecall Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telecall Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-23T06:00:04.151201Z"
+  "html_written": "2026-10-23T11:28:21.209361Z"
 }
