@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-23T01:00:48.236088Z",
+  "polled": "2026-10-23T06:00:04.151156Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "",
+      "incident_name": "Support Helpdesk Availability Issues",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "73 active Salesforce incidents",
+      "description": "78 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Project updates delayed",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "GYEN conversion to USDC",
+      "incident_name": "Delayed Sends/Receives - TON Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Viaero United States",
+      "incident_name": "SMS Delivery Delays between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Viaero United States",
+      "incident_name": "SMS Delivery Delays between a Subset of Twilio Phone Numbers and Multiple Networks in Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-23T01:00:48.236118Z"
+  "html_written": "2026-10-23T06:00:04.151201Z"
 }
