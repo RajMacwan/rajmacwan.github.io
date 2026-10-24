@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-23T22:40:08.917331Z",
+  "polled": "2026-10-24T01:10:17.071019Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "",
+      "incident_name": "Network Performance Issues in Ashburn",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "86 active Salesforce incidents",
+      "description": "85 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio Costa Rica Phone Numbers",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Network Subscribers to a Subset of Twilio Costa Rica Phone Numbers",
+      "incident_name": "Voice Call Post Dial Delay from Twilio Phone Numbers to Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-23T22:40:08.917360Z"
+  "html_written": "2026-10-24T01:10:17.071088Z"
 }
