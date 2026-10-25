@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-25T09:23:09.616145Z",
+  "polled": "2026-10-25T13:50:44.982709Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Airtel Nigeria",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Claro Brazil and Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Airtel Nigeria",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Claro Brazil and Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-25T09:23:09.616172Z"
+  "html_written": "2026-10-25T13:50:44.982737Z"
 }
