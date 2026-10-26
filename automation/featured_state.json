@@ -1,6 +1,5 @@
 {
   "history": [
-    "rag-for-internal-documentation",
     "ransomware-negotiation-when-not-to-pay",
     "reading-the-threat-intelligence-landscape",
     "running-a-warrant-canary",
@@ -15,8 +14,9 @@
     "boring-technology-case",
     "breach-notification-state-laws",
     "business-email-compromise-recovery",
-    "context-engineering-beats-prompt-engineering"
+    "context-engineering-beats-prompt-engineering",
+    "dark-web-intel-what-actually-matters"
   ],
-  "last_run": "2026-10-19T10:24:08.918532Z",
-  "last_slug": "context-engineering-beats-prompt-engineering"
+  "last_run": "2026-10-26T10:38:55.101070Z",
+  "last_slug": "dark-web-intel-what-actually-matters"
 }
