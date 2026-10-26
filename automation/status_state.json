@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-26T00:29:37.494104Z",
+  "polled": "2026-10-26T05:12:05.387646Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "83 active Salesforce incidents",
+      "description": "84 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "Service Disruption Impacting Wells Fargo connections",
       "fetched": true
     },
     "square": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telcel Mexico",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Claro Brazil and Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telcel Mexico",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Claro Brazil and Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-26T00:29:37.494151Z"
+  "html_written": "2026-10-26T05:12:05.387680Z"
 }
