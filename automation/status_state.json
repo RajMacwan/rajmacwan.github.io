@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-27T12:02:45.496463Z",
+  "polled": "2026-10-27T17:56:06.637778Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "We are seeing some customers having issues with Workers Builds",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "88 active Salesforce incidents",
+      "description": "90 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated error rates for most hosted Code Reviews and Security Reviews on private GitHub repositories",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Turkcell Turkey",
+      "incident_name": "Voice Call Failures from Twilio Mobile Numbers to Israel",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Turkcell Turkey",
+      "incident_name": "Voice Call Failures from Twilio Mobile Numbers to Israel",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-27T12:02:45.496498Z"
+  "html_written": "2026-10-27T17:56:06.637800Z"
 }
