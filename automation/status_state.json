@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-27T17:56:06.637778Z",
+  "polled": "2026-10-27T21:56:23.798293Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "",
+      "incident_name": "Elevated Cloudflare Access API Errors",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "90 active Salesforce incidents",
+      "description": "94 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Mobile Numbers to Israel",
+      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to C-Spire United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from Twilio Mobile Numbers to Israel",
+      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to C-Spire United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-27T17:56:06.637800Z"
+  "html_written": "2026-10-27T21:56:23.798310Z"
 }
