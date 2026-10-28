@@ -1,10 +1,10 @@
 {
-  "polled": "2026-10-28T19:05:39.483570Z",
+  "polled": "2026-10-28T23:09:41.038451Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Network Performance Issues in Ashburn, IAD",
+      "incident_name": "",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Connectivity Issue between ID-CGK (Jakarta) and SG-SIN-2 (Singapore 2)",
+      "incident_name": "Service Issue - Block Storage (BR-GRU)",
       "fetched": true
     },
     "aws": {
@@ -170,15 +170,15 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors affecting the Google Calendar connector",
-      "fetched": true
-    },
-    "cursor": {
       "indicator": "none",
       "description": "All Systems Operational",
       "incident_name": "",
+      "fetched": true
+    },
+    "cursor": {
+      "indicator": "minor",
+      "description": "Minor Service Outage",
+      "incident_name": "Multiple services degraded",
       "fetched": true
     },
     "replicate": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Possible 503 Errors for Messaging Traffic in the Australia Region",
+      "incident_name": "SMS Delivery Delays and Failures Between Twilio Phone Numbers and Multiple Networks in Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Possible 503 Errors for Messaging Traffic in the Australia Region",
+      "incident_name": "SMS Delivery Delays and Failures Between Twilio Phone Numbers and Multiple Networks in Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-28T19:05:39.483597Z"
+  "html_written": "2026-10-28T23:09:41.038478Z"
 }
