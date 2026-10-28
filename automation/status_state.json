@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-28T06:48:57.151743Z",
+  "polled": "2026-10-28T13:35:54.923243Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Connectivity Issue between ID-CGK (Jakarta) and SG-SIN-2 (Singapore 2)",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "92 active Salesforce incidents",
+      "description": "93 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-28T06:48:57.151787Z"
+  "html_written": "2026-10-28T13:35:54.923273Z"
 }
