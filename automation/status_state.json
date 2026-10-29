@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-28T23:09:41.038451Z",
+  "polled": "2026-10-29T02:26:37.819183Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "93 active Salesforce incidents",
+      "description": "88 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -134,10 +134,10 @@
       "fetched": false
     },
     "loom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Multiple Atlassian services are experiencing issues",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "asana": {
       "indicator": "unknown",
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Multiple services degraded",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -280,14 +280,14 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures Between Twilio Phone Numbers and Multiple Networks in Brazil",
+      "incident_name": "Silent Network Authentication (SNA) Failure Increase on Indosat in Indonesia",
       "fetched": true
     },
     "sendgrid": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures Between Twilio Phone Numbers and Multiple Networks in Brazil",
-      "fetched": true
+      "indicator": "unknown",
+      "description": "Status feed unreachable",
+      "incident_name": "",
+      "fetched": false
     },
     "postmark": {
       "indicator": "unknown",
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-28T23:09:41.038478Z"
+  "html_written": "2026-10-29T02:26:37.819232Z"
 }
