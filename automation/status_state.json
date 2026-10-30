@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-30T18:16:02.851920Z",
+  "polled": "2026-10-30T22:28:34.735464Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -20,8 +20,8 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "92 active Salesforce incidents",
+      "description": "95 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -94,7 +94,7 @@
     "snowflake": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "INC20000150",
+      "incident_name": "INC20000321",
       "fetched": true
     },
     "databricks": {
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Incident with Actions, Pages, and Webhooks",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Incident with Dependabot",
       "fetched": true
     },
     "gitlab": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors for GPT Image 2 API image edits",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -200,9 +200,9 @@
       "fetched": false
     },
     "mistral": {
-      "indicator": "minor",
-      "description": "Minor service outage",
-      "incident_name": "Vibe Code Web and Vibe Work sessions may fail to start or resume",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "okta": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects on KPN in Netherlands",
+      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) High Latency on KPN in Netherlands",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects on KPN in Netherlands",
+      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) High Latency on KPN in Netherlands",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-30T18:16:02.851946Z"
+  "html_written": "2026-10-30T22:28:34.735501Z"
 }
