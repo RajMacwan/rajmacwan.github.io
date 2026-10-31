@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-31T01:45:02.186710Z",
+  "polled": "2026-10-31T07:32:59.672784Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "Customer Security Advisory: CVE-2026-98432",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) High Latency on KPN in Netherlands",
+      "incident_name": "Silent Network Authentication (SNA) Failure Increase on Indosat in Indonesia",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects and Gateway API (Lookup API) High Latency on KPN in Netherlands",
+      "incident_name": "Silent Network Authentication (SNA) Failure Increase on Indosat in Indonesia",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-31T01:45:02.186765Z"
+  "html_written": "2026-10-31T07:32:59.672812Z"
 }
