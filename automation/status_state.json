@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-31T07:32:59.672784Z",
+  "polled": "2026-10-31T13:51:44.310101Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Customer Security Advisory: CVE-2026-98432",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "97 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Failure Increase on Indosat in Indonesia",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Failure Increase on Indosat in Indonesia",
+      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-31T07:32:59.672812Z"
+  "html_written": "2026-10-31T13:51:44.310129Z"
 }
