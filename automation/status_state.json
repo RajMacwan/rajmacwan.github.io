@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-30T22:28:34.735464Z",
+  "polled": "2026-10-31T01:45:02.186710Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -94,7 +94,7 @@
     "snowflake": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "INC20000321",
+      "incident_name": "INC20000150",
       "fetched": true
     },
     "databricks": {
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Incident with Dependabot",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-30T22:28:34.735501Z"
+  "html_written": "2026-10-31T01:45:02.186765Z"
 }
