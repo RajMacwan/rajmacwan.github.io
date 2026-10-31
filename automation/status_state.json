@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-31T18:15:03.343873Z",
+  "polled": "2026-10-31T21:43:04.392152Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Romania",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Post Dial Delay from a Subset of Twilio Phone Numbers to Thailand",
+      "incident_name": "Voice Call Failures from Twilio Phone Numbers to Romania",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-31T18:15:03.343907Z"
+  "html_written": "2026-10-31T21:43:04.392176Z"
 }
