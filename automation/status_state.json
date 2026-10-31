@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-31T13:51:44.310101Z",
+  "polled": "2026-10-31T18:15:03.343873Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Customer Security Advisory: CVE-2026-98432",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Issue - US-Southeast (Atlanta)",
       "fetched": true
     },
     "aws": {
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Issues establishing voice call",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-31T13:51:44.310129Z"
+  "html_written": "2026-10-31T18:15:03.343907Z"
 }
