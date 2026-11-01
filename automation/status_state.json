@@ -1,5 +1,5 @@
 {
-  "polled": "2026-10-31T21:43:04.392152Z",
+  "polled": "2026-11-01T00:27:47.764172Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "97 active Salesforce incidents",
+      "description": "93 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -310,7 +310,7 @@
     "discord": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Issues establishing voice call",
+      "incident_name": "",
       "fetched": true
     },
     "pagerduty": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-10-31T21:43:04.392176Z"
+  "html_written": "2026-11-01T00:27:47.764199Z"
 }
