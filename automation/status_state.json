@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-02T08:22:50.138995Z",
+  "polled": "2026-11-02T18:41:18.272392Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -20,9 +20,9 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delays in build logs appearing in the UI",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Issue - US-Southeast (Atlanta)",
+      "incident_name": "Connectivity Issue - FR-PAR-2 (Paris 2)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "92 active Salesforce incidents",
+      "description": "94 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "maintenance",
       "description": "Service Under Maintenance",
-      "incident_name": "Degraded Performance - DEX, Borrow and Lend",
+      "incident_name": "",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects in Indonesia",
+      "incident_name": "Some Customers May Have Incorrect Balances Reflected on Their Account",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Silent Network Authentication (SNA) Missing Redirects in Indonesia",
+      "incident_name": "Some Customers May Have Incorrect Balances Reflected on Their Account",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-02T08:22:50.139046Z"
+  "html_written": "2026-11-02T18:41:18.272450Z"
 }
