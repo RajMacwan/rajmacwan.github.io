@@ -1,6 +1,5 @@
 {
   "history": [
-    "ransomware-negotiation-when-not-to-pay",
     "reading-the-threat-intelligence-landscape",
     "running-a-warrant-canary",
     "setting-up-whonix-step-by-step",
@@ -15,8 +14,9 @@
     "breach-notification-state-laws",
     "business-email-compromise-recovery",
     "context-engineering-beats-prompt-engineering",
-    "dark-web-intel-what-actually-matters"
+    "dark-web-intel-what-actually-matters",
+    "data-platform-maturity-lakehouse"
   ],
-  "last_run": "2026-10-26T10:38:55.101070Z",
-  "last_slug": "dark-web-intel-what-actually-matters"
+  "last_run": "2026-11-02T12:57:42.214932Z",
+  "last_slug": "data-platform-maturity-lakehouse"
 }
