@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-03T08:00:52.812032Z",
+  "polled": "2026-11-03T16:09:00.547381Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "",
+      "incident_name": "Increased Durable Object Errors in the Dallas, TX US region",
       "fetched": true
     },
     "fastly": {
@@ -44,8 +44,8 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Customer Security Advisory: CVE-2026-98432",
       "fetched": true
     },
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "96 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "maintenance",
       "description": "Service Under Maintenance",
-      "incident_name": "",
+      "incident_name": "Delayed Sends and Receives - Sonic Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI Communication United States",
+      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Long Codes and Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Receipt Delays from a Subset of Twilio Long Codes to GCI Communication United States",
+      "incident_name": "MMS Delivery Delays and Failures from a Subset of Twilio Long Codes and Short Codes to Multiple Networks in United States",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-03T08:00:52.812075Z"
+  "html_written": "2026-11-03T16:09:00.547415Z"
 }
