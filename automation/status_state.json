@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-04T01:42:37.208912Z",
+  "polled": "2026-11-04T08:07:50.141045Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "97 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "Delayed Sends and Receives - Sonic Network",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Small Networks in United States",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Multiple Networks in Philippines",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Small Networks in United States",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Multiple Networks in Philippines",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-04T01:42:37.208936Z"
+  "html_written": "2026-11-04T08:07:50.141072Z"
 }
