@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-08T16:10:54.637814Z",
+  "polled": "2026-11-08T20:34:49.430108Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "minor",
-      "description": "Partial System Degradation",
-      "incident_name": "Elevated errors with image generation",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Elevated error rates with some U.S. business Mastercards",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-08T16:10:54.637843Z"
+  "html_written": "2026-11-08T20:34:49.430134Z"
 }
