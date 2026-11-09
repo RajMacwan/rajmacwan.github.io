@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-08T23:59:23.551803Z",
+  "polled": "2026-11-09T06:00:18.821294Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "112 active Salesforce incidents",
+      "description": "109 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "Increased timeouts due to surge in anonymous users",
       "fetched": true
     },
     "gitlab": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Multiple Countries",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Failures from a Subset of Twilio Phone Numbers to Multiple Networks in Multiple Countries",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-08T23:59:23.551845Z"
+  "html_written": "2026-11-09T06:00:18.821314Z"
 }
