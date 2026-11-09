@@ -1,6 +1,5 @@
 {
   "history": [
-    "reading-the-threat-intelligence-landscape",
     "running-a-warrant-canary",
     "setting-up-whonix-step-by-step",
     "shadow-ai-what-it-doesnt-know",
@@ -15,8 +14,9 @@
     "business-email-compromise-recovery",
     "context-engineering-beats-prompt-engineering",
     "dark-web-intel-what-actually-matters",
-    "data-platform-maturity-lakehouse"
+    "data-platform-maturity-lakehouse",
+    "detection-engineering-as-a-product"
   ],
-  "last_run": "2026-11-02T12:57:42.214932Z",
-  "last_slug": "data-platform-maturity-lakehouse"
+  "last_run": "2026-11-09T13:29:09.502510Z",
+  "last_slug": "detection-engineering-as-a-product"
 }
