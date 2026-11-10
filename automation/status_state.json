@@ -1,9 +1,9 @@
 {
-  "polled": "2026-11-10T15:43:57.470901Z",
+  "polled": "2026-11-10T21:26:48.703895Z",
   "services": {
     "cloudflare": {
-      "indicator": "major",
-      "description": "Partial System Outage",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
@@ -152,9 +152,9 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Service Degradation Affecting Zoom Conference Room Connector Services Endpoints in the AMS region.",
       "fetched": true
     },
     "dropbox": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Elevated error rates with some U.S. business Mastercards",
+      "incident_name": "",
       "fetched": true
     },
     "anthropic": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-10T15:43:57.470950Z"
+  "html_written": "2026-11-10T21:26:48.703927Z"
 }
