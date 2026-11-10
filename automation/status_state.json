@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-10T00:12:43.883748Z",
+  "polled": "2026-11-10T07:28:32.821186Z",
   "services": {
     "cloudflare": {
       "indicator": "major",
       "description": "Partial System Outage",
-      "incident_name": "Changes made to Workers may be delayed or disrupted",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -272,21 +272,21 @@
       "fetched": true
     },
     "coinbase": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "Bank Payments Unavailable - INR (India)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Bouygues Telecom France",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from Twilio to Bouygues Telecom France",
+      "incident_name": "Voice Call Failures from a Subset of Twilio Phone Numbers to Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-10T00:12:43.883766Z"
+  "html_written": "2026-11-10T07:28:32.821215Z"
 }
