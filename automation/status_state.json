@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-11T08:03:51.562431Z",
+  "polled": "2026-11-11T16:05:39.030140Z",
   "services": {
     "cloudflare": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "SSL Certificate Provisioning Issue",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Network Performance Degraded",
       "fetched": true
     },
     "fastly": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
+      "incident_name": "SMS Delivery Failures from Twilio to Turkcell Turkey",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
+      "incident_name": "SMS Delivery Failures from Twilio to Turkcell Turkey",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-11T08:03:51.562480Z"
+  "html_written": "2026-11-11T16:05:39.030170Z"
 }
