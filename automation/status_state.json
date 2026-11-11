@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-11T01:24:17.585657Z",
+  "polled": "2026-11-11T08:03:51.562431Z",
   "services": {
     "cloudflare": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "SSL Certificate Provisioning Issue",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "108 active Salesforce incidents",
+      "description": "110 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -158,8 +158,8 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Philippines",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Philippines",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-11T01:24:17.585684Z"
+  "html_written": "2026-11-11T08:03:51.562480Z"
 }
