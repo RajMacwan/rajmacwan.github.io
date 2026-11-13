@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-13T00:20:12.808902Z",
+  "polled": "2026-11-13T07:03:13.814296Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Durable Objects increased error rates in North America",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "112 active Salesforce incidents",
+      "description": "114 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Bank Payments Unavailable - INR (India)",
+      "incident_name": "Osmosis (OSMO) - Delayed Sends and Receives",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Brisanet Brazil",
+      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Brisanet Brazil",
+      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-13T00:20:12.808933Z"
+  "html_written": "2026-11-13T07:03:13.814361Z"
 }
