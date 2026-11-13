@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-13T15:18:35.189238Z",
+  "polled": "2026-11-13T21:27:29.943392Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Cloudflare is currently having an issue with the r8.im registry used for Replicate model publishing and builds is currently restricted",
+      "incident_name": "Cloudflare is seeing an issue with Workers API availability",
       "fetched": true
     },
     "fastly": {
@@ -32,8 +32,8 @@
       "fetched": true
     },
     "digitalocean": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -104,9 +104,9 @@
       "fetched": false
     },
     "github": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Copilot experiencing degraded model availability for some GPT models",
       "fetched": true
     },
     "gitlab": {
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Zoom Phone Calls in China Region",
+      "incident_name": "Service Degradation Affecting Microsoft Integrations due to an underlying vendor issue.",
       "fetched": true
     },
     "dropbox": {
@@ -166,13 +166,13 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "Elevated errors affecting the Microsoft 365 connector",
+      "incident_name": "Delayed Costs Data in the Compliance API",
       "fetched": true
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Elevated errors on claude.ai, the Claude API, and Claude Code",
+      "description": "Partially Degraded Service",
+      "incident_name": "Elevated errors affecting the Microsoft 365 connector",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
+      "incident_name": "SMS Delivery Receipt Failures from Twilio to Claro Costa Rica",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
+      "incident_name": "SMS Delivery Receipt Failures from Twilio to Claro Costa Rica",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-13T15:18:35.189266Z"
+  "html_written": "2026-11-13T21:27:29.943431Z"
 }
