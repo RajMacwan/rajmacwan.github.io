@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-13T07:03:13.814296Z",
+  "polled": "2026-11-13T15:18:35.189238Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "Cloudflare is currently having an issue with the r8.im registry used for Replicate model publishing and builds is currently restricted",
       "fetched": true
     },
     "fastly": {
@@ -20,9 +20,9 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Delayed Support Email Delivery to Microsoft 365 and Outlook Mailboxes",
       "fetched": true
     },
     "render": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "114 active Salesforce incidents",
+      "description": "115 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -154,7 +154,7 @@
     "zoom": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Service Degradation Affecting Microsoft Integrations due to an underlying vendor issue.",
+      "incident_name": "Service Degradation Affecting Zoom Phone Calls in China Region",
       "fetched": true
     },
     "dropbox": {
@@ -171,8 +171,8 @@
     },
     "anthropic": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Elevated errors affecting the Microsoft 365 connector",
+      "description": "Minor Service Outage",
+      "incident_name": "Elevated errors on claude.ai, the Claude API, and Claude Code",
       "fetched": true
     },
     "cursor": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-13T07:03:13.814361Z"
+  "html_written": "2026-11-13T15:18:35.189266Z"
 }
