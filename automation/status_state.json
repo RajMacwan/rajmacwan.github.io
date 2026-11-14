@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-14T01:39:22.709203Z",
+  "polled": "2026-11-14T08:01:09.533165Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -20,9 +20,9 @@
       "fetched": true
     },
     "netlify": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Delayed Support Email Delivery to Microsoft 365 and Outlook Mailboxes",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "render": {
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Some users unable to sign up with Apple on the Claude iOS app",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
+      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Email Delivery Delays to Microsoft Inboxes",
+      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-14T01:39:22.709241Z"
+  "html_written": "2026-11-14T08:01:09.533207Z"
 }
