@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-15T17:34:37.956282Z",
+  "polled": "2026-11-15T22:03:10.579537Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Gateway API (Lookup API) Failure Increase in United States",
+      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Gateway API (Lookup API) Failure Increase in United States",
+      "incident_name": "SMS Delivery Delays from Twilio to Brisanet Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-15T17:34:37.956301Z"
+  "html_written": "2026-11-15T22:03:10.579568Z"
 }
