@@ -1,6 +1,5 @@
 {
   "history": [
-    "running-a-warrant-canary",
     "setting-up-whonix-step-by-step",
     "shadow-ai-what-it-doesnt-know",
     "economics-of-genai-in-enterprise",
@@ -15,8 +14,9 @@
     "context-engineering-beats-prompt-engineering",
     "dark-web-intel-what-actually-matters",
     "data-platform-maturity-lakehouse",
-    "detection-engineering-as-a-product"
+    "detection-engineering-as-a-product",
+    "economics-of-genai-in-enterprise"
   ],
-  "last_run": "2026-11-09T13:29:09.502510Z",
-  "last_slug": "detection-engineering-as-a-product"
+  "last_run": "2026-11-16T13:14:58.999515Z",
+  "last_slug": "economics-of-genai-in-enterprise"
 }
