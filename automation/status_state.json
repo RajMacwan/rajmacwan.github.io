@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-16T19:45:16.876690Z",
+  "polled": "2026-11-17T02:38:15.657947Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "112 active Salesforce incidents",
+      "description": "111 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "INC20000351",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -260,9 +260,9 @@
       "fetched": false
     },
     "plaid": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "Service Disruption Impacting Chase connections",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "square": {
@@ -274,19 +274,19 @@
     "coinbase": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Osmosis (OSMO) - Delayed Sends and Receives",
+      "incident_name": "Bank Payments Unavailable - INR (India)",
       "fetched": true
     },
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation between Twilio and Multiple Networks in United Kingdom",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation between Twilio and Multiple Networks in United Kingdom",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Short Codes to Liberty Mobile Puerto Rico",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-16T19:45:16.876709Z"
+  "html_written": "2026-11-17T02:38:15.657973Z"
 }
