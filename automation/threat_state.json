@@ -1,11 +1,11 @@
 {
-  "level": "YELLOW",
-  "score": 4,
-  "headline": "Heightened activity.",
-  "body": "Above-average KEV adds this week. Watch your management-plane exposure.",
+  "level": "GREEN",
+  "score": 1,
+  "headline": "Calm across the wire.",
+  "body": "Background-noise KEV adds. No active-exploitation surges.",
   "meta": {
-    "kev_adds_7d": 8,
+    "kev_adds_7d": 3,
     "active_zero_days": 0
   },
-  "updated": "2026-11-17T15:07:55.657442Z"
+  "updated": "2026-11-18T14:46:10.196588Z"
 }
