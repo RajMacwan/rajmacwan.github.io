@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-17T19:50:26.567490Z",
+  "polled": "2026-11-18T02:09:41.760021Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Errors and stalled predictions on some models",
+      "incident_name": "Cloudflare Access Issue",
       "fetched": true
     },
     "fastly": {
@@ -26,8 +26,8 @@
       "fetched": true
     },
     "render": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -158,9 +158,9 @@
       "fetched": true
     },
     "dropbox": {
-      "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Sign in with Apple is not working as expected for some users",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "openai": {
@@ -172,7 +172,7 @@
     "anthropic": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Some users unable to sign in with Apple on claude.ai and the Claude iOS app",
+      "incident_name": "Claude unable to join meetings",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Short Codes to AT&T Mexico",
+      "incident_name": "Voice Call Audio Quality Degradation and Silent and One-Way Audio between Twilio and Network Subscribers in Brazil",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from a Subset of Twilio Short Codes to AT&T Mexico",
+      "incident_name": "Voice Call Audio Quality Degradation and Silent and One-Way Audio between Twilio and Network Subscribers in Brazil",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-17T19:50:26.567524Z"
+  "html_written": "2026-11-18T02:09:41.760049Z"
 }
