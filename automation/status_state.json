@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-18T02:09:41.760021Z",
+  "polled": "2026-11-18T10:08:59.064164Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Cloudflare Access Issue",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -26,8 +26,8 @@
       "fetched": true
     },
     "render": {
-      "indicator": "maintenance",
-      "description": "Service Under Maintenance",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation and Silent and One-Way Audio between Twilio and Network Subscribers in Brazil",
+      "incident_name": "Speech Recognition Failures in US1",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Audio Quality Degradation and Silent and One-Way Audio between Twilio and Network Subscribers in Brazil",
+      "incident_name": "Speech Recognition Failures in US1",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-18T02:09:41.760049Z"
+  "html_written": "2026-11-18T10:08:59.064208Z"
 }
