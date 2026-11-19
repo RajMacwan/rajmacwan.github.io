@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-18T18:50:34.214353Z",
+  "polled": "2026-11-19T00:58:19.654748Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "Degraded connectivity between Europe and Asia Pacific",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "112 active Salesforce incidents",
+      "description": "105 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Text to Speech Timeouts",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Text to Speech Timeouts",
+      "incident_name": "SMS Delivery Receipt Delays from a Subset of Twilio Long Codes to Multiple Networks in Chile",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-18T18:50:34.214379Z"
+  "html_written": "2026-11-19T00:58:19.654776Z"
 }
