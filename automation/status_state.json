@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-20T04:24:29.879574Z",
+  "polled": "2026-11-20T13:26:26.049999Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "R2 and Durable Objects availability issues",
+      "incident_name": "Network Performance Issues in Miami",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - Block Storage (BR-GRU)",
+      "incident_name": "Service Issue - Linode Kubernetes Engine",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "104 active Salesforce incidents",
+      "description": "105 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "maintenance",
+      "description": "Service Under Maintenance",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
+      "incident_name": "SMS Delivery Delays from Twilio to Proximus Belgium",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
+      "incident_name": "SMS Delivery Delays from Twilio to Proximus Belgium",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-20T04:24:29.879595Z"
+  "html_written": "2026-11-20T13:26:26.050034Z"
 }
