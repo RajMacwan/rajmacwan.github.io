@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-19T23:48:28.555608Z",
+  "polled": "2026-11-20T04:24:29.879574Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "R2 and Durable Objects availability issues",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "105 active Salesforce incidents",
+      "description": "104 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-19T23:48:28.555641Z"
+  "html_written": "2026-11-20T04:24:29.879595Z"
 }
