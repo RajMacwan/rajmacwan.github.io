@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-21T02:41:38.276864Z",
+  "polled": "2026-11-21T10:16:09.302562Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Network Performance Issues in Washington, DC datacenter (IAD)",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000369",
       "fetched": true
     },
     "databricks": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Multiple Networks in Philippines",
+      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Failures from a Subset of Twilio Philippines Phone Numbers to Multiple Networks in Philippines",
+      "incident_name": "Voice Call Silent and One-Way Audio from Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-21T02:41:38.276908Z"
+  "html_written": "2026-11-21T10:16:09.302587Z"
 }
