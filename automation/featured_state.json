@@ -1,6 +1,5 @@
 {
   "history": [
-    "setting-up-whonix-step-by-step",
     "shadow-ai-what-it-doesnt-know",
     "economics-of-genai-in-enterprise",
     "network-architecture-hybrid-work",
@@ -15,8 +14,9 @@
     "dark-web-intel-what-actually-matters",
     "data-platform-maturity-lakehouse",
     "detection-engineering-as-a-product",
-    "economics-of-genai-in-enterprise"
+    "economics-of-genai-in-enterprise",
+    "edr-alone-not-enough"
   ],
-  "last_run": "2026-11-16T13:14:58.999515Z",
-  "last_slug": "economics-of-genai-in-enterprise"
+  "last_run": "2026-11-23T15:31:48.020645Z",
+  "last_slug": "edr-alone-not-enough"
 }
