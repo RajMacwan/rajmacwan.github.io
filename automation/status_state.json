@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-23T03:48:26.738157Z",
+  "polled": "2026-11-23T13:43:35.056174Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
+      "indicator": "none",
+      "description": "All Systems Operational",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Gateway API (Lookup API) Failure Increase in Canada",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Cell C South Africa",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Gateway API (Lookup API) Failure Increase in Canada",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Cell C South Africa",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-23T03:48:26.738181Z"
+  "html_written": "2026-11-23T13:43:35.056207Z"
 }
