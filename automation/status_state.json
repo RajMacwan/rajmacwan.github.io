@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-22T23:18:21.488066Z",
+  "polled": "2026-11-23T03:48:26.738157Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "102 active Salesforce incidents",
+      "description": "98 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -152,8 +152,8 @@
       "fetched": false
     },
     "zoom": {
-      "indicator": "none",
-      "description": "All Systems Operational",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
       "incident_name": "",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telekom Srbija Serbia",
+      "incident_name": "Gateway API (Lookup API) Failure Increase in Canada",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from Twilio to Telekom Srbija Serbia",
+      "incident_name": "Gateway API (Lookup API) Failure Increase in Canada",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-22T23:18:21.488093Z"
+  "html_written": "2026-11-23T03:48:26.738181Z"
 }
