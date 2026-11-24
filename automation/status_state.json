@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-24T11:05:04.769588Z",
+  "polled": "2026-11-24T21:07:15.202720Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Cloudflare Workers API \u2013 Delayed or Inconsistent Responses",
+      "description": "Minor Service Outage",
+      "incident_name": "Issues with Email Routing in France",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "94 active Salesforce incidents",
+      "description": "95 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "major",
+      "description": "Partial System Outage",
+      "incident_name": "INC20000372",
       "fetched": true
     },
     "databricks": {
@@ -200,9 +200,9 @@
       "fetched": false
     },
     "mistral": {
-      "indicator": "critical",
-      "description": "Degraded Performance",
-      "incident_name": "Vibe intermittently unavailable",
+      "indicator": "minor",
+      "description": "Minor service outage",
+      "incident_name": "Vibe Work issues with GLM 5.3 Short",
       "fetched": true
     },
     "okta": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telekom Germany",
+      "incident_name": "Some calls not branded or receive Spam likely labels",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telekom Germany",
+      "incident_name": "Some calls not branded or receive Spam likely labels",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-24T11:05:04.769616Z"
+  "html_written": "2026-11-24T21:07:15.202746Z"
 }
