@@ -1,11 +1,11 @@
 {
   "level": "ORANGE",
-  "score": 6,
+  "score": 7,
   "headline": "High \u2014 active campaigns.",
   "body": "Exploitation campaigns underway. Validate patch status on internet-facing assets.",
   "meta": {
-    "kev_adds_7d": 9,
+    "kev_adds_7d": 11,
     "active_zero_days": 1
   },
-  "updated": "2026-11-23T16:48:02.994055Z"
+  "updated": "2026-11-24T16:41:10.615689Z"
 }
