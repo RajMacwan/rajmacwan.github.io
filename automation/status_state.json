@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-23T13:43:35.056174Z",
+  "polled": "2026-11-24T01:15:03.889617Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "Cloudflare Workers API \u2013 Delayed or Inconsistent Responses",
       "fetched": true
     },
     "fastly": {
@@ -46,7 +46,7 @@
     "linode": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "Service Issue - Linode Kubernetes Engine",
+      "incident_name": "Service Issue - Block Storage (BR-GRU)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "98 active Salesforce incidents",
+      "description": "94 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -170,9 +170,9 @@
       "fetched": true
     },
     "anthropic": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Claude for Microsoft 365 add-in missing for some users",
       "fetched": true
     },
     "cursor": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Cell C South Africa",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Vodacom South Africa",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Cell C South Africa",
+      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Vodacom South Africa",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-23T13:43:35.056207Z"
+  "html_written": "2026-11-24T01:15:03.889691Z"
 }
