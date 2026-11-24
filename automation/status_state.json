@@ -1,5 +1,5 @@
 {
-  "polled": "2026-11-24T01:15:03.889617Z",
+  "polled": "2026-11-24T11:05:04.769588Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
@@ -200,9 +200,9 @@
       "fetched": false
     },
     "mistral": {
-      "indicator": "minor",
-      "description": "Minor service outage",
-      "incident_name": "Vibe Work issues with GLM 5.3 Short",
+      "indicator": "critical",
+      "description": "Degraded Performance",
+      "incident_name": "Vibe intermittently unavailable",
       "fetched": true
     },
     "okta": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Vodacom South Africa",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telekom Germany",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "SMS Delivery Delays from a Subset of Twilio Long Codes to Vodacom South Africa",
+      "incident_name": "SMS Delivery Delays and Failures from Twilio to Telekom Germany",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-24T01:15:03.889691Z"
+  "html_written": "2026-11-24T11:05:04.769616Z"
 }
