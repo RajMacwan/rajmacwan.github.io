@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-24T21:07:15.202720Z",
+  "polled": "2026-11-25T04:08:18.015583Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Minor Service Outage",
-      "incident_name": "Issues with Email Routing in France",
+      "incident_name": "Magic Transit Degraded Performance",
       "fetched": true
     },
     "fastly": {
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Service Issue - Block Storage (BR-GRU)",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Connectivity Issue - US-East (Newark)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "93 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -92,9 +92,9 @@
       "fetched": false
     },
     "snowflake": {
-      "indicator": "major",
-      "description": "Partial System Outage",
-      "incident_name": "INC20000372",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "databricks": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Some calls not branded or receive Spam likely labels",
+      "incident_name": "Voice Call Silent and One-Way Audio From Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Some calls not branded or receive Spam likely labels",
+      "incident_name": "Voice Call Silent and One-Way Audio From Colombia to a Subset of Twilio Phone Numbers",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-24T21:07:15.202746Z"
+  "html_written": "2026-11-25T04:08:18.015608Z"
 }
