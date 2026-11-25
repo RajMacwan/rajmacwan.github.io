@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-25T14:17:45.848600Z",
+  "polled": "2026-11-25T23:09:19.599521Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "Elevated R2 Latency",
       "fetched": true
     },
     "fastly": {
@@ -44,9 +44,9 @@
       "fetched": false
     },
     "linode": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Connectivity Issue - US-East (Newark)",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "Service Issue - Block Storage (BR-GRU)",
       "fetched": true
     },
     "aws": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "93 active Salesforce incidents",
+      "description": "95 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "",
+      "incident_name": "LFS degradation for some customers",
       "fetched": true
     },
     "gitlab": {
@@ -166,7 +166,7 @@
     "openai": {
       "indicator": "minor",
       "description": "Partial System Degradation",
-      "incident_name": "ChatGPT, ChatGPT Work, and Codex Cloud are experiencing elevated conversation errors",
+      "incident_name": "Elevated errors with Codex GitHub reviews and pull request merges",
       "fetched": true
     },
     "anthropic": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "minor",
-      "description": "Partially Degraded Service",
-      "incident_name": "Degraded performance \u2014 Grok Bot inbound email",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "replicate": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-25T14:17:45.848625Z"
+  "html_written": "2026-11-25T23:09:19.599545Z"
 }
