@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-25T04:08:18.015583Z",
+  "polled": "2026-11-25T14:17:45.848600Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
-      "description": "Minor Service Outage",
-      "incident_name": "Magic Transit Degraded Performance",
+      "description": "Partially Degraded Service",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -164,9 +164,9 @@
       "fetched": true
     },
     "openai": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partial System Degradation",
+      "incident_name": "ChatGPT, ChatGPT Work, and Codex Cloud are experiencing elevated conversation errors",
       "fetched": true
     },
     "anthropic": {
@@ -176,9 +176,9 @@
       "fetched": true
     },
     "cursor": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "Degraded Gemini 4 Carbon",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "Degraded performance \u2014 Grok Bot inbound email",
       "fetched": true
     },
     "replicate": {
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Silent and One-Way Audio From Colombia to a Subset of Twilio Phone Numbers",
+      "incident_name": "SMS Delivery Failures from Twilio to Econet Telecom Lesotho",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Voice Call Silent and One-Way Audio From Colombia to a Subset of Twilio Phone Numbers",
+      "incident_name": "SMS Delivery Failures from Twilio to Econet Telecom Lesotho",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-25T04:08:18.015608Z"
+  "html_written": "2026-11-25T14:17:45.848625Z"
 }
