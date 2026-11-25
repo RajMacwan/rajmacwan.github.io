@@ -1,11 +1,11 @@
 {
-  "level": "ORANGE",
-  "score": 7,
-  "headline": "High \u2014 active campaigns.",
-  "body": "Exploitation campaigns underway. Validate patch status on internet-facing assets.",
+  "level": "RED",
+  "score": 9,
+  "headline": "Critical \u2014 surge in progress.",
+  "body": "Pronounced uptick in active exploitation. Treat patch windows as incident response.",
   "meta": {
-    "kev_adds_7d": 11,
+    "kev_adds_7d": 14,
     "active_zero_days": 1
   },
-  "updated": "2026-11-24T16:41:10.615689Z"
+  "updated": "2026-11-25T16:25:28.334688Z"
 }
