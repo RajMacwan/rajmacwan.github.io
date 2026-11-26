@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-25T23:09:19.599521Z",
+  "polled": "2026-11-26T05:02:48.282659Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Elevated R2 Latency",
+      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "95 active Salesforce incidents",
+      "description": "82 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -106,7 +106,7 @@
     "github": {
       "indicator": "none",
       "description": "All Systems Operational",
-      "incident_name": "LFS degradation for some customers",
+      "incident_name": "",
       "fetched": true
     },
     "gitlab": {
@@ -200,9 +200,9 @@
       "fetched": false
     },
     "mistral": {
-      "indicator": "minor",
-      "description": "Minor service outage",
-      "incident_name": "Vibe Work issues with GLM 5.3 Short",
+      "indicator": "none",
+      "description": "All Systems Operational",
+      "incident_name": "",
       "fetched": true
     },
     "okta": {
@@ -236,9 +236,9 @@
       "fetched": true
     },
     "duo": {
-      "indicator": "none",
-      "description": "All Systems Operational",
-      "incident_name": "",
+      "indicator": "minor",
+      "description": "Partially Degraded Service",
+      "incident_name": "**Duo - Support Portal Unavailable - Global**",
       "fetched": true
     },
     "crowdstrike": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-25T23:09:19.599545Z"
+  "html_written": "2026-11-26T05:02:48.282686Z"
 }
