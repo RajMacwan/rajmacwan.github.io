@@ -1,10 +1,10 @@
 {
-  "polled": "2026-11-27T23:39:34.926091Z",
+  "polled": "2026-11-28T04:57:47.390111Z",
   "services": {
     "cloudflare": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "Changes to Cloudflare Workers are not producing Event Subscription events",
+      "incident_name": "Elevated Errors for Cloudflare Workers Subrequests",
       "fetched": true
     },
     "fastly": {
@@ -75,7 +75,7 @@
     },
     "salesforce": {
       "indicator": "minor",
-      "description": "83 active Salesforce incidents",
+      "description": "82 active Salesforce incidents",
       "incident_name": "{'rootCause': None, 'actionPlan': None, 'pathToResolution': None}",
       "fetched": true
     },
@@ -280,13 +280,13 @@
     "twilio": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Status From Twilio Long Code to US/CA Carriers",
+      "incident_name": "Email Delivery Delays to Apple Private Relay Addresses",
       "fetched": true
     },
     "sendgrid": {
       "indicator": "minor",
       "description": "Partially Degraded Service",
-      "incident_name": "MMS Delivery Status From Twilio Long Code to US/CA Carriers",
+      "incident_name": "Email Delivery Delays to Apple Private Relay Addresses",
       "fetched": true
     },
     "postmark": {
@@ -320,5 +320,5 @@
       "fetched": false
     }
   },
-  "html_written": "2026-11-27T23:39:34.926115Z"
+  "html_written": "2026-11-28T04:57:47.390132Z"
 }
